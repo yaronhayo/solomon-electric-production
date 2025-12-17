@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/ui/Container.astro";
+import Button from "../components/ui/Button.astro";
+import { SITE_CONFIG } from "../config/site";
+---
+
+<Layout
+    title="404 - Page Not Found | Solomon Electric"
+    description="The page you are looking for does not exist. Return to Solomon Electric homepage."
+>
+    <section
+        class="min-h-[70vh] flex items-center bg-light relative overflow-hidden py-24 md:py-32"
+    >
+        <div class="absolute inset-0 z-0 opacity-5">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-primary)_0%,_transparent_70%)]"
+            >
+            </div>
+        </div>
+
+        <Container class="relative z-10 text-center">
+            <h1
+                class="font-black text-primary leading-none mb-4"
+                style="font-size: clamp(8rem, 20vw, 15rem);"
+            >
+                404
+            </h1>
+            <h2
+                class="text-2xl md:text-4xl font-black text-primary uppercase mb-6"
+            >
+                Page Not Found
+            </h2>
+            <p
+                class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+            >
+                The page you are looking for might have been removed, had its
+                name changed, or is temporarily unavailable.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <Button href="/" variant="primary" size="lg">
+                    Return Home
+                </Button>
+                <Button href="/contact" variant="secondary" size="lg">
+                    Contact Us
+                </Button>
+            </div>
+        </Container>
+    </section>
+</Layout>

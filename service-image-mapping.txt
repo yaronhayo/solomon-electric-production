@@ -1,0 +1,74 @@
+// Emergency services - all use emergencyServiceImg
+'24/7 Emergency Electrical Service': emergencyServiceImg,
+'Power Outage Emergency Response': emergencyServiceImg,
+'Electrical Fire Hazard Investigation': emergencyServiceImg,
+'Sparking Outlet & Circuit Breaker Repair': panel Upgrade200aImg,
+'Electrical Burning Smell Investigation': emergencyServiceImg,
+'Storm Damage Electrical Repair': emergencyServiceImg,
+
+// Outlets & Wiring - use outletInstallImg, gfciOutletImg, rewiringWorkImg
+'New Outlet Installation & Repair': outletInstallImg,
+'220/240V Outlet Installation': outletInstallImg,
+'GFCI Outlet Installation & Repair': gfciOutletImg,
+'Light Switch Installation & Replacement': outletInstallImg,
+'Electrical Wiring Updates & Rewiring': rewiringWorkImg,
+'Home Electrical System Upgrade': rewiringWorkImg,
+
+// Lighting & Fixtures - use recessedLightingImg, ceilingFanImg, landscapeLightingImg
+'Indoor & Outdoor Lighting Installation': landscapeLightingImg,
+'Recessed Lighting Installation': recessedLightingImg,
+'LED Lighting Retrofit & Conversion': recessedLightingImg,
+'Landscape & Outdoor Lighting': landscapeLightingImg,
+'Ceiling Fan & Light Fixture Installation': ceilingFanImg,
+'Motion-Sensor & Dimmer Installation': recessedLightingImg,
+
+// Smart Home - use smartHomeImg2, securityCameraImg
+'Smart Thermostat Installation': smartHomeImg2,
+'Smart Lighting Installation': smartHomeImg2,
+'Smart Switch Installation & Home Automation': smartHomeImg2,
+'Ring Doorbell & Security Camera Wiring': securityCameraImg,
+'Home Theater & Low-Voltage Wiring': securityCameraImg,
+'Computer Network Outlet Installation': outletInstallImg,
+
+// EV Charging - use evChargerInstallImg
+'Level 2 EV Charger Installation (240V)': evChargerInstallImg,
+'Level 3 DC Fast Charger Installation': evChargerInstallImg,
+'Electric Vehicle Outlet Installation': evChargerInstallImg,
+'Home EV Charging System Setup': evChargerInstallImg,
+'Commercial EV Charging Infrastructure': evChargerInstallImg,
+'Solar Panel Electrical Integration': evChargerInstallImg,
+
+// Generators - use generatorInstallImg
+'Home Standby Generator Installation': generatorInstallImg,
+'Generator Maintenance & Service': generatorInstallImg,
+'Portable Generator Hookup': generatorInstallImg,
+'Automatic Transfer Switch Installation': generatorInstallImg,
+'Generator Sizing & Load Analysis': generatorInstallImg,
+'Emergency Power System Design': generatorInstallImg,
+
+// Specialty & Outdoor - use hotTubWiringImg, landscapeLightingImg
+'Hot Tub & Spa Electrical Installation': hotTubWiringImg,
+'Pool & Spa Wiring & Inspection': hotTubWiringImg,
+'Sauna & Steam Room Electrical': hotTubWiringImg,
+'Holiday Lighting Installation & Removal': landscapeLightingImg,
+'Outdoor Waterproof Outlet Installation': gfciOutletImg,
+'Dock & Marina Electrical Services': hotTubWiringImg,
+
+// Commercial & Industrial - use commercialPanelImg, ledRetrofitImg
+'Commercial Panel Installation & Upgrades': commercialPanelImg,
+'Tenant Build-Out Electrical Work': commercialPanelImg,
+'Commercial LED Lighting Retrofit': ledRetrofitImg,
+'High-Voltage Electrical Services': commercialPanelImg,
+'Three-Phase Power Installation': commercialPanelImg,
+'Commercial GFCI & Safety Compliance': gfciOutletImg,
+'Parking Lot & Security Lighting': landscapeLightingImg,
+'Exit & Emergency Lighting Systems': recessedLightingImg,
+
+// Inspection & Compliance - use inspectionWorkImg
+'Home Electrical Inspection & Certification': inspectionWorkImg,
+'Pre-Purchase Electrical Inspection': inspectionWorkImg,
+'Electrical Code Compliance Audit': inspectionWorkImg,
+'Electrical Safety Inspection': inspectionWorkImg,
+'Real Estate Inspection Services': inspectionWorkImg,
+'Insurance Electrical Inspection': inspectionWorkImg,
+'Permit Application & Inspection Coordination': inspectionWorkImg

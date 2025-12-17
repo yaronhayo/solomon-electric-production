@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/hero.webp";
+import Button from "../components/ui/Button.astro";
+import { SERVICE_AREAS } from "../data/service-areas";
+const serviceAreas = SERVICE_AREAS;
+---
+
+<Layout
+    title="Service Areas - Solomon Electric | Miami-Dade & Broward"
+    description="We provide expert electrical services across Miami-Dade and Broward counties. Check our service areas here."
+>
+    <!-- Hero -->
+    <section
+        class="relative flex items-center overflow-hidden"
+        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); min-height: 60vh;"
+    >
+        <div class="absolute inset-0 z-0">
+            <Image
+                src={heroImage}
+                alt="Service Areas"
+                class="w-full h-full object-cover"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
+            >
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
+            >
+            </div>
+        </div>
+        <div class="container-custom relative z-10 w-full">
+            <div
+                class="grid grid-cols-1 lg:grid-cols-12 items-center"
+                style="gap: var(--spacing-xl);"
+            >
+                <div class="lg:col-span-7">
+                    <p
+                        class="text-accent tracking-[0.3em] font-bold uppercase"
+                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
+                    >
+                        South Florida
+                    </p>
+                    <h1
+                        class="font-black text-white leading-[0.9]"
+                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
+                    >
+                        Service <br />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
+                        >
+                            Areas
+                        </span>
+                    </h1>
+                    <p
+                        class="text-gray-200 font-light leading-relaxed"
+                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
+                    >
+                        Proudly serving homeowners and businesses throughout
+                        South Florida with expert electrical solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Grid -->
+    <section
+        class="bg-light"
+        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
+    >
+        <div class="container-custom">
+            <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+            >
+                {
+                    serviceAreas.map((area) => (
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-accent hover:shadow-md transition-all text-center">
+                            <h3 class="text-lg font-bold text-primary">
+                                {area}
+                            </h3>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div
+                class="mt-20 text-center bg-white border border-gray-100 rounded-2xl p-12 md:p-16 shadow-sm"
+            >
+                <h2
+                    class="text-3xl md:text-4xl font-black text-primary mb-4 uppercase"
+                >
+                    Don't See Your City?
+                </h2>
+                <p class="text-gray-600 text-lg mb-8 font-medium">
+                    We likely still cover your area! Call us to confirm
+                    availability.
+                </p>
+                <Button
+                    href="tel:7868339211"
+                    size="lg"
+                    class="px-12 py-6 text-xl">Call (786) 833-9211</Button
+                >
+            </div>
+        </div>
+    </section>
+</Layout>

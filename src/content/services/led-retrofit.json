@@ -1,0 +1,17 @@
+{
+    "name": "Commercial LED Retrofit & Energy Audits",
+    "slug": "led-retrofit-energy-audits",
+    "description": "Dramatically reduce energy costs with commercial LED retrofits and comprehensive energy audits. We analyze your facility's electrical consumption, identify waste, and implement LED lighting upgrades that cut power bills by 40-70% while improving workplace illumination.",
+    "shortDescription": "Energy efficiency upgrades and commercial lighting retrofits",
+    "icon": "../../assets/images/services/icons/led-retrofit.png",
+    "category": "Commercial",
+    "features": [
+        "Comprehensive electrical energy audits",
+        "LED lighting retrofits for warehouses, offices, retail",
+        "ROI analysis and utility rebate assistance",
+        "Smart lighting with occupancy sensors",
+        "Power quality analysis and correction"
+    ],
+    "relatedBlogPosts": [],
+    "order": 8
+}

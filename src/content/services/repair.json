@@ -1,0 +1,20 @@
+{
+    "name": "24/7 Electrical Repair & Troubleshooting",
+    "slug": "electrical-repair-troubleshooting",
+    "description": "Emergency electrical repairs available 24/7/365. Our licensed electricians diagnose and fix all electrical problems including power outages, tripped breakers, flickering lights, dead outlets, burning smells, and sparking switches. Fast response, guaranteed solutions.",
+    "shortDescription": "Emergency repairs, diagnostics, and same-day service",
+    "icon": "../../assets/images/services/icons/repair.png",
+    "category": "Both",
+    "features": [
+        "24/7 emergency service availability",
+        "Advanced diagnostic equipment and techniques",
+        "Outlet and switch repairs/replacements",
+        "Circuit breaker troubleshooting and repair",
+        "Same-day service for urgent issues"
+    ],
+    "relatedBlogPosts": [
+        "expert-electrical-diagnostics-repair",
+        "outlet-switch-modernization-services"
+    ],
+    "order": 11
+}

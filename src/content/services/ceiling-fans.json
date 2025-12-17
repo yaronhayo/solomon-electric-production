@@ -1,0 +1,19 @@
+{
+    "name": "Ceiling Fan Installation",
+    "slug": "ceiling-fan-installation",
+    "description": "Professional ceiling fan installation and balancing services. We install all fan types including smart fans with remote control, ensure proper support and electrical connections, and provide perfect balancing for quiet, wobble-free operation year-round.",
+    "shortDescription": "Expert mounting, wiring, and balancing for all fan types",
+    "icon": "../../assets/images/services/icons/ceiling-fan.png",
+    "category": "Residential",
+    "features": [
+        "Professional mounting with proper support",
+        "Smart fan integration with remote controls",
+        "Precision balancing for smooth operation",
+        "Dimmer and speed control installation",
+        "Removal of old fans and fixtures"
+    ],
+    "relatedBlogPosts": [
+        "premium-ceiling-fan-installation-balancing"
+    ],
+    "order": 6
+}

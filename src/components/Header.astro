@@ -1,0 +1,307 @@
+---
+import { Image } from "astro:assets";
+import logoImage from "../assets/images/logo-new.webp";
+import Button from "./ui/Button.astro";
+import Container from "./ui/Container.astro";
+import { SITE_CONFIG } from "../config/site";
+---
+
+<header class="w-full font-display">
+    <!-- Main Navbar -->
+    <nav
+        class="bg-white/95 backdrop-blur-md border-b border-gray-100 relative z-[50] shadow-sm sticky top-0"
+    >
+        <Container class="py-3 lg:py-5">
+            <div
+                class="hidden lg:grid lg:grid-cols-[minmax(200px,280px)_1fr_minmax(400px,auto)] items-center gap-4 xl:gap-8"
+            >
+                <!-- Left: Logo -->
+                <a href="/" class="block w-full max-w-[280px]">
+                    <Image
+                        src={logoImage}
+                        alt="Solomon Electric"
+                        class="w-full h-auto"
+                    />
+                </a>
+
+                <!-- Center: Desktop Menu -->
+                <div class="flex items-center gap-4 xl:gap-6 justify-center">
+                    <a
+                        href="/services"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        >Services</a
+                    >
+                    <a
+                        href="/service-areas"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        >Service Areas</a
+                    >
+                    <a
+                        href="/faq"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        >FAQ</a
+                    >
+                    <a
+                        href="/reviews"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        >Reviews</a
+                    >
+                    <a
+                        href="/about"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        >About</a
+                    >
+                    <a
+                        href="/contact"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        >Contact</a
+                    >
+                </div>
+
+                <!-- Right: CTAs -->
+                <div class="flex items-center gap-3 xl:gap-4 justify-end">
+                    <Button
+                        href="/book"
+                        variant="primary"
+                        size="md"
+                        class="whitespace-nowrap flex items-center gap-2"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="w-4 h-4"
+                        >
+                            <path
+                                d="M5.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H6a.75.75 0 01-.75-.75V12zM6 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H6zM7.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H8a.75.75 0 01-.75-.75V12zM8 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H8zM9.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V10zM10 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H10zM9.25 14a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V14zM12 9.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V10a.75.75 0 00-.75-.75H12zM11.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75V12zM12 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H12zM13.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H14a.75.75 0 01-.75-.75V10zM14 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H14z"
+                            ></path>
+                            <path
+                                fill-rule="evenodd"
+                                d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Book Online
+                    </Button>
+                    <Button
+                        href={SITE_CONFIG.contact.phone.href}
+                        variant="secondary"
+                        size="md"
+                        class="whitespace-nowrap flex items-center gap-2"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="w-4 h-4"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Call {SITE_CONFIG.contact.phone.formatted}
+                    </Button>
+                </div>
+            </div>
+
+            <!-- Mobile Header -->
+            <div class="flex lg:hidden items-center justify-between">
+                <a href="/" class="block w-40 md:w-48 flex-shrink-0">
+                    <Image
+                        src={logoImage}
+                        alt="Solomon Electric"
+                        class="w-full h-auto"
+                    />
+                </a>
+                <button id="mobile-menu-btn" class="text-primary p-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        class="w-8 h-8"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </Container>
+    </nav>
+</header>
+
+<!-- Mobile Menu Overlay (Moved outside Nav) -->
+<div
+    id="mobile-menu"
+    class="fixed inset-y-0 right-0 w-full max-w-[437px] bg-light z-[9999] transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col shadow-2xl overflow-y-auto"
+>
+    <!-- Header Frame 340 -->
+    <div class="flex items-center justify-between p-10">
+        <a href="/">
+            <Image
+                src={logoImage}
+                alt="Solomon Electric"
+                class="h-[68px] w-auto object-contain"
+            />
+        </a>
+        <button
+            id="close-menu-btn"
+            class="w-[20px] h-[20px] bg-primary flex items-center justify-center p-0.5 rounded-sm"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-full h-full"
+            >
+                <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Content Container Frame 338 -->
+    <div class="flex flex-col gap-[60px] pl-10 pr-0 pb-10 flex-grow">
+        <!-- Frame 339 (Nav) -->
+        <div class="flex flex-col gap-[60px] w-[242px]">
+            <!-- Navigation Links Frame 6 -->
+            <div class="flex flex-col items-start gap-[40px]">
+                <a
+                    href="/services"
+                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
+                    >Services</a
+                >
+                <a
+                    href="/service-areas"
+                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
+                    >Service Areas</a
+                >
+                <a
+                    href="/faq"
+                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
+                    >FAQ</a
+                >
+                <a
+                    href="/reviews"
+                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
+                    >Reviews</a
+                >
+                <a
+                    href="/about"
+                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
+                    >About</a
+                >
+                <a
+                    href="/contact"
+                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
+                    >Contact</a
+                >
+            </div>
+        </div>
+
+        <!-- Frame 337 (CTAs & Social) -->
+        <div class="flex flex-col gap-[30px] w-full">
+            <!-- All Services Button -->
+            <a
+                href="/services"
+                class="flex items-start w-[208px] h-[46px] drop-shadow-[5px_5px_20px_rgba(13,67,128,0.1)] group"
+            >
+                <div class="w-[13px] h-full bg-accent"></div>
+                <div
+                    class="flex-grow h-full bg-accent flex items-center justify-center gap-[10px]"
+                >
+                    <span
+                        class="font-lemon text-[20px] text-light group-hover:text-white transition-colors"
+                        >All Services
+                    </span>
+                </div>
+                <div class="w-[13px] h-full bg-accent"></div>
+            </a>
+
+            <!-- Call Now Button -->
+            <a
+                href={SITE_CONFIG.contact.phone.href}
+                class="flex items-start w-[202px] h-[50px] drop-shadow-[5px_5px_20px_rgba(13,67,128,0.1)] group"
+            >
+                <div class="w-[15px] h-full bg-primary"></div>
+                <div
+                    class="flex-grow h-full bg-primary flex items-center justify-center gap-[10px]"
+                >
+                    <span
+                        class="w-[20px] h-[20px] bg-light rounded-sm flex items-center justify-center"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-3 h-3 text-primary"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                    <span
+                        class="font-lemon text-[16px] font-medium text-light group-hover:text-white transition-colors"
+                        >Call Now</span
+                    >
+                </div>
+                <div class="w-[15px] h-full bg-primary"></div>
+            </a>
+
+            <!-- Social Icons Frame 119 -->
+            <div class="flex items-start gap-[20px] mt-4">
+                <!-- Facebook -->
+                <a
+                    href={SITE_CONFIG.social.facebook}
+                    target="_blank"
+                    class="w-[35px] h-[35px] bg-primary flex items-center justify-center rounded-sm hover:opacity-80 transition-opacity"
+                >
+                    <svg fill="white" viewBox="0 0 24 24" class="w-5 h-5"
+                        ><path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                        ></path></svg
+                    >
+                </a>
+                <!-- Instagram -->
+                <a
+                    href={SITE_CONFIG.social.instagram}
+                    target="_blank"
+                    class="w-[35px] h-[35px] bg-primary flex items-center justify-center rounded-sm hover:opacity-80 transition-opacity"
+                >
+                    <svg fill="white" viewBox="0 0 24 24" class="w-5 h-5"
+                        ><path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                        ></path></svg
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const closeBtn = document.getElementById("close-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    function toggleMenu() {
+        menu?.classList.toggle("translate-x-full");
+        document.body.classList.toggle("overflow-hidden");
+    }
+
+    menuBtn?.addEventListener("click", toggleMenu);
+    closeBtn?.addEventListener("click", toggleMenu);
+
+    menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", toggleMenu);
+    });
+</script>

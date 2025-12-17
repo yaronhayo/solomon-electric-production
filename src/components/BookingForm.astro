@@ -1,0 +1,726 @@
+---
+import Button from "./ui/Button.astro";
+
+// Props if needed
+---
+
+<div
+    class="booking-form-container bg-white rounded-2xl shadow-2xl overflow-hidden relative z-20"
+>
+    <div class="bg-primary p-6 text-center">
+        <h3
+            class="text-white text-xl md:text-2xl font-black uppercase tracking-wider font-display"
+        >
+            Request Service
+        </h3>
+        <p
+            class="text-accent text-sm font-bold uppercase tracking-widest mt-1 font-display"
+        >
+            Fast Response Guaranteed
+        </p>
+    </div>
+
+    <form
+        id="bookingForm"
+        class="p-6 md:p-8 relative min-h-[400px] flex flex-col"
+    >
+        <!-- Step 1: Service Details -->
+        <div class="form-step active flex-grow" data-step="1">
+            <div class="mb-6">
+                <label
+                    for="serviceType"
+                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                >
+                    Service Needed
+                </label>
+                <select
+                    id="serviceType"
+                    name="serviceType"
+                    required
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer appearance-none font-body"
+                >
+                    <option value="" disabled selected
+                        >Select a service...</option
+                    >
+                    <option value="electrical_repair">Electrical Repair</option>
+                    <option value="panel_upgrade">Panel Upgrade</option>
+                    <option value="lighting_installation"
+                        >Lighting Installation</option
+                    >
+                    <option value="outlet_switch">Outlet / Switch Issue</option>
+                    <option value="ev_charger">EV Charger Installation</option>
+                    <option value="generator">Generator Service</option>
+                    <option value="inspection">Safety Inspection</option>
+                    <option value="other">Other</option>
+                </select>
+                <div
+                    class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none mt-8 mr-6"
+                >
+                    <svg
+                        class="w-4 h-4 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path></svg
+                    >
+                </div>
+            </div>
+
+            <div id="additionalDetailsContainer" class="mb-6 hidden">
+                <label
+                    for="serviceDetails"
+                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                >
+                    Additional Details <span
+                        class="text-gray-400 normal-case font-normal"
+                        >(Optional)</span
+                    >
+                </label>
+                <textarea
+                    id="serviceDetails"
+                    name="serviceDetails"
+                    rows="4"
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none font-body"
+                    placeholder="Describe your issue or project..."></textarea>
+            </div>
+
+            <div class="mt-auto pt-8 flex justify-center">
+                <Button
+                    type="button"
+                    variant="primary"
+                    size="lg"
+                    class="next-step-btn flex items-center justify-center gap-2 group"
+                >
+                    Continue
+                    <svg
+                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </Button>
+            </div>
+        </div>
+
+        <!-- Step 2: Location & Urgency -->
+        <div class="form-step hidden flex-grow" data-step="2">
+            <button
+                type="button"
+                class="prev-step-btn text-gray-400 hover:text-primary mb-4 flex items-center gap-1 text-sm font-bold uppercase tracking-wide transition-colors font-display"
+            >
+                <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"></path></svg
+                >
+                Back
+            </button>
+
+            <div class="mb-4">
+                <label
+                    for="address"
+                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                >
+                    Service Address
+                </label>
+                <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    required
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-body"
+                    placeholder="Start typing your address..."
+                />
+            </div>
+
+            <div
+                id="addressFieldsContainer"
+                class="grid grid-cols-2 gap-4 mb-6 hidden"
+            >
+                <div>
+                    <label
+                        for="aptUnit"
+                        class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    >
+                        Apt/Suite # <span
+                            class="text-gray-400 normal-case font-normal"
+                            >(Opt)</span
+                        >
+                    </label>
+                    <input
+                        type="text"
+                        id="aptUnit"
+                        name="aptUnit"
+                        class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-body"
+                    />
+                </div>
+                <div>
+                    <label
+                        for="gateCode"
+                        class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    >
+                        Gate Code <span
+                            class="text-gray-400 normal-case font-normal"
+                            >(Opt)</span
+                        >
+                    </label>
+                    <input
+                        type="text"
+                        id="gateCode"
+                        name="gateCode"
+                        class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-body"
+                    />
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label
+                    for="urgency"
+                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                >
+                    When do you need us?
+                </label>
+                <select
+                    id="urgency"
+                    name="urgency"
+                    required
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer appearance-none font-body"
+                >
+                    <option value="" disabled selected>Select timing...</option>
+                    <option value="ASAP">ASAP / Emergency</option>
+                    <option value="Today">Today if possible</option>
+                    <option value="FewDays">Next few days</option>
+                    <option value="Planning">Just planning / Not sure</option>
+                </select>
+                <div
+                    class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none mt-8 mr-6"
+                >
+                    <svg
+                        class="w-4 h-4 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path></svg
+                    >
+                </div>
+            </div>
+
+            <div class="mt-auto pt-8 flex justify-center">
+                <Button
+                    type="button"
+                    variant="primary"
+                    size="lg"
+                    class="next-step-btn flex items-center justify-center gap-2 group"
+                >
+                    Continue
+                    <svg
+                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </Button>
+            </div>
+        </div>
+
+        <!-- Step 3: Contact Info -->
+        <div class="form-step hidden flex-grow" data-step="3">
+            <button
+                type="button"
+                class="prev-step-btn text-gray-400 hover:text-primary mb-4 flex items-center gap-1 text-sm font-bold uppercase tracking-wide transition-colors font-display"
+            >
+                <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"></path></svg
+                >
+                Back
+            </button>
+
+            <div class="mb-4">
+                <label
+                    for="name"
+                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                >
+                    Full Name
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-body"
+                    placeholder="John Doe"
+                />
+            </div>
+
+            <div class="mb-4">
+                <label
+                    for="phone"
+                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                >
+                    Phone Number
+                </label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-body"
+                    placeholder="(305) 555-0123"
+                />
+            </div>
+
+            <div class="mb-6">
+                <label
+                    for="email"
+                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                >
+                    Email Address <span
+                        class="text-gray-400 normal-case font-normal"
+                        >(Opt)</span
+                    >
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-700 font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-body"
+                    placeholder="john@example.com"
+                />
+            </div>
+
+            <div class="space-y-4 mb-6">
+                <label class="flex items-start cursor-pointer group">
+                    <input
+                        type="checkbox"
+                        name="consentFollowUp"
+                        required
+                        class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent"
+                    />
+                    <span
+                        class="ml-2 text-xs text-gray-600 font-medium leading-tight font-body"
+                    >
+                        I agree to be followed up about my request via phone or
+                        email.
+                    </span>
+                </label>
+
+                <label class="flex items-start cursor-pointer group">
+                    <input
+                        type="checkbox"
+                        name="consentPrivacy"
+                        required
+                        class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent"
+                    />
+                    <span
+                        class="ml-2 text-xs text-gray-600 font-medium leading-tight font-body"
+                    >
+                        I agree to the <a
+                            href="#"
+                            id="privacyLink"
+                            class="text-accent hover:underline"
+                            >Privacy Policy</a
+                        > and <a
+                            href="#"
+                            id="termsLink"
+                            class="text-accent hover:underline"
+                            >Terms & Conditions</a
+                        >.
+                    </span>
+                </label>
+            </div>
+
+            <!-- Turnstile Widget Container -->
+            <div id="cf-turnstile" class="mb-6"></div>
+
+            <div class="mt-auto pt-8 flex justify-center">
+                <Button type="submit" variant="primary" size="lg">
+                    Submit Request
+                </Button>
+            </div>
+        </div>
+
+        <!-- Privacy/Terms Modal -->
+        <div
+            id="legalModal"
+            class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+        >
+            <div
+                class="bg-white rounded-2xl p-8 max-w-lg w-full max-h-[80vh] overflow-y-auto relative shadow-2xl"
+            >
+                <button
+                    type="button"
+                    id="closeModal"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-primary"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path></svg
+                    >
+                </button>
+                <h3
+                    class="text-2xl font-black text-primary mb-4 uppercase font-display"
+                >
+                    Terms & Privacy
+                </h3>
+                <div class="prose prose-sm">
+                    <p>
+                        This is a placeholder for the Privacy Policy and Terms &
+                        Conditions. In a production environment, this should
+                        contain the actual legal text.
+                    </p>
+                    <p>
+                        <strong>Privacy Policy:</strong> We respect your privacy and
+                        will not share your information.
+                    </p>
+                    <p>
+                        <strong>Terms:</strong> By submitting this form, you agree
+                        to receive service quotes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .form-step {
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+    .form-step.hidden {
+        display: none;
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    .form-step.active {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+        animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<script>
+    // Load Google Maps Script dynamically
+    const loadGoogleMaps = () => {
+        const existingScript = document.getElementById("google-maps-script");
+        if (existingScript) return;
+
+        const script = document.createElement("script");
+        script.id = "google-maps-script";
+        // TODO: Replace with environment variable
+        const apiKey =
+            import.meta.env.PUBLIC_GOOGLE_MAPS_KEY || "PLACEHOLDER_API_KEY";
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initAutocomplete`;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    };
+
+    // Make initAutocomplete globally available
+    (window as any).initAutocomplete = () => {
+        const addressInput = document.getElementById(
+            "address",
+        ) as HTMLInputElement;
+        if (!addressInput) return;
+
+        const google = (window as any).google;
+        if (!google) return;
+
+        const autocomplete = new google.maps.places.Autocomplete(addressInput, {
+            types: ["address"],
+            componentRestrictions: { country: "us" }, // Restrict to US
+        });
+
+        autocomplete.addListener("place_changed", () => {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) {
+                // User entered the name of a Place that was not suggested and
+                // pressed the Enter key, or the Place Details request failed.
+                return;
+            }
+            // Show address fields when autocomplete is used
+            const addressFieldsContainer = document.getElementById(
+                "addressFieldsContainer",
+            );
+            if (addressFieldsContainer) {
+                addressFieldsContainer.classList.remove("hidden");
+            }
+            // You can extract more details here if needed (zip, city, etc.)
+        });
+    };
+
+    // Load Turnstile Script dynamically
+    const loadTurnstile = () => {
+        const existingScript = document.getElementById("turnstile-script");
+        if (existingScript) return;
+
+        const script = document.createElement("script");
+        script.id = "turnstile-script";
+        script.src =
+            "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback";
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    };
+
+    // Make onloadTurnstileCallback globally available for Turnstile explicit rendering
+    (window as any).onloadTurnstileCallback = function () {
+        const turnstileContainer = document.getElementById("cf-turnstile");
+        const turnstile = (window as any).turnstile;
+        if (turnstileContainer && turnstile) {
+            turnstile.render(turnstileContainer, {
+                sitekey:
+                    import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
+                    "PLACEHOLDER_SITE_KEY",
+                callback: function (token: string) {
+                    console.log(`Turnstile token: ${token}`);
+
+                    // You might want to add the token to a hidden input field in your form
+                    // or handle it directly during form submission.
+                },
+            });
+        }
+    };
+
+    // Load scripts on mount
+    loadGoogleMaps();
+    loadTurnstile();
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("bookingForm") as HTMLFormElement;
+        const steps = document.querySelectorAll(".form-step");
+        const nextBtns = document.querySelectorAll(".next-step-btn");
+        const prevBtns = document.querySelectorAll(".prev-step-btn");
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        // Conditional field displays
+        const serviceType = document.getElementById(
+            "serviceType",
+        ) as HTMLSelectElement;
+        const additionalDetailsContainer = document.getElementById(
+            "additionalDetailsContainer",
+        );
+        const addressInput = document.getElementById(
+            "address",
+        ) as HTMLInputElement;
+        const addressFieldsContainer = document.getElementById(
+            "addressFieldsContainer",
+        );
+
+        // Show additional details only after service selection
+        if (serviceType && additionalDetailsContainer) {
+            serviceType.addEventListener("change", () => {
+                if (serviceType.value) {
+                    additionalDetailsContainer.classList.remove("hidden");
+                }
+            });
+        }
+
+        // Show address fields after address is entered
+        if (addressInput && addressFieldsContainer) {
+            // Check address completion
+            const checkAddressComplete = () => {
+                if (addressInput.value.trim().length > 10) {
+                    addressFieldsContainer.classList.remove("hidden");
+                }
+            };
+
+            // Check on blur (manual entry)
+            addressInput.addEventListener("blur", checkAddressComplete);
+
+            // Check on input (with debounce)
+            let addressTimeout: ReturnType<typeof setTimeout>;
+            addressInput.addEventListener("input", () => {
+                clearTimeout(addressTimeout);
+                addressTimeout = setTimeout(checkAddressComplete, 500);
+            });
+        }
+
+        // Modal Logic
+        const privacyLink = document.getElementById("privacyLink");
+        const termsLink = document.getElementById("termsLink");
+        const legalModal = document.getElementById("legalModal");
+        const closeModal = document.getElementById("closeModal");
+
+        [privacyLink, termsLink].forEach((link) => {
+            link?.addEventListener("click", (e) => {
+                e.preventDefault();
+                legalModal?.classList.remove("hidden");
+            });
+        });
+
+        closeModal?.addEventListener("click", () => {
+            legalModal?.classList.add("hidden");
+        });
+
+        let currentStep = 1;
+
+        function showStep(step: number) {
+            steps.forEach((s) => {
+                if (s instanceof HTMLElement) {
+                    const stepNum = parseInt(s.dataset.step || "0");
+                    if (stepNum === step) {
+                        s.classList.remove("hidden");
+                        s.classList.add("active");
+                    } else {
+                        s.classList.add("hidden");
+                        s.classList.remove("active");
+                    }
+                }
+            });
+            currentStep = step;
+        }
+
+        function validateStep(step: number): boolean {
+            const currentStepEl = document.querySelector(
+                `.form-step[data-step="${step}"]`,
+            );
+            if (!currentStepEl) return false;
+
+            const inputs = currentStepEl.querySelectorAll(
+                "input[required], select[required], textarea[required]",
+            );
+            let isValid = true;
+
+            inputs.forEach((input) => {
+                if (
+                    input instanceof HTMLInputElement ||
+                    input instanceof HTMLSelectElement ||
+                    input instanceof HTMLTextAreaElement
+                ) {
+                    // Handle checkboxes (used in Step 3 for consent)
+                    if (
+                        input.type === "checkbox" &&
+                        input instanceof HTMLInputElement
+                    ) {
+                        if (!input.checked) {
+                            isValid = false;
+                            // Visual feedback could be added here
+                        }
+                    }
+                    // Handle all other input types
+                    else if (!input.value.trim()) {
+                        isValid = false;
+                        input.classList.add("border-red-500");
+                    } else {
+                        input.classList.remove("border-red-500");
+                    }
+
+                    input.addEventListener("input", () => {
+                        input.classList.remove("border-red-500");
+                    });
+                    input.addEventListener("change", () => {
+                        input.classList.remove("border-red-500");
+                    });
+                }
+            });
+
+            return isValid;
+        }
+
+        nextBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                if (validateStep(currentStep)) {
+                    showStep(currentStep + 1);
+                }
+            });
+        });
+
+        prevBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                showStep(currentStep - 1);
+            });
+        });
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            if (!validateStep(currentStep)) return;
+
+            // Disable button
+            if (submitBtn) {
+                (submitBtn as HTMLButtonElement).disabled = true;
+                (submitBtn as HTMLButtonElement).innerText = "Sending...";
+            }
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch("/api/send-email", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert("Success: " + result.message);
+                    form.reset();
+                    showStep(1);
+                } else {
+                    alert("Error: " + result.message);
+                }
+            } catch (err) {
+                alert("An error occurred. Please try again.");
+            } finally {
+                if (submitBtn) {
+                    (submitBtn as HTMLButtonElement).disabled = false;
+                    (submitBtn as HTMLButtonElement).innerText =
+                        "Submit Request";
+                }
+            }
+        });
+    });
+</script>

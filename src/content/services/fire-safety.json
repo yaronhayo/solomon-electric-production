@@ -1,0 +1,19 @@
+{
+    "name": "Fire Safety & Life Systems",
+    "slug": "fire-safety-systems",
+    "description": "Ensure life safety compliance with professional fire alarm, emergency lighting, and detection system installation. We design, install, and maintain fire safety electrical systems that meet all local codes and protect occupants in residential and commercial properties.",
+    "shortDescription": "Fire alarms, emergency lighting, and detection systems",
+    "icon": "../../assets/images/services/icons/fire-safety.png",
+    "category": "Commercial",
+    "features": [
+        "Fire alarm system installation and monitoring",
+        "Emergency lighting and exit sign installation",
+        "Smoke and CO detector wiring",
+        "Sprinkler system electrical integration",
+        "Annual inspection and code compliance testing"
+    ],
+    "relatedBlogPosts": [
+        "life-safety-detection-system-installation"
+    ],
+    "order": 10
+}

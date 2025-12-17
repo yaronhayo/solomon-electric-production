@@ -1,0 +1,260 @@
+---
+import { reviews } from "../data/reviews";
+import Button from "./ui/Button.astro";
+import Container from "./ui/Container.astro";
+
+// Component displays 12 reviews in auto-rotating carousel
+---
+
+<section class="py-20 md:py-32 bg-light relative overflow-hidden">
+    <!-- Background decoration -->
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,211,227,0.05),transparent_70%)]"
+    >
+    </div>
+
+    <Container class="relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h4 class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-display">
+                Client Testimonials
+            </h4>
+            <h2 class="text-4xl md:text-6xl font-bold text-primary mb-6 font-display">
+                What Our <span class="text-accent">Customers Say</span>
+            </h2>
+            <p class="text-gray-600 text-lg font-medium">
+                Don't just take our word for it. See why Miami homeowners and
+                businesses trust Solomon Electric for all their electrical
+                needs.
+            </p>
+        </div>
+
+        <!-- Reviews Carousel -->
+        <div class="relative" id="reviewCarousel">
+            <!-- Reviews Container -->
+            <div class="overflow-hidden">
+                <div
+                    class="flex transition-transform duration-500 ease-in-out"
+                    id="reviewsTrack"
+                >
+                    {
+                        reviews.map((review) => (
+                            <div class="carousel-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-white border border-gray-100 rounded-2xl p-8 h-full flex flex-col hover:border-accent transition-all duration-300 shadow-sm hover:shadow-md">
+                                    <!-- Star Rating -->
+                                    <div class="flex items-center gap-1 mb-4">
+                                        {[...Array(5)].map(() => (
+                                            <svg
+                                                class="w-5 h-5 text-[#CDAC4F] fill-current"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        ))}
+                                    </div>
+
+                                    <!-- Review Text -->
+                                    <p class="text-gray-600 text-base leading-relaxed mb-6 flex-grow font-medium">
+                                        "{review.text}"
+                                    </p>
+
+                                    <!-- Author & Service -->
+                                    <div class="border-t border-gray-100 pt-4">
+                                        <p class="text-primary font-bold text-lg font-display">
+                                            {review.author}
+                                        </p>
+                                        {review.service && (
+                                            <p class="text-accent text-sm font-bold mt-1 uppercase tracking-wide">
+                                                {review.service}
+                                            </p>
+                                        )}
+                                        <p class="text-gray-400 text-xs mt-2 font-medium">
+                                            {new Date(
+                                                review.date,
+                                            ).toLocaleDateString("en-US", {
+                                                month: "long",
+                                                year: "numeric",
+                                            })}
+                                        </p>
+                                    </div>
+
+                                    <!-- Google Logo -->
+                                    <div class="mt-4 flex items-center gap-2">
+                                        <svg
+                                            class="w-4 h-4"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                                fill="#4285F4"
+                                            />
+                                            <path
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                                fill="#34A853"
+                                            />
+                                            <path
+                                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                                fill="#FBBC05"
+                                            />
+                                            <path
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                                fill="#EA4335"
+                                            />
+                                        </svg>
+                                        <span class="text-gray-500 text-xs font-bold">
+                                            Google Review
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button
+                id="prevReview"
+                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white text-primary border border-gray-100 p-4 rounded-full hover:bg-accent hover:text-white transition-all duration-300 shadow-lg z-10 hidden lg:block"
+                aria-label="Previous review"
+            >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button
+                id="nextReview"
+                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white text-primary border border-gray-100 p-4 rounded-full hover:bg-accent hover:text-white transition-all duration-300 shadow-lg z-10 hidden lg:block"
+                aria-label="Next review"
+            >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            <div class="flex justify-center gap-2 mt-8" id="dotsContainer">
+                 {
+                     reviews.map((_, index) => (
+                         <button
+                             class="review-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-accent transition-all duration-300"
+                             data-index={index}
+                             aria-label={`Go to review ${index + 1}`}
+                         />
+                     ))
+                 }
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-16">
+            <Button
+                href="/reviews"
+                variant="primary"
+                class="px-12 py-5 text-lg font-black"
+                >Read All Reviews</Button
+            >
+        </div>
+    </Container>
+</section>
+
+<script>
+    // Reviews Carousel Logic
+    const track = document.getElementById("reviewsTrack");
+    const prevBtn = document.getElementById("prevReview");
+    const nextBtn = document.getElementById("nextReview");
+    const dots = document.querySelectorAll(".review-dot");
+
+    let currentIndex = 0;
+    const totalReviews = 12;
+    let autoRotateInterval: number;
+
+    // Get slides per view based on screen size
+    function getSlidesPerView() {
+        if (window.innerWidth >= 1024) return 3; // Desktop
+        if (window.innerWidth >= 768) return 2; // Tablet
+        return 1; // Mobile
+    }
+
+    function updateCarousel() {
+        const slidesPerView = getSlidesPerView();
+        const translateX = -(currentIndex * (100 / slidesPerView));
+        if (track) {
+            track.style.transform = `translateX(${translateX}%)`;
+        }
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add("bg-[#14d3e3]", "w-8");
+                dot.classList.remove("bg-white/30");
+            } else {
+                dot.classList.remove("bg-[#14d3e3]", "w-8");
+                dot.classList.add("bg-white/30");
+            }
+        });
+    }
+
+    function nextSlide() {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = totalReviews - slidesPerView;
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = totalReviews - slidesPerView;
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        updateCarousel();
+    }
+
+    function startAutoRotate() {
+        autoRotateInterval = window.setInterval(nextSlide, 6000); // 6 seconds
+    }
+
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+
+    // Event listeners
+    prevBtn?.addEventListener("click", () => {
+        prevSlide();
+        stopAutoRotate();
+        startAutoRotate();
+    });
+
+    nextBtn?.addEventListener("click", () => {
+        nextSlide();
+        stopAutoRotate();
+        startAutoRotate();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            currentIndex = index;
+            updateCarousel();
+            stopAutoRotate();
+            startAutoRotate();
+        });
+    });
+
+    // Pause on hover
+    const carousel = document.getElementById("reviewCarousel");
+    carousel?.addEventListener("mouseenter", stopAutoRotate);
+    carousel?.addEventListener("mouseleave", startAutoRotate);
+
+    // Handle resize
+    window.addEventListener("resize", updateCarousel);
+
+    // Initialize
+    updateCarousel();
+    startAutoRotate();
+</script>

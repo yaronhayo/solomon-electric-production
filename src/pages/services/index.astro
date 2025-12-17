@@ -1,0 +1,728 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImage from "../../assets/images/service-panel.png";
+import ServiceCard from "../../components/ServiceCard.astro";
+import {
+    services,
+    serviceCategories,
+    getCategoryInfo,
+} from "../../data/services";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import { SITE_CONFIG } from "../../config/site";
+---
+
+<Layout
+    title="Our Electrical Services - Solomon Electric"
+    description="Comprehensive residential and commercial electrical services in Miami. From panel upgrades to EV charging, smart homes to emergency repairs - we do it all."
+>
+    <!-- Hero Section - Matching Homepage Grid Layout -->
+    <section
+        class="relative min-h-[70vh] flex items-center overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32"
+    >
+        <div class="absolute inset-0 z-0">
+            <Image
+                src={heroImage}
+                alt="Professional Electrical Services"
+                class="w-full h-full object-cover"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
+            >
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
+            >
+            </div>
+        </div>
+
+        <Container class="relative z-10 w-full">
+            <div
+                class="grid grid-cols-1 lg:grid-cols-12 items-center"
+                style="gap: var(--spacing-xl);"
+            >
+                <!-- Left Column: Content -->
+                <div class="lg:col-span-7">
+                    <p
+                        class="text-accent tracking-[0.3em] font-bold uppercase"
+                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
+                    >
+                        Complete Electrical Solutions
+                    </p>
+
+                    <h1
+                        class="font-black text-white leading-[0.9]"
+                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
+                    >
+                        Expert Electrical<br />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
+                        >
+                            Services You Trust
+                        </span>
+                    </h1>
+
+                    <p
+                        class="text-gray-200 font-light leading-relaxed"
+                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
+                    >
+                        From emergency repairs to complete
+                        installations—residential, commercial, and industrial
+                        electrical services across Miami-Dade and Broward
+                        counties.
+                    </p>
+
+                    <!-- Trust Indicators -->
+                    <div
+                        class="flex flex-wrap items-center"
+                        style="gap: var(--spacing-md); margin-bottom: var(--spacing-xl);"
+                    >
+                        <div
+                            class="flex items-center text-accent"
+                            style="gap: var(--spacing-xs);"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="font-bold text-white"
+                                style="font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem);"
+                                >Licensed FL EC13012419</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-2 text-accent">
+                            <svg
+                                class="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
+                                ></path>
+                            </svg>
+                            <span
+                                class="font-bold text-white"
+                                style="font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem);"
+                                >24/7 Emergency Service</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-4">
+                        <Button
+                            href="/book"
+                            size="lg"
+                            class="flex items-center gap-3"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                class="w-5 h-5"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.5 3A2.5 2.5 0 003 5.5v2.879a2.5 2.5 0 00.732 1.767l6.5 6.5a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536l-6.5-6.5A2.5 2.5 0 008.38 3H5.5zM6 7a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Book Service Online
+                        </Button>
+                        <Button
+                            href="tel:7868339211"
+                            variant="secondary"
+                            size="lg"
+                            class="flex items-center gap-3"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                class="w-5 h-5"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Call (786) 833-9211
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
+</Layout>
+
+<!-- Emergency vs. Scheduled Banner -->
+<section class="bg-gradient-to-r from-accent to-accent-dark py-16 md:py-24">
+    <Container>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 text-white"
+            style="gap: var(--spacing-lg);"
+        >
+            <!-- Emergency Services -->
+            <div class="flex items-start" style="gap: var(--spacing-md);">
+                <div
+                    class="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center animate-pulse"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                        ></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-black uppercase mb-2">
+                        Emergency Services (24/7)
+                    </h3>
+                    <p
+                        class="text-white/90 font-medium text-sm leading-relaxed"
+                    >
+                        Power outages, sparking outlets, burning smells, exposed
+                        wiring—call immediately for 60-minute response.
+                    </p>
+                    <a
+                        href="tel:7868339211"
+                        class="inline-block mt-3 text-sm font-bold uppercase tracking-wide border-b-2 border-white hover:border-white/50 transition-colors"
+                    >
+                        Call (786) 833-9211 Now →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scheduled Services -->
+            <div class="flex items-start" style="gap: var(--spacing-md);">
+                <div
+                    class="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                        ></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-black uppercase mb-2">
+                        Scheduled Services
+                    </h3>
+                    <p
+                        class="text-white/90 font-medium text-sm leading-relaxed"
+                    >
+                        Installations, upgrades, inspections, EV charging—book
+                        online at your convenience for same-day or next-day
+                        service.
+                    </p>
+                    <a
+                        href="/book"
+                        class="inline-block mt-3 text-sm font-bold uppercase tracking-wide border-b-2 border-white hover:border-white/50 transition-colors"
+                    >
+                        Book Online →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<!-- How It Works Process Section -->
+<section class="bg-gradient-to-b from-white to-light py-20 md:py-32">
+    <Container>
+        <div class="text-center" style="margin-bottom: var(--spacing-3xl);">
+            <h4
+                class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
+                style="margin-bottom: var(--spacing-md);"
+            >
+                Our Process
+            </h4>
+            <h2 class="text-3xl md:text-5xl font-black text-primary uppercase">
+                How It <span class="text-accent">Works</span>
+            </h2>
+            <p class="text-gray-600 font-medium text-lg mt-4 max-w-2xl mx-auto">
+                Simple, transparent process from inquiry to completion
+            </p>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+            style="gap: var(--spacing-2xl);"
+        >
+            <!-- Step 1 -->
+            <div
+                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
+                <div
+                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-accent to-accent-dark rounded-2xl flex items-center justify-center transform -rotate-3 hover:rotate-0 transition-transform duration-300"
+                    style="margin-bottom: var(--spacing-lg);"
+                >
+                    <div
+                        class="absolute inset-0 bg-accent/20 rounded-2xl blur-xl"
+                    >
+                    </div>
+                    <span class="relative text-4xl font-black text-white"
+                        >1</span
+                    >
+                </div>
+                <h3
+                    class="text-xl font-black text-primary uppercase"
+                    style="margin-bottom: var(--spacing-md);"
+                >
+                    Contact Us
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed">
+                    Call, book online, or request a free estimate. We're
+                    available 24/7 for emergencies.
+                </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
+                <div
+                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center transform rotate-3 hover:rotate-0 transition-transform duration-300"
+                    style="margin-bottom: var(--spacing-lg);"
+                >
+                    <div
+                        class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl"
+                    >
+                    </div>
+                    <span class="relative text-4xl font-black text-white"
+                        >2</span
+                    >
+                </div>
+                <h3
+                    class="text-xl font-black text-primary uppercase"
+                    style="margin-bottom: var(--spacing-md);"
+                >
+                    Fast Response
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed">
+                    Same-day scheduling for regular work. Average 60-minute
+                    arrival for emergencies.
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
+                <div
+                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-accent to-accent-dark rounded-2xl flex items-center justify-center transform -rotate-3 hover:rotate-0 transition-transform duration-300"
+                    style="margin-bottom: var(--spacing-lg);"
+                >
+                    <div
+                        class="absolute inset-0 bg-accent/20 rounded-2xl blur-xl"
+                    >
+                    </div>
+                    <span class="relative text-4xl font-black text-white"
+                        >3</span
+                    >
+                </div>
+                <h3
+                    class="text-xl font-black text-primary uppercase"
+                    style="margin-bottom: var(--spacing-md);"
+                >
+                    Expert Service
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed">
+                    Licensed electricians provide upfront pricing and
+                    professional workmanship.
+                </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
+                <div
+                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center transform rotate-3 hover:rotate-0 transition-transform duration-300"
+                    style="margin-bottom: var(--spacing-lg);"
+                >
+                    <div
+                        class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl"
+                    >
+                    </div>
+                    <span class="relative text-4xl font-black text-white"
+                        >4</span
+                    >
+                </div>
+                <h3
+                    class="text-xl font-black text-primary uppercase"
+                    style="margin-bottom: var(--spacing-md);"
+                >
+                    Quality Guaranteed
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed">
+                    All work backed by warranty. 100% satisfaction guarantee on
+                    every job.
+                </p>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<!-- Pricing Transparency -->
+<section class="bg-white py-20 md:py-32">
+    <Container>
+        <div class="text-center" style="margin-bottom: var(--spacing-3xl);">
+            <h4
+                class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
+                style="margin-bottom: var(--spacing-md);"
+            >
+                Transparent Pricing
+            </h4>
+            <h2 class="text-3xl md:text-5xl font-black text-primary uppercase">
+                No <span class="text-accent">Hidden Fees</span>
+            </h2>
+        </div>
+
+        <div
+            class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3"
+            style="gap: var(--spacing-2xl);"
+        >
+            <div
+                class="bg-light rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
+            >
+                <div
+                    class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8 text-accent"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-black text-primary uppercase mb-3">
+                    Upfront Pricing
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed">
+                    No hidden fees or surprise charges. Know the exact cost
+                    before we start working.
+                </p>
+            </div>
+            <div
+                class="bg-light rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
+            >
+                <div
+                    class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8 text-accent"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 009-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-black text-primary uppercase mb-3">
+                    Free Estimates
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed">
+                    Complimentary project quotes with detailed breakdowns and
+                    multiple options.
+                </p>
+            </div>
+            <div
+                class="bg-light rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
+            >
+                <div
+                    class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8 text-accent"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0121 12c0 5.591-3.824 10.29-9 11.622M3 12c0-5.591 3.824-10.29 9-11.622"
+                        ></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-black text-primary uppercase mb-3">
+                    Warranty Protected
+                </h3>
+                <p class="text-gray-600 font-medium leading-relaxed">
+                    All installations backed by comprehensive warranty for your
+                    peace of mind.
+                </p>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<!-- Services Grid -->
+<section class="bg-gradient-to-b from-light to-white py-20 md:py-32">
+    <Container>
+        <!-- Services Categories -->
+        <div id="services-wrapper">
+            {
+                serviceCategories.map((category) => {
+                    const categoryServices = services.filter(
+                        (s) => s.category === category,
+                    );
+                    if (categoryServices.length === 0) return null;
+
+                    const info = getCategoryInfo(category);
+
+                    return (
+                        <div
+                            class="category-section"
+                            style="margin-bottom: var(--spacing-4xl);"
+                            data-category={category}
+                        >
+                            <div class="relative rounded-2xl overflow-hidden mb-12 shadow-lg group">
+                                <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40 z-10" />
+                                <Image
+                                    src={info.image}
+                                    alt={category}
+                                    class="w-full h-48 md:h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div class="absolute inset-x-0 bottom-0 p-6 md:p-10 z-20">
+                                    <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">
+                                        {category}
+                                    </h2>
+                                    <p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed">
+                                        {info.description}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                                style="gap: var(--spacing-2xl);"
+                            >
+                                {categoryServices.map((service) => (
+                                    <ServiceCard service={service} />
+                                ))}
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+
+        <!-- Service FAQs -->
+        <div
+            class="max-w-4xl mx-auto bg-white border border-gray-100 rounded-2xl shadow-sm"
+            style="margin-top: var(--spacing-3xl); padding: var(--spacing-3xl);"
+        >
+            <div class="text-center" style="margin-bottom: var(--spacing-2xl);">
+                <h2
+                    class="text-3xl md:text-4xl font-black text-primary uppercase"
+                >
+                    Service <span class="text-accent">FAQs</span>
+                </h2>
+                <p class="text-gray-600 font-medium mt-4">
+                    Common questions about our electrical services
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="border-b border-gray-100 pb-6">
+                    <h3 class="text-xl font-black text-primary uppercase mb-3">
+                        How quickly can you respond to emergencies?
+                    </h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">
+                        We average a 60-minute response time for emergency calls
+                        throughout Miami-Dade and Broward counties. Our dispatch
+                        team is staffed 24/7, and we strategically position
+                        electricians across the service area for rapid response.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border-b border-gray-100 pb-6">
+                    <h3 class="text-xl font-black text-primary uppercase mb-3">
+                        Do you offer free estimates?
+                    </h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">
+                        Yes! We provide complimentary estimates for all
+                        projects. We'll assess your needs, explain your options,
+                        and give you a detailed written quote with no
+                        obligation. All quotes include transparent pricing with
+                        no hidden fees.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border-b border-gray-100 pb-6">
+                    <h3 class="text-xl font-black text-primary uppercase mb-3">
+                        Are you licensed and insured?
+                    </h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">
+                        Absolutely. We hold Florida state electrical license
+                        #EC13012419 and carry $2M in liability insurance. All of
+                        our electricians are licensed, continuously trained, and
+                        up-to-date on current electrical codes and safety
+                        standards.
+                    </p>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border-b border-gray-100 pb-6">
+                    <h3 class="text-xl font-black text-primary uppercase mb-3">
+                        What payment methods do you accept?
+                    </h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">
+                        We accept all major credit cards, debit cards, checks,
+                        and cash. For larger projects, we offer flexible
+                        financing options. Payment is due upon completion, and
+                        we'll never start work without your approval on the
+                        estimate.
+                    </p>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div>
+                    <h3 class="text-xl font-black text-primary uppercase mb-3">
+                        Do you offer warranties on your work?
+                    </h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">
+                        Yes, all of our work is backed by comprehensive
+                        warranties. Installation and repair warranties vary by
+                        scope of work—we'll explain specific coverage when we
+                        provide your estimate. We also offer a 100% satisfaction
+                        guarantee on every job.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a
+                    href="/faq"
+                    class="text-accent font-bold uppercase tracking-widest hover:text-primary transition-colors border-b-2 border-accent hover:border-primary pb-1"
+                >
+                    View All FAQs →
+                </a>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div
+            class="text-center bg-white border border-gray-100 rounded-2xl shadow-sm"
+            style="margin-top: var(--spacing-3xl); padding: var(--spacing-2xl) var(--spacing-3xl);"
+        >
+            <h2
+                class="text-3xl md:text-4xl font-black text-primary uppercase"
+                style="margin-bottom: var(--spacing-md);"
+            >
+                Need a Custom Electrical Solution?
+            </h2>
+            <p
+                class="text-gray-600 text-lg font-medium"
+                style="margin-bottom: var(--spacing-xl);"
+            >
+                Can't find exactly what you're looking for? We handle custom
+                electrical projects of all sizes. Contact us to discuss your
+                specific needs.
+            </p>
+            <div
+                class="flex flex-col md:flex-row justify-center"
+                style="gap: var(--spacing-md);"
+            >
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <Button href="/contact" class="px-12 py-6 text-xl"
+                        >Contact Us Today</Button
+                    >
+                    <Button
+                        href={SITE_CONFIG.contact.phone.href}
+                        variant="secondary"
+                        class="flex items-center"
+                        style="gap: var(--spacing-xs); padding: var(--spacing-2xl) var(--spacing-3xl); font-size: clamp(1.125rem, 1.25vw, 1.25rem);"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Call Now
+                    </Button>
+                </div>
+            </div>
+
+            <!-- Related Blog Posts Section -->
+            <div style="margin-top: var(--spacing-3xl);">
+                <div
+                    class="text-center"
+                    style="margin-bottom: var(--spacing-2xl);"
+                >
+                    <h2
+                        class="text-3xl md:text-4xl font-black text-primary uppercase"
+                        style="margin-bottom: var(--spacing-md);"
+                    >
+                        Learn More About Our <span class="text-accent"
+                            >Services</span
+                        >
+                    </h2>
+                    <p class="text-gray-600 font-medium">
+                        Dive deeper into our expertise with detailed guides and
+                        articles about electrical services.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <a
+                        href="/blog"
+                        class="inline-block text-primary border-b-2 border-accent pb-1 hover:text-accent transition-colors uppercase tracking-widest font-bold"
+                    >
+                        Browse Our Blog →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>

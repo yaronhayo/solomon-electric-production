@@ -1,0 +1,127 @@
+---
+import { faqs } from "../data/faqs";
+import Button from "./ui/Button.astro";
+import Container from "./ui/Container.astro";
+---
+
+<section class="py-20 md:py-32 bg-white relative overflow-hidden">
+    <Container>
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h4
+                class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-display"
+            >
+                Common Questions
+            </h4>
+            <h2
+                class="text-4xl md:text-6xl font-bold text-primary mb-6 font-display"
+            >
+                Frequently Asked <span class="text-accent">Questions</span>
+            </h2>
+            <p class="text-gray-600 text-lg font-medium">
+                Get answers to the most common questions about our electrical
+                services, pricing, and availability.
+            </p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="max-w-4xl mx-auto space-y-4">
+            {
+                faqs.map((faq, index) => (
+                    <div class="faq-item bg-light border border-gray-100 rounded-2xl overflow-hidden hover:border-accent transition-all duration-300 shadow-sm">
+                        <button
+                            class="faq-question w-full text-left p-6 md:p-8 flex justify-between items-center gap-4"
+                            data-index={index}
+                            aria-expanded="false"
+                        >
+                            <span class="text-lg md:text-xl font-bold text-primary pr-4 font-display">
+                                {faq.question}
+                            </span>
+                            <span class="faq-icon flex-shrink-0 w-8 h-8 flex items-center justify-center bg-accent text-white rounded-full font-bold text-xl transition-transform duration-300 shadow-sm">
+                                +
+                            </span>
+                        </button>
+                        <div
+                            class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+                            style="max-height: 0;"
+                            data-index={index}
+                        >
+                            <div class="p-6 md:p-8 pt-0 text-gray-600 leading-relaxed text-base md:text-lg border-t border-gray-200/50">
+                                {faq.answer}
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-16">
+            <Button
+                href="/faq"
+                variant="primary"
+                class="px-12 py-5 text-lg font-black">View All FAQs</Button
+            >
+        </div>
+    </Container>
+</section>
+
+<script>
+    // FAQ Accordion Logic
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+            const index = question.getAttribute("data-index");
+            const answer = document.querySelector(
+                `.faq-answer[data-index="${index}"]`,
+            ) as HTMLElement;
+            const icon = question.querySelector(".faq-icon");
+            const isExpanded =
+                question.getAttribute("aria-expanded") === "true";
+
+            // Close all other FAQs
+            faqQuestions.forEach((q) => {
+                const qIndex = q.getAttribute("data-index");
+                if (qIndex !== index) {
+                    const qAnswer = document.querySelector(
+                        `.faq-answer[data-index="${qIndex}"]`,
+                    ) as HTMLElement;
+                    const qIcon = q.querySelector(".faq-icon");
+
+                    if (qAnswer) {
+                        qAnswer.style.maxHeight = "0";
+                    }
+                    q.setAttribute("aria-expanded", "false");
+                    if (qIcon) {
+                        qIcon.textContent = "+";
+                        qIcon.classList.remove("rotate-45");
+                    }
+                }
+            });
+
+            // Toggle current FAQ
+            if (isExpanded) {
+                // Close it
+                if (answer) {
+                    answer.style.maxHeight = "0";
+                }
+                question.setAttribute("aria-expanded", "false");
+                if (icon) {
+                    icon.textContent = "+";
+                    icon.classList.remove("rotate-45");
+                }
+            } else {
+                // Open it
+                if (answer) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+                question.setAttribute("aria-expanded", "true");
+                if (icon) {
+                    icon.textContent = "−";
+                    icon.classList.add("rotate-45");
+                }
+            }
+        });
+    });
+</script>

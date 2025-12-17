@@ -1,0 +1,88 @@
+---
+// src/components/ui/Button.astro
+interface Props {
+  variant?: "primary" | "secondary" | "icon";
+  size?: "lg" | "md" | "sm";
+  href?: string;
+  class?: string;
+  type?: "button" | "submit" | "reset";
+  id?: string;
+  [x: string]: any;
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  class: className = "",
+  type = "button",
+  id,
+  ...rest
+} = Astro.props;
+
+// Base styles for all buttons
+const baseStyles =
+  "inline-flex items-center justify-center font-manrope font-semibold uppercase transition-all duration-300 transform hover:-translate-y-0.5 group relative overflow-hidden";
+const shadowStyle = "drop-shadow-[5px_5px_20px_rgba(13,67,128,0.1)]";
+
+const sizes = {
+  lg: "h-[56px] px-8 text-[18px]",
+  md: "h-[48px] px-6 text-[16px]",
+  sm: "h-[40px] px-5 text-[14px]",
+};
+
+// Variant styles matching Figma (Colors & Clip Path only)
+const variants = {
+  primary: `
+    bg-accent text-light
+    hover:bg-primary hover:text-white
+    leading-[1.5] font-bold
+    [clip-path:polygon(15px_0%,100%_0%,calc(100%_-_15px)_100%,0%_100%)]
+  `,
+  secondary: `
+    bg-primary text-white
+    hover:bg-accent hover:text-light
+    leading-[1.5] font-bold
+    [clip-path:polygon(15px_0%,100%_0%,calc(100%_-_15px)_100%,0%_100%)]
+  `,
+  icon: `
+    bg-accent text-white
+    hover:bg-primary
+    !px-0 w-[44px] h-[44px] flex items-center justify-center
+    text-[18px]
+    rounded-full
+  `,
+};
+
+// Handle old "mobile" variant mapping if necessary, or just rely on manual updates.
+// For now, if someone passes "mobile" as variant (which was removed from types but might be in code),
+// it will fall back to undefined in variants object.
+// We should check usages of variant="mobile" and update them to size="sm".
+
+const styles = `
+  ${baseStyles} 
+  ${shadowStyle} 
+  ${variants[variant] || variants.primary} 
+  ${variant !== "icon" ? sizes[size] : ""}
+  ${className}
+`;
+
+// Element Logic: render <a> if href exists, otherwise <button>
+const Element = href ? "a" : "button";
+---
+
+<!-- Custom slant effects using pseudo-elements or just simplified CSS for now --><!-- The design shows "Rectangle 12" and "Rectangle 14" creating a slanted look or borders. 
+     For now, we will stick to a clean rectangular button with the requested colors/fonts 
+     unless we implement the complex multi-part logic. 
+     The spec shows strict "auto layout" with rectangles. 
+     Standard implementation: Simple standardized button first.
+-->
+<Element
+  href={href}
+  type={!href ? type : undefined}
+  class={styles}
+  id={id}
+  {...rest}
+>
+  <slot />
+</Element>

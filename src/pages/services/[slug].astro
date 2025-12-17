@@ -1,0 +1,70 @@
+---
+import { getCollection } from "astro:content";
+
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImage from "../../assets/images/hero.webp";
+import Button from "../../components/ui/Button.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post,
+    }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout
+    title={`${post.data.title} - Solomon Electric`}
+    description={post.data.description}
+>
+    <!-- Hero Section -->
+    <section class="relative bg-primary py-40 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <Image
+                src={post.data.image || heroImage}
+                alt={post.data.title}
+                class="w-full h-full object-cover opacity-20"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/40"
+            >
+            </div>
+        </div>
+
+        <div class="container-custom relative z-10 text-center">
+            <h1
+                class="text-4xl md:text-6xl font-black text-white mb-6 shadow-black drop-shadow-lg max-w-4xl mx-auto uppercase"
+            >
+                {post.data.title}
+            </h1>
+            <p
+                class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-medium"
+            >
+                {post.data.description}
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-light">
+        <div class="container-custom">
+            <article
+                class="prose prose-lg mx-auto max-w-4xl prose-headings:font-display prose-headings:font-bold prose-headings:text-primary prose-headings:uppercase prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-primary prose-a:text-accent prose-blockquote:border-l-accent prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:not-italic prose-blockquote:rounded-r-lg prose-blockquote:shadow-sm"
+            >
+                <Content />
+            </article>
+
+            <div class="mt-16 text-center">
+                <Button href="/contact" size="lg" class="px-12 py-6 text-xl">
+                    Schedule This Service
+                </Button>
+            </div>
+        </div>
+    </section>
+</Layout>

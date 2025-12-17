@@ -1,0 +1,76 @@
+---
+import Button from "./ui/Button.astro";
+---
+
+<div
+    id="quote-widget"
+    class="fixed top-1/2 left-0 z-50 transform -translate-y-1/2 -translate-x-[341px] transition-transform duration-300 flex items-start shadow-2xl rounded-r-lg group"
+>
+    <!-- Sidebar Content (Form) -->
+    <div
+        class="w-[341px] bg-light p-8 border-r-4 border-accent relative h-auto min-h-[400px] flex flex-col justify-center"
+    >
+        <h3 class="font-lemon text-2xl text-primary mb-2 uppercase">
+            Get An Instant Quote
+        </h3>
+        <p class="font-manrope text-sm text-gray-500 mb-6">
+            Fill out the form below and we'll get back to you immediately.
+        </p>
+
+        <form class="flex flex-col gap-4">
+            <div>
+                <label for="name" class="sr-only">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    class="w-full bg-white border border-gray-200 p-3 rounded-sm font-manrope text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent placeholder:text-primary/50"
+                />
+            </div>
+            <div>
+                <label for="phone" class="sr-only">Phone</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone"
+                    class="w-full bg-white border border-gray-200 p-3 rounded-sm font-manrope text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent placeholder:text-primary/50"
+                />
+            </div>
+            <div>
+                <label for="email" class="sr-only">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="email@website.com"
+                    class="w-full bg-white border border-gray-200 p-3 rounded-sm font-manrope text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent placeholder:text-primary/50"
+                />
+            </div>
+
+            <Button type="submit" class="w-full mt-2">Get Quote</Button>
+        </form>
+    </div>
+
+    <!-- Vertical Tab Toggle -->
+    <button
+        id="quote-toggle"
+        class="bg-primary text-white p-4 h-auto min-h-[160px] flex items-center justify-center rounded-r-lg hover:bg-accent transition-colors shadow-lg cursor-pointer transform translate-x-0 group-hover:bg-accent/90"
+        aria-label="Toggle Quote Form"
+    >
+        <span
+            class="writing-vertical font-lemon text-lg tracking-widest whitespace-nowrap rotate-180"
+            style="writing-mode: vertical-rl;">INSTANT QUOTE</span
+        >
+    </button>
+</div>
+
+<script>
+    const widget = document.getElementById("quote-widget");
+    const toggle = document.getElementById("quote-toggle");
+
+    toggle?.addEventListener("click", () => {
+        widget?.classList.toggle("-translate-x-[341px]");
+    });
+</script>

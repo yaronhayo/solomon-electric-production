@@ -1,0 +1,20 @@
+{
+    "name": "Lighting Design & Installation",
+    "slug": "lighting-design-installation",
+    "description": "Enhance your space with professional lighting design and installation. From LED retrofits to landscape lighting, recessed lighting to chandelier installation, we create beautiful, energy-efficient lighting solutions tailored to your aesthetic and functional needs.",
+    "shortDescription": "LED upgrades, landscape lighting, and designer fixtures",
+    "icon": "../../assets/images/services/icons/lighting.png",
+    "category": "Both",
+    "features": [
+        "LED retrofit and energy-efficient upgrades",
+        "Landscape and outdoor lighting systems",
+        "Recessed and track lighting installation",
+        "Chandelier and statement fixture hanging",
+        "Dimmer and lighting control systems"
+    ],
+    "relatedBlogPosts": [
+        "lighting-fixture-installation",
+        "architectural-lighting-chandelier-installation"
+    ],
+    "order": 5
+}
