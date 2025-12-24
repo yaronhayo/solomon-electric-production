@@ -1,0 +1,99 @@
+{
+    "name": "West Palm Beach",
+    "slug": "west-palm-beach",
+    "county": "Palm Beach",
+    "description": "Licensed West Palm Beach electricians providing 24/7 expert residential and commercial services. From historic downtown restorations to luxury waterfront lighting, Solomon Electric is your trusted local choice.",
+    "population": "120,000+",
+    "founded": "1894",
+    "areaSquareMiles": "58",
+    "tagline": "The City of West Palm Beach",
+    "landmarks": [
+        "The Square (formerly CityPlace)",
+        "Norton Museum of Art",
+        "Clematis Street",
+        "Palm Beach Zoo & Conservation Society",
+        "Flagler Drive Boardwalk"
+    ],
+    "neighborhoods": [
+        "El Cid",
+        "Grandview Heights",
+        "Flamingo Park",
+        "Northwood Village",
+        "Palm Beach Lakes",
+        "South of Southern (SoSo)"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Florida Turnpike",
+        "Okeechobee Boulevard",
+        "Southern Boulevard",
+        "Federal Highway (US-1)"
+    ],
+    "coordinates": {
+        "lat": 26.7153,
+        "lng": -80.0534
+    },
+    "challenges": [
+        {
+            "title": "Historic District Preservation",
+            "description": "Neighborhoods like El Cid and Flamingo Park feature historic architecture that requires specialized electrical skills to modernize systems while preserving integrity.",
+            "icon": "Home"
+        },
+        {
+            "title": "Booming Commercial Growth",
+            "description": "The rapid development of West Palm's downtown and corporate corridors requires electricians who can manage complex commercial power and advanced lighting systems.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Coastal Weather Protection",
+            "description": "With its extensive waterfront, West Palm properties need robust surge protection and corrosion-resistant materials to withstand South Florida's coastal environment.",
+            "icon": "Umbrella"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "landscape-outdoor-lighting",
+        "commercial-led-lighting-retrofit",
+        "24-7-emergency-electrical-service",
+        "whole-home-surge-protection",
+        "ev-charging-system-setup"
+    ],
+    "stats": [
+        {
+            "value": "120K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you offer emergency repairs in West Palm Beach neighborhoods?",
+            "answer": "Yes, we provide 24/7 emergency electrical service to all of West Palm Beach, from downtown and Clematis Street to the historic residential districts."
+        },
+        {
+            "question": "Can you handle electrical upgrades for historic West Palm homes?",
+            "answer": "Absolutely. We specialize in modernizing the electrical systems of historic properties like those in El Cid and Northwood, ensuring they are safe and code-compliant without losing their charm."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Trusted West Palm Beach Electricians Since 2003",
+            "body": "West Palm Beach is a vibrant, historic city that serves as the heart of Palm Beach County. From its bustling downtown to its beautifully preserved neighborhoods, it's a place of incredible energy and growth. Solomon Electric is proud to serve West Palm residents and businesses with the professional excellence they deserve."
+        },
+        {
+            "heading": "Reliable Electrical Solutions for West Palm properties",
+            "body": "Whether you're developing a new commercial space near The Square, upgrading your family home in Flamingo Park, or requiring urgent help near the waterfront, our licensed team is ready. We provide upfront pricing, clean workmanship, and a dedication to safety that West Palm Beach has trusted for 15 years."
+        }
+    ]
+}

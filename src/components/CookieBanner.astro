@@ -1,0 +1,230 @@
+---
+// CookieBanner.astro - GDPR-compliant cookie consent banner
+---
+
+<div
+    id="cookie-banner"
+    class="cookie-banner glass-border shadow-2xl"
+    style="display: none; background-color: #0e4380;"
+>
+    <div class="cookie-content">
+        <div class="cookie-icon-wrapper">
+            <div class="cookie-icon shimmer-authority">🍪</div>
+        </div>
+        <div class="cookie-text">
+            <h4 class="cookie-title">We Value Your Privacy</h4>
+            <p class="cookie-description">
+                We use cookies to enhance your experience and analyze our
+                traffic. By clicking "Accept All", you consent to our use of all
+                cookies.
+            </p>
+        </div>
+        <div class="cookie-actions">
+            <button
+                id="accept-cookies"
+                class="cookie-btn cookie-btn-primary magnetic-cta"
+            >
+                Accept All
+            </button>
+            <button id="reject-cookies" class="cookie-btn cookie-btn-secondary">
+                Reject
+            </button>
+            <a href="/privacy-policy" class="cookie-link font-secondary"
+                >Privacy Policy</a
+            >
+        </div>
+    </div>
+</div>
+
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: var(--spacing-lg);
+        left: var(--spacing-lg);
+        right: var(--spacing-lg);
+        max-width: 900px;
+        margin: 0 auto;
+        z-index: 9998;
+        border-radius: var(--radius-2xl);
+        overflow: hidden;
+    }
+
+    .cookie-content {
+        padding: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        align-items: center;
+        text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+        .cookie-content {
+            flex-direction: row;
+            text-align: left;
+            gap: var(--spacing-xl);
+        }
+    }
+
+    .cookie-icon-wrapper {
+        flex-shrink: 0;
+    }
+
+    .cookie-icon {
+        font-size: 2.5rem;
+        filter: drop-shadow(0 0 10px rgba(var(--color-accent-rgb), 0.3));
+    }
+
+    .cookie-text {
+        flex: 1;
+    }
+
+    .cookie-title {
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: white;
+        margin: 0 0 var(--spacing-xs) 0;
+        font-family: var(--font-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .cookie-description {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        line-height: 1.6;
+        font-family: var(--font-body);
+        max-width: 500px;
+    }
+
+    .cookie-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+        .cookie-actions {
+            justify-content: flex-end;
+        }
+    }
+
+    .cookie-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.75rem;
+        font-weight: 900;
+        font-family: var(--font-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        white-space: nowrap;
+        clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    }
+
+    .cookie-btn-primary {
+        background: var(--color-accent);
+        color: var(--color-primary);
+    }
+
+    .cookie-btn-primary:hover {
+        background: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(var(--color-accent-rgb), 0.4);
+    }
+
+    .cookie-btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cookie-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: white;
+    }
+
+    .cookie-link {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .cookie-link:hover {
+        color: var(--color-accent);
+        border-bottom-color: var(--color-accent);
+    }
+
+    .cookie-link:hover {
+        color: var(--color-primary);
+    }
+</style>
+
+<script>
+    // Check if user has already made a choice
+    const cookieConsent = localStorage.getItem("cookieConsent");
+
+    if (!cookieConsent) {
+        // Show banner if no consent stored
+        const banner = document.getElementById("cookie-banner");
+        if (banner) {
+            banner.style.display = "block";
+        }
+    } else if (cookieConsent === "accepted") {
+        // User previously accepted - load analytics
+        loadAnalytics();
+    }
+
+    // Accept button
+    document.getElementById("accept-cookies")?.addEventListener("click", () => {
+        localStorage.setItem("cookieConsent", "accepted");
+        hideBanner();
+        loadAnalytics();
+    });
+
+    // Reject button
+    document.getElementById("reject-cookies")?.addEventListener("click", () => {
+        localStorage.setItem("cookieConsent", "rejected");
+        hideBanner();
+    });
+
+    function hideBanner() {
+        const banner = document.getElementById("cookie-banner");
+        if (banner) {
+            banner.style.animation = "slideDown 0.3s ease-out";
+            setTimeout(() => {
+                banner.style.display = "none";
+            }, 300);
+        }
+    }
+
+    function loadAnalytics() {
+        // GTM should already be loaded in Layout.astro
+        // This just signals that consent was given
+        if (typeof window !== "undefined" && (window as any).dataLayer) {
+            (window as any).dataLayer.push({
+                event: "cookie_consent_given",
+                consent_type: "analytics",
+            });
+        }
+    }
+</script>
+
+<style>
+    @keyframes slideDown {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(100%);
+        }
+    }
+</style>

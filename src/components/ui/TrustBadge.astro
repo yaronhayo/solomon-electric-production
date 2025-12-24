@@ -1,0 +1,18 @@
+---
+interface Props {
+    title: string;
+    class?: string;
+}
+
+const { title, class: className } = Astro.props;
+---
+
+<div
+    class:list={[
+        "w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xs text-center p-1 hover:bg-white/20 transition-colors cursor-default",
+        className,
+    ]}
+    title={title}
+>
+    <slot>{title}</slot>
+</div>

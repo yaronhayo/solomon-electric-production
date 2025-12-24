@@ -3,40 +3,248 @@ import "../styles/global.css";
 import TopBar from "../components/TopBar.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import PageLoader from "../components/PageLoader.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+import MobileFloatingCTA from "../components/MobileFloatingCTA.astro";
+import { SITE_CONFIG } from "../config/site";
 
 import "@fontsource/manrope";
+import "@fontsource/outfit";
+
+import { generateSpeakableSchema } from "../utils/seo";
 
 interface Props {
 	title: string;
 	description?: string;
+	ogImage?: string;
+	ogType?: "website" | "article";
+	canonical?: string;
+	noindex?: boolean;
+	speakableSelectors?: string[];
+	topBarDark?: boolean;
 }
 
 const {
 	title,
 	description = "24/7 Professional Electrical Services in Miami",
+	ogImage,
+	ogType = "website",
+	canonical,
+	noindex = false,
+	speakableSelectors = [
+		".section-title",
+		".section-description",
+		".seo-body",
+	],
+	topBarDark = false,
 } = Astro.props;
+
+// Generate canonical URL - use provided or construct from current path
+const siteUrl = SITE_CONFIG.seo.siteUrl;
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).href;
+
+// Default OG image if none provided
+const ogImageURL = ogImage || `${siteUrl}/og-default.jpg`;
+
+// Generate Speakable Schema
+const speakableSchema = generateSpeakableSchema(
+	canonicalURL,
+	speakableSelectors,
+);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google Tag Manager -->
+		<script is:inline>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start": new Date().getTime(),
+					event: "gtm.js",
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-KQQZXTZ6");
+		</script>
+		<!-- End Google Tag Manager -->
+
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+		/>
+
+		<!-- Performance: Critical resource hints -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+		<!-- Preload critical assets for faster LCP -->
+		<link rel="preload" href="/favicon.png" as="image" type="image/png" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			href="/favicon.png"
+			fetchpriority="high"
+		/>
+		<link rel="manifest" href="/manifest.json" />
+		<meta
+			name="theme-color"
+			content={SITE_CONFIG.company.branding.primary}
+		/>
+
+		<!-- iOS PWA Support -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		/>
+		<meta name="apple-mobile-web-app-title" content="Solomon Electric" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!-- Mobile App Meta -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=yes" />
+
 		<meta name="generator" content={Astro.generator} />
 
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Robots -->
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
+
 		<title>{title}</title>
+
+		<!-- Speakable Schema for Voice AI -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify(speakableSchema)}
+		/>
+
+		<!-- Open Graph -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Solomon Electric" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@solomonelectric" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
+
+		<!-- Local Business Info (for rich snippets) -->
+		<meta name="geo.region" content="US-FL" />
+		<meta name="geo.placename" content="Miami" />
+		<meta name="geo.position" content="25.7617;-80.1918" />
+		<meta name="ICBM" content="25.7617, -80.1918" />
+
+		<!-- Allow additional head content via slots -->
+		<slot name="head" />
 	</head>
 	<body
-		class="bg-light text-primary flex flex-col min-h-screen font-body selection:bg-accent selection:text-white"
+		class="bg-[var(--bg-body)] text-[var(--text-primary)] flex flex-col min-h-screen font-body selection:bg-[var(--bg-accent)] selection:text-[var(--text-inverse)]"
 	>
-		<TopBar />
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-KQQZXTZ6"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"></iframe></noscript
+		>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<PageLoader />
+		<TopBar isDark={topBarDark} />
 		<Header />
 
 		<main class="flex-grow">
 			<slot />
 		</main>
 		<Footer />
+		<MobileFloatingCTA />
+		<CookieBanner />
+		<script is:inline>
+			// Scroll Reveal System - Intersection Observer (scoped to avoid conflicts)
+			(function () {
+				const observerOptions = {
+					root: null,
+					threshold: 0.1,
+					rootMargin: "0px 0px -50px 0px",
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("reveal-active");
+							// Optional: stop observing after reveal
+							// observer.unobserve(entry.target);
+						}
+					});
+				}, observerOptions);
+
+				function initScrollReveal() {
+					const revealElements = document.querySelectorAll(".reveal");
+					revealElements.forEach((el) => observer.observe(el));
+				}
+
+				// Initialize on page load
+				document.addEventListener("DOMContentLoaded", initScrollReveal);
+
+				// Initialize after Astro page transitions (if using View Transitions)
+				document.addEventListener("astro:after-swap", initScrollReveal);
+			})();
+		</script>
+
+		<script is:inline>
+			// Session & UTM tracking initialization
+			(function () {
+				if (!sessionStorage.getItem("sessionStart")) {
+					sessionStorage.setItem(
+						"sessionStart",
+						Date.now().toString(),
+					);
+				}
+
+				// Capture UTM parameters on first visit
+				const params = new URLSearchParams(window.location.search);
+				["utm_source", "utm_medium", "utm_campaign", "gclid"].forEach(
+					(param) => {
+						const value = params.get(param);
+						if (value && !sessionStorage.getItem(param)) {
+							sessionStorage.setItem(param, value);
+						}
+					},
+				);
+
+				// Track click path
+				const path = sessionStorage.getItem("clickPath") || "";
+				const currentPath = window.location.pathname;
+				if (!path.includes(currentPath)) {
+					sessionStorage.setItem(
+						"clickPath",
+						path + (path ? " > " : "") + currentPath,
+					);
+				}
+			})();
+		</script>
 	</body>
 </html>
+```

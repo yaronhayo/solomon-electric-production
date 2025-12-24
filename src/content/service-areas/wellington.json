@@ -1,0 +1,99 @@
+{
+    "name": "Wellington",
+    "slug": "wellington",
+    "county": "Palm Beach",
+    "description": "Licensed Wellington electricians serving the 'Equestrian Capital of the World'. Solomon Electric provides professional residential and commercial services tailored for high-end estates and equestrian properties.",
+    "population": "65,000+",
+    "founded": "1995",
+    "areaSquareMiles": "45",
+    "tagline": "The Equestrian Capital of the World",
+    "landmarks": [
+        "Palm Beach International Equestrian Center",
+        "International Polo Club",
+        "Wellington Environmental Preserve",
+        "The Mall at Wellington Green"
+    ],
+    "neighborhoods": [
+        "Aeroclub",
+        "Wycliffe",
+        "Grand Isles",
+        "Olympia",
+        "Versailles",
+        "Paddock Park",
+        "Wellington Shores"
+    ],
+    "majorRoads": [
+        "Florida Turnpike",
+        "Southern Boulevard",
+        "441 (State Road 7)",
+        "Forest Hill Boulevard",
+        "Lake Worth Road"
+    ],
+    "coordinates": {
+        "lat": 26.6587,
+        "lng": -80.2414
+    },
+    "challenges": [
+        {
+            "title": "Equestrian Electrical Excellence",
+            "description": "Wellington's world-famous barns and stables require specialized wiring for safety, specialized arena lighting, and robust, weather-hardened power systems.",
+            "icon": "Zap"
+        },
+        {
+            "title": "High-End Estate Distribution",
+            "description": "Luxury homes in communities like Aeroclub and Versailles require massive power capacity, sophisticated automation integration, and significant backup power readiness.",
+            "icon": "Shield"
+        },
+        {
+            "title": "Western Storm Vulnerability",
+            "description": "As one of the westernmost Palm Beach cities, Wellington faces intense seasonal storms. We focus on high-performance surge protection to guard expensive estate systems.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "smart-home-automation",
+        "landscape-outdoor-lighting",
+        "home-standby-generator-installation",
+        "whole-home-surge-protection",
+        "24-7-emergency-electrical-service",
+        "electrical-panel-upgrade-100a-to-200a"
+    ],
+    "stats": [
+        {
+            "value": "65K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you work with equestrian facilities in Wellington?",
+            "answer": "Yes, we are specialists in equestrian electrical work. We understand the specific safety and aesthetic requirements of Wellington's world-class barns, stable areas, and polo facilities."
+        },
+        {
+            "question": "Can you handle smart home integration for Wellington estates?",
+            "answer": "Absolutely. We provide high-end automation, lighting control, and integrated power management for premier residences in communities like Aeroclub and Olympia."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Premier Wellington Electricians – Serving the World of Equestrian Excellence",
+            "body": "Wellington is a community of prestige and precision, known globally as the capital of equestrian sports. It's a city that values tradition, quality, and exceptional service. Solomon Electric is proud to provide the licensed expertise that Wellington's premier homes and facilities count on to stay powered and safe."
+        },
+        {
+            "heading": "Advanced Electrical Care for Your Wellington Property",
+            "body": "Whether you're upgrading the lighting in a luxury arena, modernizing the automation in an estate home, or requiring the peace of mind of a whole-home backup power system, our team is ready to assist. We provide clean, professional, and code-compliant work that matches the high standards of the Wellington community."
+        }
+    ]
+}

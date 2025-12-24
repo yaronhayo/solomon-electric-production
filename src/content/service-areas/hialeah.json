@@ -1,0 +1,98 @@
+{
+    "name": "Hialeah",
+    "slug": "hialeah",
+    "county": "Miami-Dade",
+    "description": "Licensed electrical services throughout Hialeah, Florida. Solomon Electric provides professional residential and commercial electricians serving the City of Progress' homes and businesses with safe, code-compliant solutions.",
+    "population": "220,000+",
+    "founded": "1925",
+    "areaSquareMiles": "19",
+    "tagline": "The City of Progress",
+    "landmarks": [
+        "Hialeah Park Racing & Casino",
+        "Westland Mall",
+        "Amelia Earhart Park",
+        "Hialeah Hospital",
+        "Garden of the Arts"
+    ],
+    "neighborhoods": [
+        "Seminola",
+        "Tanglewood",
+        "Hialeah Heights",
+        "Mango Hill",
+        "Hialeah Park"
+    ],
+    "majorRoads": [
+        "I-75",
+        "Palmetto Expressway (SR 826)",
+        "Gratigny Parkway",
+        "Hialeah Drive",
+        "W 49th Street"
+    ],
+    "coordinates": {
+        "lat": 25.8576,
+        "lng": -80.2781
+    },
+    "challenges": [
+        {
+            "title": "Industrial Electrical Safety",
+            "description": "Hialeah's large industrial base requires electricians who understand heavy-duty power systems, three-phase wiring, and strict commercial code compliance.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Retrofitting Older Homes",
+            "description": "Many Hialeah properties built in the mid-20th century feature outdated electrical panels and wiring that require professional modernization to support modern loads.",
+            "icon": "AlertTriangle"
+        },
+        {
+            "title": "Tropical Storm Resiliency",
+            "description": "South Florida's weather patterns demand robust outdoor electrical protection. We emphasize proper conduit sealing and storm-rated fixtures for Hialeah homes.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "whole-home-surge-protection",
+        "commercial-led-lighting-retrofit",
+        "ceiling-fan-light-fixture-installation",
+        "gfci-outlet-installation-outdoor-pool"
+    ],
+    "stats": [
+        {
+            "value": "220K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you offer industrial electrical services in Hialeah?",
+            "answer": "Yes, Solomon Electric serves Hialeah's extensive industrial sector. We provide heavy-duty power installations, equipment wiring, maintenance, and emergency repairs for warehouses and manufacturing facilities."
+        },
+        {
+            "question": "Are your Hialeah electricians licensed?",
+            "answer": "Absolutely. We are fully licensed (#EC13012419) and insured to perform all types of electrical work in Hialeah and throughout Miami-Dade County."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Trusted Hialeah Electricians Serving the City of Progress",
+            "body": "Hialeah is a cornerstone of the South Florida community, known for its industrious spirit and vibrant culture. Solomon Electric has been part of the Hialeah landscape for over 15 years, providing the reliable electrical foundation homes and businesses need to thrive. Whether you're near Westland Mall or deep in the industrial district, our team is ready to help."
+        },
+        {
+            "heading": "Meeting Hialeah's Diverse Electrical Needs",
+            "body": "From the charming mid-century homes in the traditional Hialeah area to the newer developments in Hialeah Heights, the electrical demands of this city are diverse. Our residential electricians specialize in panel upgrades and rewiring for older properties, while our commercial team handles the complex requirements of local warehouses and retail spaces."
+        }
+    ]
+}

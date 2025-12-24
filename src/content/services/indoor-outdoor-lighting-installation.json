@@ -1,0 +1,180 @@
+{
+  "name": "Indoor & Outdoor Lighting Installation",
+  "slug": "indoor-outdoor-lighting-installation",
+  "description": "Transform your South Florida home with professional lighting installation—inside and out. Solomon Electric installs all types of residential lighting, from elegant interior fixtures to dramatic outdoor illumination. Whether you're updating outdated fixtures, adding lighting to new spaces, or creating complete lighting designs, our licensed electricians deliver beautiful, safe, code-compliant installations.",
+  "shortDescription": "Complete residential lighting services",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 28,
+  "features": [
+    "Interior fixture installation",
+    "Outdoor and security lighting",
+    "Under-cabinet kitchen lighting",
+    "Bathroom vanity lighting",
+    "Garage and shop lighting",
+    "LED upgrades and conversions"
+  ],
+  "warningSignsHeading": "When to Upgrade Your Lighting",
+  "warningSignsSubheading": "Quality lighting transforms spaces. Here's when professional lighting installation makes sense.",
+  "problems": [
+    {
+      "title": "Dark or Poorly Lit Rooms",
+      "description": "Insufficient lighting makes spaces feel small and unwelcoming. Strategic lighting can transform any room into an inviting space.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Outdated Fixtures",
+      "description": "1990s brass fixtures and builder-grade boob lights date your home. Updated fixtures are one of the most impactful visual upgrades.",
+      "icon": "Home"
+    },
+    {
+      "title": "No Task Lighting",
+      "description": "Kitchens, bathrooms, and workspaces need directed task lighting—not just ambient overhead fixtures. Under-cabinet and vanity lighting solve this.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Dark Outdoor Areas",
+      "description": "Unlit pathways, entries, and outdoor living spaces are unsafe and underutilized. Outdoor lighting extends usable hours and adds security.",
+      "icon": "Shield"
+    },
+    {
+      "title": "New Construction or Remodel",
+      "description": "Building or renovating is the ideal time to plan comprehensive lighting—before drywall goes up and modifications become expensive.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Energy Efficiency Goals",
+      "description": "Older lighting consumes excessive energy. LED upgrades cut lighting electricity by 75% while improving light quality.",
+      "icon": "Zap"
+    }
+  ],
+  "processHeading": "Our Lighting Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Lighting Consultation",
+      "description": "We discuss your goals, assess existing electrical, and recommend lighting solutions for each space based on function, style, and budget."
+    },
+    {
+      "step": 2,
+      "title": "Product Selection",
+      "description": "We help select appropriate fixtures, considering style, light output, color temperature, and energy efficiency. You can supply fixtures or we can recommend options."
+    },
+    {
+      "step": 3,
+      "title": "Electrical Preparation",
+      "description": "If new wiring, switches, or circuits are needed, we handle all electrical work before fixture installation."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "We install fixtures with proper electrical connections, secure mounting, and appropriate weather protection for outdoor installations."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Adjustment",
+      "description": "We test all lighting, adjust any directional fixtures, and ensure controls work properly. Your lighting is ready to enjoy."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Lighting Installation",
+  "benefits": [
+    {
+      "title": "Transform Your Spaces",
+      "description": "Good lighting makes rooms feel larger, more welcoming, and more functional. It's one of the most impactful upgrades you can make.",
+      "icon": "Home"
+    },
+    {
+      "title": "Safe, Code-Compliant",
+      "description": "Lighting installation requires proper electrical connections, appropriate boxes, and code-compliant techniques. Professional installation ensures safety.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Proper Fixture Mounting",
+      "description": "Heavy fixtures require structural mounting—not just ceiling drywall. We verify support and install appropriate mounting hardware.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Immediate Enjoyment",
+      "description": "Skip DIY frustration and enjoy your new lighting immediately. Professional installation means it works perfectly from day one.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "800+",
+      "label": "Fixtures Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Satisfaction"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you install fixtures I've already purchased?",
+      "answer": "Absolutely. Bring your own fixtures and we'll install them professionally. We can also help you select fixtures if you haven't decided yet—we're not tied to particular brands and can recommend based on your needs."
+    },
+    {
+      "question": "Can you add lighting where none exists?",
+      "answer": "Yes. We can add new lighting locations, running wire through attics, walls, and crawl spaces. This includes adding switches at convenient locations. Most rooms can have lighting added without major construction."
+    },
+    {
+      "question": "What about outdoor lighting in Florida weather?",
+      "answer": "All outdoor installations use fixtures and methods rated for wet conditions. We ensure proper weatherproofing, appropriate GFCI protection, and mounting that sheds water. Quality outdoor lighting handles Florida's sun, rain, and humidity."
+    },
+    {
+      "question": "How do I choose the right light fixtures?",
+      "answer": "Consider function (ambient, task, accent), style (matching your décor), and light output (appropriate brightness for the space). Dimming capability adds flexibility. We can help you select fixtures appropriate for each space."
+    },
+    {
+      "question": "Can you install heavy chandeliers safely?",
+      "answer": "Yes. Heavy fixtures require mounting to ceiling joists or proper brace boxes—not just drywall. We verify structural support and install appropriate mounting hardware for fixtures of any weight."
+    },
+    {
+      "question": "What's under-cabinet lighting and is it worth it?",
+      "answer": "Under-cabinet lighting illuminates kitchen countertops—eliminating the shadows that overhead lighting creates when you're working at the counter. It's one of the most functional kitchen upgrades and adds ambiance. Modern LED strips are energy-efficient and long-lasting."
+    },
+    {
+      "question": "Do you install bathroom lighting?",
+      "answer": "Yes, with attention to bathroom-specific requirements. Lighting near showers and tubs has wet-location rating requirements. We install vanity lighting, recessed fixtures, and exhaust fan/light combinations with appropriate fixtures and methods."
+    },
+    {
+      "question": "Can lighting be made dimmable?",
+      "answer": "Most lighting can be dimmed with appropriate fixtures and dimmers. LED fixtures require LED-compatible dimmers for smooth operation. We install dimmers that match your fixtures for flicker-free dimming across the full range."
+    }
+  ],
+  "relatedServices": [
+    "recessed-lighting-installation",
+    "landscape-outdoor-lighting",
+    "ceiling-fan-light-fixture-installation",
+    "led-lighting-retrofit-conversion"
+  ],
+  "seoContent": [
+    {
+      "heading": "Residential Lighting Installation in South Florida",
+      "body": "Solomon Electric provides complete residential lighting services throughout Miami-Dade and Broward counties. From interior fixture upgrades to comprehensive outdoor illumination, our licensed electricians install all types of lighting with proper electrical connections, secure mounting, and code-compliant techniques."
+    },
+    {
+      "heading": "Kitchen and Bathroom Lighting",
+      "body": "Kitchens and bathrooms need more than just overhead fixtures. Under-cabinet lighting illuminates work surfaces without shadows. Proper vanity lighting ensures accurate visibility for grooming. We install task lighting that makes these hardworking spaces functional and beautiful."
+    },
+    {
+      "heading": "Outdoor and Exterior Lighting",
+      "body": "South Florida's outdoor lifestyle deserves proper lighting. We install pathway lighting, security fixtures, patio and deck illumination, and accent lighting that highlights your home's architecture. All outdoor installations use weather-rated equipment designed for Florida conditions."
+    },
+    {
+      "heading": "Professional Installation Throughout South Florida",
+      "body": "Solomon Electric installs lighting fixtures throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Whether you're updating a single fixture or lighting an entire home, we provide professional installation with lasting results."
+    }
+  ],
+  "relatedBlogPosts": []
+}

@@ -1,0 +1,160 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/ui/Container.astro";
+import Button from "../components/ui/Button.astro";
+import CtaButton from "../components/ui/CtaButton.astro";
+import { SITE_CONFIG } from "../config/site";
+import { CheckCircle, Clock, Phone, Star, ArrowRight } from "lucide-astro";
+---
+
+<Layout
+    title="Thank You | Solomon Electric"
+    description="Thank you for contacting Solomon Electric. We'll be in touch shortly to discuss your electrical needs."
+    noindex={true}
+>
+    <!-- Form submission validation - redirects if no form was submitted -->
+    <script is:inline>
+        (function () {
+            // Check if form was successfully submitted (flag set by booking form)
+            const formSubmitted = sessionStorage.getItem("formSubmitted");
+            if (!formSubmitted) {
+                // No form submission detected - redirect to homepage
+                window.location.replace("/");
+            } else {
+                // Clear the flag so refreshing the page also redirects
+                sessionStorage.removeItem("formSubmitted");
+            }
+        })();
+    </script>
+
+    <section
+        class="min-h-[70vh] flex items-center bg-light relative overflow-hidden py-24 md:py-32"
+    >
+        <div class="absolute inset-0 z-0 opacity-5">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-accent)_0%,_transparent_70%)]"
+            >
+            </div>
+        </div>
+
+        <Container class="relative z-10 text-center">
+            <div
+                class="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse"
+            >
+                <CheckCircle class="w-14 h-14 text-accent" />
+            </div>
+            <h1
+                class="text-3xl md:text-5xl font-black text-primary uppercase mb-6"
+            >
+                You Made the Right Call
+            </h1>
+            <p
+                class="text-[var(--text-body)] text-lg md:text-xl mx-auto mb-8 leading-relaxed max-w-4xl"
+            >
+                Your request is in good hands. We've received your information
+                and one of our licensed electricians will reach out shortly to
+                understand your needs—no pressure, no sales pitch, just helpful
+                advice from someone who knows electrical work inside and out.
+            </p>
+
+            <!-- What to expect -->
+            <div
+                class="bg-white rounded-2xl shadow-lg p-8 md:p-10 max-w-4xl mx-auto mb-12"
+            >
+                <h2 class="text-xl font-black text-primary uppercase mb-6">
+                    What Happens Next
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4"
+                        >
+                            <Clock class="w-6 h-6 text-accent" />
+                        </div>
+                        <h3 class="font-bold text-primary mb-2">
+                            Quick Response
+                        </h3>
+                        <p class="text-[var(--text-body)] text-sm">
+                            We'll contact you within business hours to confirm
+                            details
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4"
+                        >
+                            <Phone class="w-6 h-6 text-accent" />
+                        </div>
+                        <h3 class="font-bold text-primary mb-2">
+                            Free Consultation
+                        </h3>
+                        <p class="text-[var(--text-body)] text-sm">
+                            Discuss your project and receive a detailed estimate
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4"
+                        >
+                            <Star class="w-6 h-6 text-accent" />
+                        </div>
+                        <h3 class="font-bold text-primary mb-2">
+                            Expert Service
+                        </h3>
+                        <p class="text-[var(--text-body)] text-sm">
+                            Licensed electricians complete your project safely
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Urgent? CTA -->
+            <div
+                class="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 max-w-4xl mx-auto mb-12"
+            >
+                <p class="text-primary font-bold mb-4">
+                    Have an electrical emergency?
+                </p>
+                <CtaButton
+                    action="call"
+                    variant="primary"
+                    size="lg"
+                    text={`Call Now: ${SITE_CONFIG.contact.phone.formatted}`}
+                />
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <Button href="/" variant="secondary" size="lg" class="gap-2">
+                    Return Home
+                </Button>
+                <Button
+                    href="/services"
+                    variant="secondary"
+                    size="lg"
+                    class="gap-2"
+                >
+                    Explore Services
+                    <ArrowRight class="w-5 h-5" />
+                </Button>
+            </div>
+
+            <!-- Social proof -->
+            <div class="mt-16 pt-8 border-t border-gray-200">
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <div class="flex">
+                        {
+                            [1, 2, 3, 4, 5].map(() => (
+                                <Star class="w-5 h-5 text-accent fill-accent" />
+                            ))
+                        }
+                    </div>
+                    <span class="font-bold text-primary">4.9/5</span>
+                </div>
+                <p class="text-[var(--text-muted)] text-sm">
+                    Trusted by 19,400+ customers across South Florida
+                </p>
+            </div>
+        </Container>
+    </section>
+</Layout>

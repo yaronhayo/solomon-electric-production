@@ -1,0 +1,180 @@
+{
+  "name": "Electrical Code Compliance Violation Repairs",
+  "slug": "electrical-code-compliance-violation-repairs",
+  "description": "Code violations identified during inspections, sales, or audits need to be corrected. Solomon Electric provides electrical code violation repairs throughout South Florida—addressing cited violations, bringing systems into compliance, and providing documentation that satisfies inspectors, insurers, and buyers.",
+  "shortDescription": "Fix code violations professionally",
+  "icon": "Shield",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Commercial & Inspections",
+  "order": 46,
+  "features": [
+    "Citation correction",
+    "Compliance remediation",
+    "Re-inspection coordination",
+    "Panel violations",
+    "Wiring violations",
+    "Documentation for records"
+  ],
+  "warningSignsHeading": "When Violation Repairs Are Needed",
+  "warningSignsSubheading": "Various situations require addressing electrical code violations.",
+  "problems": [
+    {
+      "title": "Failed Inspection Citations",
+      "description": "Building or fire inspector cited violations that must be corrected. We address cited issues and coordinate re-inspection.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Real Estate Transaction Issues",
+      "description": "Buyer inspection or appraisal identified code violations affecting the sale. We repair violations to clear transaction obstacles.",
+      "icon": "Home"
+    },
+    {
+      "title": "Insurance Requirements",
+      "description": "Insurer identified violations affecting coverage. We correct issues and provide documentation satisfying insurance requirements.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Audit Findings",
+      "description": "Code compliance audit revealed violations needing correction. We prioritize and address findings systematically.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Unpermitted Work Corrections",
+      "description": "Previous unpermitted work doesn't meet code. We bring it into compliance or correct it properly.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Certificate of Occupancy Requirements",
+      "description": "Commercial spaces need electrical compliance for occupancy permits. We address violations blocking certificate of occupancy.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Violation Repair Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Violation Review",
+      "description": "We review the specific violations cited—inspection reports, audit findings, or buyer concerns—to understand exactly what needs correction."
+    },
+    {
+      "step": 2,
+      "title": "Scope and Quote",
+      "description": "We determine work required to correct each violation and provide pricing. Some violations are simple; others require significant work."
+    },
+    {
+      "step": 3,
+      "title": "Correction Work",
+      "description": "We perform repairs and modifications needed to bring electrical into compliance with cited code requirements."
+    },
+    {
+      "step": 4,
+      "title": "Re-Inspection",
+      "description": "For permit-related violations, we schedule and attend re-inspection to verify corrections satisfy the inspector."
+    },
+    {
+      "step": 5,
+      "title": "Documentation",
+      "description": "We provide documentation of corrections made—important for satisfying insurance, closing transactions, or completing audit remediation."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Violation Repair",
+  "benefits": [
+    {
+      "title": "Pass Re-Inspection",
+      "description": "Corrections done right pass re-inspection the first time. We address the root cause, not just the symptom.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Complete Compliance",
+      "description": "While correcting cited violations, we identify and address related issues that might be cited in future inspections.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Transaction Support",
+      "description": "Clear documentation of corrections helps close real estate transactions and satisfy insurance requirements.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Long-Term Safety",
+      "description": "Code requirements exist for safety. Proper corrections address hazards, not just satisfy inspectors.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Violations Corrected"
+    },
+    {
+      "value": "100%",
+      "label": "Re-Inspection Pass"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How quickly can you correct violations?",
+      "answer": "It depends on severity and parts availability. Simple violations (missing covers, GFCI installation) can be corrected same-day. Complex violations (panel replacement, rewiring) take longer. We prioritize based on your deadline."
+    },
+    {
+      "question": "What if I don't understand the violation notice?",
+      "answer": "Inspection reports can be technical and confusing. We interpret violation notices, explain what they mean, and clarify what corrections are needed. Understanding the problem is the first step."
+    },
+    {
+      "question": "Can you help with fire marshal violations?",
+      "answer": "Yes. Fire code violations related to electrical—exit signs, emergency lighting, panel access—fall within our expertise. We address fire code electrical violations and coordinate with fire inspectors."
+    },
+    {
+      "question": "What about commercial violations?",
+      "answer": "Commercial violations are often more complex and have stricter deadlines. We handle commercial violation repairs with appropriate urgency and can work extended hours to meet certificate of occupancy deadlines."
+    },
+    {
+      "question": "Will you coordinate re-inspection?",
+      "answer": "Yes. After corrections, we schedule re-inspection, are present when the inspector arrives, and address any remaining concerns. Our goal is passed re-inspection."
+    },
+    {
+      "question": "What documentation do I receive?",
+      "answer": "We provide work documentation describing corrections made, along with passed re-inspection records if applicable. This documentation satisfies insurers, title companies, and your records."
+    },
+    {
+      "question": "Can violations be 'grandfathered'?",
+      "answer": "Some conditions that were legal when installed remain legal (grandfathered). However, safety hazards and clearly substandard work typically require correction regardless. We clarify what applies to your specific violations."
+    },
+    {
+      "question": "What if corrections are expensive?",
+      "answer": "We provide accurate quotes before starting work. For expensive corrections, we discuss options—phased work, alternative approaches, or understanding whether the violation truly requires correction. We help you make informed decisions."
+    }
+  ],
+  "relatedServices": [
+    "electrical-code-compliance-audit",
+    "permit-application-inspection-coordination",
+    "electrical-safety-inspection",
+    "electrical-panel-upgrade-100a-to-200a"
+  ],
+  "seoContent": [
+    {
+      "heading": "Code Violation Repairs in South Florida",
+      "body": "Code violations identified during inspections, sales, or audits need correction. Solomon Electric provides electrical violation repairs throughout Miami-Dade and Broward counties—addressing cited issues, achieving compliance, and providing documentation for inspectors and insurers."
+    },
+    {
+      "heading": "Inspection Failure Corrections",
+      "body": "When building or fire inspectors cite electrical violations, we address them promptly and coordinate re-inspection. Our corrections address root causes to pass inspection and prevent future citations."
+    },
+    {
+      "heading": "Real Estate Transaction Support",
+      "body": "Electrical violations can derail property sales. We correct cited issues quickly, provide documentation, and help meet transaction deadlines. Clear the path to closing with professional violation repairs."
+    },
+    {
+      "heading": "Serving South Florida Properties",
+      "body": "Solomon Electric provides code violation repairs throughout Miami, Fort Lauderdale, Hollywood, and all surrounding areas. From simple corrections to complex remediation, we bring electrical systems into compliance."
+    }
+  ],
+  "relatedBlogPosts": []
+}

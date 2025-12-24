@@ -1,0 +1,98 @@
+{
+    "name": "Miramar",
+    "slug": "miramar",
+    "county": "Broward",
+    "description": "Licensed Miramar electricians serving Southern Broward County. Solomon Electric provides professional residential and commercial electrical services for Miramar's homes and booming corporate centers.",
+    "population": "140,000+",
+    "founded": "1955",
+    "areaSquareMiles": "31",
+    "tagline": "Beauty and Progress",
+    "landmarks": [
+        "Miramar Cultural Center",
+        "Miramar Regional Park",
+        "Ansin Sports Complex",
+        "Miramar Town Center"
+    ],
+    "neighborhoods": [
+        "Silver Lakes",
+        "Sunset Lakes",
+        "Miramar Isles",
+        "Country Club Ranches",
+        "Mirabella",
+        "Monarch Lakes"
+    ],
+    "majorRoads": [
+        "I-75",
+        "Florida Turnpike",
+        "Miramar Parkway",
+        "University Drive",
+        "Red Road"
+    ],
+    "coordinates": {
+        "lat": 25.9873,
+        "lng": -80.3012
+    },
+    "challenges": [
+        {
+            "title": "Corporate & Industrial Power",
+            "description": "Miramar's status as a corporate hub requires electricians who understand high-capacity commercial power distribution and data center electrical needs.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Modern Suburban Wiring",
+            "description": "Miramar's many newer residential communities feature complex wiring that needs professional maintenance and integration for modern smart home features.",
+            "icon": "Home"
+        },
+        {
+            "title": "Storm Surge Protection",
+            "description": "Protecting expensive home electronics from South Florida's frequent lightning strikes is a top priority for Miramar families. We specialize in tiered surge protection systems.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "ev-charging-system-setup",
+        "whole-home-surge-protection",
+        "commercial-led-lighting-retrofit",
+        "recessed-lighting-installation",
+        "24-7-emergency-electrical-service"
+    ],
+    "stats": [
+        {
+            "value": "140K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide electrical services for Miramar businesses?",
+            "answer": "Yes, we handle commercial electrical work for offices, retail, and industrial properties across Miramar, including the Miramar Town Center and corporate plazas along I-75."
+        },
+        {
+            "question": "Can you install an EV charger in my Miramar home?",
+            "answer": "Absolutely. We are experts in EV charger installations for all Miramar residential communities, ensuring your home's panel can handle the load and everything is per code."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Reliable Miramar Electricians – Serving Our Neighbors Since 2003",
+            "body": "Miramar is a city defined by its rapid growth and commitment to progress. From its corporate centers to its beautiful gated communities, Miramar requires a level of electrical expertise that is both modern and highly professional. Solomon Electric is proud to be part of the Miramar community, keeping homes and businesses powered safely."
+        },
+        {
+            "heading": "Expert Electrical Solutions for Miramar Families",
+            "body": "Whether you're in Sunset Lakes, Silver Lakes, or a business near the Miramar Cultural Center, Solomon Electric is your first choice for licensed electrical work. We provide 24/7 emergency response, upfront pricing, and a dedication to quality that has made us a leader in Broward County's electrical industry."
+        }
+    ]
+}

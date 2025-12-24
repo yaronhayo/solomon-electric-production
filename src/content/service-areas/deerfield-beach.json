@@ -1,0 +1,97 @@
+{
+    "name": "Deerfield Beach",
+    "slug": "deerfield-beach",
+    "county": "Broward",
+    "description": "Licensed Deerfield Beach electricians providing professional residential and commercial services. From beachway lighting to industrial electrical support, Solomon Electric is your local partner in Deerfield Beach.",
+    "population": "80,000+",
+    "founded": "1925",
+    "areaSquareMiles": "16",
+    "tagline": "More Than Just a Pretty Beach",
+    "landmarks": [
+        "Deerfield Beach International Fishing Pier",
+        "Quiet Waters Park",
+        "South Florida Railway Museum",
+        "The Cove Shopping Center"
+    ],
+    "neighborhoods": [
+        "The Cove",
+        "Deer Creek",
+        "Loch Lomond",
+        "Deer Isle",
+        "Century Village Deerfield"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Federal Highway (US-1)",
+        "Hillsboro Boulevard",
+        "Dixie Highway",
+        "Sawgrass Expressway (SR 869)"
+    ],
+    "coordinates": {
+        "lat": 26.3184,
+        "lng": -80.0998
+    },
+    "challenges": [
+        {
+            "title": "Beachfront Electrical Resilience",
+            "description": "Deerfield's oceanside properties require extra protection from the elements. We use non-corrosive fixtures and heavy-duty seals for all coastal installations.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Industrial Corridor Power",
+            "description": "The thriving industrial and business parks in Deerfield require electricians who can manage large power distribution systems and modern energy solutions.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Suburban Safety Upgrades",
+            "description": "With many mature neighborhoods, Deerfield homes often need safety audits to ensure older panels and wiring meet today's high energy demands.",
+            "icon": "AlertTriangle"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "landscape-outdoor-lighting",
+        "commercial-led-lighting-retrofit",
+        "whole-home-surge-protection",
+        "recessed-lighting-installation"
+    ],
+    "stats": [
+        {
+            "value": "80K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide emergency service in Deerfield Beach communities like The Cove?",
+            "answer": "Yes, we offer 24/7 emergency response to all Deerfield Beach neighborhoods, ensuring your power is restored quickly and safely."
+        },
+        {
+            "question": "Can you handle commercial electrical projects in Deerfield business parks?",
+            "answer": "Absolutely. We provide full commercial electrical support, including tenant improvements, lighting design, and emergency services for Deerfield businesses."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Deerfield Beach's Trusted Local Electricians",
+            "body": "Deerfield Beach is a city of incredible variety, from its pristine shores to its bustling corporate centers. It's a place where tradition meets progress, and Solomon Electric has been there since 2003, providing the reliable electrical foundation Deerfield homes and businesses need to flourish."
+        },
+        {
+            "heading": "Serving Every Corner of Deerfield Beach with Excellence",
+            "body": "Whether you're finishing a remodel in Deer Creek, upgrading the lighting at The Cove, or needing urgent help at a local industrial property, Solomon Electric is your first choice. We bring 15 years of licensed experience and a commitment to quality that our Deerfield neighbors trust."
+        }
+    ]
+}

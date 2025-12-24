@@ -1,109 +1,1143 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import heroImage from "../assets/images/hero.webp";
-import Button from "../components/ui/Button.astro";
+import heroImage from "../assets/images/heroes/service-areas.png";
+import PageHero from "../components/PageHero.astro";
+import Container from "../components/ui/Container.astro";
+import CtaButton from "../components/ui/CtaButton.astro";
+import FAQAccordion from "../components/FAQAccordion.astro";
+import ReviewCarousel from "../components/ReviewCarousel.astro";
+import ServiceAreaMap from "../components/ServiceAreaMap.astro";
+import {
+    Shield,
+    Clock,
+    Award,
+    CheckCircle,
+    Zap,
+    Phone,
+    MapPin,
+} from "lucide-astro";
+import { SITE_CONFIG } from "../config/site";
 import { SERVICE_AREAS } from "../data/service-areas";
-const serviceAreas = SERVICE_AREAS;
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+// Enhanced SEO Schema
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "ElectricalContractor",
+    name: SITE_CONFIG.company.name,
+    url: SITE_CONFIG.seo.siteUrl,
+    telephone: SITE_CONFIG.contact.phone.formatted,
+    email: SITE_CONFIG.contact.email,
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: SITE_CONFIG.contact.address.street,
+        addressLocality: SITE_CONFIG.contact.address.city,
+        addressRegion: SITE_CONFIG.contact.address.state,
+        postalCode: SITE_CONFIG.contact.address.zip,
+        addressCountry: "US",
+    },
+    geo: {
+        "@type": "GeoCoordinates",
+        latitude: "25.7617",
+        longitude: "-80.1918",
+    },
+    openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+    },
+    areaServed: SERVICE_AREAS.map((area) => ({
+        "@type": "City",
+        name: area,
+        containedInPlace: {
+            "@type": "State",
+            name: "Florida",
+            abbreviation: "FL",
+        },
+    })),
+    priceRange: "$$",
+    image: `${SITE_CONFIG.seo.siteUrl}/images/og-image.jpg`,
+    sameAs: [
+        SITE_CONFIG.social?.facebook,
+        SITE_CONFIG.social?.instagram,
+        SITE_CONFIG.social?.yelp,
+    ].filter(Boolean),
+};
+
+const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Solomon Electric Service Areas",
+    itemListElement: SERVICE_AREAS.map((area, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+            "@type": "City",
+            name: area,
+            url: `${SITE_CONFIG.seo.siteUrl}/service-areas/${area.toLowerCase().replace(/\s+/g, "-")}`,
+        },
+    })),
+};
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_CONFIG.seo.siteUrl,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Service Areas",
+            item: `${SITE_CONFIG.seo.siteUrl}/service-areas`,
+        },
+    ],
+};
+
+const counties = {
+    "Miami-Dade": {
+        cities: [
+            "Miami",
+            "Miami Beach",
+            "Miami Gardens",
+            "Hialeah",
+            "Homestead",
+            "North Miami",
+        ],
+        tagline: "Where we started. Where we're strongest.",
+    },
+    Broward: {
+        cities: [
+            "Fort Lauderdale",
+            "Hollywood",
+            "Pembroke Pines",
+            "Miramar",
+            "Coral Springs",
+            "Plantation",
+            "Davie",
+            "Weston",
+            "Sunrise",
+            "Pompano Beach",
+            "Deerfield",
+            "Lauderhill",
+            "Tamarac",
+            "Margate",
+            "Coconut Creek",
+        ],
+        tagline: "Fort Lauderdale to Coral Springs.",
+    },
+    "Palm Beach": {
+        cities: [
+            "West Palm Beach",
+            "Boca Raton",
+            "Boynton Beach",
+            "Delray Beach",
+            "Jupiter",
+            "Wellington",
+        ],
+        tagline: "Expanding north to serve you.",
+    },
+};
+
+const trustPoints = [
+    { icon: Shield, title: "Licensed & Insured", desc: "Florida EC13012419" },
+    { icon: Clock, title: "24/7 Emergency", desc: "Always available" },
+    { icon: Award, title: "Satisfaction Guaranteed", desc: "100% commitment" },
+    { icon: CheckCircle, title: "Free Estimates", desc: "No obligation" },
+];
 ---
 
 <Layout
-    title="Service Areas - Solomon Electric | Miami-Dade & Broward"
-    description="We provide expert electrical services across Miami-Dade and Broward counties. Check our service areas here."
+    title="Electrician Near Me | Miami-Dade, Broward & Palm Beach FL | Solomon Electric"
+    description="Find a licensed electrician in your neighborhood. Solomon Electric serves 27 cities across Miami-Dade, Broward, and Palm Beach counties. Available 24/7 for residential, commercial & emergency electrical service."
 >
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(localBusinessSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(itemListSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+    />
+
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb
+        items={[{ label: "Home", href: "/" }, { label: "Service Areas" }]}
+    />
+
     <!-- Hero -->
-    <section
-        class="relative flex items-center overflow-hidden"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); min-height: 60vh;"
-    >
-        <div class="absolute inset-0 z-0">
-            <Image
-                src={heroImage}
-                alt="Service Areas"
-                class="w-full h-full object-cover"
-            />
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
-            >
-            </div>
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
-            >
-            </div>
-        </div>
-        <div class="container-custom relative z-10 w-full">
-            <div
-                class="grid grid-cols-1 lg:grid-cols-12 items-center"
-                style="gap: var(--spacing-xl);"
-            >
-                <div class="lg:col-span-7">
-                    <p
-                        class="text-accent tracking-[0.3em] font-bold uppercase"
-                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
+    <PageHero
+        title="Your Local<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Electrician is Here</span>"
+        subtitle="27 Cities • 3 Counties • 24/7 Response"
+        description="Looking for a licensed electrician in your area? We serve the entire tri-county region—Miami-Dade, Broward, and Palm Beach—with the same commitment to safety and quality in every neighborhood. Find your city below and see how we can help."
+        image={heroImage}
+        trustIndicators={true}
+    />
+
+    <!-- SEO Intro Section -->
+    <section class="seo-intro">
+        <Container>
+            <div class="seo-intro-content">
+                <h2 class="seo-intro-title">
+                    Licensed Electricians Serving <span class="text-accent"
+                        >South Florida</span
                     >
-                        South Florida
-                    </p>
-                    <h1
-                        class="font-black text-white leading-[0.9]"
-                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
-                    >
-                        Service <br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
-                        >
-                            Areas
-                        </span>
-                    </h1>
-                    <p
-                        class="text-gray-200 font-light leading-relaxed"
-                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
-                    >
-                        Proudly serving homeowners and businesses throughout
-                        South Florida with expert electrical solutions.
-                    </p>
-                </div>
+                </h2>
+                <p class="seo-intro-description">
+                    Solomon Electric provides comprehensive electrical services
+                    across {SERVICE_AREAS.length} cities in Miami-Dade, Broward, and
+                    Palm Beach counties. As a licensed electrical contractor (FL License
+                    #{SITE_CONFIG.credentials.license.number.replace("#", "")}),
+                    we deliver code-compliant residential and commercial
+                    electrical work backed by our satisfaction guarantee.
+                </p>
+                <p class="seo-intro-secondary">
+                    From emergency electrical repairs in Miami to panel upgrades
+                    in Fort Lauderdale, EV charger installation in Boca Raton,
+                    and smart home wiring throughout South Florida—our
+                    experienced electricians provide 24/7 service with upfront
+                    pricing and no hidden fees.
+                </p>
             </div>
-        </div>
+        </Container>
     </section>
 
-    <!-- Areas Grid -->
-    <section
-        class="bg-light"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
-    >
-        <div class="container-custom">
-            <div
-                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
-            >
+    <!-- Interactive Map -->
+    <section class="map-section">
+        <Container>
+            <ServiceAreaMap />
+        </Container>
+    </section>
+
+    <!-- Why Choose Us - Trust Strip -->
+    <section class="trust-section">
+        <Container>
+            <div class="trust-grid">
                 {
-                    serviceAreas.map((area) => (
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-accent hover:shadow-md transition-all text-center">
-                            <h3 class="text-lg font-bold text-primary">
-                                {area}
-                            </h3>
+                    trustPoints.map(({ icon: Icon, title, desc }) => (
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <Icon size={24} />
+                            </div>
+                            <div class="trust-content">
+                                <h4>{title}</h4>
+                                <p>{desc}</p>
+                            </div>
                         </div>
                     ))
                 }
             </div>
+        </Container>
+    </section>
 
-            <div
-                class="mt-20 text-center bg-white border border-gray-100 rounded-2xl p-12 md:p-16 shadow-sm"
+    <!-- Counties Showcase -->
+    <section class="counties-section">
+        <Container>
+            <header
+                class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12"
             >
-                <h2
-                    class="text-3xl md:text-4xl font-black text-primary mb-4 uppercase"
+                <div class="section-header-angular flex-1">
+                    <div class="header-accent"></div>
+                    <div class="header-content">
+                        <span class="header-eyebrow">Coverage by County</span>
+                        <h2>
+                            Three Counties, <span class="text-accent"
+                                >One Call</span
+                            >
+                        </h2>
+                    </div>
+                </div>
+
+                <div
+                    class="flex items-center gap-3 md:gap-4 overflow-x-auto pb-2 md:pb-0"
                 >
-                    Don't See Your City?
-                </h2>
-                <p class="text-gray-600 text-lg mb-8 font-medium">
-                    We likely still cover your area! Call us to confirm
-                    availability.
-                </p>
-                <Button
-                    href="tel:7868339211"
-                    size="lg"
-                    class="px-12 py-6 text-xl">Call (786) 833-9211</Button
-                >
+                    <div
+                        class="flex flex-col items-center bg-primary/5 px-4 py-2 rounded-xl border border-primary/10 min-w-[80px]"
+                    >
+                        <span
+                            class="text-xl font-black text-primary leading-none"
+                            >27</span
+                        >
+                        <span
+                            class="text-[10px] font-bold text-primary/60 uppercase tracking-tighter"
+                            >Cities</span
+                        >
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-primary/5 px-4 py-2 rounded-xl border border-primary/10 min-w-[80px]"
+                    >
+                        <span
+                            class="text-xl font-black text-primary leading-none"
+                            >3</span
+                        >
+                        <span
+                            class="text-[10px] font-bold text-primary/60 uppercase tracking-tighter"
+                            >Counties</span
+                        >
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-accent/10 px-4 py-2 rounded-xl border border-accent/20 min-w-[80px]"
+                    >
+                        <span
+                            class="text-xl font-black text-accent leading-none"
+                            >24/7</span
+                        >
+                        <span
+                            class="text-[10px] font-bold text-accent/60 uppercase tracking-tighter"
+                            >Live</span
+                        >
+                    </div>
+                </div>
+            </header>
+
+            <div class="counties-grid">
+                {
+                    Object.entries(counties).map(([name, data], index) => (
+                        <article
+                            class:list={[
+                                "county-card glass-bg glass-border",
+                                { primary: index === 0 },
+                            ]}
+                        >
+                            <div class="county-accent" />
+                            <div class="county-body">
+                                <div class="county-header">
+                                    <div class="flex items-center justify-between gap-4 mb-2">
+                                        <h3>{name}</h3>
+                                        <span class="county-badge font-secondary">
+                                            {index === 0
+                                                ? "Primary"
+                                                : `${data.cities.length} Cities`}
+                                        </span>
+                                    </div>
+                                    <p class="county-tagline font-secondary">
+                                        {data.tagline}
+                                    </p>
+                                </div>
+                                <div class="county-cities">
+                                    {data.cities
+                                        .slice(0, index === 0 ? 6 : 5)
+                                        .map((city) => (
+                                            <a
+                                                href={`/service-areas/${city.toLowerCase().replace(/\s+/g, "-")}`}
+                                                class="city-chip"
+                                            >
+                                                {city}
+                                            </a>
+                                        ))}
+                                    {data.cities.length >
+                                        (index === 0 ? 6 : 5) && (
+                                        <span class="city-more">
+                                            +
+                                            {data.cities.length -
+                                                (index === 0 ? 6 : 5)}
+                                        </span>
+                                    )}
+                                </div>
+                                <div class="county-footer">
+                                    <CtaButton
+                                        variant="primary"
+                                        action="book"
+                                        text={`Book ${name}`}
+                                        size="sm"
+                                    />
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
             </div>
+        </Container>
+    </section>
+
+    <!-- All Cities Mosaic -->
+    <section class="cities-mosaic-section">
+        <Container>
+            <header class="section-header text-center">
+                <span class="header-label"
+                    >{SERVICE_AREAS.length} Locations</span
+                >
+                <h2>
+                    Every City <span class="text-accent">We Serve</span>
+                </h2>
+            </header>
+
+            <div class="cities-mosaic">
+                {
+                    SERVICE_AREAS.map((area) => (
+                        <a
+                            href={`/service-areas/${area.toLowerCase().replace(/\s+/g, "-")}`}
+                            class="city-tile glass-bg glass-border hover:border-accent group"
+                        >
+                            <MapPin
+                                class="w-3.5 h-3.5 text-accent"
+                                stroke-width={2.5}
+                            />
+                            <span class="tile-name transition-colors group-hover:text-accent font-bold uppercase tracking-wider">
+                                {area}
+                            </span>
+                        </a>
+                    ))
+                }
+            </div>
+        </Container>
+    </section>
+
+    <!-- Not Listed Banner -->
+    <section class="coverage-banner-section">
+        <div class="banner-skew"></div>
+        <Container>
+            <div class="coverage-banner">
+                <div class="banner-text">
+                    <h3>Don't See Your City?</h3>
+                    <p>
+                        Our service territory extends throughout South Florida.
+                        Call us to confirm we serve your area.
+                    </p>
+                </div>
+                <div class="banner-cta">
+                    <CtaButton
+                        variant="primary"
+                        action="call"
+                        text={`Call ${SITE_CONFIG.contact.phone.formatted}`}
+                        size="lg"
+                    />
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Reviews -->
+    <ReviewCarousel />
+
+    <!-- FAQs -->
+    <FAQAccordion />
+
+    <!-- Final CTA - Angular Split -->
+    <section class="final-cta">
+        <div class="cta-primary">
+            <Container>
+                <div class="cta-primary-inner">
+                    <Zap class="cta-bolt" size={48} />
+                    <h2>Ready for Expert<br />Electrical Service?</h2>
+                </div>
+            </Container>
+        </div>
+        <div class="cta-surface">
+            <Container>
+                <div class="cta-surface-inner">
+                    <p>
+                        Licensed electricians in your neighborhood. Free
+                        estimates, 24/7 emergency response, and satisfaction
+                        guaranteed on every job.
+                    </p>
+                    <div class="cta-actions">
+                        <CtaButton
+                            variant="primary"
+                            action="book"
+                            text="Book Online"
+                            size="lg"
+                        />
+                        <CtaButton
+                            variant="secondary"
+                            action="call"
+                            text="Call Now"
+                            size="lg"
+                        />
+                    </div>
+                </div>
+            </Container>
         </div>
     </section>
 </Layout>
+
+<style>
+    /* ============================================
+       STATS STRIP - Enhanced like services index
+    ============================================ */
+    .stats-strip {
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #0a3560 100%
+        );
+        padding: clamp(1rem, 2vw, 1.5rem) 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stats-strip::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(20, 211, 227, 0.1) 50%,
+            transparent 100%
+        );
+        animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0%,
+        100% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(100%);
+        }
+    }
+
+    .stats-strip::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            var(--color-accent),
+            transparent
+        );
+    }
+
+    .stats-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        position: relative;
+    }
+
+    .stat-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.5rem);
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-lg);
+        transition: all var(--transition-fast);
+    }
+
+    .stat-block:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .stat-icon {
+        color: var(--color-accent);
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .stat-value {
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: var(--text-inverse);
+        line-height: 1;
+        text-shadow: 0 0 30px rgba(20, 211, 227, 0.3);
+    }
+
+    .stat-label {
+        font-size: clamp(0.65rem, 1vw, 0.75rem);
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 0.25rem;
+    }
+
+    .stat-cta {
+        text-decoration: none;
+        background: rgba(239, 68, 68, 0.3);
+    }
+
+    .stat-cta:hover {
+        background: rgba(239, 68, 68, 0.5);
+        transform: translateY(-2px);
+    }
+
+    .stat-cta .stat-value {
+        color: var(--color-accent);
+    }
+
+    /* ============================================
+       SEO INTRO SECTION
+    ============================================ */
+    .seo-intro {
+        background: linear-gradient(
+            180deg,
+            var(--bg-surface) 0%,
+            var(--bg-body) 100%
+        );
+        padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .seo-intro-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .seo-intro-title {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    .seo-intro-description {
+        font-size: clamp(1rem, 1.25vw, 1.125rem);
+        color: var(--text-body);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .seo-intro-secondary {
+        font-size: clamp(0.95rem, 1.1vw, 1rem);
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    /* ============================================
+       MAP SECTION
+    ============================================ */
+    .map-section {
+        background: var(--bg-body);
+        padding: clamp(2rem, 4vw, 3rem) 0;
+    }
+
+    /* ============================================
+       TRUST SECTION - Enhanced styling
+    ============================================ */
+    .trust-section {
+        background: var(--bg-surface);
+        padding: clamp(1.5rem, 3vw, 2rem) 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    @media (min-width: 768px) {
+        .trust-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .trust-item {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        background: var(--bg-body);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-light);
+        transition: all var(--transition-fast);
+    }
+
+    .trust-item:hover {
+        border-color: var(--color-accent);
+        box-shadow: var(--shadow-brand);
+        transform: translateY(-2px);
+    }
+
+    .trust-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(
+            135deg,
+            var(--color-accent),
+            var(--color-accent-dark)
+        );
+        color: white;
+        flex-shrink: 0;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+    }
+
+    .trust-content h4 {
+        font-family: var(--font-secondary);
+        font-size: clamp(0.75rem, 1vw, 0.875rem);
+        color: var(--text-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.125rem;
+    }
+
+    .trust-content p {
+        font-size: clamp(0.7rem, 0.9vw, 0.75rem);
+        color: var(--text-muted);
+    }
+
+    /* ============================================
+       SECTION HEADERS
+    ============================================ */
+    .section-header-angular {
+        display: flex;
+        align-items: stretch;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .header-accent {
+        width: 4px;
+        background: var(--color-accent);
+        /* Sharp diagonal cut */
+        clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+    }
+
+    .header-content {
+        flex: 1;
+    }
+
+    .header-eyebrow {
+        font-family: var(--font-secondary);
+        font-size: var(--text-caption);
+        color: var(--color-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .section-header-angular h2 {
+        font-family: var(--font-display);
+        font-size: var(--text-headline);
+        color: var(--text-primary);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section-header.text-center {
+        text-align: center;
+    }
+
+    .header-label {
+        display: inline-block;
+        font-family: var(--font-secondary);
+        font-size: var(--text-caption);
+        color: var(--color-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .section-header h2 {
+        font-family: var(--font-display);
+        font-size: var(--text-headline);
+        color: var(--text-primary);
+        text-transform: uppercase;
+    }
+
+    /* ============================================
+       COUNTIES SECTION - Enhanced styling
+    ============================================ */
+    .counties-section {
+        background: var(--bg-surface);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .counties-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .county-card {
+        background: var(--bg-body);
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--border-light);
+        transition: all var(--transition-base);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .county-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--color-accent);
+    }
+
+    .county-card.primary {
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #0a3560 100%
+        );
+        border-color: transparent;
+        grid-row: span 1;
+    }
+
+    @media (min-width: 768px) {
+        .county-card.primary {
+            grid-column: span 2;
+        }
+        .counties-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .county-card.primary {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+        .counties-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .county-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--color-accent);
+    }
+
+    .county-body {
+        padding: clamp(1.25rem, 2vw, 1.5rem);
+        padding-left: calc(clamp(1.25rem, 2vw, 1.5rem) + 10px);
+    }
+
+    .county-badge {
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 0.625rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        padding: 0.25rem 0.75rem;
+        background: var(--color-accent);
+        color: white;
+        margin-bottom: var(--spacing-sm);
+        border-radius: var(--radius-md);
+        font-weight: 700;
+    }
+
+    .county-card h3 {
+        font-family: var(--font-display);
+        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        color: var(--text-primary);
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .county-card.primary h3 {
+        color: var(--text-inverse);
+    }
+
+    .county-tagline {
+        font-size: clamp(0.8rem, 1vw, 0.875rem);
+        color: var(--text-body);
+        font-style: italic;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .county-card.primary .county-tagline {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .county-cities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .city-chip {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        text-decoration: none;
+        padding: 0.375rem 0.625rem;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        transition: all var(--transition-fast);
+    }
+
+    .city-chip:hover {
+        background: var(--color-accent);
+        color: white;
+        border-color: var(--color-accent);
+        transform: translateY(-1px);
+    }
+
+    .county-card.primary .city-chip {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+        color: white;
+    }
+
+    .county-card.primary .city-chip:hover {
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+    }
+
+    .city-more {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        padding: 0.25rem 0.375rem;
+        font-style: italic;
+    }
+
+    .county-card.primary .city-more {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .county-footer {
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+    }
+
+    /* ============================================
+       CITIES MOSAIC - Enhanced styling
+    ============================================ */
+    .cities-mosaic-section {
+        background: var(--bg-body);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .cities-mosaic {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .city-tile {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1rem);
+        background: var(--bg-surface);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        text-decoration: none;
+        transition: all var(--transition-fast);
+    }
+
+    .city-tile:hover {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .tile-name {
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .city-tile:hover .tile-name {
+        color: white;
+    }
+
+    /* ============================================
+       COVERAGE BANNER
+    ============================================ */
+    .coverage-banner-section {
+        position: relative;
+        padding: var(--spacing-2xl) 0;
+        overflow: hidden;
+    }
+
+    .banner-skew {
+        position: absolute;
+        inset: 0;
+        background: var(--color-accent);
+        transform: skewY(-2deg);
+        transform-origin: top left;
+    }
+
+    .coverage-banner {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .coverage-banner {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .banner-text h3 {
+        font-family: var(--font-display);
+        font-size: var(--text-title);
+        color: var(--text-inverse);
+        text-transform: uppercase;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .banner-text p {
+        font-size: var(--text-body);
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 450px;
+    }
+
+    /* ============================================
+       FINAL CTA
+    ============================================ */
+    .final-cta {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .final-cta {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .cta-primary {
+        background: var(--bg-primary);
+        padding: var(--spacing-2xl) 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-primary::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+            135deg,
+            transparent 50%,
+            rgba(var(--accent-rgb, 20, 211, 227), 0.1) 100%
+        );
+        pointer-events: none;
+    }
+
+    .cta-primary-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+        .cta-primary-inner {
+            align-items: flex-end;
+            text-align: right;
+        }
+    }
+
+    .cta-bolt {
+        color: var(--color-accent);
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+    }
+
+    .cta-primary h2 {
+        font-family: var(--font-display);
+        font-size: var(--text-headline);
+        color: var(--text-inverse);
+        text-transform: uppercase;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .cta-primary h2 {
+            text-align: right;
+        }
+    }
+
+    .cta-surface {
+        background: var(--bg-surface);
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .cta-surface-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+
+    @media (min-width: 768px) {
+        .cta-surface-inner {
+            align-items: flex-start;
+        }
+    }
+
+    .cta-surface p {
+        font-size: var(--text-body);
+        color: var(--text-body);
+        max-width: 380px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+        .cta-surface p {
+            text-align: left;
+        }
+    }
+
+    .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+</style>

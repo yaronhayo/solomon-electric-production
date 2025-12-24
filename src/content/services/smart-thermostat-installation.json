@@ -1,0 +1,180 @@
+{
+  "name": "Smart Thermostat Installation",
+  "slug": "smart-thermostat-installation",
+  "description": "Take control of your South Florida cooling costs with professional smart thermostat installation. Smart thermostats like Nest, Ecobee, and Honeywell learn your schedule, adjust automatically, and let you control temperature from anywhere. Solomon Electric ensures proper wiring—including the common wire (C-wire) most smart thermostats need—and complete app setup.",
+  "shortDescription": "Connected temperature control",
+  "icon": "Home",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 25,
+  "features": [
+    "Nest thermostat installation",
+    "Ecobee and Honeywell setup",
+    "C-wire installation when needed",
+    "Multi-zone system configuration",
+    "Voice assistant integration",
+    "Energy usage monitoring setup"
+  ],
+  "warningSignsHeading": "Why Upgrade to a Smart Thermostat?",
+  "warningSignsSubheading": "In Florida's cooling-intensive climate, smart thermostats offer real savings and convenience.",
+  "problems": [
+    {
+      "title": "High AC Bills",
+      "description": "Florida's AC runs constantly, driving up electricity costs. Smart thermostats optimize cooling schedules to reduce energy waste without sacrificing comfort.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Coming Home to a Hot House",
+      "description": "Forget to adjust the thermostat before leaving? Smart thermostats learn your schedule and cool down before you arrive—or control them from your phone.",
+      "icon": "Home"
+    },
+    {
+      "title": "Old Programmable Thermostats",
+      "description": "Traditional programmable thermostats are confusing to set and can't adapt to schedule changes. Smart thermostats learn habits and adjust automatically.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Want Remote Control",
+      "description": "On vacation and want to save energy? Coming home early and want it cool? Control temperature from anywhere with your phone.",
+      "icon": "Zap"
+    },
+    {
+      "title": "No C-Wire at Thermostat",
+      "description": "Many older homes lack the common wire (C-wire) smart thermostats need for power. We can run C-wires or install compatible alternatives.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Multi-Zone HVAC Complexity",
+      "description": "Homes with multiple AC zones need thermostats that communicate. We configure multi-thermostat setups that work together efficiently.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our Smart Thermostat Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Compatibility Assessment",
+      "description": "We verify your HVAC system type (single-stage, multi-stage, heat pump) and check thermostat wiring to ensure compatibility with your chosen smart thermostat."
+    },
+    {
+      "step": 2,
+      "title": "C-Wire Verification/Installation",
+      "description": "Most smart thermostats need a common (C) wire for power. If your wiring lacks this, we can install a C-wire from the air handler or use compatible adapter solutions."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "We remove the old thermostat, connect wiring properly (with labels), mount the new unit, and verify the HVAC system responds correctly to all modes."
+    },
+    {
+      "step": 4,
+      "title": "App and WiFi Setup",
+      "description": "We connect the thermostat to your WiFi, set up the manufacturer app on your phone, and configure basic schedules and preferences."
+    },
+    {
+      "step": 5,
+      "title": "Voice Assistant Integration",
+      "description": "If you use Alexa, Google Home, or Apple HomeKit, we link your thermostat for voice control and smart home integration."
+    }
+  ],
+  "benefitsHeading": "Benefits of Smart Thermostats",
+  "benefits": [
+    {
+      "title": "Energy Savings",
+      "description": "Smart thermostats typically reduce HVAC energy use by 10-15% through optimized scheduling and learning your habits. In AC-intensive Florida, this translates to real dollar savings.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Remote Control",
+      "description": "Adjust temperature from anywhere using your phone. On vacation? Set away mode. Coming home early? Start cooling before you arrive.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Learning Capability",
+      "description": "Smart thermostats learn your schedule and preferences, automatically adjusting without manual programming. They adapt when your routine changes.",
+      "icon": "Home"
+    },
+    {
+      "title": "HVAC Monitoring",
+      "description": "Get alerts about HVAC performance, filter replacement reminders, and energy usage tracking. Catch problems early before they become expensive repairs.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "15%",
+      "label": "Typical Energy Savings"
+    },
+    {
+      "value": "300+",
+      "label": "Thermostats Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a C-wire for a smart thermostat?",
+      "answer": "Most smart thermostats need a C-wire (common wire) for power. Many older thermostats don't use this wire even if it's present at the air handler. We check your wiring and can install a C-wire if needed, or recommend thermostats with battery backup (like some Nest models) or adapter solutions."
+    },
+    {
+      "question": "What's the difference between Nest, Ecobee, and Honeywell?",
+      "answer": "All are excellent choices with similar capabilities. Nest has the sleekest interface and strong learning features. Ecobee includes room sensors for better temperature balancing. Honeywell offers broad HVAC compatibility and familiar interface. We can help you choose based on your priorities and HVAC system."
+    },
+    {
+      "question": "Will a smart thermostat work with my HVAC system?",
+      "answer": "Most smart thermostats work with common HVAC systems: central AC, heat pumps, furnaces, and many multi-stage systems. Some very old systems, high-voltage systems (like baseboard heat), and some proprietary HVAC equipment may have compatibility limitations. We verify compatibility before installation."
+    },
+    {
+      "question": "How much can I save with a smart thermostat?",
+      "answer": "Studies show 10-15% HVAC energy savings from smart thermostats. In Florida where AC accounts for a large portion of electricity bills, this translates to meaningful monthly savings. Exact savings depend on your current habits and home efficiency."
+    },
+    {
+      "question": "Can smart thermostats be controlled by voice?",
+      "answer": "Yes! All major smart thermostats integrate with Amazon Alexa, Google Home, and most work with Apple HomeKit. You can say 'Alexa, set the temperature to 74' or 'Hey Google, turn on AC.' We configure voice assistant integration during installation."
+    },
+    {
+      "question": "What if my power goes out?",
+      "answer": "Smart thermostats typically have battery backup that maintains settings during outages. When power returns, they reconnect to WiFi and resume normal operation. Your schedule and preferences aren't lost during power disruptions."
+    },
+    {
+      "question": "Can I install a smart thermostat myself?",
+      "answer": "While some handy homeowners can handle basic installation, professional installation ensures: proper wiring (including C-wire installation if needed), correct HVAC configuration, complete app and voice setup, and verification that all heating/cooling modes work correctly. DIY mistakes can damage HVAC equipment or void warranties."
+    },
+    {
+      "question": "Do smart thermostats work with multi-zone systems?",
+      "answer": "Yes. Homes with multiple AC zones need a thermostat for each zone. We install and configure multi-thermostat setups where multiple smart thermostats work together, often controlled through a single app. Ecobee and Nest both support this configuration well."
+    }
+  ],
+  "relatedServices": [
+    "smart-switch-home-automation",
+    "ring-doorbell-security-camera-wiring",
+    "home-theater-low-voltage-wiring",
+    "smart-lighting-installation"
+  ],
+  "seoContent": [
+    {
+      "heading": "Smart Thermostat Installation in Miami & South Florida",
+      "body": "Take control of your Florida cooling costs with professional smart thermostat installation from Solomon Electric. We install Nest, Ecobee, Honeywell, and all major brands, ensuring proper wiring including C-wire installation when needed. Complete app setup and voice assistant integration means your smart thermostat works perfectly from day one."
+    },
+    {
+      "heading": "C-Wire Installation for Smart Thermostats",
+      "body": "Many older homes lack the common wire (C-wire) that powers most smart thermostats. We can run a C-wire from your air handler to the thermostat location, install a C-wire adapter, or recommend thermostats that work without C-wires. Professional installation solves the #1 DIY smart thermostat challenge."
+    },
+    {
+      "heading": "Energy Savings in Florida's Climate",
+      "body": "With AC running 8+ months per year, Florida homeowners see significant returns from smart thermostat efficiency. Learning schedules, remote control, and optimized operation typically reduce HVAC energy use by 10-15%—meaningful savings that add up over Florida's long cooling season."
+    },
+    {
+      "heading": "Expert Installation Throughout South Florida",
+      "body": "Solomon Electric installs smart thermostats throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-thermostat installations to multi-zone smart home integration, we deliver professional installation with complete setup and training."
+    }
+  ],
+  "relatedBlogPosts": []
+}

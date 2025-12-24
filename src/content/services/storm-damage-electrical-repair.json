@@ -1,0 +1,182 @@
+{
+  "name": "Storm Damage Electrical Repair",
+  "slug": "storm-damage-electrical-repair",
+  "description": "When hurricanes, tropical storms, or severe weather damages your electrical system, you need fast, professional repairs to restore safety and power. Solomon Electric provides emergency storm damage electrical repair throughout South Florida—addressing downed service lines, damaged panels, flooded equipment, and all electrical hazards that storms leave behind. We coordinate with FPL and help you navigate insurance claims.",
+  "shortDescription": "Emergency electrical storm response",
+  "icon": "Zap",
+  "image": "../../assets/images/services/emergency.png",
+  "category": "Emergency Electrical Services",
+  "order": 10,
+  "features": [
+    "Post-hurricane electrical assessment",
+    "Damaged panel and meter repair",
+    "Service entrance reconstruction",
+    "Flooded equipment evaluation",
+    "FPL coordination for reconnection",
+    "Insurance documentation support"
+  ],
+  "warningSignsHeading": "Post-Storm Electrical Hazards",
+  "warningSignsSubheading": "After any significant storm, your electrical system may have hidden damage. Watch for these danger signs.",
+  "problems": [
+    {
+      "title": "Downed or Damaged Service Lines",
+      "description": "If the power lines from the pole to your home are down or damaged, you need licensed electrical work before FPL will restore service. We repair weather heads and service entrances.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Water in Electrical Equipment",
+      "description": "Flooding, even minimal water intrusion into panels, outlets, or equipment, can cause immediate short circuits or delayed corrosion failures. All affected equipment must be inspected.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Generator Back-Feed Issues",
+      "description": "Improper portable generator connections during outages can create dangerous back-feed onto power lines or damage equipment when utility power returns.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Surge Damage from Lightning",
+      "description": "Storm lightning can damage electronics, HVAC controls, and appliances even without direct strikes. Post-storm equipment failures often indicate surge damage.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Partial Power After Storm",
+      "description": "If only some circuits work after power restoration, you may have internal electrical damage from the storm or utility issues that need professional diagnosis.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Burning Smell or Sparking",
+      "description": "Any burning odor or visible sparking after a storm indicates active electrical damage that could cause fire. Shut off power immediately and call for emergency service.",
+      "icon": "Home"
+    }
+  ],
+  "processHeading": "Our Storm Damage Response",
+  "process": [
+    {
+      "step": 1,
+      "title": "Safety Assessment",
+      "description": "We ensure the immediate area is safe, identify any electrocution hazards from downed lines or damaged equipment, and determine whether power should remain off."
+    },
+    {
+      "step": 2,
+      "title": "Damage Documentation",
+      "description": "We photograph and document all storm damage for your insurance claim, noting affected equipment, visible damage, and repairs needed."
+    },
+    {
+      "step": 3,
+      "title": "Emergency Repairs",
+      "description": "We perform priority repairs to eliminate hazards and enable power restoration—service entrance repairs, panel work, and replacement of dangerous damaged components."
+    },
+    {
+      "step": 4,
+      "title": "FPL Coordination",
+      "description": "We coordinate with Florida Power & Light for service reconnection, ensuring our repairs pass inspection requirements and scheduling power restoration."
+    },
+    {
+      "step": 5,
+      "title": "Full Restoration",
+      "description": "Once emergency repairs are complete, we address remaining damage—replacing damaged circuits, outlets, and equipment to fully restore your electrical system."
+    }
+  ],
+  "benefitsHeading": "Why Choose Solomon Electric for Storm Recovery",
+  "benefits": [
+    {
+      "title": "Rapid Emergency Response",
+      "description": "We prioritize storm damage calls, understanding that Florida families need power restored quickly—especially for medical needs, food preservation, and cooling.",
+      "icon": "Zap"
+    },
+    {
+      "title": "FPL Reconnection Expertise",
+      "description": "We know exactly what FPL requires for service restoration and can expedite the process with proper repairs and inspection coordination.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Insurance Claim Support",
+      "description": "Proper documentation is critical for insurance claims. We provide detailed damage reports, photographs, and repair estimates that support your claim.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Complete Restoration",
+      "description": "Beyond emergency repairs, we can fully restore your electrical system—replacing damaged circuits, updating outdated equipment, and even adding storm protection for the future.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "200+",
+      "label": "Storm Repairs"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Response"
+    },
+    {
+      "value": "15+",
+      "label": "Hurricanes Survived"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What should I do immediately after a storm damages my electrical system?",
+      "answer": "If you see downed power lines, smell burning, see sparking, or suspect water in electrical equipment, don't touch anything—turn off your main breaker if safe to do so and call for emergency electrical service. Never approach downed lines or attempt repairs yourself. Call Solomon Electric for emergency assessment."
+    },
+    {
+      "question": "Will FPL restore power if my service entrance is damaged?",
+      "answer": "No. FPL will not restore power to homes with damaged weather heads, service entrances, or meter bases. You need a licensed electrician to repair this equipment and often need a passing inspection before FPL will reconnect service. We handle these repairs and coordinate with FPL."
+    },
+    {
+      "question": "Does homeowner's insurance cover storm electrical damage?",
+      "answer": "Most policies cover storm-related electrical damage including service entrance repairs, panel damage, and surge-damaged equipment. Documentation is critical—we photograph all damage and provide detailed repair estimates for your insurance claim. Specific coverage varies by policy."
+    },
+    {
+      "question": "Can flooded electrical equipment be saved?",
+      "answer": "It depends. Some equipment can be dried, cleaned, and restored. However, panels and outlets that have been submerged typically need replacement—internal components corrode quickly even after drying. We assess each piece of equipment and recommend repair or replacement based on actual condition."
+    },
+    {
+      "question": "How long does storm damage repair take?",
+      "answer": "Emergency repairs to restore power often complete in one day. Full restoration of all damaged circuits and equipment may take longer depending on damage extent and material availability. After major hurricanes, material shortages can extend timelines—we maintain storm inventory to minimize delays."
+    },
+    {
+      "question": "Should I run my generator until power is restored?",
+      "answer": "Portable generators must be properly connected—never through standard outlets which cause dangerous back-feed. If you don't have a transfer switch, we can install one. For post-storm generator safety, keep generators outdoors (carbon monoxide kills), and don't operate in wet conditions."
+    },
+    {
+      "question": "What if only half my house has power after the storm?",
+      "answer": "Partial power can indicate several issues: one leg of your service is interrupted, individual circuit damage, or a problem with your panel. This requires professional diagnosis—the cause determines whether you're waiting for FPL or need electrician repairs."
+    },
+    {
+      "question": "How can I prepare my electrical system for future storms?",
+      "answer": "We recommend: whole-home surge protection (for lightning), properly installed transfer switch (for generator), secured weather head and service entrance, and tree trimming away from service lines. We can assess your system's storm vulnerability and recommend improvements."
+    }
+  ],
+  "relatedServices": [
+    "24-7-emergency-electrical-service",
+    "power-outage-emergency-response",
+    "whole-home-surge-protection",
+    "portable-generator-hookup"
+  ],
+  "seoContent": [
+    {
+      "heading": "Hurricane & Storm Electrical Repair in South Florida",
+      "body": "Hurricane season brings annual risk to South Florida electrical systems. Downed service lines, flooded panels, lightning damage, and wind-damaged equipment leave homes without power and facing serious safety hazards. Solomon Electric provides emergency storm damage electrical repair throughout Miami-Dade and Broward counties, helping families restore safe power as quickly as possible."
+    },
+    {
+      "heading": "Getting FPL Power Restored After Storm Damage",
+      "body": "FPL cannot restore power to homes with damaged service entrances, weather heads, or meter bases—you need a licensed electrician first. We specialize in the repairs FPL requires: service entrance reconstruction, meter base replacement, and the inspection coordination needed for power reconnection. Our storm response team knows exactly what's needed to expedite your restoration."
+    },
+    {
+      "heading": "Insurance Documentation for Storm Claims",
+      "body": "Proper documentation protects your insurance claim. Solomon Electric photographs all storm damage, provides detailed damage assessments, and supplies repair estimates in formats insurance adjusters expect. We can work directly with your adjuster if helpful and ensure you receive complete documentation for claim support."
+    },
+    {
+      "heading": "Serving South Florida Through Every Storm",
+      "body": "With over 15 years serving South Florida, Solomon Electric has helped homeowners recover from hurricanes, tropical storms, and severe weather events. We maintain storm inventory, have relationships with suppliers, and scale up response capacity during major events. When storms hit Miami, Fort Lauderdale, Hollywood, Pembroke Pines, and surrounding communities, we're ready."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

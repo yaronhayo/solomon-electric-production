@@ -1,0 +1,99 @@
+{
+    "name": "Jupiter",
+    "slug": "jupiter",
+    "county": "Palm Beach",
+    "description": "Licensed Jupiter electricians providing premier residential and commercial services. From luxury waterfront estates to commercial support near the Jupiter Inlet, Solomon Electric is your trusted choice.",
+    "population": "65,000+",
+    "founded": "1925",
+    "areaSquareMiles": "21",
+    "tagline": "Uniquely Jupiter",
+    "landmarks": [
+        "Jupiter Inlet Lighthouse & Museum",
+        "Carlin Park",
+        "Abacoa Town Center",
+        "Roger Dean Chevrolet Stadium",
+        "Loxahatchee River"
+    ],
+    "neighborhoods": [
+        "Abacoa",
+        "Jupiter Farms",
+        "The Bluffs",
+        "Admiral's Cove",
+        "Jupiter Bay",
+        "Evergrene"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Florida Turnpike",
+        "Indiantown Road",
+        "US-1",
+        "Donald Ross Road"
+    ],
+    "coordinates": {
+        "lat": 26.9342,
+        "lng": -80.0942
+    },
+    "challenges": [
+        {
+            "title": "Waterfront Estate Distribution",
+            "description": "Jupiter's premier estates on the Loxahatchee River and Inlet require high-capacity electrical systems, specialized multi-panel setups, and advanced marine-grade outdoor lighting.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Jupiter Farms Rural Power",
+            "description": "Properties in the Farms often require specialized wiring for large acreages, outbuildings, sophisticated well-pump systems, and robust generator backup readiness.",
+            "icon": "Shield"
+        },
+        {
+            "title": "Storm Surge Resilience",
+            "description": "Jupiter's northern coastal location makes it a target for powerful seasonal storms. We emphasize whole-home surge protection and weather-resistant infrastructure.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "landscape-outdoor-lighting",
+        "whole-home-surge-protection",
+        "home-standby-generator-installation",
+        "smart-home-automation",
+        "24-7-emergency-electrical-service",
+        "electrical-panel-upgrade-100a-to-200a"
+    ],
+    "stats": [
+        {
+            "value": "65K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you offer electrical services for homes in Jupiter Farms?",
+            "answer": "Yes, we are experts in the unique electrical needs of Jupiter Farms properties, including outbuilding power, large-scale site lighting, and backup generator systems."
+        },
+        {
+            "question": "Can you handle high-end electrical projects in Admiral's Cove?",
+            "answer": "Absolutely. We specialize in luxury estate electrical work, providing high-capacity service and sophisticated lighting design for Jupiter's premier waterfront communities."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Premier Jupiter Electricians – Uniquely Professional",
+            "body": "Jupiter is a town like no other, balancing beautiful natural waterways with a sophisticated lifestyle. From the historic lighthouse to the vibrant Abacoa community, it's a place that values quality and durability. Solomon Electric is proud to provide the licensed expertise that Jupiter's homeowners and businesses count on."
+        },
+        {
+            "heading": "Reliable Electrical Care for the Jupiter Community",
+            "body": "Whether you're modernizing a beach house in The Bluffs, upgrading a professional office in Abacoa Town Center, or needing storm-ready protection in Jupiter Farms, our team is ready to serve. we provide upfront pricing, clean workmanship, and a dedication to safety that has been our hallmark for 15 years."
+        }
+    ]
+}

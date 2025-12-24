@@ -22,8 +22,8 @@ const {
 
 // Base styles for all buttons
 const baseStyles =
-  "inline-flex items-center justify-center font-manrope font-semibold uppercase transition-all duration-300 transform hover:-translate-y-0.5 group relative overflow-hidden";
-const shadowStyle = "drop-shadow-[5px_5px_20px_rgba(13,67,128,0.1)]";
+  "inline-flex items-center justify-center font-secondary font-bold uppercase transition-all duration-[var(--transition-base)] group relative overflow-hidden magnetic-cta";
+const shadowStyle = "hover:shadow-[var(--shadow-brand)]";
 
 const sizes = {
   lg: "h-[56px] px-8 text-[18px]",
@@ -34,23 +34,24 @@ const sizes = {
 // Variant styles matching Figma (Colors & Clip Path only)
 const variants = {
   primary: `
-    bg-accent text-light
-    hover:bg-primary hover:text-white
-    leading-[1.5] font-bold
-    [clip-path:polygon(15px_0%,100%_0%,calc(100%_-_15px)_100%,0%_100%)]
+    bg-gradient-to-r from-accent to-[#0ab8c7] text-[#082a4d]
+    hover:from-primary hover:to-[#0a3060] hover:text-white
+    leading-[1.5] shimmer-authority
+    [clip-path:polygon(12px_0%,100%_0%,calc(100%_-_12px)_100%,0%_100%)]
   `,
   secondary: `
-    bg-primary text-white
-    hover:bg-accent hover:text-light
-    leading-[1.5] font-bold
-    [clip-path:polygon(15px_0%,100%_0%,calc(100%_-_15px)_100%,0%_100%)]
+    bg-primary text-white border-2 border-accent/30
+    hover:bg-accent hover:text-primary hover:border-accent
+    leading-[1.5]
+    [clip-path:polygon(12px_0%,100%_0%,calc(100%_-_12px)_100%,0%_100%)]
   `,
   icon: `
-    bg-accent text-white
-    hover:bg-primary
+    bg-accent text-[#082a4d]
+    hover:bg-primary hover:text-white
     !px-0 w-[44px] h-[44px] flex items-center justify-center
     text-[18px]
-    rounded-full
+    rounded-[var(--radius-full)]
+    shimmer-authority
   `,
 };
 

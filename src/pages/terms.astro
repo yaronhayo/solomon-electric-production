@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/ui/Container.astro";
+import { SITE_CONFIG } from "../config/site";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+// Use Eastern Time (Florida) for build-time dates
+const lastUpdated = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "America/New_York",
+});
+---
+
+<Layout
+    title="Terms of Service - Solomon Electric"
+    description="Terms of Service for Solomon Electric. Please read these terms carefully before using our website."
+    noindex={true}
+>
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb
+        items={[{ label: "Home", href: "/" }, { label: "Terms of Service" }]}
+    />
+
+    <!-- Header -->
+    <div class="bg-primary py-12 md:py-20">
+        <Container>
+            <h1
+                class="text-3xl md:text-5xl font-black text-white uppercase text-center"
+            >
+                Terms of Service
+            </h1>
+            <p class="text-gray-300 text-center mt-4">
+                Last Updated: {lastUpdated}
+            </p>
+        </Container>
+    </div>
+
+    <!-- Content -->
+    <section class="py-16 bg-white">
+        <Container>
+            <div
+                class="prose prose-lg max-w-4xl mx-auto text-[var(--text-body)]"
+            >
+                <h2>1. Acceptance of the Terms of Use</h2>
+                <p>
+                    These terms of use are entered into by and between You and
+                    Solomon Electric ("Company," "we," or "us"). The following
+                    terms and conditions govern your access to and use of {
+                        SITE_CONFIG.seo.siteUrl
+                    }.
+                </p>
+                <p>
+                    By using the Website, you accept and agree to be bound and
+                    abide by these Terms of Use. If you do not want to agree to
+                    these Terms of Use, you must not access or use the Website.
+                </p>
+
+                <h2>2. Services</h2>
+                <p>
+                    Solomon Electric provides electrical contractor services in
+                    the State of Florida (License EC13012419). All services
+                    provided are subject to a separate service agreement or
+                    contract between you and the Company. Requesting a quote or
+                    service through this Website does not create a binding
+                    contract for services until confirmed by our team.
+                </p>
+
+                <h2>3. Intellectual Property Rights</h2>
+                <p>
+                    The Website and its entire contents, features, and
+                    functionality (including but not limited to all information,
+                    software, text, displays, images, video, and audio, and the
+                    design, selection, and arrangement thereof) are owned by the
+                    Company, its licensors, or other providers of such material
+                    and are protected by United States and international
+                    copyright, trademark, patent, trade secret, and other
+                    intellectual property or proprietary rights laws.
+                </p>
+
+                <h2>4. Prohibited Uses</h2>
+                <p>
+                    You may use the Website only for lawful purposes and in
+                    accordance with these Terms of Use. You agree not to use the
+                    Website:
+                </p>
+                <ul>
+                    <li>
+                        In any way that violates any applicable federal, state,
+                        local, or international law or regulation.
+                    </li>
+                    <li>
+                        To transmit, or procure the sending of, any advertising
+                        or promotional material, including any "junk mail,"
+                        "chain letter," "spam," or any other similar
+                        solicitation.
+                    </li>
+                    <li>
+                        To impersonate or attempt to impersonate the Company, a
+                        Company employee, another user, or any other person or
+                        entity.
+                    </li>
+                </ul>
+
+                <h2>5. Disclaimer of Warranties</h2>
+                <p>
+                    YOUR USE OF THE WEBSITE IS AT YOUR OWN RISK. THE WEBSITE IS
+                    PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY
+                    WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+                </p>
+
+                <h2>6. Limitation on Liability</h2>
+                <p>
+                    TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO EVENT WILL THE
+                    COMPANY, ITS AFFILIATES, OR THEIR LICENSORS, SERVICE
+                    PROVIDERS, EMPLOYEES, AGENTS, OFFICERS, OR DIRECTORS BE
+                    LIABLE FOR DAMAGES OF ANY KIND, UNDER ANY LEGAL THEORY,
+                    ARISING OUT OF OR IN CONNECTION WITH YOUR USE, OR INABILITY
+                    TO USE, THE WEBSITE.
+                </p>
+
+                <h2>7. Governing Law</h2>
+                <p>
+                    All matters relating to the Website and these Terms of Use,
+                    and any dispute or claim arising therefrom or related
+                    thereto, shall be governed by and construed in accordance
+                    with the internal laws of the State of Florida without
+                    giving effect to any choice or conflict of law provision or
+                    rule.
+                </p>
+
+                <h2>8. Contact Information</h2>
+                <p>
+                    This website is operated by Solomon Electric. All feedback,
+                    comments, requests for technical support, and other
+                    communications relating to the Website should be directed
+                    to:
+                </p>
+                <p>
+                    <strong>Solomon Electric</strong><br />
+                    Email: {SITE_CONFIG.contact.email.primary}<br />
+                    Phone: {SITE_CONFIG.contact.phone.formatted}
+                </p>
+            </div>
+        </Container>
+    </section>
+</Layout>

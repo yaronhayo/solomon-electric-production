@@ -1,0 +1,180 @@
+{
+  "name": "Motion Sensor & Dimmer Installation",
+  "slug": "motion-sensor-dimmer-installation",
+  "description": "Add convenience, energy savings, and enhanced functionality to your lighting with motion sensor switches and dimmer installation. Solomon Electric installs occupancy sensors that automatically control lights, plus dimmer switches that adjust brightness for any occasion—from bright task lighting to relaxing ambiance.",
+  "shortDescription": "Smart lighting controls",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 23,
+  "features": [
+    "Occupancy sensor switches",
+    "Vacancy sensor switches",
+    "LED-compatible dimmer installation",
+    "Multi-location dimmer systems",
+    "Timer switches",
+    "Daylight harvesting sensors"
+  ],
+  "warningSignsHeading": "When Motion Sensors and Dimmers Make Sense",
+  "warningSignsSubheading": "These smart controls add convenience and savings to everyday lighting. Here's when they're the right choice.",
+  "problems": [
+    {
+      "title": "Lights Left On Constantly",
+      "description": "Family members forgetting to turn off lights wastes energy. Occupancy sensors ensure lights turn off automatically when rooms are empty.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Hands Full in Doorways",
+      "description": "Carrying laundry, groceries, or a sleeping child? Motion sensors turn lights on automatically—no fumbling for switches in the dark.",
+      "icon": "Home"
+    },
+    {
+      "title": "Want Ambiance Control",
+      "description": "Full brightness isn't appropriate for every occasion. Dimmers let you set the perfect light level for dining, movies, or relaxation.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Bathroom Exhaust Fan Control",
+      "description": "Timer switches for bathroom fans ensure moisture is removed without running fans all day. They turn off automatically after set periods.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Closet Lights Always On",
+      "description": "Closets are perfect for occupancy sensors—lights come on when you enter, off when you leave. No more closet lights burning for hours.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Security When Away",
+      "description": "Vacancy sensors turn lights OFF when you leave but require manual ON—signaling when your home appears occupied to deter intruders.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Application Assessment",
+      "description": "We discuss your goals for each location—automatic control, dimming, timer function—and recommend the appropriate sensor or dimmer type."
+    },
+    {
+      "step": 2,
+      "title": "Compatibility Verification",
+      "description": "We verify your existing wiring supports the desired controls and ensure dimmers are compatible with your specific bulb types."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "We install switches with proper wiring, secure mounting, and settings appropriate for each application."
+    },
+    {
+      "step": 4,
+      "title": "Sensitivity and Timer Adjustment",
+      "description": "We adjust motion sensor sensitivity, coverage area, and time delays to match your preferences and eliminate unwanted activations."
+    },
+    {
+      "step": 5,
+      "title": "Demonstration",
+      "description": "We show you how each control works, including any adjustment features for future fine-tuning."
+    }
+  ],
+  "benefitsHeading": "Benefits of Smart Lighting Controls",
+  "benefits": [
+    {
+      "title": "Automatic Energy Savings",
+      "description": "Occupancy sensors eliminate lights left on in empty rooms. Typical households see 30-60% reduction in lighting energy with proper sensor placement.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Hands-Free Convenience",
+      "description": "Motion sensors mean never fumbling for switches with full hands or in the dark. Lights just work when and where you need them.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Perfect Ambiance",
+      "description": "Dimmers let you set exactly the right light level for any activity—bright for tasks, dim for relaxation, low for nighttime navigation.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Extended Bulb Life",
+      "description": "Dimmed lights last longer than full-brightness operation. LEDs dimmed to 50% can last twice as long—additional savings beyond energy reduction.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "60%",
+      "label": "Potential Energy Savings"
+    },
+    {
+      "value": "500+",
+      "label": "Controls Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's the difference between occupancy and vacancy sensors?",
+      "answer": "Occupancy sensors turn lights ON automatically when you enter and OFF when you leave. Vacancy sensors require manual ON (you flip the switch) but turn OFF automatically when you leave. Vacancy sensors are often preferred for bedrooms and living areas where you want control over when lights come on."
+    },
+    {
+      "question": "Will motion sensors work with my existing light fixtures?",
+      "answer": "Yes. Motion sensor switches replace your wall switch and work with any fixture. They're rated for specific total wattages—we ensure your fixture load is within the switch rating. LED lighting works perfectly with modern occupancy sensors."
+    },
+    {
+      "question": "Why don't all LED bulbs work with dimmers?",
+      "answer": "LED bulbs contain drivers (electronics) that must be designed for dimming. Non-dimmable LEDs can flicker, buzz, or fail with dimmers. Always use bulbs marked 'dimmable' with dimmer switches—and use dimmers rated for LED loads. We can recommend compatible combinations."
+    },
+    {
+      "question": "My dimmer buzzes—what's wrong?",
+      "answer": "Buzzing typically indicates incompatibility between the dimmer and bulbs. Common causes: old-style dimmers with LED bulbs, dimmers operating near minimum load, or incompatible LED drivers. The solution is usually replacing the dimmer with one designed for your specific bulb type."
+    },
+    {
+      "question": "Can motion sensors be adjusted?",
+      "answer": "Yes. Most occupancy sensors have adjustments for sensitivity (how much motion triggers them), time delay (how long lights stay on after motion stops), and sometimes ambient light (preventing daytime activation). We set these during installation and can show you how to adjust them later."
+    },
+    {
+      "question": "Will motion sensors activate from pet movement?",
+      "answer": "PIR (passive infrared) sensors can detect larger pets, especially if they're close to the sensor or furniture. Ceiling-mounted sensors and adjustable sensitivity settings help minimize pet triggers. We can position sensors and adjust settings to reduce unwanted activations."
+    },
+    {
+      "question": "Can you install dimmers for ceiling fans?",
+      "answer": "Regular dimmers should never be used with ceiling fans—they damage fan motors. Fan speed controls are specifically designed for fans. We install appropriate controls: dimmers for lights only, fan controls for fans, or combination units that control both independently."
+    },
+    {
+      "question": "How much do motion sensors save on electricity?",
+      "answer": "Savings depend on how often lights were left on unnecessarily. In areas where lights run frequently when unoccupied (closets, bathrooms, garages), sensors can reduce lighting energy by 30-60%. The savings typically pay for the sensors within 1-2 years."
+    }
+  ],
+  "relatedServices": [
+    "light-switch-installation-replacement",
+    "smart-switch-home-automation",
+    "recessed-lighting-installation",
+    "led-lighting-retrofit-conversion"
+  ],
+  "seoContent": [
+    {
+      "heading": "Motion Sensor & Dimmer Installation in South Florida",
+      "body": "Add convenience and energy savings to your South Florida home with professional motion sensor and dimmer installation from Solomon Electric. We install occupancy sensors that eliminate lights left on in empty rooms, plus dimmer switches that provide perfect ambiance control for any occasion."
+    },
+    {
+      "heading": "LED-Compatible Dimmer Switches",
+      "body": "Modern LED lighting requires dimmers designed for LED loads. We install dimmer switches matched to your specific bulbs, eliminating the flickering and buzzing that occurs with incompatible combinations. Proper dimmer selection ensures smooth, quiet operation across the full brightness range."
+    },
+    {
+      "heading": "Occupancy Sensors for Energy Savings",
+      "body": "Stop wasting electricity on lights in empty rooms. Occupancy sensors in closets, bathrooms, laundry rooms, and garages ensure lights turn off automatically when you leave. Typical installations reduce lighting energy consumption by 30-60%—savings that pay for themselves quickly."
+    },
+    {
+      "heading": "Professional Installation Throughout South Florida",
+      "body": "Solomon Electric installs motion sensors and dimmers throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. From single switch installations to whole-home lighting control upgrades, we provide professional installation with proper configuration."
+    }
+  ],
+  "relatedBlogPosts": []
+}

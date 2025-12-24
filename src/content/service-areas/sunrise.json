@@ -1,0 +1,97 @@
+{
+    "name": "Sunrise",
+    "slug": "sunrise",
+    "county": "Broward",
+    "description": "Licensed Sunrise electricians providing expert residential and commercial electrical services. From Sawgrass Mills commercial support to residential panel upgrades, Solomon Electric is your trusted local choice.",
+    "population": "95,000+",
+    "founded": "1961",
+    "areaSquareMiles": "18",
+    "tagline": "The City of Sunrise",
+    "landmarks": [
+        "Sawgrass Mills Mall",
+        "Amerant Bank Arena",
+        "Sunrise Civic Center",
+        "Welleby Park"
+    ],
+    "neighborhoods": [
+        "Welleby",
+        "Sawgrass",
+        "Sunrise Lakes",
+        "Springtree",
+        "Nob Hill"
+    ],
+    "majorRoads": [
+        "Sawgrass Expressway (SR 869)",
+        "I-75",
+        "I-595",
+        "Sunrise Boulevard",
+        "Oakland Park Boulevard"
+    ],
+    "coordinates": {
+        "lat": 26.1332,
+        "lng": -80.2662
+    },
+    "challenges": [
+        {
+            "title": "Major Commercial Power Support",
+            "description": "Supporting one of the largest malls in the country requires electricians who understand high-capacity retail and commercial electrical needs and emergency response.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Aging Suburban Wiring",
+            "description": "Homes built during Sunrise's original growth periods may have outdated panels or Federal Pacific breakers that need professional replacement for safety.",
+            "icon": "AlertTriangle"
+        },
+        {
+            "title": "Severe Weather Readiness",
+            "description": "Sunrise's central location makes it a target for summer storm surges. We prioritize whole-home surge protection to guard your property's sensitive electronics.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "whole-home-surge-protection",
+        "24-7-emergency-electrical-service",
+        "commercial-led-lighting-retrofit",
+        "recessed-lighting-installation",
+        "ev-charging-system-setup"
+    ],
+    "stats": [
+        {
+            "value": "95K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you offer emergency electrical repairs for Sunrise residents?",
+            "answer": "Yes, we provide 24/7 emergency electrical service to all Sunrise neighborhoods, including Welleby, Springtree, and the Sawgrass area."
+        },
+        {
+            "question": "Can you handle commercial electrical for Sunrise businesses?",
+            "answer": "Absolutely. We serve the extensive commercial districts surrounding Sawgrass Mills and major corporate hubs with tenant build-outs, maintenance, and emergency service."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Sunrise's Trusted Licensed Electricians",
+            "body": "Sunrise is a dynamic city that serves as a cornerstone of the Broward County community. From the family-friendly parks of Welleby to the world-class shopping at Sawgrass Mills, Sunrise requires a high standard of professional electrical care. Solomon Electric is proud to be a trusted provider for our Sunrise neighbors for over 15 years."
+        },
+        {
+            "heading": "Excellence in Electrical Care for Sunrise Families",
+            "body": "Whether you're upgrading the lighting in your Sunrise home, requiring an urgent panel replacement, or needing the peace of mind of a whole-home surge protector, our team is ready to help. We provide upfront pricing, clean workmanship, and a dedication to safety that Sunrise families can rely on."
+        }
+    ]
+}

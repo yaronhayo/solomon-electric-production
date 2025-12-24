@@ -1,0 +1,791 @@
+---
+import { SITE_CONFIG } from "../config/site";
+import { Map, MapPin, Zap } from "lucide-astro";
+
+const miamiDadeLink = `/service-areas/miami`;
+const browardLink = `/service-areas/fort-lauderdale`;
+const palmBeachLink = `/service-areas/west-palm-beach`;
+
+// City coordinates for markers
+const cityMarkers = [
+    // Miami-Dade County
+    {
+        name: "Miami",
+        lat: 25.7617,
+        lng: -80.1918,
+        county: "miami-dade",
+        link: "/service-areas/miami",
+    },
+    {
+        name: "Miami Beach",
+        lat: 25.7907,
+        lng: -80.13,
+        county: "miami-dade",
+        link: "/service-areas/miami-beach",
+    },
+    {
+        name: "Hialeah",
+        lat: 25.8576,
+        lng: -80.2781,
+        county: "miami-dade",
+        link: "/service-areas/hialeah",
+    },
+    {
+        name: "Miami Gardens",
+        lat: 25.942,
+        lng: -80.2456,
+        county: "miami-dade",
+        link: "/service-areas/miami-gardens",
+    },
+    {
+        name: "North Miami",
+        lat: 25.89,
+        lng: -80.1867,
+        county: "miami-dade",
+        link: "/service-areas/north-miami",
+    },
+    {
+        name: "Homestead",
+        lat: 25.4687,
+        lng: -80.4776,
+        county: "miami-dade",
+        link: "/service-areas/homestead",
+    },
+
+    // Broward County
+    {
+        name: "Fort Lauderdale",
+        lat: 26.1224,
+        lng: -80.1373,
+        county: "broward",
+        link: "/service-areas/fort-lauderdale",
+    },
+    {
+        name: "Hollywood",
+        lat: 26.0112,
+        lng: -80.1495,
+        county: "broward",
+        link: "/service-areas/hollywood",
+    },
+    {
+        name: "Pembroke Pines",
+        lat: 26.0128,
+        lng: -80.3137,
+        county: "broward",
+        link: "/service-areas/pembroke-pines",
+    },
+    {
+        name: "Miramar",
+        lat: 25.986,
+        lng: -80.3035,
+        county: "broward",
+        link: "/service-areas/miramar",
+    },
+    {
+        name: "Coral Springs",
+        lat: 26.2712,
+        lng: -80.2706,
+        county: "broward",
+        link: "/service-areas/coral-springs",
+    },
+    {
+        name: "Pompano Beach",
+        lat: 26.2379,
+        lng: -80.1248,
+        county: "broward",
+        link: "/service-areas/pompano-beach",
+    },
+    {
+        name: "Davie",
+        lat: 26.0765,
+        lng: -80.2521,
+        county: "broward",
+        link: "/service-areas/davie",
+    },
+    {
+        name: "Plantation",
+        lat: 26.1276,
+        lng: -80.2331,
+        county: "broward",
+        link: "/service-areas/plantation",
+    },
+    {
+        name: "Sunrise",
+        lat: 26.167,
+        lng: -80.2563,
+        county: "broward",
+        link: "/service-areas/sunrise",
+    },
+    {
+        name: "Weston",
+        lat: 26.1004,
+        lng: -80.3998,
+        county: "broward",
+        link: "/service-areas/weston",
+    },
+    {
+        name: "Deerfield Beach",
+        lat: 26.3184,
+        lng: -80.0998,
+        county: "broward",
+        link: "/service-areas/deerfield-beach",
+    },
+    {
+        name: "Coconut Creek",
+        lat: 26.2518,
+        lng: -80.1789,
+        county: "broward",
+        link: "/service-areas/coconut-creek",
+    },
+    {
+        name: "Tamarac",
+        lat: 26.2128,
+        lng: -80.2498,
+        county: "broward",
+        link: "/service-areas/tamarac",
+    },
+    {
+        name: "Margate",
+        lat: 26.2445,
+        lng: -80.2064,
+        county: "broward",
+        link: "/service-areas/margate",
+    },
+    {
+        name: "Lauderhill",
+        lat: 26.1423,
+        lng: -80.2134,
+        county: "broward",
+        link: "/service-areas/lauderhill",
+    },
+
+    // Palm Beach County
+    {
+        name: "West Palm Beach",
+        lat: 26.7153,
+        lng: -80.0534,
+        county: "palm-beach",
+        link: "/service-areas/west-palm-beach",
+    },
+    {
+        name: "Boca Raton",
+        lat: 26.3587,
+        lng: -80.0831,
+        county: "palm-beach",
+        link: "/service-areas/boca-raton",
+    },
+    {
+        name: "Boynton Beach",
+        lat: 26.5254,
+        lng: -80.0662,
+        county: "palm-beach",
+        link: "/service-areas/boynton-beach",
+    },
+    {
+        name: "Delray Beach",
+        lat: 26.4615,
+        lng: -80.0728,
+        county: "palm-beach",
+        link: "/service-areas/delray-beach",
+    },
+    {
+        name: "Jupiter",
+        lat: 26.9342,
+        lng: -80.0942,
+        county: "palm-beach",
+        link: "/service-areas/jupiter",
+    },
+    {
+        name: "Wellington",
+        lat: 26.6618,
+        lng: -80.2684,
+        county: "palm-beach",
+        link: "/service-areas/wellington",
+    },
+];
+
+// County boundary coordinates (simplified polygons)
+// Optimized to match the stylized look of Group-9.jpg
+const countyBoundaries = {
+    "miami-dade": {
+        color: "#14D3E3", // Solomon Cyan
+        borderColor: "#FFFFFF",
+        center: { lat: 25.7617, lng: -80.1918 },
+        zoom: 10,
+        coords: [
+            { lat: 25.979, lng: -80.87 },
+            { lat: 25.979, lng: -80.1 },
+            { lat: 25.35, lng: -80.1 },
+            { lat: 25.35, lng: -80.87 },
+        ],
+    },
+    broward: {
+        color: "#14D3E3", // Solomon Cyan
+        borderColor: "#FFFFFF",
+        center: { lat: 26.1224, lng: -80.2373 },
+        zoom: 10,
+        coords: [
+            { lat: 26.33, lng: -80.87 },
+            { lat: 26.33, lng: -80.05 },
+            { lat: 25.979, lng: -80.05 },
+            { lat: 25.979, lng: -80.87 },
+        ],
+    },
+    "palm-beach": {
+        color: "#14D3E3", // Solomon Cyan
+        borderColor: "#FFFFFF",
+        center: { lat: 26.7153, lng: -80.1534 },
+        zoom: 10,
+        coords: [
+            { lat: 27.03, lng: -80.87 },
+            { lat: 27.03, lng: -80.0 },
+            { lat: 26.33, lng: -80.0 },
+            { lat: 26.33, lng: -80.87 },
+        ],
+    },
+};
+
+// Default view showing all counties
+const defaultCenter = { lat: 26.15, lng: -80.25 };
+const defaultZoom = 9;
+
+const dataProps = {
+    cityMarkers,
+    countyBoundaries,
+    defaultCenter,
+    defaultZoom,
+    averageRating: SITE_CONFIG.stats.averageRating,
+    GOOGLE_MAPS_API_KEY: "AIzaSyCPUa0e_IB0rB5UeJrWa3__Lohkm7HB9hY",
+};
+---
+
+<div
+    class="service-area-map-container rounded-[var(--radius-xl)] overflow-hidden shadow-2xl"
+>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+        <!-- Content Side - DARK THEME -->
+        <div
+            class="p-6 md:p-10 lg:p-12 flex flex-col justify-center bg-[var(--color-primary)] relative"
+        >
+            <!-- Decorative accent line -->
+            <div
+                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent"
+            >
+            </div>
+
+            <div
+                class="inline-block px-3 py-1.5 bg-accent/90 text-primary font-bold text-[10px] tracking-[0.2em] uppercase mb-4 w-fit"
+                style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);"
+            >
+                Coverage Network
+            </div>
+            <h2
+                class="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-[1.1] font-display uppercase"
+            >
+                Serving All of <br />
+                <span class="text-accent">South Florida</span>
+            </h2>
+
+            <p class="text-sm md:text-base text-white/75 mb-6 leading-relaxed">
+                Licensed electricians providing rapid response across the entire
+                tri-county area.
+            </p>
+
+            <!-- County Cards - Interactive with map -->
+            <div class="space-y-2 mb-6">
+                <!-- Miami-Dade -->
+                <a
+                    href={miamiDadeLink}
+                    class="county-card flex items-center group p-3 bg-accent/10 border-l-4 border-accent hover:bg-accent/20 transition-all duration-300"
+                    data-county="miami-dade"
+                >
+                    <div
+                        class="w-8 h-8 bg-accent flex items-center justify-center text-[var(--color-primary)] mr-3 group-hover:scale-110 transition-transform"
+                        style="clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);"
+                    >
+                        <MapPin class="w-4 h-4" />
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="text-white font-bold text-sm group-hover:text-white transition-colors"
+                        >
+                            Miami-Dade County
+                        </h3>
+                        <p class="text-white/70 text-xs">
+                            6 Cities • 24/7 Service
+                        </p>
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"><path d="M9 18l6-6-6-6"></path></svg
+                    >
+                </a>
+
+                <!-- Broward -->
+                <a
+                    href={browardLink}
+                    class="county-card flex items-center group p-3 bg-[#1E5AA8]/20 border-l-4 border-[#1E5AA8] hover:bg-[#1E5AA8]/30 transition-all duration-300"
+                    data-county="broward"
+                >
+                    <div
+                        class="w-8 h-8 bg-[#1E5AA8] flex items-center justify-center text-white mr-3 group-hover:scale-110 transition-transform"
+                        style="clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);"
+                    >
+                        <MapPin class="w-4 h-4" />
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="text-white font-bold text-sm group-hover:text-white transition-colors"
+                        >
+                            Broward County
+                        </h3>
+                        <p class="text-white/70 text-xs">
+                            15 Cities • 24/7 Service
+                        </p>
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-[#1E5AA8] group-hover:text-accent group-hover:translate-x-1 transition-all"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"><path d="M9 18l6-6-6-6"></path></svg
+                    >
+                </a>
+
+                <!-- Palm Beach -->
+                <a
+                    href={palmBeachLink}
+                    class="county-card flex items-center group p-3 bg-[#2980B9]/20 border-l-4 border-[#2980B9] hover:bg-[#2980B9]/30 transition-all duration-300"
+                    data-county="palm-beach"
+                >
+                    <div
+                        class="w-8 h-8 bg-[#2980B9] flex items-center justify-center text-white mr-3 group-hover:scale-110 transition-transform"
+                        style="clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);"
+                    >
+                        <MapPin class="w-4 h-4" />
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="text-white font-bold text-sm group-hover:text-white transition-colors"
+                        >
+                            Palm Beach County
+                        </h3>
+                        <p class="text-white/70 text-xs">
+                            6 Cities • 24/7 Service
+                        </p>
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-[#2980B9] group-hover:text-accent group-hover:translate-x-1 transition-all"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"><path d="M9 18l6-6-6-6"></path></svg
+                    >
+                </a>
+            </div>
+
+            <a
+                href="/service-areas"
+                class="inline-flex items-center justify-center gap-2 h-[42px] px-6 bg-accent text-[var(--color-primary)] font-bold text-sm uppercase transition-all duration-300 transform hover:-translate-y-0.5 hover:bg-white"
+                style="clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);"
+            >
+                <Map class="w-4 h-4" />
+                View All Cities
+            </a>
+        </div>
+
+        <!-- Map Side - Interactive Google Maps -->
+        <div
+            class="relative overflow-hidden min-h-[500px] lg:min-h-[650px] bg-slate-100"
+        >
+            <div id="interactive-map" class="absolute inset-0 w-full h-full">
+            </div>
+
+            <!-- Loading State -->
+            <div
+                id="map-loading"
+                class="absolute inset-0 flex items-center justify-center bg-slate-100"
+            >
+                <div class="text-center">
+                    <Zap
+                        class="w-12 h-12 text-accent animate-pulse mx-auto mb-3"
+                    />
+                    <p class="text-sm text-[var(--text-muted)] font-medium">
+                        Loading map...
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Badge -->
+            <div
+                class="absolute bottom-4 right-4 bg-[var(--color-primary)] px-4 py-3 shadow-lg z-10"
+                style="clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);"
+            >
+                <div class="flex items-center gap-3 text-white">
+                    <div class="text-center">
+                        <div
+                            class="text-lg font-black text-accent leading-none"
+                        >
+                            27
+                        </div>
+                        <div class="text-[8px] text-white/70 uppercase">
+                            Cities
+                        </div>
+                    </div>
+                    <div class="w-px h-6 bg-white/20"></div>
+                    <div class="text-center">
+                        <div class="text-lg font-black leading-none">3</div>
+                        <div class="text-[8px] text-white/70 uppercase">
+                            Counties
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pass data to JavaScript -->
+<script define:vars={{ dataProps }}>
+    window.mapData = dataProps;
+</script>
+
+<script>
+    const mapStyles = [
+        {
+            elementType: "geometry",
+            stylers: [{ color: "#1E5AA8" }], // Mid Blue base
+        },
+        {
+            elementType: "labels.icon",
+            stylers: [{ visibility: "off" }],
+        },
+        {
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#FFFFFF" }, { opacity: 0.8 }],
+        },
+        {
+            elementType: "labels.text.stroke",
+            stylers: [{ color: "#1E5AA8" }, { weight: 2 }],
+        },
+        {
+            featureType: "administrative",
+            elementType: "geometry",
+            stylers: [{ visibility: "on" }],
+        },
+        {
+            featureType: "administrative.country",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#FFFFFF" }, { weight: 1.5 }],
+        },
+        {
+            featureType: "administrative.locality",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#FFFFFF" }, { weight: 8 }],
+        },
+        {
+            featureType: "administrative.province",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#FFFFFF" }, { weight: 2 }],
+        },
+        {
+            featureType: "landscape",
+            elementType: "geometry",
+            stylers: [{ color: "#0D4380" }], // Deep Solomon Blue
+        },
+        {
+            featureType: "poi",
+            stylers: [{ visibility: "off" }],
+        },
+        {
+            featureType: "road",
+            stylers: [{ visibility: "off" }],
+        },
+        {
+            featureType: "transit",
+            stylers: [{ visibility: "off" }],
+        },
+        {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [{ color: "#0A3161" }], // Darker Blue for water
+        },
+        {
+            featureType: "water",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#FFFFFF" }],
+        },
+    ];
+
+    let map: any;
+    let markers: any[] = [];
+    let countyPolygons: Record<string, any> = {};
+    let infoWindow: any;
+
+    function initMap() {
+        const data = (window as any).mapData;
+
+        // Initialize map with Solomon Electric styling
+        const mapElement = document.getElementById("interactive-map");
+        if (!mapElement) return;
+
+        map = new (window as any).google.maps.Map(mapElement, {
+            center: data.defaultCenter,
+            zoom: data.defaultZoom,
+            styles: mapStyles,
+            disableDefaultUI: true,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: (window as any).google.maps.ControlPosition
+                    .RIGHT_CENTER,
+            },
+            mapTypeControl: false,
+            streetViewControl: false,
+            fullscreenControl: false,
+            gestureHandling: "cooperative",
+        });
+
+        // Hide loading state
+        const loadingElement = document.getElementById("map-loading");
+        if (loadingElement) loadingElement.style.display = "none";
+
+        // Create info window
+        infoWindow = new (window as any).google.maps.InfoWindow();
+
+        // Draw county boundaries
+        Object.entries(data.countyBoundaries).forEach(
+            ([countyId, county]: [string, any]) => {
+                const polygon = new (window as any).google.maps.Polygon({
+                    paths: county.coords,
+                    strokeColor: "#14D3E3", // Cyan accent
+                    strokeOpacity: 0.4,
+                    strokeWeight: 1,
+                    fillColor: "#0D4380", // Default deep blue
+                    fillOpacity: 0.05,
+                    map: map,
+                });
+
+                countyPolygons[countyId] = polygon;
+
+                // Hover effect on polygon
+                polygon.addListener("mouseover", () => {
+                    polygon.setOptions({
+                        fillColor: "#14D3E3",
+                        fillOpacity: 0.3,
+                        strokeWeight: 2,
+                        strokeOpacity: 0.8,
+                    });
+                });
+
+                polygon.addListener("mouseout", () => {
+                    polygon.setOptions({
+                        fillColor: "#0D4380",
+                        fillOpacity: 0.05,
+                        strokeWeight: 1,
+                        strokeOpacity: 0.4,
+                    });
+                });
+            },
+        );
+
+        const createMarkerIcon = (isActive = false) => ({
+            path: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
+            fillColor: isActive ? "#FFFFFF" : "#14D3E3",
+            fillOpacity: 1,
+            strokeColor: "#0D4380",
+            strokeWeight: 1,
+            scale: 1.5,
+            anchor: new (window as any).google.maps.Point(12, 22),
+        });
+
+        // Add city markers with click state tracking
+        data.cityMarkers.forEach((city: any) => {
+            // Color available for future use
+            const _countyColor =
+                data.countyBoundaries[city.county]?.color || "#0D4380";
+
+            const marker = new (window as any).google.maps.Marker({
+                position: { lat: city.lat, lng: city.lng },
+                map: map,
+                title: city.name,
+                icon: createMarkerIcon(false),
+                animation: (window as any).google.maps.Animation.DROP,
+            });
+
+            // Track click state for double-click behavior
+            let isZoomed = false;
+
+            // Click behavior: first click zooms, second click navigates
+            marker.addListener("click", () => {
+                if (!isZoomed) {
+                    // First click: zoom to city
+                    marker.setIcon(createMarkerIcon(true));
+                    map.panTo(marker.getPosition());
+                    map.setZoom(12);
+                    isZoomed = true;
+
+                    // Show info window
+                    const content = `
+                        <div style="padding: 16px; font-family: var(--font-secondary), sans-serif; min-width: 200px;">
+                            <h3 style="margin: 0 0 4px 0; font-weight: 800; color: #0D4380; font-size: 16px; text-transform: uppercase;">${city.name}</h3>
+                            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 12px;">
+                                <span style="color: #CDAC4F; font-size: 14px;">★★★★★</span>
+                                <span style="font-size: 12px; font-weight: 700; color: #666;">${data.averageRating} Rating</span>
+                            </div>
+                            <p style="margin: 0 0 12px 0; font-size: 12px; color: #444; line-height: 1.4;">24/7 Professional Electrical Services in ${city.name}. Licensed Florida Contractor #EC13012419.</p>
+                            <p style="margin: 0; font-size: 11px; color: #14D3E3; font-weight: 700;">Click again to view service details →</p>
+                        </div>
+                    `;
+                    infoWindow.setContent(content);
+                    infoWindow.open(map, marker);
+                } else {
+                    // Second click: navigate to service page
+                    window.location.href = city.link;
+                }
+            });
+
+            markers.push({ marker, county: city.county });
+        });
+
+        // Set up county card hover interactions
+        setupCountyCardInteractions(data);
+
+        // STABLE ZOOM: Reset map when mouse leaves the MAP CONTAINER
+        const mapContainer = document.getElementById("interactive-map");
+        if (mapContainer) {
+            mapContainer.addEventListener("mouseleave", () => {
+                map.setCenter(data.defaultCenter);
+                map.setZoom(data.defaultZoom);
+
+                // Also reset all county polygons
+                Object.values(countyPolygons).forEach((polygon) => {
+                    polygon.setOptions({
+                        fillColor: "#0D4380",
+                        fillOpacity: 0.1,
+                        strokeWeight: 2,
+                    });
+                });
+            });
+        }
+    }
+
+    function setupCountyCardInteractions(data: any) {
+        const countyCards = document.querySelectorAll(".county-card");
+
+        countyCards.forEach((card) => {
+            const countyId = card.getAttribute("data-county");
+            if (!countyId) return;
+            const county = data.countyBoundaries[countyId];
+
+            if (!county) return;
+
+            card.addEventListener("mouseenter", () => {
+                // Zoom to county
+                map.setCenter(county.center);
+                map.setZoom(county.zoom);
+
+                // Highlight this county's polygon
+                Object.entries(countyPolygons).forEach(([id, polygon]) => {
+                    if (id === countyId) {
+                        polygon.setOptions({
+                            fillColor: "#14D3E3",
+                            fillOpacity: 0.8,
+                            strokeWeight: 5,
+                        });
+                    } else {
+                        polygon.setOptions({
+                            fillColor: "#0D4380",
+                            fillOpacity: 0.05,
+                            strokeWeight: 1,
+                        });
+                    }
+                });
+
+                // Highlight this county's markers
+                markers.forEach(({ marker, county: markerCounty }) => {
+                    if (markerCounty === countyId) {
+                        marker.setVisible(true);
+                        marker.setAnimation(
+                            (window as any).google.maps.Animation.BOUNCE,
+                        );
+                        setTimeout(() => marker.setAnimation(null), 750);
+                    } else {
+                        marker.setVisible(false);
+                    }
+                });
+            });
+
+            card.addEventListener("mouseleave", () => {
+                // Reset to default view
+                map.setCenter(data.defaultCenter);
+                map.setZoom(data.defaultZoom);
+
+                // Reset all polygons
+                Object.values(countyPolygons).forEach((polygon) => {
+                    polygon.setOptions({
+                        fillColor: "#0D4380",
+                        fillOpacity: 0.1,
+                        strokeWeight: 2,
+                    });
+                });
+
+                // Show all markers
+                markers.forEach(({ marker }) => {
+                    marker.setVisible(true);
+                });
+            });
+        });
+    }
+
+    // Load Google Maps API
+    function loadGoogleMapsScript() {
+        if ((window as any).google && (window as any).google.maps) {
+            initMap();
+            return;
+        }
+
+        const data = (window as any).mapData;
+
+        if (!data?.GOOGLE_MAPS_API_KEY) {
+            console.warn("Google Maps API key missing in window.mapData");
+            return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${data.GOOGLE_MAPS_API_KEY}&callback=initMap`;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    }
+
+    // Make initMap globally available
+    (window as any).initMap = initMap;
+
+    // Initialize when DOM is ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadGoogleMapsScript);
+    } else {
+        loadGoogleMapsScript();
+    }
+</script>
+
+<style>
+    /* Custom Google Maps info window styling */
+    :global(.gm-style-iw) {
+        border-radius: 0 !important;
+    }
+
+    :global(.gm-style-iw-d) {
+        overflow: hidden !important;
+    }
+
+    :global(.gm-ui-hover-effect) {
+        display: none !important;
+    }
+</style>

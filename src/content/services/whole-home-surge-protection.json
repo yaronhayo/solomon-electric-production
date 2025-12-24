@@ -1,0 +1,182 @@
+{
+  "name": "Whole-Home Surge Protection",
+  "slug": "whole-home-surge-protection",
+  "description": "Florida leads the nation in lightning strikes—and every strike within miles of your home sends damaging voltage surges through your electrical system. Whole-home surge protection installed at your electrical panel intercepts these surges before they reach your expensive electronics, appliances, and HVAC systems. Solomon Electric installs professional-grade surge protection that guards your entire home, not just individual outlets.",
+  "shortDescription": "Protect all electronics from power surges",
+  "icon": "Shield",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 4,
+  "features": [
+    "Whole-home panel-mounted protection",
+    "Guards against lightning-induced surges",
+    "Protects HVAC, appliances, and electronics simultaneously",
+    "LED indicator shows protection status",
+    "Meets IEEE and UL specifications",
+    "Often qualifies for insurance discounts"
+  ],
+  "warningSignsHeading": "Why Your South Florida Home Needs Surge Protection",
+  "warningSignsSubheading": "If you haven't installed whole-home surge protection, your electronics are vulnerable. Here's why protection matters in Florida.",
+  "problems": [
+    {
+      "title": "Florida Lightning Capital",
+      "description": "Central and South Florida experience more lightning strikes than anywhere else in the United States. Each nearby strike induces dangerous voltage spikes in your wiring.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Expensive Modern Electronics",
+      "description": "Smart TVs, gaming systems, computers, and smart home devices contain sensitive microprocessors that can be destroyed by even small voltage spikes.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "HVAC System Vulnerability",
+      "description": "Modern air conditioning systems contain electronic control boards costing hundreds to replace. A single surge can disable your AC in Florida's brutal heat.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Appliance Control Boards",
+      "description": "Refrigerators, washers, dryers, and ovens now contain computerized controls. Surge damage to these boards often costs more than half the appliance's value to repair.",
+      "icon": "Home"
+    },
+    {
+      "title": "Utility Grid Fluctuations",
+      "description": "Power surges don't only come from lightning. Utility switching, downed lines, and grid problems cause surges that travel right into your home.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Insurance Claim Limitations",
+      "description": "While homeowner's insurance may cover surge damage, deductibles and depreciation often leave you paying significant out-of-pocket costs. Prevention is more economical.",
+      "icon": "FileCheck"
+    }
+  ],
+  "processHeading": "Our Surge Protection Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Electrical System Assessment",
+      "description": "We evaluate your electrical panel, grounding system, and existing protection to recommend the right surge protection device (SPD) for your home's needs."
+    },
+    {
+      "step": 2,
+      "title": "Equipment Selection",
+      "description": "We use commercial-grade SPDs with appropriate joule ratings and response times—not the consumer-grade units from hardware stores that provide minimal protection."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "Our licensed electricians install the SPD at your main panel with proper connections and dedicated breaker. Installation typically takes 1-2 hours."
+    },
+    {
+      "step": 4,
+      "title": "Grounding Verification",
+      "description": "Effective surge protection requires proper grounding. We verify your home's grounding system and make any necessary improvements."
+    },
+    {
+      "step": 5,
+      "title": "Testing & Documentation",
+      "description": "We test the installation, explain the LED indicators (so you know protection is active), and provide documentation for your records and insurance company."
+    }
+  ],
+  "benefitsHeading": "Benefits of Whole-Home Surge Protection",
+  "benefits": [
+    {
+      "title": "Protect Everything at Once",
+      "description": "Unlike power strip surge protectors, whole-home protection guards every outlet, every appliance, and your HVAC system simultaneously. One device, total protection.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Save Thousands in Replacement Costs",
+      "description": "A single lightning-related surge can destroy multiple devices worth thousands of dollars. Whole-home surge protection costs a fraction of one major claim.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Potential Insurance Discounts",
+      "description": "Some insurance companies offer premium discounts for homes with whole-home surge protection installed by a licensed electrician with documentation.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Peace of Mind During Storms",
+      "description": "Florida afternoon thunderstorms happen almost daily in summer. Stop worrying about whether this storm will be the one that fries your electronics.",
+      "icon": "Zap"
+    }
+  ],
+  "stats": [
+    {
+      "value": "1.2M",
+      "label": "FL Lightning Strikes/Year"
+    },
+    {
+      "value": "Major",
+      "label": "Avg Surge Damage Risk"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need whole-home surge protection if I use power strips?",
+      "answer": "Power strip surge protectors provide a second layer of defense, but they can't protect everything—especially hardwired devices like your HVAC system, water heater, and built-in appliances. They also degrade over time and often fail without warning. Whole-home protection at your panel stops surges before they reach any outlet."
+    },
+    {
+      "question": "How does whole-home surge protection work?",
+      "answer": "A surge protective device (SPD) installed at your electrical panel monitors incoming voltage. When it detects a dangerous spike, it instantly diverts the excess energy to your home's grounding system—protecting everything connected to your electrical system."
+    },
+    {
+      "question": "Will surge protection help during a lightning strike on my house?",
+      "answer": "A direct lightning strike to your home involves massive energy that no residential equipment can fully stop—though whole-home protection will significantly reduce damage even in direct strikes. However, most lightning damage comes from nearby strikes (within a mile or more) that induce surges through power lines—and this is exactly what surge protection handles."
+    },
+    {
+      "question": "How long does whole-home surge protection last?",
+      "answer": "Quality surge protectors last 5-10 years under normal conditions, though multiple significant surge events will reduce lifespan. Most units include LED indicators showing protection status. We recommend annual inspection during your electrical system checkup."
+    },
+    {
+      "question": "Does my homeowner's insurance require surge protection?",
+      "answer": "Most policies don't require it, but many insurers offer premium discounts for documented whole-home surge protection installation. After a major surge event, some insurers add surge protection requirements for continued coverage. Check with your agent about available discounts."
+    },
+    {
+      "question": "What joule rating do I need for Florida?",
+      "answer": "Given Florida's extreme lightning activity, we recommend SPDs with minimum 50,000-amp surge current ratings and joule ratings of 1,000 or higher. Consumer-grade units with 400-600 joule ratings provide minimal protection against lightning-induced surges."
+    },
+    {
+      "question": "Can you install surge protection during a panel upgrade?",
+      "answer": "Absolutely—this is the ideal time! Installing surge protection during a panel upgrade means only one installation visit and ensures your new panel is protected from day one. We offer package pricing for panel upgrades with surge protection."
+    },
+    {
+      "question": "Is my grounding system important for surge protection?",
+      "answer": "Critical. Surge protection works by diverting dangerous voltage to ground. Poor grounding means surges have nowhere to go. We verify your grounding system during installation and make any necessary improvements to ensure effective protection."
+    }
+  ],
+  "relatedServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "home-electrical-system-upgrade",
+    "electrical-safety-inspection",
+    "storm-damage-electrical-repair"
+  ],
+  "seoContent": [
+    {
+      "heading": "Professional Surge Protection for South Florida Homes",
+      "body": "South Florida experiences more lightning strikes than anywhere else in the United States—an average of 1.2 million strikes per year in Florida alone. Without whole-home surge protection, every nearby lightning strike sends damaging voltage spikes through your power lines. Solomon Electric installs professional-grade surge protective devices (SPDs) that intercept these surges before they destroy your expensive electronics, appliances, and HVAC systems."
+    },
+    {
+      "heading": "Why Power Strips Aren't Enough in Florida",
+      "body": "Those $20 power strips from the hardware store might protect a lamp from a minor fluctuation, but they're woefully inadequate for Florida's lightning environment. They can't protect hardwired devices, they degrade invisibly over time, and they don't have the capacity to handle significant surges. Whole-home surge protection installed at your electrical panel protects every outlet, every appliance, and every circuit—including your air conditioning system."
+    },
+    {
+      "heading": "Protect Your Investment in Modern Technology",
+      "body": "Modern homes contain tens of thousands of dollars in electronics vulnerable to surge damage: smart TVs, gaming systems, computers, smart home hubs, security cameras, and smart appliances. Your HVAC system alone contains electronic control boards that cost hundreds to replace. One lightning-induced surge can cause more damage than a decade of surge protection costs."
+    },
+    {
+      "heading": "Serving Lightning Alley Communities",
+      "body": "Solomon Electric provides whole-home surge protection throughout Miami-Dade, Broward, and Palm Beach counties. Our licensed electricians install commercial-grade SPDs in Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Springs, Boca Raton, and all surrounding communities. Protect your home before the next storm—contact us for a protection assessment."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

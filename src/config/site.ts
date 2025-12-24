@@ -6,8 +6,14 @@
 export const SITE_CONFIG = {
     company: {
         name: "Solomon Electric",
-        tagline: "Miami's Premier Electrical Contractor",
+        tagline: "Miami's Trusted Electrical Experts",
         foundedYear: 2008,
+        branding: {
+            primary: "#0D4380",
+            accent: "#14D3E3",
+            light: "#F3F3F3",
+            dark: "#111111",
+        },
     },
 
     contact: {
@@ -18,8 +24,8 @@ export const SITE_CONFIG = {
             href: "tel:7868339211"
         },
         email: {
-            primary: "info@solomonelectric.com",
-            support: "contactus@solomonelectric.com",
+            primary: "contactus@solomonselectric.com",
+            support: "contactus@solomonselectric.com",
         },
         address: {
             street: "4036 N 29th Ave",
@@ -27,7 +33,8 @@ export const SITE_CONFIG = {
             state: "FL",
             zip: "33020",
             full: "4036 N 29th Ave, Hollywood, FL 33020"
-        }
+        },
+        bookingUrl: "/book"
     },
 
     credentials: {
@@ -35,45 +42,66 @@ export const SITE_CONFIG = {
             state: "FL",
             number: "EC13012419",
             display: "FL EC13012419",
-            fullDisplay: "Florida License: #EC13012419"
+            fullDisplay: "100% Licensed & Insured • Florida License: #EC13012419"
         },
-        insurance: "$2M Coverage",
+        insurance: "Fully Insured",
         yearsExperience: "15+"
     },
 
     social: {
-        facebook: "https://www.facebook.com",
-        instagram: "https://www.instagram.com",
-        yelp: "https://www.yelp.com",
-        googleMaps: "https://www.google.com/maps"
+        facebook: "https://www.facebook.com/Solomonselectric",
+        instagram: "https://www.instagram.com/solomonelectric",
+        yelp: "https://www.yelp.com/biz/solomon-electric-hollywood-6",
+        googleMaps: "https://maps.app.goo.gl/xRAyZhNnNDVds3gh6"
     },
 
     stats: {
-        residentialProjects: "12,500+",
-        commercialJobs: "4,800+",
-        industrialSystems: "2,100+",
-        happyClients: "19,400+",
-        totalReviews: "1,200+",
+        residentialProjects: "12,000+",
+        commercialJobs: "4,500+",
+        industrialSystems: "2,000+",
+        happyClients: "19,000+",
+        totalReviews: "1,000+",
         averageRating: 4.9,
-        fiveStarPercentage: 96,
+        fiveStarPercentage: 98,
         wouldRecommend: 100
     },
 
     hours: {
-        office: {
-            weekdays: "7:00 AM - 7:00 PM",
-            saturday: "8:00 AM - 5:00 PM",
-            sunday: "Closed"
-        },
-        emergency: "24/7",
-        isAlwaysOpen: false // Set to true if actually 24/7, false if just emergency service
+        monday: "24 Hours",
+        tuesday: "24 Hours",
+        wednesday: "24 Hours",
+        thursday: "24 Hours",
+        friday: "24 Hours",
+        saturday: "24 Hours",
+        sunday: "24 Hours",
+        emergency: "24/7 Emergency Service",
+        isAlwaysOpen: true 
     },
 
     seo: {
-        defaultTitle: "Solomon Electric - Miami's Most Trusted 24/7 Electrician | Licensed & Insured",
-        defaultDescription: "Expert electrical services in Miami. 24/7 emergency response, residential & commercial. Panel upgrades, EV charging, smart homes, repairs. Licensed, insured, 15+ years experience.",
-        siteUrl: "https://solomonelectric.com"
+        defaultTitle: "Electrician Miami & Broward | Licensed Electrical Contractors | Solomon Electric",
+        defaultDescription: "Top-rated licensed electricians serving Miami-Dade & Broward. Residential, commercial & industrial electrical repairs, installations & upgrades. 24/7 emergency service available. Call for safe, reliable power solutions.",
+        siteUrl: "https://www.247electricianmiami.com",
+        tracking: {
+            gtm: "GTM-KQQZXTZ6",
+        },
+        schema: {
+            businessName: "Solomon Electric",
+            type: "ElectricalContractor",
+            priceRange: "$$",
+            latitude: 26.035414,
+            longitude: -80.170560,
+            areaServed: [
+                "Miami", "Fort Lauderdale", "Hollywood", "Miami Beach", "Boca Raton", "Coral Springs", "Pembroke Pines", "Hialeah", "Homestead", "Jupiter"
+            ],
+            socialProfiles: [
+                "https://www.facebook.com/Solomonselectric",
+                "https://www.instagram.com/solomonelectric",
+                "https://www.yelp.com/biz/solomon-electric-hollywood-6"
+            ]
+        }
     }
 } as const;
 
 export type SiteConfig = typeof SITE_CONFIG;
+

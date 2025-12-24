@@ -1,0 +1,180 @@
+{
+  "name": "Electrical Fire Hazard Investigation",
+  "slug": "electrical-fire-hazard-investigation",
+  "description": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive electrical fire hazard investigation throughout South Florida—identifying conditions that could lead to fires: overloaded circuits, damaged wiring, improper installations, and failing equipment. Proactive investigation prevents fires; reactive investigation follows them.",
+  "shortDescription": "Identify fire risks before they ignite",
+  "icon": "Flame",
+  "image": "../../assets/images/services/emergency.png",
+  "category": "Emergency Electrical Services",
+  "order": 19,
+  "features": [
+    "Comprehensive hazard assessment",
+    "Thermal imaging inspection",
+    "Panel fire risk evaluation",
+    "Wiring condition assessment",
+    "Connection integrity testing",
+    "Prioritized remediation plan"
+  ],
+  "warningSignsHeading": "When Fire Hazard Investigation Is Needed",
+  "warningSignsSubheading": "Some situations warrant proactive investigation before problems manifest.",
+  "problems": [
+    {
+      "title": "Old Home with Original Wiring",
+      "description": "Homes 40+ years old may have degraded wiring, obsolete materials, or accumulated improper modifications creating fire risks.",
+      "icon": "Home"
+    },
+    {
+      "title": "Previous Electrical Fire",
+      "description": "If you've had a small electrical fire or near-miss, investigation determines whether underlying hazards remain.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Purchased Home with Concerns",
+      "description": "If you've purchased a home with electrical concerns—old panel, evidence of DIY work—investigation quantifies the risks.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Unexplained Electrical Symptoms",
+      "description": "Flickering lights, warm outlets, intermittent problems—these symptoms may indicate fire hazards requiring investigation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Insurance Requirement",
+      "description": "Some insurers require fire hazard assessment for older homes or after claims. We provide documentation they accept.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Peace of Mind",
+      "description": "If you're concerned about your home's electrical safety, professional investigation provides answers and recommended actions.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our Investigation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Risk Interview",
+      "description": "We discuss your concerns, home history, any symptoms you've noticed, and specific areas of concern to guide our investigation."
+    },
+    {
+      "step": 2,
+      "title": "Panel Examination",
+      "description": "We inspect your electrical panel for recalled brands, overheating evidence, connection integrity, and capacity issues."
+    },
+    {
+      "step": 3,
+      "title": "Thermal Inspection",
+      "description": "We use thermal imaging to identify hot spots indicating overheating—in panels, at outlets, and in accessible wiring areas."
+    },
+    {
+      "step": 4,
+      "title": "Wiring Assessment",
+      "description": "We examine accessible wiring for condition, type (aluminum, knob-and-tube), and installation quality."
+    },
+    {
+      "step": 5,
+      "title": "Risk Report",
+      "description": "We provide a detailed report identifying hazards found, their severity, and recommended remediation priorities."
+    }
+  ],
+  "benefitsHeading": "Benefits of Fire Hazard Investigation",
+  "benefits": [
+    {
+      "title": "Prevent Fires",
+      "description": "Finding and fixing hazards before they ignite prevents devastating fires. Proactive investigation is far better than reactive fire response.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Prioritized Action",
+      "description": "Not all hazards are equal. We categorize findings by risk level so you can address the most dangerous conditions first.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Documentation",
+      "description": "Professional hazard assessment creates documentation for insurance, real estate, and your records.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Clear Path Forward",
+      "description": "You'll know exactly what hazards exist and what's needed to resolve them—no more wondering or worrying.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Investigations"
+    },
+    {
+      "value": "40%",
+      "label": "Find Significant Hazards"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What electrical conditions cause fires?",
+      "answer": "Common fire causes: loose connections creating heat, overloaded circuits exceeding wire ratings, degraded wire insulation, recalled panels (Federal Pacific, Zinsco), improper DIY installations, and damages from pests or physical contact."
+    },
+    {
+      "question": "How common are electrical fires?",
+      "answer": "Electrical problems cause approximately 47,000 home fires annually in the US, resulting in hundreds of deaths. Most are preventable—caused by conditions that proper inspection could identify and remediate."
+    },
+    {
+      "question": "What's a thermal imaging inspection?",
+      "answer": "Thermal cameras detect heat that's invisible to the eye. Overheating electrical connections show as hot spots on thermal images. This non-invasive technology identifies problems inside panels, walls, and equipment."
+    },
+    {
+      "question": "Is my old panel a fire hazard?",
+      "answer": "Age alone doesn't make panels hazardous, but certain brands (Federal Pacific, Zinsco) have documented fire risks regardless of age. Very old panels may also have degraded components or inadequate capacity. We assess actual condition, not just age."
+    },
+    {
+      "question": "What about aluminum wiring?",
+      "answer": "Aluminum branch circuit wiring (1965-1975 era) presents fire risks at connections—aluminum expands/contracts differently than the copper/brass fittings it connects to. It doesn't require removal, but connections need proper treatment or replacement."
+    },
+    {
+      "question": "Can DIY electrical work cause fires?",
+      "answer": "Yes. Common DIY mistakes include: improper wire sizing, loose connections, overloaded circuits, inappropriate wire types, missing junction boxes, and connections not tightened properly. We identify and document these hazards."
+    },
+    {
+      "question": "What if you find serious hazards?",
+      "answer": "We'll explain the severity and recommend immediate actions—potentially shutting off specific circuits until repairs are complete. For serious hazards, we provide same-day or next-day repair availability. Your safety is the priority."
+    },
+    {
+      "question": "Does investigation damage walls or finishes?",
+      "answer": "Our inspection techniques are largely non-invasive. Thermal imaging sees through walls without holes. Panel inspection opens the panel cover but doesn't affect your home. If destructive investigation is needed, we discuss it first."
+    }
+  ],
+  "relatedServices": [
+    "electrical-burning-smell-investigation",
+    "electrical-safety-inspection",
+    "24-7-emergency-electrical-service",
+    "electrical-code-compliance-audit"
+  ],
+  "seoContent": [
+    {
+      "heading": "Electrical Fire Hazard Investigation in South Florida",
+      "body": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive fire hazard investigation throughout Miami-Dade and Broward counties—identifying overloaded circuits, damaged wiring, and failing equipment before they cause fires."
+    },
+    {
+      "heading": "Thermal Imaging for Hidden Hazards",
+      "body": "Our thermal cameras detect overheating invisible to the naked eye. Hot spots in panels, walls, and equipment indicate fire risks that physical inspection might miss. Non-invasive thermal inspection is a core part of our hazard investigation."
+    },
+    {
+      "heading": "Proactive Prevention",
+      "body": "Electrical fires are largely preventable. Conditions that cause fires—loose connections, overloaded circuits, degraded wiring—can be identified and corrected before ignition. Proactive investigation is far better than reactive fire response."
+    },
+    {
+      "heading": "Protecting South Florida Homes",
+      "body": "Solomon Electric provides electrical fire hazard investigation throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Know your risks. Address hazards. Protect your family and home."
+    }
+  ],
+  "relatedBlogPosts": []
+}

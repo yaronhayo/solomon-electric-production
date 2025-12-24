@@ -1,0 +1,180 @@
+{
+  "name": "Service Panel Replacement",
+  "slug": "service-panel-replacement",
+  "description": "When your electrical panel is damaged, recalled, or simply worn out, replacement is the right answer. Solomon Electric provides service panel replacement throughout South Florida—removing problematic panels and installing modern, code-compliant electrical distribution that protects your home and provides reliable power.",
+  "shortDescription": "Replace outdated or dangerous panels",
+  "icon": "Zap",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 8,
+  "features": [
+    "Federal Pacific panel replacement",
+    "Zinsco panel replacement",
+    "Storm-damaged panel replacement",
+    "Corroded panel replacement",
+    "Modern breaker installation",
+    "Code-compliant installation"
+  ],
+  "warningSignsHeading": "When Panel Replacement Is Needed",
+  "warningSignsSubheading": "Some panels should be replaced regardless of age or capacity.",
+  "problems": [
+    {
+      "title": "Federal Pacific or Zinsco Panel",
+      "description": "These recalled brands have documented failure rates causing fires. Insurance companies increasingly require their replacement.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Storm or Water Damage",
+      "description": "Panels exposed to flooding or severe weather may have internal damage even if they appear functional. Replacement is often necessary.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Corrosion and Deterioration",
+      "description": "Salt air and humidity deteriorate electrical equipment. Heavily corroded panels should be replaced for safety and reliability.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Burning Smell or Scorch Marks",
+      "description": "Evidence of overheating in your panel indicates potential fire hazard. Replacement addresses the underlying problem.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Breakers Won't Stay Reset",
+      "description": "Breakers that trip immediately or won't stay on may indicate panel problems beyond just the breaker itself.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Insurance Requirement",
+      "description": "Your insurer may require panel replacement for policy renewal or after claims. We provide the compliant installation they require.",
+      "icon": "FileCheck"
+    }
+  ],
+  "processHeading": "Our Panel Replacement Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Panel Assessment",
+      "description": "We evaluate your current panel, determine why replacement is needed, and assess whether service size change is also appropriate."
+    },
+    {
+      "step": 2,
+      "title": "Replacement Planning",
+      "description": "We select appropriate replacement panel, plan the installation, and explain what to expect during the work."
+    },
+    {
+      "step": 3,
+      "title": "Permit and Coordination",
+      "description": "We obtain required permits and coordinate with FPL for any meter work needed during the replacement."
+    },
+    {
+      "step": 4,
+      "title": "Panel Replacement",
+      "description": "We remove the old panel, install the new panel, reconnect all circuits, and install modern breakers."
+    },
+    {
+      "step": 5,
+      "title": "Inspection and Documentation",
+      "description": "We coordinate inspection, verify passed inspection, and provide documentation for your records."
+    }
+  ],
+  "benefitsHeading": "Benefits of Panel Replacement",
+  "benefits": [
+    {
+      "title": "Safety",
+      "description": "Replace dangerous or deteriorated panels with modern, safe equipment. Eliminate fire hazards from recalled or failing panels.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Reliability",
+      "description": "New panels with quality breakers provide reliable power distribution. No more worrying about panel problems.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Insurance Compliance",
+      "description": "Many insurers require removal of Federal Pacific and Zinsco panels. New panel satisfies their requirements.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Modern Features",
+      "description": "New panels can include AFCI/GFCI breakers, whole-home surge protection, and space for future circuit additions.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "200+",
+      "label": "Panels Replaced"
+    },
+    {
+      "value": "100%",
+      "label": "Recall Removal"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why is my specific panel brand a problem?",
+      "answer": "Federal Pacific (FPE/Stab-Lok) and Zinsco breakers have documented failure rates—they don't trip when they should, leading to overheating and fires. The problem is the breaker design, not just age. These panels should be replaced regardless of condition."
+    },
+    {
+      "question": "How do I know if I have a recalled panel?",
+      "answer": "Look for 'Federal Pacific,' 'FPE,' 'Stab-Lok,' 'Zinsco,' or 'Sylvania Zinsco' on the panel door or breakers. Not sure? Send us a photo and we'll identify it. These brands are easily recognizable to electricians."
+    },
+    {
+      "question": "Will my insurance cover panel replacement?",
+      "answer": "Insurance typically doesn't cover replacement of functioning but hazardous panels—that's maintenance, not damage. However, if your insurer requires replacement for continued coverage, the alternative is losing insurance. The cost of replacement versus uninsured status makes the decision clear."
+    },
+    {
+      "question": "How long does panel replacement take?",
+      "answer": "Typically one full day for direct replacement (same size panel). Power is off for most of that time—usually 6-10 hours. We coordinate to minimize disruption and complete work efficiently."
+    },
+    {
+      "question": "Should I upgrade size while replacing?",
+      "answer": "If your panel is being replaced anyway, upgrading from 100A to 200A adds relatively little to the project (vs. separate upgrade later). Consider future needs—EV charging, additions, modern electrical loads. We can advise whether upgrade makes sense."
+    },
+    {
+      "question": "What about my breakers?",
+      "answer": "Panel replacement includes new breakers. Old breakers don't fit new panels, and you wouldn't want problematic breakers in a new panel anyway. All new equipment provides the fresh start replacement is meant to achieve."
+    },
+    {
+      "question": "Will replacement solve my electrical problems?",
+      "answer": "Panel replacement addresses panel-specific issues—recalled equipment, corrosion, physical damage. If you have wiring problems, overloaded circuits, or other issues, those may need separate attention. We identify what panel replacement will and won't solve."
+    },
+    {
+      "question": "Do I need to coordinate with FPL?",
+      "answer": "We handle FPL coordination. Panel replacement typically requires FPL to briefly disconnect and reconnect the meter. We schedule this as part of the project. You don't need to contact FPL directly."
+    }
+  ],
+  "relatedServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "panel-repair-circuit-breaker-replacement",
+    "whole-home-surge-protection",
+    "electrical-safety-inspection"
+  ],
+  "seoContent": [
+    {
+      "heading": "Service Panel Replacement in South Florida",
+      "body": "When your electrical panel is damaged, recalled, or worn out, replacement is the answer. Solomon Electric replaces problematic panels throughout Miami-Dade and Broward counties with modern, code-compliant electrical distribution that protects your home."
+    },
+    {
+      "heading": "Federal Pacific and Zinsco Panel Replacement",
+      "body": "These recalled brands have documented fire risks from breakers that don't trip when they should. Insurance companies increasingly require their removal. We replace dangerous FPE and Zinsco panels with safe, modern equipment."
+    },
+    {
+      "heading": "Storm and Damage Replacement",
+      "body": "Panels damaged by storms, flooding, or surge events may have internal damage that isn't visible. When panels are compromised, replacement provides the fresh start your electrical system needs."
+    },
+    {
+      "heading": "Professional Panel Replacement",
+      "body": "Solomon Electric provides panel replacement throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Remove dangerous equipment and install reliable, safe electrical distribution."
+    }
+  ],
+  "relatedBlogPosts": []
+}

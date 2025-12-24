@@ -1,0 +1,180 @@
+{
+  "name": "Sparking Outlet & Circuit Breaker Repair",
+  "slug": "sparking-outlet-circuit-breaker-repair",
+  "description": "Sparks from outlets or circuit breakers aren't normal—they indicate electrical problems that could start fires. Solomon Electric provides emergency diagnosis and repair for sparking electrical issues throughout South Florida. Whether it's a one-time spark or ongoing problem, we find the cause and fix it before it becomes dangerous.",
+  "shortDescription": "Stop dangerous electrical sparks",
+  "icon": "AlertTriangle",
+  "image": "../../assets/images/services/emergency.png",
+  "category": "Emergency Electrical Services",
+  "order": 13,
+  "features": [
+    "Emergency spark investigation",
+    "Outlet repair and replacement",
+    "Loose connection diagnosis",
+    "Arc fault identification",
+    "Circuit breaker repair",
+    "Fire prevention"
+  ],
+  "warningSignsHeading": "Types of Electrical Sparking",
+  "warningSignsSubheading": "Not all sparks are equal. Understanding the type helps determine urgency and response.",
+  "problems": [
+    {
+      "title": "Sparks When Plugging In",
+      "description": "Brief sparks when plugging in are often normal (load pickup), but large, loud, or blue sparks indicate outlet problems needing investigation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Sparks Without Touching",
+      "description": "Sparks from an outlet you're not using indicate internal arcing—a serious fire hazard requiring immediate attention.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Sparking From Panel",
+      "description": "Any visible sparking from your electrical panel is an emergency. Turn off the main breaker immediately and call for emergency service.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Burnt Smell with Sparks",
+      "description": "Burning smell accompanying sparks means overheating is occurring—potential fire already starting. Turn off power and call immediately.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Outlet Scorch Marks",
+      "description": "Discoloration around outlets indicates previous arcing. Even if not currently sparking, internal damage likely exists.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Lights Flicker with Sparks",
+      "description": "Sparking combined with flickering lights suggests loose connections affecting multiple circuits—potentially at the panel.",
+      "icon": "Lightbulb"
+    }
+  ],
+  "processHeading": "Our Sparking Diagnosis Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Safety Assessment",
+      "description": "We determine if immediate shutdown is needed to prevent fire risk. Severe sparking requires turning off affected circuits or main power."
+    },
+    {
+      "step": 2,
+      "title": "Source Identification",
+      "description": "We trace sparking to its source—outlet, switch, junction box, panel, or connected equipment—to understand the underlying problem."
+    },
+    {
+      "step": 3,
+      "title": "Root Cause Analysis",
+      "description": "We determine WHY sparking is occurring: loose connections, damaged wiring, failed equipment, or overloaded circuits."
+    },
+    {
+      "step": 4,
+      "title": "Repair or Replacement",
+      "description": "We fix the underlying problem—tightening connections, replacing damaged outlets, repairing wiring, or addressing panel issues."
+    },
+    {
+      "step": 5,
+      "title": "System Verification",
+      "description": "We verify the repair resolved the issue and check related circuits for similar problems that might cause future sparking."
+    }
+  ],
+  "benefitsHeading": "Why Sparking Requires Immediate Attention",
+  "benefits": [
+    {
+      "title": "Fire Prevention",
+      "description": "Electrical arcing causes approximately 47,000 home fires annually. Finding and fixing sparking before it starts a fire protects your home and family.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Find Hidden Problems",
+      "description": "Visible sparking often indicates larger problems—loose connections, damaged wiring, overloads—that could affect other circuits.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Peace of Mind",
+      "description": "Once we identify and fix the problem, you can use your electrical system confidently without worrying about hidden hazards.",
+      "icon": "Home"
+    },
+    {
+      "title": "Insurance Protection",
+      "description": "Ignoring known electrical problems can complicate insurance claims. Prompt professional repair demonstrates responsible maintenance.",
+      "icon": "FileCheck"
+    }
+  ],
+  "stats": [
+    {
+      "value": "24/7",
+      "label": "Emergency Response"
+    },
+    {
+      "value": "47K",
+      "label": "Annual Arc Fires"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is a small spark when plugging in normal?",
+      "answer": "Small, brief sparks when plugging in can be normal—it's the 'load pickup' when electricity starts flowing. However, large sparks, colored sparks (yellow/orange), loud pops, or sparks every time you plug in indicate outlet problems needing attention."
+    },
+    {
+      "question": "What causes outlets to spark?",
+      "answer": "Common causes include: loose wiring connections (most common), worn outlet contacts, short circuits in connected equipment, moisture (rare indoors), overloaded circuits, and damaged wiring behind the outlet."
+    },
+    {
+      "question": "Should I keep using an outlet that sparked?",
+      "answer": "If it was a single, brief spark when plugging in a device that works normally, probably okay—but monitor it. If sparking continues, is severe, or happens without touching the outlet, STOP using it immediately and call for service."
+    },
+    {
+      "question": "Is sparking from my electrical panel an emergency?",
+      "answer": "Yes—absolutely. Any visible sparking from your electrical panel indicates serious problems. Turn off the main breaker immediately (if safe to do so), don't touch the panel, and call for emergency electrical service. Panel arcing can start fires quickly."
+    },
+    {
+      "question": "What does blue vs. orange sparking mean?",
+      "answer": "Blue sparks are typically electrical load pickup—often normal. Orange or yellow sparks indicate burning metal or overheating—much more serious. Any colored sparking with heat, smell, or sounds should be treated as an emergency."
+    },
+    {
+      "question": "Can loose outlets cause sparking?",
+      "answer": "Yes. When outlets become loose in the box or their contacts wear out, plugs don't make solid connections. This intermittent contact causes arcing when plugs move. We can replace worn outlets and secure loose boxes."
+    },
+    {
+      "question": "What if I smell burning with the sparks?",
+      "answer": "Burning smell means overheating is occurring—insulation may already be damaged. Turn off power to the circuit immediately (the breaker, not just unplugging). Call for emergency service. Don't turn power back on until an electrician investigates."
+    },
+    {
+      "question": "Do I need AFCI breakers to prevent arcing?",
+      "answer": "AFCI (Arc Fault Circuit Interrupter) breakers detect dangerous arcing and trip before fires start. They're required by code in bedrooms and many living areas. While not required everywhere, AFCIs are an excellent safety upgrade for any home."
+    }
+  ],
+  "relatedServices": [
+    "24-7-emergency-electrical-service",
+    "electrical-fire-hazard-investigation",
+    "panel-repair-circuit-breaker-replacement",
+    "new-outlet-installation-repair"
+  ],
+  "seoContent": [
+    {
+      "heading": "Sparking Outlet Repair in Miami & South Florida",
+      "body": "Sparking outlets and circuit breakers aren't normal—they're fire hazards that need immediate attention. Solomon Electric provides emergency diagnosis and repair for sparking electrical problems throughout South Florida. We find the underlying cause and fix it before a fire starts."
+    },
+    {
+      "heading": "Why Electrical Sparking Is Dangerous",
+      "body": "Electrical arcing causes nearly 47,000 home fires each year. Sparking indicates loose connections, damaged wiring, or failing equipment—all conditions that can ignite surrounding materials. Prompt professional repair prevents these fires."
+    },
+    {
+      "heading": "Emergency Response for Panel Sparking",
+      "body": "Sparking from your electrical panel is a true emergency. Turn off the main breaker immediately and call for emergency service. Don't attempt to investigate the panel yourself—arcing inside panels can cause severe burns and start fires rapidly."
+    },
+    {
+      "heading": "Serving South Florida 24/7",
+      "body": "Solomon Electric provides emergency sparking diagnosis and repair throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Don't wait until tomorrow—call now for emergency service."
+    }
+  ],
+  "relatedBlogPosts": []
+}

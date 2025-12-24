@@ -1,0 +1,100 @@
+{
+    "name": "Coral Springs",
+    "slug": "coral-springs",
+    "county": "Broward",
+    "description": "Licensed Coral Springs electricians providing professional residential and commercial electrical services. From modern kitchen remodels in Wyndham Lakes to commercial projects on Sample Road, Solomon Electric is your local partner.",
+    "population": "135,000+",
+    "founded": "1963",
+    "areaSquareMiles": "24",
+    "tagline": "Everything Under the Sun",
+    "landmarks": [
+        "Coral Springs Center for the Arts",
+        "The Walk of Coral Springs",
+        "Museum of Art",
+        "Mullins Park",
+        "Tallavast Park"
+    ],
+    "neighborhoods": [
+        "Wyndham Lakes",
+        "Eagle Ridge",
+        "Shadow Wood",
+        "Parkside",
+        "Ramblewood",
+        "Maplewood",
+        "Whispering Woods"
+    ],
+    "majorRoads": [
+        "Sawgrass Expressway (SR 869)",
+        "Sample Road",
+        "University Drive",
+        "Coral Springs Drive",
+        "Wiles Road"
+    ],
+    "coordinates": {
+        "lat": 26.2712,
+        "lng": -80.2706
+    },
+    "challenges": [
+        {
+            "title": "Master-Planned Community Standards",
+            "description": "Coral Springs' strict aesthetic and building standards require electricians who understand local HOA requirements and municipal codes for consistent quality.",
+            "icon": "Shield"
+        },
+        {
+            "title": "Aging Suburban Infrastructure",
+            "description": "Neighborhoods built in the 70s and 80s, like Ramblewood, often require panel upgrades and aluminum wiring remediation to support modern electrical loads.",
+            "icon": "AlertTriangle"
+        },
+        {
+            "title": "Smart Irrigation & Landscape Power",
+            "description": "Many Coral Springs properties feature extensive landscaping and smart irrigation that require specialized outdoor power solutions and GFCI protection.",
+            "icon": "Umbrella"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "smart-home-automation",
+        "whole-home-surge-protection",
+        "landscape-outdoor-lighting",
+        "24-7-emergency-electrical-service",
+        "recessed-lighting-installation"
+    ],
+    "stats": [
+        {
+            "value": "135K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Are you licensed to work in the City of Coral Springs?",
+            "answer": "Yes, we are fully licensed (FL License #EC13012419) and insured. We frequently work with the Coral Springs Building Department and are well-versed in local code requirements."
+        },
+        {
+            "question": "Do you offer emergency electrical repairs for Coral Springs residents?",
+            "answer": "Absolutely. We provide 24/7 emergency service throughout Coral Springs, including Wyndham Lakes, Eagle Ridge, and all major residential areas."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Trusted Coral Springs Electricians At Your Service",
+            "body": "Coral Springs is a premier master-planned city known for its family values and beautiful green spaces. As a city that prides itself on 'Everything Under the Sun,' it deserves electrical service that is reliable, professional, and code-compliant. Solomon Electric has been providing top-tier electrical solutions to Coral Springs families since 2003."
+        },
+        {
+            "heading": "Expert Electrical Modernization for Your Coral Springs Home",
+            "body": "Whether you're updating your kitchen lighting at The Walk, installing a whole-home surge protector to guard against Florida storms, or need an urgent panel upgrade in Maplewood, our team is ready to help. We provide upfront pricing and a satisfaction guarantee on every Coral Springs project."
+        }
+    ]
+}

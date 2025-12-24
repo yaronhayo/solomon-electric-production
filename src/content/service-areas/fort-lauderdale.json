@@ -1,0 +1,102 @@
+{
+    "name": "Fort Lauderdale",
+    "slug": "fort-lauderdale",
+    "county": "Broward",
+    "description": "Licensed Fort Lauderdale electricians providing 24/7 professional electrical services. From waterfront luxury lighting to commercial properties on Las Olas, Solomon Electric is your trusted partner for all electrical needs.",
+    "population": "180,000+",
+    "founded": "1911",
+    "areaSquareMiles": "38",
+    "tagline": "Venice of America",
+    "landmarks": [
+        "Las Olas Boulevard",
+        "Fort Lauderdale Beach",
+        "Museum of Discovery and Science",
+        "Broward Center for the Performing Arts",
+        "Stranahan House"
+    ],
+    "neighborhoods": [
+        "Victoria Park",
+        "Harbordale",
+        "Rio Vista",
+        "Coral Ridge",
+        "Sailboat Bend",
+        "Tarpon River",
+        "Las Olas Isles",
+        "Downtown Fort Lauderdale",
+        "Galt Ocean Mile"
+    ],
+    "majorRoads": [
+        "I-95",
+        "I-595",
+        "Sunrise Boulevard",
+        "Las Olas Boulevard",
+        "Federal Highway (US-1)"
+    ],
+    "coordinates": {
+        "lat": 26.1224,
+        "lng": -80.1373
+    },
+    "challenges": [
+        {
+            "title": "Waterfront Electrical Safety",
+            "description": "Fort Lauderdale's extensive canal system and Intracoastal access require specialized dock wiring, boat lift power, and corrosion-resistant outdoor lighting.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Downtown Commercial Infrastructure",
+            "description": "The complex power needs of Fort Lauderdale's growing downtown skyline demand expertise in commercial electrical distribution and advanced fire/safety systems.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Historic Home Modernization",
+            "description": "Neighborhoods like Sailboat Bend and Rio Vista feature beautiful historic homes that require sensitive electrical upgrades to handle modern energy loads.",
+            "icon": "Home"
+        }
+    ],
+    "featuredServices": [
+        "dock-marina-electrical-services",
+        "recessed-lighting-installation",
+        "24-7-emergency-electrical-service",
+        "commercial-led-lighting-retrofit",
+        "electrical-panel-upgrade-100a-to-200a",
+        "smart-home-automation"
+    ],
+    "stats": [
+        {
+            "value": "180K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide electrical services for docks and boat lifts in Fort Lauderdale?",
+            "answer": "Yes, we are specialists in waterfront electrical. We handle dock lighting, boat lift wiring, and shore power connections, ensuring everything meets marine safety standards and local building codes."
+        },
+        {
+            "question": "Are your electricians available for emergency repairs near Las Olas?",
+            "answer": "Absolutely. We provide 24/7 emergency electrical service to all of Fort Lauderdale, from the beachfront and Las Olas to the industrial sectors and residential neighborhoods."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Fort Lauderdale's Trusted Electrical Experts",
+            "body": "Known as the 'Venice of America' for its intricate canal system, Fort Lauderdale is a hub of maritime, commercial, and residential excellence. Solomon Electric is proud to serve this vibrant city, providing the specialized electrical knowledge needed for its unique waterfront lifestyle and booming urban core. Our licensed team is dedicated to keeping Fort Lauderdale powered safely and efficiently."
+        },
+        {
+            "heading": "Serving Every Corner of Fort Lauderdale",
+            "body": "Whether you're maintaining a waterfront estate in Rio Vista, upgrading a commercial space on Las Olas, or restoring a historic gem in Victoria Park, Solomon Electric brings 15 years of professional experience to your door. We understand Fort Lauderdale's specific code requirements and environmental challenges, delivering results that stand the test of time."
+        }
+    ]
+}

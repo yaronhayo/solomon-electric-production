@@ -1,0 +1,180 @@
+{
+  "name": "Three-Phase Power Installation",
+  "slug": "three-phase-power-installation",
+  "description": "Large commercial equipment, industrial machinery, and high-power systems often require three-phase power that standard single-phase service can't provide. Solomon Electric installs three-phase electrical service throughout South Florida—coordinating with utilities, installing appropriate panels and wiring, and connecting equipment that demands three-phase power.",
+  "shortDescription": "Industrial three-phase electrical",
+  "icon": "Zap",
+  "image": "../../assets/images/services/commercial.png",
+  "category": "Commercial & Inspections",
+  "order": 55,
+  "features": [
+    "Three-phase service installation",
+    "Utility coordination for 3-phase",
+    "Three-phase panel installation",
+    "Motor and equipment connections",
+    "Single to 3-phase conversion",
+    "Phase converter alternatives"
+  ],
+  "warningSignsHeading": "When You Need Three-Phase Power",
+  "warningSignsSubheading": "Three-phase power serves larger loads efficiently. Here's when it becomes necessary.",
+  "problems": [
+    {
+      "title": "Equipment Requires 3-Phase",
+      "description": "Large motors, CNC machines, welders, and commercial HVAC often require three-phase power. The equipment simply won't run on single-phase.",
+      "icon": "Zap"
+    },
+    {
+      "title": "High Power Demands",
+      "description": "When total electrical load exceeds what single-phase can efficiently deliver, three-phase service provides more power capacity.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Industrial Process Needs",
+      "description": "Manufacturing, machining, and industrial processes often require three-phase for specific equipment and overall capacity.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Property Expansion",
+      "description": "Growing operations may exceed single-phase limitations. Upgrading to three-phase provides capacity for current and future growth.",
+      "icon": "Home"
+    },
+    {
+      "title": "Commercial Kitchen Equipment",
+      "description": "Large commercial kitchen equipment—high-volume ovens, mixers, refrigeration—may require three-phase power.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Data Center Needs",
+      "description": "Larger data installations and server rooms often require three-phase power for high-density computing loads.",
+      "icon": "Plug"
+    }
+  ],
+  "processHeading": "Our Three-Phase Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Load Analysis",
+      "description": "We calculate your total three-phase power requirements based on equipment specifications and planned operations."
+    },
+    {
+      "step": 2,
+      "title": "Utility Coordination",
+      "description": "We work with FPL to determine three-phase availability, transformer requirements, and utility work needed for your location."
+    },
+    {
+      "step": 3,
+      "title": "Design and Permitting",
+      "description": "We design the complete three-phase system—service entrance, panels, feeders—and handle all permit applications."
+    },
+    {
+      "step": 4,
+      "title": "Infrastructure Installation",
+      "description": "We install service entrance equipment, panels, feeders, and circuits to deliver three-phase power throughout your facility."
+    },
+    {
+      "step": 5,
+      "title": "Equipment Connection",
+      "description": "We connect equipment to appropriate three-phase circuits, verify proper rotation, and test complete system operation."
+    }
+  ],
+  "benefitsHeading": "Benefits of Three-Phase Power",
+  "benefits": [
+    {
+      "title": "Run Required Equipment",
+      "description": "Three-phase motors and equipment simply won't work on single-phase. Three-phase service enables equipment operation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "More Power Per Wire",
+      "description": "Three-phase delivers more power with smaller conductors than single-phase. For high-power needs, it's more efficient and cost-effective.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Smoother Motor Operation",
+      "description": "Three-phase power provides constant power delivery, making motors run more smoothly and efficiently than single-phase equivalents.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Industrial Capability",
+      "description": "Three-phase power enables industrial equipment operation that isn't possible with single-phase service.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "50+",
+      "label": "3-Phase Installations"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Utility Coordinated"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's the difference between single-phase and three-phase power?",
+      "answer": "Single-phase uses two wires (one hot, one neutral) with 120V power oscillating in one wave pattern. Three-phase uses three wires, each carrying power that peaks at different times, delivering smoother, more powerful electricity. Three-phase is more efficient for high-power applications."
+    },
+    {
+      "question": "Is three-phase power available at my location?",
+      "answer": "It depends on your location and utility infrastructure. Commercial areas often have three-phase available. Residential areas typically don't. We coordinate with FPL to determine availability and what's needed to bring three-phase to your location."
+    },
+    {
+      "question": "How much does three-phase installation cost?",
+      "answer": "Costs vary widely based on utility work required, distance from three-phase source, and installation complexity. If three-phase is nearby, costs are moderate. If utility must extend three-phase infrastructure, costs increase significantly. We provide detailed quotes after site assessment."
+    },
+    {
+      "question": "Can I run three-phase equipment on single-phase power?",
+      "answer": "Not directly, but phase converters can create three-phase from single-phase power. Rotary phase converters work well for motors. Variable frequency drives (VFDs) can run single motors from single-phase. These are alternatives when true three-phase service isn't feasible."
+    },
+    {
+      "question": "What equipment typically requires three-phase?",
+      "answer": "Large motors (5+ HP), CNC machines, large air compressors, commercial HVAC, industrial welders, large commercial kitchen equipment, and data center power systems commonly require three-phase power."
+    },
+    {
+      "question": "How long does three-phase installation take?",
+      "answer": "Timeline depends heavily on utility work required. If three-phase is available nearby, installation might take 2-4 weeks. If utility must extend three-phase infrastructure (new transformers, lines), it could take 2-6 months. We clarify expected timeline during assessment."
+    },
+    {
+      "question": "What voltage is three-phase power?",
+      "answer": "Common commercial three-phase voltages are 208V (wye configuration, common in smaller commercial) and 480V (larger industrial). The right voltage depends on your equipment requirements. We match service voltage to your equipment specifications."
+    },
+    {
+      "question": "Can I have both single-phase and three-phase in my facility?",
+      "answer": "Yes. Three-phase service includes single-phase availability. Your three-phase panel can supply both three-phase circuits for appropriate equipment and single-phase circuits for lighting, outlets, and other standard loads."
+    }
+  ],
+  "relatedServices": [
+    "commercial-panel-installation-upgrades",
+    "high-voltage-electrical-services",
+    "tenant-build-out-electrical-work",
+    "emergency-power-system-design"
+  ],
+  "seoContent": [
+    {
+      "heading": "Three-Phase Power Installation in South Florida",
+      "body": "Large equipment and industrial operations require three-phase power that single-phase service can't provide. Solomon Electric installs three-phase electrical service throughout Miami-Dade and Broward counties—coordinating with FPL, installing appropriate infrastructure, and connecting equipment that demands three-phase power."
+    },
+    {
+      "heading": "Utility Coordination for 3-Phase",
+      "body": "Three-phase installation requires utility coordination for transformer and service requirements. We work directly with FPL to determine availability, design appropriate service, and coordinate all utility work. Managing this coordination is a key part of our service."
+    },
+    {
+      "heading": "Industrial and Commercial Applications",
+      "body": "Manufacturing facilities, machine shops, commercial kitchens, and data centers commonly require three-phase power. We install complete three-phase systems—service entrance, panels, feeders, and equipment connections—for industrial and commercial applications."
+    },
+    {
+      "heading": "Serving South Florida Industrial Needs",
+      "body": "Solomon Electric provides three-phase power installation throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding industrial areas. From equipment upgrades to complete facility power, we deliver the three-phase infrastructure your operations require."
+    }
+  ],
+  "relatedBlogPosts": []
+}

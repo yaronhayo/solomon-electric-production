@@ -1,0 +1,180 @@
+{
+  "name": "Light Switch Installation & Replacement",
+  "slug": "light-switch-installation-replacement",
+  "description": "Need new light switches, want to add a dimmer, or replacing worn-out switches that buzz or feel loose? Solomon Electric installs and replaces all types of light switches throughout South Florida homes—from standard toggles to dimmers, timers, and multi-way configurations. We ensure proper wiring, smooth operation, and code compliance.",
+  "shortDescription": "Switch installation and upgrades",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Outlets, Switches & Wiring",
+  "order": 18,
+  "features": [
+    "Standard switch replacement",
+    "Dimmer switch installation",
+    "3-way and 4-way switch wiring",
+    "Timer switch installation",
+    "Occupancy sensor switches",
+    "Combination switch/outlet units"
+  ],
+  "warningSignsHeading": "When to Replace Your Light Switches",
+  "warningSignsSubheading": "Light switches may seem simple, but worn or faulty switches can cause problems—or indicate bigger issues.",
+  "problems": [
+    {
+      "title": "Switch Feels Loose or Wobbly",
+      "description": "A switch that doesn't stay firmly in position has worn internal contacts. This affects reliability and can eventually fail completely.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Buzzing or Crackling Sounds",
+      "description": "Audible buzzing from a switch indicates arcing—electrical sparks jumping inside the switch. This is a fire hazard requiring immediate replacement.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Switch Feels Warm",
+      "description": "Dimmer switches normally generate slight warmth, but standard switches should never be warm. Heat indicates poor connections or overload.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Lights Flicker When Switched",
+      "description": "Flickering when operating the switch suggests loose connections or a failing switch. Both need attention before they cause bigger problems.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Delay Before Lights Turn On",
+      "description": "If there's a noticeable delay between flipping the switch and lights coming on, the switch may be failing internally.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Want Dimming Capability",
+      "description": "Upgrading from standard switches to dimmers provides ambiance control and extends LED bulb life—a popular upgrade for living areas and bedrooms.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Switch Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Switch Assessment",
+      "description": "We identify your current switch configuration (single-pole, 3-way, 4-way), wiring method, and what you want to achieve with the upgrade."
+    },
+    {
+      "step": 2,
+      "title": "Product Selection",
+      "description": "We recommend appropriate switches based on your needs—dimmer compatibility with your bulbs, smart switch requirements, or specialized controls."
+    },
+    {
+      "step": 3,
+      "title": "Safe Installation",
+      "description": "With power safely off, we remove the old switch, verify wiring, and install the new switch with proper connections and secure mounting."
+    },
+    {
+      "step": 4,
+      "title": "Cover Plate Finishing",
+      "description": "We install appropriate cover plates, ensuring a clean finished appearance that matches your décor."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Demonstration",
+      "description": "We test operation, verify smooth switching, and demonstrate any special features like dimming ranges or timer programming."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Switch Installation",
+  "benefits": [
+    {
+      "title": "Proper Wiring Connections",
+      "description": "Incorrect switch wiring can prevent proper operation, damage switches, or create hazards. Professional installation ensures correct connections every time.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Dimmer Compatibility",
+      "description": "LED dimmers must match bulb specifications to avoid flickering, buzzing, or limited dimming range. We select compatible combinations.",
+      "icon": "Zap"
+    },
+    {
+      "title": "3-Way Switch Expertise",
+      "description": "Replacing 3-way or 4-way switches (controlling lights from multiple locations) confuses many DIYers. We wire these configurations correctly.",
+      "icon": "Home"
+    },
+    {
+      "title": "Quick, Clean Service",
+      "description": "Switch replacements are fast—most installations take under an hour. We leave your home clean with no mess to clean up.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "2,000+",
+      "label": "Switches Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Satisfaction"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why do my LED lights flicker with a dimmer switch?",
+      "answer": "Not all dimmers work with all LED bulbs. Older dimmers designed for incandescent bulbs often can't handle the low wattage of LEDs. The solution is an LED-compatible dimmer matched to your specific bulbs. We install dimmers that work properly with your lighting."
+    },
+    {
+      "question": "What's a 3-way switch and why is it different?",
+      "answer": "A 3-way switch is one of two switches that control the same light from different locations (like top and bottom of stairs). They require special wiring with an extra 'traveler' wire connecting them. Replacing one 3-way switch with an incompatible type breaks the circuit. We handle these properly."
+    },
+    {
+      "question": "Can I add a dimmer switch to any light?",
+      "answer": "Almost any light can be dimmed with the right equipment. However, some LED fixtures have non-dimmable drivers, and ceiling fans should use fan-rated controllers (not standard dimmers). We verify your fixture is dimmable and install the appropriate switch."
+    },
+    {
+      "question": "What's an occupancy sensor switch?",
+      "answer": "Occupancy sensors automatically turn lights on when you enter a room and off when you leave—perfect for closets, laundry rooms, and bathrooms. They save energy and add convenience. We install motion-detecting and vacancy sensor switches."
+    },
+    {
+      "question": "Why does my switch buzz?",
+      "answer": "Buzzing typically indicates a dimmer that's incompatible with your bulbs or a switch with failing internal contacts. For dimmers, the solution is usually a compatible switch and/or compatible bulbs. For standard switches, replacement is needed—buzzing indicates arcing."
+    },
+    {
+      "question": "Can you add a switch where there isn't one?",
+      "answer": "Yes. We can add switches to control existing lights, add switches for 3-way control of lights currently controlled from one location only, and install new switch runs. This often requires running wire through walls, which we handle professionally."
+    },
+    {
+      "question": "What's the difference between single-pole and single-location switches?",
+      "answer": "Single-pole switches are the standard type—one switch controls one light. Double-pole switches handle 240V circuits (rare in residential). 3-way switches work in pairs to control one light from two locations. We determine which type you need based on your wiring."
+    },
+    {
+      "question": "Do you install timer switches?",
+      "answer": "Yes. Timer switches are great for bathroom exhaust fans, outdoor lights, and holiday lighting. We install mechanical timers and digital programmable timers that can control lights on different schedules for different days."
+    }
+  ],
+  "relatedServices": [
+    "new-outlet-installation-repair",
+    "smart-switch-home-automation",
+    "motion-sensor-dimmer-installation",
+    "ceiling-fan-light-fixture-installation"
+  ],
+  "seoContent": [
+    {
+      "heading": "Light Switch Installation in Miami & South Florida",
+      "body": "Whether you're replacing a worn-out switch, upgrading to dimmers, or adding switches for convenience, Solomon Electric handles all residential switch work throughout South Florida. Our licensed electricians install standard switches, dimmers, timers, occupancy sensors, and multi-way switch configurations—quickly and correctly."
+    },
+    {
+      "heading": "LED-Compatible Dimmer Switches",
+      "body": "Older dimmer switches often don't work well with modern LED bulbs, causing flickering, buzzing, or limited dimming range. We install LED-compatible dimmers matched to your specific bulbs, providing smooth dimming performance without compatibility issues."
+    },
+    {
+      "heading": "3-Way and 4-Way Switch Expertise",
+      "body": "Switches that control lights from multiple locations require specific wiring configurations. Incorrect replacement breaks the circuit entirely. Our electricians understand 3-way and 4-way wiring, installing replacements that work correctly the first time."
+    },
+    {
+      "heading": "Fast Professional Service Throughout South Florida",
+      "body": "Most switch installations take under an hour, meaning minimal disruption to your day. Solomon Electric provides fast, professional switch service throughout Miami, Fort Lauderdale, Hollywood, and all surrounding communities. Call us for quick, reliable switch installation and replacement."
+    }
+  ],
+  "relatedBlogPosts": []
+}

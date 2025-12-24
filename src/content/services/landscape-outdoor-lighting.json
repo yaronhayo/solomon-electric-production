@@ -1,0 +1,180 @@
+{
+  "name": "Landscape & Outdoor Lighting",
+  "slug": "landscape-outdoor-lighting",
+  "description": "Transform your South Florida outdoor spaces with professional landscape lighting installation. Illuminate walkways, highlight palm trees and tropical landscaping, create poolside ambiance, and enhance security—all while adding dramatic nighttime curb appeal. Solomon Electric designs and installs low-voltage and line-voltage outdoor lighting systems that withstand Florida's sun, rain, and humidity.",
+  "shortDescription": "Beautiful outdoor illumination",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 24,
+  "features": [
+    "Path and walkway lighting",
+    "Architectural and uplighting",
+    "Pool and patio illumination",
+    "Palm tree and landscape highlighting",
+    "LED low-voltage systems",
+    "Smart outdoor lighting controls"
+  ],
+  "warningSignsHeading": "Is Your Outdoor Lighting Ready for an Upgrade?",
+  "warningSignsSubheading": "Quality outdoor lighting enhances beauty, safety, and security. Here's when to consider professional installation.",
+  "problems": [
+    {
+      "title": "Dark Walkways and Entry",
+      "description": "Unlit paths create trip hazards and uninviting approaches. Well-designed path lighting guides visitors safely while welcoming them to your home.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Beautiful Landscaping Invisible at Night",
+      "description": "You invested in palm trees, tropical plants, and landscape design—but it all disappears after dark. Uplighting and accent lighting showcase your investment 24/7.",
+      "icon": "Home"
+    },
+    {
+      "title": "Security Concerns",
+      "description": "Darkness provides cover for intruders. Motion-activated and strategic security lighting deters crime while avoiding annoying neighbors with constant brightness.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Pool and Patio Underutilized at Night",
+      "description": "Florida evenings are perfect for outdoor living, but unlit outdoor spaces go unused after sunset. Proper lighting extends your usable hours.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Failing Existing Fixtures",
+      "description": "Corroded fixtures, burned-out bulbs, and damaged wiring are common in Florida's harsh outdoor environment. LED upgrades solve maintenance headaches.",
+      "icon": "Plug"
+    },
+    {
+      "title": "DIY Lighting That Looks... DIY",
+      "description": "Big-box store lighting kits often look cheap and fail quickly in Florida conditions. Professional design and installation creates lasting, dramatic results.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Landscape Lighting Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Design Consultation",
+      "description": "We walk your property at night, discuss your vision, identify key features to highlight, and design a lighting plan that balances beauty, function, and budget."
+    },
+    {
+      "step": 2,
+      "title": "System Selection",
+      "description": "We recommend appropriate fixtures—low-voltage for landscaping, line-voltage where needed—selecting weather-resistant LED equipment rated for Florida conditions."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "Our electricians install transformers, run properly buried cables, mount fixtures securely, and make all connections with waterproof methods designed for outdoor use."
+    },
+    {
+      "step": 4,
+      "title": "Aiming and Adjustment",
+      "description": "We return at night to fine-tune fixture positioning, adjust angles for optimal effect, and verify the complete system creates your desired atmosphere."
+    },
+    {
+      "step": 5,
+      "title": "Controls and Automation",
+      "description": "We set up timers, photocells, or smart controls so your lighting operates automatically—on at dusk, off at your preferred time—with no daily management needed."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Landscape Lighting",
+  "benefits": [
+    {
+      "title": "Dramatic Curb Appeal",
+      "description": "Well-designed outdoor lighting makes your home stand out in the neighborhood. Uplighting on palms and architectural lighting create magazine-worthy nighttime scenes.",
+      "icon": "Home"
+    },
+    {
+      "title": "Enhanced Security",
+      "description": "Illuminated homes are less attractive targets. Motion-activated lights and strategic placement eliminate dark hiding spots without creating a prison-yard look.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Extended Outdoor Living",
+      "description": "Florida's warm evenings are perfect for outdoor entertaining—but only if you can see. Proper lighting lets you enjoy patios, pools, and outdoor kitchens after dark.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Energy-Efficient LED",
+      "description": "Modern LED landscape lights use a fraction of the energy of older halogen systems, last 50,000+ hours, and generate minimal heat—perfect for Florida conditions.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Properties Illuminated"
+    },
+    {
+      "value": "50K+",
+      "label": "LED Hours Lifespan"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's the difference between low-voltage and line-voltage outdoor lighting?",
+      "answer": "Low-voltage systems (12V) are safer, easier to install, and ideal for landscape lighting—path lights, uplights, and accent fixtures. Line-voltage (120V) is needed for larger fixtures, security floods, and wherever more power is required. We typically use low-voltage for landscaping and line-voltage for architectural and security applications."
+    },
+    {
+      "question": "How do LED landscape lights compare to halogen?",
+      "answer": "LED is superior in every way for outdoor use: 80% less energy, 50,000+ hour lifespan vs 2,000 for halogen, no heat (important in Florida), and more consistent light quality. While LED fixtures cost slightly more upfront, the energy and maintenance savings make them far more economical over time."
+    },
+    {
+      "question": "Will landscape lighting increase my electric bill significantly?",
+      "answer": "Not with LED. A typical landscape lighting system with 15-20 LED fixtures uses about the same power as a standard light bulb. Running 4-6 hours per night typically costs just a few dollars per month. The security and enjoyment benefits far outweigh the minimal energy cost."
+    },
+    {
+      "question": "How do you handle Florida's rain and humidity?",
+      "answer": "All outdoor electrical work must withstand Florida's climate. We use fixtures rated for wet locations, waterproof connection methods, properly buried cables, and GFCI protection where required. Quality fixtures and proper installation techniques ensure long-term reliability."
+    },
+    {
+      "question": "Can landscape lighting be added to existing landscaping?",
+      "answer": "Absolutely. Low-voltage cable can be buried with minimal disturbance to established plants. Fixtures are positioned without disturbing root systems. Most landscape lighting installations complete without significant damage to existing landscaping."
+    },
+    {
+      "question": "Do you offer smart outdoor lighting controls?",
+      "answer": "Yes! We can integrate landscape lighting with smart home systems—controlling lights from your phone, setting schedules, adjusting brightness, and even changing colors with RGB-capable fixtures. Sunset-activated automation ensures lights come on exactly when needed."
+    },
+    {
+      "question": "How do you prevent light pollution and neighbor complaints?",
+      "answer": "Professional design considers light angles and shielding to direct light where intended—not into neighbors' windows or the sky. Downlighting, proper fixture selection, and thoughtful placement create beautiful effects while being a good neighbor."
+    },
+    {
+      "question": "What about fixture maintenance?",
+      "answer": "LED fixtures require minimal maintenance—occasional cleaning and adjustment. With no bulbs to replace for years, maintenance is dramatically reduced versus older systems. We can provide annual maintenance service to keep your system performing optimally."
+    }
+  ],
+  "relatedServices": [
+    "indoor-outdoor-lighting-installation",
+    "parking-lot-security-lighting",
+    "smart-lighting-installation",
+    "holiday-lighting-installation-removal"
+  ],
+  "seoContent": [
+    {
+      "heading": "Professional Landscape Lighting in Miami & South Florida",
+      "body": "Transform your outdoor spaces with professional landscape lighting from Solomon Electric. We design and install complete outdoor lighting systems—path lighting, palm tree uplighting, architectural accents, pool and patio illumination, and security lighting. Our licensed electricians create dramatic nighttime scenes while ensuring all installations meet Florida electrical codes and withstand our demanding climate."
+    },
+    {
+      "heading": "Highlighting South Florida's Tropical Beauty",
+      "body": "Palm trees, tropical plants, and water features deserve to be showcased after dark. Strategic uplighting transforms ordinary landscaping into nighttime art. We position fixtures to wash walls with light, silhouette distinctive plants, and create layered illumination that adds depth and drama to any property."
+    },
+    {
+      "heading": "LED Technology for Florida Conditions",
+      "body": "Florida's sun, rain, and humidity destroy inferior outdoor lighting. We install high-quality LED fixtures rated for wet locations, designed to withstand years of Florida weather. LED technology provides beautiful, consistent light while using 80% less energy than older halogen systems—perfect for environmentally conscious homeowners."
+    },
+    {
+      "heading": "Serving Properties Throughout South Florida",
+      "body": "Solomon Electric designs and installs landscape lighting throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, Weston, and all surrounding communities. From modest path lighting to complete estate illumination, we create outdoor lighting that enhances your property's beauty, safety, and security."
+    }
+  ],
+  "relatedBlogPosts": []
+}

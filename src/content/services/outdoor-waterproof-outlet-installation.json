@@ -1,0 +1,180 @@
+{
+  "name": "Outdoor & Waterproof Outlet Installation",
+  "slug": "outdoor-waterproof-outlet-installation",
+  "description": "South Florida outdoor living demands properly installed outdoor electrical outlets—for holiday lights, landscape equipment, pool pumps, outdoor kitchens, and more. Solomon Electric installs weatherproof GFCI outlets designed to withstand Florida's rain, humidity, and sun while meeting all code requirements for outdoor electrical.",
+  "shortDescription": "Weather-resistant outdoor power",
+  "icon": "Plug",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Outlets, Switches & Wiring",
+  "order": 21,
+  "features": [
+    "GFCI-protected outdoor outlets",
+    "Weatherproof in-use covers",
+    "Patio and deck outlets",
+    "Landscape and irrigation power",
+    "Outdoor kitchen circuits",
+    "Pool and spa area outlets"
+  ],
+  "warningSignsHeading": "When You Need Outdoor Outlets",
+  "warningSignsSubheading": "Outdoor electrical extends your usable space. Here's when to add properly installed outdoor power.",
+  "problems": [
+    {
+      "title": "Running Extension Cords Outside",
+      "description": "Extension cords through windows or under doors are code violations and safety hazards. Proper outdoor outlets eliminate this unsafe practice.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "No Power for Landscape Equipment",
+      "description": "Electric hedge trimmers, leaf blowers, and power washers need outlets in convenient locations—not 100-foot extension cord runs.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Holiday Lighting Struggles",
+      "description": "If decorating for holidays means dangerous cord situations, additional outdoor outlets in strategic locations simplifies and safeguards seasonal lighting.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Outdoor Kitchen Needs",
+      "description": "Outdoor kitchens require properly rated outlets for rotisseries, blenders, and small appliances—with GFCI protection and waterproof covers.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Pool Equipment Power",
+      "description": "Pool areas need GFCI-protected outlets at proper distances from water per code. We understand the specific requirements for pool-area electrical.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Old Outdoor Outlets Failing",
+      "description": "Outdoor outlets deteriorate faster than indoor ones. Cracked covers, corroded contacts, and non-functional GFCIs all need professional attention.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our Outdoor Outlet Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Location Planning",
+      "description": "We identify optimal outlet placement for your intended uses, ensuring code-compliant distances from pools and proper spacing for coverage."
+    },
+    {
+      "step": 2,
+      "title": "Circuit Assessment",
+      "description": "We determine whether existing circuits have capacity for new outdoor outlets or if dedicated circuits are needed for specific loads."
+    },
+    {
+      "step": 3,
+      "title": "Weatherproof Installation",
+      "description": "We install outlets rated for wet locations with proper in-use covers that protect even when cords are plugged in—required by code for exposed locations."
+    },
+    {
+      "step": 4,
+      "title": "GFCI Protection",
+      "description": "All outdoor outlets receive GFCI protection as required by code, protecting users from ground faults in wet conditions."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Verification",
+      "description": "We test all outlets, verify GFCI function, and ensure weatherproof covers seal properly against Florida rain."
+    }
+  ],
+  "benefitsHeading": "Benefits of Proper Outdoor Outlets",
+  "benefits": [
+    {
+      "title": "Safe Outdoor Power",
+      "description": "Properly installed outdoor outlets eliminate dangerous extension cord situations. GFCI protection provides critical safety in wet environments.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Expand Living Space",
+      "description": "Outdoor outlets make patios, decks, and yards functional extensions of your home—power for entertainment, cooking, and comfortable living.",
+      "icon": "Home"
+    },
+    {
+      "title": "Convenient Power Access",
+      "description": "Outlets where you need them mean no more dragging cords across the yard. Power your equipment with convenience.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "Outdoor electrical has specific requirements—GFCI protection, weatherproof covers, proper box types. Professional installation meets all codes.",
+      "icon": "FileCheck"
+    }
+  ],
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Outdoor Outlets"
+    },
+    {
+      "value": "100%",
+      "label": "GFCI Protected"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do all outdoor outlets need GFCI protection?",
+      "answer": "Yes, absolutely. Florida electrical code (following NEC) requires GFCI protection for all outdoor outlets. This protects users from ground faults that could cause electrocution when exposed to rain, sprinklers, or wet conditions. No exceptions."
+    },
+    {
+      "question": "What's an in-use cover vs. a standard weatherproof cover?",
+      "answer": "Standard weatherproof covers protect outlets when nothing is plugged in. In-use covers (bubble covers) protect even when a cord is plugged in—this is required by code for outlets in exposed locations. We install appropriate covers for each location."
+    },
+    {
+      "question": "How many outdoor outlets do I need?",
+      "answer": "Code requires outlets on front and back of homes, but convenience often calls for more. Consider outlets near: patio seating, outdoor kitchen, pool equipment, landscape lighting transformers, garden beds, and garage exterior. More outlets means less extension cord use."
+    },
+    {
+      "question": "Can outdoor outlets handle holiday lights?",
+      "answer": "Standard 15 or 20-amp outdoor outlets handle typical holiday light installations. For extensive displays, dedicated circuits prevent overloading. We can assess your holiday lighting needs and install appropriate capacity."
+    },
+    {
+      "question": "What about outlets near pools and hot tubs?",
+      "answer": "Pool area outlets have specific code requirements: GFCI protection is mandatory, and outlets must maintain minimum distances from the pool edge (typically 6-20 feet depending on the application). We understand and follow all pool electrical requirements."
+    },
+    {
+      "question": "Do outdoor outlets work in rain?",
+      "answer": "Properly installed outdoor outlets function safely in rain. Wet-rated boxes, in-use covers, and GFCI protection work together to provide safe operation even during Florida's afternoon thunderstorms. Never use damaged outlets or covers in wet conditions."
+    },
+    {
+      "question": "Can you add outlets to my existing patio?",
+      "answer": "Yes. We can add outlets to existing outdoor spaces by running conduit along surfaces or under-deck, or by running wire through walls to access exterior locations. We'll determine the best approach for your specific situation."
+    },
+    {
+      "question": "What wire is used for outdoor electrical?",
+      "answer": "Underground outdoor circuits use UF (Underground Feeder) cable or standard wire in conduit. Above-ground outdoor installations typically use conduit for protection. We select appropriate materials based on installation location and method."
+    }
+  ],
+  "relatedServices": [
+    "gfci-outlet-installation-repair",
+    "landscape-outdoor-lighting",
+    "pool-spa-wiring-inspection",
+    "hot-tub-spa-installation"
+  ],
+  "seoContent": [
+    {
+      "heading": "Outdoor Outlet Installation in Miami & South Florida",
+      "body": "South Florida's outdoor lifestyle demands proper outdoor electrical. Solomon Electric installs weatherproof GFCI outlets throughout outdoor living spaces—patios, decks, pool areas, outdoor kitchens, and landscape areas. Professional installation ensures code compliance and safe operation in Florida's demanding weather conditions."
+    },
+    {
+      "heading": "Weatherproof and GFCI Protection",
+      "body": "Every outdoor outlet we install includes GFCI protection (required by code) and appropriate weatherproof covers. For exposed locations, we use in-use covers that protect even when cords are plugged in. These features work together to provide safe outdoor power in rain, humidity, and wet conditions."
+    },
+    {
+      "heading": "Outdoor Kitchen and Patio Electrical",
+      "body": "Outdoor entertaining spaces need convenient power. We install outlets for outdoor kitchens (grills, rotisseries, small appliances), patio entertainment (TVs, speakers, lighting), and general convenience. Proper circuit sizing ensures reliable power for outdoor living."
+    },
+    {
+      "heading": "Professional Installation Throughout South Florida",
+      "body": "Solomon Electric installs outdoor outlets throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Eliminate dangerous extension cord situations with properly installed outdoor power—contact us for outdoor electrical installation."
+    }
+  ],
+  "relatedBlogPosts": []
+}

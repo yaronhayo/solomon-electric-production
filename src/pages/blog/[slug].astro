@@ -16,8 +16,10 @@ import {
 import {
     generateArticleSchema,
     generateBreadcrumbSchema,
+    generateFAQSchema,
 } from "../../utils/seo";
 import { SITE_CONFIG } from "../../config/site";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -50,11 +52,26 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 );
 
 const currentUrl = `${siteUrl}/blog/${post.slug}`;
+
+// Get the image URL for OG tags
+const getOgImageUrl = () => {
+    if (!post.data.image) return undefined;
+    // For Astro Image imports, we need the src property
+    const imageSrc =
+        typeof post.data.image === "string"
+            ? post.data.image
+            : post.data.image.src;
+    // Make it an absolute URL
+    return imageSrc.startsWith("http") ? imageSrc : `${siteUrl}${imageSrc}`;
+};
+const ogImageUrl = getOgImageUrl();
 ---
 
 <Layout
-    title={`${post.data.title} - Solomon Electric Blog`}
+    title={`${post.data.title} | Solomon Electric Miami`}
     description={post.data.description}
+    ogImage={ogImageUrl}
+    ogType="article"
 >
     <!-- Structured Data -->
     <script
@@ -65,6 +82,14 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
         type="application/ld+json"
         set:html={JSON.stringify(breadcrumbSchema)}
     />
+    {
+        post.data.faqs && post.data.faqs.length > 0 && (
+            <script
+                type="application/ld+json"
+                set:html={JSON.stringify(generateFAQSchema(post.data.faqs))}
+            />
+        )
+    }
 
     <!-- SEO Meta Tags -->
     <meta slot="head" property="og:title" content={post.data.title} />
@@ -98,23 +123,13 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
     />
 
     <!-- Breadcrumb Navigation -->
-    <nav class="bg-light py-4 border-b border-gray-200">
-        <div class="container-custom">
-            <div
-                class="flex items-center gap-2 text-sm text-gray-500 font-medium"
-            >
-                <a href="/" class="hover:text-accent transition-colors">Home</a>
-                <span>/</span>
-                <a href="/blog" class="hover:text-accent transition-colors"
-                    >Blog</a
-                >
-                <span>/</span>
-                <span class="text-primary font-bold line-clamp-1"
-                    >{post.data.title}</span
-                >
-            </div>
-        </div>
-    </nav>
+    <Breadcrumb
+        items={[
+            { label: "Home", href: "/" },
+            { label: "Blog", href: "/blog" },
+            { label: post.data.title },
+        ]}
+    />
 
     <!-- Hero Section -->
     <section class="relative bg-primary py-20 md:py-32 overflow-hidden">
@@ -124,6 +139,8 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
                     <Image
                         src={post.data.image}
                         alt={post.data.title}
+                        loading="eager"
+                        fetchpriority="high"
                         class="w-full h-full object-cover opacity-20"
                     />
                 )
@@ -135,7 +152,7 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
         </div>
 
         <div class="container-custom relative z-10">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-5xl mx-auto">
                 <!-- Category Badge -->
                 <div class="mb-6">
                     <span
@@ -212,10 +229,10 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
     <!-- Article Content -->
     <section class="py-16 md:py-24 bg-white">
         <div class="container-custom">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-5xl mx-auto">
                 <!-- Main Content -->
                 <article
-                    class="prose prose-lg mx-auto prose-headings:font-display prose-headings:font-black prose-headings:text-primary prose-headings:tracking-tight prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-accent prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-accent prose-blockquote:bg-light prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:not-italic prose-blockquote:rounded-r-lg prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-12 prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-8 prose-h2:uppercase prose-h3:uppercase"
+                    class="prose prose-lg mx-auto prose-headings:font-display prose-headings:font-black prose-headings:text-primary prose-headings:tracking-tight prose-p:text-[var(--text-body)] prose-p:leading-relaxed prose-li:text-[var(--text-body)] prose-strong:text-accent prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-accent prose-blockquote:bg-light prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:not-italic prose-blockquote:rounded-r-lg prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-12 prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-8 prose-h2:uppercase prose-h3:uppercase"
                 >
                     <Content />
                 </article>
@@ -229,7 +246,7 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
                                     Tags:
                                 </span>
                                 {post.data.tags.map((tag: string) => (
-                                    <span class="px-4 py-2 bg-light border border-gray-200 rounded-full text-sm text-gray-600 hover:border-accent hover:text-accent transition-all font-medium">
+                                    <span class="px-4 py-2 bg-light border border-gray-200 rounded-full text-sm text-[var(--text-body)] hover:border-accent hover:text-accent transition-all font-medium">
                                         {tag}
                                     </span>
                                 ))}
@@ -250,7 +267,7 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
                     >
                         Ready for Professional Electrical Service?
                     </h3>
-                    <p class="text-gray-600 mb-6 max-w-2xl mx-auto font-medium">
+                    <p class="text-[var(--text-body)] mb-6 font-medium">
                         Get expert electrical solutions from Miami's trusted
                         contractors. 24/7 emergency service available.
                     </p>
@@ -308,7 +325,7 @@ const currentUrl = `${siteUrl}/blog/${post.slug}`;
                         <h2 class="text-3xl md:text-4xl font-black text-primary mb-2 uppercase">
                             Related <span class="text-accent">Articles</span>
                         </h2>
-                        <p class="text-gray-600 font-medium">
+                        <p class="text-[var(--text-body)] font-medium">
                             Continue learning about electrical services
                         </p>
                     </div>

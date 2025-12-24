@@ -1,0 +1,180 @@
+{
+  "name": "Ring Doorbell & Security Camera Wiring",
+  "slug": "ring-doorbell-security-camera-wiring",
+  "description": "Protect your South Florida home with professionally wired security cameras and video doorbells. While battery-powered options exist, hardwired security cameras provide reliable, uninterrupted operation without changing batteries or worrying about WiFi range. Solomon Electric installs low-voltage wiring for Ring, Nest, Arlo, and all major security camera brands, plus doorbell transformers for video doorbells.",
+  "shortDescription": "Professional security camera wiring",
+  "icon": "Shield",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Lighting & Smart Home",
+  "order": 27,
+  "features": [
+    "Ring and Nest doorbell installation",
+    "Security camera wiring",
+    "Doorbell transformer upgrade",
+    "POE camera network runs",
+    "Hidden wire installation",
+    "NVR and DVR connections"
+  ],
+  "warningSignsHeading": "Why Wire Your Security Cameras?",
+  "warningSignsSubheading": "Hardwired cameras offer significant advantages over battery-powered options. Here's why professional wiring matters.",
+  "problems": [
+    {
+      "title": "Battery Cameras Dying",
+      "description": "Tired of climbing ladders to change batteries every few months? Wired cameras run continuously without battery maintenance—set and forget.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Video Doorbell Not Powering Up",
+      "description": "Many video doorbells need more power than old doorbell transformers provide. Upgrading the transformer ensures reliable operation.",
+      "icon": "Plug"
+    },
+    {
+      "title": "WiFi Range Limitations",
+      "description": "WiFi cameras at property edges often drop connection. POE (Power over Ethernet) cameras run on network cable for reliable connection regardless of WiFi coverage.",
+      "icon": "Home"
+    },
+    {
+      "title": "Ugly Visible Wiring",
+      "description": "DIY camera installations often have cables dangling down walls. Professional installation hides wires for clean, finished appearance.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Gaps in Coverage",
+      "description": "Professional assessment identifies optimal camera placement for complete coverage—eliminating blind spots and ensuring every entry point is monitored.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Needing Local Recording",
+      "description": "Cloud-only cameras depend on internet connection and subscription fees. Local NVR/DVR systems provide backup recording and avoid monthly costs.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Security Camera Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Security Assessment",
+      "description": "We evaluate your property, identify areas needing coverage, and recommend camera types and positions for comprehensive security monitoring."
+    },
+    {
+      "step": 2,
+      "title": "Wiring Route Planning",
+      "description": "We plan cable routes that hide wiring inside walls, attics, and soffits—minimizing visible cables while ensuring proper cable protection."
+    },
+    {
+      "step": 3,
+      "title": "Power and Data Installation",
+      "description": "We install low-voltage power wiring, POE network runs, or combination cables depending on your camera system requirements."
+    },
+    {
+      "step": 4,
+      "title": "Camera Mounting",
+      "description": "We securely mount cameras with proper angles and weatherproofing for outdoor installations, connecting all wiring with clean terminations."
+    },
+    {
+      "step": 5,
+      "title": "Configuration and Testing",
+      "description": "We configure cameras, verify recording, set up app access, and test motion detection zones. You'll see exactly what your cameras capture before we leave."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Camera Installation",
+  "benefits": [
+    {
+      "title": "No Battery Maintenance",
+      "description": "Wired cameras run 24/7 without battery changes. No climbing ladders, no dead cameras at critical moments, no maintenance hassles.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Clean Installation",
+      "description": "Hidden wiring inside walls and soffits creates professional appearance. No exposed cables running down your home's exterior.",
+      "icon": "Home"
+    },
+    {
+      "title": "Reliable Connection",
+      "description": "POE cameras eliminate WiFi dependency—they work reliably regardless of router placement or wireless interference.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Optimal Coverage",
+      "description": "Professional placement assessment ensures complete coverage with no blind spots. We position cameras for best surveillance effectiveness.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Systems Installed"
+    },
+    {
+      "value": "24/7",
+      "label": "Continuous Recording"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can you install security cameras I've already purchased?",
+      "answer": "Yes. We install cameras from all major brands—Ring, Nest, Arlo, Wyze, Hikvision, Reolink, and others. We can also recommend cameras if you haven't decided yet. Bring your own equipment and we'll handle professional installation and wiring."
+    },
+    {
+      "question": "What does POE camera wiring involve?",
+      "answer": "POE (Power over Ethernet) cameras receive power and data through a single network cable. We run Cat5e or Cat6 cable from your router/switch location to each camera position. POE cameras are more reliable than WiFi and don't require separate power wiring."
+    },
+    {
+      "question": "Why isn't my Ring doorbell working properly?",
+      "answer": "Most Ring doorbell issues stem from inadequate transformer power. Older doorbell transformers often provide only 10-16 volts, while Ring doorbells need 16-24 volts with adequate VA rating. We install upgraded transformers that provide proper power for reliable operation."
+    },
+    {
+      "question": "Can you hide camera wires inside walls?",
+      "answer": "Yes—this is our standard approach. We route wiring through attics, walls, and soffits to hide cables. Low-voltage camera wiring doesn't require the same separation rules as electrical wiring, giving us flexibility in routing. The result is a clean, professional installation."
+    },
+    {
+      "question": "Do I need an NVR or is cloud storage enough?",
+      "answer": "It depends on your needs. Cloud storage is convenient but requires internet and usually involves subscription fees. Local NVR (Network Video Recorder) provides backup recording and typically higher quality than cloud, without monthly costs. Many systems use both for redundancy."
+    },
+    {
+      "question": "How many cameras do I need?",
+      "answer": "Coverage depends on your property layout. At minimum, cover all entry doors (front, back, garage). Larger properties benefit from cameras covering driveways, side yard access, and backyard areas. We'll assess your property and recommend optimal camera quantity and placement."
+    },
+    {
+      "question": "What about outdoor cameras and Florida weather?",
+      "answer": "All outdoor cameras we install are rated for weather exposure. We ensure proper mounting that sheds water, seal cable entry points, and position cameras where rain and sun exposure won't affect performance. Florida conditions require attention to these details."
+    },
+    {
+      "question": "Can cameras integrate with my smart home system?",
+      "answer": "Yes. Most modern cameras integrate with Alexa, Google Home, Apple HomeKit, and smart home platforms. We configure integrations during installation so you can view cameras on smart displays, receive alerts, and include cameras in automation routines."
+    }
+  ],
+  "relatedServices": [
+    "smart-switch-home-automation",
+    "computer-network-outlet-installation",
+    "outdoor-waterproof-outlet-installation",
+    "home-theater-low-voltage-wiring"
+  ],
+  "seoContent": [
+    {
+      "heading": "Security Camera Installation in Miami & South Florida",
+      "body": "Protect your property with professionally installed security cameras from Solomon Electric. We wire and install Ring doorbells, Nest cameras, POE security systems, and all major brands throughout South Florida. Our installations feature hidden wiring, proper outdoor weatherproofing, and configuration that ensures your system works reliably from day one."
+    },
+    {
+      "heading": "Ring Doorbell Transformer Upgrades",
+      "body": "Video doorbells like Ring and Nest need adequate power to function properly. Many older homes have doorbell transformers that can't deliver the 16-24 volts these devices require. We upgrade transformers, add missing backplates, and ensure your video doorbell operates reliably without constant charging or connectivity issues."
+    },
+    {
+      "heading": "POE Camera Network Installation",
+      "body": "POE (Power over Ethernet) security cameras offer superior reliability compared to WiFi cameras. They receive power and data through a single network cable, eliminating battery maintenance and WiFi dead zone problems. We run Cat5e/Cat6 cable through walls and attics for clean, concealed installation."
+    },
+    {
+      "heading": "Professional Installation Throughout South Florida",
+      "body": "Solomon Electric installs security cameras and video doorbells throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single doorbell installations to complete multi-camera security systems, we provide professional installation with hidden wiring and full configuration."
+    }
+  ],
+  "relatedBlogPosts": []
+}

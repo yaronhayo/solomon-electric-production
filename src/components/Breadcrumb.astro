@@ -1,0 +1,127 @@
+---
+/**
+ * Breadcrumb Component
+ * Displays a sticky breadcrumb navigation below the header.
+ * Matches the premium styling across all pages.
+ */
+import Container from "./ui/Container.astro";
+
+interface BreadcrumbItem {
+    label: string;
+    href?: string; // Optional - last item typically has no href
+}
+
+interface Props {
+    items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb-nav">
+    <Container>
+        <div class="breadcrumb-items">
+            {
+                items.map((item, index) => (
+                    <>
+                        {item.href ? (
+                            <a href={item.href} class="breadcrumb-link">
+                                {item.label}
+                            </a>
+                        ) : (
+                            <span class="breadcrumb-current">{item.label}</span>
+                        )}
+                        {index < items.length - 1 && (
+                            <svg
+                                class="breadcrumb-sep"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        )}
+                    </>
+                ))
+            }
+        </div>
+    </Container>
+</nav>
+
+<style>
+    .breadcrumb-nav {
+        background: rgba(243, 243, 243, 0.9);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: var(--header-height, 70px);
+        z-index: 45;
+    }
+
+    .breadcrumb-items {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .breadcrumb-link {
+        color: var(--text-body);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color var(--transition-fast);
+    }
+
+    .breadcrumb-link:hover {
+        color: var(--color-accent);
+    }
+
+    .breadcrumb-sep {
+        width: 1rem;
+        height: 1rem;
+        color: var(--text-muted);
+        flex-shrink: 0;
+    }
+
+    .breadcrumb-current {
+        color: var(--color-primary);
+        font-weight: 700;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+
+<script>
+    // Set header height for sticky breadcrumbs positioning
+    function setHeaderHeight() {
+        const topBar = document.querySelector(".top-bar") as HTMLElement | null;
+        const header = document.querySelector("header") as HTMLElement | null;
+        let totalHeight = 0;
+
+        if (topBar) {
+            totalHeight += topBar.offsetHeight;
+        }
+        if (header) {
+            totalHeight += header.offsetHeight;
+        }
+
+        document.documentElement.style.setProperty(
+            "--header-height",
+            totalHeight + "px",
+        );
+    }
+
+    // Run on load
+    setHeaderHeight();
+
+    // Run on resize (header height may change on mobile)
+    window.addEventListener("resize", setHeaderHeight);
+
+    // Run on Astro page transitions
+    document.addEventListener("astro:page-load", setHeaderHeight);
+</script>

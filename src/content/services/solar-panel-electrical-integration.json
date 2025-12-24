@@ -1,0 +1,180 @@
+{
+  "name": "Solar Panel Electrical Integration",
+  "slug": "solar-panel-electrical-integration",
+  "description": "Adding solar to your South Florida home requires more than just panels on the roof. Solomon Electric provides the electrical integration that makes solar systems work—service upgrades when needed, panel modifications for solar connection, inverter wiring, monitoring systems, and all the electrical work between your solar installer and your home's power system.",
+  "shortDescription": "Electrical for solar installations",
+  "icon": "Zap",
+  "image": "../../assets/images/services/ev-charging.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 15,
+  "features": [
+    "Solar-ready panel upgrades",
+    "Inverter electrical connection",
+    "Service upgrades for solar",
+    "Battery backup integration",
+    "Net metering setup",
+    "Solar monitoring systems"
+  ],
+  "warningSignsHeading": "Solar Electrical Integration Needs",
+  "warningSignsSubheading": "Solar installations require electrical work beyond panel mounting. Here's what's involved.",
+  "problems": [
+    {
+      "title": "Panel Lacks Solar Capacity",
+      "description": "Many older electrical panels lack space or capacity for solar breakers. We upgrade panels to accommodate solar connections properly.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Service Size Concerns",
+      "description": "Solar back-feed has limits based on main breaker size. Larger systems may require service upgrades or load-side taps for code compliance.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Inverter Wiring",
+      "description": "Solar inverters require proper electrical connection to your panel—conduit runs, appropriate wiring, and code-compliant installation.",
+      "icon": "Home"
+    },
+    {
+      "title": "Battery Backup Addition",
+      "description": "Adding battery storage to solar requires additional electrical work—battery wiring, critical load panels, and proper integration.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Permit Requirements",
+      "description": "Solar electrical connections require permits and inspection. We handle electrical permits and ensure code-compliant installation.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Utility Interconnection",
+      "description": "Connecting solar to the grid requires utility approval and proper meter/disconnect configuration. We ensure utility-compliant installation.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Solar Integration Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "System Assessment",
+      "description": "We evaluate your solar system specifications and your existing electrical panel to determine what electrical work is needed for integration."
+    },
+    {
+      "step": 2,
+      "title": "Panel Planning",
+      "description": "We plan panel modifications or upgrades required to accept solar connection while maintaining code compliance and capacity requirements."
+    },
+    {
+      "step": 3,
+      "title": "Electrical Installation",
+      "description": "We install conduit runs, wire inverter connections, install solar breakers, and complete all electrical between inverter and panel."
+    },
+    {
+      "step": 4,
+      "title": "Battery Integration",
+      "description": "If your system includes batteries, we install battery connections, critical load panels, and any transfer switching required."
+    },
+    {
+      "step": 5,
+      "title": "Inspection and Activation",
+      "description": "We coordinate electrical inspection and work with your solar installer and utility for final activation and net metering setup."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Solar Integration",
+  "benefits": [
+    {
+      "title": "Code Compliance",
+      "description": "Solar electrical has specific code requirements. Professional integration ensures your system passes inspection and operates safely.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Proper Panel Sizing",
+      "description": "We ensure your panel can handle solar back-feed without exceeding conductor ratings—the #1 code violation in amateur solar installations.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Battery Ready",
+      "description": "If you're adding batteries now or later, we plan electrical infrastructure that accommodates battery integration without rework.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Warranty Protection",
+      "description": "Proper electrical installation protects both solar and electrical equipment warranties. Don't void warranties with improper connections.",
+      "icon": "FileCheck"
+    }
+  ],
+  "stats": [
+    {
+      "value": "75+",
+      "label": "Solar Integrations"
+    },
+    {
+      "value": "100%",
+      "label": "Code Compliant"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why can't my solar installer handle all the electrical work?",
+      "answer": "Some solar installers are fully licensed for electrical work; many are not. Panel upgrades, service changes, and significant electrical modifications often require a licensed electrical contractor. We partner with solar installers to provide the electrical work they need."
+    },
+    {
+      "question": "What's the 120% rule for solar connections?",
+      "answer": "The NEC limits solar back-feed based on panel bus bar rating. The sum of main breaker and solar breaker can't exceed 120% of bus bar rating. If your 200A panel has 200A bus bars, maximum combined breakers is 240A (200A main + 40A solar). Larger solar systems may need panel upgrades."
+    },
+    {
+      "question": "Do I need a new electrical panel for solar?",
+      "answer": "Not always. If your panel has adequate capacity, space for a solar breaker, and meets the 120% rule, it may work as-is. Many older or full panels need upgrades. We assess your specific situation and recommend only necessary work."
+    },
+    {
+      "question": "What about battery backup with solar?",
+      "answer": "Battery systems (Tesla Powerwall, Generac PWRcell, etc.) require additional electrical work—battery connections, critical load subpanels, and proper integration with both solar and grid power. We install the electrical infrastructure batteries require."
+    },
+    {
+      "question": "Will solar work during a power outage?",
+      "answer": "Standard grid-tied solar without batteries shuts off during outages (anti-islanding safety requirement). Solar with battery backup can power critical loads during outages. We install the battery and electrical infrastructure needed for backup capability."
+    },
+    {
+      "question": "What permits are required for solar electrical?",
+      "answer": "Solar installations require electrical permits for the connection to your panel. If panel upgrades or service changes are involved, those require separate permits. We handle all electrical permitting and inspection coordination."
+    },
+    {
+      "question": "How do I prepare for solar installation?",
+      "answer": "Consider panel capacity and condition. If your panel is old, undersized, or full, address upgrades before or during solar installation. We can assess your panel's solar-readiness and recommend any pre-work that simplifies solar integration."
+    },
+    {
+      "question": "What's involved in net metering setup?",
+      "answer": "Net metering requires utility approval, proper metering equipment, and specific disconnect/connection configurations. Your solar installer handles most utility coordination, but the electrical equipment must be installed correctly. We ensure installation meets FPL requirements."
+    }
+  ],
+  "relatedServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "home-electrical-system-upgrade",
+    "home-standby-generator-installation",
+    "whole-home-surge-protection"
+  ],
+  "seoContent": [
+    {
+      "heading": "Solar Electrical Integration in South Florida",
+      "body": "Adding solar to your South Florida home requires more than panels on the roof. Solomon Electric provides the electrical integration that makes solar work—panel modifications, inverter wiring, battery connections, and all electrical between your solar system and your home's power."
+    },
+    {
+      "heading": "Panel Upgrades for Solar",
+      "body": "Many older electrical panels can't accommodate solar connections. We upgrade panels to accept solar breakers, meet the 120% back-feed rule, and provide capacity for both solar input and household loads. Proper panel sizing is essential for code compliance."
+    },
+    {
+      "heading": "Battery Backup Integration",
+      "body": "Solar battery systems like Tesla Powerwall require additional electrical infrastructure—battery wiring, critical load panels, and proper integration. We install the electrical components that make battery backup work, whether installed with solar or added later."
+    },
+    {
+      "heading": "Serving South Florida Solar Installations",
+      "body": "Solomon Electric provides solar electrical integration throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Partner with experienced electricians for the electrical work your solar installation requires."
+    }
+  ],
+  "relatedBlogPosts": []
+}

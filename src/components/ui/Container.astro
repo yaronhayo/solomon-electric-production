@@ -1,4 +1,10 @@
 ---
+/**
+ * Container Component
+ * Uses CSS custom properties from global.css for consistent responsive widths
+ * --container-max: 1600px (main layout)
+ * --container-padding-sm/md/lg/xl: responsive padding
+ */
 interface Props {
     class?: string;
     [key: string]: any;
@@ -7,12 +13,39 @@ interface Props {
 const { class: className, ...rest } = Astro.props;
 ---
 
-<div
-    class:list={[
-        "mx-auto w-full max-w-[1600px] px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-20",
-        className,
-    ]}
-    {...rest}
->
+<div class:list={["container-wrapper", className]} {...rest}>
     <slot />
 </div>
+
+<style>
+    .container-wrapper {
+        width: 100%;
+        max-width: var(--container-max, 1600px);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: clamp(
+            var(--container-padding-sm, 1.25rem),
+            4vw,
+            var(--container-padding-md, 2rem)
+        );
+        padding-right: clamp(
+            var(--container-padding-sm, 1.25rem),
+            4vw,
+            var(--container-padding-md, 2rem)
+        );
+    }
+
+    @media (min-width: 1920px) {
+        .container-wrapper {
+            padding-left: var(--container-padding-lg, 3rem);
+            padding-right: var(--container-padding-lg, 3rem);
+        }
+    }
+
+    @media (min-width: 2560px) {
+        .container-wrapper {
+            padding-left: var(--container-padding-xl, 4rem);
+            padding-right: var(--container-padding-xl, 4rem);
+        }
+    }
+</style>

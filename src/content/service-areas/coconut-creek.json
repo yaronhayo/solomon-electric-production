@@ -1,0 +1,97 @@
+{
+    "name": "Coconut Creek",
+    "slug": "coconut-creek",
+    "county": "Broward",
+    "description": "Licensed Coconut Creek electricians serving the 'Butterfly Capital of the World'. Solomon Electric provides professional residential and commercial services, including smart home and landscape lighting.",
+    "population": "58,000+",
+    "founded": "1967",
+    "areaSquareMiles": "12",
+    "tagline": "Butterfly Capital of the World",
+    "landmarks": [
+        "Butterfly World",
+        "Promenade at Coconut Creek",
+        "Tradewinds Park & Stables",
+        "Seminole Casino Coconut Creek"
+    ],
+    "neighborhoods": [
+        "Wynmoor",
+        "Regency Lakes",
+        "Centura Village",
+        "Coconut Creek Park",
+        "Tall Pines"
+    ],
+    "majorRoads": [
+        "Sawgrass Expressway (SR 869)",
+        "Florida Turnpike",
+        "Sample Road",
+        "Lyons Road",
+        "State Road 7 (US-441)"
+    ],
+    "coordinates": {
+        "lat": 26.2517,
+        "lng": -80.1789
+    },
+    "challenges": [
+        {
+            "title": "Eco-Friendly Modernization",
+            "description": "As a Green Local Government, Coconut Creek residents value energy efficiency. We specialize in LED retrofits and high-performance, energy-saving electrical systems.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Sophisticated Resort Power",
+            "description": "With major entertainment and shopping centers like the Promenade and Seminole Casino, we understand complex commercial power and lighting requirements.",
+            "icon": "Shield"
+        },
+        {
+            "title": "Suburban Safety Upgrades",
+            "description": "Many Coconut Creek homes in established neighborhoods like Wynmoor require expert panel inspections and upgrades to support modern electrical demands.",
+            "icon": "AlertTriangle"
+        }
+    ],
+    "featuredServices": [
+        "smart-home-automation",
+        "landscape-outdoor-lighting",
+        "ev-charging-system-setup",
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "recessed-lighting-installation"
+    ],
+    "stats": [
+        {
+            "value": "58K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide electrical services for Coconut Creek businesses?",
+            "answer": "Yes, we serve the vibrant commercial sector of Coconut Creek, including the Promenade and surrounding business corridors, with maintenance and emergency repairs."
+        },
+        {
+            "question": "Can you help with EV charger installation in Regency Lakes?",
+            "answer": "Absolutely. We are experts in home EV charger setups, ensuring your panel is ready for the future and all installations meet strict local building codes."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Trusted Coconut Creek Electricians Since 2003",
+            "body": "Coconut Creek, the 'Butterfly Capital of the World,' is a city dedicated to its natural beauty and environmental sustainability. It's a community that values excellence and innovation. Solomon Electric is proud to serve Coconut Creek families with electrical services that are as professional as they are efficient."
+        },
+        {
+            "heading": "Excellence in Electrical Care for Your Coconut Creek Home",
+            "body": "Whether you're upgrading the technology in your Wynmoor condo, installing beautiful landscape lighting to match our city's greenery, or requiring an urgent repair, our licensed team is here for you. We provide upfront pricing and a dedication to safety that Coconut Creek has trusted for 15 years."
+        }
+    ]
+}

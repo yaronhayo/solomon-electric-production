@@ -1,0 +1,180 @@
+{
+  "name": "Exit & Emergency Lighting Systems",
+  "slug": "exit-emergency-lighting-systems",
+  "description": "Keep your employees, customers, and building occupants safe with properly functioning exit and emergency lighting. Solomon Electric installs, tests, and maintains emergency egress lighting throughout South Florida commercial properties—ensuring code compliance and safe evacuation paths when the power goes out.",
+  "shortDescription": "Commercial emergency egress lighting",
+  "icon": "Shield",
+  "image": "../../assets/images/services/commercial.png",
+  "category": "Commercial & Inspections",
+  "order": 37,
+  "features": [
+    "Exit sign installation",
+    "Emergency light fixtures",
+    "Battery backup systems",
+    "Monthly and annual testing",
+    "Code compliance inspection",
+    "Replacement and repair"
+  ],
+  "warningSignsHeading": "When Your Emergency Lighting Needs Attention",
+  "warningSignsSubheading": "Emergency lighting must work when you need it most. Watch for these warning signs.",
+  "problems": [
+    {
+      "title": "Exit Signs Burned Out",
+      "description": "Dead exit signs create life safety hazards and code violations. LED exit signs rarely burn out, but battery failures are common.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Emergency Lights Won't Illuminate",
+      "description": "Emergency lights with dead batteries or failed charging circuits won't work during outages—exactly when they're needed.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Failed Monthly/Annual Tests",
+      "description": "Code requires regular testing of emergency lighting. Failed tests must be addressed promptly to maintain compliance.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Fire Marshal Citations",
+      "description": "Fire inspectors check emergency lighting compliance. Citations require correction for certificate of occupancy.",
+      "icon": "Shield"
+    },
+    {
+      "title": "New Construction or Renovation",
+      "description": "Building permits require proper emergency lighting installation before occupancy. We ensure code-compliant installation.",
+      "icon": "Home"
+    },
+    {
+      "title": "Aging Equipment",
+      "description": "Emergency lighting fixtures over 10-15 years old may have failing batteries, degraded bulbs, or outdated technology.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Emergency Lighting Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Compliance Assessment",
+      "description": "We evaluate your facility against Florida fire code requirements, identifying any gaps in exit sign coverage or emergency light placement."
+    },
+    {
+      "step": 2,
+      "title": "Equipment Selection",
+      "description": "We recommend appropriate fixtures—LED exit signs, battery backup emergency lights, combination units—matched to your needs and budget."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "We install emergency lighting with proper wiring, battery connections, and placement to meet code requirements."
+    },
+    {
+      "step": 4,
+      "title": "Testing and Documentation",
+      "description": "We verify all units illuminate properly on battery power and document the installation for fire marshal inspection."
+    },
+    {
+      "step": 5,
+      "title": "Ongoing Maintenance",
+      "description": "We can provide monthly functional testing and annual 90-minute discharge testing to maintain compliance."
+    }
+  ],
+  "benefitsHeading": "Benefits of Proper Emergency Lighting",
+  "benefits": [
+    {
+      "title": "Life Safety",
+      "description": "When fire or power failure occurs, proper emergency lighting guides occupants to exits safely. This is literally life-saving equipment.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "Florida fire code requires functioning emergency lighting. Proper installation and testing maintains your certificate of occupancy.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Liability Protection",
+      "description": "If evacuation incidents occur, functioning emergency lighting demonstrates you met safety requirements—protecting you from liability.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Modern LED Efficiency",
+      "description": "New LED exit signs use a fraction of the energy of incandescent and last 25+ years with virtually no maintenance.",
+      "icon": "Zap"
+    }
+  ],
+  "stats": [
+    {
+      "value": "150+",
+      "label": "Commercial Properties"
+    },
+    {
+      "value": "100%",
+      "label": "Code Compliant"
+    },
+    {
+      "value": "25",
+      "label": "Year LED Lifespan"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How often does emergency lighting need testing?",
+      "answer": "Florida fire code requires monthly 30-second functional tests to verify lights illuminate on battery power. Annual testing requires 90-minute battery discharge to ensure full emergency duration. All testing must be documented."
+    },
+    {
+      "question": "What's the difference between exit signs and emergency lights?",
+      "answer": "Exit signs identify egress routes and must be illuminated at all times (with battery backup for outages). Emergency lights activate during power failures to illuminate paths to exits. Many installations use both, and combination units are available."
+    },
+    {
+      "question": "How many emergency lights do I need?",
+      "answer": "Placement depends on building layout and code requirements. Emergency lighting must illuminate egress paths to at least 1 foot-candle. We calculate proper placement to meet code while avoiding over-engineering."
+    },
+    {
+      "question": "Should I repair or replace old emergency lights?",
+      "answer": "Units over 10-15 years old often cost more to repair than replace. New LED units use less energy, require less maintenance, and provide more reliable battery backup. We can assess whether repair or replacement makes more sense."
+    },
+    {
+      "question": "Can I do emergency lighting testing myself?",
+      "answer": "Building staff can perform monthly functional tests (press test button, verify illumination). Annual 90-minute testing typically requires an electrician to properly disconnect utility power and document the test. Many businesses outsource all testing for reliable compliance."
+    },
+    {
+      "question": "What happens if I fail a fire inspection?",
+      "answer": "Fire code violations require correction within a specified timeframe—often 30 days for minor issues. We provide rapid response to address citations, install compliant equipment, and provide documentation for re-inspection."
+    },
+    {
+      "question": "Do battery backup emergency lights drain power constantly?",
+      "answer": "Emergency lights draw minimal power to keep batteries charged—typically a few watts. LED exit signs use only 2-5 watts continuously. The energy cost is negligible compared to the life safety value."
+    },
+    {
+      "question": "What about tenant spaces in commercial buildings?",
+      "answer": "Each tenant space typically needs its own exit signage and emergency lighting appropriate to the space. We install to meet code requirements for individual tenant spaces and can coordinate with property management for common areas."
+    }
+  ],
+  "relatedServices": [
+    "commercial-led-lighting-retrofit",
+    "commercial-panel-installation-upgrades",
+    "electrical-code-compliance-audit",
+    "electrical-safety-inspection"
+  ],
+  "seoContent": [
+    {
+      "heading": "Commercial Emergency Lighting in South Florida",
+      "body": "Keep your employees, customers, and building occupants safe with properly functioning exit and emergency lighting from Solomon Electric. We install, test, and maintain emergency egress lighting throughout Miami-Dade and Broward counties—ensuring Florida fire code compliance and safe evacuation paths during emergencies."
+    },
+    {
+      "heading": "Exit Sign and Emergency Light Installation",
+      "body": "Code-compliant emergency lighting requires proper placement, wiring, and battery backup. We install LED exit signs, emergency light fixtures, and combination units with appropriate coverage for your facility. All installations meet Florida fire code requirements and are documented for inspection."
+    },
+    {
+      "heading": "Monthly and Annual Testing Services",
+      "body": "Florida fire code requires regular emergency lighting testing—30-second monthly tests and 90-minute annual tests. We provide testing services with proper documentation, identifying and addressing any failures before they become fire code violations."
+    },
+    {
+      "heading": "Serving South Florida Commercial Properties",
+      "body": "Solomon Electric provides emergency lighting services throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding areas. From small retail spaces to large commercial facilities, we keep your emergency lighting compliant and functional."
+    }
+  ],
+  "relatedBlogPosts": []
+}

@@ -1,0 +1,180 @@
+{
+  "name": "Permit Application & Inspection Coordination",
+  "slug": "permit-application-inspection-coordination",
+  "description": "Electrical permits and inspections are required for most significant electrical work in South Florida, but navigating the process can be confusing. Solomon Electric handles permit applications and inspection coordination for all our projects—ensuring proper permits are pulled, work passes inspection, and you have documentation for insurance and resale purposes.",
+  "shortDescription": "We handle permits and inspections",
+  "icon": "FileCheck",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Commercial & Inspections",
+  "order": 45,
+  "features": [
+    "Permit application preparation",
+    "Municipal submission",
+    "Inspection scheduling",
+    "Inspector coordination",
+    "Correction handling",
+    "Final documentation"
+  ],
+  "warningSignsHeading": "When Permits Are Required",
+  "warningSignsSubheading": "Most electrical work beyond minor repairs requires permits. Here's what you should know.",
+  "problems": [
+    {
+      "title": "Don't Know What Requires Permits",
+      "description": "Panel changes, new circuits, major additions—these require permits. Simple repairs typically don't. We know the requirements.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Previous Work Wasn't Permitted",
+      "description": "If previous electrical work was unpermitted, it can complicate sales, insurance, and future work. We can help address permit issues.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Unsure How to Get Permits",
+      "description": "Each municipality has different requirements and processes. We handle permit applications across all South Florida jurisdictions.",
+      "icon": "Home"
+    },
+    {
+      "title": "Need Inspection Passed",
+      "description": "Work must pass inspection to be legal and insurable. Our work is designed to pass inspection—and we're present for inspections.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Selling Home with Questions",
+      "description": "Buyers and title companies ask about permit history. Properly permitted work with passed inspections protects your transaction.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Insurance Requires Documentation",
+      "description": "Some insurers want proof that electrical work was permitted and inspected. We provide documentation for your records.",
+      "icon": "Zap"
+    }
+  ],
+  "processHeading": "Our Permit Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Scope Determination",
+      "description": "We determine what permits are required for your project based on work scope and local jurisdiction requirements."
+    },
+    {
+      "step": 2,
+      "title": "Application Preparation",
+      "description": "We prepare permit applications with required information—scope of work, diagrams if needed, and contractor documentation."
+    },
+    {
+      "step": 3,
+      "title": "Submission and Fees",
+      "description": "We submit applications to the appropriate building department. Permit fees are either included in our quote or passed through at cost."
+    },
+    {
+      "step": 4,
+      "title": "Work and Inspection",
+      "description": "We complete work according to code, then schedule and attend inspection. We're present to answer inspector questions."
+    },
+    {
+      "step": 5,
+      "title": "Documentation",
+      "description": "You receive permit documentation showing work was properly permitted and passed inspection—important for insurance and resale."
+    }
+  ],
+  "benefitsHeading": "Benefits of Proper Permitting",
+  "benefits": [
+    {
+      "title": "Legal Compliance",
+      "description": "Permits are required by law for most electrical work. Proper permitting protects you from potential penalties and complications.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Insurance Protection",
+      "description": "Insurers may deny claims if damage results from unpermitted work. Properly permitted and inspected work protects your coverage.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Resale Value",
+      "description": "Buyers and title companies research permit history. Unpermitted work complicates sales; permitted work facilitates them.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Safety Verification",
+      "description": "Inspections verify work meets code safety requirements. This independent verification protects you and future owners.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "100%",
+      "label": "Permits Obtained"
+    },
+    {
+      "value": "100%",
+      "label": "First-Pass Inspections"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What electrical work requires permits?",
+      "answer": "Generally: new circuits, panel changes/upgrades, service changes, new receptacle or fixture additions, and any work requiring 'opening up' the electrical system. Simple repairs (replacing devices, replacing fixtures in kind) typically don't require permits."
+    },
+    {
+      "question": "Why should I care about permits?",
+      "answer": "Permits protect you: work is inspected for safety and code compliance, insurance remains valid, and property sales aren't complicated by unpermitted work questions. The cost and time are minimal compared to the protection."
+    },
+    {
+      "question": "What if previous work wasn't permitted?",
+      "answer": "Options include: leave it alone (may cause problems later), apply for after-the-fact permits (if work is up to code), or correct and permit as new work. We can assess the situation and recommend appropriate approach."
+    },
+    {
+      "question": "Do you handle permits, or do I?",
+      "answer": "We handle everything. We prepare applications, submit to the building department, pay fees (included or pass-through), schedule inspections, and attend inspections. You just need to sign permit applications as property owner."
+    },
+    {
+      "question": "How long does permit approval take?",
+      "answer": "Simple residential permits often approve same-day or within a few days. Complex or commercial permits take longer. We submit promptly and follow up to minimize delays."
+    },
+    {
+      "question": "What if inspection fails?",
+      "answer": "We design work to pass inspection first time. If an inspector requires changes, we make them promptly and schedule re-inspection. Our pass rate is excellent, but any corrections are our responsibility to address."
+    },
+    {
+      "question": "What documentation do I receive?",
+      "answer": "You receive copies of the approved permit and passed inspection record. These documents prove work was properly permitted and inspected—important for insurance claims, property sales, and your records."
+    },
+    {
+      "question": "Are permit fees included in your quotes?",
+      "answer": "We can include fees in quotes or pass through at cost—whichever you prefer. Fees vary by municipality and scope of work, typically $50-200 for residential work, more for larger commercial projects."
+    }
+  ],
+  "relatedServices": [
+    "electrical-code-compliance-audit",
+    "electrical-code-compliance-violation-repairs",
+    "electrical-panel-upgrade-100a-to-200a",
+    "home-electrical-system-upgrade"
+  ],
+  "seoContent": [
+    {
+      "heading": "Permit Application & Inspection Coordination in South Florida",
+      "body": "Electrical permits and inspections are required for most significant electrical work. Solomon Electric handles the entire permit process throughout Miami-Dade and Broward counties—applications, submissions, inspections, and documentation. You get compliant work with proper records."
+    },
+    {
+      "heading": "We Know South Florida Jurisdictions",
+      "body": "Every municipality has different permit requirements and processes. We work regularly with building departments across South Florida—Miami, Fort Lauderdale, Hollywood, and surrounding cities—and know their requirements and procedures."
+    },
+    {
+      "heading": "Pass Inspection the First Time",
+      "body": "Our work is designed to pass inspection. We understand code requirements, build accordingly, and attend inspections to address any questions. High first-pass inspection rates mean faster project completion."
+    },
+    {
+      "heading": "Documentation for Your Records",
+      "body": "Properly permitted and inspected work protects your insurance coverage and facilitates property sales. We provide documentation showing permits were obtained and inspections passed—important records for the future."
+    }
+  ],
+  "relatedBlogPosts": []
+}

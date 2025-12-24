@@ -1,0 +1,193 @@
+---
+/**
+ * Mobile Floating CTA Bar
+ * Sticky bottom bar with All Services and Call Now buttons
+ * Auto-parks above footer when scrolled to bottom
+ */
+import { Phone } from "lucide-astro";
+import { SITE_CONFIG } from "../config/site";
+---
+
+<div id="mobile-floating-cta" class="mobile-floating-cta">
+    <!-- All Services Button -->
+    <a href="/services" class="cta-button cta-all-services">
+        <div class="cta-content">
+            <span class="cta-text">All Services</span>
+        </div>
+    </a>
+
+    <!-- Call Now Button -->
+    <a
+        href={`tel:${SITE_CONFIG.contact.phoneRaw}`}
+        class="cta-button cta-call-now"
+    >
+        <div class="cta-content">
+            <Phone class="cta-icon" />
+            <span class="cta-text">Call Now</span>
+        </div>
+    </a>
+</div>
+
+<style>
+    .mobile-floating-cta {
+        display: none; /* Hidden on desktop */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Show only on mobile */
+    @media (max-width: 768px) {
+        .mobile-floating-cta {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            width: 100%;
+            height: 50px;
+            filter: drop-shadow(0px -2px 10px rgba(13, 67, 128, 0.15));
+        }
+
+        .mobile-floating-cta.parked {
+            position: absolute;
+            bottom: auto;
+        }
+    }
+
+    .cta-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        height: 50px;
+        text-decoration: none;
+        transition:
+            transform 0.2s ease,
+            filter 0.2s ease;
+    }
+
+    .cta-button:active {
+        transform: scale(0.98);
+    }
+
+    .cta-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* All Services Button - Cyan */
+    .cta-all-services {
+        background: var(--color-accent); /* #14D3E3 */
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-all-services .cta-text {
+        font-family: "Manrope", sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.4;
+        text-align: center;
+        color: var(--color-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Call Now Button - Blue */
+    .cta-call-now {
+        background: var(--color-primary); /* #0D4380 */
+    }
+
+    .cta-call-now .cta-text {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.4;
+        text-align: center;
+        color: var(--color-light);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .cta-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--color-light);
+        flex-shrink: 0;
+    }
+
+    /* Press effect on mobile */
+    @media (hover: none) {
+        .cta-button:active {
+            filter: brightness(0.9);
+        }
+    }
+</style>
+
+<script>
+    // Auto-park CTA above footer when scrolled to bottom
+    function initMobileFloatingCTA() {
+        const ctaBar = document.getElementById("mobile-floating-cta");
+        const footer = document.querySelector("footer");
+
+        if (!ctaBar || !footer) return;
+
+        // Create spacer element to prevent footer content from being covered
+        const spacer = document.createElement("div");
+        spacer.id = "mobile-cta-spacer";
+        spacer.style.height = "60px"; // 50px CTA + 10px gap
+        spacer.style.display = "none";
+        footer.parentElement?.insertBefore(spacer, footer);
+
+        function updateCTAPosition() {
+            if (window.innerWidth > 768) {
+                ctaBar.classList.remove("parked");
+                spacer.style.display = "none";
+                return;
+            }
+
+            spacer.style.display = "block";
+
+            const footerRect = footer.getBoundingClientRect();
+            const ctaHeight = ctaBar.offsetHeight;
+            const viewportHeight = window.innerHeight;
+
+            // Check if footer is visible in viewport
+            const footerTopInView = footerRect.top < viewportHeight;
+
+            if (footerTopInView) {
+                // Park CTA above footer
+                ctaBar.classList.add("parked");
+                const offsetTop = footer.offsetTop - ctaHeight - 10; // 10px gap
+                ctaBar.style.top = `${offsetTop}px`;
+            } else {
+                // Float at bottom
+                ctaBar.classList.remove("parked");
+                ctaBar.style.top = "";
+            }
+        }
+
+        // Update on scroll and resize
+        window.addEventListener("scroll", updateCTAPosition, { passive: true });
+        window.addEventListener("resize", updateCTAPosition);
+
+        // Initial check
+        updateCTAPosition();
+    }
+
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", initMobileFloatingCTA);
+
+    // Re-initialize after Astro page transitions
+    document.addEventListener("astro:after-swap", initMobileFloatingCTA);
+</script>

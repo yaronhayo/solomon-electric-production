@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/ui/Container.astro";
+import { SITE_CONFIG } from "../config/site";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+// Use Eastern Time (Florida) for build-time dates
+const lastUpdated = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "America/New_York",
+});
+---
+
+<Layout
+    title="Privacy Policy - Solomon Electric"
+    description="Privacy Policy for Solomon Electric. Learn how we collect, use, and protect your personal information."
+    noindex={true}
+>
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb
+        items={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]}
+    />
+
+    <!-- Header -->
+    <div class="bg-primary py-12 md:py-20">
+        <Container>
+            <h1
+                class="text-3xl md:text-5xl font-black text-white uppercase text-center"
+            >
+                Privacy Policy
+            </h1>
+            <p class="text-gray-300 text-center mt-4">
+                Last Updated: {lastUpdated}
+            </p>
+        </Container>
+    </div>
+
+    <!-- Content -->
+    <section class="py-16 bg-white">
+        <Container>
+            <div
+                class="prose prose-lg max-w-4xl mx-auto text-[var(--text-body)]"
+            >
+                <h2>1. Introduction</h2>
+                <p>
+                    Solomon Electric ("we," "our," or "us") respects your
+                    privacy and is committed to protecting it through our
+                    compliance with this policy. This policy describes the types
+                    of information we may collect from you or that you may
+                    provide when you visit the website {SITE_CONFIG.seo.siteUrl} (our
+                    "Website") and our practices for collecting, using, maintaining,
+                    protecting, and disclosing that information.
+                </p>
+
+                <h2>2. Information We Collect</h2>
+                <p>
+                    We may collect several types of information from and about
+                    users of our Website, including information:
+                </p>
+                <ul>
+                    <li>
+                        by which you may be personally identified, such as name,
+                        postal address, e-mail address, telephone number
+                        ("personal information");
+                    </li>
+                    <li>
+                        that is about you but individually does not identify
+                        you; and/or
+                    </li>
+                    <li>
+                        about your internet connection, the equipment you use to
+                        access our Website, and usage details.
+                    </li>
+                </ul>
+
+                <h2>3. How We Use Your Information</h2>
+                <p>
+                    We use information that we collect about you or that you
+                    provide to us, including any personal information:
+                </p>
+                <ul>
+                    <li>To present our Website and its contents to you.</li>
+                    <li>
+                        To provide you with information, products, or services
+                        that you request from us (such as electrical service
+                        quotes).
+                    </li>
+                    <li>
+                        To fulfill any other purpose for which you provide it.
+                    </li>
+                    <li>
+                        To carry out our obligations and enforce our rights
+                        arising from any contracts entered into between you and
+                        us.
+                    </li>
+                    <li>
+                        To notify you about changes to our Website or any
+                        products or services we offer or provide though it.
+                    </li>
+                </ul>
+
+                <h2>4. Disclosure of Your Information</h2>
+                <p>
+                    We do not sell, trade, or otherwise transfer to outside
+                    parties your Personally Identifiable Information unless we
+                    provide users with advance notice. This does not include
+                    website hosting partners and other parties who assist us in
+                    operating our website, conducting our business, or serving
+                    our users, so long as those parties agree to keep this
+                    information confidential.
+                </p>
+
+                <h2>5. Security</h2>
+                <p>
+                    We have implemented measures designed to secure your
+                    personal information from accidental loss and from
+                    unauthorized access, use, alteration, and disclosure. All
+                    information you provide to us is stored on our secure
+                    servers behind firewalls.
+                </p>
+
+                <h2>6. Contact Information</h2>
+                <p>
+                    To ask questions or comment about this privacy policy and
+                    our privacy practices, contact us at:
+                </p>
+                <p>
+                    <strong>Solomon Electric</strong><br />
+                    {SITE_CONFIG.contact.address.street}<br />
+                    {SITE_CONFIG.contact.address.city}, {
+                        SITE_CONFIG.contact.address.state
+                    }
+                    {SITE_CONFIG.contact.address.zip}<br />
+                    Phone: {SITE_CONFIG.contact.phone.formatted}<br />
+                    Email: {SITE_CONFIG.contact.email.primary}
+                </p>
+            </div>
+        </Container>
+    </section>
+</Layout>

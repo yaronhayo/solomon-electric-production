@@ -1,0 +1,182 @@
+{
+  "name": "Emergency Power System Design",
+  "slug": "emergency-power-system-design",
+  "description": "When your operation can't tolerate power interruptions, you need more than a generator—you need a complete emergency power system. Solomon Electric designs comprehensive backup power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida. From generator sizing to transfer systems to load prioritization, we create backup power that keeps you running.",
+  "shortDescription": "Mission-critical backup power design",
+  "icon": "Shield",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 16,
+  "features": [
+    "Load analysis and generator sizing",
+    "N+1 redundancy design",
+    "Automatic transfer systems",
+    "Emergency vs. standby classification",
+    "UPS integration",
+    "Life safety compliance"
+  ],
+  "warningSignsHeading": "When Professional Power System Design Matters",
+  "warningSignsSubheading": "Mission-critical operations require engineered backup power solutions, not just generators.",
+  "problems": [
+    {
+      "title": "Business-Critical Operations",
+      "description": "When power loss means lost revenue, spoiled product, or failed service commitments, you need backup power designed for reliability.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Healthcare and Life Safety",
+      "description": "Medical facilities have code-mandated emergency power requirements. Design must meet NEC and NFPA 99 requirements.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Data Center Uptime",
+      "description": "Data centers require seamless power transition and often N+1 generator redundancy. Seconds of outage can cause major disruption.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Cold Storage/Refrigeration",
+      "description": "Food storage, pharmaceutical cold chain, and other temperature-critical operations can't survive extended outages.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Manufacturing Continuity",
+      "description": "Production processes with long startup times or in-process materials at risk need backup power to prevent costly interruptions.",
+      "icon": "Home"
+    },
+    {
+      "title": "Life Safety Systems",
+      "description": "Emergency lighting, fire pumps, elevators, and smoke control have code-mandated emergency power requirements.",
+      "icon": "AlertTriangle"
+    }
+  ],
+  "processHeading": "Our Emergency Power Design Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Requirements Analysis",
+      "description": "We understand your operational requirements—what can't lose power, acceptable transition times, and runtime needs."
+    },
+    {
+      "step": 2,
+      "title": "Load Analysis",
+      "description": "We inventory and calculate loads requiring backup power—critical vs. optional, continuous vs. cyclical—to properly size generation."
+    },
+    {
+      "step": 3,
+      "title": "System Design",
+      "description": "We design the complete system—generators, transfer equipment, distribution, and any UPS or ride-through requirements."
+    },
+    {
+      "step": 4,
+      "title": "Code Compliance Review",
+      "description": "Healthcare, assembly, and other facilities have code-mandated requirements. We ensure designs meet all applicable codes."
+    },
+    {
+      "step": 5,
+      "title": "Implementation Planning",
+      "description": "We develop implementation plans including equipment specifications, installation approach, testing procedures, and maintenance requirements."
+    }
+  ],
+  "benefitsHeading": "Benefits of Engineered Emergency Power",
+  "benefits": [
+    {
+      "title": "Right-Sized Systems",
+      "description": "Proper load analysis ensures generators are sized correctly—not undersized (won't carry load) or oversized (wasted capital and operating cost).",
+      "icon": "Zap"
+    },
+    {
+      "title": "Reliability",
+      "description": "Engineered systems with proper transfer schemes, exercising programs, and maintenance provide the reliability critical operations demand.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "Healthcare, high-rise, and assembly occupancies have emergency power requirements. Proper design meets these mandates.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Optimized Investment",
+      "description": "Thoughtful design balances protection needs with cost—possibly including tiered backup for different criticality levels.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "30+",
+      "label": "System Designs"
+    },
+    {
+      "value": "N+1",
+      "label": "Redundancy Available"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's the difference between emergency and standby power?",
+      "answer": "Legally, 'emergency' systems power life safety (egress lighting, fire pumps) with strict code requirements: engine start within 10 seconds, separate wiring, specific maintenance. 'Standby' or 'optional standby' powers business operations with fewer code mandates but similar reliability goals."
+    },
+    {
+      "question": "How do you size a generator for our facility?",
+      "answer": "We inventory all loads requiring backup, calculate running and starting loads (motors have high inrush), account for load sequencing, and add appropriate safety margin. Proper sizing prevents undersized generators that can't start loads or oversized units wasting fuel."
+    },
+    {
+      "question": "What's N+1 redundancy?",
+      "answer": "N+1 means having one more generator than minimum required. If your load needs three generators, N+1 provides four—so any one can fail or need maintenance without losing backup capability. Critical facilities like data centers often require N+1."
+    },
+    {
+      "question": "Do we need UPS in addition to generators?",
+      "answer": "Generators take 10-30 seconds to start and transfer. UPS provides instant, seamless power during this transition. For sensitive electronics and zero-interruption requirements, UPS bridges the gap until generators assume load."
+    },
+    {
+      "question": "How long should backup systems run?",
+      "answer": "It depends on your needs. Most commercial systems target 24-72 hours fuel capacity. Healthcare has 24-hour minimums. Data centers may require 48-72+ hours. We design fuel capacity based on your operational requirements and refueling logistics."
+    },
+    {
+      "question": "What about code requirements for healthcare?",
+      "answer": "NFPA 99 and NEC govern healthcare electrical. Requirements include emergency system, life safety system, critical system, and equipment system—each with specific loads and transfer requirements. We design compliant systems for healthcare facilities."
+    },
+    {
+      "question": "Can you upgrade our existing backup system?",
+      "answer": "Absolutely. We evaluate existing systems, identify limitations, and design upgrades—larger generators, additional transfer capacity, improved redundancy, or better load management. Upgrades often provide significantly better protection than original installations."
+    },
+    {
+      "question": "What maintenance do emergency power systems need?",
+      "answer": "Regular maintenance includes engine service (oil, filters, coolant), monthly exercising under load, annual load bank testing, transfer switch testing, and fuel system maintenance. We can provide maintenance programs or advise your staff on requirements."
+    }
+  ],
+  "relatedServices": [
+    "home-standby-generator-installation",
+    "automatic-transfer-switch-installation",
+    "generator-sizing-load-analysis",
+    "commercial-panel-installation-upgrades"
+  ],
+  "seoContent": [
+    {
+      "heading": "Emergency Power System Design in South Florida",
+      "body": "Mission-critical operations can't tolerate power interruptions. Solomon Electric designs comprehensive emergency power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida—from generator sizing to complete redundant systems."
+    },
+    {
+      "heading": "Healthcare and Life Safety Compliance",
+      "body": "Healthcare facilities, high-rise buildings, and assembly occupancies have code-mandated emergency power requirements. We design systems meeting NEC, NFPA 99, and NFPA 110 requirements—ensuring proper emergency, life safety, and critical branch separation."
+    },
+    {
+      "heading": "Data Center and IT Critical Power",
+      "body": "Data centers require seamless power transition and often N+1 generator redundancy. We design emergency power systems with UPS integration, redundant generation, and maintained transfer schemes that meet tier-level uptime requirements."
+    },
+    {
+      "heading": "Serving South Florida Critical Facilities",
+      "body": "Solomon Electric designs emergency power systems throughout Miami, Fort Lauderdale, Hollywood, and all South Florida. From hospitals to data centers to commercial operations, we create backup power that keeps you running."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

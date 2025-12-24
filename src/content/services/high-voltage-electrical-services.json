@@ -1,0 +1,180 @@
+{
+  "name": "High-Voltage Electrical Services",
+  "slug": "high-voltage-electrical-services",
+  "description": "Industrial and large commercial operations often require high-voltage electrical systems beyond standard commercial service. Solomon Electric provides high-voltage electrical services throughout South Florida—medium voltage distribution, switchgear installation, transformer work, and specialized industrial electrical for facilities requiring more than typical 480V systems.",
+  "shortDescription": "Industrial high-voltage specialists",
+  "icon": "Zap",
+  "image": "../../assets/images/services/commercial.png",
+  "category": "Commercial & Inspections",
+  "order": 59,
+  "features": [
+    "Medium voltage distribution",
+    "Switchgear installation",
+    "Transformer connections",
+    "Industrial motor circuits",
+    "Power factor correction",
+    "High-voltage maintenance"
+  ],
+  "warningSignsHeading": "When High-Voltage Service Is Required",
+  "warningSignsSubheading": "Large industrial operations have electrical needs beyond standard commercial service.",
+  "problems": [
+    {
+      "title": "Large Industrial Loads",
+      "description": "Facilities with total loads exceeding 500 kVA often receive medium voltage service and step down on-site—more efficient and cost-effective.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Large Motor Requirements",
+      "description": "Motors over 200 HP often operate on 2.4 kV or 4.16 kV. High-voltage motors are more efficient and easier to start than equivalent low-voltage units.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Utility Service Upgrades",
+      "description": "Growing operations may outgrow low-voltage utility service. Upgrading to medium voltage with on-site transformation provides growth capacity.",
+      "icon": "Home"
+    },
+    {
+      "title": "Switchgear Maintenance",
+      "description": "High-voltage switchgear requires specialized maintenance—testing, lubrication, and inspection that general electricians aren't equipped to perform.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Power Quality Issues",
+      "description": "Large industrial facilities may need power factor correction, harmonic filtering, or other power quality equipment to meet utility requirements.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Specialized Industrial Equipment",
+      "description": "Arc furnaces, large compressors, industrial ovens, and other specialized equipment often require high-voltage electrical infrastructure.",
+      "icon": "Flame"
+    }
+  ],
+  "processHeading": "Our High-Voltage Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Load Analysis",
+      "description": "We analyze your facility's electrical load profile, peak demands, and future growth to design appropriate high-voltage infrastructure."
+    },
+    {
+      "step": 2,
+      "title": "Utility Coordination",
+      "description": "Medium voltage service requires extensive utility coordination—service agreements, transformer specifications, and protection coordination."
+    },
+    {
+      "step": 3,
+      "title": "Engineering Design",
+      "description": "High-voltage systems require professional engineering—one-line diagrams, protection coordination studies, and arc flash analysis."
+    },
+    {
+      "step": 4,
+      "title": "Equipment and Installation",
+      "description": "We procure and install switchgear, transformers, and distribution equipment according to engineered specifications."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Commissioning",
+      "description": "High-voltage systems require specialized testing before energization—insulation testing, protection verification, and coordinated startup."
+    }
+  ],
+  "benefitsHeading": "Benefits of Proper High-Voltage Infrastructure",
+  "benefits": [
+    {
+      "title": "Handle Large Loads",
+      "description": "High-voltage systems efficiently distribute power for large industrial operations where low-voltage would require impractical conductor sizes.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Cost-Effective Power",
+      "description": "Utility rates for medium voltage service are typically lower per kWh than low-voltage rates. Larger operations save significantly.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Reliability",
+      "description": "Properly designed and maintained high-voltage systems provide reliable industrial power. Redundancy options improve uptime for critical operations.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Growth Capacity",
+      "description": "Medium voltage service provides capacity for facility growth without repeated utility upgrades as operations expand.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "25+",
+      "label": "Industrial Projects"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "35",
+      "label": "kV Max Voltage"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What qualifies as high-voltage?",
+      "answer": "Terminology varies, but generally: low voltage is up to 600V (common commercial), medium voltage is 600V-35kV (industrial distribution), high voltage is above 35kV (transmission). Most 'high-voltage' industrial work is technically medium voltage distribution."
+    },
+    {
+      "question": "When should a facility use medium voltage service?",
+      "answer": "Generally when total load exceeds 500-1000 kVA. At these sizes, medium voltage service with on-site transformation becomes more cost-effective than the large low-voltage service that would be required."
+    },
+    {
+      "question": "What's involved in switchgear maintenance?",
+      "answer": "Switchgear requires periodic inspection, cleaning, lubrication of mechanisms, protective relay testing, and insulation testing. Frequency depends on equipment type and usage—typically annual or biennial for critical systems."
+    },
+    {
+      "question": "Do you perform arc flash studies?",
+      "answer": "Yes. Arc flash studies calculate incident energy levels at each point in the electrical system, determining required PPE for safe work. OSHA requires employers to assess and label electrical hazards—arc flash studies fulfill this requirement."
+    },
+    {
+      "question": "Can you work on energized high-voltage systems?",
+      "answer": "We have trained and qualified personnel for high-voltage work, but most high-voltage work is performed de-energized with proper lockout/tagout. Some testing and troubleshooting requires energized work with appropriate precautions and PPE."
+    },
+    {
+      "question": "What about power factor correction?",
+      "answer": "Poor power factor increases utility bills (power factor penalties) and reduces system capacity. We design and install power factor correction equipment—typically capacitor banks—to improve power factor to acceptable levels."
+    },
+    {
+      "question": "How long do high-voltage projects take?",
+      "answer": "Timelines vary significantly. Equipment lead times for switchgear and transformers can be 16-40+ weeks. Utility coordination adds months. Simple additions to existing systems are faster; new installations take 6-18 months typically."
+    },
+    {
+      "question": "Do you provide 24/7 emergency response for industrial systems?",
+      "answer": "Yes. Production facilities can't wait for business hours. We provide emergency response for industrial electrical failures, prioritizing production-critical systems."
+    }
+  ],
+  "relatedServices": [
+    "three-phase-power-installation",
+    "commercial-panel-installation-upgrades",
+    "emergency-power-system-design",
+    "tenant-build-out-electrical-work"
+  ],
+  "seoContent": [
+    {
+      "heading": "High-Voltage Electrical Services in South Florida",
+      "body": "Industrial and large commercial operations often require high-voltage electrical systems. Solomon Electric provides medium voltage distribution, switchgear installation, and specialized industrial electrical throughout South Florida for facilities requiring more than standard commercial service."
+    },
+    {
+      "heading": "Medium Voltage Distribution",
+      "body": "Large industrial facilities often receive medium voltage service (4.16kV, 13.8kV, etc.) and step down on-site via transformers. We design and install medium voltage distribution systems that efficiently power large industrial operations."
+    },
+    {
+      "heading": "Switchgear and Industrial Equipment",
+      "body": "Industrial electrical infrastructure includes switchgear, motor control centers, transformers, and specialized distribution equipment. We install, maintain, and repair industrial electrical systems that keep operations running."
+    },
+    {
+      "heading": "Serving South Florida Industrial Facilities",
+      "body": "Solomon Electric provides high-voltage electrical services throughout South Florida industrial areas—from manufacturing facilities to processing plants to large commercial complexes requiring specialized industrial electrical expertise."
+    }
+  ],
+  "relatedBlogPosts": []
+}

@@ -1,0 +1,31 @@
+# Hostinger - Force index.html as default document
+DirectoryIndex index.html index.htm
+
+# Error pages
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Protect sensitive files
+<Files "env.php">
+    Require all denied
+</Files>
+
+<Files ".env">
+    Require all denied
+</Files>
+
+# Redirects (no rewrites to avoid issues)
+Redirect 301 /about-us /about
+Redirect 301 /services/tesla-universal-ev-charging-station-installation /services/level-2-ev-charger-installation
+Redirect 301 /services/electrical-panels-repair /services/panel-repair-circuit-breaker-replacement
+Redirect 301 /services/electrical-panel-modernization-upgrades /services/electrical-panel-upgrade-100a-to-200a
+Redirect 301 /services/expert-electrical-diagnostics-repair /services/sparking-outlet-circuit-breaker-repair
+Redirect 301 /services/comprehensive-electrical-safety-inspections /services/electrical-safety-inspection-certification
+Redirect 301 /services/lighting-fixture-installation /services/indoor-outdoor-lighting-installation
+Redirect 301 /services/light-fixture-installation /services/indoor-outdoor-lighting-installation
+Redirect 301 /services/intelligent-sensor-security-lighting-systems /services/motion-sensor-dimmer-installation
+Redirect 301 /services/outdoor-dining-landscape-lighting /services/outdoor-landscape-patio-lighting
+Redirect 301 /services/emergency-electrical-services /services/24-7-emergency-electrical-service
+Redirect 301 /services/outlet-switch-installation-repair /services/new-outlet-installation-repair
+Redirect 301 /services/gfci-outlet-installation /services/gfci-outlet-installation-repair
+Redirect 301 /services/electrical-outlet-safety-installation /services/new-outlet-installation-repair

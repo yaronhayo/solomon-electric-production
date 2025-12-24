@@ -1,515 +1,489 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import heroImage from "../assets/images/hero.webp";
+import heroImage from "../assets/images/heroes/contact.png";
 import Button from "../components/ui/Button.astro";
+import CtaButton from "../components/ui/CtaButton.astro";
 import Container from "../components/ui/Container.astro";
+import PageHero from "../components/PageHero.astro";
+import { SITE_CONFIG } from "../config/site";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { generateBreadcrumbSchema } from "../utils/seo";
+import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-astro";
+
+// Generate ContactPage Schema
+const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    mainEntity: {
+        "@type": "LocalBusiness",
+        name: "Solomon Electric",
+        telephone: SITE_CONFIG.contact.phone.formatted,
+        email: SITE_CONFIG.contact.email.primary,
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: SITE_CONFIG.contact.address.street,
+            addressLocality: SITE_CONFIG.contact.address.city,
+            addressRegion: SITE_CONFIG.contact.address.state,
+            postalCode: SITE_CONFIG.contact.address.zip,
+            addressCountry: "US",
+        },
+        openingHoursSpecification: [
+            {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                ],
+                opens: "00:00",
+                closes: "23:59",
+            },
+        ],
+        contactPoint: [
+            {
+                "@type": "ContactPoint",
+                telephone: SITE_CONFIG.contact.phone.formatted,
+                contactType: "customer service",
+                availableLanguage: ["English", "Spanish"],
+                areaServed: {
+                    "@type": "State",
+                    name: "Florida",
+                },
+            },
+            {
+                "@type": "ContactPoint",
+                telephone: SITE_CONFIG.contact.phone.formatted,
+                contactType: "emergency",
+                hoursAvailable: {
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday",
+                    ],
+                    opens: "00:00",
+                    closes: "23:59",
+                },
+            },
+        ],
+    },
+};
+
+const breadcrumbSchema = generateBreadcrumbSchema(
+    [
+        { name: "Home", url: "/" },
+        { name: "Contact", url: "/contact" },
+    ],
+    SITE_CONFIG.seo.siteUrl,
+);
 ---
 
 <Layout
-    title="Contact Us - Solomon Electric | 24/7 Miami Emergency Electrician"
-    description="Contact Solomon Electric for immediate electrical service in Miami. Available 24/7 for emergencies. Licensed electricians respond within 60 minutes. Call (786) 833-9211."
+    title="Contact Solomon Electric | 24/7 Emergency Electrician Miami"
+    description={`Contact Solomon Electric for professional electrical service in Miami-Dade & Broward. Licensed electricians available 24/7 for emergencies. Call ${SITE_CONFIG.contact.phone.formatted}.`}
 >
-    <!-- Hero Section - Matching Homepage Grid Layout -->
-    <section
-        class="relative flex items-center overflow-hidden min-h-[60vh] pt-32 pb-20 md:pt-48 md:pb-32"
-    >
-        <div class="absolute inset-0 z-0">
-            <Image
-                src={heroImage}
-                alt="Contact Solomon Electric Miami Electricians"
-                class="w-full h-full object-cover"
-            />
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
-            >
-            </div>
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
-            >
-            </div>
-        </div>
-        <Container class="relative z-10 w-full">
-            <div
-                class="grid grid-cols-1 lg:grid-cols-12 items-center"
-                style="gap: var(--spacing-xl);"
-            >
-                <div class="lg:col-span-7">
-                    <p
-                        class="text-accent tracking-[0.3em] font-bold uppercase"
-                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
-                    >
-                        Get In Touch
-                    </p>
-                    <h1
-                        class="font-black text-white leading-[0.9]"
-                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
-                    >
-                        Contact <br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
-                        >
-                            Our Team
-                        </span>
-                    </h1>
-                    <p
-                        class="text-gray-200 font-light leading-relaxed"
-                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
-                    >
-                        Available 24/7 for emergency electrical service. Average
-                        60-minute response time throughout Miami-Dade and
-                        Broward County.
-                    </p>
+    <!-- ContactPage Schema Markup -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(contactSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+    />
 
-                    <!-- Quick Contact CTA -->
-                    <div class="flex flex-wrap gap-4 mt-8">
-                        <Button
-                            href="tel:7868339211"
-                            variant="secondary"
-                            size="lg"
-                            class="flex items-center gap-3"
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
+
+    <!-- Hero Section -->
+    <PageHero
+        title="Need an Electrician?<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>We're Here to Help</span>"
+        subtitle="Get In Touch • Available 24/7"
+        description="Electrical problem that can't wait? Questions about your upcoming project? Or just want to talk to a real person who knows what they're doing? Reach out anytime—we answer calls day and night, and we never pressure you into services you don't need."
+        image={heroImage}
+        trustIndicators={true}
+    />
+
+    <div class="bg-light py-20 md:py-32">
+        <Container>
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 items-start"
+                style="gap: var(--spacing-3xl);"
+            >
+                <!-- Contact Info -->
+                <div>
+                    <h2
+                        class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase"
+                        style="margin-bottom: var(--spacing-xl);"
+                    >
+                        Contact <span class="text-accent">Info</span>
+                    </h2>
+
+                    <div class="space-y-10">
+                        <div
+                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-2xl transition-all hover:bg-white/10"
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                class="w-5 h-5"
+                            <div
+                                class="bg-accent/10 p-5 rounded-xl text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300 shimmer-authority"
                             >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            Emergency: (786) 833-9211
-                        </Button>
+                                <Phone class="w-8 h-8" />
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
+                                >
+                                    Phone
+                                </h3>
+                                <p class="text-body mb-2 font-medium">
+                                    24/7 Emergency Service
+                                </p>
+                                <a
+                                    href={SITE_CONFIG.contact.phone.href}
+                                    class="text-2xl font-black text-accent hover:text-primary transition-colors tracking-wider"
+                                    >{SITE_CONFIG.contact.phone.formatted}</a
+                                >
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-2xl transition-all hover:bg-white/10"
+                        >
+                            <div
+                                class="bg-accent/10 p-5 rounded-xl text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300"
+                            >
+                                <Mail class="w-8 h-8" />
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
+                                >
+                                    Email
+                                </h3>
+                                <p class="text-body mb-2 font-medium">
+                                    For general inquiries & quotes
+                                </p>
+                                <a
+                                    href={`mailto:${SITE_CONFIG.contact.email.primary}`}
+                                    class="text-xl font-bold text-primary hover:text-accent transition-colors"
+                                    >{SITE_CONFIG.contact.email.primary}</a
+                                >
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-2xl transition-all hover:bg-white/10"
+                        >
+                            <div
+                                class="bg-accent/10 p-5 rounded-xl text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300"
+                            >
+                                <MapPin class="w-8 h-8" />
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
+                                >
+                                    Service Areas
+                                </h3>
+                                <p class="text-body font-medium">
+                                    Miami-Dade, Broward &<br />Palm Beach
+                                    Counties
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div
+                    class="glass-bg-dark p-8 md:p-10 border-l-4 border-l-accent shadow-xl relative overflow-hidden rounded-2xl"
+                >
+                    <!-- Decorative Corner Element -->
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-accent/10 to-transparent pointer-events-none"
+                    >
+                    </div>
+                    <h2
+                        class="text-3xl font-black mb-8 text-primary uppercase relative z-10"
+                    >
+                        Send a <span class="text-accent">Message</span>
+                    </h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label
+                                for="name"
+                                class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                >Your Name</label
+                            >
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                class="w-full bg-light border-2 border-gray-200 px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all placeholder-gray-400 font-medium"
+                                placeholder="John Doe"
+                            />
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label
+                                    for="email"
+                                    class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                    >Email Address</label
+                                >
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full bg-light border-2 border-gray-200 px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all placeholder-gray-400 font-medium"
+                                    placeholder="john@example.com"
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    for="phone"
+                                    class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                    >Phone Number</label
+                                >
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                    class="w-full bg-light border-2 border-gray-200 px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all placeholder-gray-400 font-medium"
+                                    placeholder="(305) 555-0123"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                for="message"
+                                class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                >Message</label
+                            >
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                required
+                                class="w-full bg-light border-2 border-gray-200 px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all placeholder-gray-400 font-medium resize-none"
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            id="submit-btn"
+                            class="w-full bg-accent text-white font-black text-lg py-5 hover:bg-primary transition-all transform hover:-translate-y-1 uppercase tracking-widest shadow-[var(--shadow-lg)] border-l-4 border-primary"
+                        >
+                            Send Message
+                        </button>
+
+                        <div
+                            id="form-status"
+                            class="hidden text-center p-4 rounded-lg font-bold mt-4"
+                        >
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </Container>
+    </div>
+
+    <!-- Business Hours & Emergency Protocol -->
+    <section
+        id="business-hours"
+        aria-labelledby="hours-heading"
+        class="bg-light py-20 md:py-32"
+    >
+        <Container>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Business Hours -->
+                <div
+                    class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] border border-[var(--border-light)]"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+                        >
+                            <Clock class="w-6 h-6 text-white" />
+                        </div>
+                        <h2
+                            id="hours-heading"
+                            class="text-2xl font-black text-primary uppercase"
+                        >
+                            Business Hours
+                        </h2>
+                    </div>
+                    <div class="space-y-3">
+                        <div
+                            class="flex justify-between items-center py-2 border-b border-gray-200"
+                        >
+                            <span class="text-gray-700 font-bold"
+                                >Monday - Friday</span
+                            >
+                            <span class="text-primary font-black">24 Hours</span
+                            >
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-2 border-b border-gray-200"
+                        >
+                            <span class="text-gray-700 font-bold">Saturday</span
+                            >
+                            <span class="text-primary font-black">24 Hours</span
+                            >
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-2 border-b border-gray-200"
+                        >
+                            <span class="text-gray-700 font-bold">Sunday</span>
+                            <span class="text-primary font-black">24 Hours</span
+                            >
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span
+                                class="text-accent font-black uppercase tracking-wide"
+                                >Emergency Service</span
+                            >
+                            <span class="text-accent font-black">24/7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Protocol -->
+                <div
+                    class="bg-gradient-to-br from-accent/10 to-accent/5 p-8 rounded-2xl border border-accent/20"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center animate-pulse"
+                        >
+                            <AlertTriangle class="w-6 h-6 text-white" />
+                        </div>
+                        <h2 class="text-2xl font-black text-primary uppercase">
+                            Emergency Protocol
+                        </h2>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-gray-700 font-medium leading-relaxed">
+                            <span class="font-black text-accent"
+                                >Electrical emergencies require immediate
+                                attention.</span
+                            > If you're experiencing any of the following, call us
+                            now:
+                        </p>
+                        <ul class="space-y-2 text-gray-700 font-medium">
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent font-black mt-1"
+                                    >•</span
+                                >
+                                <span>Sparking outlets or electrical panel</span
+                                >
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent font-black mt-1"
+                                    >•</span
+                                >
+                                <span>Burning smell from outlets or wiring</span
+                                >
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent font-black mt-1"
+                                    >•</span
+                                >
+                                <span>Complete power outage</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent font-black mt-1"
+                                    >•</span
+                                >
+                                <span>Exposed or damaged wiring</span>
+                            </li>
+                        </ul>
+                        <p
+                            class="text-sm text-[var(--text-body)] font-medium italic pt-4 border-t border-accent/20"
+                        >
+                            <span class="font-bold text-primary"
+                                >24/7 Availability:</span
+                            > Our dispatch team is staffed around the clock. Licensed
+                            electricians serve all of Miami-Dade and Broward County.
+                        </p>
                     </div>
                 </div>
             </div>
         </Container>
     </section>
-</Layout>
 
-<!-- Business Hours & Emergency Protocol -->
-<section class="bg-white py-20 md:py-32">
-    <Container>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Business Hours -->
-            <div class="bg-light p-8 rounded-2xl border border-gray-100">
-                <div class="flex items-center gap-4 mb-6">
-                    <div
-                        class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-6 h-6 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <h2 class="text-2xl font-black text-primary uppercase">
-                        Business Hours
-                    </h2>
-                </div>
-                <div class="space-y-3">
-                    <div
-                        class="flex justify-between items-center py-2 border-b border-gray-200"
-                    >
-                        <span class="text-gray-700 font-bold"
-                            >Monday - Friday</span
-                        >
-                        <span class="text-primary font-black"
-                            >7:00 AM - 7:00 PM</span
-                        >
-                    </div>
-                    <div
-                        class="flex justify-between items-center py-2 border-b border-gray-200"
-                    >
-                        <span class="text-gray-700 font-bold">Saturday</span>
-                        <span class="text-primary font-black"
-                            >8:00 AM - 5:00 PM</span
-                        >
-                    </div>
-                    <div
-                        class="flex justify-between items-center py-2 border-b border-gray-200"
-                    >
-                        <span class="text-gray-700 font-bold">Sunday</span>
-                        <span class="text-primary font-black">Closed</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span
-                            class="text-accent font-black uppercase tracking-wide"
-                            >Emergency Service</span
-                        >
-                        <span class="text-accent font-black">24/7</span>
-                    </div>
-                </div>
-            </div>
+    <script>
+        const form = document.getElementById("contact-form") as HTMLFormElement;
+        const statusDiv = document.getElementById("form-status");
+        const submitBtn = document.getElementById(
+            "submit-btn",
+        ) as HTMLButtonElement;
 
-            <!-- Emergency Protocol -->
-            <div
-                class="bg-gradient-to-br from-accent/10 to-accent/5 p-8 rounded-2xl border border-accent/20"
-            >
-                <div class="flex items-center gap-4 mb-6">
-                    <div
-                        class="w-12 h-12 bg-accent rounded-full flex items-center justify-center animate-pulse"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-6 h-6 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <h2 class="text-2xl font-black text-primary uppercase">
-                        Emergency Protocol
-                    </h2>
-                </div>
-                <div class="space-y-4">
-                    <p class="text-gray-700 font-medium leading-relaxed">
-                        <span class="font-black text-accent"
-                            >Electrical emergencies require immediate attention.</span
-                        > If you're experiencing any of the following, call us now:
-                    </p>
-                    <ul class="space-y-2 text-gray-700 font-medium">
-                        <li class="flex items-start gap-3">
-                            <span class="text-accent font-black mt-1">•</span>
-                            <span>Sparking outlets or electrical panel</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-accent font-black mt-1">•</span>
-                            <span>Burning smell from outlets or wiring</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-accent font-black mt-1">•</span>
-                            <span>Complete power outage</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-accent font-black mt-1">•</span>
-                            <span>Exposed or damaged wiring</span>
-                        </li>
-                    </ul>
-                    <p
-                        class="text-sm text-gray-600 font-medium italic pt-4 border-t border-accent/20"
-                    >
-                        <span class="font-bold text-primary"
-                            >Response Time:</span
-                        > Our dispatch team prioritizes emergency calls. Average arrival
-                        time is 60 minutes throughout Miami-Dade and Broward County.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </Container>
-</section>
+        form?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            if (!statusDiv || !submitBtn) return;
 
-<div class="bg-light py-20 md:py-32">
-    <Container>
-        <div
-            class="grid grid-cols-1 lg:grid-cols-2 items-start"
-            style="gap: var(--spacing-3xl);"
-        >
-            <!-- Contact Info -->
-            <div>
-                <h2
-                    class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase"
-                    style="margin-bottom: var(--spacing-xl);"
-                >
-                    Contact <span class="text-accent">Info</span>
-                </h2>
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+            statusDiv.classList.add("hidden");
+            statusDiv.className =
+                "hidden text-center p-4 rounded-lg font-bold mt-4"; // Reset classes
 
-                <div class="space-y-10">
-                    <div class="flex items-start gap-6 group">
-                        <div
-                            class="bg-white p-5 rounded-2xl text-accent border border-gray-100 group-hover:border-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="2"
-                                stroke="currentColor"
-                                class="w-8 h-8"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                                ></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3
-                                class="text-xl font-bold mb-1 text-primary uppercase tracking-wide"
-                            >
-                                Phone
-                            </h3>
-                            <p class="text-gray-600 mb-2 font-medium">
-                                24/7 Emergency Service - Immediate Response for
-                                Urgent Electrical Issues
-                            </p>
-                            <a
-                                href="tel:7868339211"
-                                class="text-2xl font-black text-accent hover:text-primary transition-colors tracking-wider"
-                                >(786) 833-9211</a
-                            >
-                            <p class="text-sm text-gray-500 mt-2 font-medium">
-                                Average 60-minute emergency response time
-                            </p>
-                        </div>
-                    </div>
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
 
-                    <div class="flex items-start gap-6 group">
-                        <div
-                            class="bg-white p-5 rounded-2xl text-accent border border-gray-100 group-hover:border-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="2"
-                                stroke="currentColor"
-                                class="w-8 h-8"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                                ></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3
-                                class="text-xl font-bold mb-1 text-primary uppercase tracking-wide"
-                            >
-                                Email
-                            </h3>
-                            <p class="text-gray-600 mb-2 font-medium">
-                                For general inquiries, quotes, and non-urgent
-                                questions
-                            </p>
-                            <a
-                                href="mailto:info@solomonelectric.com"
-                                class="text-xl font-bold text-gray-800 hover:text-accent transition-colors"
-                                >info@solomonelectric.com</a
-                            >
-                            <p class="text-sm text-gray-500 mt-2 font-medium">
-                                We respond to all emails within 2 hours during
-                                business hours
-                            </p>
-                        </div>
-                    </div>
+            try {
+                // Submit to PHP backend (SMTP2GO integration)
+                const response = await fetch("/api/contact.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+                const result = await response.json();
 
-                    <div class="flex items-start gap-6 group">
-                        <div
-                            class="bg-white p-5 rounded-2xl text-accent border border-gray-100 group-hover:border-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="2"
-                                stroke="currentColor"
-                                class="w-8 h-8"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                                ></path>
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                                ></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3
-                                class="text-xl font-bold mb-1 text-primary uppercase tracking-wide"
-                            >
-                                Service Areas
-                            </h3>
-                            <p class="text-gray-600 font-medium">
-                                <span class="font-bold text-primary"
-                                    >Miami-Dade County</span
-                                ><br />Broward County<br />Fort Lauderdale &
-                                Surrounding Areas
-                            </p>
-                            <p class="text-sm text-gray-500 mt-2 font-medium">
-                                Serving 25+ cities across South Florida
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div
-                class="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-brand"
-            >
-                <h2 class="text-3xl font-black mb-8 text-primary uppercase">
-                    Send a <span class="text-accent">Message</span>
-                </h2>
-                <form id="contact-form" class="space-y-6">
-                    <div>
-                        <label
-                            for="name"
-                            class="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide"
-                            >Your Name</label
-                        >
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            class="w-full bg-light border border-gray-200 rounded-xl px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder-gray-400 font-medium"
-                            placeholder="John Doe"
-                        />
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label
-                                for="email"
-                                class="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide"
-                                >Email Address</label
-                            >
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                class="w-full bg-light border border-gray-200 rounded-xl px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder-gray-400 font-medium"
-                                placeholder="john@example.com"
-                            />
-                        </div>
-                        <div>
-                            <label
-                                for="phone"
-                                class="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide"
-                                >Phone Number</label
-                            >
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                required
-                                class="w-full bg-light border border-gray-200 rounded-xl px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder-gray-400 font-medium"
-                                placeholder="(305) 555-0123"
-                            />
-                        </div>
-                    </div>
-
-                    <div>
-                        <label
-                            for="message"
-                            class="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide"
-                            >Message</label
-                        >
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            required
-                            class="w-full bg-light border border-gray-200 rounded-xl px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder-gray-400 font-medium"
-                            placeholder="How can we help you?"></textarea>
-                    </div>
-
-                    <button
-                        type="submit"
-                        id="submit-btn"
-                        class="w-full bg-accent text-white font-black text-lg py-5 rounded-xl hover:bg-primary transition-all transform hover:-translate-y-1 uppercase tracking-widest shadow-brand"
-                    >
-                        Send Message
-                    </button>
-
-                    <div
-                        id="form-status"
-                        class="hidden text-center p-4 rounded-lg font-bold mt-4"
-                    >
-                    </div>
-                </form>
-            </div>
-        </div>
-    </Container>
-</div>
-
-<script>
-    const form = document.getElementById("contact-form") as HTMLFormElement;
-    const statusDiv = document.getElementById("form-status");
-    const submitBtn = document.getElementById(
-        "submit-btn",
-    ) as HTMLButtonElement;
-
-    form?.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        if (!statusDiv || !submitBtn) return;
-
-        // Loading state
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-        statusDiv.classList.add("hidden");
-        statusDiv.className =
-            "hidden text-center p-4 rounded-lg font-bold mt-4"; // Reset classes
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            const response = await fetch("/send-mail.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-
-            const result = await response.json();
-
-            statusDiv.classList.remove("hidden");
-            if (response.ok && result.status === "success") {
+                statusDiv.classList.remove("hidden");
+                if (response.ok && result.status === "success") {
+                    statusDiv.classList.add(
+                        "bg-green-500/10",
+                        "text-green-600",
+                        "border",
+                        "border-green-500/20",
+                    );
+                    statusDiv.textContent = result.message;
+                    form.reset();
+                } else {
+                    throw new Error(result.message || "Failed to send message");
+                }
+            } catch (error) {
+                statusDiv.classList.remove("hidden");
                 statusDiv.classList.add(
-                    "bg-green-500/10",
-                    "text-green-600",
+                    "bg-red-500/10",
+                    "text-red-600",
                     "border",
-                    "border-green-500/20",
+                    "border-red-500/20",
                 );
-                statusDiv.textContent = result.message;
-                form.reset();
-            } else {
-                throw new Error(result.message || "Failed to send message");
+                statusDiv.textContent =
+                    error instanceof Error
+                        ? error.message
+                        : "Something went wrong. Please try again or call us.";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
             }
-        } catch (error) {
-            statusDiv.classList.remove("hidden");
-            statusDiv.classList.add(
-                "bg-red-500/10",
-                "text-red-600",
-                "border",
-                "border-red-500/20",
-            );
-            statusDiv.textContent =
-                error instanceof Error
-                    ? error.message
-                    : "Something went wrong. Please try again or call us.";
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Send Message";
-        }
-    });
-</script>
+        });
+    </script>
+</Layout>

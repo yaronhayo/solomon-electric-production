@@ -1,0 +1,182 @@
+{
+  "name": "Automatic Transfer Switch Installation",
+  "slug": "automatic-transfer-switch-installation",
+  "description": "Automatic transfer switches make generator backup truly seamless—detecting power outages and switching to generator power within seconds, without any human intervention. Solomon Electric installs automatic transfer switches for both standby generators and portable units throughout South Florida, providing the convenience and reliability families need during hurricanes and outages.",
+  "shortDescription": "Seamless generator switchover",
+  "icon": "Zap",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 7,
+  "features": [
+    "Automatic outage detection",
+    "Sub-10-second power transfer",
+    "Standby generator integration",
+    "Portable generator compatibility",
+    "Whole-house and essential load options",
+    "Load shedding management"
+  ],
+  "warningSignsHeading": "Why Upgrade to Automatic Transfer Switch?",
+  "warningSignsSubheading": "Manual transfer requires you to be home during outages. Automatic switching provides protection even when you're away.",
+  "problems": [
+    {
+      "title": "Away When Power Goes Out",
+      "description": "Manual transfer means no protection when you're not home. Automatic switches detect outages and start your generator whether you're there or not.",
+      "icon": "Home"
+    },
+    {
+      "title": "Middle-of-Night Outages",
+      "description": "Who wants to go outside at 2 AM during a storm to start a generator? Automatic transfer switches handle outages while you sleep.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Protecting Medical Equipment",
+      "description": "Home medical equipment can't wait for you to notice an outage. Automatic transfer ensures continuous power for critical health devices.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Protecting Freezers and Refrigerators",
+      "description": "Food spoils during extended outages. While a manual switch requires your presence, automatic transfer protects food even when you're away.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Upgrading from Manual Interlock",
+      "description": "If you have a portable generator with interlock kit, upgrading to automatic transfer adds convenience while maintaining code compliance.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Want True Backup Protection",
+      "description": "Real backup power works automatically. If you want protection you can count on regardless of circumstances, automatic transfer is essential.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our Transfer Switch Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "System Assessment",
+      "description": "We evaluate your generator capacity, determine which loads to prioritize, and select appropriate transfer switch size and type."
+    },
+    {
+      "step": 2,
+      "title": "Load Circuit Selection",
+      "description": "We identify essential circuits to receive backup power—refrigerator, well pump, medical equipment, selected lights—matched to generator capacity."
+    },
+    {
+      "step": 3,
+      "title": "Permit Application",
+      "description": "Transfer switch installation requires electrical permits. We handle permit applications and ensure code compliance."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "We install the automatic transfer switch adjacent to your panel, move essential circuits to protected subpanel, and connect generator interface."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Training",
+      "description": "We test automatic operation under simulated outage, verify transfer timing, and demonstrate system operation including maintenance requirements."
+    }
+  ],
+  "benefitsHeading": "Benefits of Automatic Transfer Switch",
+  "benefits": [
+    {
+      "title": "Seamless Protection",
+      "description": "Power transfers within seconds of outage detection—often before lights even flicker off. No intervention required.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Protection When Away",
+      "description": "Whether you're sleeping, at work, or on vacation, automatic transfer protects your home whenever outages occur.",
+      "icon": "Home"
+    },
+    {
+      "title": "Safe and Legal",
+      "description": "Automatic transfer switches prevent dangerous back-feed automatically, meeting all code requirements for generator connection.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Return to Normal",
+      "description": "When utility power returns, automatic switches transfer back and signal the generator to shut down—completely hands-free.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "10",
+      "label": "Second Transfer Time"
+    },
+    {
+      "value": "200+",
+      "label": "ATS Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's an automatic transfer switch?",
+      "answer": "An ATS monitors utility power. When it detects an outage, it sends a start signal to your generator. Once the generator is running and stable, it transfers your home's load to generator power—typically within 10-30 seconds. When utility power returns, it transfers back and stops the generator."
+    },
+    {
+      "question": "Can ATS work with portable generators?",
+      "answer": "Some automatic transfer switches work with portable generators that have electric start. However, most portable generators require manual start, limiting automation. For true automatic operation, a standby generator with remote start capability is recommended."
+    },
+    {
+      "question": "What's the difference between whole-house and essential circuit transfer?",
+      "answer": "Whole-house ATS powers your entire panel—requiring a generator large enough for all loads. Essential circuit ATS powers only selected circuits (refrigerator, lights, medical equipment) allowing a smaller generator. Most residential installations use essential circuit approach."
+    },
+    {
+      "question": "How much of my house can an ATS power?",
+      "answer": "That depends on your generator size, not the ATS. We size transfer switches for your generator output and select circuits to protect based on available capacity. Larger generators can power more circuits."
+    },
+    {
+      "question": "Do I need a new generator for automatic transfer?",
+      "answer": "Automatic transfer works best with standby generators designed for automatic operation. Some portable generators support automatic start with additional equipment. We can assess your current generator and recommend options."
+    },
+    {
+      "question": "How long do automatic transfer switches last?",
+      "answer": "Quality ATS units last 20+ years with proper maintenance. They're designed for reliable operation over many transfer cycles. Regular testing (running your generator monthly) exercises the transfer mechanism and verifies operation."
+    },
+    {
+      "question": "Is installation complicated?",
+      "answer": "Transfer switch installation involves significant panel work—moving circuits, installing subpanel if needed, connecting generator interface. It's not DIY work. However, for experienced electricians, it's straightforward work that typically completes in one day."
+    },
+    {
+      "question": "What happens if the generator runs out of fuel?",
+      "answer": "The ATS continues monitoring. If generator voltage drops (fuel exhausted, mechanical failure), it won't transfer back damaging loads. It will simply wait until either utility returns or generator is restored. Some systems include low-fuel alerts."
+    }
+  ],
+  "relatedServices": [
+    "home-standby-generator-installation",
+    "portable-generator-hookup",
+    "emergency-power-system-design",
+    "electrical-panel-upgrade-100a-to-200a"
+  ],
+  "seoContent": [
+    {
+      "heading": "Automatic Transfer Switch Installation in South Florida",
+      "body": "Make your generator backup truly seamless with automatic transfer switch installation from Solomon Electric. Our ATS installations detect power outages and switch to generator power within seconds—protecting your home whether you're present or away. Essential protection for South Florida's hurricane-prone region."
+    },
+    {
+      "heading": "Hands-Free Backup Power",
+      "body": "Manual generator start and transfer requires you to be home during outages. Automatic transfer switches provide protection around the clock—detecting outages, starting your generator, and transferring power without any intervention. When utility power returns, they transfer back automatically."
+    },
+    {
+      "heading": "Essential Circuit Protection",
+      "body": "Most residential automatic transfer installations protect essential circuits—refrigerator, lighting, well pump, medical equipment—sized to your generator's capacity. We help you prioritize which circuits matter most and configure the system to protect what's important to your family."
+    },
+    {
+      "heading": "Hurricane Season Preparation",
+      "body": "Solomon Electric installs automatic transfer switches throughout Miami, Fort Lauderdale, Hollywood, and all South Florida communities. Prepare before hurricane season—get the automatic protection that works even during overnight storms or when you're away from home."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

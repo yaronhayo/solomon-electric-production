@@ -1,0 +1,182 @@
+{
+  "name": "Ceiling Fan & Light Fixture Installation",
+  "slug": "ceiling-fan-light-fixture-installation",
+  "description": "Transform any room with professional ceiling fan and light fixture installation. Whether you're replacing outdated fixtures, adding a new ceiling fan for comfort and efficiency, or installing statement lighting in your South Florida home, Solomon Electric ensures safe, code-compliant installation with proper electrical connections and secure mounting.",
+  "shortDescription": "Expert fixture and fan installation",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 19,
+  "features": [
+    "Ceiling fan installation with all brands",
+    "Chandelier and heavy fixture mounting",
+    "New ceiling box installation when needed",
+    "Light fixture replacement and upgrade",
+    "Fan/light combination units",
+    "Remote and smart control setup"
+  ],
+  "warningSignsHeading": "When You Need Professional Fixture Installation",
+  "warningSignsSubheading": "Some installations are straightforward—others require professional electrical work. Here's when to call an electrician.",
+  "problems": [
+    {
+      "title": "No Existing Ceiling Box",
+      "description": "Installing a fan or fixture where none existed before requires running new wiring and installing a properly rated ceiling box—definitely electrician territory.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Standard Box, Heavy Fixture",
+      "description": "Ceiling fans and heavy chandeliers require fan-rated boxes designed to support weight and vibration. Standard light boxes can fail catastrophically.",
+      "icon": "Home"
+    },
+    {
+      "title": "Old Wiring Compatibility",
+      "description": "Modern fixtures with remotes, dimmers, and smart controls may not work properly with older wiring. Electricians ensure compatibility and proper connections.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Adding Wall Controls",
+      "description": "Want separate fan speed and light controls on the wall? This requires additional wiring or smart controls that need professional installation.",
+      "icon": "Plug"
+    },
+    {
+      "title": "High or Vaulted Ceilings",
+      "description": "Fixtures on high or angled ceilings require special mounting hardware, extension rods, and safe access that goes beyond typical DIY capability.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Structural Mounting Concerns",
+      "description": "Heavy fixtures must mount to ceiling joists or properly installed bracing. Drywall alone cannot support ceiling fans or chandeliers.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Assessment & Planning",
+      "description": "We evaluate your existing electrical setup, ceiling structure, and fixture requirements to determine proper installation approach and any upgrades needed."
+    },
+    {
+      "step": 2,
+      "title": "Electrical Preparation",
+      "description": "If needed, we install or upgrade ceiling boxes, run new wiring, or add switch controls to support your fixture and desired functionality."
+    },
+    {
+      "step": 3,
+      "title": "Secure Mounting",
+      "description": "We install proper mounting hardware rated for your fixture's weight, ensuring connection to structural framing—not just drywall."
+    },
+    {
+      "step": 4,
+      "title": "Electrical Connection",
+      "description": "All wiring connections are made securely with proper wire nuts and connections, ensuring reliable operation and code compliance."
+    },
+    {
+      "step": 5,
+      "title": "Testing & Adjustment",
+      "description": "We test all functions (lights, fan speeds, remotes), balance ceiling fans for wobble-free operation, and demonstrate controls."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Installation",
+  "benefits": [
+    {
+      "title": "Safe, Secure Mounting",
+      "description": "Ceiling fans spin at high speeds—loose mounting creates dangerous situations. Professional installation ensures your fixture stays safely in place.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Proper Electrical Connections",
+      "description": "Incorrect wiring causes flickering, non-functional controls, and fire hazards. Professional installation means reliable operation from day one.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Florida Comfort & Efficiency",
+      "description": "Ceiling fans reduce perceived temperature by 4-8°F, allowing higher thermostat settings. This means real AC savings in Florida's long cooling season.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Immediate Enjoyment",
+      "description": "Skip the frustrating hours of DIY assembly and troubleshooting. Professional installation means your fixture works perfectly, immediately.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Fixtures Installed"
+    },
+    {
+      "value": "4-8°F",
+      "label": "Cooling Effect"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I install a ceiling fan where there's only a light fixture?",
+      "answer": "Usually, yes—but the existing ceiling box must be replaced with a fan-rated box designed to handle the weight and vibration of a spinning fan. Standard light boxes will fail over time, creating a safety hazard. We install proper fan boxes as part of our fan installation service."
+    },
+    {
+      "question": "Do you install ceiling fans I've already purchased?",
+      "answer": "Absolutely. Bring your own fixture and we'll install it professionally. We can also help select fixtures if you haven't decided yet—we're not tied to any particular brand and can recommend options based on your needs."
+    },
+    {
+      "question": "Why does my ceiling fan wobble?",
+      "answer": "Fan wobble comes from unbalanced blades (manufacturing variance or dust accumulation), loose mounting hardware, incorrect installation, or damaged components. We can diagnose and correct wobble issues on existing fans or ensure new installations are balanced from the start."
+    },
+    {
+      "question": "Can you install a fan on my high/vaulted ceiling?",
+      "answer": "Yes. High ceilings often require extended downrods, angled mounting adapters, and proper scaffolding or lift access. We have the equipment and experience to safely install fixtures on any ceiling height."
+    },
+    {
+      "question": "Do ceiling fans save money on AC?",
+      "answer": "Yes! Ceiling fans create a wind-chill effect that makes rooms feel 4-8°F cooler. This allows you to raise your thermostat setting and reduce AC runtime. In Florida's long cooling season, this translates to meaningful energy savings—enough that fans typically pay for themselves."
+    },
+    {
+      "question": "Can I have separate wall switches for fan and light?",
+      "answer": "Yes, if proper wiring exists or can be installed. Many older installations have only one switch. We can run additional switch legs, install smart switches that work with single-wire setups, or configure remote controls for separate control."
+    },
+    {
+      "question": "What's a fan-rated box and why does it matter?",
+      "answer": "Fan-rated boxes are designed to support 50+ pounds and withstand the vibration of spinning motors. Standard ceiling boxes are rated for static fixtures (chandeliers, flush mounts) but fail under the dynamic loads of ceiling fans. Using the wrong box is a code violation and safety hazard."
+    },
+    {
+      "question": "Do you install smart ceiling fans and lights?",
+      "answer": "Yes. We install smart fixtures from all major brands, configure apps and voice control, and ensure your smart devices work reliably with your home network. Smart ceiling fans with temperature sensors and scheduling can automate your comfort."
+    }
+  ],
+  "relatedServices": [
+    "recessed-lighting-installation",
+    "indoor-outdoor-lighting-installation",
+    "smart-lighting-installation",
+    "light-switch-installation-replacement"
+  ],
+  "seoContent": [
+    {
+      "heading": "Ceiling Fan Installation in Miami & South Florida",
+      "body": "Ceiling fans aren't just decorative—they're essential comfort devices in South Florida's climate. By creating a wind-chill effect, ceiling fans make rooms feel 4-8°F cooler, allowing you to reduce AC usage and save on energy bills. Solomon Electric provides professional ceiling fan installation throughout Miami-Dade and Broward counties, ensuring safe mounting, proper electrical connections, and wobble-free operation."
+    },
+    {
+      "heading": "Light Fixture Installation & Replacement",
+      "body": "Whether you're updating outdated fixtures, installing a statement chandelier, or adding task lighting to your kitchen, Solomon Electric handles all residential light fixture work. We install fixtures you've purchased or help select options that meet your style and functional needs. Every installation includes proper electrical connections, secure mounting, and testing."
+    },
+    {
+      "heading": "Heavy Fixture & Chandelier Mounting",
+      "body": "Large chandeliers and heavy fixtures require proper structural mounting—not just a ceiling box. Drywall cannot support significant weight; fixtures must connect to ceiling joists or properly installed bracing. Our electricians verify structural support and install appropriate mounting hardware for fixtures of any size."
+    },
+    {
+      "heading": "Serving South Florida Homeowners",
+      "body": "Solomon Electric installs ceiling fans and light fixtures throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Schedule your installation and enjoy your new fixture—professionally installed, safely mounted, and ready to enjoy."
+    }
+  ],
+  "relatedBlogPosts": [
+    "lighting-fixture-installation"
+  ]
+}

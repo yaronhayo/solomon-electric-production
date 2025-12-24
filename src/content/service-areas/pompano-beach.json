@@ -1,0 +1,98 @@
+{
+    "name": "Pompano Beach",
+    "slug": "pompano-beach",
+    "county": "Broward",
+    "description": "Licensed Pompano Beach electricians providing 24/7 expert residential and commercial services. From beachfront luxury to industrial corridors, Solomon Electric is your local choice for safe electrical solutions.",
+    "population": "115,000+",
+    "founded": "1908",
+    "areaSquareMiles": "25",
+    "tagline": "The Heart of the Gold Coast",
+    "landmarks": [
+        "Pompano Beach Pier",
+        "Isle Casino Racing Pompano Park",
+        "Hillsboro Inlet Lighthouse",
+        "Pompano Community Park"
+    ],
+    "neighborhoods": [
+        "Garden Isles",
+        "Harbor Village",
+        "Cypress Lakes",
+        "Pompano Isles",
+        "Hillsboro Shores",
+        "Kendall Green"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Florida Turnpike",
+        "Atlantic Boulevard",
+        "Federal Highway (US-1)",
+        "Copans Road"
+    ],
+    "coordinates": {
+        "lat": 26.2379,
+        "lng": -80.1248
+    },
+    "challenges": [
+        {
+            "title": "Coastal Corrosion Resistance",
+            "description": "Pompano's coastal geography means outdoor electrical components are at risk from salt air. we use specialized corrosion-resistant hardware for all beachfront and dock installations.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Industrial Power Efficiency",
+            "description": "Pompano Beach's large industrial sector requires electricians who understand high-voltage distribution, motor controls, and large-scale LED lighting retrofits.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Historic Neighborhood Modernization",
+            "description": "Established residential areas often feature original wiring that needs professional auditing and upgrading to meet modern safety and energy efficiency standards.",
+            "icon": "Home"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "landscape-outdoor-lighting",
+        "24-7-emergency-electrical-service",
+        "commercial-led-lighting-retrofit",
+        "whole-home-surge-protection",
+        "recessed-lighting-installation"
+    ],
+    "stats": [
+        {
+            "value": "115K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Are you licensed to perform electrical work in Pompano Beach?",
+            "answer": "Yes, we are fully licensed (FL License #EC13012419) and insured. We frequently work with the Pompano Beach Building Department on both residential and commercial projects."
+        },
+        {
+            "question": "Do you provide emergency repairs for Pompano waterfront properties?",
+            "answer": "Absolutely. We offer 24/7 emergency response for all of Pompano Beach, including specialized repairs for dock power, beachfront lighting, and residential failures."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Trusted Pompano Beach Electricians Since 2003",
+            "body": "Pompano Beach—the 'Heart of the Gold Coast'—is a city defined by its beautiful beaches, thriving industrial districts, and historic charm. Solomon Electric is proud to serve this multifaceted community with the highest standard of electrical expertise. Whether you're a long-time resident or a growing business, our team is dedicated to your safety."
+        },
+        {
+            "heading": "Comprehensive Electrical Solutions for Pompano Properties",
+            "body": "From the revitalized beachfront to the bustling industrial parks along I-95, Pompano Beach homeowners and businesses count on Solomon Electric. We provide everything from 24/7 emergency repairs to complex panel upgrades and sophisticated lighting design, all backed by our 100% satisfaction guarantee."
+        }
+    ]
+}

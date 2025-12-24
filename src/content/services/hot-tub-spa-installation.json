@@ -1,0 +1,180 @@
+{
+  "name": "Hot Tub & Spa Installation",
+  "slug": "hot-tub-spa-installation",
+  "description": "Proper electrical installation is essential for hot tub and spa safety. Solomon Electric provides professional hot tub wiring throughout South Florida—including dedicated 240V circuits, GFCI protection, disconnect switches, and all code requirements for wet-location electrical work. Whether you're installing a new spa or replacing electrical for an existing one, we ensure your installation is safe and inspection-ready.",
+  "shortDescription": "Safe electrical for hot tubs and spas",
+  "icon": "Zap",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Outlets, Switches & Wiring",
+  "order": 46,
+  "features": [
+    "240V dedicated circuits",
+    "50-60 amp service as required",
+    "GFCI breaker protection",
+    "Required disconnect switch",
+    "Wet-rated conduit and wiring",
+    "Permit and inspection coordination"
+  ],
+  "warningSignsHeading": "Planning Your Hot Tub Installation",
+  "warningSignsSubheading": "Hot tubs have specific electrical requirements for safety. Here's what to consider before installation.",
+  "problems": [
+    {
+      "title": "No Existing Electrical Service",
+      "description": "Hot tubs require dedicated 240V circuits from your panel to the installation location. If you're adding a spa, you need new electrical service installed.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Inadequate Panel Capacity",
+      "description": "Hot tubs typically require 50-60 amp circuits—significant load. We assess whether your panel can handle the addition or needs upgrading.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Long Distance from Panel",
+      "description": "The further your spa is from the panel, the heavier wire gauge required. Long runs need proper sizing to prevent voltage drop.",
+      "icon": "Home"
+    },
+    {
+      "title": "Missing Disconnect Requirement",
+      "description": "Code requires a disconnect switch within sight of and 5-50 feet from the hot tub. This safety device allows quick power cutoff in emergencies.",
+      "icon": "Shield"
+    },
+    {
+      "title": "GFCI Protection Needed",
+      "description": "All hot tub circuits require GFCI protection to prevent electrocution—one of the most critical safety requirements for any hot tub installation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Replacing Old Spa Wiring",
+      "description": "If you're replacing an older hot tub, existing wiring may not meet current code requirements or may be damaged from years of outdoor exposure.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our Hot Tub Wiring Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Spa Electrical Assessment",
+      "description": "We review your hot tub's electrical specifications, assess panel capacity, and determine wire gauge and routing for your specific installation location."
+    },
+    {
+      "step": 2,
+      "title": "Permit Application",
+      "description": "Hot tub wiring requires electrical permits in all Florida municipalities. We handle permit applications and ensure work meets code requirements."
+    },
+    {
+      "step": 3,
+      "title": "Circuit Installation",
+      "description": "We install the dedicated circuit from your panel, using properly rated wire in weather-resistant conduit, with appropriate burial depth for underground runs."
+    },
+    {
+      "step": 4,
+      "title": "Disconnect and GFCI",
+      "description": "We install the required disconnect switch at proper distance and GFCI breaker protection—the two most critical safety components of hot tub wiring."
+    },
+    {
+      "step": 5,
+      "title": "Connection and Inspection",
+      "description": "We make final connections to your spa, test operation, and coordinate required inspection. Your hot tub is ready to enjoy once inspection passes."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Hot Tub Wiring",
+  "benefits": [
+    {
+      "title": "Safety First",
+      "description": "Electricity and water are a deadly combination when improperly installed. Professional wiring with proper GFCI protection keeps your family safe.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "Hot tub electrical has specific code requirements that vary by jurisdiction. Professional installation ensures your spa passes inspection and is fully legal.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Reliable Operation",
+      "description": "Properly sized circuits ensure your hot tub operates at full capacity without tripping breakers or experiencing voltage-related problems.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Insurance Protection",
+      "description": "Unpermitted electrical work can void insurance coverage. Professional, inspected installation protects you if anything ever goes wrong.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "200+",
+      "label": "Spas Wired"
+    },
+    {
+      "value": "100%",
+      "label": "GFCI Protected"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What electrical service do hot tubs require?",
+      "answer": "Most hot tubs require 240V, 50-amp service with a 4-wire connection (hot, hot, neutral, ground). Some smaller spas run on 240V/30A. Larger units may need 60 amps. We verify your specific hot tub's requirements—the nameplate or manual specifies exactly what's needed."
+    },
+    {
+      "question": "Why do hot tubs need GFCI protection?",
+      "answer": "GFCI (Ground Fault Circuit Interrupter) protection detects when electrical current is escaping through an unintended path—like through a person in the water. It cuts power in milliseconds, preventing electrocution. This protection is absolutely mandatory for all hot tub installations."
+    },
+    {
+      "question": "What is the disconnect switch requirement?",
+      "answer": "Code requires a lockable disconnect switch within line-of-sight of the hot tub and at least 5 feet away (but no more than 50 feet). This allows quick emergency shutoff if someone is in trouble in the water. We install code-compliant disconnects as part of every hot tub installation."
+    },
+    {
+      "question": "Can I plug a hot tub into a regular outlet?",
+      "answer": "Only small plug-and-play spas (120V) can use standard outlets. Full-size hot tubs require 240V hardwired connections—there's no standard outlet for this. We install the complete circuit from panel to spa with required safety devices."
+    },
+    {
+      "question": "How far can the hot tub be from my electrical panel?",
+      "answer": "There's no code limit, but distance affects wire sizing—longer runs require heavier wire to prevent voltage drop. We calculate proper wire gauge for your specific distance. Very long runs (over 100 feet) may benefit from larger wire than minimum requirements."
+    },
+    {
+      "question": "Do I need a permit for hot tub electrical?",
+      "answer": "Yes. Hot tub electrical installations require permits in all Florida municipalities. We handle permit applications and inspection scheduling. Never hire an electrician who suggests skipping permits—it's illegal and unsafe."
+    },
+    {
+      "question": "Can I use existing wiring from an old hot tub?",
+      "answer": "Sometimes, if the existing circuit is properly sized for the new spa and the wiring is in good condition. However, older installations may not meet current code requirements for GFCI protection or disconnect placement. We assess existing wiring and recommend whether it's usable or needs replacement."
+    },
+    {
+      "question": "How long does hot tub wiring installation take?",
+      "answer": "Most residential hot tub wiring installations complete in one day—typically 4-6 hours. Underground runs take longer due to trenching. Complex installations or long distances may extend to two days. We'll estimate timeline during your consultation."
+    }
+  ],
+  "relatedServices": [
+    "pool-spa-wiring-inspection",
+    "240v-outlet-installation",
+    "gfci-outlet-installation-repair",
+    "sauna-steam-room-electrical"
+  ],
+  "seoContent": [
+    {
+      "heading": "Hot Tub Electrical Installation in South Florida",
+      "body": "Proper electrical installation is critical for hot tub safety—and required by Florida electrical code. Solomon Electric provides complete hot tub wiring services throughout Miami-Dade and Broward counties, including dedicated 240V circuits, GFCI breaker protection, required disconnect switches, and permit coordination. We ensure your spa installation is safe, code-compliant, and ready for relaxation."
+    },
+    {
+      "heading": "Hot Tub GFCI and Disconnect Requirements",
+      "body": "Florida electrical code requires GFCI protection for all hot tub circuits—a device that prevents electrocution by cutting power when ground faults occur. Code also requires a disconnect switch within line-of-sight of the spa for emergency shutoff. These aren't optional safety features—they're legally required protections that save lives."
+    },
+    {
+      "heading": "Proper Wire Sizing for Hot Tubs",
+      "body": "Hot tub circuits carry significant current over distances from panel to spa. Undersized wire causes voltage drop, overheating, and tripping. We calculate proper wire gauge based on your circuit amperage and distance, ensuring reliable operation and safe wiring. This is especially important for spas located far from the electrical panel."
+    },
+    {
+      "heading": "Expert Hot Tub Wiring Throughout South Florida",
+      "body": "Solomon Electric wires hot tubs and spas throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Our licensed electricians handle everything from permit applications to final inspection—delivering safe, legal hot tub installations ready for your enjoyment."
+    }
+  ],
+  "relatedBlogPosts": []
+}

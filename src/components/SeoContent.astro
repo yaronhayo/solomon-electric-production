@@ -1,0 +1,70 @@
+---
+/**
+ * SeoContent Component
+ * Displays SEO content blocks in a clean format
+ */
+import Container from "./ui/Container.astro";
+
+interface ContentBlock {
+    heading: string;
+    body: string;
+}
+
+interface Props {
+    content: ContentBlock[];
+}
+
+const { content } = Astro.props;
+---
+
+{
+    content && content.length > 0 && (
+        <section class="seo-section">
+            <Container>
+                <div class="seo-wrapper">
+                    {content.map((block) => (
+                        <article class="seo-block">
+                            <h2 class="seo-heading">{block.heading}</h2>
+                            <p class="seo-body">{block.body}</p>
+                        </article>
+                    ))}
+                </div>
+            </Container>
+        </section>
+    )
+}
+
+<style>
+    .seo-section {
+        background: var(--bg-body);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .seo-wrapper {
+        max-width: var(--container-content, 1100px);
+        margin: 0 auto;
+    }
+
+    .seo-block {
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .seo-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .seo-heading {
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-weight: 700;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .seo-body {
+        font-size: clamp(1rem, 1.1vw, 1.0625rem);
+        color: var(--text-body);
+        line-height: 1.8;
+        margin: 0;
+    }
+</style>

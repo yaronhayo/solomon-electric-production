@@ -1,0 +1,182 @@
+{
+  "name": "Home Electrical System Upgrade",
+  "slug": "home-electrical-system-upgrade",
+  "description": "Modernize your older South Florida home's electrical system to meet today's power demands and safety standards. Our licensed electricians upgrade infrastructure, add capacity, and bring older homes up to current code requirements—protecting your family and preparing your home for modern technology.",
+  "shortDescription": "Modernize older home electrical",
+  "icon": "CircuitBoard",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Outlets, Switches & Wiring",
+  "order": 18,
+  "features": [
+    "Complete electrical capacity planning and upgrades",
+    "Modern device and outlet installation throughout",
+    "Safety system updates including GFCI and AFCI protection",
+    "Renovation electrical work with permit coordination",
+    "Aluminum to copper wiring upgrades",
+    "Code compliance verification and certification"
+  ],
+  "warningSignsHeading": "Warning Signs Your Home's Electrical System Needs an Upgrade",
+  "warningSignsSubheading": "If you're experiencing any of these issues, your electrical system may be outdated or unsafe. Don't wait for a fire hazard—get a professional assessment.",
+  "problems": [
+    {
+      "title": "Frequent Circuit Breaker Trips",
+      "description": "Your breakers trip whenever you run multiple appliances. This indicates your electrical panel can't handle modern power demands.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Flickering or Dimming Lights",
+      "description": "Lights flicker when appliances turn on, or they dim without explanation. This often signals inadequate wiring or loose connections.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Two-Prong Outlets",
+      "description": "Old two-prong outlets can't accommodate modern three-prong plugs and lack grounding—a serious safety concern.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Warm or Discolored Outlets",
+      "description": "Outlets that feel warm to the touch or show discoloration indicate dangerous overheating that could cause a fire.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Burning or Unusual Odors",
+      "description": "Any burning smell from outlets, switches, or your panel requires immediate attention—this is an electrical emergency.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Home Built Before 1980",
+      "description": "Older homes often have aluminum wiring, undersized panels, or outdated components that don't meet current safety codes.",
+      "icon": "Home"
+    }
+  ],
+  "processHeading": "Our Home Electrical Upgrade Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Comprehensive Inspection",
+      "description": "We thoroughly inspect your entire electrical system—panel, wiring, outlets, and connections—to identify all issues and safety concerns."
+    },
+    {
+      "step": 2,
+      "title": "Custom Upgrade Plan",
+      "description": "Based on our findings and your needs (EV chargers, home office, appliances), we create a detailed upgrade plan with transparent pricing."
+    },
+    {
+      "step": 3,
+      "title": "Permit & Scheduling",
+      "description": "We handle all permit applications with local building departments and coordinate a convenient installation timeline."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "Our licensed electricians complete the upgrade work, minimizing disruption to your home while maintaining the highest safety standards."
+    },
+    {
+      "step": 5,
+      "title": "Inspection & Certification",
+      "description": "We coordinate the final inspection with the building department and provide you with all documentation for your records and insurance."
+    }
+  ],
+  "benefitsHeading": "Why South Florida Homeowners Choose Solomon Electric",
+  "benefits": [
+    {
+      "title": "Enhanced Safety",
+      "description": "Modern wiring, GFCI protection, and proper grounding dramatically reduce fire and shock risks for your family.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Increased Home Value",
+      "description": "Updated electrical systems are a major selling point and can increase your home's market value by thousands of dollars.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Modern Power Capacity",
+      "description": "Power all your devices, appliances, EV chargers, and home office equipment without worrying about overloaded circuits.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Insurance Compliance",
+      "description": "Many insurance companies require updated electrical systems. Avoid policy issues and potentially lower your premiums.",
+      "icon": "FileCheck"
+    }
+  ],
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "2,500+",
+      "label": "Homes Upgraded"
+    },
+    {
+      "value": "100%",
+      "label": "Licensed & Insured"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Support"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I know if my home needs an electrical system upgrade?",
+      "answer": "Look for warning signs like frequent breaker trips, flickering lights, two-prong outlets, warm or discolored outlets, burning smells, or if your home was built before 1980. We offer free electrical assessments to evaluate your system's condition and safety."
+    },
+    {
+      "question": "How long does a complete home electrical upgrade take?",
+      "answer": "Timeline depends on the scope of work. Minor upgrades may take 1-2 days, while complete rewiring of an older home can take 3-5 days. We'll provide a detailed timeline during your consultation and work to minimize disruption to your daily life."
+    },
+    {
+      "question": "Do I need permits for electrical upgrade work in South Florida?",
+      "answer": "Yes, most electrical work in South Florida requires permits. Solomon Electric handles all permit applications, coordinates inspections, and provides final documentation. Never hire an electrician who suggests skipping permits."
+    },
+    {
+      "question": "Is aluminum wiring dangerous? Should I replace it?",
+      "answer": "Aluminum wiring installed in the 1960s-70s can be a fire hazard due to oxidation and loose connections at terminals. We can either replace aluminum wiring with copper or install approved aluminum-to-copper connectors (COPALUM or AlumiConn) as a safe alternative."
+    },
+    {
+      "question": "Will upgrading my electrical system save money on my electric bill?",
+      "answer": "While the primary benefits are safety and capacity, modern electrical systems with LED-compatible dimmers, smart controls, and efficient wiring can contribute to energy savings. The bigger savings come from avoiding costly emergency repairs and potential fire damage."
+    },
+    {
+      "question": "Can you upgrade my electrical system if I'm planning a renovation?",
+      "answer": "Absolutely—this is the ideal time for electrical upgrades! We coordinate with contractors to run new circuits, add outlets, and upgrade capacity while walls are open, saving you money compared to doing it after the renovation is complete."
+    },
+    {
+      "question": "What's the difference between rewiring and an electrical system upgrade?",
+      "answer": "Rewiring specifically replaces the wires running through your walls. A full electrical system upgrade may include rewiring plus panel upgrades, new outlets and switches, grounding improvements, and safety device installation—a more comprehensive modernization."
+    },
+    {
+      "question": "Do you offer financing for electrical system upgrades?",
+      "answer": "Yes, we offer flexible financing options for larger projects. We'll discuss all available options during your consultation so you can make the best decision for your budget while not compromising on safety."
+    }
+  ],
+  "relatedServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "electrical-wiring-updates-rewiring",
+    "whole-home-surge-protection",
+    "gfci-outlet-installation-repair"
+  ],
+  "seoContent": [
+    {
+      "heading": "Complete Electrical System Modernization for South Florida Homes",
+      "body": "Many South Florida homes were built decades ago when electrical demands were a fraction of what they are today. Between air conditioning, electric vehicles, home offices, smart home devices, and modern kitchen appliances, your electrical system may be struggling to keep up. Solomon Electric specializes in bringing older homes up to modern standards safely and efficiently."
+    },
+    {
+      "heading": "South Florida Electrical Code Compliance",
+      "body": "Florida has strict electrical codes designed to protect homeowners from fire and shock hazards—especially important in our hurricane-prone environment. Whether you're selling your home, dealing with insurance requirements, or simply want peace of mind, our licensed electricians ensure your electrical system meets or exceeds all current Florida codes."
+    },
+    {
+      "heading": "Serving Miami-Dade, Broward & Palm Beach Counties",
+      "body": "Solomon Electric provides professional electrical system upgrades throughout South Florida, including Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Springs, Boca Raton, Deerfield Beach, Pompano Beach, and all surrounding communities. Our local electricians understand the unique challenges of Florida homes, from humidity concerns to hurricane preparedness requirements."
+    },
+    {
+      "heading": "Why Choose a Licensed Electrician for Home Upgrades",
+      "body": "Electrical work is not a DIY project. Improper wiring can cause fires, electrical shocks, and costly damage. Our Florida State Licensed electricians (License #EC13012419) are fully insured and bonded, guaranteeing work that passes inspection the first time. We provide written warranties, transparent pricing, and complete documentation for your records and insurance company."
+    }
+  ],
+  "relatedBlogPosts": [
+    "rewiring-historic-miami-homes"
+  ]
+}

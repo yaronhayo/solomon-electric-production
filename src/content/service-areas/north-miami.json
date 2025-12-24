@@ -1,0 +1,105 @@
+{
+    "name": "North Miami",
+    "slug": "north-miami",
+    "county": "Miami-Dade",
+    "description": "Expert licensed electricians serving North Miami, Florida. Solomon Electric provides professional residential and commercial electrical services throughout North Miami, from Biscayne Blvd to Florida International University's Biscayne Bay Campus.",
+    "population": "60,000+",
+    "founded": "1926",
+    "areaSquareMiles": "10",
+    "tagline": "Gateway to the Bay",
+    "landmarks": [
+        "Museum of Contemporary Art (MOCA)",
+        "FIU Biscayne Bay Campus",
+        "Oleta River State Park",
+        "North Miami Public Library",
+        "Enchanted Forest Elaine Gordon Park"
+    ],
+    "neighborhoods": [
+        "Arch Creek",
+        "Biscayne Park Estates",
+        "Keystone Islands",
+        "Sanhsouci",
+        "Sunkist Grove",
+        "Uleta",
+        "Breezeswept Estates",
+        "Alhambra Circle"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Biscayne Blvd (US-1)",
+        "NW 7th Avenue",
+        "NE 125th Street",
+        "NE 135th Street"
+    ],
+    "coordinates": {
+        "lat": 25.8901,
+        "lng": -80.1867
+    },
+    "challenges": [
+        {
+            "title": "Coastal Electrical Issues",
+            "description": "North Miami's proximity to the bay means salt air can accelerate corrosion on outdoor electrical components and service masts, requiring marine-grade materials.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Historic Home Wiring",
+            "description": "Many properties in established North Miami neighborhoods feature original cloth wiring or outdated panels that need modernization to meet current safety codes.",
+            "icon": "AlertTriangle"
+        },
+        {
+            "title": "Storm Preparedness",
+            "description": "Low-lying areas of North Miami are prone to flooding during heavy tropical storms, making proper GFCI protection and elevated electrical systems critical.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "whole-home-surge-protection",
+        "recessed-lighting-installation",
+        "ceiling-fan-light-fixture-installation",
+        "gfci-outlet-installation-outdoor-pool"
+    ],
+    "stats": [
+        {
+            "value": "60K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide emergency electrical services in North Miami?",
+            "answer": "Yes, we offer 24/7 emergency electrical services to all North Miami residents and businesses. Whether you're in Keystone Islands or Arch Creek, our licensed electricians respond quickly to urgent issues like power loss, sparking panels, or burning smells."
+        },
+        {
+            "question": "Are your electricians licensed to work in North Miami?",
+            "answer": "Yes, Solomon Electric is a fully licensed and insured electrical contractor (FL License #EC13012419). We serve all of Miami-Dade County, including the City of North Miami, and ensure all work meets Florida Building Code and NEC standards."
+        },
+        {
+            "question": "Can you help with salt air corrosion on my electrical system?",
+            "answer": "Absolutely. North Miami homes near the water often suffer from salt air corrosion. We specialize in installing corrosion-resistant outdoor panels, GFCI outlets, and lighting fixtures designed to withstand the South Florida coastal environment."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Your Trusted North Miami Residential & Commercial Electrician",
+            "body": "North Miami is one of South Florida's most diverse and established communities. From the cultural hub of MOCA to the natural beauty of Oleta River State Park, North Miami requires electrical expertise that understands both historic estates and modern developments. Solomon Electric has been a staple in the Miami-Dade community for over 15 years, providing safe, reliable, and professional electrical solutions for every type of property."
+        },
+        {
+            "heading": "Serving Every Neighborhood in North Miami",
+            "body": "Whether you live in the waterfront Keystone Islands, the historic Arch Creek area, or near the FIU Biscayne Bay Campus, Solomon Electric is just a phone call away. We understand the specific municipal requirements of North Miami and handle everything from permit acquisition to final inspection, ensuring your project is compliant and safe."
+        }
+    ]
+}

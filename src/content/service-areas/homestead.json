@@ -1,0 +1,98 @@
+{
+    "name": "Homestead",
+    "slug": "homestead",
+    "county": "Miami-Dade",
+    "description": "Licensed electrical contractors serving Homestead, Florida. Solomon Electric provides professional residential and commercial electrical services to the South Dade community, from agriculture hubs to new suburban developments.",
+    "population": "80,000+",
+    "founded": "1913",
+    "areaSquareMiles": "14",
+    "tagline": "Gateway to the Florida Keys & Everglades",
+    "landmarks": [
+        "Homestead-Miami Speedway",
+        "Everglades National Park",
+        "Coral Castle Museum",
+        "Biscayne National Park",
+        "Homestead Air Reserve Base"
+    ],
+    "neighborhoods": [
+        "Redland",
+        "Naranja",
+        "Modello",
+        "Leisure City",
+        "Waterstone"
+    ],
+    "majorRoads": [
+        "Florida Turnpike",
+        "US-1 (South Dixie Highway)",
+        "Krome Avenue (SR 997)",
+        "Campbell Drive",
+        "SW 328th Street"
+    ],
+    "coordinates": {
+        "lat": 25.4687,
+        "lng": -80.4776
+    },
+    "challenges": [
+        {
+            "title": "Rural & Agricultural Power",
+            "description": "Properties in Homestead's Redland and agricultural areas often require specialized wiring for outbuildings, irrigation systems, and heavy machinery.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Severe Weather Resilience",
+            "description": "As the southernmost city in Miami-Dade, Homestead is often at the forefront of storm patterns. We provide surge protection and generator systems designed for high-impact zones.",
+            "icon": "CloudLightning"
+        },
+        {
+            "title": "Rapid Suburban Growth",
+            "description": "New residential developments in Homestead require electricians who understand contemporary building codes and high-efficiency smart home integration.",
+            "icon": "Home"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "home-standby-generator-installation",
+        "whole-home-surge-protection",
+        "smart-home-automation",
+        "ceiling-fan-light-fixture-installation",
+        "gfci-outlet-installation-outdoor-pool"
+    ],
+    "stats": [
+        {
+            "value": "80K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you install standby generators in Homestead?",
+            "answer": "Yes, we specialize in home standby generator installations. Homestead frequently faces storm challenges, and our backup power solutions ensure your home stays running when the grid goes down."
+        },
+        {
+            "question": "Can you help with agricultural electrical needs in the Redland area?",
+            "answer": "Absolutely. We understand the unique requirements of rural and agricultural properties in the Homestead/Redland area, including pump wiring, outbuilding power, and heavy equipment connections."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Safe & Reliable Electrical Services for Homestead, FL",
+            "body": "Homestead is a unique blend of historic charm, agricultural heritage, and modern suburban growth. As the 'Gateway to the Keys,' this community faces specific environmental and infrastructure challenges. Solomon Electric provides the expertise needed to keep Homestead homes and businesses powered safely, through every season."
+        },
+        {
+            "heading": "Serving the South Dade Community with Pride",
+            "body": "Whether you're a long-time resident of the historic downtown area or moving into one of Homestead's newer developments like Waterstone, our team of licensed electricians is here to serve you. We provide everything from minor repairs to whole-home backup power systems, ensuring Homestead remains a safe and well-powered place to live and work."
+        }
+    ]
+}

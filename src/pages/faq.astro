@@ -1,93 +1,1115 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import heroImage from "../assets/images/hero.webp";
-import FAQAccordion from "../components/FAQAccordion.astro";
+import heroImage from "../assets/images/heroes/faq.png";
+import PageHero from "../components/PageHero.astro";
 import Button from "../components/ui/Button.astro";
 import { SITE_CONFIG } from "../config/site";
+import { MessageSquare, Phone } from "lucide-astro";
+import Container from "../components/ui/Container.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+// Extended FAQ list for progressive loading
+const faqs = [
+    {
+        id: "1",
+        question: "Do you offer 24/7 emergency electrical services?",
+        answer: "Yes! Our licensed electricians are available 24/7 for electrical emergencies throughout Miami-Dade and Broward counties. Whether it's a power outage, sparking outlet, or burning smell, our dispatch team is staffed around the clock to help you when urgent issues arise.",
+    },
+    {
+        id: "2",
+        question: "Are you licensed and insured?",
+        answer: "Absolutely. We hold Florida state electrical license #EC13012419 and carry $2M in liability insurance. All of our electricians are licensed, continuously trained, and up-to-date on current electrical codes and safety standards.",
+    },
+    {
+        id: "3",
+        question: "Do you provide free estimates?",
+        answer: "Yes! We provide complimentary estimates for all projects. We'll assess your needs, explain your options, and give you a detailed written quote with no obligation. All quotes include transparent pricing with no hidden fees.",
+    },
+    {
+        id: "4",
+        question: "What payment methods do you accept?",
+        answer: "We accept all major credit cards, debit cards, checks, and cash. For larger projects, we offer flexible financing options. Payment is due upon completion, and we'll never start work without your approval on the estimate.",
+    },
+    {
+        id: "5",
+        question: "Do you offer warranties on your work?",
+        answer: "Yes, all of our work is backed by comprehensive warranties. Installation and repair warranties vary by scope of work—we'll explain specific coverage when we provide your estimate. We also offer a 100% satisfaction guarantee on every job.",
+    },
+    {
+        id: "6",
+        question: "How long will my electrical project take?",
+        answer: "Project timelines vary based on scope. Simple repairs might take 1-2 hours, while panel upgrades or rewiring can take 1-3 days. We'll provide a detailed timeline during our estimate and keep you informed throughout the process.",
+    },
+    {
+        id: "7",
+        question: "Do I need a permit for electrical work?",
+        answer: "Most electrical work in Miami-Dade and Broward counties requires permits. We handle all permit applications and inspections for you, ensuring your project meets all local codes and regulations.",
+    },
+    {
+        id: "8",
+        question: "Can you help with electrical code violations?",
+        answer: "Yes! We specialize in correcting electrical code violations. Whether you received a notice from your HOA, city inspector, or insurance company, we'll assess the issue and bring everything up to current code standards.",
+    },
+    {
+        id: "9",
+        question: "What areas do you serve?",
+        answer: "We serve all of Miami-Dade and Broward counties, including Miami, Miami Beach, Coral Gables, Aventura, Fort Lauderdale, Pembroke Pines, and surrounding areas. Contact us to confirm service in your specific location.",
+    },
+    {
+        id: "10",
+        question: "How do I know if I need a panel upgrade?",
+        answer: "Signs you may need a panel upgrade include: frequent breaker trips, flickering lights, burning smell from the panel, rust or corrosion, or if you're adding major appliances like EV chargers or pool equipment. We offer free assessments.",
+    },
+    {
+        id: "11",
+        question: "Can you install EV chargers for electric vehicles?",
+        answer: "Absolutely! We're experienced with all major EV charger brands including Tesla Wall Connector, ChargePoint, and JuiceBox. We'll assess your electrical system, upgrade if needed, and install the charger to manufacturer specifications.",
+    },
+    {
+        id: "12",
+        question: "What should I do in an electrical emergency?",
+        answer: "If you smell burning, see sparks, or have exposed wiring, turn off power at the main breaker if safe to do so and call us immediately at the emergency number. Never touch exposed wires or attempt DIY repairs in emergency situations.",
+    },
+    {
+        id: "13",
+        question: "Do you work on commercial properties?",
+        answer: "Yes, we provide electrical services for commercial properties including offices, retail stores, restaurants, and warehouses. We can work around your business hours to minimize disruption and handle all commercial electrical needs.",
+    },
+    {
+        id: "14",
+        question: "Can you help with smart home installations?",
+        answer: "Absolutely! We install smart switches, outlets, lighting systems, and integrate them with popular platforms like Google Home, Amazon Alexa, and Apple HomeKit. We'll ensure your smart home devices are properly wired and configured.",
+    },
+    {
+        id: "15",
+        question: "What's included in an electrical safety inspection?",
+        answer: "Our comprehensive safety inspection includes checking your electrical panel, wiring, outlets, GFCI protection, grounding, smoke/CO detectors, and overall system capacity. You'll receive a detailed report with recommendations for any safety concerns.",
+    },
+    {
+        id: "16",
+        question: "Can you help with generator installation?",
+        answer: "Yes! We install both portable and whole-home standby generators. We'll assess your power needs, recommend appropriate sizing, handle all electrical connections, and coordinate with gas/propane installation if needed.",
+    },
+    {
+        id: "17",
+        question: "Do you offer surge protection?",
+        answer: "Yes, we install whole-home surge protection systems that safeguard all your electronics and appliances. Living in South Florida with frequent lightning storms, surge protection is highly recommended for every home.",
+    },
+    {
+        id: "18",
+        question: "Can you rewire an older home?",
+        answer: "Absolutely. We specialize in rewiring older homes with outdated aluminum or knob-and-tube wiring. We'll assess your current system, plan the rewiring to minimize disruption, and bring everything up to modern safety standards.",
+    },
+    {
+        id: "19",
+        question: "What are GFCI outlets and where are they required?",
+        answer: "GFCI (Ground Fault Circuit Interrupter) outlets prevent electrical shocks by cutting power when they detect imbalances. Florida code requires them in bathrooms, kitchens, garages, outdoor areas, and anywhere near water sources.",
+    },
+    {
+        id: "20",
+        question: "Can you install outdoor lighting?",
+        answer: "Yes! We design and install landscape lighting, security lighting, pathway lights, and decorative outdoor fixtures. All outdoor installations are weatherproofed and code-compliant for South Florida's climate.",
+    },
+    {
+        id: "21",
+        question: "How often should smoke detectors be replaced?",
+        answer: "Smoke detectors should be replaced every 10 years, and batteries should be changed annually (unless you have 10-year sealed batteries). We can install new smoke and CO detectors in all required locations per Florida code.",
+    },
+    {
+        id: "22",
+        question: "What's the difference between 100A and 200A electrical panels?",
+        answer: "A 100-amp panel provides 100 amps of electrical capacity, suitable for smaller homes with basic needs. A 200-amp panel doubles that capacity, necessary for larger homes, modern appliances, EV chargers, and future electrical demands.",
+    },
+    {
+        id: "23",
+        question: "Can you troubleshoot intermittent electrical problems?",
+        answer: "Yes, we excel at diagnosing tricky intermittent issues. Using advanced testing equipment and systematic troubleshooting, we can identify problems that only occur occasionally and provide permanent solutions.",
+    },
+    {
+        id: "24",
+        question: "Do you install ceiling fans?",
+        answer: "Absolutely! We install ceiling fans of all types and sizes. We'll ensure proper support, wiring, and balancing for quiet, efficient operation. We can also add wall controls or remote control functionality.",
+    },
+    {
+        id: "25",
+        question: "What should I look for when hiring an electrician?",
+        answer: "Look for valid licensing, insurance, positive reviews, transparent pricing, and experience with your specific type of project. Always get written estimates and verify they pull permits for work that requires them.",
+    },
+    {
+        id: "26",
+        question: "Can you help with electrical issues after a storm?",
+        answer: "Yes, we provide storm damage electrical assessments and repairs. Common issues include lightning damage to panels, water damage to outlets, and power surge damage to appliances. We're available 24/7 for storm emergencies.",
+    },
+    {
+        id: "27",
+        question: "Do you install recessed lighting?",
+        answer: "Yes! We design and install recessed lighting layouts for kitchens, living rooms, and any space. We'll recommend proper spacing, IC-rated fixtures for insulated ceilings, and energy-efficient LED options.",
+    },
+    {
+        id: "28",
+        question: "What's involved in installing a pool pump circuit?",
+        answer: "Pool pump circuits require dedicated 240V wiring, proper GFCI protection, and must meet specific distance requirements from the pool. We handle all aspects including permits, trenching coordination, and final inspection.",
+    },
+    {
+        id: "29",
+        question: "Can you install electric car charging stations at my business?",
+        answer: "Yes, we install commercial EV charging stations including networked stations that can accept payment. We'll assess your electrical capacity, recommend appropriate equipment, and handle all installation and permitting.",
+    },
+    {
+        id: "30",
+        question: "What causes circuit breakers to trip frequently?",
+        answer: "Common causes include overloaded circuits, short circuits, ground faults, or aging breakers. Frequent tripping indicates a problem that needs professional diagnosis to prevent potential fire hazards.",
+    },
+    {
+        id: "31",
+        question: "Do you offer maintenance plans?",
+        answer: "Yes, we offer electrical maintenance plans for both residential and commercial properties. Regular maintenance helps prevent emergencies, extends equipment life, and ensures your electrical system stays safe and code-compliant.",
+    },
+    {
+        id: "32",
+        question: "Can you help with home renovation electrical work?",
+        answer: "Absolutely! We work with homeowners and contractors on renovation electrical needs including kitchen/bathroom updates, room additions, basement finishing, and whole-home remodels. We coordinate seamlessly with other trades.",
+    },
+    {
+        id: "33",
+        question: "What are the signs of aluminum wiring problems?",
+        answer: "Warning signs include warm or discolored outlets/switches, flickering lights, burning smell, or outlets that spark. Aluminum wiring was common in the 1960s-70s but requires special attention as it can become a fire hazard.",
+    },
+    {
+        id: "34",
+        question: "Can you install dedicated circuits for appliances?",
+        answer: "Yes! Modern appliances often require dedicated circuits. We commonly install them for refrigerators, microwaves, dishwashers, garbage disposals, and especially high-draw items like electric ranges and dryers.",
+    },
+    {
+        id: "35",
+        question: "Do you install electric vehicle charging in condos?",
+        answer: "Yes, we're experienced with condo EV charger installations. We'll coordinate with your HOA, assess the electrical infrastructure, and install the charger in compliance with building regulations and manufacturer requirements.",
+    },
+    {
+        id: "36",
+        question: "What's the typical lifespan of an electrical panel?",
+        answer: "Electrical panels typically last 25-40 years depending on quality and conditions. However, panels should be evaluated sooner if you notice rust, burning smells, frequent trips, or if you're adding significant electrical loads to your home.",
+    },
+    {
+        id: "37",
+        question: "Why are my lights flickering?",
+        answer: "Flickering lights can indicate loose connections, overloaded circuits, voltage fluctuations, or issues with the light fixture itself. Occasional flicker during major appliance startup is normal, but persistent flickering should be evaluated by a licensed electrician.",
+    },
+    {
+        id: "38",
+        question: "What's the difference between a fuse box and a circuit breaker panel?",
+        answer: "Fuse boxes use replaceable fuses that blow when overloaded, while circuit breaker panels have resettable switches. Breaker panels are the modern standard, offering easier reset and better safety features. We recommend upgrading old fuse boxes to breaker panels.",
+    },
+    {
+        id: "39",
+        question: "Can you add more outlets to a room?",
+        answer: "Yes! We regularly add outlets to rooms that lack sufficient power access. We'll assess your electrical capacity, run new wiring through walls, and install outlets in convenient locations while matching your existing outlet style.",
+    },
+    {
+        id: "40",
+        question: "What is an arc fault circuit interrupter (AFCI)?",
+        answer: "AFCI breakers detect dangerous electrical arcs that can cause fires. Florida code now requires AFCI protection in bedrooms, living areas, and most other habitable rooms. We can upgrade your panel to include AFCI protection throughout your home.",
+    },
+    {
+        id: "41",
+        question: "How do I know if my home needs rewiring?",
+        answer: "Signs include two-prong outlets (ungrounded), frequent breaker trips, burning smells, discolored outlets, or if your home was built before 1970. A professional electrical inspection can determine if partial or complete rewiring is needed.",
+    },
+    {
+        id: "42",
+        question: "Can you install USB outlets?",
+        answer: "Absolutely! USB outlets are convenient for charging devices without adapters. We install outlets with built-in USB-A, USB-C, or combination ports in any location—kitchens, bedrooms, offices, and living areas are popular choices.",
+    },
+    {
+        id: "43",
+        question: "What causes outlets to spark when I plug something in?",
+        answer: "Brief sparks when connecting can be normal due to electrical draw. However, large sparks, popping sounds, or sparks when nothing is being plugged in indicate potential problems like loose connections, damaged outlets, or short circuits requiring immediate attention.",
+    },
+    {
+        id: "44",
+        question: "Do you service mobile homes and manufactured housing?",
+        answer: "Yes, we work on mobile homes and manufactured housing. These homes have specific electrical requirements and code considerations. We're experienced with mobile home panels, pedestals, and the unique wiring configurations involved.",
+    },
+    {
+        id: "45",
+        question: "Can you install pendant lights or chandeliers?",
+        answer: "Yes! We install all types of hanging fixtures including pendants, chandeliers, and multi-light installations. We ensure proper support boxes, correct wiring, and appropriate dimmer compatibility for your fixtures.",
+    },
+    {
+        id: "46",
+        question: "What should I do if an outlet feels warm or hot?",
+        answer: "A warm outlet is a warning sign of potential electrical problems—loose connections, overloaded circuits, or damaged wiring. Stop using the outlet immediately and contact us for inspection. Hot outlets can lead to electrical fires.",
+    },
+    {
+        id: "47",
+        question: "Can you help with solar panel electrical connections?",
+        answer: "Yes, we handle the electrical side of solar installations including panel-to-inverter wiring, meter upgrades, and grid interconnection. We coordinate with solar installers and FPL to ensure proper permitting and inspection.",
+    },
+    {
+        id: "48",
+        question: "What's the difference between 120V and 240V circuits?",
+        answer: "Standard outlets are 120V for most appliances. 240V circuits provide more power for heavy-draw appliances like electric dryers, ranges, water heaters, and EV chargers. We install dedicated 240V circuits for any high-power equipment needs.",
+    },
+    {
+        id: "49",
+        question: "Do you offer electrical services for new construction?",
+        answer: "Yes, we provide complete new construction electrical services including rough-in wiring, panel installation, fixture placement, and final connections. We work with builders, contractors, and homeowners on residential and commercial projects.",
+    },
+    {
+        id: "50",
+        question: "Can you install motion sensor switches?",
+        answer: "Yes! Motion sensor switches are great for convenience and energy savings. We install them for indoor and outdoor lighting, including bathrooms, closets, garages, and walkways. We'll ensure proper placement for optimal detection.",
+    },
+    {
+        id: "51",
+        question: "What causes circuit breakers to trip?",
+        answer: "Breakers trip due to overloads (too many devices), short circuits (wiring issues), or ground faults (current leakage). Occasional trips from vacuums or hair dryers are common, but frequent trips indicate a problem needing professional diagnosis.",
+    },
+    {
+        id: "52",
+        question: "Can you install electric tankless water heater circuits?",
+        answer: "Yes! Electric tankless water heaters require substantial dedicated circuits (often 2-3 circuits at 240V). We'll assess your panel capacity, install necessary circuits, and ensure proper wire sizing for your specific unit's requirements.",
+    },
+    {
+        id: "53",
+        question: "Do you install bathroom exhaust fans?",
+        answer: "Yes, we install and replace bathroom exhaust fans including timer-controlled and humidity-sensing models. Proper bathroom ventilation prevents mold and moisture damage. We handle all wiring and can add switched or automatic control.",
+    },
+    {
+        id: "54",
+        question: "What is grounding and why is it important?",
+        answer: "Grounding provides a safe path for electrical current to flow into the earth during faults, preventing shock hazards. Properly grounded systems protect people and electronics. We can evaluate and upgrade your home's grounding system.",
+    },
+    {
+        id: "55",
+        question: "Can you install electric radiant floor heating?",
+        answer: "Yes! Electric radiant floor heating provides comfortable warmth in bathrooms, kitchens, and other areas. We install the electrical connections for heating mats and cables, including dedicated circuits and thermostat wiring.",
+    },
+    {
+        id: "56",
+        question: "Do you work on Saturday or Sunday?",
+        answer: "Yes, we offer weekend service by appointment for both emergency and scheduled work. We understand that many homeowners are only available on weekends. Contact us to schedule weekend service in your area.",
+    },
+    {
+        id: "57",
+        question: "What's the average cost of an electrical panel upgrade?",
+        answer: "Panel upgrade costs vary based on amperage, existing wiring conditions, and permit requirements. We provide free estimates with detailed pricing for your specific situation—no generic quotes. All estimates are transparent with no hidden fees.",
+    },
+    {
+        id: "58",
+        question: "Can you install attic or whole-house fans?",
+        answer: "Yes! Attic fans help reduce cooling costs by exhausting hot air. Whole-house fans can dramatically lower AC usage. We install all types including solar-powered attic fans, with proper wiring and switch controls.",
+    },
+    {
+        id: "59",
+        question: "Do you handle insurance claim repairs?",
+        answer: "Yes, we work with homeowners and insurance companies on electrical damage claims from storms, fires, floods, and other covered events. We document damage thoroughly and provide detailed estimates for insurance purposes.",
+    },
+    {
+        id: "60",
+        question: "Can you install electric cooktop or oven circuits?",
+        answer: "Yes! Electric cooktops and wall ovens require dedicated high-amperage 240V circuits. We'll run new wiring from your panel, install the appropriate outlet or hardwired connection, and ensure proper circuit protection.",
+    },
+    {
+        id: "61",
+        question: "What's involved in adding a subpanel?",
+        answer: "Subpanels distribute power to specific areas like garages, workshops, or additions. Installation involves running feeder cables from your main panel, mounting the subpanel, and wiring new circuits. We handle sizing, installation, and permitting.",
+    },
+    {
+        id: "62",
+        question: "Do you install garbage disposal wiring?",
+        answer: "Yes! Garbage disposals need proper wiring and often a dedicated circuit with switch control. We install new disposal circuits, replace old wiring, and can add convenient air switches or wall switches for control.",
+    },
+    {
+        id: "63",
+        question: "Can you relocate electrical outlets or switches?",
+        answer: "Yes, we regularly relocate outlets and switches for remodeling, furniture placement, or convenience. We'll run new wiring inside walls and patch the old location, providing a clean finished result.",
+    },
+    {
+        id: "64",
+        question: "What is a transfer switch for generators?",
+        answer: "A transfer switch safely connects your generator to your home's electrical system, preventing dangerous backfeed into power lines. Manual transfer switches require you to flip breakers; automatic versions switch power automatically during outages.",
+    },
+    {
+        id: "65",
+        question: "Do you offer senior citizen discounts?",
+        answer: "We offer various promotions throughout the year. Contact us to ask about current offers for seniors and veterans. We're committed to providing fair, competitive pricing for all customers in our community.",
+    },
+    {
+        id: "66",
+        question: "Can you install electric vehicle charging at apartments?",
+        answer: "Yes, we work with apartment communities and property managers on EV charging solutions. We can assess infrastructure capacity and install individual or shared charging stations with proper metering and access control.",
+    },
+    {
+        id: "67",
+        question: "What causes electrical outlets to stop working?",
+        answer: "Common causes include tripped breakers, tripped GFCI outlets (which can affect downstream outlets), loose connections, or failed outlets. Check your breaker panel and any GFCI outlets first; if those are fine, contact us for diagnosis.",
+    },
+    {
+        id: "68",
+        question: "Do you install landscape lighting transformers?",
+        answer: "Yes! Low-voltage landscape lighting requires transformers and proper outdoor wiring. We install transformers, run buried cables, and connect fixtures. We also install line-voltage landscape lighting for brighter applications.",
+    },
+    {
+        id: "69",
+        question: "Can you install whole-home battery backup systems?",
+        answer: "Yes, we install battery systems like Tesla Powerwall and Enphase that store solar energy or grid power for backup. These systems provide seamless backup during outages and can reduce peak-hour energy costs.",
+    },
+    {
+        id: "70",
+        question: "What should I do during a power outage?",
+        answer: "First, check if neighbors have power to determine if it's your home or the utility. Check your main breaker. Report outages to FPL. Turn off sensitive electronics to protect from surges when power returns. Contact us if your breaker trips repeatedly.",
+    },
+    {
+        id: "71",
+        question: "Do you install electric car charging for Tesla specifically?",
+        answer: "Yes, we're experienced with Tesla Wall Connector installations and all Tesla charging requirements. We can install the Wall Connector, run dedicated circuits, and ensure your electrical system supports the charger's full power output.",
+    },
+    {
+        id: "72",
+        question: "Can you help with electrical issues in rental properties?",
+        answer: "Yes, we work with landlords and property managers on rental property electrical needs. We provide prompt service to minimize tenant inconvenience and can coordinate access with tenants for scheduling repairs.",
+    },
+];
+
+// Generate FAQ Schema
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_CONFIG.seo.siteUrl,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "FAQ",
+            item: `${SITE_CONFIG.seo.siteUrl}/faq`,
+        },
+    ],
+};
 ---
 
 <Layout
-    title="Frequently Asked Questions - Solomon Electric"
-    description="Answers to common questions about our electrical services, pricing, and emergency availability."
+    title="Electrician FAQs | Answers to Common Electrical Questions | Solomon Electric"
+    description="Get expert answers to your electrical questions. Learn about panel upgrades, EV chargers, permits, emergency repairs & more from licensed Miami electricians. 50+ FAQs answered."
 >
+    <!-- FAQPage Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "FAQ" }
+    ]} />
+
     <!-- Hero -->
-    <section
-        class="relative flex items-center overflow-hidden"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); min-height: 60vh;"
-    >
-        <div class="absolute inset-0 z-0">
-            <Image
-                src={heroImage}
-                alt="FAQ"
-                class="w-full h-full object-cover"
-            />
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
-            >
-            </div>
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
-            >
-            </div>
-        </div>
-        <div class="container-custom relative z-10 w-full">
-            <div
-                class="grid grid-cols-1 lg:grid-cols-12 items-center"
-                style="gap: var(--spacing-xl);"
-            >
-                <div class="lg:col-span-7">
-                    <p
-                        class="text-accent tracking-[0.3em] font-bold uppercase"
-                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
-                    >
-                        Help & Support
+    <PageHero
+        title="Have Questions?<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>We Have Answers</span>"
+        subtitle="Electrical Help & Support"
+        description="Worried about that buzzing outlet? Unsure if your panel can handle an EV charger? Not sure whether to call an electrician or wait? Browse our answers to the most common questions South Florida homeowners ask us—so you can make confident decisions about your electrical safety."
+        image={heroImage}
+    />
+
+    <!-- SEO Intro Section -->
+    <section id="faq-intro" aria-labelledby="intro-heading" class="seo-intro">
+        <Container>
+            <div class="seo-intro-content">
+                <div class="seo-intro-text">
+                    <h2 id="intro-heading" class="seo-intro-title">
+                        Your Electrical Questions <span class="text-accent">Answered</span>
+                    </h2>
+                    <p class="seo-intro-description">
+                        Browse our {faqs.length} most frequently asked questions about electrical services 
+                        in South Florida. From emergency repairs to panel upgrades, EV charger installation 
+                        to smart home wiring—we've compiled answers to help you understand your options 
+                        and make informed decisions about your electrical project.
                     </p>
-                    <h1
-                        class="font-black text-white leading-[0.9]"
-                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
-                    >
-                        Frequent <br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
-                        >
-                            Questions
-                        </span>
-                    </h1>
-                    <p
-                        class="text-gray-200 font-light leading-relaxed"
-                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
-                    >
-                        Common questions about our electrical services, pricing,
-                        and emergency availability.
+                    <p class="seo-intro-secondary">
+                        As a licensed electrical contractor (FL License #{SITE_CONFIG.credentials.license.number.replace('#', '')}), 
+                        Solomon Electric is committed to transparency and customer education. Can't find 
+                        what you're looking for? Contact us for personalized answers—we're available 24/7.
                     </p>
                 </div>
+                <div class="seo-intro-stats">
+                    <div class="intro-stat-item">
+                        <MessageSquare class="intro-stat-icon" />
+                        <span class="intro-stat-value">{faqs.length}</span>
+                        <span class="intro-stat-label">Questions</span>
+                    </div>
+                    <div class="intro-stat-item">
+                        <Phone class="intro-stat-icon" />
+                        <span class="intro-stat-value">24/7</span>
+                        <span class="intro-stat-label">Available</span>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Container>
     </section>
 
-    <!-- FAQ Section Reuse -->
-    <div class="py-20 md:py-32">
-        <FAQAccordion />
-    </div>
-
-    <!-- Contact CTA -->
-    <section
-        class="bg-light text-center"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
-    >
-        <div class="container-custom">
-            <h2 class="text-3xl font-black text-primary mb-6 uppercase">
-                Still Have Questions?
-            </h2>
-            <div class="flex justify-center gap-4">
-                <Button href="/contact">Contact Us</Button>
-                <Button
-                    href={SITE_CONFIG.contact.phone.href}
-                    variant="secondary"
-                    size="md">Call Us</Button
-                >
-            </div>
+    <!-- FAQ Section -->
+    <section id="faq-list" aria-labelledby="faq-list-heading" class="faq-section">
+        <!-- Decorative Background Elements -->
+        <div class="faq-bg-decorations">
+            <div class="decoration-top"></div>
+            <div class="decoration-bottom"></div>
         </div>
+
+        <Container class="relative z-10">
+            <!-- Section Header - Consistent with Services Page -->
+            <header class="section-header">
+                <span class="section-label">Common Questions</span>
+                <h2 id="faq-list-heading" class="section-title">
+                    Frequently Asked <span class="text-accent">Questions</span>
+                </h2>
+                <p class="section-description">
+                    Get answers to the most common questions about our electrical
+                    services and availability throughout Miami-Dade & Broward.
+                </p>
+            </header>
+
+            <div id="faq-container" class="faq-grid">
+                {
+                    faqs.map((faq, index) => (
+                        <div class={`faq-item ${index >= 12 ? 'hidden' : ''}`} data-index={index}>
+                            <!-- Accent stripe -->
+                            <div class="faq-accent-stripe"></div>
+                            
+                            <!-- Hover glow effect -->
+                            <div class="faq-glow"></div>
+                            
+                            <button
+                                class="faq-question"
+                                data-index={index}
+                                aria-expanded="false"
+                            >
+                                <span class="faq-question-text">
+                                    {faq.question}
+                                </span>
+                                
+                                <!-- Icon container -->
+                                <div class="faq-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="faq-icon-plus">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="faq-icon-minus">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                            </button>
+                            
+                            <div
+                                class="faq-answer"
+                                style="max-height: 0;"
+                                data-index={index}
+                            >
+                                <div class="faq-answer-content">
+                                    {faq.answer}
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- Load More Button - Enhanced Style -->
+            <div id="load-more-container" class="load-more-wrapper">
+                <button id="load-more-faqs-btn" class="load-more-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-accent">
+                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Show More FAQs</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="load-more-icon ml-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Final CTA Section - Consistent with Services Page -->
+    <section id="faq-contact" aria-labelledby="faq-contact-heading" class="faq-final-cta">
+        <Container>
+            <div class="final-cta-content">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="cta-bolt">
+                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                </svg>
+                <h2 id="faq-contact-heading">Still Have Questions?</h2>
+                <p>
+                    Contact our team for personalized answers to your electrical questions.
+                    Our licensed electricians are here to help with any concerns.
+                </p>
+                <div class="final-cta-buttons">
+                    <Button href="/contact" size="lg" class="gap-2">
+                        <MessageSquare class="w-5 h-5" />
+                        Contact Us
+                    </Button>
+                    <Button
+                        href={SITE_CONFIG.contact.phone.href}
+                        variant="secondary"
+                        size="lg"
+                        class="gap-2"
+                    >
+                        <Phone class="w-5 h-5" />
+                        Call Now</Button
+                    >
+                </div>
+            </div>
+        </Container>
     </section>
 </Layout>
+
+<script is:inline>
+    // FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll(".faq-question");
+
+        function initAccordion(questions) {
+            questions.forEach((question) => {
+                question.addEventListener("click", () => {
+                    const index = question.getAttribute("data-index");
+                    const answer = document.querySelector(
+                        `.faq-answer[data-index="${index}"]`,
+                    );
+                    const isExpanded =
+                        question.getAttribute("aria-expanded") === "true";
+                    const parentItem = question.closest(".faq-item");
+
+                    // Close all other FAQs
+                    document.querySelectorAll(".faq-question").forEach((q) => {
+                        const qIndex = q.getAttribute("data-index");
+                        if (qIndex !== index) {
+                            const qAnswer = document.querySelector(
+                                `.faq-answer[data-index="${qIndex}"]`,
+                            );
+                            const qParent = q.closest(".faq-item");
+
+                            if (qAnswer) {
+                                qAnswer.style.maxHeight = "0";
+                            }
+                            q.setAttribute("aria-expanded", "false");
+                            qParent?.classList.remove("is-open");
+                        }
+                    });
+
+                    // Toggle current FAQ
+                    if (isExpanded) {
+                        if (answer) {
+                            answer.style.maxHeight = "0";
+                        }
+                        question.setAttribute("aria-expanded", "false");
+                        parentItem?.classList.remove("is-open");
+                    } else {
+                        if (answer) {
+                            answer.style.maxHeight = answer.scrollHeight + "px";
+                        }
+                        question.setAttribute("aria-expanded", "true");
+                        parentItem?.classList.add("is-open");
+                    }
+                });
+            });
+        }
+
+        // Initialize existing questions
+        initAccordion(faqQuestions);
+
+        // Load More FAQs Logic
+        const loadMoreBtn = document.getElementById('load-more-faqs-btn');
+        const faqItems = document.querySelectorAll('.faq-item');
+        let currentlyShown = 12;
+        const incrementBy = 12;
+        const totalFaqs = faqItems.length;
+
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                // Show next batch of FAQs
+                const nextBatch = currentlyShown + incrementBy;
+                
+                for (let i = currentlyShown; i < nextBatch && i < totalFaqs; i++) {
+                    faqItems[i].classList.remove('hidden');
+                    // Add smooth fade-in animation
+                    faqItems[i].style.animation = 'fadeInUp 0.4s ease-out forwards';
+                    faqItems[i].style.animationDelay = `${(i - currentlyShown) * 0.05}s`;
+                }
+                
+                currentlyShown = Math.min(nextBatch, totalFaqs);
+                
+                // Hide button if all FAQs are shown
+                if (currentlyShown >= totalFaqs) {
+                    document.getElementById('load-more-container').classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
+
+<style>
+    /* ===== SEO Intro Section ===== */
+    .seo-intro {
+        background: var(--bg-body);
+        padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .seo-intro-content {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: clamp(2rem, 4vw, 4rem);
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+        .seo-intro-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+
+    .seo-intro-title {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    .seo-intro-description {
+        font-size: clamp(1rem, 1.25vw, 1.125rem);
+        color: var(--text-body);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .seo-intro-secondary {
+        font-size: clamp(0.95rem, 1.1vw, 1rem);
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .seo-intro-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+        .seo-intro-stats {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    .intro-stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 2rem);
+        background: var(--bg-surface);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        text-align: center;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .intro-stat-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .intro-stat-icon {
+        width: 28px;
+        height: 28px;
+        color: var(--color-accent);
+        margin-bottom: 0.5rem;
+    }
+
+    .intro-stat-value {
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        line-height: 1;
+    }
+
+    .intro-stat-label {
+        font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-top: 0.25rem;
+    }
+
+    /* ===== FAQ Section ===== */
+    .faq-section {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-body) 100%);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .faq-bg-decorations {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .decoration-top {
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 320px;
+        height: 320px;
+        background: linear-gradient(135deg, rgba(20, 211, 227, 0.08) 0%, transparent 70%);
+        transform: rotate(45deg);
+    }
+
+    .decoration-bottom {
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 320px;
+        height: 320px;
+        background: linear-gradient(135deg, rgba(13, 67, 128, 0.06) 0%, transparent 70%);
+        transform: rotate(12deg);
+    }
+
+    /* Section Header - Consistent with Services Page */
+    .section-header {
+        text-align: center;
+        margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .section-label {
+        display: block;
+        color: var(--color-accent);
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+        text-transform: uppercase;
+        line-height: 1.15;
+    }
+
+    .section-description {
+        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        color: var(--text-body);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* ===== FAQ Grid ===== */
+    .faq-grid {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* ===== FAQ Item ===== */
+    .faq-item {
+        position: relative;
+        background: var(--bg-surface);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        transition: 
+            box-shadow var(--transition-base),
+            transform var(--transition-base);
+    }
+
+    .faq-item:hover {
+        box-shadow: var(--shadow-xl);
+        transform: translateY(-2px);
+    }
+
+    .faq-item.is-open {
+        box-shadow: var(--shadow-xl), 0 0 0 2px rgba(20, 211, 227, 0.3);
+    }
+
+    /* Accent Stripe */
+    .faq-accent-stripe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-primary) 100%);
+        transition: width var(--transition-fast);
+    }
+
+    .faq-item:hover .faq-accent-stripe,
+    .faq-item.is-open .faq-accent-stripe {
+        width: 6px;
+    }
+
+    /* Hover Glow */
+    .faq-glow {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(20, 211, 227, 0.04) 0%, transparent 50%);
+        opacity: 0;
+        transition: opacity var(--transition-base);
+        pointer-events: none;
+    }
+
+    .faq-item:hover .faq-glow,
+    .faq-item.is-open .faq-glow {
+        opacity: 1;
+    }
+
+    /* ===== FAQ Question Button ===== */
+    .faq-question {
+        width: 100%;
+        text-align: left;
+        padding: clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2.5vw, 1.75rem);
+        padding-left: clamp(1.5rem, 3vw, 2rem);
+        display: flex;
+        align-items: center;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+    }
+
+    .faq-question-text {
+        flex: 1;
+        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        font-weight: 700;
+        color: var(--color-primary);
+        font-family: var(--font-display);
+        line-height: 1.4;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        transition: color var(--transition-fast);
+    }
+
+    .faq-item:hover .faq-question-text,
+    .faq-item.is-open .faq-question-text {
+        color: var(--color-accent);
+    }
+
+    /* ===== FAQ Icon ===== */
+    .faq-icon {
+        flex-shrink: 0;
+        width: clamp(2rem, 3vw, 2.5rem);
+        height: clamp(2rem, 3vw, 2.5rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--color-primary) 0%, #0a3560 100%);
+        border-radius: var(--radius-lg);
+        position: relative;
+        transition: 
+            background var(--transition-fast),
+            transform var(--transition-fast);
+    }
+
+    .faq-item:hover .faq-icon,
+    .faq-item.is-open .faq-icon {
+        background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    }
+
+    .faq-icon svg {
+        width: clamp(1rem, 1.5vw, 1.25rem);
+        height: clamp(1rem, 1.5vw, 1.25rem);
+        color: white;
+        transition: 
+            opacity var(--transition-fast),
+            transform var(--transition-fast);
+    }
+
+    .faq-icon-plus {
+        position: absolute;
+        opacity: 1;
+    }
+
+    .faq-icon-minus {
+        position: absolute;
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+
+    .faq-item.is-open .faq-icon-plus {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    .faq-item.is-open .faq-icon-minus {
+        opacity: 1;
+        transform: rotate(0);
+    }
+
+    /* ===== FAQ Answer ===== */
+    .faq-answer {
+        overflow: hidden;
+        transition: max-height var(--transition-base) ease-in-out;
+    }
+
+    .faq-answer-content {
+        padding: 0 clamp(1.25rem, 2.5vw, 1.75rem) clamp(1rem, 2vw, 1.5rem);
+        padding-left: clamp(1.5rem, 3vw, 2rem);
+        color: var(--text-body);
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
+        line-height: 1.7;
+        border-top: 1px solid var(--border-light);
+        margin-top: -0.25rem;
+        padding-top: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    /* ===== Load More Button ===== */
+    .load-more-wrapper {
+        text-align: center;
+        margin-top: clamp(2rem, 4vw, 3rem);
+    }
+
+    .load-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: linear-gradient(135deg, var(--color-primary) 0%, #0a3560 100%);
+        color: white;
+        font-family: var(--font-display);
+        font-size: clamp(0.875rem, 1vw, 1rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: clamp(0.875rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+        border: none;
+        border-radius: var(--radius-lg);
+        cursor: pointer;
+        box-shadow: var(--shadow-md);
+        transition: 
+            background var(--transition-fast),
+            box-shadow var(--transition-fast),
+            transform var(--transition-fast);
+    }
+
+    .load-more-btn:hover {
+        background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
+    }
+
+    .load-more-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        transition: transform var(--transition-fast);
+    }
+
+    .load-more-btn:hover .load-more-icon {
+        transform: translateY(3px);
+    }
+
+    /* ===== Final CTA Section ===== */
+    .faq-final-cta {
+        background: var(--bg-surface);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .final-cta-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .final-cta-content .cta-bolt {
+        width: clamp(2.5rem, 5vw, 3rem);
+        height: clamp(2.5rem, 5vw, 3rem);
+        color: var(--color-accent);
+        margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .final-cta-content h2 {
+        color: var(--color-primary);
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .final-cta-content p {
+        color: var(--text-body);
+        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        line-height: 1.6;
+        margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .final-cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        justify-content: center;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+    }
+
+    /* ===== Hidden State ===== */
+    .hidden {
+        display: none !important;
+    }
+
+    /* ===== Responsive Adjustments ===== */
+    @media (max-width: 640px) {
+        .faq-question {
+            padding: 1rem 1.25rem 1rem 1.5rem;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem 1.5rem;
+            padding-top: 0.75rem;
+        }
+    }
+</style>

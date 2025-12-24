@@ -1,0 +1,180 @@
+{
+  "name": "Computer & Network Outlet Installation",
+  "slug": "computer-network-outlet-installation",
+  "description": "WiFi isn't enough for everything. When you need reliable, fast network connections for home offices, gaming, streaming, or smart home hubs, Solomon Electric installs professional Ethernet wiring throughout South Florida homes. We run Cat5e and Cat6 cable through walls with clean terminations and proper testing.",
+  "shortDescription": "Wired network infrastructure",
+  "icon": "Plug",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 31,
+  "features": [
+    "Cat5e and Cat6 cable installation",
+    "In-wall network jack installation",
+    "Structured wiring panels",
+    "Network patch panel setup",
+    "Home office connectivity",
+    "Gaming and streaming optimization"
+  ],
+  "warningSignsHeading": "When You Need Wired Network Connections",
+  "warningSignsSubheading": "WiFi works for most things, but wired connections excel where reliability and speed matter most.",
+  "problems": [
+    {
+      "title": "Home Office VoIP Quality Issues",
+      "description": "Video calls dropping and VoIP cutting out? Wired connections eliminate the WiFi interference that causes these problems.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Gaming Lag and Latency",
+      "description": "Serious gamers know WiFi latency costs matches. Ethernet provides the consistent, low-latency connection gaming demands.",
+      "icon": "Zap"
+    },
+    {
+      "title": "4K Streaming Buffering",
+      "description": "Multiple 4K streams can overwhelm WiFi. Wired connections to smart TVs ensure buffer-free streaming regardless of other network activity.",
+      "icon": "Home"
+    },
+    {
+      "title": "Smart Home Hub Reliability",
+      "description": "Smart home hubs control your entire automation system—they shouldn't rely on WiFi. Wired connections ensure hub reliability.",
+      "icon": "Shield"
+    },
+    {
+      "title": "WiFi Dead Zones",
+      "description": "Distant rooms with poor WiFi benefit from wired access points. Ethernet backhaul for mesh systems dramatically improves performance.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Security Camera Recording",
+      "description": "NVR systems and high-resolution security cameras benefit from wired connections. POE cameras combine power and data on one cable.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our Network Wiring Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Connectivity Planning",
+      "description": "We identify where you need network connections, plan cable routes through walls and attics, and determine the best central distribution point."
+    },
+    {
+      "step": 2,
+      "title": "Cable Selection",
+      "description": "We recommend appropriate cable—Cat5e handles gigabit speeds, Cat6 supports faster connections and future expansion. Cable type affects long-term capabilities."
+    },
+    {
+      "step": 3,
+      "title": "In-Wall Installation",
+      "description": "We run cables through walls, ceilings, and attics with minimal access holes. Low-voltage wiring has flexibility that electrical wiring doesn't."
+    },
+    {
+      "step": 4,
+      "title": "Jack and Patch Panel Termination",
+      "description": "We install wall jacks at each location and terminate all cables at a central patch panel with proper labeling and organization."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Verification",
+      "description": "We test every cable run for proper termination and speed capability. You know each connection works before we finish."
+    }
+  ],
+  "benefitsHeading": "Benefits of Wired Network Connections",
+  "benefits": [
+    {
+      "title": "Reliability",
+      "description": "Wired connections don't suffer from WiFi's interference, range issues, or congestion. Once installed, they simply work.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Speed",
+      "description": "Cat6 supports 10 gigabit speeds—far beyond what WiFi can deliver. Even Cat5e provides reliable gigabit connections.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Latency",
+      "description": "For gaming, video calls, and real-time applications, wired connections provide consistent low latency that WiFi can't match.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Security",
+      "description": "Wired networks don't broadcast signals for neighbors to intercept. For security cameras and sensitive work, wired is more secure.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "10",
+      "label": "Gbps Cat6 Speed"
+    },
+    {
+      "value": "200+",
+      "label": "Network Projects"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's the difference between Cat5e and Cat6?",
+      "answer": "Both support gigabit (1000 Mbps) speeds. Cat6 is better shielded, reducing crosstalk, and can support 10 gigabit speeds over shorter distances. Cat6 costs slightly more but provides better future-proofing. For most homes, either works well."
+    },
+    {
+      "question": "Is wired network faster than WiFi 6?",
+      "answer": "Yes, consistently. WiFi 6 can theoretically match gigabit speeds under ideal conditions, but real-world WiFi rarely achieves theoretical speeds. Wired connections deliver consistent, maximum speeds without WiFi's variability."
+    },
+    {
+      "question": "How many network drops do I need?",
+      "answer": "Consider: home office (2), living room TV/gaming (1-2), each bedroom with smart TV (1 each), smart home hub location (1), and any WiFi access point locations (1-2). Most homes benefit from 6-10 drops. More drops cost less per drop when installed together."
+    },
+    {
+      "question": "Can you run cables to a detached garage or office?",
+      "answer": "Yes, with outdoor-rated or conduit-protected cable. For distances over 300 feet, fiber optic connection is recommended. We can connect detached structures with reliable, high-speed network connections."
+    },
+    {
+      "question": "Where should the central network panel be?",
+      "answer": "Ideally near where internet service enters your home—often near the electrical panel or utility closet. We install patch panels and leave space for your router and switch equipment in an organized, accessible location."
+    },
+    {
+      "question": "Do I still need WiFi if I have wired connections?",
+      "answer": "Yes—phones, tablets, and many devices use WiFi exclusively. Wired connections are for stationary devices that benefit most: TVs, gaming consoles, desktops, NVRs. Wired access points improve WiFi for mobile devices."
+    },
+    {
+      "question": "Can you install during renovation or after?",
+      "answer": "Either works. Pre-wire during construction is easier and cheaper. Retrofit installation after construction requires fishing cables through existing walls—more challenging but achievable in most homes."
+    },
+    {
+      "question": "Do you test the cables after installation?",
+      "answer": "Yes—every cable is tested for proper termination and speed capability. We verify each run works correctly before finishing. You'll know your network infrastructure is solid."
+    }
+  ],
+  "relatedServices": [
+    "home-theater-low-voltage-wiring",
+    "ring-doorbell-security-camera-wiring",
+    "smart-switch-home-automation",
+    "new-outlet-installation-repair"
+  ],
+  "seoContent": [
+    {
+      "heading": "Network Cable Installation in Miami & South Florida",
+      "body": "WiFi isn't reliable enough for everything. Solomon Electric installs professional Ethernet wiring throughout South Florida homes—Cat5e and Cat6 cable through walls with proper terminations and testing. Get the fast, reliable connections your home office, gaming setup, and smart home deserve."
+    },
+    {
+      "heading": "Home Office Network Connectivity",
+      "body": "Work from home demands reliable network connections. VoIP phone calls, video conferences, and large file transfers work better over wired connections than contention-ridden WiFi. We install dedicated network drops for home offices that just work."
+    },
+    {
+      "heading": "Gaming and Streaming Performance",
+      "body": "Serious gamers and streaming enthusiasts know the difference wired connections make. Lower latency for competitive gaming, consistent bandwidth for 4K streaming, no buffering during peak WiFi times. Wired connections deliver the performance you paid for."
+    },
+    {
+      "heading": "Professional Installation Throughout South Florida",
+      "body": "Solomon Electric installs network wiring throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-room home offices to whole-home structured wiring, we provide professional network infrastructure."
+    }
+  ],
+  "relatedBlogPosts": []
+}

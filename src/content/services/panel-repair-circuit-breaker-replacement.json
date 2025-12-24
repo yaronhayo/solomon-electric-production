@@ -1,0 +1,180 @@
+{
+  "name": "Panel Repair & Circuit Breaker Replacement",
+  "slug": "panel-repair-circuit-breaker-replacement",
+  "description": "Electrical panels and circuit breakers are your home's first line of defense against electrical fires and problems. When breakers trip repeatedly, won't reset, or your panel shows signs of wear, Solomon Electric provides professional diagnosis and repair. We fix panel problems, replace damaged breakers, and address the underlying issues causing failures.",
+  "shortDescription": "Panel and breaker repairs",
+  "icon": "Zap",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 6,
+  "features": [
+    "Circuit breaker replacement",
+    "Panel diagnosis and repair",
+    "Arc fault breaker installation",
+    "Bus bar repairs",
+    "Loose connection diagnosis",
+    "GFCI breaker installation"
+  ],
+  "warningSignsHeading": "Signs Your Panel Needs Attention",
+  "warningSignsSubheading": "Don't ignore these warning signs—they indicate panel problems that could become serious.",
+  "problems": [
+    {
+      "title": "Breaker Trips Repeatedly",
+      "description": "A breaker that keeps tripping protects you from a real problem—overload, short circuit, or ground fault. We find and fix the cause, not just reset the breaker.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Breaker Won't Stay Reset",
+      "description": "A breaker that trips immediately upon reset indicates a short circuit or ground fault on that circuit requiring diagnosis and repair.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Burning Smell from Panel",
+      "description": "Any burning odor from your electrical panel is an emergency. Turn off the main breaker immediately and call for emergency service.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Visible Damage or Corrosion",
+      "description": "Rust, corrosion, burn marks, or melted plastic on your panel indicate serious problems that need professional attention.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Breaker Feels Warm",
+      "description": "Breakers that are warm or hot to the touch indicate overloading or poor connections—fire hazards that need investigation.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Lights Flicker Throughout House",
+      "description": "Whole-house flickering (not single fixtures) often indicates panel problems—loose main connections or failing main breaker.",
+      "icon": "Lightbulb"
+    }
+  ],
+  "processHeading": "Our Panel Repair Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Safety Assessment",
+      "description": "We check for immediate hazards—burning smell, visible damage, overheating—and determine if emergency shutdown is needed."
+    },
+    {
+      "step": 2,
+      "title": "Thorough Diagnosis",
+      "description": "We systematically test the panel, breakers, and affected circuits to identify the root cause—not just symptoms—of the problem."
+    },
+    {
+      "step": 3,
+      "title": "Solution Recommendation",
+      "description": "We explain what we found and recommend appropriate repairs—from simple breaker replacement to panel upgrades if needed."
+    },
+    {
+      "step": 4,
+      "title": "Professional Repair",
+      "description": "We perform repairs using proper techniques and quality replacement parts. Breakers are matched to your panel brand for proper fit and protection."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Verification",
+      "description": "We test the repaired circuits, verify proper operation, and ensure the underlying problem is resolved—not just temporarily fixed."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Panel Repair",
+  "benefits": [
+    {
+      "title": "Find the Real Problem",
+      "description": "Repeatedly resetting a tripping breaker ignores the actual issue. We diagnose and fix root causes—overloaded circuits, faulty equipment, or wiring problems.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Proper Parts",
+      "description": "Breakers must match panel brands and be properly rated. We use correct replacement parts that provide proper protection.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Prevent Escalation",
+      "description": "Small panel problems become big ones. Fixing issues early prevents the damage, fires, and expensive repairs that result from ignored warnings.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Safe, Code-Compliant Work",
+      "description": "Panel work can be dangerous and must meet code requirements. Professional repair ensures safety and proper installation.",
+      "icon": "FileCheck"
+    }
+  ],
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Panels Repaired"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Response"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why does my breaker keep tripping?",
+      "answer": "Common causes include: circuit overload (too many devices), short circuit (damaged wire or appliance), ground fault (especially in wet areas), failing breaker, or loose connections. We diagnose the specific cause rather than just resetting repeatedly."
+    },
+    {
+      "question": "Can I just replace a breaker myself?",
+      "answer": "While technically possible, panel work is dangerous—live bus bars can kill. Breakers must also match your panel brand exactly. Wrong breakers can fail to trip properly and cause fires. We strongly recommend professional replacement."
+    },
+    {
+      "question": "Why does my breaker trip immediately when I reset it?",
+      "answer": "Immediate tripping indicates a short circuit (hot wire touching neutral or ground) or ground fault on that circuit. Something on that circuit has a serious wiring problem. Don't keep trying—the breaker is protecting you. Call for diagnosis."
+    },
+    {
+      "question": "What are arc fault breakers and do I need them?",
+      "answer": "Arc fault circuit interrupters (AFCIs) detect dangerous arcing that can cause fires—even when current is too low to trip standard breakers. Current code requires AFCIs in bedrooms and many living areas. They're an excellent safety upgrade for older homes."
+    },
+    {
+      "question": "My panel has rust/corrosion—is that dangerous?",
+      "answer": "Rust indicates moisture intrusion, which is serious in electrical panels. Corrosion can affect connections and breaker operation. Depending on severity, you may need repairs or panel replacement. We can assess the damage and recommend appropriate action."
+    },
+    {
+      "question": "Can breakers wear out?",
+      "answer": "Yes. Breakers are mechanical devices that can fail after years of use or repeated tripping. A breaker that trips more easily than it used to, won't stay on, or runs warm may need replacement. Quality circuit breakers last 25-30 years under normal conditions."
+    },
+    {
+      "question": "Why do breakers from the hardware store sometimes not fit my panel?",
+      "answer": "Breakers must match your panel brand and series. While breakers may physically fit, incorrect breakers don't make proper contact with bus bars, can fail to trip, and violate code. We use manufacturer-appropriate breakers for your specific panel."
+    },
+    {
+      "question": "Is a burning smell from the panel an emergency?",
+      "answer": "Yes—absolutely. A burning smell indicates overheating, which can cause fire. Turn off the main breaker immediately (if safe to do so), leave the area if smoke is visible, and call for emergency electrical service. Don't ignore this warning sign."
+    }
+  ],
+  "relatedServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "24-7-emergency-electrical-service",
+    "electrical-safety-inspection",
+    "home-electrical-system-upgrade"
+  ],
+  "seoContent": [
+    {
+      "heading": "Panel Repair & Breaker Replacement in South Florida",
+      "body": "When circuit breakers trip repeatedly, won't reset, or your electrical panel shows warning signs, Solomon Electric provides professional diagnosis and repair. We find the root cause of panel problems—not just reset breakers—and provide lasting solutions that protect your home."
+    },
+    {
+      "heading": "Proper Breaker Replacement",
+      "body": "Circuit breakers must match your panel brand and be properly rated for the circuit they protect. Wrong breakers can fail to trip during overloads, causing fires. We use manufacturer-appropriate replacement breakers that provide proper protection and meet code requirements."
+    },
+    {
+      "heading": "Diagnosing Repeated Breaker Trips",
+      "body": "A breaker that keeps tripping is doing its job—protecting you from a real problem. We trace circuit issues to their source: overloaded circuits, short circuits, ground faults, failing appliances, or loose connections. Fixing the cause prevents repeated trips and potential hazards."
+    },
+    {
+      "heading": "Emergency Panel Service Throughout South Florida",
+      "body": "Solomon Electric provides panel repair and circuit breaker replacement throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. For burning smells or visible panel damage, we offer 24/7 emergency response."
+    }
+  ],
+  "relatedBlogPosts": []
+}

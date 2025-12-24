@@ -1,0 +1,180 @@
+{
+  "name": "Commercial LED Lighting Retrofit",
+  "slug": "commercial-led-lighting-retrofit",
+  "description": "Reduce your business's energy costs by 50-75% with commercial LED lighting retrofit. Solomon Electric converts fluorescent, HID, and older lighting systems to energy-efficient LED throughout South Florida commercial properties. Our retrofit solutions maintain or improve light quality while slashing electricity bills and reducing maintenance costs.",
+  "shortDescription": "Energy-efficient commercial lighting",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Commercial & Inspections",
+  "order": 35,
+  "features": [
+    "Fluorescent to LED conversion",
+    "HID/metal halide replacement",
+    "Warehouse and industrial lighting",
+    "Office and retail lighting",
+    "Parking lot light conversion",
+    "Utility rebate assistance"
+  ],
+  "warningSignsHeading": "Is LED Retrofit Right for Your Business?",
+  "warningSignsSubheading": "Most commercial properties with older lighting benefit from LED conversion. Here's when retrofit makes sense.",
+  "problems": [
+    {
+      "title": "High Electricity Bills",
+      "description": "Lighting typically accounts for 20-40% of commercial electricity costs. LED retrofit cuts lighting energy use by 50-75%, directly reducing utility bills.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Frequent Lamp Replacements",
+      "description": "Fluorescent and HID lamps require regular replacement—labor costs, lift rentals, and business disruption. LEDs last 50,000+ hours, dramatically reducing maintenance.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Poor Light Quality",
+      "description": "Old fluorescent lights flicker, buzz, and produce unflattering light. Modern LEDs provide consistent, high-quality illumination that improves workplaces.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Dim Areas in Your Space",
+      "description": "As lamps age, light output degrades. LED retrofit restores—and often improves—light levels throughout your facility.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Heat Load from Lighting",
+      "description": "Traditional lighting generates significant heat, adding to cooling costs. LEDs run cool, reducing HVAC load—additional savings in Florida's climate.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Sustainability Goals",
+      "description": "LED conversion reduces carbon footprint and supports corporate sustainability initiatives—increasingly important for customers and employees.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our LED Retrofit Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Lighting Audit",
+      "description": "We survey your facility, document existing fixtures, and calculate current energy consumption. This establishes baseline for savings calculations."
+    },
+    {
+      "step": 2,
+      "title": "Solution Design",
+      "description": "We design LED solutions matching or exceeding your current light levels—selecting appropriate color temperature, brightness, and fixture styles for each area."
+    },
+    {
+      "step": 3,
+      "title": "ROI and Rebate Analysis",
+      "description": "We calculate projected savings, payback period, and available utility rebates. Many FPL commercial customers qualify for significant retrofit incentives."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "Our crews work efficiently to minimize business disruption—often performing installations during off-hours. We handle all fixture conversions and lamp replacements."
+    },
+    {
+      "step": 5,
+      "title": "Verification and Documentation",
+      "description": "We verify light levels, document the installation for rebate claims, and provide before/after energy analysis to confirm savings."
+    }
+  ],
+  "benefitsHeading": "Benefits of Commercial LED Retrofit",
+  "benefits": [
+    {
+      "title": "Immediate Energy Savings",
+      "description": "LED lighting typically reduces lighting energy consumption by 50-75%. For businesses with high lighting loads, this represents significant monthly savings.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Drastically Reduced Maintenance",
+      "description": "LEDs last 50,000+ hours (5-10 years of typical commercial use). Eliminate frequent lamp replacements, reduce maintenance labor, and avoid lift rental costs.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Improved Light Quality",
+      "description": "Modern LEDs provide better color rendering, no flicker, and consistent light levels. Employees and customers both benefit from improved illumination.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Utility Rebates Available",
+      "description": "FPL and other Florida utilities offer rebates for commercial LED conversion. We help identify available incentives and handle rebate documentation.",
+      "icon": "FileCheck"
+    }
+  ],
+  "stats": [
+    {
+      "value": "75%",
+      "label": "Typical Energy Savings"
+    },
+    {
+      "value": "50K+",
+      "label": "LED Hour Lifespan"
+    },
+    {
+      "value": "2-3",
+      "label": "Year Payback"
+    },
+    {
+      "value": "100+",
+      "label": "Commercial Properties"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much will LED retrofit save my business?",
+      "answer": "Savings depend on your current lighting type and operating hours. Converting fluorescent to LED typically saves 50% on lighting electricity. Converting HID (metal halide, high-pressure sodium) often saves 70-75%. We calculate projected savings specific to your facility during our audit."
+    },
+    {
+      "question": "What's the payback period for commercial LED retrofit?",
+      "answer": "Most commercial LED conversions pay back in 2-4 years through energy and maintenance savings, often faster with utility rebates. After payback, savings continue for the life of the LEDs—typically 10+ years of pure savings."
+    },
+    {
+      "question": "Do I need to replace entire fixtures or just lamps?",
+      "answer": "It depends on your existing fixtures. Many fluorescent fixtures can be retrofitted with LED tubes and modified ballasts (or ballast bypass). Older or damaged fixtures may warrant complete replacement with LED fixtures. We recommend the most cost-effective approach for your situation."
+    },
+    {
+      "question": "What about utility rebates for LED conversion?",
+      "answer": "FPL and other Florida utilities offer commercial lighting rebates that significantly reduce retrofit costs. Programs change periodically, but substantial incentives are typically available. We stay current on rebate programs and handle all documentation for your claim."
+    },
+    {
+      "question": "Will LED lighting provide the same light levels?",
+      "answer": "Properly designed LED retrofit matches or improves existing light levels. We use lighting design calculations to ensure adequate illumination. Often, newer LEDs actually improve light quality—better color rendering, no flicker, and more uniform distribution."
+    },
+    {
+      "question": "Can you work around our business hours?",
+      "answer": "Absolutely. We understand business operations can't always stop for lighting work. We frequently install during evenings, weekends, or non-peak hours to minimize disruption. We'll work with your schedule."
+    },
+    {
+      "question": "What types of commercial lighting can be converted?",
+      "answer": "We retrofit all commercial lighting types: T12 and T8 fluorescent (most common), metal halide and HPS warehouse/parking lighting, halogen track and display lighting, CFL fixtures, and older outdoor lighting. Whatever you have, we can upgrade it to LED."
+    },
+    {
+      "question": "How long does commercial LED installation take?",
+      "answer": "Timeline depends on facility size. A typical office or retail space can be converted in a day or two. Large warehouses or multi-building properties may take a week or more. We provide project timelines during the proposal phase."
+    }
+  ],
+  "relatedServices": [
+    "parking-lot-security-lighting",
+    "commercial-panel-installation-upgrades",
+    "exit-emergency-lighting-systems",
+    "led-lighting-retrofit-conversion"
+  ],
+  "seoContent": [
+    {
+      "heading": "Commercial LED Lighting Retrofit in South Florida",
+      "body": "Reduce your business's lighting energy costs by 50-75% with professional LED retrofit from Solomon Electric. We convert fluorescent, HID, and outdated commercial lighting systems to energy-efficient LED throughout Miami-Dade, Broward, and Palm Beach counties. Our retrofit solutions slash electricity bills while improving light quality and reducing maintenance."
+    },
+    {
+      "heading": "Warehouse and Industrial LED Conversion",
+      "body": "High-bay warehouse lighting is one of the best LED conversion opportunities—high-wattage metal halide fixtures running extended hours see dramatic savings. We install LED high-bays that reduce energy use by 70%+ while improving light quality and eliminating frequent lamp changes on tall ceilings."
+    },
+    {
+      "heading": "FPL Commercial Lighting Rebates",
+      "body": "Florida Power & Light offers significant rebates for commercial LED conversion projects. These incentives can offset 20-40% of project costs, dramatically reducing payback time. Solomon Electric handles all rebate documentation and ensures your installation qualifies for maximum available incentives."
+    },
+    {
+      "heading": "Serving South Florida Businesses",
+      "body": "Solomon Electric provides commercial LED retrofit throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding areas. From small retail spaces to large industrial facilities, we deliver energy-efficient lighting solutions that reduce costs and improve illumination."
+    }
+  ],
+  "relatedBlogPosts": []
+}

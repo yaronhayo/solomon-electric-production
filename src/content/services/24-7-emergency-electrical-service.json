@@ -1,0 +1,182 @@
+{
+  "name": "24/7 Emergency Electrical Service",
+  "slug": "24-7-emergency-electrical-service",
+  "description": "When electrical emergencies strike, every second counts. Solomon Electric provides around-the-clock emergency electrical services throughout South Florida—available 24 hours a day, 7 days a week, 365 days a year. Our licensed electricians respond quickly to power outages, dangerous sparking, burning smells, circuit failures, and any critical electrical situation that threatens your family's safety or disrupts your business operations.",
+  "shortDescription": "Around-the-clock emergency electrical repairs",
+  "icon": "Wrench",
+  "image": "../../assets/images/services/emergency.png",
+  "category": "Emergency Electrical Services",
+  "order": 7,
+  "features": [
+    "Available 24/7/365—nights, weekends, and holidays",
+    "Rapid response throughout Miami-Dade and Broward",
+    "Fully equipped service vehicles for on-site repairs",
+    "Licensed, insured professional electricians",
+    "No hidden fees—upfront pricing before work begins",
+    "Same-day service for urgent situations"
+  ],
+  "warningSignsHeading": "Electrical Emergencies That Require Immediate Attention",
+  "warningSignsSubheading": "Some electrical problems can't wait until tomorrow. If you're experiencing any of these situations, call us immediately—your safety depends on it.",
+  "problems": [
+    {
+      "title": "Burning Smell from Outlets or Panels",
+      "description": "A burning odor indicates overheating wires or components that could ignite at any moment. This is a fire hazard requiring immediate professional attention.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Sparking or Arcing from Outlets",
+      "description": "Visible sparks when plugging in devices or sparks coming from outlets signal dangerous wiring faults that can cause electrical fires or severe shock.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Complete Power Loss to Your Home",
+      "description": "If your home has no power but neighbors do, you may have a failed main breaker, damaged service entrance, or utility connection issue requiring expert diagnosis.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Buzzing or Humming from Electrical Panel",
+      "description": "Unusual sounds from your breaker panel indicate loose connections, failing breakers, or dangerous arcing that could lead to fire.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Outlets or Switches That Are Hot to Touch",
+      "description": "Warm or hot electrical components indicate overloaded circuits or poor connections that are actively creating fire risk inside your walls.",
+      "icon": "Home"
+    },
+    {
+      "title": "Electrical Shock When Touching Appliances",
+      "description": "Receiving a shock—even a mild tingle—from appliances or fixtures indicates dangerous grounding problems that could cause serious injury or death.",
+      "icon": "AlertTriangle"
+    }
+  ],
+  "processHeading": "How Our Emergency Response Works",
+  "process": [
+    {
+      "step": 1,
+      "title": "Immediate Phone Assessment",
+      "description": "When you call, we assess the emergency over the phone to understand the severity and provide immediate safety instructions while we dispatch an electrician."
+    },
+    {
+      "step": 2,
+      "title": "Rapid Dispatch",
+      "description": "A licensed electrician is dispatched from our service fleet, equipped with common replacement parts and diagnostic tools to handle most emergencies on the first visit."
+    },
+    {
+      "step": 3,
+      "title": "On-Site Diagnosis",
+      "description": "Our electrician thoroughly inspects the problem, identifies the root cause, and explains the situation clearly—no jargon, just honest answers about what's happening."
+    },
+    {
+      "step": 4,
+      "title": "Upfront Pricing Approval",
+      "description": "Before any work begins, we provide a written estimate for your approval. No hidden fees, no surprise charges. You decide whether to proceed."
+    },
+    {
+      "step": 5,
+      "title": "Professional Repair & Safety Verification",
+      "description": "We complete the repair, verify safe operation of your electrical system, and provide documentation. Your safety is restored—usually the same day."
+    }
+  ],
+  "benefitsHeading": "Why South Florida Trusts Solomon Electric for Emergencies",
+  "benefits": [
+    {
+      "title": "Genuine 24/7 Availability",
+      "description": "Real electricians, not an answering service. We staff licensed professionals around the clock because electrical emergencies don't follow business hours.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Fast Response Times",
+      "description": "Our fleet of fully-stocked service vehicles enables rapid response throughout Miami-Dade and Broward counties—often within the hour for true emergencies.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Upfront, Honest Pricing",
+      "description": "Emergency doesn't mean exploitation. We provide clear pricing before work begins—no inflated 'emergency rates' that take advantage of your situation.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Licensed & Fully Insured",
+      "description": "Florida State License #EC13012419. Full liability insurance and workers' compensation protect you from any liability during emergency repairs.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "24/7",
+      "label": "Always Available"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "1,000+",
+      "label": "Emergency Calls"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What qualifies as an electrical emergency?",
+      "answer": "Any situation that poses immediate risk to safety or property qualifies as an emergency: burning smells from electrical components, sparking outlets, complete power loss, exposed wires, electrical shocks, buzzing panels, or any situation where you fear a fire could start. When in doubt, call us—we'd rather assess a non-emergency than have you wait during a dangerous situation."
+    },
+    {
+      "question": "How quickly can an electrician arrive at my home?",
+      "answer": "Response times depend on current call volume and your location, but we prioritize true emergencies. For fire hazards, sparking, or electrical shocks, we dispatch immediately. Our service area covers all of Miami-Dade and Broward counties, with electricians strategically positioned throughout the region."
+    },
+    {
+      "question": "Do you charge more for nights, weekends, or holidays?",
+      "answer": "We offer transparent, competitive emergency rates. While emergency calls naturally require premium availability, we don't exploit crisis situations with excessive markups. You'll receive upfront pricing before any work begins—no surprises on your bill."
+    },
+    {
+      "question": "Should I turn off my power before you arrive?",
+      "answer": "If you smell burning, see sparking, or feel the situation is immediately dangerous, go to your main breaker and switch it OFF. This eliminates power to your home and stops most electrical hazards. If you're unsure where your main breaker is or feel unsafe approaching your panel, leave the home and call us immediately."
+    },
+    {
+      "question": "What if the repair needs parts you don't have?",
+      "answer": "Our service vehicles carry the most common replacement parts—breakers, outlets, wiring, connectors, and safety devices. For unusual equipment or specialized repairs, we'll secure the area, provide a temporary safe solution if possible, and return promptly with the required materials."
+    },
+    {
+      "question": "Do you handle commercial and business emergencies?",
+      "answer": "Absolutely. We serve residential, commercial, and industrial properties. Business electrical emergencies—especially those affecting operations, safety systems, or refrigeration—receive priority response. We understand that downtime costs money."
+    },
+    {
+      "question": "What areas do you serve for emergency calls?",
+      "answer": "We provide emergency electrical service throughout Miami-Dade County (Miami, Miami Beach, Coral Gables, Hialeah, Kendall) and Broward County (Fort Lauderdale, Hollywood, Pembroke Pines, Coral Springs, Deerfield Beach). Call us even if you're unsure—we'll let you know if we can help."
+    },
+    {
+      "question": "Can I wait until morning if the problem seems minor?",
+      "answer": "If there's no burning smell, sparking, shock hazard, or heat coming from electrical components, many issues can safely wait. However, if you're losing sleep worrying about it, that's often your instinct telling you something is wrong. Trust your gut—the peace of mind from a professional assessment is worth it."
+    }
+  ],
+  "relatedServices": [
+    "electrical-burning-smell-investigation",
+    "sparking-outlet-circuit-breaker-repair",
+    "power-outage-emergency-response",
+    "storm-damage-electrical-repair"
+  ],
+  "seoContent": [
+    {
+      "heading": "Emergency Electrician Services in Miami & South Florida",
+      "body": "Electrical emergencies don't wait for convenient hours—and neither do we. Solomon Electric provides professional 24/7 emergency electrical service to homeowners and businesses throughout Miami-Dade and Broward counties. When you smell burning, see sparks, or lose power unexpectedly, you need a licensed electrician who can respond immediately, diagnose the problem accurately, and restore safety to your property."
+    },
+    {
+      "heading": "Common Electrical Emergencies We Handle",
+      "body": "Our emergency electricians regularly respond to power outages, circuit breaker failures, sparking or arcing outlets, burning smells from panels or walls, electrical shocks from fixtures, storm damage to electrical systems, and any situation where electrical problems create immediate safety concerns. We arrive with fully-stocked vehicles capable of handling most repairs on the first visit."
+    },
+    {
+      "heading": "South Florida's Trusted Emergency Electrical Response",
+      "body": "With over 15 years serving South Florida, Solomon Electric has built a reputation for reliable emergency response. Our Florida State Licensed electricians (License #EC13012419) are available 24 hours a day, equipped to handle everything from simple breaker resets to complex wiring failures. We serve Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities."
+    },
+    {
+      "heading": "What to Do During an Electrical Emergency",
+      "body": "Your safety comes first. If you smell burning or see flames, evacuate and call 911. For non-fire emergencies, locate your main breaker panel and switch it OFF to cut power. Don't attempt to repair electrical problems yourself—even seemingly simple issues can cause shock or fire. Call Solomon Electric and we'll guide you through keeping safe until our electrician arrives."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "name": "240V Outlet Installation",
+  "slug": "240v-outlet-installation",
+  "description": "Need 240V power for heavy-duty equipment? Solomon Electric installs dedicated 240-volt outlets for electric dryers, ranges, welders, air compressors, EV chargers, and other high-power devices throughout South Florida homes and workshops. We handle the complete installation—from load calculation and panel capacity assessment to running new circuits and installing the proper outlet configuration for your equipment.",
+  "shortDescription": "High-voltage outlets for heavy equipment",
+  "icon": "Zap",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Outlets, Switches & Wiring",
+  "order": 16,
+  "features": [
+    "NEMA 14-30 dryer outlets",
+    "NEMA 14-50 range/EV charger outlets",
+    "Workshop and garage 240V circuits",
+    "Proper wire gauge for distance",
+    "Load calculation and panel assessment",
+    "Permit handling when required"
+  ],
+  "warningSignsHeading": "When You Need 240V Service",
+  "warningSignsSubheading": "Many heavy-duty appliances and tools require 240-volt power. Here's when you need professional 240V outlet installation.",
+  "problems": [
+    {
+      "title": "New Electric Dryer",
+      "description": "Electric dryers require 240V, typically a NEMA 14-30 outlet. If your laundry area only has 120V, you need a new 30-amp circuit installed.",
+      "icon": "Home"
+    },
+    {
+      "title": "Electric Range or Oven",
+      "description": "Full-size electric ranges require 240V 50-amp service, a dedicated circuit, and proper outlet configuration. Gas-to-electric conversions need new wiring.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Level 2 EV Charger",
+      "description": "Home EV charging requires 240V—typically a NEMA 14-50 outlet or hardwired connection. We size circuits for your charger's requirements.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Workshop Power Tools",
+      "description": "Welders, plasma cutters, large air compressors, and CNC equipment often require 240V. Workshop circuits need proper sizing for tool demands.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "HVAC Equipment",
+      "description": "Central air conditioners, heat pumps, and larger mini-splits require 240V circuits properly sized for the equipment's load.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Hot Tub or Sauna",
+      "description": "Hot tubs and saunas require dedicated 240V circuits with proper GFCI protection and often specific disconnect requirements.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our 240V Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Equipment Assessment",
+      "description": "We verify your equipment's electrical requirements—voltage, amperage, outlet type—and any specific installation requirements from the manufacturer."
+    },
+    {
+      "step": 2,
+      "title": "Panel Capacity Review",
+      "description": "We assess whether your electrical panel has capacity for the new circuit. If additional capacity is needed, we discuss panel upgrade options."
+    },
+    {
+      "step": 3,
+      "title": "Wire Sizing and Routing",
+      "description": "We determine proper wire gauge for the amperage and distance, plan the routing path, and identify whether conduit is required for protection."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "Our licensed electricians install the breaker, run the circuit, and mount the outlet or make hardwired connections per equipment requirements."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Verification",
+      "description": "We test the circuit, verify proper voltage and polarity, and confirm your equipment operates correctly before completing the job."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional 240V Installation",
+  "benefits": [
+    {
+      "title": "Proper Sizing",
+      "description": "240V circuits require proper wire gauge for the amperage and distance. Undersized wire overheats and creates fire hazards. We calculate correctly every time.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "240V installations have specific code requirements—proper outlet types, grounding, and sometimes GFCI protection. Professional installation meets all requirements.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Equipment Protection",
+      "description": "Properly sized circuits protect your expensive equipment from voltage issues, ensuring reliable operation and full equipment lifespan.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Future Flexibility",
+      "description": "We install to proper specifications so you can change equipment in the future without rewiring—a NEMA 14-50 today works for EV chargers tomorrow.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "400+",
+      "label": "240V Circuits Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Properly Sized"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's the difference between 120V and 240V?",
+      "answer": "Standard outlets provide 120V for typical household devices. 240V uses both legs of your electrical service to provide double the voltage for high-power equipment. Heavy-duty appliances use 240V because it allows the same power with less current, enabling smaller wire sizes and reduced heat."
+    },
+    {
+      "question": "What type of 240V outlet do I need?",
+      "answer": "The outlet type depends on your equipment. NEMA 14-30 (30-amp) is standard for electric dryers. NEMA 14-50 (50-amp) is used for ranges and EV chargers. NEMA 6-50 (50-amp, no neutral) is common for welders. We verify your equipment's requirements and install the correct outlet."
+    },
+    {
+      "question": "Does my panel have room for a 240V circuit?",
+      "answer": "240V circuits require double-pole breakers taking two adjacent spaces. Many panels have open spaces, but capacity also depends on your overall electrical load. We assess your panel during consultation and discuss options if upgrades are needed."
+    },
+    {
+      "question": "How far can 240V outlets be from the panel?",
+      "answer": "Distance affects wire gauge requirements—longer runs require heavier wire to prevent voltage drop. We calculate proper wire sizes for your specific installation, ensuring full voltage reaches your equipment regardless of distance from the panel."
+    },
+    {
+      "question": "Do 240V circuits need GFCI protection?",
+      "answer": "Some do. 240V outlets in garages, outdoors, and within 6 feet of water sources require GFCI protection per current code. Hot tub and pool equipment have specific GFCI requirements. We install appropriate protection for each location."
+    },
+    {
+      "question": "Can I convert a gas dryer connection to electric?",
+      "answer": "You'll need a new electrical circuit—there's no way to convert existing gas piping to electrical. We install the 240V, 30-amp circuit required for electric dryers, including proper outlet placement where your dryer will be located."
+    },
+    {
+      "question": "What if I have an old 3-prong dryer outlet?",
+      "answer": "Older 3-prong dryer outlets (NEMA 10-30) lack a ground wire—a safety concern. Modern dryers require 4-prong outlets (NEMA 14-30) with separate neutral and ground. We can upgrade your outlet and circuit to current standards."
+    },
+    {
+      "question": "Can you install 240V in a detached garage or workshop?",
+      "answer": "Absolutely. We run 240V circuits to detached buildings using properly sized underground or overhead feeders. Workshops often need multiple 240V circuits for different tools. We design systems to handle your current needs plus future expansion."
+    }
+  ],
+  "relatedServices": [
+    "level-2-ev-charger-installation",
+    "hot-tub-spa-installation",
+    "new-outlet-installation-repair",
+    "electrical-panel-upgrade-100a-to-200a"
+  ],
+  "seoContent": [
+    {
+      "heading": "240V Outlet Installation in Miami & South Florida",
+      "body": "Heavy-duty appliances and equipment require 240-volt power that standard outlets can't provide. Solomon Electric installs 240V outlets throughout South Florida for electric dryers, ranges, EV chargers, workshop equipment, hot tubs, and any application requiring high-voltage service. Our licensed electricians ensure proper sizing, code compliance, and reliable operation."
+    },
+    {
+      "heading": "Proper Wire Sizing for 240V Circuits",
+      "body": "240V circuits handle significant current and require proper wire gauge for the amperage and installation distance. Undersized wire creates heat, voltage drop, and fire hazards. We calculate correct wire sizes using NEC requirements, ensuring safe operation and full power delivery to your equipment."
+    },
+    {
+      "heading": "Common 240V Applications",
+      "body": "We install 240V circuits for electric dryers (30A NEMA 14-30), electric ranges (50A NEMA 14-50), EV chargers (40-50A), welders and plasma cutters (50A NEMA 6-50), air compressors, hot tubs, saunas, and HVAC equipment. Whatever your high-voltage needs, we install the right circuit for your equipment."
+    },
+    {
+      "heading": "Expert Installation Throughout South Florida",
+      "body": "Solomon Electric installs 240V circuits throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single appliance circuits to complete workshop electrical systems, we provide the 240V power your equipment demands."
+    }
+  ],
+  "relatedBlogPosts": []
+}

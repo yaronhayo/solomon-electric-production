@@ -1,0 +1,182 @@
+{
+  "name": "New Outlet Installation & Repair",
+  "slug": "new-outlet-installation-repair",
+  "description": "Need more outlets? Tired of extension cords and power strips cluttering your home? Solomon Electric installs additional outlets exactly where you need them—behind mounted TVs, in home offices, kitchen islands, garage workshops, and anywhere else your South Florida home lacks convenient power access. We also repair faulty outlets that spark, feel loose, or no longer hold plugs securely.",
+  "shortDescription": "Add outlets and repair existing ones",
+  "icon": "Plug",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Outlets, Switches & Wiring",
+  "order": 15,
+  "features": [
+    "New outlet installation anywhere needed",
+    "Behind-TV outlet boxes for clean mounting",
+    "USB outlet upgrades",
+    "Outlet repair and replacement",
+    "20-amp circuit additions for load",
+    "Dedicated circuit installation"
+  ],
+  "warningSignsHeading": "Signs You Need Outlet Work",
+  "warningSignsSubheading": "Whether you need new outlets or existing ones repaired, these signs indicate it's time to call an electrician.",
+  "problems": [
+    {
+      "title": "Extension Cords Everywhere",
+      "description": "Extension cords are temporary solutions. Permanent use creates trip hazards and fire risks. If you're relying on extension cords, you need more outlets.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Overloaded Power Strips",
+      "description": "Power strips daisy-chained together or strips hot to the touch indicate you're exceeding safe capacity. Additional outlets on new circuits solve this.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Outlets That Don't Hold Plugs",
+      "description": "When plugs fall out or feel loose, the outlet contacts are worn. This creates arcing and fire risk—replacement is needed.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Sparking When Plugging In",
+      "description": "Visible sparks from outlets indicate internal damage or wiring problems. Stop using the outlet and call an electrician immediately.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Outlets Warm to Touch",
+      "description": "Warm or hot outlets indicate overloading or poor connections—both fire hazards requiring professional diagnosis and repair.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Two-Prong Outlets",
+      "description": "Old two-prong outlets lack grounding protection and can't accommodate most modern plugs safely. Upgrading to grounded outlets improves safety.",
+      "icon": "Home"
+    }
+  ],
+  "processHeading": "Our Outlet Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Location Planning",
+      "description": "We discuss where you need outlets, determine the best routing approach for new wiring, and plan any new circuits required."
+    },
+    {
+      "step": 2,
+      "title": "Circuit Assessment",
+      "description": "We evaluate whether existing circuits have capacity for new outlets or if dedicated circuits are needed for heavy loads like space heaters or power tools."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "We cut outlet boxes, run wiring (often through attics or crawl spaces to minimize wall damage), and make proper electrical connections."
+    },
+    {
+      "step": 4,
+      "title": "Safety Features",
+      "description": "We install GFCI outlets where required (kitchens, bathrooms, outdoor) and tamper-resistant outlets in areas accessible to children."
+    },
+    {
+      "step": 5,
+      "title": "Testing & Completion",
+      "description": "We test every outlet for proper wiring, grounding, and function. You'll have convenient, safe power exactly where you need it."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Outlet Installation",
+  "benefits": [
+    {
+      "title": "Eliminate Cord Clutter",
+      "description": "Outlets where you need them means no more extension cords snaking across floors or power strips cluttering every corner.",
+      "icon": "Home"
+    },
+    {
+      "title": "Proper Load Distribution",
+      "description": "New outlets on appropriate circuits prevent overloading. Dedicated circuits for high-draw devices ensure reliable, safe operation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Modern Conveniences",
+      "description": "USB outlets eliminate adapter clutter. GFCI protection adds safety. Tamper-resistant outlets protect children. Modern outlets do more than just provide power.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "Professional installation meets current code requirements for spacing, protection, and installation—important for insurance and future home sales.",
+      "icon": "FileCheck"
+    }
+  ],
+  "stats": [
+    {
+      "value": "1,000+",
+      "label": "Outlets Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Code Compliant"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much does it cost to add an outlet?",
+      "answer": "Cost varies based on location, distance from existing circuits, and whether new circuits are needed. Adding an outlet to an existing circuit with accessible routing is relatively economical. Dedicated circuits or long wire runs cost more. We provide upfront pricing after assessing your specific situation."
+    },
+    {
+      "question": "Can you add an outlet to a specific wall location?",
+      "answer": "Usually, yes! We can add outlets to most wall locations by routing wiring through attics, crawl spaces, or along existing wire paths. Some locations (exterior walls with insulation, concrete walls, inaccessible areas) are more challenging but usually still possible."
+    },
+    {
+      "question": "Do I need a permit to add an outlet?",
+      "answer": "Florida generally requires permits for new electrical circuits but not always for extending existing circuits with additional outlets. Either way, professional installation ensures code compliance. We'll advise whether permitting is required for your specific project."
+    },
+    {
+      "question": "What are USB outlets and should I get them?",
+      "answer": "USB outlets include built-in USB-A or USB-C charging ports alongside standard receptacles. They're convenient for charging phones and tablets without taking outlet space for adapters. We recommend them in bedrooms, offices, and kitchen charging areas."
+    },
+    {
+      "question": "Why do plugs fall out of my outlets?",
+      "answer": "Outlet contacts wear over time, losing their grip on plugs. This creates loose connections that can arc and cause fires. Outlets with poor plug retention should be replaced—it's a straightforward repair that eliminates a real hazard."
+    },
+    {
+      "question": "What's a dedicated circuit and when do I need one?",
+      "answer": "A dedicated circuit serves only one outlet or appliance rather than being shared. You need dedicated circuits for: refrigerators, microwaves, garbage disposals, dishwashers, washers/dryers, garage door openers, and any appliance over 1000 watts. Dedicated circuits prevent overloading."
+    },
+    {
+      "question": "Can you add an outlet behind my mounted TV?",
+      "answer": "Absolutely—this is one of our most popular requests. We install recessed outlet boxes with cable pass-through designed specifically for wall-mounted TVs. This eliminates visible cords for a clean, professional look."
+    },
+    {
+      "question": "What's the difference between 15-amp and 20-amp outlets?",
+      "answer": "20-amp outlets handle more current and are required for certain circuits (kitchens, laundry, bathrooms). They have a distinctive T-shaped slot for 20-amp plugs. Most general-purpose outlets are 15-amp. We'll install the appropriate type based on the circuit and location."
+    }
+  ],
+  "relatedServices": [
+    "gfci-outlet-installation-repair",
+    "outdoor-waterproof-outlet-installation",
+    "240v-outlet-installation",
+    "light-switch-installation-replacement"
+  ],
+  "seoContent": [
+    {
+      "heading": "Professional Outlet Installation in Miami & South Florida",
+      "body": "Solomon Electric installs new electrical outlets throughout South Florida homes—adding convenient power access exactly where you need it. Whether you need outlets for a home office, behind-TV power for clean cable management, kitchen island receptacles, or garage workshop circuits, our licensed electricians provide safe, code-compliant installation."
+    },
+    {
+      "heading": "Outlet Repair & Replacement Services",
+      "body": "Sparking outlets, loose connections, and worn receptacles aren't just inconveniences—they're fire hazards. We diagnose and repair faulty outlets, replace worn units, and upgrade outdated two-prong outlets to modern grounded receptacles. Don't ignore outlet problems—they rarely improve on their own."
+    },
+    {
+      "heading": "USB & Smart Outlet Options",
+      "body": "Modern outlets do more than provide power. USB outlets build in device charging capability. Smart outlets enable remote control and automation. GFCI outlets provide shock protection. We install all types and help you choose the right features for each location."
+    },
+    {
+      "heading": "Serving Miami, Fort Lauderdale & Surrounding Communities",
+      "body": "Solomon Electric provides outlet installation and repair throughout Miami-Dade, Broward, and Palm Beach counties. From single outlet additions to comprehensive rewiring projects, our licensed electricians deliver professional results. Contact us to add the outlets your home needs."
+    }
+  ],
+  "relatedBlogPosts": [
+    "outlet-switch-modernization-services"
+  ]
+}

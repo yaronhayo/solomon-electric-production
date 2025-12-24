@@ -1,0 +1,182 @@
+{
+  "name": "Insurance Electrical Inspection",
+  "slug": "insurance-electrical-inspection",
+  "description": "Many Florida insurance companies require electrical inspections for policy renewal, especially for homes over 25-30 years old. Solomon Electric provides the electrical inspection documentation insurers need—examining panels, wiring, and safety systems to verify your home meets insurance requirements. Don't risk policy cancellation—get the inspection your insurer requires.",
+  "shortDescription": "Inspections for insurance requirements",
+  "icon": "FileCheck",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Commercial & Inspections",
+  "order": 42,
+  "features": [
+    "4-point electrical inspection",
+    "Insurance-ready documentation",
+    "Panel brand and condition",
+    "Wiring type verification",
+    "GFCI protection verification",
+    "Recommendations for deficiencies"
+  ],
+  "warningSignsHeading": "Why Insurers Require Electrical Inspection",
+  "warningSignsSubheading": "Florida insurers increasingly require electrical documentation. Here's what drives these requirements.",
+  "problems": [
+    {
+      "title": "Policy Renewal Requirement",
+      "description": "Many insurers require updated electrical inspection for homes over 25-30 years old. Without it, they may not renew your policy.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "New Policy Application",
+      "description": "When applying for new homeowner's insurance, especially for older homes, insurers often require 4-point inspection including electrical.",
+      "icon": "Home"
+    },
+    {
+      "title": "Federal Pacific or Zinsco Panel",
+      "description": "Insurers know these panels are fire hazards. They may require replacement before issuing or renewing coverage.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Aluminum Wiring Concerns",
+      "description": "Homes with aluminum wiring may face insurance scrutiny. Documentation of proper remediation can satisfy insurer concerns.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Recent Electrical Claim",
+      "description": "After electrical-related claims, insurers may require inspection before continuing coverage to verify repairs and overall condition.",
+      "icon": "Shield"
+    },
+    {
+      "title": "4-Point Inspection Need",
+      "description": "Florida's 4-point inspection examines roof, HVAC, plumbing, and electrical. We provide the electrical portion with documentation insurers accept.",
+      "icon": "FileCheck"
+    }
+  ],
+  "processHeading": "Our Insurance Inspection Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Requirement Review",
+      "description": "We understand what your insurer specifically requires—some want standard forms, others need specific detail. We match our inspection to requirements."
+    },
+    {
+      "step": 2,
+      "title": "Panel Inspection",
+      "description": "We document panel brand, age, capacity, condition, and any recalls or known issues—the items insurers care most about."
+    },
+    {
+      "step": 3,
+      "title": "Wiring Assessment",
+      "description": "We identify wiring type (copper, aluminum) and assess visible condition. Insurers want to know about aluminum and any obvious deficiencies."
+    },
+    {
+      "step": 4,
+      "title": "Safety Verification",
+      "description": "We verify GFCI protection in required locations, check outlet grounding, and note any safety concerns."
+    },
+    {
+      "step": 5,
+      "title": "Documentation",
+      "description": "We provide a comprehensive written report in format your insurer accepts—with photographs if required—documenting findings and any recommendations."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Insurance Inspection",
+  "benefits": [
+    {
+      "title": "Maintain Coverage",
+      "description": "Providing requested inspection keeps your insurance policy active. Don't risk cancellation for non-compliance with inspection requirements.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Know Your Condition",
+      "description": "Insurance inspection reveals any issues your home has—valuable information whether or not the insurer requires repairs.",
+      "icon": "Home"
+    },
+    {
+      "title": "Documentation They Accept",
+      "description": "Our inspection reports satisfy insurance company requirements. We know what they need and provide it in appropriate format.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Path to Compliance",
+      "description": "If issues exist, we provide recommendations and can quote repairs to bring your electrical system to insurer standards.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "800+",
+      "label": "Insurance Inspections"
+    },
+    {
+      "value": "100%",
+      "label": "Insurer Accepted"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a 4-point inspection?",
+      "answer": "Florida's 4-point inspection examines four major home systems: roof, HVAC, plumbing, and electrical. Insurers use it to assess risk for older homes. We provide the electrical portion—licensed electrician inspection of your panel, wiring, and safety systems."
+    },
+    {
+      "question": "Why does my insurer want an electrical inspection?",
+      "answer": "Older homes have higher electrical fire risk—aging wiring, outdated panels, and accumulated wear. Insurers use inspections to identify high-risk situations before insuring or renewing coverage. It protects them from claims on hazardous properties."
+    },
+    {
+      "question": "What if the inspection reveals problems?",
+      "answer": "You have options: make repairs before submitting the report, submit the report and address insurer concerns, or find different insurance. We can quote repairs if corrections are needed. Some issues are minor; others may require panel replacement or wiring work."
+    },
+    {
+      "question": "Will you fail me for an old panel?",
+      "answer": "Age alone doesn't fail an inspection—condition matters. However, certain panel brands (Federal Pacific, Zinsco) are known hazards and many insurers require replacement regardless of condition. We document what we find honestly."
+    },
+    {
+      "question": "How quickly can I get the inspection report?",
+      "answer": "We typically provide written reports within 24-48 hours of inspection. If you have urgent insurance deadlines, let us know—we can expedite when necessary."
+    },
+    {
+      "question": "Do you work with my insurer directly?",
+      "answer": "We provide the inspection report to you. You submit it to your insurer or insurance agent. We're happy to clarify findings with your insurer if questions arise. Some 4-point inspection companies coordinate multiple trades—we handle the electrical portion."
+    },
+    {
+      "question": "What format is the inspection report?",
+      "answer": "We provide detailed written reports with our findings, any concerns, and photographs if required. Most insurers accept our standard format. If your insurer has specific form requirements, we can accommodate those."
+    },
+    {
+      "question": "Can you fix problems you find?",
+      "answer": "Yes. If we identify issues that need correction for insurance compliance, we can quote and perform those repairs. Many clients prefer one company to handle both inspection and any needed work."
+    }
+  ],
+  "relatedServices": [
+    "electrical-safety-inspection",
+    "home-electrical-inspection-certification",
+    "pre-purchase-electrical-inspection",
+    "electrical-panel-upgrade-100a-to-200a"
+  ],
+  "seoContent": [
+    {
+      "heading": "Insurance Electrical Inspection in South Florida",
+      "body": "Florida insurers increasingly require electrical inspections for homes over 25-30 years old. Solomon Electric provides the inspection documentation your insurer needs—examining panels, wiring, and safety systems with reports they accept. Don't risk policy cancellation for missing inspection requirements."
+    },
+    {
+      "heading": "4-Point Inspection Electrical Component",
+      "body": "Florida's 4-point inspection includes electrical system assessment. We provide comprehensive electrical inspection for 4-point reports—documenting panel brand and condition, wiring type, GFCI protection, and overall electrical system status. Our reports satisfy insurance company requirements."
+    },
+    {
+      "heading": "Panel Brand and Age Documentation",
+      "body": "Insurers pay close attention to electrical panel brand and age. We identify and document panel manufacturer, capacity, condition, and any recalls or known issues. Federal Pacific and Zinsco panels typically require replacement—we can quote that work if needed."
+    },
+    {
+      "heading": "Serving South Florida Homeowners",
+      "body": "Solomon Electric provides insurance electrical inspections throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Get the inspection documentation your insurer requires—contact us to schedule."
+    }
+  ],
+  "relatedBlogPosts": [
+    "comprehensive-electrical-safety-inspections"
+  ]
+}

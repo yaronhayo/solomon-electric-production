@@ -1,0 +1,147 @@
+---
+/**
+ * FinalCta Component
+ * Full-width call-to-action section with book/call buttons
+ */
+import Container from "./ui/Container.astro";
+import CtaButton from "./ui/CtaButton.astro";
+import { Zap } from "lucide-astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+    serviceName?: string;
+}
+
+const {
+    title = "Ready to Get Started?",
+    description,
+    serviceName,
+} = Astro.props;
+
+const finalDescription =
+    description ||
+    `Contact Solomon Electric today for a free consultation. Our licensed electricians are ready to help with your ${serviceName ? serviceName.toLowerCase() : "electrical"} needs in South Florida.`;
+---
+
+<section class="final-cta">
+    <div class="final-cta-bg">
+        <div class="cta-bolt-decoration cta-bolt-1">
+            <Zap />
+        </div>
+        <div class="cta-bolt-decoration cta-bolt-2">
+            <Zap />
+        </div>
+    </div>
+    <Container class="relative z-10">
+        <div class="final-cta-content">
+            <div class="cta-icon-wrapper">
+                <Zap class="cta-icon" fill="currentColor" />
+            </div>
+            <h2 class="cta-title">{title}</h2>
+            <p class="cta-description">{finalDescription}</p>
+            <div class="cta-buttons">
+                <CtaButton
+                    action="book"
+                    variant="secondary"
+                    size="lg"
+                    text="Get Free Estimate"
+                />
+                <CtaButton
+                    action="call"
+                    variant="icon"
+                    size="lg"
+                    class="!w-auto !px-8 border-2 border-primary !text-primary !bg-transparent hover:!bg-primary hover:!text-white"
+                    text="Call Now"
+                />
+            </div>
+        </div>
+    </Container>
+</section>
+
+<style>
+    .final-cta {
+        position: relative;
+        padding: clamp(4rem, 8vw, 6rem) 0;
+        overflow: hidden;
+    }
+
+    .final-cta-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            var(--color-accent) 0%,
+            #0ab8c7 100%
+        );
+    }
+
+    .cta-bolt-decoration {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-bolt-decoration :global(svg) {
+        width: clamp(150px, 20vw, 250px);
+        height: clamp(150px, 20vw, 250px);
+    }
+
+    .cta-bolt-1 {
+        top: -30px;
+        left: 5%;
+        transform: rotate(-15deg);
+    }
+
+    .cta-bolt-2 {
+        bottom: -40px;
+        right: 5%;
+        transform: rotate(15deg);
+    }
+
+    .final-cta-content {
+        text-align: center;
+        max-width: var(--container-narrow, 900px);
+        margin: 0 auto;
+    }
+
+    .cta-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto clamp(1.5rem, 3vw, 2rem);
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-icon-wrapper :global(.cta-icon) {
+        width: 40px;
+        height: 40px;
+        color: var(--color-accent);
+    }
+
+    .cta-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-description {
+        font-size: clamp(1rem, 1.25vw, 1.125rem);
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        line-height: 1.7;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+</style>

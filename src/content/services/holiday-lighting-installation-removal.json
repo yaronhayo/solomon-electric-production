@@ -1,0 +1,180 @@
+{
+  "name": "Holiday Lighting Installation & Removal",
+  "slug": "holiday-lighting-installation-removal",
+  "description": "Let professionals handle your holiday lights this year. Solomon Electric provides holiday lighting installation and removal throughout South Florida—eliminating ladder climbing, frustrated troubleshooting, and storage hassles. We install residential and commercial holiday displays safely and beautifully, then remove and store them when the season ends.",
+  "shortDescription": "Professional holiday display service",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 32,
+  "features": [
+    "Custom lighting design",
+    "Professional installation",
+    "LED holiday lights",
+    "Roofline and tree lighting",
+    "Timer and smart control setup",
+    "Post-season removal and storage"
+  ],
+  "warningSignsHeading": "Why Hire Professional Holiday Installers?",
+  "warningSignsSubheading": "Holiday lighting should bring joy, not stress or injury. Here's why professional service makes sense.",
+  "problems": [
+    {
+      "title": "Dangerous Ladder Work",
+      "description": "Falls from ladders are a leading cause of holiday injuries. Professional installers have proper equipment and training for safe rooftop work.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "No Time for Installation",
+      "description": "Between work, family, and holiday preparations, who has hours to spend on lights? Professional installation frees your time for what matters.",
+      "icon": "Home"
+    },
+    {
+      "title": "Burned Out Strands",
+      "description": "Nothing's more frustrating than discovering half your lights don't work after you've hung them. We test and prepare lights before installation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Want a Bigger Display",
+      "description": "You've dreamed of a spectacular display but don't have the equipment or expertise. Professional installation makes ambitious displays possible.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Hate Removal and Storage",
+      "description": "January takes all the fun out of holiday lights. We remove, pack, and store lights properly so they're ready for next year.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Commercial Display Needs",
+      "description": "Businesses need impressive, reliable holiday displays without burdening staff. Professional installation projects the image you want.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our Holiday Lighting Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Design Consultation",
+      "description": "We discuss your vision, assess your property, and design a lighting plan that achieves the look you want within your budget."
+    },
+    {
+      "step": 2,
+      "title": "Product Selection",
+      "description": "We recommend appropriate lights—LED for efficiency, commercial-grade for durability—and any accessories needed for your display."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "Our crews safely install lights with proper clips and fasteners that protect your home. No nail holes, no damage."
+    },
+    {
+      "step": 4,
+      "title": "Testing and Timing",
+      "description": "We test the complete display, set up timers for automatic operation, and verify everything looks spectacular after dark."
+    },
+    {
+      "step": 5,
+      "title": "Removal and Storage",
+      "description": "After the holidays, we return to carefully remove, pack, and store your lights so they're ready for next season."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Holiday Lighting",
+  "benefits": [
+    {
+      "title": "Safety First",
+      "description": "No ladder climbing, no rooftop risks. Our trained crews handle the dangerous work so you stay safely on the ground.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Spectacular Results",
+      "description": "Professional installation achieves the impressive displays you see in magazines. Clean lines, even spacing, proper brightness.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Time Savings",
+      "description": "Spend your limited holiday time with family, not wrestling with tangled lights on a ladder. We handle everything.",
+      "icon": "Home"
+    },
+    {
+      "title": "Complete Service",
+      "description": "Installation, maintenance, removal, and storage—we handle the entire lifecycle so lights are never your problem.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "150+",
+      "label": "Holiday Displays"
+    },
+    {
+      "value": "100%",
+      "label": "Tested Before Hanging"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When should I book holiday lighting installation?",
+      "answer": "Book early—October or early November. Popular installation dates fill quickly. Early booking ensures installation before Thanksgiving and allows time for any custom lights to arrive. Last-minute requests may not be accommodable during peak season."
+    },
+    {
+      "question": "Do you provide the lights or do I?",
+      "answer": "Either works. We can provide commercial-grade LED lights sized for your property, or we can install lights you already own. Our lights typically look better, last longer, and include warranty coverage. Using your existing lights may save money if they're in good condition."
+    },
+    {
+      "question": "How do you attach lights without damaging my home?",
+      "answer": "We use clips designed for each application—shingle clips, gutter clips, tree clips—that attach without nails or screws. When we remove lights, no damage remains. The same clips work year after year."
+    },
+    {
+      "question": "What about lights for my palm trees?",
+      "answer": "Florida palm trees look spectacular wrapped with lights! We spiral-wrap trunks and can add lights to fronds for dramatic effects. LED lights are cool-running and safe for trees. Palm lighting is one of our most popular requests."
+    },
+    {
+      "question": "Can you repair or troubleshoot existing displays?",
+      "answer": "Yes. If your existing lights have problems—burned sections, flickering, timer issues—we can troubleshoot and repair. Sometimes repair is more cost-effective than replacement; other times new lights make more sense."
+    },
+    {
+      "question": "What happens if lights stop working during the season?",
+      "answer": "Lights we provide include service during the season. If sections fail, we return to repair or replace. This is one advantage of professional service over DIY—you have support if problems occur."
+    },
+    {
+      "question": "Do you install for businesses too?",
+      "answer": "Absolutely. Commercial holiday displays are a significant part of our business. Retail stores, office buildings, restaurants, and shopping centers all benefit from professional holiday lighting that impresses customers and creates festive atmosphere."
+    },
+    {
+      "question": "What does removal service include?",
+      "answer": "We return after holidays (typically January) to carefully remove all lights and accessories, inspect for any damage, pack everything properly, label for next year, and either store on-site in your specified location or hold at our facility. Everything is ready for next season."
+    }
+  ],
+  "relatedServices": [
+    "landscape-outdoor-lighting",
+    "outdoor-waterproof-outlet-installation",
+    "indoor-outdoor-lighting-installation",
+    "led-lighting-retrofit-conversion"
+  ],
+  "seoContent": [
+    {
+      "heading": "Holiday Lighting Installation in Miami & South Florida",
+      "body": "Transform your South Florida home into a holiday spectacle without the ladder climbing, tangled lights, and frustration. Solomon Electric provides professional holiday lighting installation and removal—delivering spectacular displays safely while you enjoy the season."
+    },
+    {
+      "heading": "Commercial Holiday Displays",
+      "body": "Businesses need impressive holiday displays that project the right image. We install commercial holiday lighting for retail stores, office buildings, restaurants, and commercial properties throughout South Florida. Professional installation ensures reliability and impact."
+    },
+    {
+      "heading": "Complete Seasonal Service",
+      "body": "Our holiday lighting service handles everything: consultation and design, professional installation, timer setup, season-long support, and post-holiday removal and storage. Next year, we return and do it all again. Holiday lights without the hassle."
+    },
+    {
+      "heading": "Serving South Florida Holidays",
+      "body": "Solomon Electric installs holiday lighting throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Book early for the best installation dates—popular times fill quickly."
+    }
+  ],
+  "relatedBlogPosts": []
+}

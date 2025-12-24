@@ -1,0 +1,98 @@
+{
+    "name": "Weston",
+    "slug": "weston",
+    "county": "Broward",
+    "description": "Licensed Weston electricians serving Broward's premier master-planned city. Solomon Electric provides high-end residential and commercial electrical services, including smart home integration and safety inspections.",
+    "population": "70,000+",
+    "founded": "1996",
+    "areaSquareMiles": "27",
+    "tagline": "A World-Class City to Live, Work and Play",
+    "landmarks": [
+        "Weston Town Center",
+        "Weston Regional Park",
+        "Cleveland Clinic Florida",
+        "Library Park"
+    ],
+    "neighborhoods": [
+        "Saddle Club Estates",
+        "Savanna",
+        "Windmill Ranch Estates",
+        "The Ridges",
+        "Bonaventure",
+        "The Meadows"
+    ],
+    "majorRoads": [
+        "I-75",
+        "I-595",
+        "US-27",
+        "Weston Road",
+        "Royal Palm Boulevard"
+    ],
+    "coordinates": {
+        "lat": 26.1031,
+        "lng": -80.3959
+    },
+    "challenges": [
+        {
+            "title": "Luxury Estate Distribution",
+            "description": "Weston's high-end estates in Windmill Ranch and Saddle Club require complex electrical systems, including multiple panels, advanced lighting controls, and significant power capacity.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Strict Uniformity Codes",
+            "description": "Weston's reputation for perfection means all electrical work must be exceptionally clean, following strict municipal codes and neighborhood aesthetic requirements.",
+            "icon": "Shield"
+        },
+        {
+            "title": "Intelligent Modernization",
+            "description": "Weston residents demand the latest in smart home technology, requiring electricians who are experts in high-performance automation and energy-efficient systems.",
+            "icon": "Home"
+        }
+    ],
+    "featuredServices": [
+        "smart-home-automation",
+        "whole-home-surge-protection",
+        "smart-lighting-installation",
+        "ev-charging-system-setup",
+        "24-7-emergency-electrical-service",
+        "electrical-panel-upgrade-100a-to-200a"
+    ],
+    "stats": [
+        {
+            "value": "70K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide smart home automation services in Weston?",
+            "answer": "Yes, we specialize in high-end smart home integration for Weston residences, including lighting control, smart HVAC, and fully integrated automation ecosystems."
+        },
+        {
+            "question": "Can you handle complex electrical tasks for Weston estates?",
+            "answer": "Absolutely. We have extensive experience working on luxury properties in communities like Windmill Ranch Estates, providing 400-amp service, sophisticated lighting, and robust backup power."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Premier Weston Electricians – A World-Class Standard",
+            "body": "Weston is a city defined by excellence, from its award-winning landscaping to its top-tier corporate residents. As a community that prides itself on being 'world-class,' your home or business deserves an electrical partner who delivers that same level of quality. Solomon Electric is proud to be that choice for Weston families."
+        },
+        {
+            "heading": "Exceeding Expectations for Weston's Electrical Needs",
+            "body": "Whether you're upgrading the smart technology in your Savanna home, requiring emergency repairs near Weston Town Center, or seeking the ultimate in surge protection for your luxury estate, our licensed electricians are ready to assist. We provide clean, professional, and code-compliant work that meets the high standards Weston is known for."
+        }
+    ]
+}

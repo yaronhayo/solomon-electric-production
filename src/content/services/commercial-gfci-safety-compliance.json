@@ -1,0 +1,180 @@
+{
+  "name": "Commercial GFCI Safety Compliance",
+  "slug": "commercial-gfci-safety-compliance",
+  "description": "Commercial facilities have specific GFCI requirements that protect employees, customers, and you from liability. Solomon Electric ensures commercial GFCI compliance throughout South Florida—installing and maintaining ground fault protection in kitchens, bathrooms, outdoor areas, and all locations code requires.",
+  "shortDescription": "Commercial ground fault protection",
+  "icon": "Shield",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Commercial & Inspections",
+  "order": 47,
+  "features": [
+    "Commercial GFCI assessment",
+    "Required location installation",
+    "Circuit-level protection",
+    "Periodic testing",
+    "Code compliance documentation",
+    "Retrofit installations"
+  ],
+  "warningSignsHeading": "When Commercial GFCI Compliance Matters",
+  "warningSignsSubheading": "GFCI protection prevents shocks and demonstrates due care for safety.",
+  "problems": [
+    {
+      "title": "Kitchen and Food Prep Areas",
+      "description": "Commercial kitchens require GFCI protection near sinks and wet areas. This protects staff and meets code requirements.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Restroom Facilities",
+      "description": "All restroom outlets require GFCI protection. This applies to commercial restrooms accessed by employees and public.",
+      "icon": "Home"
+    },
+    {
+      "title": "Outdoor Receptacles",
+      "description": "All outdoor outlets at commercial properties require GFCI protection—parking areas, patios, loading docks.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Rooftop Equipment",
+      "description": "Outlets serving rooftop equipment require GFCI protection. This often-overlooked requirement applies to maintenance outlets.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Inspection or Violation",
+      "description": "Fire or building inspection cited missing GFCI protection. We correct violations and provide documentation.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Liability Concerns",
+      "description": "If someone is shocked at your property and GFCI wasn't installed where required, liability exposure increases significantly.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our Commercial GFCI Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Compliance Assessment",
+      "description": "We evaluate your facility against current GFCI requirements, identifying locations requiring protection that may not have it."
+    },
+    {
+      "step": 2,
+      "title": "Gap Identification",
+      "description": "We document specifically where GFCI protection is required but missing—with code references if needed for budget justification."
+    },
+    {
+      "step": 3,
+      "title": "Installation",
+      "description": "We install GFCI protection—either GFCI receptacles at point-of-use or GFCI breakers protecting entire circuits as appropriate."
+    },
+    {
+      "step": 4,
+      "title": "Testing and Verification",
+      "description": "We test all GFCI devices to verify proper function—both trip and reset operation."
+    },
+    {
+      "step": 5,
+      "title": "Documentation",
+      "description": "We provide documentation of GFCI installations for compliance records, inspection support, and liability protection."
+    }
+  ],
+  "benefitsHeading": "Benefits of GFCI Compliance",
+  "benefits": [
+    {
+      "title": "Life Safety",
+      "description": "GFCI protection prevents electrocution by detecting current leakage and tripping before lethal levels are reached.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "GFCI requirements are code-mandated, not optional. Proper coverage satisfies inspection requirements.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Liability Protection",
+      "description": "If electrical injuries occur, having required GFCI protection demonstrates due care. Missing protection increases exposure.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Insurance Compliance",
+      "description": "Some insurers verify GFCI compliance. Proper protection supports favorable insurance treatment.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "200+",
+      "label": "Commercial GFCI Projects"
+    },
+    {
+      "value": "100%",
+      "label": "Code Compliant"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Where does commercial code require GFCI?",
+      "answer": "Required locations include: kitchen areas within 6 feet of sinks, restrooms, rooftops, outdoors, garages/service bays, near pools/hot tubs, and more. Specific requirements depend on building type and use. We identify all required locations for your facility."
+    },
+    {
+      "question": "What's the difference between GFCI outlets and breakers?",
+      "answer": "GFCI outlets protect that outlet and potentially downstream outlets. GFCI breakers protect entire circuits including all wiring and connected devices. For commercial, breakers often provide more comprehensive protection and easier testing."
+    },
+    {
+      "question": "How often should commercial GFCI be tested?",
+      "answer": "Monthly testing is recommended—press test button, verify trip, press reset. Some facilities require documented testing. We can provide periodic testing services or train your staff on proper testing procedures."
+    },
+    {
+      "question": "Can GFCI cause nuisance tripping?",
+      "answer": "GFCI trips when it detects current leakage—sometimes from equipment with normal leakage (old refrigerators, certain tools). If tripping is frequent, the solution may be equipment repair, dedicated circuits, or addressing actual leakage issues."
+    },
+    {
+      "question": "Are older buildings exempt from GFCI requirements?",
+      "answer": "Existing non-compliant installations may be grandfathered, but modifications trigger current code requirements. Additionally, life safety considerations may warrant GFCI installation even when not strictly required. We clarify what's legally required vs. recommended."
+    },
+    {
+      "question": "What about tenant spaces in commercial buildings?",
+      "answer": "Each tenant space should have GFCI protection in required locations. Responsibility (landlord vs. tenant) depends on lease terms. We work with both property managers and tenants to ensure proper protection."
+    },
+    {
+      "question": "Can you provide testing documentation for inspections?",
+      "answer": "Yes. We document GFCI installations with locations, dates, and test verification. This documentation supports fire marshal inspections, insurance audits, and compliance records."
+    },
+    {
+      "question": "What if GFCI keeps tripping in our commercial kitchen?",
+      "answer": "Kitchen GFCI tripping usually indicates moisture issues, equipment problems, or circuit overloads. We diagnose the cause—it may be equipment needing repair, circuit reorganization, or addressing moisture intrusion."
+    }
+  ],
+  "relatedServices": [
+    "gfci-outlet-installation-repair",
+    "electrical-code-compliance-audit",
+    "electrical-safety-inspection",
+    "exit-emergency-lighting-systems"
+  ],
+  "seoContent": [
+    {
+      "heading": "Commercial GFCI Compliance in South Florida",
+      "body": "Commercial facilities have specific GFCI requirements protecting employees, customers, and limiting liability. Solomon Electric ensures GFCI compliance throughout Miami-Dade and Broward counties—installing ground fault protection in kitchens, restrooms, outdoor areas, and all required locations."
+    },
+    {
+      "heading": "Required GFCI Locations",
+      "body": "Commercial GFCI requirements include kitchen areas near sinks, all restrooms, outdoor outlets, rooftop receptacles, garages, and more. We assess your facility against current code and identify any gaps in required protection."
+    },
+    {
+      "heading": "Liability and Code Compliance",
+      "body": "Missing GFCI protection increases liability if electrical injuries occur at your property. GFCI is code-mandated safety equipment, not optional enhancement. Proper compliance demonstrates due care and satisfies inspectors."
+    },
+    {
+      "heading": "Serving South Florida Commercial Properties",
+      "body": "Solomon Electric provides commercial GFCI compliance services throughout Miami, Fort Lauderdale, Hollywood, and all surrounding commercial areas. Protect your employees, customers, and business with proper ground fault protection."
+    }
+  ],
+  "relatedBlogPosts": []
+}

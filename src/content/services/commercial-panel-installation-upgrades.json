@@ -1,0 +1,180 @@
+{
+  "name": "Commercial Panel Installation & Upgrades",
+  "slug": "commercial-panel-installation-upgrades",
+  "description": "Your commercial electrical panel is the heart of your business's power distribution. Solomon Electric provides commercial panel installation, upgrades, and replacements throughout South Florida—from small retail panels to large industrial distribution systems. We ensure your business has adequate capacity for current operations and future growth.",
+  "shortDescription": "Commercial electrical panel services",
+  "icon": "Zap",
+  "image": "../../assets/images/services/commercial.png",
+  "category": "Commercial & Inspections",
+  "order": 36,
+  "features": [
+    "New commercial panel installation",
+    "Service upgrades (200A-800A+)",
+    "Subpanel additions",
+    "Three-phase service installation",
+    "Load balancing and optimization",
+    "Emergency panel replacement"
+  ],
+  "warningSignsHeading": "Signs Your Business Needs Panel Work",
+  "warningSignsSubheading": "Commercial electrical capacity directly impacts business operations. Watch for these warning signs.",
+  "problems": [
+    {
+      "title": "Frequent Breaker Trips",
+      "description": "Tripping breakers interrupt operations and indicate overloaded circuits. Your panel may need upgraded capacity or better load distribution.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Business Expansion",
+      "description": "Adding equipment, HVAC, or expanding operations often exceeds existing panel capacity. Plan electrical upgrades before they limit growth.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Old or Obsolete Equipment",
+      "description": "Panels over 25-30 years old may have obsolete breakers, inadequate capacity for modern needs, or safety issues. Replacement ensures reliability.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "New Equipment Won't Fit",
+      "description": "When your panel has no more space for new circuits, options include adding subpanels or upgrading to larger main panels.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Three-Phase Requirements",
+      "description": "New commercial equipment often requires three-phase power. Upgrading from single-phase involves significant electrical service changes.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Tenant Build-Out Needs",
+      "description": "Preparing commercial space for new tenants often requires panel work—new subpanels, meter separation, or capacity upgrades.",
+      "icon": "Home"
+    }
+  ],
+  "processHeading": "Our Commercial Panel Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Load Analysis",
+      "description": "We calculate your current electrical load and projected future needs, determining exactly what panel capacity your business requires."
+    },
+    {
+      "step": 2,
+      "title": "Utility Coordination",
+      "description": "Commercial service upgrades require utility coordination. We work with FPL to plan service entrance changes and meter upgrades."
+    },
+    {
+      "step": 3,
+      "title": "Permitting",
+      "description": "We handle all commercial electrical permit applications and ensure designs meet Florida electrical code requirements."
+    },
+    {
+      "step": 4,
+      "title": "Scheduled Installation",
+      "description": "We coordinate installation to minimize business disruption—often working during off-hours or scheduling planned outages."
+    },
+    {
+      "step": 5,
+      "title": "Inspection and Commissioning",
+      "description": "We coordinate required inspections, verify all systems, and ensure your new panel is ready for reliable operation."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Commercial Panel Work",
+  "benefits": [
+    {
+      "title": "Adequate Capacity",
+      "description": "Properly sized commercial panels handle your current needs with room for growth. No more limiting business operations because of electrical constraints.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Reliable Operations",
+      "description": "New panels with modern breakers provide reliable power distribution without nuisance trips or equipment damage from electrical issues.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "Commercial electrical work requires permits and inspections. Professional installation ensures compliance with safety codes and insurance requirements.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Minimal Disruption",
+      "description": "We plan installations to minimize business impact—scheduling around your operations and completing work efficiently.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "100+",
+      "label": "Commercial Projects"
+    },
+    {
+      "value": "15+",
+      "label": "Years Commercial Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Response"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I know if my commercial panel needs upgrading?",
+      "answer": "Signs include: frequent breaker trips, panel at full capacity (no room for new circuits), planning to add significant equipment or HVAC, panel over 25 years old, or utility company flagging capacity issues. We can perform a load analysis to determine if upgrading makes sense."
+    },
+    {
+      "question": "What's the difference between single-phase and three-phase service?",
+      "answer": "Single-phase service (common in smaller commercial) delivers power on two hot wires. Three-phase service uses three hot wires, providing more power delivery and the ability to run three-phase motors directly. Larger commercial equipment often requires three-phase power."
+    },
+    {
+      "question": "How long will installation take and will I lose power?",
+      "answer": "Timeline depends on project scope—simple panel changeouts may take a day, while service upgrades with utility work extend to weeks. Some work requires planned outages, but we minimize duration and often work during off-hours. We provide detailed schedules before starting."
+    },
+    {
+      "question": "Do commercial panels require permits?",
+      "answer": "Yes. All commercial electrical work in Florida requires permits and inspections. We handle all permitting and inspection coordination, ensuring your installation is legal and meets all code requirements."
+    },
+    {
+      "question": "Can you add a subpanel instead of replacing my main panel?",
+      "answer": "Often, yes. If your main panel has capacity but no physical space for new breakers, a subpanel provides additional circuit space. However, if the main panel itself is at capacity, a subpanel doesn't help—you need a main panel upgrade."
+    },
+    {
+      "question": "What about generator connections for my business?",
+      "answer": "Commercial generator installations require transfer switches integrated with your panel system. We can configure panels for generator connection, install automatic transfer switches, and ensure your critical circuits receive backup power during outages."
+    },
+    {
+      "question": "Do you work with FPL on service upgrades?",
+      "answer": "Yes. Commercial service upgrades require utility coordination—FPL must upgrade transformers, meters, and service drops for larger service sizes. We manage this coordination as part of our service, handling communication with FPL and scheduling their work."
+    },
+    {
+      "question": "What size panel does my business need?",
+      "answer": "Panel sizing depends on your electrical load—HVAC, lighting, equipment, and future growth plans. Common commercial sizes range from 200-800 amps (or larger for industrial). We perform load calculations to determine the right size for your specific needs."
+    }
+  ],
+  "relatedServices": [
+    "three-phase-power-installation",
+    "tenant-build-out-electrical-work",
+    "emergency-power-system-design",
+    "commercial-ev-charging-infrastructure"
+  ],
+  "seoContent": [
+    {
+      "heading": "Commercial Panel Installation in South Florida",
+      "body": "Solomon Electric provides commercial electrical panel services throughout Miami-Dade and Broward counties. Whether you need new panel installation, service upgrades, subpanel additions, or emergency panel replacement, our licensed electricians deliver reliable commercial electrical solutions for businesses of all sizes."
+    },
+    {
+      "heading": "Commercial Service Upgrades",
+      "body": "Growing businesses need growing electrical capacity. We upgrade commercial service from inadequate panels to properly sized systems—coordinating with FPL for utility work, handling all permits, and minimizing operational disruption. From 200-amp retail upgrades to 800-amp industrial installations, we have the experience."
+    },
+    {
+      "heading": "Three-Phase Power Installation",
+      "body": "Industrial equipment, large HVAC systems, and commercial machinery often require three-phase power. We install complete three-phase service including utility coordination, panel installation, and equipment connections. Upgrading from single-phase opens possibilities for equipment that wasn't previously feasible."
+    },
+    {
+      "heading": "Serving South Florida Businesses",
+      "body": "Solomon Electric provides commercial panel services throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding areas. From small retail spaces to large industrial facilities, we deliver commercial electrical solutions that power your business."
+    }
+  ],
+  "relatedBlogPosts": []
+}

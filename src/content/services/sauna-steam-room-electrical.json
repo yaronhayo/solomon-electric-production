@@ -1,0 +1,180 @@
+{
+  "name": "Sauna & Steam Room Electrical",
+  "slug": "sauna-steam-room-electrical",
+  "description": "Installing a sauna or steam room requires specialized electrical work. The combination of high heat, high humidity, and high power demands specific wiring methods, equipment ratings, and safety considerations. Solomon Electric provides professional sauna and steam room electrical installation throughout South Florida—ensuring your wellness installation operates safely and reliably.",
+  "shortDescription": "Sauna and steam electrical specialists",
+  "icon": "Flame",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Outlets, Switches & Wiring",
+  "order": 58,
+  "features": [
+    "Sauna heater wiring",
+    "Steam generator connection",
+    "Dedicated circuits",
+    "High-temperature rated wiring",
+    "Proper disconnect installation",
+    "Humidity-rated equipment"
+  ],
+  "warningSignsHeading": "Sauna & Steam Electrical Requirements",
+  "warningSignsSubheading": "These installations combine extreme conditions with high power—requiring specialized electrical approach.",
+  "problems": [
+    {
+      "title": "High Power Requirements",
+      "description": "Sauna heaters and steam generators draw significant power—typically 30-60 amps at 240V. Dedicated circuits sized for equipment ratings are essential.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Extreme Heat Exposure",
+      "description": "Saunas reach 180°F+. Electrical components inside the sauna must be rated for these temperatures—standard wiring and devices fail.",
+      "icon": "Flame"
+    },
+    {
+      "title": "High Humidity Environment",
+      "description": "Steam rooms are 100% humidity. All electrical components need appropriate moisture ratings—switches outside, wet-rated if inside.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Proper Disconnect Required",
+      "description": "Code requires visible disconnects for sauna heaters and steam generators. We install disconnects where required for safe operation.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Control System Wiring",
+      "description": "Sauna controls—timers, thermostats, low-voltage components—require proper wiring separate from power circuits.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Existing Panel Capacity",
+      "description": "Large heaters may exceed available panel capacity. We assess your panel and upgrade if necessary before installation.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Sauna/Steam Electrical Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Equipment Review",
+      "description": "We review your sauna or steam generator specifications to determine exact electrical requirements—voltage, amperage, and control needs."
+    },
+    {
+      "step": 2,
+      "title": "Panel Assessment",
+      "description": "We verify your panel can support additional load and determine if panel upgrade or new circuit installation is needed."
+    },
+    {
+      "step": 3,
+      "title": "Circuit Installation",
+      "description": "We install dedicated circuits with appropriate wire sizing, conduit where required, and high-temperature wire where needed."
+    },
+    {
+      "step": 4,
+      "title": "Disconnect and Connection",
+      "description": "We install required disconnects, connect to heater/generator terminals, and install control wiring."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Verification",
+      "description": "We test complete system operation, verify proper heating/steam generation, and ensure all safety devices function correctly."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Sauna Electrical",
+  "benefits": [
+    {
+      "title": "Safety",
+      "description": "High power, high heat, and high humidity create serious hazards if installed incorrectly. Professional installation ensures safe operation.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Code Compliance",
+      "description": "Sauna and steam electrical has specific code requirements. Professional installation meets NEC requirements for these specialized installations.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Reliable Operation",
+      "description": "Properly sized circuits and rated components ensure your wellness investment operates reliably for years.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Warranty Protection",
+      "description": "Equipment warranties typically require professional electrical installation. Protect your investment with proper installation.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "50+",
+      "label": "Sauna/Steam Installs"
+    },
+    {
+      "value": "100%",
+      "label": "Code Compliant"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What electrical does a sauna heater need?",
+      "answer": "Most residential sauna heaters require 240V, 30-50 amp circuits. Larger commercial saunas may need multiple heaters or higher amperage. Exact requirements are on heater specifications—we match wiring to manufacturer requirements."
+    },
+    {
+      "question": "Can my existing panel handle a sauna?",
+      "answer": "It depends on current panel capacity and existing loads. Many panels can accommodate sauna circuits. Older or heavily loaded panels may need upgrade. We assess capacity before providing installation quote."
+    },
+    {
+      "question": "What about lighting in the sauna?",
+      "answer": "Sauna lighting requires high-temperature rated fixtures specifically designed for sauna use. Standard fixtures fail quickly in sauna heat. We install fixtures rated for the extreme temperatures inside saunas."
+    },
+    {
+      "question": "Does steam room electrical differ from sauna?",
+      "answer": "Steam generators are outside the steam room (away from moisture), so electrical exposure is less extreme. However, any electrical inside the steam room needs wet-location rating. Overall, steam room electrical is somewhat less demanding than sauna."
+    },
+    {
+      "question": "Where does the sauna disconnect go?",
+      "answer": "Code requires visible disconnect within sight of the heater. This is typically mounted outside the sauna room but visible through a window or adjacent to the door. We install disconnects meeting code requirements."
+    },
+    {
+      "question": "What wire rating is needed for saunas?",
+      "answer": "Wiring inside sauna enclosures must be rated for high temperature. Standard NM ('Romex') cables can't handle sauna heat. We use THHN in conduit or other appropriately rated wiring methods inside heated areas."
+    },
+    {
+      "question": "Can I convert an existing room to a sauna?",
+      "answer": "Yes, with appropriate modifications. Electrical needs include dedicated heater circuit, proper disconnect, temperature-rated interior wiring, and sauna-rated lighting. We can handle the electrical portion of sauna conversion projects."
+    },
+    {
+      "question": "Do infrared saunas have different requirements?",
+      "answer": "Infrared saunas operate at lower temperatures and often lower power than traditional saunas. Many plug into standard 120V outlets or need simple 240V circuits. Requirements vary by unit—we match installation to your specific infrared sauna specs."
+    }
+  ],
+  "relatedServices": [
+    "hot-tub-spa-installation",
+    "240v-outlet-installation",
+    "electrical-panel-upgrade-100a-to-200a",
+    "gfci-outlet-installation-repair"
+  ],
+  "seoContent": [
+    {
+      "heading": "Sauna & Steam Room Electrical in South Florida",
+      "body": "Installing a sauna or steam room requires specialized electrical work. Solomon Electric provides professional sauna and steam room electrical installation throughout Miami-Dade and Broward counties—ensuring your wellness installation operates safely with proper wiring, disconnects, and code-compliant installation."
+    },
+    {
+      "heading": "High-Temperature Electrical Requirements",
+      "body": "Saunas reach temperatures exceeding 180°F—beyond what standard wiring and fixtures can handle. We install high-temperature rated wiring inside sauna enclosures and sauna-rated lighting fixtures designed for the extreme heat environment."
+    },
+    {
+      "heading": "Steam Generator Electrical Connection",
+      "body": "Steam generators require dedicated 240V circuits sized for their power output. While generators install outside the steam room, proper electrical connection ensures reliable steam generation for your home spa experience."
+    },
+    {
+      "heading": "Serving South Florida Wellness Installations",
+      "body": "Solomon Electric provides sauna and steam room electrical throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Trust specialists for your home wellness installation electrical needs."
+    }
+  ],
+  "relatedBlogPosts": []
+}

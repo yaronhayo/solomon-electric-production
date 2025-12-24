@@ -1,6 +1,7 @@
 ---
-const { post } = Astro.props;
 import { Image } from "astro:assets";
+import { ArrowRight } from "lucide-astro";
+const { post } = Astro.props;
 import { formatDate, calculateReadingTime } from "../utils/blog";
 
 const readingTime = post.body ? calculateReadingTime(post.body) : 5;
@@ -8,18 +9,24 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
 
 <a
     href={`/blog/${post.slug}`}
-    class="group bg-white border border-gray-100 rounded-2xl hover:border-accent hover:shadow-lg transition-all duration-300 overflow-hidden block shadow-sm"
+    class="group bg-[var(--bg-surface)] border border-[var(--border-light)] rounded-[var(--radius-xl)] hover:border-[var(--border-focus)] hover:shadow-[var(--shadow-brand)] transition-all duration-[var(--transition-slow)] overflow-hidden block shadow-[var(--shadow-sm)]"
 >
     <!-- Featured Image -->
     {
         post.data.image && (
-            <div class="relative h-48 md:h-56 overflow-hidden bg-gray-100">
+            <div
+                class="relative overflow-hidden bg-[var(--bg-surface-hover)]"
+                style="aspect-ratio: 16/9;"
+            >
                 <Image
                     src={post.data.image}
                     alt={post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={600}
+                    height={338}
+                    loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[var(--transition-slow)]"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-[var(--transition-base)]" />
 
                 {post.data.featured && (
                     <span class="absolute top-4 left-4 bg-accent text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
@@ -30,37 +37,40 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
         )
     }
 
-    <div class="p-6 md:p-8">
-        <!-- Category & Reading Time -->
-        <div
-            class="flex items-center gap-4 mb-4 text-xs text-gray-500 font-bold uppercase tracking-wider"
-        >
-            <span class="text-accent">{post.data.category}</span>
-            <span>•</span>
-            <span>{readingTime} min read</span>
+    <div class="p-[var(--spacing-lg)] md:p-[var(--spacing-xl)]">
+        <div class="flex items-center justify-between mb-4">
+            <div
+                class="flex items-center gap-[var(--gap-md)] mb-4 text-xs text-[var(--text-muted)] font-bold uppercase tracking-wider"
+            >
+                <span class="text-accent">{post.data.category}</span>
+                <span>•</span>
+                <span>{readingTime} min read</span>
+            </div>
         </div>
 
         <!-- Title -->
         <h3
-            class="text-xl md:text-2xl font-black text-primary mb-3 tracking-tight group-hover:text-accent transition-colors line-clamp-2 uppercase font-display"
+            class="text-xl md:text-2xl font-black text-primary mb-3 tracking-tight group-hover:text-accent transition-colors duration-[var(--transition-base)] line-clamp-2 uppercase font-display"
         >
             {post.data.title}
         </h3>
 
         <!-- Excerpt -->
-        <p class="text-gray-600 mb-6 line-clamp-3 leading-relaxed font-medium">
+        <p
+            class="text-[var(--text-body)] mb-6 line-clamp-3 leading-relaxed font-medium"
+        >
             {post.data.excerpt || post.data.description}
         </p>
 
         <!-- Meta Info -->
         <div class="flex items-center justify-between text-sm">
-            <span class="text-gray-500 font-medium">
+            <span class="text-[var(--text-muted)] font-medium">
                 {formatDate(post.data.pubDate)}
             </span>
             <span
-                class="text-accent font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-300 flex items-center"
+                class="text-accent font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-[var(--transition-base)] flex items-center"
             >
-                Read More <span class="ml-2">→</span>
+                Read More <ArrowRight class="w-4 h-4 ml-2" />
             </span>
         </div>
     </div>

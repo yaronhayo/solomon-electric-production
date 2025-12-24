@@ -1,0 +1,103 @@
+{
+    "name": "Miami",
+    "slug": "miami",
+    "county": "Miami-Dade",
+    "description": "Premier licensed electricians serving the City of Miami, Florida. Solomon Electric provides 24/7 professional electrical services for Miami's diverse neighborhoods, from high-rise condos in Brickell to historic homes in Coconut Grove.",
+    "population": "450,000+",
+    "founded": "1896",
+    "areaSquareMiles": "36",
+    "tagline": "The Magic City",
+    "landmarks": [
+        "Vizcaya Museum & Gardens",
+        "Bayfront Park",
+        "Freedom Tower",
+        "Miami Tower",
+        "Calle Ocho"
+    ],
+    "neighborhoods": [
+        "Brickell",
+        "Coconut Grove",
+        "Little Havana",
+        "Wynwood",
+        "Coral Way",
+        "Edgewater",
+        "Design District",
+        "Overtown",
+        "Shenandoah",
+        "The Roads"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Biscayne Blvd (US-1)",
+        "Brickell Avenue",
+        "SE 8th Street (Calle Ocho)",
+        "NW 27th Avenue"
+    ],
+    "coordinates": {
+        "lat": 25.7617,
+        "lng": -80.1918
+    },
+    "challenges": [
+        {
+            "title": "High-Rise Electrical Systems",
+            "description": "Miami's skyline requires specialized knowledge of high-voltage distribution, conduit systems, and fire safety codes for multi-story residential and commercial buildings.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Coastal Corrosion & Humidity",
+            "description": "Miami's proximity to the Atlantic means salt air and high humidity constantly threaten electrical connections. We use high-grade materials to prevent premature failure.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Historic District Preservation",
+            "description": "Neighborhoods like Coconut Grove and Shenandoah feature historic homes with delicate architecture and antiquated wiring that require expert, non-invasive retrofitting.",
+            "icon": "Home"
+        }
+    ],
+    "featuredServices": [
+        "condo-electrical-upgrades-miami",
+        "24-7-emergency-electrical-service",
+        "ev-charging-system-setup",
+        "recessed-lighting-installation",
+        "electrical-panel-upgrade-100a-to-200a",
+        "smart-home-automation"
+    ],
+    "stats": [
+        {
+            "value": "450K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide electrical services for condos in Brickell and Edgewater?",
+            "answer": "Yes, we are experts in condo electrical work. We understand the specific rules of Miami's high-rise buildings, including working with building management, meeting insurance requirements, and navigating vertical electrical systems."
+        },
+        {
+            "question": "Are your electricians available for emergency calls in Wynwood and Little Havana?",
+            "answer": "We offer true 24/7 emergency service throughout the entire City of Miami. Whether it's a commercial power outage in Wynwood or a residential sparking outlet in Little Havana, our technicians respond immediately."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Miami's Premier Licensed Electricians",
+            "body": "Miami—The Magic City—is a global hub of culture, business, and innovation. From the glittering towers of Brickell to the lush canopy of Coconut Grove, Miami's electrical needs are as diverse as its people. Solomon Electric is proud to be a trusted provider for Miami's homeowners and entrepreneurs, delivering the professional expertise needed in a world-class city."
+        },
+        {
+            "heading": "Professional Electrical Solutions for Every Miami Neighborhood",
+            "body": "Whether you're modernizing a boutique in the Design District, upgrading a luxury condo in Edgewater, or restoring the safe power of a family home in Coral Way, Solomon Electric brings 15 years of experience to every project. We understand Miami's strict building codes and unique environmental challenges, ensuring your electrical system is safe, efficient, and ready for the future."
+        }
+    ]
+}

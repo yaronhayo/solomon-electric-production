@@ -2,7 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/ui/Container.astro";
 import Button from "../components/ui/Button.astro";
+import CtaButton from "../components/ui/CtaButton.astro";
 import { SITE_CONFIG } from "../config/site";
+import { Home } from "lucide-astro";
 ---
 
 <Layout
@@ -29,22 +31,60 @@ import { SITE_CONFIG } from "../config/site";
             <h2
                 class="text-2xl md:text-4xl font-black text-primary uppercase mb-6"
             >
-                Page Not Found
+                This Page Took a Wrong Turn
             </h2>
             <p
-                class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+                class="text-[var(--text-body)] text-lg md:text-xl mx-auto mb-12 leading-relaxed"
             >
-                The page you are looking for might have been removed, had its
-                name changed, or is temporarily unavailable.
+                Don't worry—you're still in the right place for electrical help.
+                The page you were looking for may have moved, but our team is
+                still here 24/7 ready to solve your electrical problems.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <Button href="/" variant="primary" size="lg">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <CtaButton
+                    action="call"
+                    variant="primary"
+                    size="lg"
+                    text="Emergency Service"
+                />
+                <Button href="/" variant="secondary" size="lg" class="gap-2">
+                    <Home class="w-5 h-5" />
                     Return Home
                 </Button>
-                <Button href="/contact" variant="secondary" size="lg">
-                    Contact Us
-                </Button>
+            </div>
+
+            <div class="border-t border-gray-200 pt-12">
+                <p
+                    class="text-gray-500 font-medium mb-6 uppercase tracking-wide text-sm"
+                >
+                    Or explore our most popular services:
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a
+                        href="/services/electrical-panel-upgrade-100a-to-200a"
+                        class="text-primary hover:text-accent font-bold underline decoration-accent/30 hover:decoration-accent transition-all"
+                        >Panel Upgrades</a
+                    >
+                    <span class="text-gray-300">•</span>
+                    <a
+                        href="/services/level-2-ev-charger-installation"
+                        class="text-primary hover:text-accent font-bold underline decoration-accent/30 hover:decoration-accent transition-all"
+                        >EV Charging</a
+                    >
+                    <span class="text-gray-300">•</span>
+                    <a
+                        href="/services/home-standby-generator-installation"
+                        class="text-primary hover:text-accent font-bold underline decoration-accent/30 hover:decoration-accent transition-all"
+                        >Generators</a
+                    >
+                    <span class="text-gray-300">•</span>
+                    <a
+                        href="/services/24-7-emergency-electrical-service"
+                        class="text-primary hover:text-accent font-bold underline decoration-accent/30 hover:decoration-accent transition-all"
+                        >24/7 Repairs</a
+                    >
+                </div>
             </div>
         </Container>
     </section>

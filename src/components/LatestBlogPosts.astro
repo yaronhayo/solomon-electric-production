@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import Button from "./ui/Button.astro";
 import Container from "./ui/Container.astro";
+import { ArrowRight } from "lucide-astro";
 
 // Get the 3 most recent blog posts
 const allPosts = await getCollection("blog");
@@ -26,19 +27,20 @@ function calculateReadingTime(content: string): number {
     <Container>
         <!-- Section Header -->
         <div class="text-center mb-16">
-            <h4
-                class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-display"
+            <p
+                class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary"
             >
-                From The Blog
-            </h4>
+                Expert Electrical Knowledge
+            </p>
             <h2
                 class="text-4xl md:text-6xl font-black text-primary mb-6 uppercase"
             >
-                Latest <span class="text-accent">Insights & Tips</span>
+                Helpful <span class="text-accent">Guides & Tips</span>
             </h2>
-            <p class="text-gray-600 text-lg font-medium">
-                Stay informed with expert electrical advice, safety tips, and
-                industry updates from our team of licensed electricians.
+            <p class="text-[var(--text-body)] text-lg font-medium">
+                Get expert electrical advice from licensed Miami electricians.
+                Learn about home safety, energy efficiency, and when to call a
+                professional.
             </p>
         </div>
 
@@ -49,75 +51,79 @@ function calculateReadingTime(content: string): number {
                     const readingTime = calculateReadingTime(post.body);
 
                     return (
-                        <a
-                            href={`/blog/${post.slug}`}
-                            class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-accent hover:shadow-lg hover:transform hover:-translate-y-2 transition-all duration-300 flex flex-col shadow-sm"
-                        >
-                            {/* Featured Image */}
-                            <div class="relative h-64 overflow-hidden bg-gray-100">
-                                {post.data.image ? (
-                                    <Image
-                                        src={post.data.image}
-                                        alt={post.data.title}
-                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                        widths={[400, 800]}
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    />
-                                ) : (
-                                    <div class="w-full h-full flex items-center justify-center">
-                                        <svg
-                                            class="w-16 h-16 text-gray-300"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M13 10V3L4 14h7v7l9-11h-7z"
-                                            />
-                                        </svg>
+                        <article class="h-full">
+                            <a
+                                href={`/blog/${post.slug}`}
+                                class="group bg-[var(--bg-surface)] border border-[var(--border-light)] rounded-[var(--radius-xl)] overflow-hidden hover:border-[var(--border-focus)] hover:shadow-[var(--shadow-brand)] hover:transform hover:-translate-y-2 transition-all duration-[var(--transition-base)] flex flex-col h-full shadow-[var(--shadow-sm)]"
+                            >
+                                <div
+                                    class="relative overflow-hidden bg-[var(--bg-surface-hover)]"
+                                    style="aspect-ratio: 16/9;"
+                                >
+                                    {post.data.image ? (
+                                        <Image
+                                            src={post.data.image}
+                                            alt={post.data.title}
+                                            width={600}
+                                            height={338}
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[var(--transition-slow)]"
+                                            loading="lazy"
+                                        />
+                                    ) : (
+                                        <div class="w-full h-full flex items-center justify-center">
+                                            <svg
+                                                class="w-16 h-16 text-gray-300"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                                                />
+                                            </svg>
+                                        </div>
+                                    )}
+                                    {/* Reading Time Badge */}
+                                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-gray-100">
+                                        {readingTime} min read
                                     </div>
-                                )}
-                                {/* Reading Time Badge */}
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-gray-100">
-                                    {readingTime} min read
                                 </div>
-                            </div>
 
-                            {/* Content */}
-                            <div class="p-6 md:p-8 flex flex-col flex-grow">
-                                {/* Date */}
-                                <time class="text-accent text-sm font-bold mb-3 block uppercase tracking-wide">
-                                    {new Date(
-                                        post.data.pubDate,
-                                    ).toLocaleDateString("en-US", {
-                                        month: "long",
-                                        day: "numeric",
-                                        year: "numeric",
-                                    })}
-                                </time>
+                                {/* Content */}
+                                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                                    {/* Date */}
+                                    <time class="text-accent text-sm font-bold mb-3 block uppercase tracking-wide">
+                                        {new Date(
+                                            post.data.pubDate,
+                                        ).toLocaleDateString("en-US", {
+                                            month: "long",
+                                            day: "numeric",
+                                            year: "numeric",
+                                            timeZone: "America/New_York",
+                                        })}
+                                    </time>
 
-                                {/* Title */}
-                                <h3 class="text-xl md:text-2xl font-black text-primary mb-4 group-hover:text-accent transition-colors line-clamp-2 leading-tight uppercase font-display">
-                                    {post.data.title}
-                                </h3>
+                                    {/* Title */}
+                                    <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 tracking-tight group-hover:text-accent transition-colors duration-[var(--transition-base)] line-clamp-2 uppercase font-secondary">
+                                        {post.data.title}
+                                    </h3>
 
-                                {/* Excerpt */}
-                                <p class="text-gray-600 leading-relaxed line-clamp-3 mb-6 flex-grow font-medium">
-                                    {post.data.description}
-                                </p>
+                                    {/* Excerpt */}
+                                    <p class="text-[var(--text-body)] leading-relaxed line-clamp-3 mb-6 flex-grow font-medium">
+                                        {post.data.description}
+                                    </p>
 
-                                {/* Read More Link */}
-                                <span class="inline-flex items-center text-accent font-bold uppercase tracking-widest text-sm group-hover:gap-3 transition-all duration-300">
-                                    Read Article{" "}
-                                    <span class="ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                                        →
+                                    {/* Read More Link */}
+                                    <span class="inline-flex items-center text-accent-text font-bold uppercase tracking-widest text-sm group-hover:gap-3 transition-all duration-[var(--transition-base)]">
+                                        Read Article{" "}
+                                        <ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-[var(--transition-base)]" />
                                     </span>
-                                </span>
-                            </div>
-                        </a>
+                                </div>
+                            </a>
+                        </article>
                     );
                 })
             }
@@ -128,8 +134,11 @@ function calculateReadingTime(content: string): number {
             <Button
                 href="/blog"
                 variant="primary"
-                class="px-12 py-5 text-lg font-black">View All Articles</Button
+                class="px-12 py-5 text-lg font-black flex items-center gap-2"
             >
+                View All Articles
+                <ArrowRight class="w-5 h-5" />
+            </Button>
         </div>
     </Container>
 </section>

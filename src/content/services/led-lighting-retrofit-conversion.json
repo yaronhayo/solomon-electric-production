@@ -1,0 +1,180 @@
+{
+  "name": "LED Lighting Retrofit & Conversion",
+  "slug": "led-lighting-retrofit-conversion",
+  "description": "Upgrade your South Florida home to energy-efficient LED lighting. Solomon Electric converts fluorescent fixtures, replaces outdated incandescent setups, and retrofits can and track lighting to modern LED—reducing energy consumption by 75% while improving light quality. LED lighting lasts 25,000+ hours, eliminating frequent bulb changes.",
+  "shortDescription": "Energy-efficient LED upgrades",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 26,
+  "features": [
+    "Fluorescent to LED conversion",
+    "Recessed light LED retrofit",
+    "Track lighting LED upgrade",
+    "Dimmable LED solutions",
+    "Color temperature selection",
+    "Whole-home LED packages"
+  ],
+  "warningSignsHeading": "Is Your Home Ready for LED?",
+  "warningSignsSubheading": "If you're still using older lighting technology, LED conversion offers immediate benefits.",
+  "problems": [
+    {
+      "title": "Frequent Bulb Burnouts",
+      "description": "Tired of constantly replacing incandescent or halogen bulbs? LED bulbs last 15-25 years of typical use—set and forget.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Flickering Fluorescent Tubes",
+      "description": "Old fluorescent lights flicker, buzz, and produce harsh, unflattering light. LED tubes or retrofit fixtures solve all these problems.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Hot Halogen Fixtures",
+      "description": "Halogen track lights and recessed cans generate significant heat—adding to AC load. LED replacements run cool.",
+      "icon": "Flame"
+    },
+    {
+      "title": "High Electricity Bills",
+      "description": "Older lighting can account for 10-15% of home electricity use. LED conversion cuts this by 75-80%.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Poor Light Quality",
+      "description": "Old CFL and fluorescent lights have poor color rendering—everything looks dull. Modern LEDs provide excellent color quality.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Dimming Issues",
+      "description": "Old bulbs and incompatible dimmers cause flickering and limited range. We install LED-compatible dimmers with smooth operation.",
+      "icon": "Plug"
+    }
+  ],
+  "processHeading": "Our LED Retrofit Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Lighting Assessment",
+      "description": "We evaluate your current lighting—fixture types, bulb counts, control methods—and identify the best LED solutions for each application."
+    },
+    {
+      "step": 2,
+      "title": "Product Selection",
+      "description": "We recommend appropriate LED products: retrofit kits, tube replacements, or new fixtures, with color temperature and brightness matched to each room's needs."
+    },
+    {
+      "step": 3,
+      "title": "Dimmer Compatibility",
+      "description": "If you have dimmers, we verify compatibility and upgrade dimmer switches when needed for smooth LED dimming."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "We install LED products properly—ballast bypass for tubes, retrofit kits for cans, or complete fixture replacement as appropriate."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Adjustment",
+      "description": "We test all lights, verify dimming operation, and ensure consistent color temperature throughout your home."
+    }
+  ],
+  "benefitsHeading": "Benefits of LED Conversion",
+  "benefits": [
+    {
+      "title": "Dramatic Energy Savings",
+      "description": "LED uses 75% less energy than incandescent and 50% less than fluorescent. The savings add up quickly and continue for decades of LED lifespan.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Long-Lasting Performance",
+      "description": "Quality LEDs last 25,000-50,000 hours—15-25 years of typical home use. Install once and forget about bulb changes for decades.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Better Light Quality",
+      "description": "Modern LEDs produce excellent color rendering, instant-on brightness, and consistent light quality throughout their lifespan—no warm-up time or end-of-life dimming.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Cooler Operation",
+      "description": "LEDs convert energy to light, not heat. This reduces cooling load in Florida homes and eliminates the fire risk of hot halogen fixtures.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "75%",
+      "label": "Energy Reduction"
+    },
+    {
+      "value": "25K+",
+      "label": "LED Hour Lifespan"
+    },
+    {
+      "value": "500+",
+      "label": "Homes Converted"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does LED retrofit mean?",
+      "answer": "LED retrofit means converting existing fixtures to LED without replacing the entire fixture. For recessed cans, this often means installing retrofit kits that replace the bulb and trim. For fluorescent fixtures, it may mean LED tubes with ballast bypass. Retrofit is typically more cost-effective than complete fixture replacement."
+    },
+    {
+      "question": "What color temperature should I choose?",
+      "answer": "LED color temperature affects ambiance: Warm white (2700K) is similar to incandescent—cozy for living rooms and bedrooms. Neutral white (3000K) is versatile for most spaces. Cool white (4000K) is crisp and energizing—good for kitchens and workspaces. We help you select appropriate temperatures for each area."
+    },
+    {
+      "question": "Will my existing dimmers work with LED?",
+      "answer": "Often not. Older dimmers designed for incandescent bulbs can cause LED flickering, buzzing, and limited dimming range. We assess your dimmers and upgrade to LED-compatible models when needed for smooth, quiet operation."
+    },
+    {
+      "question": "Can fluorescent fixtures be converted to LED?",
+      "answer": "Yes, with several options: LED tubes work in existing fixtures (with or without ballast modification), or we can replace fixtures entirely with LED panels or fixtures. The best approach depends on fixture condition, ceiling type, and your goals."
+    },
+    {
+      "question": "How much will LED conversion save?",
+      "answer": "A typical home converting from incandescent to LED saves $100-300+ annually on lighting electricity, depending on usage. Fluorescent-to-LED saves less but still reduces energy and eliminates tube replacement costs. LEDs typically pay for themselves within 1-2 years."
+    },
+    {
+      "question": "Are all LED bulbs the same quality?",
+      "answer": "No. Cheap LED bulbs can have poor color quality, inconsistent brightness, and shorter lifespan. We use quality LED products from reputable manufacturers that deliver consistent performance, accurate color, and rated lifespan. The small cost difference is worth the quality improvement."
+    },
+    {
+      "question": "Will LED light look different from what I'm used to?",
+      "answer": "LED light quality varies by product and color temperature. We select LEDs that match or improve upon your current lighting character. If you love warm incandescent light, we choose warm white LEDs. The transition should feel natural—just more efficient."
+    },
+    {
+      "question": "Can you convert my entire home to LED at once?",
+      "answer": "Absolutely. Whole-home LED conversion is often the most cost-effective approach—we can negotiate better pricing on materials and complete the work efficiently. Many homeowners choose whole-home conversion for consistency and to maximize savings immediately."
+    }
+  ],
+  "relatedServices": [
+    "recessed-lighting-installation",
+    "motion-sensor-dimmer-installation",
+    "commercial-led-lighting-retrofit",
+    "ceiling-fan-light-fixture-installation"
+  ],
+  "seoContent": [
+    {
+      "heading": "LED Lighting Conversion in Miami & South Florida",
+      "body": "Upgrade your South Florida home to energy-efficient LED lighting with Solomon Electric. We convert fluorescent fixtures, replace outdated incandescent setups, and retrofit existing recessed and track lighting to modern LED. Professional LED conversion reduces lighting energy consumption by 75% while dramatically improving light quality and eliminating frequent bulb changes."
+    },
+    {
+      "heading": "Fluorescent to LED Conversion",
+      "body": "Tired of flickering, buzzing fluorescent lights? We convert fluorescent fixtures to LED using tube replacements, ballast bypass, or complete fixture replacement—whichever approach makes sense for your situation. LED tubes last 50,000+ hours (vs. 20,000 for fluorescent) and provide better light quality with no startup delay."
+    },
+    {
+      "heading": "Recessed Light LED Retrofit",
+      "body": "Old recessed lights with incandescent or halogen bulbs waste energy and generate heat. We install LED retrofit kits that fit your existing cans, providing instant energy savings, cooler operation, and decades of maintenance-free lighting. Dimmable options work with new LED-compatible dimmers."
+    },
+    {
+      "heading": "Professional LED Installation Throughout South Florida",
+      "body": "Solomon Electric provides LED lighting conversion throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-fixture upgrades to complete whole-home LED conversion, we deliver energy-efficient lighting that saves money and improves your home."
+    }
+  ],
+  "relatedBlogPosts": []
+}

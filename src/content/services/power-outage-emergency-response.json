@@ -1,0 +1,182 @@
+{
+  "name": "Power Outage & Emergency Response",
+  "slug": "power-outage-emergency-response",
+  "description": "When the power goes out in your South Florida home or business, you need answers fast. Is it an FPL issue or a problem on your side? Solomon Electric provides emergency power outage response—diagnosing whether you need utility service or electrician repairs and getting your power back on as quickly as possible.",
+  "shortDescription": "Fast power restoration",
+  "icon": "Zap",
+  "image": "../../assets/images/services/emergency.png",
+  "category": "Emergency Electrical Services",
+  "order": 9,
+  "features": [
+    "Emergency power restoration",
+    "Outage diagnosis (utility vs. internal)",
+    "Breaker and panel troubleshooting",
+    "Service entrance repairs",
+    "Generator hookup assistance",
+    "FPL coordination"
+  ],
+  "warningSignsHeading": "What to Do When You Lose Power",
+  "warningSignsSubheading": "Power outages can have multiple causes. Here's how to identify what's happening.",
+  "problems": [
+    {
+      "title": "Entire House Dark",
+      "description": "If everything's out, check neighbors first. If they have power, your main breaker or service entrance may have failed. Call an electrician.",
+      "icon": "Home"
+    },
+    {
+      "title": "Partial Power",
+      "description": "Only half your house has power? This could indicate a utility leg failure or internal panel problem. Either way, you need professional diagnosis.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Single Room Out",
+      "description": "One room without power usually means a tripped breaker or GFCI. Check your panel and reset any tripped breakers. If they immediately trip again, call an electrician.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Breaker Won't Reset",
+      "description": "A breaker that trips immediately when reset indicates a short circuit or ground fault on that circuit. Don't keep trying—call an electrician to find the cause.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Power Flickers Then Fails",
+      "description": "Flickering followed by outage often indicates loose connections or failing equipment. This needs investigation before it causes fire or damage.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Storm-Related Outage",
+      "description": "After storms, power problems may be utility-side (call FPL) or damage to your service entrance (call an electrician). We can diagnose and repair storm damage.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our Emergency Response Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Immediate Diagnosis",
+      "description": "We determine whether your outage is utility-side (FPL problem) or internal (your electrical system). This critical first step determines the fastest path to restoration."
+    },
+    {
+      "step": 2,
+      "title": "Safety Assessment",
+      "description": "We check for hazardous conditions—smoke, burning smell, arcing, flooding—that require immediate attention or evacuation."
+    },
+    {
+      "step": 3,
+      "title": "Problem Location",
+      "description": "For internal problems, we trace the issue to its source—main breaker, service entrance, individual circuits, or specific equipment."
+    },
+    {
+      "step": 4,
+      "title": "Repair or Coordination",
+      "description": "We repair electrical issues on your property. If the problem is utility-side, we help you communicate effectively with FPL to expedite their response."
+    },
+    {
+      "step": 5,
+      "title": "Power Restoration",
+      "description": "We restore power safely, verify proper operation, and ensure all circuits are working correctly before leaving."
+    }
+  ],
+  "benefitsHeading": "Why Call Us for Power Outages",
+  "benefits": [
+    {
+      "title": "Fast Diagnosis",
+      "description": "Is it FPL or your electrical system? We answer this question quickly so you're not waiting for the wrong repair company.",
+      "icon": "Zap"
+    },
+    {
+      "title": "24/7 Availability",
+      "description": "Power outages don't wait for business hours. Our emergency service responds around the clock when you need help.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Complete Repairs",
+      "description": "If your electrical system is the problem, we repair it—from tripped breakers to damaged service entrances to failed panels.",
+      "icon": "Home"
+    },
+    {
+      "title": "FPL Coordination",
+      "description": "When utility repairs are needed, we help you navigate FPL communication and can make repairs on your side that enable utility reconnection.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "24/7",
+      "label": "Emergency Response"
+    },
+    {
+      "value": "60",
+      "label": "Min Avg Response"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I know if it's FPL's problem or mine?",
+      "answer": "Check your neighbors—if they're also out, it's likely FPL. If they have power but you don't, check your main breaker first. If the main breaker is on or won't reset, the problem is your electrical system. We can help diagnose either way."
+    },
+    {
+      "question": "My main breaker tripped—should I reset it?",
+      "answer": "You can try resetting once. If it immediately trips again, don't keep trying—repeated tripping can damage the breaker and indicates a fault that needs investigation. If it stays on after reset, monitor closely for any problems."
+    },
+    {
+      "question": "Why do I only have power in half my house?",
+      "answer": "Your home receives power on two 'legs' from the utility. If one leg fails (utility side) or you have a main panel problem, you'll have partial power. This needs professional diagnosis—it could be FPL or your panel."
+    },
+    {
+      "question": "Can you help during a major storm outage?",
+      "answer": "We prioritize storm damage repairs that enable FPL reconnection—service entrance repairs, weather head replacement, and panel damage. If FPL is your issue, we can help with generator hookup until power returns."
+    },
+    {
+      "question": "How fast can you respond to power emergencies?",
+      "answer": "We prioritize power outage calls and typically respond within 60-90 minutes. During major storms or widespread outages, response may take longer as we work through calls in order."
+    },
+    {
+      "question": "What if my power outage is FPL's responsibility?",
+      "answer": "We'll tell you if FPL needs to fix the problem and help you report the outage effectively. If you have generator needs while waiting for FPL, we can help with safe generator hookup."
+    },
+    {
+      "question": "Is partial power dangerous?",
+      "answer": "Partial power itself isn't immediately dangerous, but it can indicate problems that could become serious. Appliances on working circuits are typically fine, but the underlying cause should be investigated promptly to prevent further issues."
+    },
+    {
+      "question": "Why won't my GFCI reset after a power outage?",
+      "answer": "GFCI outlets can fail during power surges or when exposed to moisture. If the TEST and RESET buttons don't work, the GFCI itself may be damaged and need replacement. Check that the outlet is receiving power first (it won't reset if the circuit is dead)."
+    }
+  ],
+  "relatedServices": [
+    "24-7-emergency-electrical-service",
+    "storm-damage-electrical-repair",
+    "electrical-panel-upgrade-100a-to-200a",
+    "portable-generator-hookup"
+  ],
+  "seoContent": [
+    {
+      "heading": "Emergency Power Outage Response in South Florida",
+      "body": "When your power goes out, you need answers fast. Solomon Electric provides emergency power outage response throughout Miami-Dade and Broward counties. We quickly diagnose whether you need FPL or an electrician, then either repair your electrical system or help you navigate utility restoration."
+    },
+    {
+      "heading": "Is It FPL or Your Electrical System?",
+      "body": "The first critical question during any outage: is this a utility problem or something on your side? We answer this quickly through proper diagnosis—checking your service entrance, panel, and connections. If it's FPL, we tell you and help with generator options. If it's your system, we repair it."
+    },
+    {
+      "heading": "24/7 Emergency Electrician Available",
+      "body": "Power outages don't wait for business hours, and neither do we. Our emergency electrical service responds around the clock to help restore your power. Whether it's a tripped main breaker at midnight or storm damage on the weekend, we're available when you need us."
+    },
+    {
+      "heading": "Serving South Florida Homes and Businesses",
+      "body": "Solomon Electric provides emergency power outage response throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. When the lights go out, call the emergency electricians who can get them back on."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

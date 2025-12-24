@@ -1,0 +1,180 @@
+{
+  "name": "Level 3 DC Fast Charger Installation",
+  "slug": "level-3-dc-fast-charger-installation",
+  "description": "Level 3 DC fast chargers provide the rapid charging that highway travelers and commercial fleet operators need—adding 100+ miles of range in 20-30 minutes. Solomon Electric designs and installs DC fast charging infrastructure throughout South Florida for highway locations, fleet depots, and high-traffic commercial sites.",
+  "shortDescription": "Rapid DC fast charging",
+  "icon": "Zap",
+  "image": "../../assets/images/services/ev-charging.png",
+  "category": "EV Charging & Solar",
+  "order": 51,
+  "features": [
+    "DC fast charger installation",
+    "High-power electrical capacity",
+    "Utility coordination",
+    "Payment system setup",
+    "Network connectivity",
+    "Multiple unit installations"
+  ],
+  "warningSignsHeading": "When DC Fast Charging Makes Sense",
+  "warningSignsSubheading": "Level 3 charging serves specific use cases where speed is essential.",
+  "problems": [
+    {
+      "title": "Highway Travel Corridor",
+      "description": "Locations along major travel routes attract EV drivers who need quick charging to continue their journey. DC fast charging makes you a destination.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Fleet Operations",
+      "description": "Commercial fleets need vehicles back on the road quickly. DC fast charging minimizes downtime between delivery runs or service calls.",
+      "icon": "Zap"
+    },
+    {
+      "title": "High-Traffic Retail",
+      "description": "Retail locations where customers stay 30-60 minutes benefit from DC fast charging—enough time for significant charge during shopping.",
+      "icon": "Home"
+    },
+    {
+      "title": "Limited Dwell Time",
+      "description": "Convenience stores, fast food, and quick-service locations can't use Level 2. DC fast charging matches their customer visit duration.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Hub Depot Charging",
+      "description": "Delivery and rideshare hubs need multiple EVs charged rapidly. DC fast charging keeps fleets moving efficiently.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Competitive Differentiation",
+      "description": "Being the DC fast charging location in your area captures EV traffic that competitors without it can't serve.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our DC Fast Charger Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Site Feasibility",
+      "description": "DC fast chargers require significant power—50-350 kW per unit. We assess whether your site can support DCFC or what upgrades are needed."
+    },
+    {
+      "step": 2,
+      "title": "Utility Coordination",
+      "description": "High-power installations often require utility service upgrades, transformer work, or new service. We coordinate with FPL from the start."
+    },
+    {
+      "step": 3,
+      "title": "Design and Engineering",
+      "description": "We design complete electrical infrastructure—service entrance, switchgear, conduit routes, and charger foundations."
+    },
+    {
+      "step": 4,
+      "title": "Construction",
+      "description": "We install all electrical infrastructure leading to charger locations. Charger installation may be by manufacturer or our crews depending on brand."
+    },
+    {
+      "step": 5,
+      "title": "Commissioning",
+      "description": "We coordinate final utility connection, charger activation, network configuration, and payment system setup for operational launch."
+    }
+  ],
+  "benefitsHeading": "Benefits of DC Fast Charging",
+  "benefits": [
+    {
+      "title": "Rapid Charging",
+      "description": "Add 100+ miles of range in 20-30 minutes. Level 3 provides the speed highway travelers and fleet operators require.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Revenue Generation",
+      "description": "DCFC typically operates as paid charging. Charging fees, plus customer spending during stops, creates significant revenue opportunity.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Traffic Driver",
+      "description": "EV drivers seek DCFC locations—dedicated apps and in-car navigation direct them to you. Fast charging brings customers.",
+      "icon": "Home"
+    },
+    {
+      "title": "Future-Ready",
+      "description": "As EV adoption accelerates, DC fast charging will be essential commercial infrastructure. Early installation establishes market position.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "350",
+      "label": "kW Max Power"
+    },
+    {
+      "value": "20",
+      "label": "Min Quick Charge"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much power does a DC fast charger need?",
+      "answer": "DC fast chargers range from 50 kW to 350 kW. More power means faster charging. A 50 kW charger adds significant range per hour; a 350 kW charger can add substantial range in 10-15 minutes. Higher power requires larger electrical infrastructure."
+    },
+    {
+      "question": "What's the cost difference between Level 2 and Level 3?",
+      "answer": "Significant. Level 3 charging equipment is a major investment compared to Level 2—the equipment is specialized and the electrical infrastructure requirements are much larger. However, the rapid charging capabilities and revenue potential are also significantly higher for high-traffic commercial sites."
+    },
+    {
+      "question": "Does my site need a service upgrade?",
+      "answer": "Very likely. DC fast chargers require 50-350+ kW each—far more than most commercial services can spare. Most DCFC installations include service upgrades. We assess current capacity and plan necessary upgrades."
+    },
+    {
+      "question": "How long does installation take?",
+      "answer": "Much longer than Level 2. Utility work for service upgrades can take 3-12 months depending on transformer and line work required. After electrical infrastructure is complete, charger installation takes weeks. Plan 6-18 months for complete DCFC projects."
+    },
+    {
+      "question": "What incentives exist for DC fast charging?",
+      "answer": "Federal tax credits, FPL commercial EV programs, and state grants may offset costs. Incentive availability changes—we identify current programs during project planning. Incentives often cover 30-50% of eligible costs."
+    },
+    {
+      "question": "What brands of DC fast chargers do you install?",
+      "answer": "We work with all major DCFC manufacturers—ABB, Tritium, ChargePoint, Blink, and others. Brand selection depends on your goals: pricing, network features, reliability reputation, and customer preferences. We can recommend based on your situation."
+    },
+    {
+      "question": "Can I install multiple fast chargers?",
+      "answer": "Yes, and multi-unit sites are common for commercial destinations. We design infrastructure for multiple units with appropriate power sharing or independent circuits. Site power availability determines how many units you can support."
+    },
+    {
+      "question": "What ongoing costs should I expect?",
+      "answer": "Electrical costs (demand charges are significant), network/software fees, payment processing, maintenance, and occasional repairs. Revenue from charging typically covers costs at well-located sites. We can help you understand the economics."
+    }
+  ],
+  "relatedServices": [
+    "commercial-ev-charging-infrastructure",
+    "level-2-ev-charger-installation",
+    "three-phase-power-installation",
+    "commercial-panel-installation-upgrades"
+  ],
+  "seoContent": [
+    {
+      "heading": "Level 3 DC Fast Charger Installation in South Florida",
+      "body": "Provide the rapid charging EV drivers demand with Level 3 DC fast charging. Solomon Electric designs and installs DC fast charging infrastructure throughout South Florida for highway locations, fleet operations, and high-traffic commercial sites—delivering the 20-minute charges travelers need."
+    },
+    {
+      "heading": "High-Power Infrastructure",
+      "body": "DC fast chargers require significant electrical infrastructure—50-350 kW per unit. We design and install complete DCFC electrical systems from utility service through charger connection, coordinating with FPL for service upgrades and transformer work."
+    },
+    {
+      "heading": "Commercial and Fleet Applications",
+      "body": "Fleet operators, delivery services, and rideshare companies need EVs charged and back on the road quickly. DC fast charging at fleet depots minimizes downtime and keeps operations efficient as fleets electrify."
+    },
+    {
+      "heading": "Capturing EV Highway Traffic",
+      "body": "Solomon Electric installs DC fast charging throughout South Florida highway corridors, retail locations, and commercial properties. Position your business to capture the growing EV market with Level 3 fast charging infrastructure."
+    }
+  ],
+  "relatedBlogPosts": []
+}

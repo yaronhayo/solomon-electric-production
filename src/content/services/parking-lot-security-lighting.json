@@ -1,0 +1,180 @@
+{
+  "name": "Parking Lot & Security Lighting",
+  "slug": "parking-lot-security-lighting",
+  "description": "Well-lit parking lots protect your customers, employees, and property while reducing liability exposure. Solomon Electric designs and installs commercial parking lot lighting throughout South Florida—pole lights, wall packs, security lighting, and complete lighting systems that meet safety requirements while controlling energy costs with LED technology.",
+  "shortDescription": "Commercial parking area lighting",
+  "icon": "Lightbulb",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Commercial & Inspections",
+  "order": 60,
+  "features": [
+    "Pole-mounted parking lot lights",
+    "LED retrofit and new installation",
+    "Wall pack security lighting",
+    "Photocell and timer controls",
+    "Site lighting design",
+    "Maintenance and repair"
+  ],
+  "warningSignsHeading": "Signs Your Parking Lot Needs Attention",
+  "warningSignsSubheading": "Adequate lighting is essential for safety, security, and liability protection.",
+  "problems": [
+    {
+      "title": "Dark Areas and Shadows",
+      "description": "Poor lighting creates hiding spots for criminals and trip hazards for customers. Even lighting across your lot is essential for safety.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Outdated HID Fixtures",
+      "description": "Old metal halide and high-pressure sodium fixtures waste energy and require frequent maintenance. LED replacement cuts costs by 60-70%.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Failed Lights Not Replaced",
+      "description": "Burned-out lights reduce safety and signal neglect. Regular maintenance keeps all fixtures operational.",
+      "icon": "Lightbulb"
+    },
+    {
+      "title": "Liability Concerns",
+      "description": "Inadequate lighting is a common basis for 'premises liability' claims after crimes or accidents. Proper lighting demonstrates due care.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Customer Complaints",
+      "description": "Customers who feel unsafe won't return. Especially for evening businesses, parking lot lighting affects customer willingness to visit.",
+      "icon": "Home"
+    },
+    {
+      "title": "High Energy Costs",
+      "description": "Parking lot lighting runs many hours nightly. Old technology wastes thousands in annual energy costs that LED eliminates.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Parking Lot Lighting Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Site Assessment",
+      "description": "We evaluate your lot layout, existing infrastructure, and lighting needs—identifying dark areas and opportunities for improvement."
+    },
+    {
+      "step": 2,
+      "title": "Lighting Design",
+      "description": "We design appropriate lighting levels across your property—meeting IES recommendations while avoiding light pollution to neighbors."
+    },
+    {
+      "step": 3,
+      "title": "Product Selection",
+      "description": "We recommend appropriate fixtures—LED pole lights, wall packs, and controls—matched to your needs and budget."
+    },
+    {
+      "step": 4,
+      "title": "Installation",
+      "description": "Our crews install new poles, fixtures, wiring, and controls with minimal disruption to your business operations."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Adjustment",
+      "description": "We test complete system, adjust timers and photocells, and verify even coverage across your property."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Parking Lighting",
+  "benefits": [
+    {
+      "title": "Safety and Security",
+      "description": "Well-lit lots deter crime and prevent accidents. Adequate lighting is fundamental to safe parking environments.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Liability Protection",
+      "description": "Documenting proper lighting levels and maintenance protects you if incidents occur. Poor lighting is a common claim basis.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Energy Savings",
+      "description": "LED parking lot lights use 60-70% less energy than HID. For lots running 12+ hours nightly, savings are substantial.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Reduced Maintenance",
+      "description": "LEDs last 100,000+ hours vs. 20,000 for metal halide. No more frequent lamp replacement and parking lot closures for bucket truck access.",
+      "icon": "Zap"
+    }
+  ],
+  "stats": [
+    {
+      "value": "70%",
+      "label": "LED Energy Savings"
+    },
+    {
+      "value": "100K",
+      "label": "Hour LED Life"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much can LED parking lights save?",
+      "answer": "Typical savings are 60-70% on lighting electricity. Commercial lighting costs typically drop significantly after an LED retrofit, and the investment often pays for itself through energy and maintenance savings within a few years."
+    },
+    {
+      "question": "What light level should a parking lot have?",
+      "answer": "IES recommends 1-5 foot-candles for parking areas, with higher levels (5-10 fc) near entrances and pedestrian paths. We design to appropriate levels for your use—higher for high-crime areas or evening-primary businesses."
+    },
+    {
+      "question": "Should we retrofit existing fixtures or replace poles?",
+      "answer": "It depends on pole and fixture condition. LED retrofit kits can convert existing fixtures cost-effectively. If poles are damaged, corroded, or poorly positioned, full replacement makes more sense. We recommend the appropriate approach."
+    },
+    {
+      "question": "How should parking lot lights be controlled?",
+      "answer": "Photocells (dusk-to-dawn) are standard—lights automatically activate at dusk. Timer overrides can turn lights off late at night if the lot is closed. Some systems include motion dimming—lights dim when the lot is empty, brighten with activity."
+    },
+    {
+      "question": "What about light pollution to neighbors?",
+      "answer": "Modern fixtures include optics that direct light downward rather than outward. We select and aim fixtures to light your lot while minimizing spill to adjacent properties—important for good neighbor relations and some zoning requirements."
+    },
+    {
+      "question": "How long does installation take?",
+      "answer": "Retrofit projects converting existing poles to LED can often complete in 1-2 days. New installations with new poles take longer—typically 1-2 weeks depending on lot size. We schedule to minimize disruption to your operations."
+    },
+    {
+      "question": "Do you provide maintenance after installation?",
+      "answer": "Yes. We offer maintenance programs for commercial lighting—periodic inspection, cleaning, and rapid response for any failures. LEDs fail rarely, but when fixtures or controls need attention, we respond quickly."
+    },
+    {
+      "question": "Are there utility incentives for LED parking lights?",
+      "answer": "FPL offers rebates for commercial LED lighting retrofits. Incentives vary by fixture type and efficiency. We identify applicable incentives during project planning—often covering 20-30% of upgrade costs."
+    }
+  ],
+  "relatedServices": [
+    "commercial-led-lighting-retrofit",
+    "exit-emergency-lighting-systems",
+    "electrical-code-compliance-audit",
+    "outdoor-waterproof-outlet-installation"
+  ],
+  "seoContent": [
+    {
+      "heading": "Parking Lot Lighting Installation in South Florida",
+      "body": "Well-lit parking lots protect your customers, employees, and property. Solomon Electric designs and installs commercial parking lot lighting throughout Miami-Dade and Broward counties—LED pole lights, wall packs, and complete lighting systems that meet safety requirements while cutting energy costs."
+    },
+    {
+      "heading": "LED Parking Lot Retrofit",
+      "body": "Upgrade old metal halide and high-pressure sodium fixtures to LED. Cut lighting energy costs 60-70%, reduce maintenance dramatically, and improve light quality. LED retrofit pays for itself in 2-4 years then keeps saving for another decade."
+    },
+    {
+      "heading": "Security and Liability Protection",
+      "body": "Inadequate parking lot lighting is a common basis for premises liability claims. Proper lighting demonstrates due care for visitor safety. We design lighting meeting IES recommendations and document light levels for your records."
+    },
+    {
+      "heading": "Serving South Florida Commercial Properties",
+      "body": "Solomon Electric provides parking lot lighting services throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding commercial areas. From small retail lots to large commercial properties, we deliver parking lighting that works."
+    }
+  ],
+  "relatedBlogPosts": []
+}

@@ -1,0 +1,45 @@
+---
+import Button from "./Button.astro";
+import { Phone, Calendar } from "lucide-astro";
+import { SITE_CONFIG } from "../../config/site";
+
+interface Props {
+  action: "call" | "book" | "schedule";
+  variant?: "primary" | "secondary" | "icon";
+  size?: "lg" | "md" | "sm";
+  class?: string;
+  text?: string;
+  [x: string]: any;
+}
+
+const {
+  action,
+  variant = "primary",
+  size = "md",
+  class: className = "",
+  text,
+  ...rest
+} = Astro.props;
+
+const isCall = action === "call";
+const href = isCall
+  ? SITE_CONFIG.contact.phone.href
+  : SITE_CONFIG.contact.bookingUrl;
+
+// Default text based on action if not provided
+const defaultText = isCall
+  ? `Call ${SITE_CONFIG.contact.phone.display}`
+  : "Schedule Service";
+const label = text || defaultText;
+---
+
+<Button
+  href={href}
+  variant={variant}
+  size={size}
+  class={`flex items-center gap-2 ${className}`}
+  {...rest}
+>
+  {isCall ? <Phone class="w-5 h-5" /> : <Calendar class="w-5 h-5" />}
+  {label}
+</Button>

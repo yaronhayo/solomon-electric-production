@@ -1,0 +1,180 @@
+{
+  "name": "Electric Vehicle Outlet Installation",
+  "slug": "electric-vehicle-outlet-installation",
+  "description": "Start your EV ownership with the right electrical outlet. Before investing in a dedicated EVSE, many EV owners begin with a properly installed 240V outlet that works with portable EV chargers. Solomon Electric installs EV-ready outlets throughout South Florida—providing immediate charging capability with flexibility for future upgrades.",
+  "shortDescription": "240V outlet for EV charging",
+  "icon": "Zap",
+  "image": "../../assets/images/services/ev-charging.png",
+  "category": "EV Charging & Solar",
+  "order": 52,
+  "features": [
+    "NEMA 14-50 outlet installation",
+    "Dedicated circuit wiring",
+    "Panel capacity assessment",
+    "Garage and carport locations",
+    "Future EVSE preparation",
+    "Portable charger compatibility"
+  ],
+  "warningSignsHeading": "EV Outlet vs. Dedicated EVSE",
+  "warningSignsSubheading": "Understanding your options helps make the right choice for your situation.",
+  "problems": [
+    {
+      "title": "Need Charging Now",
+      "description": "Just got an EV and need charging capability immediately. An outlet installation is often faster than dedicated EVSE installation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Want Flexibility",
+      "description": "240V outlet works with portable EVSE that came with your car or you can purchase. Change chargers without rewiring.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Budget Constraints",
+      "description": "Outlet installation is less expensive than dedicated EVSE. Get charging now, upgrade to hardwired EVSE later if desired.",
+      "icon": "Home"
+    },
+    {
+      "title": "Rental Property",
+      "description": "If you're renting, an outlet installation may be more acceptable to landlords than permanent EVSE installation.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Multiple Vehicles",
+      "description": "Portable EVSE on an outlet can be moved between locations if you have multiple EVs or parking spots.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Unsure About Permanent EVSE",
+      "description": "Not sure which EVSE brand or features you want? Start with an outlet, try different portable chargers, then decide.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our EV Outlet Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Assessment",
+      "description": "We evaluate your panel capacity, determine optimal outlet location, and plan the circuit route from panel to parking spot."
+    },
+    {
+      "step": 2,
+      "title": "Outlet Selection",
+      "description": "We recommend appropriate outlet type—typically NEMA 14-50 (50A) for maximum flexibility with various portable EVSE units."
+    },
+    {
+      "step": 3,
+      "title": "Circuit Installation",
+      "description": "We install a dedicated circuit from your panel to the parking location with appropriate wire sizing for full 50A or 40A capacity."
+    },
+    {
+      "step": 4,
+      "title": "Outlet Installation",
+      "description": "We install the outlet at appropriate height and location for convenient EVSE connection and cord management."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Documentation",
+      "description": "We verify proper voltage, polarity, and grounding, then provide documentation for your records."
+    }
+  ],
+  "benefitsHeading": "Benefits of EV Outlet Installation",
+  "benefits": [
+    {
+      "title": "Flexibility",
+      "description": "Outlets work with any portable EVSE. Change chargers, upgrade equipment, or take your portable unit when you move.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Lower Cost",
+      "description": "Outlet installation costs less than dedicated EVSE installation. Get charging capability while managing budget.",
+      "icon": "Home"
+    },
+    {
+      "title": "Fast Installation",
+      "description": "Outlet installation is typically faster than integrated EVSE. Get charging sooner with simpler installation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Future Ready",
+      "description": "The circuit supports future hardwired EVSE if you decide to upgrade. Infrastructure is the same; only the charger changes.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "200+",
+      "label": "EV Outlets Installed"
+    },
+    {
+      "value": "50A",
+      "label": "Typical Capacity"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What outlet type do I need for EV charging?",
+      "answer": "NEMA 14-50 is most common—50A, 240V outlet used by most portable EVSE. Some chargers use NEMA 14-30 or NEMA 6-50. Check your portable EVSE's plug type. When in doubt, NEMA 14-50 provides maximum flexibility."
+    },
+    {
+      "question": "Is outlet charging as fast as dedicated EVSE?",
+      "answer": "Speed depends on your portable EVSE's power output, not the outlet. Most portable EVSE deliver 32A (about 25 miles/hour). Some deliver up to 40A on 50A outlets. Hardwired EVSE can deliver up to 48A but requires larger circuits."
+    },
+    {
+      "question": "Should I install an outlet or hardwired EVSE?",
+      "answer": "Outlets offer flexibility and lower initial cost—good if you're new to EVs or want to try different chargers. Hardwired EVSE offers slightly higher power (up to 48A), permanent installation, and often smart features. Either works well."
+    },
+    {
+      "question": "Can I use a regular 240V outlet I already have?",
+      "answer": "Possibly, if it's a proper heavy-duty outlet (14-50, 14-30, 6-50, etc.) on a dedicated circuit. Standard dryer outlets may work but shouldn't be shared with dryers. We can evaluate your existing outlet's suitability."
+    },
+    {
+      "question": "Where should the outlet be located?",
+      "answer": "Typically inside the garage near where the EV's charge port parks. If parking outside, we install outdoor-rated enclosures. Height should allow comfortable EVSE connection. We plan location with you before installation."
+    },
+    {
+      "question": "Can I install outside for carport or driveway parking?",
+      "answer": "Yes. Outdoor EV outlets require weatherproof enclosures (while-in-use covers or lockable boxes). We install outdoor-rated outlets for carport and driveway charging locations."
+    },
+    {
+      "question": "What if my panel doesn't have room for a new circuit?",
+      "answer": "Options include: panel upgrade to add capacity, tandem breakers where code allows, or load management devices that share capacity with other circuits. We assess your panel and recommend appropriate solutions."
+    },
+    {
+      "question": "Can I upgrade to hardwired EVSE later?",
+      "answer": "Yes. The circuit we install supports future hardwired EVSE. When you're ready to upgrade, we disconnect the outlet, install the EVSE, and connect to the existing circuit. Infrastructure work is already done."
+    }
+  ],
+  "relatedServices": [
+    "level-2-ev-charger-installation",
+    "240v-outlet-installation",
+    "home-ev-charging-system-setup",
+    "electrical-panel-upgrade-100a-to-200a"
+  ],
+  "seoContent": [
+    {
+      "heading": "EV Outlet Installation in South Florida",
+      "body": "Start your EV ownership with a properly installed 240V outlet. Solomon Electric installs EV-ready outlets throughout Miami-Dade and Broward counties—providing immediate charging capability with the flexibility to upgrade to dedicated EVSE later."
+    },
+    {
+      "heading": "NEMA 14-50 for EV Charging",
+      "body": "The NEMA 14-50 outlet is the standard for portable EV chargers—providing 50A capacity that works with most EVSEs. We install 14-50 outlets on dedicated circuits sized for full charging capability."
+    },
+    {
+      "heading": "Flexibility for New EV Owners",
+      "body": "Not sure which dedicated charger you want? An outlet lets you use portable EVSE—including the charger that came with your EV—while you decide. Try different chargers, then upgrade to hardwired when you know what you prefer."
+    },
+    {
+      "heading": "Professional EV Outlet Installation",
+      "body": "Solomon Electric installs EV outlets throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Professional installation ensures proper wiring, capacity, and safety for reliable EV charging."
+    }
+  ],
+  "relatedBlogPosts": []
+}

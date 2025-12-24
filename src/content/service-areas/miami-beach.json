@@ -1,0 +1,102 @@
+{
+    "name": "Miami Beach",
+    "slug": "miami-beach",
+    "county": "Miami-Dade",
+    "description": "Expert licensed electricians serving Miami Beach, Florida. Solomon Electric provides high-end electrical services tailored for coastal resilience, from Art Deco restorations in South Beach to luxury estates on North Beach.",
+    "population": "85,000+",
+    "founded": "1915",
+    "areaSquareMiles": "8",
+    "tagline": "The World's Playground",
+    "landmarks": [
+        "Ocean Drive",
+        "Lincoln Road",
+        "Miami Beach Convention Center",
+        "South Pointe Park",
+        "The Fillmore"
+    ],
+    "neighborhoods": [
+        "South Beach (SoBe)",
+        "Mid-Beach",
+        "North Beach",
+        "Star Island",
+        "Fisher Island",
+        "Sunset Islands",
+        "Venetian Islands",
+        "Belle Isle",
+        "La Gorce"
+    ],
+    "majorRoads": [
+        "Collins Avenue (A1A)",
+        "MacArthur Causeway",
+        "Julia Tuttle Causeway",
+        "Alton Road",
+        "Ocean Drive"
+    ],
+    "coordinates": {
+        "lat": 25.7907,
+        "lng": -80.1300
+    },
+    "challenges": [
+        {
+            "title": "Extreme Salt Air Corrosion",
+            "description": "Miami Beach's literal island geography means electrical systems face constant salt spray. We use specialized marine-grade coatings and corrosion-resistant hardware for all outdoor installations.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Art Deco & Historic Code Compliance",
+            "description": "Restoring many of Miami Beach's iconic 1920s-1940s buildings requires a delicate balance of preserving historic character while modernizing systems to meet current safety and fire codes.",
+            "icon": "Home"
+        },
+        {
+            "title": "High-End Lighting & Smart Luxury",
+            "description": "Miami Beach luxury properties demand sophisticated lighting design and advanced home automation systems that integrate seamlessly with high-end architecture.",
+            "icon": "Zap"
+        }
+    ],
+    "featuredServices": [
+        "condo-electrical-upgrades-miami",
+        "smart-lighting-installation",
+        "24-7-emergency-electrical-service",
+        "landscape-outdoor-lighting",
+        "whole-home-surge-protection",
+        "ev-charging-system-setup"
+    ],
+    "stats": [
+        {
+            "value": "85K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you work with historic Miami Beach properties?",
+            "answer": "Yes, we have extensive experience working within the historic districts of Miami Beach. We know how to upgrade electrical systems while respecting the architectural integrity of Art Deco and Miami Modern (MiMo) gems."
+        },
+        {
+            "question": "Can you install EV chargers in Miami Beach condo buildings?",
+            "answer": "Absolutely. We specialize in navigating the complexities of EV charger installation in residential towers, including coordination with HOA boards and evaluating building load capacity."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Luxury Electrical Services in Miami Beach",
+            "body": "Miami Beach is more than a destination; it's a lifestyle. From the historic neon of South Beach to the ultra-exclusive estates on the Venetian Islands, Miami Beach requires a level of electrical service that is both technically superior and aesthetically conscious. Solomon Electric provides that expertise, ensuring your coastal home is both beautiful and resilient."
+        },
+        {
+            "heading": "Coastal Resilience for Your Beachfront Property",
+            "body": "Living on an island brings unique challenges to your electrical system. Corrosion is a constant threat, and storm surge protection is a necessity. Our team is specifically trained in coastal electrical best practices, using materials and techniques that withstand the harsh Miami Beach environment. We ensure your luxury investment is protected by a safe, robust, and modern electrical foundation."
+        }
+    ]
+}

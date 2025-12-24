@@ -1,0 +1,24 @@
+---
+interface Props {
+    href: string;
+    label: string;
+    class?: string;
+}
+
+const { href, label, class: className } = Astro.props;
+---
+
+<a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class:list={[
+        "w-8 h-8 flex items-center justify-center bg-[var(--bg-surface)] rounded-[var(--radius-full)] text-[var(--text-primary)] hover:bg-[var(--color-accent)] hover:text-primary transition-all duration-[var(--transition-base)]",
+        className,
+    ]}
+    aria-label={label}
+>
+    <!-- Screen reader text included in aria-label, but we can also add a hidden span if preferred -->
+    <span class="sr-only">{label}</span>
+    <slot />
+</a>

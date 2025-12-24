@@ -1,0 +1,100 @@
+{
+    "name": "Pembroke Pines",
+    "slug": "pembroke-pines",
+    "county": "Broward",
+    "description": "Licensed Pembroke Pines electricians serving Western Broward County. Solomon Electric provides professional residential and commercial electrical services, including smart home integration and panel upgrades for modern suburban homes.",
+    "population": "170,000+",
+    "founded": "1960",
+    "areaSquareMiles": "35",
+    "tagline": "Join Us & Progress",
+    "landmarks": [
+        "Pembroke Lakes Mall",
+        "C.B. Smith Park",
+        "Pembroke Pines City Center",
+        "Pines Ice Arena",
+        "Southwest Regional Library"
+    ],
+    "neighborhoods": [
+        "Silver Lakes",
+        "Pembroke Falls",
+        "Pembroke Isles",
+        "Chapel Trail",
+        "TownGate",
+        "Pasadena Lakes",
+        "Century Village"
+    ],
+    "majorRoads": [
+        "I-75",
+        "Florida Turnpike",
+        "Pines Boulevard",
+        "Sheridan Street",
+        "University Drive"
+    ],
+    "coordinates": {
+        "lat": 26.0078,
+        "lng": -80.2963
+    },
+    "challenges": [
+        {
+            "title": "Smart Home Integration",
+            "description": "As one of Broward's premier family communities, Pembroke Pines homes often feature high-tech systems that require expert smart home wiring and automation integration.",
+            "icon": "Home"
+        },
+        {
+            "title": "Electrical Panel Demands",
+            "description": "Many homes in established Pines neighborhoods like Pasadena Lakes may still have 100-amp or 150-amp panels that need upgrading to support modern HVAC and appliance loads.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Tropical Storm Protection",
+            "description": "Western Broward's exposure to summer thunderstorms makes whole-home surge protection a critical necessity for protecting expensive electronics and appliances.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "smart-home-automation",
+        "electrical-panel-upgrade-100a-to-200a",
+        "whole-home-surge-protection",
+        "recessed-lighting-installation",
+        "24-7-emergency-electrical-service",
+        "ev-charging-system-setup"
+    ],
+    "stats": [
+        {
+            "value": "170K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Can you help with smart home upgrades in Pembroke Pines?",
+            "answer": "Absolutely. We specialize in modernizing Pembroke Pines homes with smart switches, thermostats, lighting controls, and integrated automation systems that work seamlessly with your lifestyle."
+        },
+        {
+            "question": "Do you offer emergency electrical repairs in Silver Lakes or Chapel Trail?",
+            "answer": "Yes, we provide 24/7 emergency electrical service to all communities in Pembroke Pines, from the eastern residential areas to the western master-planned developments."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Pembroke Pines' Trusted Electrical Professionals",
+            "body": "Pembroke Pines is a thriving, award-winning community known for its excellent parks and family-friendly atmosphere. As one of the largest cities in Broward County, it requires a high standard of professional service. Solomon Electric is proud to meet that standard, providing the licensed expertise Pines' residents need for their modern, busy lives."
+        },
+        {
+            "heading": "Excellence in Electrical Service for Western Broward",
+            "body": "Whether you're upgrading your lighting in Pembroke Falls, installing a new EV charger in Silver Lakes, or needing an emergency repair in Century Village, our team is ready to assist. We understand the specific needs of Pembroke Pines properties and provide upfront pricing, clean workmanship, and a dedication to safety that our neighbors have trusted for 15 years."
+        }
+    ]
+}

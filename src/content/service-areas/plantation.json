@@ -1,0 +1,99 @@
+{
+    "name": "Plantation",
+    "slug": "plantation",
+    "county": "Broward",
+    "description": "Licensed Plantation electricians providing expert residential and commercial electrical services. From the historic trees of Central Plantation to modern estates in Plantation Acres, Solomon Electric is your trusted choice.",
+    "population": "95,000+",
+    "founded": "1953",
+    "areaSquareMiles": "22",
+    "tagline": "The Grass is Greener",
+    "landmarks": [
+        "Plantation Central Park",
+        "Westfield Broward Mall",
+        "Volunteer Park",
+        "Plantation Preserve Golf Course",
+        "Pine Island Ridge"
+    ],
+    "neighborhoods": [
+        "Plantation Acres",
+        "Central Plantation",
+        "Jacaranda",
+        "Mirror Lake",
+        "Lakes of Plantation",
+        "Hawks Landing"
+    ],
+    "majorRoads": [
+        "I-595",
+        "Sunrise Boulevard",
+        "University Drive",
+        "Broward Boulevard",
+        "Pine Island Road"
+    ],
+    "coordinates": {
+        "lat": 26.1276,
+        "lng": -80.2431
+    },
+    "challenges": [
+        {
+            "title": "Large Estate Power Needs",
+            "description": "Homes in Plantation Acres and Hawks Landing often have significant power demands for luxury amenities, requiring 400-amp service upgrades and complex distribution.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Historic Tree Canopy Resilience",
+            "description": "Plantation's famous tree canopy can threaten overhead power lines during storms. We specialize in underground service conversions and robust tree-clearance safety checks.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Suburban Aging & Modernization",
+            "description": "Established central neighborhoods require expert electricians to remediate aluminum wiring and upgrade outdated panels without disturbing the home's historic charm.",
+            "icon": "Home"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "recessed-lighting-installation",
+        "whole-home-surge-protection",
+        "smart-home-automation",
+        "24-7-emergency-electrical-service",
+        "ev-charging-system-setup"
+    ],
+    "stats": [
+        {
+            "value": "95K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Can you install an EV charger in a Plantation Acres estate?",
+            "answer": "Yes, we specialize in high-capacity EV charger installations for larger homes, including coordinating with multiple vehicles and ensuring your electrical panel can support the load."
+        },
+        {
+            "question": "Do you serve businesses near the Westfield Broward Mall?",
+            "answer": "Absolutely. We provide full commercial electrical services for retail, office, and dining establishments throughout the Plantation business corridor."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Premier Plantation Electricians – Your Local Connection",
+            "body": "Plantation is a city that prides itself on its lush greenery and high quality of life. As a community that truly believes 'the grass is greener' here, your home or business deserves electrical service that is equally exceptional. Solomon Electric has been serving the Plantation community for over 15 years with professionalism and integrity."
+        },
+        {
+            "heading": "Excellence in Electrical Care for Plantation Families",
+            "body": "From the sprawling estates of Plantation Acres to the cozy neighborhoods of Jacaranda, our team understands the diverse needs of Plantation properties. Whether it's a 24/7 emergency repair or a sophisticated smart home upgrade, Solomon Electric delivers the safe and reliable service our neighbors count on."
+        }
+    ]
+}

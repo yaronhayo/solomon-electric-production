@@ -1,6 +1,6 @@
 /**
  * Service Areas Data
- * Centralized list of service areas
+ * Centralized list of all service areas (all areas treated equally)
  */
 
 export const SERVICE_AREAS = [

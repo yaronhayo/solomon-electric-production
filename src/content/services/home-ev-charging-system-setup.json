@@ -1,0 +1,180 @@
+{
+  "name": "Home EV Charging System Setup",
+  "slug": "home-ev-charging-system-setup",
+  "description": "Getting your home EV charging right from the start makes ownership hassle-free. Solomon Electric provides complete home EV charging system setup throughout South Florida—from initial planning through final installation. We assess your panel, plan the installation, recommend appropriate equipment, and install everything for reliable home charging.",
+  "shortDescription": "Complete home EV charging setup",
+  "icon": "Zap",
+  "image": "../../assets/images/services/ev-charging.png",
+  "category": "EV Charging & Solar",
+  "order": 53,
+  "features": [
+    "EV charging planning consultation",
+    "Panel capacity assessment",
+    "Charger recommendation",
+    "Complete installation",
+    "Smart charger setup",
+    "Utility time-of-use optimization"
+  ],
+  "warningSignsHeading": "Planning Your Home EV Charging",
+  "warningSignsSubheading": "Good planning ensures your charging setup works perfectly for your needs.",
+  "problems": [
+    {
+      "title": "Just Purchased an EV",
+      "description": "Congratulations! Now you need home charging. We help new EV owners plan and install the right charging setup for their situation.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Overwhelmed by Options",
+      "description": "Outlet vs. hardwired? Level 1 vs. Level 2? Which brand? We explain options and help you choose what fits your needs and budget.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Concerned About Panel Capacity",
+      "description": "Not sure if your panel can handle EV charging? We assess capacity and recommend solutions—from direct installation to panel upgrades.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Want Smart Features",
+      "description": "Scheduling, energy monitoring, utility integration—smart chargers offer features that save money and add convenience.",
+      "icon": "Home"
+    },
+    {
+      "title": "Planning Multi-EV Household",
+      "description": "If you have or will have multiple EVs, planning infrastructure now avoids redundant work later.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Utility Rate Optimization",
+      "description": "FPL time-of-use rates mean charging timing matters. Smart charger setup maximizes savings from off-peak charging.",
+      "icon": "FileCheck"
+    }
+  ],
+  "processHeading": "Our Complete Setup Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "EV Charging Consultation",
+      "description": "We discuss your EV, driving patterns, budget, and preferences to understand your ideal charging solution."
+    },
+    {
+      "step": 2,
+      "title": "Site and Panel Assessment",
+      "description": "We evaluate your electrical panel, determine capacity for EV charging, and plan installation approach."
+    },
+    {
+      "step": 3,
+      "title": "Equipment Recommendation",
+      "description": "Based on your needs, we recommend appropriate charging equipment—outlet, portable EVSE, or hardwired Level 2 charger."
+    },
+    {
+      "step": 4,
+      "title": "Complete Installation",
+      "description": "We install the complete charging system—circuit, wiring, charger or outlet, and any panel modifications needed."
+    },
+    {
+      "step": 5,
+      "title": "Setup and Training",
+      "description": "For smart chargers, we configure scheduling, connect to WiFi and apps, and explain features so you can maximize benefits."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional Setup",
+  "benefits": [
+    {
+      "title": "Right Solution First Time",
+      "description": "Expert guidance ensures you choose the charging solution that matches your actual needs—not under or over-specified.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Optimized Installation",
+      "description": "We find the best route from panel to parking, minimize installation cost, and plan for potential future needs.",
+      "icon": "Home"
+    },
+    {
+      "title": "Utility Savings",
+      "description": "Smart charger setup with time-of-use scheduling maximizes savings from FPL's lower overnight rates.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Future Ready",
+      "description": "Even if you start simple, we plan infrastructure that accommodates upgrades—more EVs, higher power, or additional features.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Home EV Setups"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Satisfaction"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "I just ordered an EV—where do I start?",
+      "answer": "Contact us for a consultation. We'll discuss your EV model, where you park, your panel situation, and your preferences. We'll recommend the right charging approach and can have it installed before your EV arrives."
+    },
+    {
+      "question": "What's the difference between Level 1 and Level 2 charging?",
+      "answer": "Level 1 uses a standard 120V outlet—about 4 miles of range per hour (40 miles overnight). Level 2 uses 240V—about 25-30 miles per hour (full charge overnight for most EVs). Most homeowners want Level 2 for practical daily charging."
+    },
+    {
+      "question": "Do I need a specific charger for my EV brand?",
+      "answer": "Most EVs use the standard J1772 connector that works with any Level 2 EVSE. Teslas come with an adapter or can use Universal Wall Connectors. We recommend equipment compatible with your specific vehicle."
+    },
+    {
+      "question": "Should I get a smart charger?",
+      "answer": "Smart chargers offer valuable features: scheduled charging for off-peak rates, energy monitoring, remote control, and integration with utility programs. If you'll use these features, smart chargers pay for themselves in energy savings."
+    },
+    {
+      "question": "What if I have two EVs or might add another?",
+      "answer": "We can plan for multiple EVs—either separate circuits for each parking spot or a shared circuit with power-sharing capability. Planning during initial installation is much more cost-effective than adding later."
+    },
+    {
+      "question": "How can I save money on EV charging?",
+      "answer": "FPL offers time-of-use rates where overnight electricity costs less. Smart chargers can schedule charging during these hours automatically. We set up scheduling during installation so savings start immediately."
+    },
+    {
+      "question": "What if my panel is full or too small?",
+      "answer": "Options include: panel upgrade for more capacity, tandem breakers for more circuits, load management devices that share capacity, or charging at lower power levels. We evaluate your situation and recommend the best approach."
+    },
+    {
+      "question": "How long does complete setup take?",
+      "answer": "Simple installations often complete in one visit. If panel work is needed, it may be two visits. Panel upgrades add time. We provide realistic timelines when we assess your situation."
+    }
+  ],
+  "relatedServices": [
+    "level-2-ev-charger-installation",
+    "electric-vehicle-outlet-installation",
+    "electrical-panel-upgrade-100a-to-200a",
+    "smart-switch-home-automation"
+  ],
+  "seoContent": [
+    {
+      "heading": "Home EV Charging System Setup in South Florida",
+      "body": "Getting your home EV charging right from the start makes ownership hassle-free. Solomon Electric provides complete home EV charging setup throughout Miami-Dade and Broward counties—from planning through installation to smart charger configuration."
+    },
+    {
+      "heading": "Expert Guidance for New EV Owners",
+      "body": "Overwhelmed by charging options? We explain the choices—outlet vs. hardwired, Level 1 vs. Level 2, smart features vs. simple installation—and recommend what fits your needs and budget. No pressure, just expert advice."
+    },
+    {
+      "heading": "Smart Charger Setup and Optimization",
+      "body": "Smart EV chargers save money through scheduled charging during FPL's lower overnight rates. We configure scheduling, connect apps, and set up features so you maximize savings from day one."
+    },
+    {
+      "heading": "Complete Home EV Setup",
+      "body": "Solomon Electric provides complete home EV charging installation throughout Miami, Fort Lauderdale, Hollywood, and all surrounding communities. From consultation to installation to training—we handle everything for hassle-free home charging."
+    }
+  ],
+  "relatedBlogPosts": []
+}

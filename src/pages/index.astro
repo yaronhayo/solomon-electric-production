@@ -1,26 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import heroImage from "../assets/images/hero.webp";
+import heroImage from "../assets/images/heroes/homepage.png"; // Updated hero image
 import customerInteractionImage from "../assets/images/enhancements/customer-interaction.png";
 import trustBgImage from "../assets/images/enhancements/trust-bg.png";
 import ReviewCarousel from "../components/ReviewCarousel.astro";
 import FAQAccordion from "../components/FAQAccordion.astro";
 import LatestBlogPosts from "../components/LatestBlogPosts.astro";
 import {
-    services,
+    getServices,
     getFeaturedServices,
     serviceCategories,
     getCategoryInfo,
-} from "../data/services";
+    categoryImages,
+} from "../utils/services";
 import { SERVICE_AREAS } from "../data/service-areas";
 import { SITE_CONFIG } from "../config/site";
 import Button from "../components/ui/Button.astro";
+import CtaButton from "../components/ui/CtaButton.astro";
 import Container from "../components/ui/Container.astro";
 import BookingForm from "../components/BookingForm.astro";
+import PageHero from "../components/PageHero.astro";
+import ServiceAreaMap from "../components/ServiceAreaMap.astro";
+import { generateOrganizationSchema } from "../utils/seo";
 
 // For featured carousel, get first 3 services
-const featuredServices = services.slice(0, 3);
+const allServices = await getServices();
+// featuredServices variable not used, using explicit getFeaturedServices call logic instead
+const featuredServicesList = await getFeaturedServices();
 
 const stats = [
     {
@@ -36,789 +43,778 @@ const stats = [
 ];
 
 const serviceAreas = SERVICE_AREAS;
+
+// Generate Local Business Schema
+const orgSchema = generateOrganizationSchema(SITE_CONFIG.seo.siteUrl);
+
+// Generate Breadcrumb Schema (Home only)
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_CONFIG.seo.siteUrl,
+        },
+    ],
+};
+
+import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 ---
 
 <Layout
-    title="Solomon Electric - Miami's Most Trusted 24/7 Electrician | Licensed & Insured"
-    description="Expert electrical services in Miami. 24/7 emergency response, residential & commercial. Panel upgrades, EV charging, smart homes, repairs. Licensed, insured, 15+ years experience. Call (786) 833-9211"
+    title="Licensed Electrician Miami | 24/7 Emergency Electrical Services | Solomon Electric"
+    description={`Professional electrician serving Miami-Dade & Broward. Licensed & insured for residential, commercial & industrial electrical services. Panel upgrades, EV charging, smart home, repairs. Call ${SITE_CONFIG.contact.phone.formatted}`}
 >
-    <!-- Hero Section - Fully responsive with optimized spacing -->
-    <section
-        class="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32"
+    <!-- Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+    />
+
+    <!-- Hero Section -->
+    <PageHero
+        title="Electrical Problems?<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>We'll Fix Them Today</span>"
+        subtitle="Licensed Electricians • Miami-Dade • Broward • Palm Beach"
+        description="Flickering lights keeping you up at night? Circuit breakers that won't stop tripping? An outlet that sparks when you plug something in? You're not alone—and you don't have to live with it. Our licensed electricians diagnose problems fast and fix them right the first time, so you can stop worrying and get back to your life."
+        image={heroImage}
+        trustIndicators={true}
+        showScrollIndicator={true}
+        primaryCta={{
+            text: "Get Help Now",
+            href: "/book",
+            icon: Calendar,
+        }}
+        secondaryCta={{
+            text: "See What We Fix",
+            href: "/services",
+            icon: Zap,
+        }}
     >
-        <!-- Background with overlay -->
+        <BookingForm slot="visual" />
+    </PageHero>
+
+    <!-- Trust Bar - Certifications and Guarantees -->
+    <section
+        id="trust-indicators"
+        aria-labelledby="trust-heading"
+        class="relative border-b border-gray-100 overflow-hidden py-16 md:py-24"
+    >
+        <h2 id="trust-heading" class="sr-only">Why Trust Solomon Electric</h2>
         <div class="absolute inset-0 z-0">
             <Image
-                src={heroImage}
-                alt="Professional Electrician Working"
-                class="w-full h-full object-cover"
+                src={trustBgImage}
+                alt=""
+                class="w-full h-full object-cover opacity-5"
+                loading="lazy"
+                widths={[400, 800, 1200]}
             />
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
-            >
-            </div>
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
-            >
-            </div>
         </div>
-
-        <!-- Hero Content -->
         <Container class="relative z-10">
             <div
-                class="grid grid-cols-1 lg:grid-cols-12 items-center"
+                class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 text-center reveal reveal-up"
                 style="gap: var(--spacing-xl);"
             >
-                <!-- Left Column: Text -->
-                <div class="lg:col-span-7">
-                    <p
-                        class="text-accent tracking-[0.3em] font-bold uppercase"
-                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
-                    >
-                        Miami's Premier Electrical Contractor
-                    </p>
-
-                    <h1
-                        class="font-black text-white leading-[0.9]"
-                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
-                    >
-                        Power Your World<br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
-                        >
-                            With Confidence
-                        </span>
-                    </h1>
-
-                    <p
-                        class="text-gray-200 font-light leading-relaxed"
-                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
-                    >
-                        Licensed, insured electricians ready to serve you 24/7.
-                        From emergency repairs to complete installations, we
-                        deliver excellence at the speed of light.
-                    </p>
-
-                    <!-- Trust Indicators -->
+                <div
+                    class="flex flex-col items-center group"
+                    style="gap: var(--spacing-md);"
+                >
                     <div
-                        class="flex flex-wrap items-center"
-                        style="gap: var(--spacing-md); margin-bottom: var(--spacing-xl);"
+                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1 shimmer-authority"
                     >
-                        <div
-                            class="flex items-center text-accent"
-                            style="gap: var(--spacing-xs);"
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-8 h-8 text-accent"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
                         >
-                            <svg
-                                class="w-5 h-5"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span
-                                class="font-bold text-white"
-                                style="font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem);"
-                                >Licensed FL EC13012419</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-2 text-accent">
-                            <svg
-                                class="w-5 h-5"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
-                                ></path>
-                            </svg>
-                            <span
-                                class="font-bold text-white"
-                                style="font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem);"
-                                >24/7 Emergency Service</span
-                            >
-                        </div>
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-lg font-bold text-primary uppercase leading-tight font-secondary"
+                            style="margin-bottom: var(--spacing-xs);"
+                            >Licensed & Insured</span
+                        >
+                        <span
+                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            >Your Safety Guaranteed</span
+                        >
                     </div>
                 </div>
 
-                <!-- Right Column: Booking Form -->
-                <div class="lg:col-span-5 relative">
-                    <BookingForm />
+                <div
+                    class="flex flex-col items-center group"
+                    style="gap: var(--spacing-md);"
+                >
+                    <div
+                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-8 h-8 text-accent"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-lg font-bold text-primary mb-1 uppercase leading-tight font-secondary"
+                            >Emergency Service</span
+                        >
+                        <span
+                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            >Here When Needed</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col items-center group"
+                    style="gap: var(--spacing-md);"
+                >
+                    <div
+                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-8 h-8 text-accent"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-lg font-bold text-primary mb-1 uppercase leading-tight font-secondary"
+                            >Local Experts</span
+                        >
+                        <span
+                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            >We Know Miami Code</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col items-center group"
+                    style="gap: var(--spacing-md);"
+                >
+                    <div
+                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-8 h-8 text-accent"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-lg font-bold text-primary mb-1 uppercase leading-tight font-secondary"
+                            >Satisfaction First</span
+                        >
+                        <span
+                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            >Quality You Can Trust</span
+                        >
+                    </div>
                 </div>
             </div>
         </Container>
     </section>
 
-    <!-- Scroll Indicator -->
-    <div
-        class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden lg:block"
+    <!-- Featured Services Carousel (Enhanced existing) -->
+    <section
+        id="featured-services"
+        aria-labelledby="services-heading"
+        class="bg-white py-20 md:py-32"
     >
-        <div
-            class="flex flex-col items-center gap-2 text-white/50 animate-bounce"
-        >
-            <span class="text-[10px] uppercase tracking-widest"
-                >Scroll Down</span
-            >
-            <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
-    </div>
-</Layout>
-
-<!-- Trust Bar - Certifications and Guarantees -->
-<section
-    class="relative border-b border-gray-100 overflow-hidden py-16 md:py-24"
->
-    <div class="absolute inset-0 z-0">
-        <Image
-            src={trustBgImage}
-            alt=""
-            class="w-full h-full object-cover opacity-5"
-        />
-    </div>
-    <Container class="relative z-10">
-        <div
-            class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 text-center"
-            style="gap: var(--spacing-xl);"
-        >
+        <Container>
             <div
-                class="flex flex-col items-center group"
-                style="gap: var(--spacing-md);"
+                class="text-center reveal reveal-up"
+                style="margin-bottom: var(--spacing-3xl);"
             >
-                <div
-                    class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                    </svg>
-                </div>
-                <div>
-                    <span
-                        class="block text-lg font-black text-primary uppercase leading-tight font-display"
-                        style="margin-bottom: var(--spacing-xs);">Licensed</span
-                    >
-                    <span
-                        class="text-xs font-bold text-gray-500 uppercase tracking-wide"
-                        >FL Certified</span
-                    >
-                </div>
-            </div>
-
-            <div
-                class="flex flex-col items-center group"
-                style="gap: var(--spacing-md);"
-            >
-                <div
-                    class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                    </svg>
-                </div>
-                <div>
-                    <span
-                        class="block text-lg font-black text-primary mb-1 uppercase leading-tight font-display"
-                        >24/7 Ready</span
-                    >
-                    <span
-                        class="text-xs font-bold text-gray-500 uppercase tracking-wide"
-                        >Emergency Service</span
-                    >
-                </div>
-            </div>
-
-            <div
-                class="flex flex-col items-center group"
-                style="gap: var(--spacing-md);"
-            >
-                <div
-                    class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        ></path>
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                </div>
-                <div>
-                    <span
-                        class="block text-lg font-black text-primary mb-1 uppercase leading-tight font-display"
-                        >Local</span
-                    >
-                    <span
-                        class="text-xs font-bold text-gray-500 uppercase tracking-wide"
-                        >Miami Experts</span
-                    >
-                </div>
-            </div>
-
-            <div
-                class="flex flex-col items-center group"
-                style="gap: var(--spacing-md);"
-            >
-                <div
-                    class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                        ></path>
-                    </svg>
-                </div>
-                <div>
-                    <span
-                        class="block text-lg font-black text-primary mb-1 uppercase leading-tight font-display"
-                        >Guaranteed</span
-                    >
-                    <span
-                        class="text-xs font-bold text-gray-500 uppercase tracking-wide"
-                        >100% Satisfaction</span
-                    >
-                </div>
-            </div>
-        </div>
-    </Container>
-</section>
-
-<!-- Featured Services Carousel (Enhanced existing) -->
-<section class="bg-white py-20 md:py-32">
-    <Container>
-        <div class="text-center" style="margin-bottom: var(--spacing-3xl);">
-            <h4
-                class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
-                style="margin-bottom: var(--spacing-md);"
-            >
-                Featured Services
-            </h4>
-            <h2 class="text-3xl md:text-5xl font-black text-primary uppercase">
-                Popular <span class="text-accent">Solutions</span>
-            </h2>
-        </div>
-
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-            style="gap: var(--spacing-lg);"
-        >
-            {
-                getFeaturedServices().map((service) => {
-                    const Icon = service.icon;
-                    return (
-                        <div class="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl hover:border-accent hover:shadow-brand transition-all duration-300 group text-center shadow-sm relative overflow-hidden h-full flex flex-col">
-                            <div
-                                class="w-24 h-24 mx-auto relative z-10 text-accent"
-                                style="margin-bottom: var(--spacing-lg);"
-                            >
-                                <Icon class="w-full h-full object-contain group-hover:scale-110 transition-all duration-300 stroke-1" />
-                            </div>
-                            <h3
-                                class="text-xl font-black text-primary group-hover:text-accent transition-colors uppercase relative z-10 flex-grow"
-                                style="margin-bottom: var(--spacing-md);"
-                            >
-                                {service.name}
-                            </h3>
-                            <a
-                                href={`/services#${service.slug}`}
-                                class="inline-flex items-center justify-center gap-2 text-accent font-bold uppercase tracking-widest text-sm  transition-all duration-300 relative z-10 mt-4 group-hover:text-primary"
-                            >
-                                Learn More{" "}
-                                <span class="group-hover:translate-x-1 transition-transform">
-                                    →
-                                </span>
-                            </a>
-                        </div>
-                    );
-                })
-            }
-        </div>
-
-        <div class="text-center mt-16">
-            <div class="text-center" style="margin-top: var(--spacing-3xl);">
-                <Button href="/services" size="lg" class="text-xl font-black"
-                    >View All Services</Button
-                >
-            </div>
-        </div>
-    </Container>
-</section>
-
-<!-- Why Choose Solomon Electric - Story Section -->
-<section class="bg-light relative overflow-hidden py-20 md:py-32">
-    <div class="absolute inset-0 opacity-5">
-        <div
-            class="absolute inset-0 bg-gradient-to-br from-accent to-transparent"
-        >
-        </div>
-    </div>
-
-    <Container class="relative z-10">
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 items-center"
-            style="gap: var(--spacing-3xl);"
-        >
-            <!-- Left: Image -->
-            <div class="relative order-2 md:order-1">
-                <div
-                    class="absolute -inset-4 border-4 border-accent z-0 translate-x-6 translate-y-6 rounded-3xl"
-                >
-                </div>
-                <Image
-                    src={customerInteractionImage}
-                    alt="Professional Electrician Team"
-                    class="relative z-10 w-full shadow-2xl rounded-3xl grayscale hover:grayscale-0 transition-all duration-500"
-                />
-            </div>
-
-            <!-- Right: Content -->
-            <div class="order-1 md:order-2">
-                <h4
-                    class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
+                <p
+                    class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
                     style="margin-bottom: var(--spacing-md);"
                 >
-                    Why Choose Us
-                </h4>
-                <h2
-                    class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase"
-                    style="margin-bottom: var(--spacing-xl);"
-                >
-                    Your Safety is<br />
-                    <span class="text-accent">Our Priority</span>
-                </h2>
-
-                <p
-                    class="text-gray-600 leading-relaxed text-lg font-medium"
-                    style="margin-bottom: var(--spacing-2xl);"
-                >
-                    Since 2008, Solomon Electric has been Miami's trusted
-                    electrical partner. We combine cutting-edge technology with
-                    old-fashioned service values, ensuring every job is done
-                    right the first time. Our licensed electricians undergo
-                    continuous training and safety certification to protect your
-                    home and family.
+                    How We Serve You
                 </p>
+                <h2
+                    id="services-heading"
+                    class="text-3xl md:text-5xl font-black text-primary uppercase"
+                >
+                    Expert <span class="text-accent">Electrical Solutions</span>
+                </h2>
+            </div>
 
-                <div class="space-y-6">
-                    <div class="flex" style="gap: var(--spacing-md);">
-                        <div class="flex-shrink-0">
-                            <div
-                                class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 reveal reveal-up"
+                style="gap: var(--spacing-xl);"
+            >
+                {
+                    featuredServicesList.map((service) => {
+                        const Icon = service.icon;
+                        const bgImage = categoryImages[service.category];
+                        return (
+                            <a
+                                href={`/services/${service.slug}`}
+                                class="group block relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                                style="aspect-ratio: 4/3;"
                             >
-                                <svg
-                                    class="w-6 h-6 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div>
-                            <h3
-                                class="text-xl font-black text-primary uppercase"
-                                style="margin-bottom: var(--spacing-xs);"
-                            >
-                                Rapid Response Time
-                            </h3>
-                            <p class="text-gray-600 font-medium">
-                                Average 60-minute emergency response throughout
-                                Miami-Dade and Broward counties.
-                            </p>
-                        </div>
+                                {/* Background Image */}
+                                <Image
+                                    src={bgImage}
+                                    alt={service.name}
+                                    width={600}
+                                    height={450}
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy"
+                                />
+
+                                {/* Gradient Overlay */}
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#082a4d] via-[#082a4d]/70 to-transparent group-hover:from-[#082a4d]/90 group-hover:via-[#082a4d]/50 transition-all duration-500" />
+
+                                {/* Content */}
+                                <div class="absolute inset-0 flex flex-col justify-end p-6">
+                                    {/* Icon Badge */}
+                                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <Icon class="w-6 h-6 text-primary" />
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 class="text-xl font-bold text-white mb-3 leading-tight">
+                                        {service.name}
+                                    </h3>
+
+                                    {/* CTA */}
+                                    <div class="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                                        <span>Learn More</span>
+                                        <ArrowRight class="w-4 h-4" />
+                                    </div>
+                                </div>
+
+                                {/* Accent Border on Hover */}
+                                <div class="absolute inset-0 border-2 border-transparent group-hover:border-accent rounded-xl transition-colors duration-300 pointer-events-none" />
+                            </a>
+                        );
+                    })
+                }
+            </div>
+
+            <div class="text-center mt-16">
+                <div
+                    class="text-center"
+                    style="margin-top: var(--spacing-3xl);"
+                >
+                    <Button
+                        href="/services"
+                        size="lg"
+                        class="text-xl font-black gap-2 magnetic-cta"
+                    >
+                        <Grid class="w-5 h-5" />
+                        View Full Service Menu
+                    </Button>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Why Choose Solomon Electric - Story Section -->
+    <section
+        id="about-story"
+        aria-labelledby="story-heading"
+        class="bg-light relative overflow-hidden py-20 md:py-32"
+    >
+        <div class="absolute inset-0 opacity-5">
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-accent to-transparent"
+            >
+            </div>
+        </div>
+
+        <Container class="relative z-10">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 items-center reveal reveal-up"
+                style="gap: var(--spacing-3xl);"
+            >
+                <!-- Left: Image -->
+                <div class="relative order-2 md:order-1">
+                    <div
+                        class="absolute -inset-4 border-4 border-accent z-0 translate-x-6 translate-y-6 rounded-3xl"
+                    >
                     </div>
+                    <Image
+                        src={customerInteractionImage}
+                        alt="Professional Electrician Team"
+                        class="relative z-10 w-full shadow-[var(--shadow-xl)] rounded-[var(--radius-2xl)] grayscale hover:grayscale-0 transition-all duration-[var(--transition-slow)]"
+                        loading="lazy"
+                        widths={[400, 600, 800]}
+                    />
+                </div>
 
-                    <div class="flex" style="gap: var(--spacing-md);">
-                        <div class="flex-shrink-0">
-                            <div
-                                class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
-                            >
-                                <svg
-                                    class="w-6 h-6 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
+                <!-- Right: Content -->
+                <div class="order-1 md:order-2">
+                    <p
+                        class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                        style="margin-bottom: var(--spacing-md);"
+                    >
+                        What You Can Expect
+                    </p>
+                    <h2
+                        id="story-heading"
+                        class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase"
+                        style="margin-bottom: var(--spacing-xl);"
+                    >
+                        Safe Homes,<br />
+                        <span class="text-accent">Protected Investments</span>
+                    </h2>
+
+                    <p
+                        class="text-[var(--text-body)] leading-relaxed text-lg font-medium"
+                        style="margin-bottom: var(--spacing-2xl);"
+                    >
+                        When you choose Solomon Electric, you're choosing safety
+                        and reliability. Whether it's a home safety concern, a
+                        commercial property upgrade, or an urgent repair, our
+                        dedicated team brings the expertise needed to protect
+                        your property and ensure your electrical systems are
+                        functioning correctly.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex" style="gap: var(--spacing-md);">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
                                 >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
+                                    <svg
+                                        class="w-6 h-6 text-white"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-black text-primary uppercase"
+                                    style="margin-bottom: var(--spacing-xs);"
+                                >
+                                    Reliable Emergency Support
+                                </h3>
+                                <p class="text-body font-medium">
+                                    Electrical issues can happen at any time.
+                                    Our team is available to handle urgent
+                                    electrical needs across Miami-Dade and
+                                    Broward, ensuring your safety is never
+                                    compromised.
+                                </p>
                             </div>
                         </div>
-                        <div>
-                            <h3
-                                class="text-xl font-black text-primary uppercase"
-                                style="margin-bottom: var(--spacing-xs);"
-                            >
-                                Transparent Pricing
-                            </h3>
-                            <p class="text-gray-600 font-medium">
-                                Free estimates with upfront pricing. No hidden
-                                fees, no surprises - ever.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="flex" style="gap: var(--spacing-md);">
-                        <div class="flex-shrink-0">
-                            <div
-                                class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
-                            >
-                                <svg
-                                    class="w-6 h-6 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
+                        <div class="flex" style="gap: var(--spacing-md);">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
                                 >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
+                                    <svg
+                                        class="w-6 h-6 text-white"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-black text-primary uppercase"
+                                    style="margin-bottom: var(--spacing-xs);"
+                                >
+                                    Transparent Communication
+                                </h3>
+                                <p class="text-body font-medium">
+                                    We believe in clear communication. Before
+                                    starting any work, we explain the issue and
+                                    the necessary solution, providing a clear
+                                    understanding of the project scope.
+                                </p>
                             </div>
                         </div>
-                        <div>
-                            <h3
-                                class="text-xl font-black text-primary uppercase"
-                                style="margin-bottom: var(--spacing-xs);"
-                            >
-                                Proven Track Record
-                            </h3>
-                            <p class="text-gray-600 font-medium">
-                                Over 19,000 satisfied customers with a perfect
-                                safety record since day one.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="flex" style="gap: var(--spacing-md);">
-                        <div class="flex-shrink-0">
-                            <div
-                                class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
-                            >
-                                <svg
-                                    class="w-6 h-6 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
+                        <div class="flex" style="gap: var(--spacing-md);">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
                                 >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
+                                    <svg
+                                        class="w-6 h-6 text-white"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-black text-primary uppercase"
+                                    style="margin-bottom: var(--spacing-xs);"
+                                >
+                                    Extensive Experience
+                                </h3>
+                                <p class="text-[var(--text-body)] font-medium">
+                                    With thousands of successful projects, we
+                                    have a proven history of delivering safe and
+                                    compliant electrical work.
+                                </p>
                             </div>
                         </div>
-                        <div>
-                            <h3
-                                class="text-xl font-black text-primary uppercase"
-                                style="margin-bottom: var(--spacing-xs);"
-                            >
-                                Warranty Protection
-                            </h3>
-                            <p class="text-gray-600 font-medium">
-                                All work backed by comprehensive warranties for
-                                your complete peace of mind.
-                            </p>
+
+                        <div class="flex" style="gap: var(--spacing-md);">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
+                                >
+                                    <svg
+                                        class="w-6 h-6 text-white"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-black text-primary uppercase"
+                                    style="margin-bottom: var(--spacing-xs);"
+                                >
+                                    Quality Assurance
+                                </h3>
+                                <p class="text-[var(--text-body)] font-medium">
+                                    We stand behind the quality of our
+                                    workmanship, ensuring every job meets high
+                                    professional standards.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </Container>
-</section>
+        </Container>
+    </section>
 
-<!-- Emergency Services CTA Banner -->
-<section class="bg-gradient-to-r from-accent to-accent-dark py-16 md:py-24">
-    <Container>
-        <div
-            class="flex flex-col md:flex-row items-center justify-between"
-            style="gap: var(--spacing-lg);"
-        >
-            <div class="text-center md:text-left">
-                <h3
-                    class="text-3xl md:text-4xl font-black text-white uppercase"
-                    style="margin-bottom: var(--spacing-xs);"
-                >
-                    Electrical Emergency? We're Here 24/7
-                </h3>
-                <p class="text-white/90 text-lg font-bold">
-                    Power outages, sparking outlets, burning smells? Call us NOW
-                    for immediate assistance.
-                </p>
-            </div>
-            <Button
-                href="tel:7868339211"
-                variant="secondary"
-                size="lg"
-                class="flex-shrink-0 shadow-2xl hover:shadow-3xl flex items-center"
-                style="gap: var(--spacing-sm);"
+    <!-- FAQ Section -->
+    <FAQAccordion />
+
+    <!-- Emergency Services CTA Banner -->
+    <section
+        id="emergency-cta"
+        aria-labelledby="emergency-heading"
+        class="bg-gradient-to-r from-accent to-accent-dark py-16 md:py-24"
+    >
+        <Container>
+            <div
+                class="flex flex-col md:flex-row items-center justify-between"
+                style="gap: var(--spacing-lg);"
             >
+                <div class="text-center md:text-left">
+                    <h3
+                        id="emergency-heading"
+                        class="text-3xl md:text-4xl font-black text-white uppercase"
+                        style="margin-bottom: var(--spacing-xs);"
+                    >
+                        Need Immediate Assistance?
+                    </h3>
+                    <p class="text-white/90 text-lg font-bold">
+                        Electrical issues like sparking outlets or burning
+                        smells require professional attention. Contact us for
+                        prompt service.
+                    </p>
+                </div>
+                <CtaButton
+                    action="call"
+                    variant="secondary"
+                    size="lg"
+                    class="flex-shrink-0 shadow-2xl hover:shadow-3xl magnetic-cta"
+                />
+            </div>
+        </Container>
+    </section>
+
+    <!-- Reviews Carousel -->
+    <ReviewCarousel />
+
+    <!-- Service Areas Map -->
+    <section class="bg-white overflow-hidden" id="service-areas">
+        <Container class="py-20 md:py-32">
+            <ServiceAreaMap />
+        </Container>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-primary py-20 md:py-32">
+        <Container>
+            <div class="text-center mb-16">
+                <p
+                    class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                    style="margin-bottom: var(--spacing-md);"
+                >
+                    Real Results
+                </p>
+                <h2
+                    class="text-3xl md:text-5xl font-black text-white uppercase"
+                >
+                    South Florida <span class="text-accent">Trusts Us</span>
+                </h2>
+            </div>
+
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 reveal reveal-up"
+                style="gap: var(--spacing-lg);"
+            >
+                {
+                    stats.map((stat) => {
+                        const numericValue = parseInt(
+                            stat.number.toString().replace(/[^0-9]/g, ""),
+                        );
+                        const suffix = stat.number.toString().includes("+")
+                            ? "+"
+                            : "";
+
+                        return (
+                            <div class="text-center">
+                                <div
+                                    class="text-4xl md:text-5xl font-black text-white stat-counter font-display"
+                                    data-target={numericValue}
+                                    data-suffix={suffix}
+                                    style="margin-bottom: var(--spacing-sm);"
+                                >
+                                    0{suffix}
+                                </div>
+                                <div class="text-accent font-bold uppercase tracking-wider text-sm md:text-base">
+                                    {stat.label}
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+        </Container>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <LatestBlogPosts />
+
+    <!-- Final CTA Section -->
+    <section class="py-20 md:py-32 bg-white relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"
+        >
+        </div>
+
+        <Container class="relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
+                    viewBox="0 0 24 24"
                     fill="currentColor"
-                    class="w-5 h-5"
+                    class="w-12 h-12 text-accent mx-auto mb-6 animate-pulse"
                 >
                     <path
                         fill-rule="evenodd"
-                        d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                        d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
                         clip-rule="evenodd"></path>
                 </svg>
-                (786) 833-9211
-            </Button>
-        </div>
-    </Container>
-</section>
+                <h2
+                    class="text-3xl md:text-5xl font-black text-primary mb-8 uppercase"
+                >
+                    Ready to Get Started?
+                </h2>
+                <p
+                    class="text-lg md:text-xl text-body mb-12 leading-relaxed font-medium reveal reveal-up reveal-delay-2"
+                >
+                    Experience professional electrical service from licensed
+                    experts. Quality workmanship backed by our satisfaction
+                    guarantee.
+                </p>
 
-<!-- FAQ Section -->
-<FAQAccordion />
+                <div
+                    class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center reveal reveal-up reveal-delay-3"
+                >
+                    <CtaButton
+                        action="call"
+                        variant="secondary"
+                        size="lg"
+                        class="magnetic-cta"
+                    />
+                    <CtaButton
+                        action="book"
+                        variant="primary"
+                        size="lg"
+                        class="magnetic-cta"
+                    />
+                </div>
 
-<!-- Latest Blog Posts -->
-<LatestBlogPosts />
-
-<!-- Stats Section -->
-<section class="bg-primary py-20 md:py-32">
-    <Container>
-        <div class="text-center mb-16">
-            <h4
-                class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
-                style="margin-bottom: var(--spacing-md);"
-            >
-                By The Numbers
-            </h4>
-            <h2 class="text-3xl md:text-5xl font-black text-white uppercase">
-                Trusted <span class="text-accent">Results</span>
-            </h2>
-        </div>
-
-        <div
-            class="grid grid-cols-2 md:grid-cols-4"
-            style="gap: var(--spacing-lg);"
-        >
-            {
-                stats.map((stat) => (
-                    <div class="text-center">
-                        <div
-                            class="text-4xl md:text-5xl font-black text-white"
-                            style="margin-bottom: var(--spacing-sm);"
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap justify-center gap-6 mt-16 text-sm">
+                    <div
+                        class="flex items-center gap-2 text-[var(--text-muted)]"
+                    >
+                        <svg
+                            class="w-5 h-5 text-accent"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
                         >
-                            {stat.number}
-                        </div>
-                        <div class="text-accent font-bold uppercase tracking-wider text-sm md:text-base">
-                            {stat.label}
-                        </div>
+                            <path
+                                fill-rule="evenodd"
+                                d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-bold">Licensed & Insured</span>
                     </div>
-                ))
-            }
-        </div>
-    </Container>
-</section>
-
-<!-- Reviews Carousel -->
-<ReviewCarousel />
-
-<!-- Service Areas -->
-<section class="bg-light py-20 md:py-32">
-    <Container>
-        <div class="text-center mb-16">
-            <h4
-                class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
-                style="margin-bottom: var(--spacing-md);"
-            >
-                Coverage Area
-            </h4>
-            <h2
-                class="text-3xl md:text-5xl font-black text-primary uppercase"
-                style="margin-bottom: var(--spacing-lg);"
-            >
-                Serving <span class="text-accent">South Florida</span>
-            </h2>
-            <p class="text-gray-600 text-lg font-medium">
-                Proudly providing expert electrical services across Miami-Dade
-                and Broward counties with fast response times.
-            </p>
-        </div>
-
-        <div
-            class="flex flex-wrap justify-center"
-            style="gap: var(--spacing-md);"
-        >
-            {
-                serviceAreas.map((area) => (
-                    <a
-                        href="/contact"
-                        class="px-6 py-3 bg-white text-gray-600 rounded-full border border-gray-200 hover:border-accent hover:text-accent hover:transform hover:-translate-y-1 transition-all text-sm font-bold uppercase tracking-wide shadow-sm"
+                    <div
+                        class="flex items-center gap-2 text-[var(--text-muted)]"
                     >
-                        {area}
-                    </a>
-                ))
-            }
-        </div>
-    </Container>
-</section>
-
-<!-- Final CTA Section -->
-<section class="py-20 md:py-32 bg-white relative overflow-hidden">
-    <div
-        class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"
-    >
-    </div>
-
-    <Container class="relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2
-                class="text-3xl md:text-5xl font-black text-primary mb-8 uppercase"
-            >
-                Ready to Get Started?
-            </h2>
-            <p
-                class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed font-medium"
-            >
-                Experience the Solomon Electric difference. Professional
-                service, expert workmanship, and complete peace of mind.
-            </p>
-
-            <div
-                class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center"
-            >
-                <Button
-                    href="tel:7868339211"
-                    variant="secondary"
-                    size="lg"
-                    class="flex items-center gap-3"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="w-5 h-5"
+                        <svg
+                            class="w-5 h-5 text-accent"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-bold"
+                            >100% Satisfaction Guaranteed</span
+                        >
+                    </div>
+                    <div
+                        class="flex items-center gap-2 text-[var(--text-muted)]"
                     >
-                        <path
-                            fill-rule="evenodd"
-                            d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    Call (786) 833-9211
-                </Button>
-                <Button
-                    href="/contact"
-                    variant="primary"
-                    size="lg"
-                    class="flex items-center gap-3"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="w-5 h-5"
-                    >
-                        <path
-                            d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"
-                        ></path>
-                        <path
-                            d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"
-                        ></path>
-                    </svg>
-                    Schedule Service
-                </Button>
-            </div>
-
-            <!-- Trust Badges -->
-            <div class="flex flex-wrap justify-center gap-6 mt-16 text-sm">
-                <div class="flex items-center gap-2 text-gray-500">
-                    <svg
-                        class="w-5 h-5 text-accent"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="font-bold">Licensed & Insured</span>
-                </div>
-                <div class="flex items-center gap-2 text-gray-500">
-                    <svg
-                        class="w-5 h-5 text-accent"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="font-bold">100% Satisfaction Guaranteed</span>
-                </div>
-                <div class="flex items-center gap-2 text-gray-500">
-                    <svg
-                        class="w-5 h-5 text-accent"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path
-                            d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
-                        ></path>
-                    </svg>
-                    <span class="font-bold">24/7 Emergency Service</span>
+                        <svg
+                            class="w-5 h-5 text-accent"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
+                            ></path>
+                        </svg>
+                        <span class="font-bold">24/7 Emergency Service</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </Container>
-</section>
+        </Container>
+    </section>
+</Layout>
+
+<script>
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+    };
+
+    const animateStats = () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target as HTMLElement;
+                    const target = parseInt(
+                        counter.getAttribute("data-target") || "0",
+                    );
+                    const suffix = counter.getAttribute("data-suffix") || "";
+                    const duration = 2000; // 2 seconds
+                    const startTime = performance.now();
+
+                    const updateCount = (currentTime: number) => {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        // Ease out quart
+                        const easeOut = 1 - Math.pow(1 - progress, 4);
+
+                        const current = Math.floor(easeOut * target);
+                        counter.innerText = current.toLocaleString() + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText =
+                                target.toLocaleString() + suffix;
+                        }
+                    };
+
+                    requestAnimationFrame(updateCount);
+                    observer.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+
+        document
+            .querySelectorAll(".stat-counter")
+            .forEach((el) => observer.observe(el));
+    };
+
+    // Run on load
+    animateStats();
+
+    // Run on view transitions if enabled
+    document.addEventListener("astro:page-load", animateStats);
+</script>

@@ -1,0 +1,99 @@
+{
+    "name": "Delray Beach",
+    "slug": "delray-beach",
+    "county": "Palm Beach",
+    "description": "Licensed Delray Beach electricians providing 24/7 expert services. From Atlantic Avenue commercial support to historic residential restorations, Solomon Electric is your trusted local choice.",
+    "population": "70,000+",
+    "founded": "1911",
+    "areaSquareMiles": "16",
+    "tagline": "Village by the Sea",
+    "landmarks": [
+        "Atlantic Avenue",
+        "Old School Square",
+        "Morikami Museum and Japanese Gardens",
+        "Delray Municipal Beach",
+        "Pineapple Grove Arts District"
+    ],
+    "neighborhoods": [
+        "Lake Ida",
+        "Delray Isle",
+        "Tropic Isle",
+        "Del-Ida Park",
+        "Kenland",
+        "Valencia Falls"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Federal Highway (US-1)",
+        "Atlantic Avenue",
+        "Congress Avenue",
+        "Linton Boulevard"
+    ],
+    "coordinates": {
+        "lat": 26.4615,
+        "lng": -80.0728
+    },
+    "challenges": [
+        {
+            "title": "Historic preservation & Modernization",
+            "description": "Delray's charm lies in its history. Neighborhoods like Lake Ida require specialized electrical skills to safely modernize systems while respecting architectural heritage.",
+            "icon": "Home"
+        },
+        {
+            "title": "High-Density Commercial Support",
+            "description": "The vibrancy of Atlantic Avenue requires electricians who can deliver fast, professional support for high-traffic retail, dining, and entertainment spaces.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Coastal Electrical Durability",
+            "description": "Delray's coastal properties face salt air corrosion. We use marine-grade fixtures and specialized materials to ensure long-lasting outdoor power and lighting.",
+            "icon": "Umbrella"
+        }
+    ],
+    "featuredServices": [
+        "commercial-led-lighting-retrofit",
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "landscape-outdoor-lighting",
+        "whole-home-surge-protection",
+        "recessed-lighting-installation"
+    ],
+    "stats": [
+        {
+            "value": "70K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide electrical services for businesses on Atlantic Avenue?",
+            "answer": "Yes, we offer full commercial support for Delray's premier entertainment district, including emergency response, lighting design, and power upgrades."
+        },
+        {
+            "question": "Are your electricians familiar with Delray Beach historic codes?",
+            "answer": "Absolutely. We frequently work on historic properties in and around downtown, ensuring all work is code-compliant and respectfully integrated into the home's architecture."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Trusted Delray Beach Electricians – Village by the Sea",
+            "body": "Delray Beach is a city that perfectly balances its award-winning 'Village by the Sea' charm with a sophisticated, modern energy. From Pineapple Grove to the sands of Atlantic Avenue, it's a community that values quality and character. Solomon Electric is proud to deliver that same standard of excellence to our Delray neighbors."
+        },
+        {
+            "heading": "Expert Electrical Solutions for Delray Residents and Businesses",
+            "body": "Whether you're restoring a historic gem in Lake Ida, upgrading a boutique on Atlantic Ave, or needing urgent help near the beach, our licensed team is ready. We provide upfront pricing, clean workmanship, and a dedication to safety that Delray Beach has trusted for over 15 years."
+        }
+    ]
+}

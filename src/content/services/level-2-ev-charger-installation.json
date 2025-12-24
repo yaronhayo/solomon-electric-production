@@ -1,0 +1,183 @@
+{
+  "name": "Level 2 EV Charger Installation (240V)",
+  "slug": "level-2-ev-charger-installation",
+  "description": "Charge your electric vehicle overnight—right in your own garage. Solomon Electric provides professional Level 2 EV charger installation throughout South Florida, including Tesla Wall Connectors, ChargePoint, JuiceBox, and all major brands. We handle everything from electrical load calculations to permit approval, ensuring your home's electrical system safely supports your EV for years to come.",
+  "shortDescription": "Home EV charging for all electric vehicles",
+  "icon": "Zap",
+  "image": "../../assets/images/services/ev-charging.png",
+  "category": "EV Charging & Solar",
+  "order": 31,
+  "features": [
+    "All EV brands supported—Tesla, Ford, Rivian, BMW, and more",
+    "Tesla Wall Connector certified installation",
+    "NEMA 14-50 outlet option for flexibility",
+    "Electrical load calculation included",
+    "Permit handling and inspection coordination",
+    "Panel upgrade assessment if needed"
+  ],
+  "warningSignsHeading": "Is Level 2 Charging Right for Your Home?",
+  "warningSignsSubheading": "Before installing a Level 2 charger, we evaluate your electrical system to ensure safe, optimal charging. Here's what we consider.",
+  "problems": [
+    {
+      "title": "Slow Level 1 Charging Frustration",
+      "description": "Standard wall outlets (Level 1) add only 3-5 miles of range per hour. If you're unplugging with a low battery each morning, you need the 25-40 mile/hour speed of Level 2.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Panel Capacity Concerns",
+      "description": "Level 2 chargers require 40-50 amps of dedicated capacity. We assess whether your current panel can handle this load or needs an upgrade.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Long Cable Run Distance",
+      "description": "The distance from your panel to your charging location affects wire gauge and installation complexity. Longer runs require thicker wire to prevent voltage drop.",
+      "icon": "Home"
+    },
+    {
+      "title": "Outdoor Installation Requirements",
+      "description": "Driveway or carport charging requires weatherproof equipment, proper mounting, and cable management to withstand Florida's sun, rain, and humidity.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Condo or HOA Restrictions",
+      "description": "Florida law gives condo owners EV charging rights (Statute 718.113), but proper permitting, insurance, and HOA notification are required. We specialize in compliant condo installations.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Future Second EV Planning",
+      "description": "Many families are adding second EVs. We can install infrastructure for future charging capacity even if you're only installing one charger now.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our EV Charger Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Site Assessment & Load Calculation",
+      "description": "We evaluate your electrical panel capacity, measure the distance to your charging location, and calculate whether your existing service can handle the added load."
+    },
+    {
+      "step": 2,
+      "title": "Equipment & Location Planning",
+      "description": "We help you select the right charger for your vehicle and usage patterns, then determine optimal mounting location for cable reach and convenience."
+    },
+    {
+      "step": 3,
+      "title": "Permit Application",
+      "description": "EV charger installations require electrical permits in all Florida municipalities. We handle the entire permit process with your local building department."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "Our licensed electricians install your dedicated 240V circuit with proper wire gauge, conduit protection, and code-compliant connections. Most installations complete in 4-6 hours."
+    },
+    {
+      "step": 5,
+      "title": "Testing & Configuration",
+      "description": "We test the circuit, configure your charger settings (including smart features if applicable), verify charging with your vehicle, and schedule your inspection."
+    }
+  ],
+  "benefitsHeading": "Why Install a Level 2 EV Charger at Home",
+  "benefits": [
+    {
+      "title": "Wake Up to a Full Battery",
+      "description": "Level 2 charging adds 25-40 miles of range per hour—giving you a complete charge overnight. No more planning your day around public charging stations.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Lower Charging Costs",
+      "description": "Home electricity costs significantly less than public DC fast chargers. Many utilities offer off-peak EV rates, providing significant savings on your daily transportation costs compared to public charging or gasoline.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Increase Home Value",
+      "description": "EV charger infrastructure is increasingly expected by home buyers. A professionally installed Level 2 charger adds value and marketability to your property.",
+      "icon": "Home"
+    },
+    {
+      "title": "Convenience & Reliability",
+      "description": "No apps, no waiting, no broken public chargers. Your home charger is always available, always working, and always ready when you are.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Chargers Installed"
+    },
+    {
+      "value": "25-40",
+      "label": "Miles/Hour Charging"
+    },
+    {
+      "value": "100%",
+      "label": "Brand Compatible"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a permit to install an EV charger in Miami?",
+      "answer": "Yes, absolutely. Installing a Level 2 charger (240V) requires a dedicated 40-50 amp circuit—significant electrical work that requires permits to ensure your panel and wiring can handle the load safely. Solomon Electric handles all permit applications and inspection scheduling."
+    },
+    {
+      "question": "Can I install a Tesla charger if I don't have a Tesla?",
+      "answer": "Yes! The Tesla Wall Connector works with all EVs when paired with a standard J1772 adapter (included in most non-Tesla EVs). The Tesla charger is well-designed and often preferred even by non-Tesla owners. Alternatively, we install universal charging stations like ChargePoint and JuiceBox."
+    },
+    {
+      "question": "How fast will a Level 2 charger charge my car?",
+      "answer": "Level 2 chargers typically add 25-40 miles of range per hour, depending on your vehicle and charger amperage. This means a full charge overnight for most EVs—compared to Level 1 charging which might only add 40 miles in an entire night of charging."
+    },
+    {
+      "question": "Can I install an EV charger in my condo parking spot?",
+      "answer": "Florida Statute 718.113 protects your right to install EV charging in your condo parking space. However, you must follow specific requirements: proper permits, adequate insurance, professional installation by a licensed electrician, and proper HOA notification. We specialize in code-compliant condo EV installations."
+    },
+    {
+      "question": "Will my electrical panel handle an EV charger?",
+      "answer": "That depends on your current panel capacity and existing loads. Most 200-amp panels can accommodate a Level 2 charger. Older 100-amp panels often need upgrading. We perform a detailed load calculation during our site assessment and can bundle panel upgrades with charger installation if needed."
+    },
+    {
+      "question": "Should I get a hardwired charger or a NEMA 14-50 outlet?",
+      "answer": "Both work excellently. A NEMA 14-50 outlet provides flexibility—you can unplug and take your portable charger to another location. Hardwired chargers often allow higher amperage and cleaner installation. We'll discuss your specific needs and recommend the best option."
+    },
+    {
+      "question": "Can you install my charger outdoors?",
+      "answer": "Yes. We regularly install outdoor chargers in driveways, carports, and open parking areas. We use weatherproof equipment, proper mounting, and code-compliant wiring protection to handle Florida's sun, rain, and humidity. Cable management options keep your installation neat."
+    },
+    {
+      "question": "What brands of EV chargers do you install?",
+      "answer": "We install all major brands: Tesla Wall Connector, ChargePoint, JuiceBox, Grizzl-E, Wallbox, ClipperCreek, and others. We also install NEMA 14-50 outlets for use with portable chargers included with your vehicle. If you have a preferred charger, we're happy to install it."
+    }
+  ],
+  "relatedServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "240v-outlet-installation",
+    "electric-vehicle-outlet-installation",
+    "home-ev-charging-system-setup"
+  ],
+  "seoContent": [
+    {
+      "heading": "Professional EV Charger Installation in Miami & South Florida",
+      "body": "Solomon Electric is South Florida's trusted partner for residential and commercial EV charger installation. Our licensed electricians install Tesla Wall Connectors, ChargePoint, JuiceBox, and all major Level 2 charging systems. We handle everything from initial load calculations to final inspection—ensuring your home is EV-ready with a safe, code-compliant installation."
+    },
+    {
+      "heading": "Tesla Wall Connector Certified Installation",
+      "body": "The Tesla Wall Connector is the fastest home charging option for Tesla owners, delivering up to 44 miles of range per hour. We're experienced with Tesla's specific installation requirements, including proper wire gauge, breaker sizing, and optimal placement. Your Tesla Wall Connector installation includes all permits, professional mounting, and testing."
+    },
+    {
+      "heading": "EV Charger Installation for Condos & HOAs",
+      "body": "Florida law (Statute 718.113) protects condo owners' rights to install EV chargers, but proper procedures must be followed. Solomon Electric specializes in HOA-compliant EV installations, handling permits, insurance requirements, and the specific electrical challenges of multi-unit buildings. We make condo EV charging hassle-free."
+    },
+    {
+      "heading": "Serving All of South Florida's EV Owners",
+      "body": "From Miami Beach to Boca Raton, Solomon Electric installs EV chargers throughout Miami-Dade, Broward, and Palm Beach counties. Our service areas include Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Springs, Coral Gables, Aventura, Weston, and all surrounding communities. Contact us for a free EV charger installation assessment."
+    }
+  ],
+  "relatedBlogPosts": [
+    "condo-electrical-upgrades-miami",
+    "tesla-universal-ev-charging-station-installation"
+  ]
+}

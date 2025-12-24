@@ -1,0 +1,180 @@
+{
+  "name": "Smart Switch & Home Automation",
+  "slug": "smart-switch-home-automation",
+  "description": "Transform your South Florida home into a smart home with professional smart switch and automation installation. Control lights, fans, and devices from your phone, voice assistants, or automated schedules. Solomon Electric ensures proper wiring compatibility, reliable app configuration, and seamless integration with your existing smart home ecosystem.",
+  "shortDescription": "Control your home from anywhere",
+  "icon": "Zap",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 22,
+  "features": [
+    "Smart light switch installation",
+    "Smart dimmer setup and configuration",
+    "Voice assistant integration (Alexa, Google, Siri)",
+    "Automated lighting schedules",
+    "Smart fan controls",
+    "Hub and bridge configuration"
+  ],
+  "warningSignsHeading": "Is Smart Home Automation Right for You?",
+  "warningSignsSubheading": "Smart switches and automation can transform daily routines. Here's when professional installation makes the difference.",
+  "problems": [
+    {
+      "title": "No Neutral Wire in Switch Box",
+      "description": "Many smart switches require a neutral wire that older homes lack. We can install smart switches designed for no-neutral situations or run neutral wires where needed.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Multi-Way Switch Confusion",
+      "description": "Three-way and four-way switches controlling lights from multiple locations require specific smart switch configurations. DIY mistakes here cause non-functioning switches.",
+      "icon": "Plug"
+    },
+    {
+      "title": "WiFi Dead Zones",
+      "description": "Smart devices need reliable WiFi. We can identify connectivity issues and recommend solutions like mesh networks or Zigbee/Z-Wave alternatives.",
+      "icon": "Home"
+    },
+    {
+      "title": "Dimmer Compatibility Issues",
+      "description": "Not all smart dimmers work with all LED bulbs—causing flickering, buzzing, or limited dimming range. We select compatible equipment combinations.",
+      "icon": "Zap"
+    },
+    {
+      "title": "App and Voice Setup Complexity",
+      "description": "Getting smart devices to work together across apps and voice assistants can be frustrating. We configure everything so it works on installation day.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Want Automation Without Replacing Every Switch",
+      "description": "Strategic smart switch placement at key locations provides most automation benefits without the cost of replacing every switch in your home.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "processHeading": "Our Smart Home Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Consultation & Planning",
+      "description": "We discuss your automation goals, assess your existing wiring, and recommend smart switches and hubs compatible with your preferred ecosystem (Apple, Google, Alexa, or neutral)."
+    },
+    {
+      "step": 2,
+      "title": "Wiring Assessment",
+      "description": "We check switch boxes for neutral wires, identify multi-way switch configurations, and plan any wiring modifications needed for your chosen devices."
+    },
+    {
+      "step": 3,
+      "title": "Professional Installation",
+      "description": "Our licensed electricians install smart switches with proper wiring, ensuring secure connections and correct load ratings for your fixtures."
+    },
+    {
+      "step": 4,
+      "title": "App & Voice Configuration",
+      "description": "We set up your smart home app, configure WiFi connectivity, link voice assistants, and create initial automation scenes and schedules."
+    },
+    {
+      "step": 5,
+      "title": "Training & Demonstration",
+      "description": "We walk you through controlling your new smart devices, explain automation options, and ensure everyone in the household knows how to use the system."
+    }
+  ],
+  "benefitsHeading": "Benefits of Smart Home Automation",
+  "benefits": [
+    {
+      "title": "Control from Anywhere",
+      "description": "Left a light on? Forgot to turn off the fan? Control your home from your phone wherever you are—at work, on vacation, or just in bed.",
+      "icon": "Home"
+    },
+    {
+      "title": "Voice Control Convenience",
+      "description": "'Alexa, turn off the lights.' 'Hey Google, dim the bedroom.' Voice control makes everyday tasks effortless, especially when your hands are full.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Energy Savings",
+      "description": "Automated schedules and occupancy sensing ensure lights aren't running when no one's home. Smart dimming reduces energy use while extending LED life.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Enhanced Security",
+      "description": "Vacation mode simulates occupancy with random lighting patterns. Arriving home to a lit house is both welcoming and safer.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "200+",
+      "label": "Smart Homes Set Up"
+    },
+    {
+      "value": "15%",
+      "label": "Typical Energy Savings"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a neutral wire for smart switches?",
+      "answer": "Most smart switches require a neutral wire for power, but many older homes don't have neutral wires in switch boxes. We can: 1) install neutral-wire-not-required switches (Lutron Caseta, some Inovelli), 2) run a neutral wire to the switch box, or 3) use smart bulbs instead. We'll assess your situation and recommend the best approach."
+    },
+    {
+      "question": "Which smart home system is best?",
+      "answer": "It depends on your ecosystem. If you have iPhones and Apple devices, HomeKit offers the best integration. Alexa works well for Amazon households. Google Home suits Android users. For maximum flexibility, Zigbee or Z-Wave devices with a SmartThings or Hubitat hub work across platforms. We'll help you choose based on your existing devices."
+    },
+    {
+      "question": "Will smart switches work with my existing light fixtures?",
+      "answer": "Yes, smart switches replace the wall switch and work with any fixture. However, smart dimmers must be compatible with your bulb type—LED, incandescent, or CFL. We verify compatibility and select dimmers rated for your specific fixtures."
+    },
+    {
+      "question": "Can you install smart switches in a 3-way configuration?",
+      "answer": "Absolutely. Three-way switches (controlling one light from two locations) require specific smart switch setups—typically a smart switch at one location and a companion switch at the other. We configure these correctly so both switches work as expected."
+    },
+    {
+      "question": "What happens to smart switches during power outages?",
+      "answer": "Smart switches still function as regular switches during power outages—you can still turn lights on and off manually. When power returns, most smart switches reconnect automatically to your WiFi and resume normal smart operation."
+    },
+    {
+      "question": "Do you install smart thermostats too?",
+      "answer": "Yes! Smart thermostats like Nest, Ecobee, and Honeywell integrate perfectly with smart home ecosystems. We ensure proper wiring (including the common wire most smart thermostats need) and configure app/voice integration."
+    },
+    {
+      "question": "Will smart switches slow down my WiFi?",
+      "answer": "Individual smart switches use minimal bandwidth. However, many devices on older routers can cause congestion. Zigbee and Z-Wave devices use separate frequencies and don't impact WiFi at all. We can recommend the best approach for your home network."
+    },
+    {
+      "question": "Can I still use regular switches after installing smart switches?",
+      "answer": "Smart switches can always be operated manually—they're still physical switches. Family members or guests who don't want to use voice or app control can use them exactly like regular switches."
+    }
+  ],
+  "relatedServices": [
+    "smart-lighting-installation",
+    "smart-thermostat-installation",
+    "motion-sensor-dimmer-installation",
+    "ring-doorbell-security-camera-wiring"
+  ],
+  "seoContent": [
+    {
+      "heading": "Smart Switch Installation in Miami & South Florida",
+      "body": "Transform your home with professional smart switch installation from Solomon Electric. We install smart light switches, dimmers, and fan controls that integrate with Alexa, Google Home, Apple HomeKit, and other smart home platforms. Our licensed electricians ensure proper wiring, reliable connectivity, and complete app configuration—so your smart home works perfectly from day one."
+    },
+    {
+      "heading": "Expert Smart Home Wiring",
+      "body": "Smart device installation isn't just plugging in a gadget—it requires proper electrical wiring and configuration. We handle the challenges DIYers struggle with: missing neutral wires, multi-way switch configurations, dimmer compatibility, and WiFi connectivity issues. Professional installation means reliable, frustration-free smart home operation."
+    },
+    {
+      "heading": "Complete Smart Home Ecosystem Setup",
+      "body": "We don't just install hardware—we configure your complete smart home ecosystem. App setup, voice assistant integration, automation schedules, and scenes that control multiple devices with one command. We'll train you on using your new system and ensure everyone in the household can operate it."
+    },
+    {
+      "heading": "Serving Smart Homeowners Throughout South Florida",
+      "body": "Solomon Electric provides smart home installation throughout Miami-Dade, Broward, and Palm Beach counties. From single smart switch installations to whole-home automation projects, we bring the expertise to make your smart home dreams reality. Contact us for a smart home consultation."
+    }
+  ],
+  "relatedBlogPosts": []
+}

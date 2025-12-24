@@ -1,15 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import heroImage from "../assets/images/hero.webp";
+import heroImage from "../assets/images/heroes/book.png";
 import Button from "../components/ui/Button.astro";
 import BookingForm from "../components/BookingForm.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 ---
 
 <Layout
-    title="Book Online - Solomon Electric"
-    description="Schedule your electrical service online. Fast, easier, and convenient."
+    title="Book Electrician Online | Schedule Service Miami FL"
+    description="Schedule electrical service online with Solomon Electric. Fast, convenient booking for Miami and South Florida. Licensed electricians available for residential and commercial work."
 >
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb
+        items={[{ label: "Home", href: "/" }, { label: "Book Online" }]}
+    />
+
     <!-- Hero Section - Fully responsive with optimized spacing -->
     <section
         class="relative min-h-screen flex items-center overflow-hidden"
@@ -51,11 +57,11 @@ import BookingForm from "../components/BookingForm.astro";
                         class="font-black text-white leading-[0.9]"
                         style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
                     >
-                        Book <br />
+                        Let's Get Your<br />
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
                         >
-                            Service
+                            Problem Solved
                         </span>
                     </h1>
 
@@ -63,8 +69,10 @@ import BookingForm from "../components/BookingForm.astro";
                         class="text-gray-200 font-light leading-relaxed"
                         style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
                     >
-                        Fill out the form to request an appointment. We'll get
-                        back to you shortly to confirm your service.
+                        Takes less than 2 minutes. No commitment required—just
+                        tell us what's going on and we'll reach out to discuss
+                        how we can help. A real electrician will review your
+                        request personally.
                     </p>
                 </div>
 

@@ -1,0 +1,182 @@
+{
+  "name": "Home Standby Generator Installation",
+  "slug": "home-standby-generator-installation",
+  "description": "When the power goes out in South Florida—from hurricanes, thunderstorms, or grid failures—a whole-home standby generator keeps your family safe and comfortable. Unlike portable generators, standby systems detect outages automatically and restore power within seconds, running on natural gas or propane so you never have to worry about fuel supplies. Solomon Electric provides complete generator installation including sizing, permits, and professional installation.",
+  "shortDescription": "Automatic backup power for your home",
+  "icon": "Zap",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 8,
+  "features": [
+    "Automatic power restoration in seconds",
+    "Natural gas or propane fuel options",
+    "Whole-home or essential circuit coverage",
+    "Generac, Kohler, and Briggs & Stratton brands",
+    "Transfer switch installation included",
+    "Permit and inspection coordination"
+  ],
+  "warningSignsHeading": "Do You Need a Whole-Home Generator?",
+  "warningSignsSubheading": "Consider standby generator installation if any of these apply to your South Florida home.",
+  "problems": [
+    {
+      "title": "Hurricane Season Vulnerability",
+      "description": "South Florida hurricane season runs June through November. Post-storm power outages can last days or even weeks. A standby generator keeps your home running.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Medical Equipment Dependency",
+      "description": "CPAP machines, oxygen concentrators, medications requiring refrigeration—some family members can't safely be without power. Generator backup is essential.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Home Office Requirements",
+      "description": "Remote work requires reliable power. Extended outages mean lost productivity, missed deadlines, and lost income. Generators keep you working.",
+      "icon": "Home"
+    },
+    {
+      "title": "Pool Pump & Water Systems",
+      "description": "Extended power loss means stagnant pool water turning green and well pumps stopping. Generators maintain your pool and water supply during outages.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Food Spoilage Concerns",
+      "description": "The average refrigerator contains a significant investment in groceries. Extended outages mean total loss—repeated each hurricane season without reliable backup power.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Security System Protection",
+      "description": "Alarm systems, cameras, and electric gate operators depend on power. Outages leave your home vulnerable when the neighborhood is most at risk.",
+      "icon": "AlertCircle"
+    }
+  ],
+  "processHeading": "Our Generator Installation Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Load Analysis & Sizing",
+      "description": "We calculate your home's electrical load, identify critical circuits (AC, refrigerator, well pump), and determine whether you need whole-home coverage or essential circuit protection."
+    },
+    {
+      "step": 2,
+      "title": "Site Planning & Fuel Source",
+      "description": "We determine optimal generator placement meeting code clearances, assess your natural gas or propane availability, and plan fuel line routing if needed."
+    },
+    {
+      "step": 3,
+      "title": "Permits & HOA Coordination",
+      "description": "We handle all permit applications—electrical permits and sometimes gas permits—plus coordinate any HOA requirements for generator installation."
+    },
+    {
+      "step": 4,
+      "title": "Professional Installation",
+      "description": "Our team installs the generator pad, generator unit, automatic transfer switch, and coordinates gas line connection. Installation typically takes 1-2 days."
+    },
+    {
+      "step": 5,
+      "title": "Testing & Training",
+      "description": "We test the complete system including automatic transfer, demonstrate operation and maintenance, and schedule your inspection. You'll know exactly how your generator works."
+    }
+  ],
+  "benefitsHeading": "Why Install a Standby Generator",
+  "benefits": [
+    {
+      "title": "Automatic Operation",
+      "description": "Standby generators detect outages and start automatically—even when you're away or asleep. Power transfers in 10-30 seconds with no manual intervention required.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Never Run Out of Fuel",
+      "description": "Connected to natural gas or propane, standby generators run continuously as long as fuel is available. No gas station runs during emergencies.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Protect Your Investment",
+      "description": "Air conditioning prevents mold growth during humid Florida outages. Sump pumps prevent flooding. Refrigerators save food. Generators protect far more than comfort.",
+      "icon": "Home"
+    },
+    {
+      "title": "Increase Home Value",
+      "description": "Whole-home generators are desirable selling points in hurricane-prone South Florida. Buyers pay premium prices for homes with installed backup power.",
+      "icon": "TrendingUp"
+    }
+  ],
+  "stats": [
+    {
+      "value": "10",
+      "label": "Second Auto-Start"
+    },
+    {
+      "value": "100+",
+      "label": "Generators Installed"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What size generator do I need for my home?",
+      "answer": "Generator sizing depends on what you want to power during outages. A 16-22kW unit typically handles essentials (AC, refrigerator, lights, some outlets). Whole-home coverage for larger homes may require 24kW or larger. We perform a detailed load calculation to recommend the right size—oversizing wastes money, undersizing leaves you without critical power."
+    },
+    {
+      "question": "How long can a standby generator run continuously?",
+      "answer": "Standby generators can run indefinitely as long as fuel is available. Natural gas units connected to utility gas have unlimited runtime. Propane units run until the tank empties (a 500-gallon tank provides roughly 7-10 days at moderate load). Generators need oil changes every 200-500 hours of operation."
+    },
+    {
+      "question": "Do standby generators require permits in Florida?",
+      "answer": "Yes. Generator installations require electrical permits (for the transfer switch) and often gas permits (for fuel line connections). Some municipalities have additional requirements. Solomon Electric handles all permitting—you don't need to coordinate anything yourself."
+    },
+    {
+      "question": "How loud are whole-home generators?",
+      "answer": "Modern standby generators operate at 65-75 decibels—about the volume of a conversation or air conditioner compressor. They're significantly quieter than portable generators and designed for residential neighborhoods. Local codes specify setback requirements from property lines."
+    },
+    {
+      "question": "Natural gas vs. propane—which is better?",
+      "answer": "If you have natural gas service, it's typically the better choice—unlimited fuel supply and no tank to maintain. Propane is excellent for homes without gas lines; we can install propane tanks sized to your expected usage. Both fuels provide reliable, clean-burning operation."
+    },
+    {
+      "question": "How often do generators need maintenance?",
+      "answer": "Standby generators self-test weekly (you'll hear them run briefly) to ensure readiness. Professional maintenance is recommended annually—oil change, filter replacement, battery check, and load testing. We offer maintenance plans to keep your investment ready when you need it."
+    },
+    {
+      "question": "Will my generator power my air conditioning?",
+      "answer": "Yes, with properly sized equipment. Air conditioning is typically the largest electrical load in Florida homes. We size your generator specifically to handle your AC system(s) plus other essential circuits. Running without AC during hot, humid post-hurricane recovery is miserable—we make sure you're comfortable."
+    },
+    {
+      "question": "What brands of generators do you install?",
+      "answer": "We install Generac, Kohler, and Briggs & Stratton generators—all major brands with proven reliability and available parts/service. We'll recommend the best unit for your specific needs, budget, and home requirements."
+    }
+  ],
+  "relatedServices": [
+    "automatic-transfer-switch-installation",
+    "generator-sizing-load-analysis",
+    "generator-maintenance-service",
+    "portable-generator-hookup"
+  ],
+  "seoContent": [
+    {
+      "heading": "Standby Generator Installation in South Florida",
+      "body": "Hurricane season, thunderstorms, and grid failures make backup power essential for South Florida homeowners. Solomon Electric installs whole-home standby generators that detect outages and restore power automatically—keeping your family safe and comfortable when the lights go out everywhere else. We handle everything from sizing to permits to professional installation."
+    },
+    {
+      "heading": "Why South Florida Homes Need Backup Power",
+      "body": "Living in Florida's hurricane corridor means extended power outages are inevitable. Without air conditioning, Florida's heat and humidity become dangerous. Refrigerated food spoils. Medical equipment fails. Work stops. A properly sized standby generator eliminates these concerns—running automatically on natural gas or propane for as long as needed."
+    },
+    {
+      "heading": "Generac, Kohler & Briggs & Stratton Installation",
+      "body": "Solomon Electric is an authorized installer for all major generator brands. We recommend equipment based on your specific needs—not brand partnerships. Whether you need a basic essential-circuit generator or whole-home coverage for a large property, we'll size, install, and service the right unit for your situation."
+    },
+    {
+      "heading": "Generator Installation Throughout Miami-Dade & Broward",
+      "body": "We install standby generators throughout South Florida, including Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Gables, Weston, and all surrounding communities. Our licensed electricians handle permitting, installation, and inspection—providing complete backup power solutions for homes of all sizes."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

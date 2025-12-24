@@ -1,0 +1,216 @@
+---
+import Container from "./ui/Container.astro";
+import Button from "./ui/Button.astro";
+import { Image } from "astro:assets";
+
+interface Props {
+    title: string;
+    subtitle?: string;
+    description?: string;
+    image: ImageMetadata;
+    primaryCta?: {
+        text: string;
+        href: string;
+        icon?: any;
+    };
+    secondaryCta?: {
+        text: string;
+        href: string;
+        icon?: any;
+    };
+    trustIndicators?: boolean;
+    align?: "left" | "center";
+    showScrollIndicator?: boolean;
+}
+
+const {
+    title,
+    subtitle,
+    description,
+    image,
+    primaryCta,
+    secondaryCta,
+    trustIndicators = false,
+    align = "left",
+    showScrollIndicator = false,
+} = Astro.props;
+---
+
+<section
+    class="relative min-h-[60vh] flex items-center overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32"
+>
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <Image
+            src={image}
+            alt={title.replace(/<[^>]*>/g, "")}
+            class="w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+            quality={80}
+            widths={[640, 1024, 1920]}
+            sizes="100vw"
+        />
+        <!-- Gradient Overlays matching global style -->
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/85 to-transparent z-1"
+        >
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-primary/30 z-1"
+        >
+        </div>
+    </div>
+
+    <!-- Hero Content -->
+    <Container class="relative z-10 w-full">
+        <div
+            class={`grid grid-cols-1 lg:grid-cols-12 items-center gap-[var(--spacing-xl)] ${align === "center" ? "justify-center text-center" : ""}`}
+        >
+            <!-- Left Column: Text -->
+            <div
+                class={Astro.slots.has("visual")
+                    ? "lg:col-span-7"
+                    : "lg:col-span-12 lg:max-w-5xl"}
+            >
+                {
+                    subtitle && (
+                        <p
+                            class="text-accent tracking-[0.3em] font-bold uppercase mb-[var(--spacing-md)]"
+                            style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);"
+                        >
+                            {subtitle}
+                        </p>
+                    )
+                }
+
+                <h1
+                    class="font-black text-white leading-[0.9] mb-[var(--spacing-lg)] tracking-[-0.04em]"
+                    style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem);"
+                >
+                    <Fragment set:html={title} />
+                </h1>
+
+                {
+                    description && (
+                        <p
+                            class="text-gray-200 font-light leading-relaxed mb-[var(--spacing-lg)]"
+                            style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem);"
+                        >
+                            {description}
+                        </p>
+                    )
+                }
+
+                <!-- Trust Indicators (Optional) -->
+                {
+                    trustIndicators && (
+                        <div class="flex flex-wrap items-center gap-[var(--spacing-md)] mb-[var(--spacing-xl)]">
+                            <div class="flex items-center text-accent gap-[var(--spacing-xs)] glass-bg glass-border px-4 py-2 rounded-xl">
+                                <svg
+                                    class="w-5 h-5 shimmer-authority"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                                <span
+                                    class="font-extrabold text-white tracking-wider uppercase"
+                                    style="font-size: clamp(0.7rem, 0.8vw, 0.9rem);"
+                                >
+                                    Licensed FL EC13012419
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-2 text-accent glass-bg glass-border px-4 py-2 rounded-xl">
+                                <svg
+                                    class="w-5 h-5 shimmer-authority"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                                </svg>
+                                <span
+                                    class="font-extrabold text-white tracking-wider uppercase"
+                                    style="font-size: clamp(0.7rem, 0.8vw, 0.9rem);"
+                                >
+                                    24/7 Emergency Response
+                                </span>
+                            </div>
+                        </div>
+                    )
+                }
+
+                <!-- CTAs -->
+                {
+                    (primaryCta || secondaryCta) && (
+                        <div class="flex flex-wrap gap-4">
+                            {primaryCta && (
+                                <Button
+                                    href={primaryCta.href}
+                                    variant="primary"
+                                    class="md:text-lg px-8 py-4 gap-2"
+                                >
+                                    {primaryCta.icon && (
+                                        <primaryCta.icon class="w-5 h-5" />
+                                    )}
+                                    {primaryCta.text}
+                                </Button>
+                            )}
+                            {secondaryCta && (
+                                <Button
+                                    href={secondaryCta.href}
+                                    variant="secondary"
+                                    class="md:text-lg px-8 py-4 gap-2"
+                                >
+                                    {secondaryCta.icon && (
+                                        <secondaryCta.icon class="w-5 h-5" />
+                                    )}
+                                    {secondaryCta.text}
+                                </Button>
+                            )}
+                        </div>
+                    )
+                }
+            </div>
+
+            <!-- Right Column: Visual/Widget -->
+            {
+                Astro.slots.has("visual") && (
+                    <div class="lg:col-span-5 relative">
+                        <slot name="visual" />
+                    </div>
+                )
+            }
+        </div>
+
+        <!-- Scroll Indicator -->
+        {
+            showScrollIndicator && (
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden lg:block">
+                    <div class="flex flex-col items-center gap-2 text-white/70 animate-bounce">
+                        <span class="text-[10px] uppercase tracking-widest">
+                            Scroll Down
+                        </span>
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            )
+        }
+    </Container>
+</section>

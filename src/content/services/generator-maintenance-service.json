@@ -1,0 +1,182 @@
+{
+  "name": "Generator Maintenance Service",
+  "slug": "generator-maintenance-service",
+  "description": "Your backup generator only works if it's maintained. When the power goes out isn't the time to discover maintenance issues. Solomon Electric provides comprehensive generator maintenance services throughout South Florida—keeping your standby generator ready to protect your home when hurricanes and outages strike.",
+  "shortDescription": "Keep your generator ready",
+  "icon": "Shield",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 14,
+  "features": [
+    "Annual maintenance service",
+    "Battery testing and replacement",
+    "Oil and filter changes",
+    "Load bank testing",
+    "Transfer switch testing",
+    "Fuel system service"
+  ],
+  "warningSignsHeading": "Signs Your Generator Needs Attention",
+  "warningSignsSubheading": "Regular maintenance prevents failures when you need backup power most.",
+  "problems": [
+    {
+      "title": "Hasn't Been Serviced Annually",
+      "description": "Generators need annual maintenance—oil change, filter replacement, battery check. Skipping maintenance invites failure when you need power.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Battery Issues During Self-Test",
+      "description": "If your generator struggles to start during weekly self-tests, the battery may be failing. Batteries typically need replacement every 3-4 years.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Unusual Sounds or Smoke",
+      "description": "Strange noises, excessive smoke, or rough running indicate mechanical issues needing diagnosis before they become larger problems.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Fuel Problems",
+      "description": "Fuel systems can develop issues—clogged filters, stale fuel (propane excepted), water contamination. Regular service prevents fuel-related failures.",
+      "icon": "Flame"
+    },
+    {
+      "title": "Transfer Switch Not Tested",
+      "description": "The transfer switch is critical—if it fails, your generator can't power your home. Annual testing verifies proper operation.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Been Years Since Last Service",
+      "description": "Life gets busy, but generators don't maintain themselves. If it's been more than a year, schedule service before hurricane season.",
+      "icon": "Home"
+    }
+  ],
+  "processHeading": "Our Generator Maintenance Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Visual Inspection",
+      "description": "We inspect the generator exterior, connections, and enclosure for damage, corrosion, pests, or anything affecting operation."
+    },
+    {
+      "step": 2,
+      "title": "Oil and Filter Service",
+      "description": "We change oil and filters according to manufacturer specifications—essential for long engine life and reliable operation."
+    },
+    {
+      "step": 3,
+      "title": "Battery Testing",
+      "description": "We load-test the starting battery and check connections. Weak batteries are the #1 cause of generator start failures."
+    },
+    {
+      "step": 4,
+      "title": "Operational Testing",
+      "description": "We run the generator under load, verify proper voltage and frequency, and check transfer switch operation."
+    },
+    {
+      "step": 5,
+      "title": "Documentation",
+      "description": "We provide a service report documenting work performed and any recommendations—important for warranty and maintenance records."
+    }
+  ],
+  "benefitsHeading": "Benefits of Regular Generator Maintenance",
+  "benefits": [
+    {
+      "title": "Reliable When Needed",
+      "description": "Maintained generators start and run when power fails. Neglected generators often fail at the worst possible time.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Extended Lifespan",
+      "description": "Regular maintenance extends generator life significantly. Well-maintained generators last 20-30 years; neglected ones fail much sooner.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Warranty Protection",
+      "description": "Most generator warranties require documented maintenance. Skip service and you may void your warranty.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Peace of Mind",
+      "description": "Know your generator is ready before hurricane season arrives. Maintenance now prevents panic later.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Generators Maintained"
+    },
+    {
+      "value": "Annual",
+      "label": "Recommended Service"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How often should my generator be serviced?",
+      "answer": "Annually at minimum. Most manufacturers recommend service every 100-200 hours of operation OR annually, whichever comes first. If your generator runs frequently (multiple outages), more frequent service may be appropriate."
+    },
+    {
+      "question": "What does annual maintenance include?",
+      "answer": "Comprehensive service includes: oil and filter change, air filter inspection/replacement, spark plug inspection/replacement (gas units), battery testing, coolant check (liquid-cooled), fuel system inspection, operational testing, and transfer switch verification."
+    },
+    {
+      "question": "Why did my generator fail to start during the last outage?",
+      "answer": "Common causes include: dead or weak battery (#1 cause), stale fuel (gas units left sitting), low oil (auto-shutoff protection), transfer switch issues, or mechanical problems from lack of maintenance. We diagnose and repair start failures."
+    },
+    {
+      "question": "How long do generator batteries last?",
+      "answer": "Typically 3-4 years in Florida's heat. Weekly exercise runs help but don't prevent eventual failure. We recommend proactive battery replacement every 3 years rather than waiting for failure during an outage."
+    },
+    {
+      "question": "Do I need to change the oil if my generator rarely runs?",
+      "answer": "Yes—annual oil changes are recommended regardless of runtime. Oil degrades over time even when not running. Contaminants from combustion accumulate during exercise runs. Fresh oil protects the engine whether it runs 10 hours or 100."
+    },
+    {
+      "question": "What's load bank testing?",
+      "answer": "Load bank testing runs the generator at full rated capacity using a load bank device. This verifies the generator can actually deliver rated power and that all systems function properly under load. Weekly exercise runs are typically light load only."
+    },
+    {
+      "question": "Should I service my generator before or after hurricane season?",
+      "answer": "Before. Spring service ensures your generator is ready when hurricane season starts in June. Post-season service is also valuable if the generator ran significantly during storms, but pre-season service is the priority."
+    },
+    {
+      "question": "Can you set up automatic maintenance reminders?",
+      "answer": "Yes. We track service dates and can remind you when annual maintenance is due. Many clients prefer maintenance schedules that ensure their generator is serviced every spring before hurricane season."
+    }
+  ],
+  "relatedServices": [
+    "home-standby-generator-installation",
+    "automatic-transfer-switch-installation",
+    "generator-sizing-load-analysis",
+    "portable-generator-hookup"
+  ],
+  "seoContent": [
+    {
+      "heading": "Generator Maintenance Service in South Florida",
+      "body": "Your backup generator only works if it's maintained. Solomon Electric provides comprehensive generator maintenance throughout Miami-Dade and Broward counties—keeping your standby generator ready to protect your home when hurricanes and outages strike."
+    },
+    {
+      "heading": "Annual Generator Service",
+      "body": "Generators need annual maintenance including oil and filter changes, battery testing, fuel system service, and operational verification. Regular service prevents the failures that occur with neglected generators—don't wait until an outage to discover problems."
+    },
+    {
+      "heading": "Pre-Hurricane Season Maintenance",
+      "body": "Schedule generator maintenance before hurricane season—not during. Spring service ensures your generator is ready when you need it. When storms threaten, everyone calls for service and availability becomes limited."
+    },
+    {
+      "heading": "Serving South Florida Generator Owners",
+      "body": "Solomon Electric provides generator maintenance throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Keep your backup power ready—schedule your annual maintenance today."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

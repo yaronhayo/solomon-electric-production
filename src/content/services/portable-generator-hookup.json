@@ -1,0 +1,182 @@
+{
+  "name": "Portable Generator Hookup",
+  "slug": "portable-generator-hookup",
+  "description": "If you have a portable generator for hurricane season, don't risk dangerous back-feed by plugging it into outlets. Solomon Electric installs generator inlet boxes and interlock kits that safely connect your portable generator to your home's electrical panel—powering selected circuits without exposing utility workers to dangerous back-fed power lines.",
+  "shortDescription": "Safe portable generator connections",
+  "icon": "Zap",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Electrical Panels & Power Systems",
+  "order": 12,
+  "features": [
+    "Generator inlet box installation",
+    "Panel interlock kit installation",
+    "Transfer switch options",
+    "Circuit selection for generator capacity",
+    "Proper grounding",
+    "Safe operating instruction"
+  ],
+  "warningSignsHeading": "Why You Need Proper Generator Hookup",
+  "warningSignsSubheading": "Improper portable generator connections are dangerous and illegal. Here's why professional installation matters.",
+  "problems": [
+    {
+      "title": "Using Extension Cords Everywhere",
+      "description": "Running extension cords from a generator to individual appliances is inconvenient and limits what you can power. Inlet boxes power your home's existing circuits.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Dangerous Back-Feed Risk",
+      "description": "Plugging a generator into an outlet back-feeds power to your panel—and potentially to power lines, electrocuting utility workers. This is illegal and deadly.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "No Way to Power Hard-Wired Items",
+      "description": "Your well pump, central AC, and hard-wired appliances can't use extension cords. Only panel connection powers these critical items.",
+      "icon": "Home"
+    },
+    {
+      "title": "Hurricane Season Preparation",
+      "description": "Don't wait until a storm is approaching. Install proper generator connections before hurricane season so you're ready when power goes out.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Current Setup Violates Code",
+      "description": "Any generator connection without proper transfer mechanism violates electrical code. Insurance may deny claims involving improper generator use.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Want to Power Specific Circuits",
+      "description": "Properly configured hookup lets you select which circuits receive generator power—prioritizing refrigerator, well pump, and critical needs.",
+      "icon": "Zap"
+    }
+  ],
+  "processHeading": "Our Generator Hookup Installation",
+  "process": [
+    {
+      "step": 1,
+      "title": "Generator Assessment",
+      "description": "We evaluate your generator's output capacity and determine how many circuits it can safely power—helping you prioritize essential loads."
+    },
+    {
+      "step": 2,
+      "title": "Circuit Selection",
+      "description": "We identify which circuits you want to power during outages—typically refrigerator, lights, well pump, and a few outlets—based on generator capacity."
+    },
+    {
+      "step": 3,
+      "title": "Inlet Box Installation",
+      "description": "We install a weatherproof generator inlet box on your home's exterior with appropriate amperage rating for your generator."
+    },
+    {
+      "step": 4,
+      "title": "Interlock or Transfer Switch",
+      "description": "We install either a panel interlock kit (economical) or manual transfer switch (more convenient) that prevents back-feed while enabling generator power."
+    },
+    {
+      "step": 5,
+      "title": "Testing and Training",
+      "description": "We test the complete system, demonstrate safe operating procedure, and ensure you understand exactly how to use your generator safely."
+    }
+  ],
+  "benefitsHeading": "Benefits of Proper Generator Connection",
+  "benefits": [
+    {
+      "title": "Safe for Everyone",
+      "description": "Proper interlock systems prevent back-feed that can electrocute utility workers. Your generator powers your home without endangering others.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Power What Matters",
+      "description": "Connect to your panel to power any circuit—including hard-wired items like well pumps, central AC, and electric water heaters that can't use extension cords.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Code Compliant",
+      "description": "Professional installation meets electrical code and satisfies insurance requirements. No concerns about improper connections during claims.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Convenient Operation",
+      "description": "Plug in outside, flip the interlock, turn on selected breakers. Much simpler than managing multiple extension cords throughout your home.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "300+",
+      "label": "Generator Hookups"
+    },
+    {
+      "value": "100%",
+      "label": "Code Compliant"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's an interlock kit vs. a transfer switch?",
+      "answer": "Both prevent back-feed. Interlock kits are plates that mechanically prevent your main breaker and generator breaker from being on simultaneously—more affordable but requires manual breaker operation. Transfer switches are separate panels where you flip circuits between utility and generator—more convenient but higher cost."
+    },
+    {
+      "question": "How many circuits can my portable generator power?",
+      "answer": "It depends on generator size and what you want to run. A typical 7,500-watt generator can power refrigerator, well pump, several lights, and some outlets—but not central AC. We calculate loads and help you select circuits that fit your generator's capacity."
+    },
+    {
+      "question": "Why can't I just plug my generator into an outlet?",
+      "answer": "This creates dangerous back-feed—power flows backward through your panel onto utility lines. Utility workers assume downed lines are dead and can be electrocuted by your generator. It's illegal, dangerous, and can damage your equipment when utility power returns."
+    },
+    {
+      "question": "What size inlet box do I need?",
+      "answer": "Inlet box amperage should match your generator's 240V output. A 30-amp inlet is common for mid-size generators (5,000-7,500 watts). Larger generators may need 50-amp inlets. We match inlet size to your specific generator."
+    },
+    {
+      "question": "Can I power my central AC with a portable generator?",
+      "answer": "Only with a large generator—typically 10,000+ watts for a 3-ton AC system. Most portable generators can't handle central AC startup loads. We calculate whether your generator can handle AC or if you should prioritize other loads."
+    },
+    {
+      "question": "Do I need a permit for generator hookup installation?",
+      "answer": "Generally yes—it's electrical work affecting your panel. Permits ensure proper installation and inspection. We handle permit applications and inspection coordination as part of our standard installation."
+    },
+    {
+      "question": "Where should the inlet box be located?",
+      "answer": "The inlet box should be near where you'll position your generator—typically on an exterior wall close to the panel. It needs easy access but protection from weather. We'll identify the optimal location for your situation."
+    },
+    {
+      "question": "How do I operate the generator hookup safely?",
+      "answer": "The sequence: 1) Position generator outdoors with exhaust away from home, 2) Turn off main breaker, 3) Turn off all circuit breakers, 4) Connect generator cord to inlet, 5) Start generator, 6) Turn on generator breaker, 7) Turn on selected circuit breakers. We'll demonstrate this during installation."
+    }
+  ],
+  "relatedServices": [
+    "home-standby-generator-installation",
+    "automatic-transfer-switch-installation",
+    "storm-damage-electrical-repair",
+    "power-outage-emergency-response"
+  ],
+  "seoContent": [
+    {
+      "heading": "Portable Generator Hookup Installation in South Florida",
+      "body": "If you own a portable generator for hurricane season, you need proper electrical connection—not extension cords or dangerous outlet connections. Solomon Electric installs generator inlet boxes and interlock kits throughout South Florida, providing safe, code-compliant connections that power your home's circuits without back-feed risk."
+    },
+    {
+      "heading": "Stop Dangerous Back-Feed",
+      "body": "Plugging a generator into a household outlet creates back-feed—power flowing onto utility lines where workers may be making repairs. This kills utility workers and is illegal. Proper interlock systems physically prevent generator and utility power from being on simultaneously, protecting everyone."
+    },
+    {
+      "heading": "Power What Extension Cords Can't",
+      "body": "Your well pump, central AC, and hard-wired appliances can't connect to extension cords. Proper generator hookup powers your existing panel circuits—giving you access to these essential systems during outages. Prioritize what matters most with your generator's available capacity."
+    },
+    {
+      "heading": "Prepare Before Hurricane Season",
+      "body": "Don't wait until a storm is approaching. Get your generator hookup installed before hurricane season so you're ready when power goes out. Solomon Electric serves Miami, Fort Lauderdale, Hollywood, and all South Florida communities with professional generator connection installation."
+    }
+  ],
+  "relatedBlogPosts": [
+    "miami-hurricane-electrical-prep-guide"
+  ]
+}

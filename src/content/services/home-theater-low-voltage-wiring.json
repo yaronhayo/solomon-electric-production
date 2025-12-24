@@ -1,0 +1,180 @@
+{
+  "name": "Home Theater & Low Voltage Wiring",
+  "slug": "home-theater-low-voltage-wiring",
+  "description": "Create the ultimate entertainment experience with professional home theater wiring. Solomon Electric installs hidden speaker wire, HDMI runs, network cabling, and projector power—creating clean installations without visible wires. Whether you're building a dedicated theater room or upgrading your living room TV setup, we handle the wiring that makes great audio/video possible.",
+  "shortDescription": "Hidden AV and network wiring",
+  "icon": "Home",
+  "image": "../../assets/images/services/lighting.png",
+  "category": "Lighting & Smart Home",
+  "order": 30,
+  "features": [
+    "In-wall HDMI cable runs",
+    "Hidden speaker wire installation",
+    "Projector power and signal wiring",
+    "Wall-mounted TV outlet boxes",
+    "Network cable installation",
+    "Rack and equipment wiring"
+  ],
+  "warningSignsHeading": "When You Need Professional AV Wiring",
+  "warningSignsSubheading": "Great home entertainment deserves great installation. Here's when professional wiring makes the difference.",
+  "problems": [
+    {
+      "title": "Cables Hanging from Wall-Mounted TV",
+      "description": "Nothing ruins a clean TV installation like cables dangling down the wall. In-wall wiring and recessed outlet boxes eliminate visible wires.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Speakers Too Far from Receiver",
+      "description": "Surround sound means speakers throughout the room. Professional in-wall speaker wire runs eliminate trip hazards and visible cables.",
+      "icon": "Home"
+    },
+    {
+      "title": "Projector Needs Power and Signal",
+      "description": "Ceiling-mounted projectors need electrical power and HDMI signal. We run both before you ever see the projector installed.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Slow WiFi for Streaming",
+      "description": "WiFi often can't deliver reliable 4K streaming. Ethernet cable to your smart TV or streaming box provides the bandwidth for buffer-free viewing.",
+      "icon": "Plug"
+    },
+    {
+      "title": "Planning New Construction",
+      "description": "Building or renovating? Now is the time to run all AV wiring before drywall goes up—much easier and cheaper than retrofitting later.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Multiple HDMI Devices",
+      "description": "Need to connect gaming consoles, streaming boxes, and Blu-ray players? We can run multiple HDMI cables to consolidate equipment in one location.",
+      "icon": "Shield"
+    }
+  ],
+  "processHeading": "Our Home Theater Wiring Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "System Planning",
+      "description": "We discuss your equipment, room layout, and goals to plan cable routes, outlet locations, and any structural considerations."
+    },
+    {
+      "step": 2,
+      "title": "Route Assessment",
+      "description": "We identify the best paths for running cables—through attics, walls, and crawl spaces—to achieve hidden installation with minimal wall cuts."
+    },
+    {
+      "step": 3,
+      "title": "Cable Installation",
+      "description": "We run HDMI, speaker wire, network cable, and any other required wiring through walls and ceilings to each destination."
+    },
+    {
+      "step": 4,
+      "title": "Electrical Work",
+      "description": "We install recessed outlet boxes behind TVs, power for projectors, and any dedicated circuits needed for equipment."
+    },
+    {
+      "step": 5,
+      "title": "Termination and Testing",
+      "description": "We terminate all cables with proper connectors/plates, test every run for signal quality, and verify everything works before you install equipment."
+    }
+  ],
+  "benefitsHeading": "Benefits of Professional AV Wiring",
+  "benefits": [
+    {
+      "title": "Clean, Hidden Installation",
+      "description": "No more visible cables, extension cords, or wire management nightmares. Professional wiring disappears into walls for a clean, finished look.",
+      "icon": "Home"
+    },
+    {
+      "title": "Reliable Signal Quality",
+      "description": "Proper cable selection, routing, and termination ensures your 4K video and audio signals arrive without interference or quality loss.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Future-Proof Installation",
+      "description": "We can run extra cables or conduit for future expansion. Add speakers or upgrade equipment later without new wire runs.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Code-Compliant Work",
+      "description": "Low-voltage wiring has rules about fire-stopping, proximity to electrical, and proper installation. Professional work meets all requirements.",
+      "icon": "Shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "200+",
+      "label": "Theater Systems"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Hidden Wiring"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can you run HDMI cables through walls?",
+      "answer": "Yes, with appropriate cables. Regular HDMI cables aren't rated for in-wall use—we use in-wall rated HDMI cables or conduit to meet code. For long runs, active HDMI cables or fiber HDMI maintain signal quality. We select appropriate cables for your specific situation."
+    },
+    {
+      "question": "How do you hide TV power cords?",
+      "answer": "We install a recessed outlet box behind the TV and an inlet plate at the bottom of the wall near your equipment. Power runs inside the wall from outlet to inlet. This is the code-compliant way to eliminate visible power cords—not just cable covers."
+    },
+    {
+      "question": "What about wireless speakers—do I still need wiring?",
+      "answer": "Wireless speakers still need power, and many 'wireless' systems use wired rear speakers. Even fully wireless systems benefit from strategic outlets. However, wireless technology has advanced significantly—we can discuss whether wired installation makes sense for your setup."
+    },
+    {
+      "question": "Can you install for Sonos, Bose, and other systems?",
+      "answer": "Absolutely. We work with all audio/video systems. Whether you're doing Sonos whole-home audio, traditional receiver-based systems, or soundbars with wireless subwoofers, we provide the wiring infrastructure these systems need."
+    },
+    {
+      "question": "Is it too late to add wiring after construction?",
+      "answer": "No—retrofit wiring is more challenging but usually possible. We route through attics, crawl spaces, and strategic wall cuts to achieve hidden installation. It costs more than pre-wire but the results are nearly identical."
+    },
+    {
+      "question": "What cable do you recommend for 4K/8K video?",
+      "answer": "For HDMI 2.1 (8K/120Hz), we use certified Ultra High Speed HDMI cables. For long runs, fiber HDMI provides reliable high-resolution signal over distances that copper can't achieve. We match cable selection to your specific equipment and run lengths."
+    },
+    {
+      "question": "Can you wire for outdoor speakers?",
+      "answer": "Yes. Outdoor speaker wire runs need weather protection at entry points and appropriate routing. We can wire for covered patio speakers, poolside audio, and outdoor entertainment areas throughout your property."
+    },
+    {
+      "question": "Do you install the actual equipment?",
+      "answer": "Our focus is the wiring infrastructure—cables, outlets, and proper terminations. Some clients prefer to handle their own equipment installation; others want complete installation help. We can discuss how much installation support you need."
+    }
+  ],
+  "relatedServices": [
+    "ring-doorbell-security-camera-wiring",
+    "computer-network-outlet-installation",
+    "smart-switch-home-automation",
+    "new-outlet-installation-repair"
+  ],
+  "seoContent": [
+    {
+      "heading": "Home Theater Wiring in Miami & South Florida",
+      "body": "Create the ultimate entertainment experience with professional home theater wiring from Solomon Electric. We install hidden HDMI cables, speaker wire, network runs, and dedicated power throughout South Florida homes—eliminating visible cables for clean, professional installations."
+    },
+    {
+      "heading": "Wall-Mounted TV Wiring",
+      "body": "A beautiful wall-mounted TV deserves invisible wiring. We install recessed outlet boxes behind TVs and run power and HDMI through walls—code-compliant installations that eliminate dangling cables. The result is a clean, professional look worthy of your investment."
+    },
+    {
+      "heading": "Surround Sound and Whole-Home Audio",
+      "body": "Surround sound systems and whole-home audio require speaker wire throughout your home. We run speaker wire through walls, ceilings, and attics to deliver sound where you want it without visible cables. From traditional receiver systems to modern Sonos installations, we provide the infrastructure."
+    },
+    {
+      "heading": "Professional Installation Throughout South Florida",
+      "body": "Solomon Electric provides home theater and low voltage wiring throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single TV setups to dedicated theater rooms, we deliver the wiring that makes great entertainment possible."
+    }
+  ],
+  "relatedBlogPosts": []
+}

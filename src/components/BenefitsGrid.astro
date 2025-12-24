@@ -1,0 +1,238 @@
+---
+/**
+ * BenefitsGrid Component
+ * Displays benefits in a card grid with icons
+ */
+import Container from "./ui/Container.astro";
+import {
+    AlertTriangle,
+    Lightbulb,
+    Plug,
+    Flame,
+    AlertCircle,
+    Home,
+    Shield,
+    TrendingUp,
+    Zap,
+    FileCheck,
+} from "lucide-astro";
+
+const Icons: Record<string, any> = {
+    AlertTriangle,
+    Lightbulb,
+    Plug,
+    Flame,
+    AlertCircle,
+    Home,
+    Shield,
+    TrendingUp,
+    Zap,
+    FileCheck,
+};
+
+interface BenefitItem {
+    title: string;
+    description: string;
+    icon?: string;
+}
+
+interface Props {
+    benefits: BenefitItem[];
+    heading?: string;
+    label?: string;
+}
+
+const {
+    benefits,
+    heading = "Benefits of Professional Service",
+    label = "✓ Why Choose Us",
+} = Astro.props;
+---
+
+<section class="benefits-section">
+    <div class="benefits-bg">
+        <div class="benefits-pattern"></div>
+    </div>
+    <Container class="relative z-10">
+        <header class="section-header section-header-light">
+            <span class="section-label section-label-light">{label}</span>
+            <h2 class="section-title section-title-light">{heading}</h2>
+        </header>
+
+        <div class="benefits-grid">
+            {
+                benefits.map((benefit, index) => {
+                    const BenefitIcon = Icons[benefit.icon || "Zap"];
+                    const isFilled = benefit.icon === "Zap";
+                    return (
+                        <div
+                            class="benefit-card"
+                            style={`--delay: ${index * 0.1}s`}
+                        >
+                            <div class="benefit-icon-wrapper">
+                                <div class="benefit-icon-bg" />
+                                <div class="benefit-icon">
+                                    <BenefitIcon
+                                        strokeWidth={1.5}
+                                        fill={
+                                            isFilled ? "currentColor" : "none"
+                                        }
+                                    />
+                                </div>
+                            </div>
+                            <h3 class="benefit-title">{benefit.title}</h3>
+                            <p class="benefit-description">
+                                {benefit.description}
+                            </p>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </Container>
+</section>
+
+<style>
+    .benefits-section {
+        position: relative;
+        padding: clamp(4rem, 8vw, 7rem) 0;
+        overflow: hidden;
+    }
+
+    .benefits-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #061f3d 100%
+        );
+    }
+
+    .benefits-pattern {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px
+        );
+        background-size: 30px 30px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-label {
+        display: inline-block;
+        color: var(--color-accent);
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+        padding: 0.5rem 1rem;
+        background: rgba(20, 211, 227, 0.1);
+        border-radius: var(--radius-full);
+    }
+
+    .section-label-light {
+        color: white;
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        margin-bottom: 0;
+        text-transform: uppercase;
+        line-height: 1.15;
+    }
+
+    .section-title-light {
+        color: white;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .benefit-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-xl);
+        padding: clamp(1.5rem, 3vw, 2rem);
+        text-align: center;
+        transition: all var(--transition-base);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s forwards;
+        animation-delay: var(--delay);
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .benefit-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-8px);
+        border-color: rgba(20, 211, 227, 0.3);
+    }
+
+    .benefit-icon-wrapper {
+        position: relative;
+        width: clamp(60px, 8vw, 80px);
+        height: clamp(60px, 8vw, 80px);
+        margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .benefit-icon-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            var(--color-accent) 0%,
+            rgba(20, 211, 227, 0.3) 100%
+        );
+        border-radius: 50%;
+        opacity: 0.2;
+    }
+
+    .benefit-icon {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+    }
+
+    .benefit-icon :global(svg) {
+        width: clamp(28px, 4vw, 36px);
+        height: clamp(28px, 4vw, 36px);
+    }
+
+    .benefit-title {
+        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .benefit-description {
+        font-size: clamp(0.9rem, 1vw, 1rem);
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin: 0;
+    }
+</style>

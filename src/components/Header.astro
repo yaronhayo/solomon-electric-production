@@ -1,22 +1,60 @@
 ---
 import { Image } from "astro:assets";
-import logoImage from "../assets/images/logo-new.webp";
-import Button from "./ui/Button.astro";
+import { IMAGES } from "../config/images";
+const logoImage = IMAGES.branding.logoNew;
+import CtaButton from "./ui/CtaButton.astro";
 import Container from "./ui/Container.astro";
+import {
+    ChevronDown,
+    Zap,
+    MapPin,
+    ArrowRight,
+    Menu,
+    X,
+    Phone,
+    Facebook,
+    Instagram,
+} from "lucide-astro";
 import { SITE_CONFIG } from "../config/site";
+import { NAV_LINKS } from "../config/navigation";
+
+// Top services for mega menu
+const topServices = [
+    { name: "Panel Upgrades", slug: "electrical-panel-upgrade-100a-to-200a" },
+    { name: "24/7 Emergency", slug: "24-7-emergency-electrical-service" },
+    {
+        name: "EV Charger Installation",
+        slug: "level-2-ev-charger-installation",
+    },
+    { name: "Surge Protection", slug: "whole-home-surge-protection" },
+    { name: "Recessed Lighting", slug: "recessed-lighting-installation" },
+    {
+        name: "Ceiling Fan Installation",
+        slug: "ceiling-fan-light-fixture-installation",
+    },
+];
+
+// Top service areas for mega menu
+const topServiceAreas = [
+    "Miami",
+    "Fort Lauderdale",
+    "Hollywood",
+    "Pembroke Pines",
+    "Miami Beach",
+    "Coral Springs",
+];
 ---
 
-<header class="w-full font-display">
+<header class="w-full font-secondary sticky top-0 z-[var(--z-sticky)]">
     <!-- Main Navbar -->
-    <nav
-        class="bg-white/95 backdrop-blur-md border-b border-gray-100 relative z-[50] shadow-sm sticky top-0"
-    >
-        <Container class="py-3 lg:py-5">
+    <nav class="bg-white border-b border-gray-100 shadow-[var(--shadow-sm)]">
+        <Container class="py-2 lg:py-3">
+            <!-- Desktop Header (lg and up) -->
             <div
-                class="hidden lg:grid lg:grid-cols-[minmax(200px,280px)_1fr_minmax(400px,auto)] items-center gap-4 xl:gap-8"
+                class="hidden lg:grid lg:grid-cols-[minmax(180px,220px)_1fr_minmax(400px,auto)] items-center gap-4 xl:gap-8"
             >
                 <!-- Left: Logo -->
-                <a href="/" class="block w-full max-w-[280px]">
+                <a href="/" class="block w-full max-w-[220px]">
                     <Image
                         src={logoImage}
                         alt="Solomon Electric"
@@ -24,18 +62,89 @@ import { SITE_CONFIG } from "../config/site";
                     />
                 </a>
 
-                <!-- Center: Desktop Menu -->
+                <!-- Center: Desktop Menu with Mega Menus -->
                 <div class="flex items-center gap-4 xl:gap-6 justify-center">
-                    <a
-                        href="/services"
-                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
-                        >Services</a
-                    >
-                    <a
-                        href="/service-areas"
-                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
-                        >Service Areas</a
-                    >
+                    <!-- Services Mega Menu -->
+                    <div class="mega-menu-container group">
+                        <a
+                            href="/services"
+                            class="mega-menu-trigger text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap flex items-center gap-1 group/trigger"
+                        >
+                            <span class="shimmer-authority">Services</span>
+                            <ChevronDown
+                                class="w-3 h-3 transition-transform group-hover/trigger:rotate-180"
+                            />
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-header">
+                                    <span class="mega-menu-label"
+                                        >⚡ Popular Services</span
+                                    >
+                                </div>
+                                <div class="mega-menu-grid">
+                                    {
+                                        topServices.map((service) => (
+                                            <a
+                                                href={`/services/${service.slug}`}
+                                                class="mega-menu-item"
+                                            >
+                                                <Zap class="mega-menu-icon" />
+                                                <span>{service.name}</span>
+                                            </a>
+                                        ))
+                                    }
+                                </div>
+                                <a href="/services" class="mega-menu-view-all">
+                                    View All Services
+                                    <ArrowRight class="w-4 h-4" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Areas Mega Menu -->
+                    <div class="mega-menu-container group">
+                        <a
+                            href="/service-areas"
+                            class="mega-menu-trigger text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap flex items-center gap-1 group/trigger"
+                        >
+                            <span class="shimmer-authority">Service Areas</span>
+                            <ChevronDown
+                                class="w-3 h-3 transition-transform group-hover/trigger:rotate-180"
+                            />
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-header">
+                                    <span class="mega-menu-label"
+                                        >📍 Top Cities We Serve</span
+                                    >
+                                </div>
+                                <div class="mega-menu-grid">
+                                    {
+                                        topServiceAreas.map((area) => (
+                                            <a
+                                                href={`/service-areas/${area.toLowerCase().replace(/\s+/g, "-")}`}
+                                                class="mega-menu-item"
+                                            >
+                                                <MapPin class="mega-menu-icon" />
+                                                <span>{area}</span>
+                                            </a>
+                                        ))
+                                    }
+                                </div>
+                                <a
+                                    href="/service-areas"
+                                    class="mega-menu-view-all"
+                                >
+                                    View All Service Areas
+                                    <ArrowRight class="w-4 h-4" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <a
                         href="/faq"
                         class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
@@ -60,246 +169,388 @@ import { SITE_CONFIG } from "../config/site";
 
                 <!-- Right: CTAs -->
                 <div class="flex items-center gap-3 xl:gap-4 justify-end">
-                    <Button
-                        href="/book"
-                        variant="primary"
+                    <CtaButton
+                        action="book"
+                        text="Book Online"
                         size="md"
-                        class="whitespace-nowrap flex items-center gap-2"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-4 h-4"
-                        >
-                            <path
-                                d="M5.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H6a.75.75 0 01-.75-.75V12zM6 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H6zM7.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H8a.75.75 0 01-.75-.75V12zM8 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H8zM9.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V10zM10 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H10zM9.25 14a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V14zM12 9.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V10a.75.75 0 00-.75-.75H12zM11.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75V12zM12 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H12zM13.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H14a.75.75 0 01-.75-.75V10zM14 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H14z"
-                            ></path>
-                            <path
-                                fill-rule="evenodd"
-                                d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        Book Online
-                    </Button>
-                    <Button
-                        href={SITE_CONFIG.contact.phone.href}
+                        class="whitespace-nowrap"
+                    />
+                    <CtaButton
+                        action="call"
                         variant="secondary"
                         size="md"
-                        class="whitespace-nowrap flex items-center gap-2"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-4 h-4"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        Call {SITE_CONFIG.contact.phone.formatted}
-                    </Button>
+                        class="whitespace-nowrap"
+                    />
                 </div>
             </div>
 
-            <!-- Mobile Header -->
+            <!-- Mobile & Tablet Header (below lg) -->
             <div class="flex lg:hidden items-center justify-between">
-                <a href="/" class="block w-40 md:w-48 flex-shrink-0">
+                <a href="/" class="block w-32 md:w-40 flex-shrink-0">
                     <Image
                         src={logoImage}
                         alt="Solomon Electric"
                         class="w-full h-auto"
                     />
                 </a>
-                <button id="mobile-menu-btn" class="text-primary p-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                        class="w-8 h-8"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                        ></path>
-                    </svg>
+                <button
+                    id="mobile-menu-btn"
+                    class="text-primary p-2"
+                    aria-label="Open Menu"
+                >
+                    <Menu class="w-8 h-8" />
                 </button>
             </div>
         </Container>
     </nav>
 </header>
 
-<!-- Mobile Menu Overlay (Moved outside Nav) -->
+<!-- Mobile Menu Overlay (for phones and tablets) -->
 <div
     id="mobile-menu"
-    class="fixed inset-y-0 right-0 w-full max-w-[437px] bg-light z-[9999] transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col shadow-2xl overflow-y-auto"
+    class="fixed inset-y-0 right-0 w-full max-w-[400px] bg-gradient-to-br from-[#0e4380] via-[#0a3a6e] to-[#082a50] z-[var(--z-modal)] transform translate-x-full transition-all duration-300 ease-out lg:hidden flex flex-col shadow-2xl overflow-y-auto backdrop-blur-sm"
 >
-    <!-- Header Frame 340 -->
-    <div class="flex items-center justify-between p-10">
-        <a href="/">
+    <!-- Glass Overlay Effect -->
+    <div class="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
+
+    <!-- Header -->
+    <div
+        class="relative flex items-center justify-between p-8 bg-white border-b border-gray-200"
+    >
+        <a href="/" class="transition-transform hover:scale-105">
             <Image
                 src={logoImage}
                 alt="Solomon Electric"
-                class="h-[68px] w-auto object-contain"
+                class="h-[60px] w-auto object-contain"
             />
         </a>
         <button
             id="close-menu-btn"
-            class="w-[20px] h-[20px] bg-primary flex items-center justify-center p-0.5 rounded-sm"
+            class="w-10 h-10 bg-primary/10 hover:bg-primary/20 flex items-center justify-center rounded-lg transition-all duration-200 hover:rotate-90 group"
+            aria-label="Close Menu"
         >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="w-full h-full"
-            >
-                <path d="M18 6L6 18M6 6l12 12"></path>
-            </svg>
+            <X
+                class="w-5 h-5 text-primary group-hover:text-accent transition-colors"
+            />
         </button>
     </div>
 
-    <!-- Content Container Frame 338 -->
-    <div class="flex flex-col gap-[60px] pl-10 pr-0 pb-10 flex-grow">
-        <!-- Frame 339 (Nav) -->
-        <div class="flex flex-col gap-[60px] w-[242px]">
-            <!-- Navigation Links Frame 6 -->
-            <div class="flex flex-col items-start gap-[40px]">
-                <a
-                    href="/services"
-                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
-                    >Services</a
-                >
-                <a
-                    href="/service-areas"
-                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
-                    >Service Areas</a
-                >
-                <a
-                    href="/faq"
-                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
-                    >FAQ</a
-                >
-                <a
-                    href="/reviews"
-                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
-                    >Reviews</a
-                >
-                <a
-                    href="/about"
-                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
-                    >About</a
-                >
-                <a
-                    href="/contact"
-                    class="font-body text-[20px] text-primary hover:text-accent transition-colors"
-                    >Contact</a
-                >
-            </div>
-        </div>
+    <!-- Content -->
+    <div class="relative flex flex-col gap-12 px-8 py-6 flex-grow">
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-6 animate-fade-in-up">
+            <a
+                href="/services"
+                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+            >
+                <Zap
+                    class="w-5 h-5 text-accent group-hover:scale-110 transition-transform"
+                />
+                <span>Services</span>
+                <ArrowRight
+                    class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+            </a>
+            <a
+                href="/service-areas"
+                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+            >
+                <MapPin
+                    class="w-5 h-5 text-accent group-hover:scale-110 transition-transform"
+                />
+                <span>Service Areas</span>
+                <ArrowRight
+                    class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+            </a>
+            <a
+                href="/faq"
+                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+            >
+                <span class="text-accent text-lg">❓</span>
+                <span>FAQ</span>
+                <ArrowRight
+                    class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+            </a>
+            <a
+                href="/reviews"
+                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+            >
+                <span class="text-accent text-lg">⭐</span>
+                <span>Reviews</span>
+                <ArrowRight
+                    class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+            </a>
+            <a
+                href="/about"
+                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+            >
+                <span class="text-accent text-lg">ℹ️</span>
+                <span>About</span>
+                <ArrowRight
+                    class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+            </a>
+            <a
+                href="/contact"
+                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+            >
+                <span class="text-accent text-lg">📧</span>
+                <span>Contact</span>
+                <ArrowRight
+                    class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+            </a>
+        </nav>
 
-        <!-- Frame 337 (CTAs & Social) -->
-        <div class="flex flex-col gap-[30px] w-full">
+        <!-- CTAs -->
+        <div
+            class="flex flex-col gap-4 mt-auto animate-fade-in-up"
+            style="animation-delay: 0.1s;"
+        >
+            <!-- Divider -->
+            <div
+                class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-2"
+            >
+            </div>
+
             <!-- All Services Button -->
             <a
                 href="/services"
-                class="flex items-start w-[208px] h-[46px] drop-shadow-[5px_5px_20px_rgba(13,67,128,0.1)] group"
+                class="group relative flex items-center justify-center gap-3 px-6 py-4 bg-accent hover:bg-accent/90 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] overflow-hidden"
             >
-                <div class="w-[13px] h-full bg-accent"></div>
                 <div
-                    class="flex-grow h-full bg-accent flex items-center justify-center gap-[10px]"
+                    class="absolute inset-0 bg-gradient-to-r from-accent/0 via-white/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
                 >
-                    <span
-                        class="font-lemon text-[20px] text-light group-hover:text-white transition-colors"
-                        >All Services
-                    </span>
                 </div>
-                <div class="w-[13px] h-full bg-accent"></div>
+                <Zap class="w-5 h-5 text-primary relative z-10" />
+                <span
+                    class="font-secondary text-lg font-bold text-primary relative z-10"
+                    >All Services</span
+                >
+                <ArrowRight
+                    class="w-5 h-5 text-primary relative z-10 transition-transform group-hover:translate-x-1"
+                />
             </a>
 
             <!-- Call Now Button -->
             <a
                 href={SITE_CONFIG.contact.phone.href}
-                class="flex items-start w-[202px] h-[50px] drop-shadow-[5px_5px_20px_rgba(13,67,128,0.1)] group"
+                class="group relative flex items-center justify-center gap-3 px-6 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.02] overflow-hidden"
             >
-                <div class="w-[15px] h-full bg-primary"></div>
                 <div
-                    class="flex-grow h-full bg-primary flex items-center justify-center gap-[10px]"
+                    class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
                 >
-                    <span
-                        class="w-[20px] h-[20px] bg-light rounded-sm flex items-center justify-center"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            class="w-3 h-3 text-primary"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </span>
-                    <span
-                        class="font-lemon text-[16px] font-medium text-light group-hover:text-white transition-colors"
-                        >Call Now</span
-                    >
                 </div>
-                <div class="w-[15px] h-full bg-primary"></div>
+                <span
+                    class="w-9 h-9 bg-accent rounded-lg flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform"
+                >
+                    <Phone class="w-5 h-5 text-primary" />
+                </span>
+                <span
+                    class="font-secondary text-lg font-bold text-white relative z-10"
+                    >Call Now</span
+                >
             </a>
 
-            <!-- Social Icons Frame 119 -->
-            <div class="flex items-start gap-[20px] mt-4">
-                <!-- Facebook -->
-                <a
-                    href={SITE_CONFIG.social.facebook}
-                    target="_blank"
-                    class="w-[35px] h-[35px] bg-primary flex items-center justify-center rounded-sm hover:opacity-80 transition-opacity"
+            <!-- Contact Info -->
+            <div class="text-center mt-4 space-y-2">
+                <p
+                    class="text-white/60 text-xs uppercase tracking-wider font-secondary"
                 >
-                    <svg fill="white" viewBox="0 0 24 24" class="w-5 h-5"
-                        ><path
-                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
-                        ></path></svg
-                    >
-                </a>
-                <!-- Instagram -->
-                <a
-                    href={SITE_CONFIG.social.instagram}
-                    target="_blank"
-                    class="w-[35px] h-[35px] bg-primary flex items-center justify-center rounded-sm hover:opacity-80 transition-opacity"
-                >
-                    <svg fill="white" viewBox="0 0 24 24" class="w-5 h-5"
-                        ><path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                        ></path></svg
-                    >
-                </a>
+                    Available 24/7
+                </p>
+                <p class="text-accent text-xl font-bold font-secondary">
+                    {SITE_CONFIG.contact.phone.display}
+                </p>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    /* =========================================
+       MEGA MENU STYLES
+       ========================================= */
+    .mega-menu-container {
+        position: relative;
+    }
+
+    .mega-menu-trigger {
+        position: relative;
+        z-index: 10;
+    }
+
+    .mega-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.2s ease;
+        padding-top: 12px; /* Gap between trigger and menu */
+    }
+
+    .mega-menu-container:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .mega-menu-content {
+        background: white;
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-xl);
+        min-width: 280px;
+        overflow: hidden;
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(var(--glass-blur));
+    }
+
+    .mega-menu-header {
+        padding: 0.75rem 1rem;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #0a3060 100%
+        );
+        border-bottom: 2px solid var(--color-accent);
+    }
+
+    .mega-menu-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .mega-menu-grid {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mega-menu-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.625rem 0.75rem;
+        color: var(--text-body);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: var(--radius-md);
+        transition: all 0.15s ease;
+    }
+
+    .mega-menu-item:hover {
+        background: rgba(20, 211, 227, 0.08);
+        color: var(--color-primary);
+    }
+
+    .mega-menu-item:hover .mega-menu-icon {
+        color: var(--color-accent);
+    }
+
+    .mega-menu-icon {
+        width: 1rem;
+        height: 1rem;
+        color: var(--color-primary);
+        flex-shrink: 0;
+        transition: color 0.15s ease;
+    }
+
+    .mega-menu-view-all {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        background: var(--bg-surface);
+        color: var(--color-primary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        border-top: 1px solid var(--border-light);
+        transition: all 0.15s ease;
+    }
+
+    .mega-menu-view-all:hover {
+        background: var(--color-accent);
+        color: var(--color-primary);
+    }
+
+    .mega-menu-view-all svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    /* =========================================
+       MOBILE MENU ANIMATIONS
+       ========================================= */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.4s ease-out forwards;
+    }
+
+    /* Mobile menu backdrop */
+    #mobile-menu-backdrop {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+</style>
 
 <script>
     const menuBtn = document.getElementById("mobile-menu-btn");
     const closeBtn = document.getElementById("close-menu-btn");
     const menu = document.getElementById("mobile-menu");
 
+    // Create backdrop
+    const backdrop = document.createElement("div");
+    backdrop.id = "mobile-menu-backdrop";
+    backdrop.className =
+        "fixed inset-0 bg-black/50 z-[calc(var(--z-modal)-1)] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden";
+    document.body.appendChild(backdrop);
+
     function toggleMenu() {
+        const isOpen = !menu?.classList.contains("translate-x-full");
+
         menu?.classList.toggle("translate-x-full");
         document.body.classList.toggle("overflow-hidden");
+
+        // Toggle backdrop
+        if (!isOpen) {
+            backdrop.classList.remove("pointer-events-none");
+            backdrop.classList.remove("opacity-0");
+        } else {
+            backdrop.classList.add("opacity-0");
+            setTimeout(() => {
+                backdrop.classList.add("pointer-events-none");
+            }, 300);
+        }
     }
 
     menuBtn?.addEventListener("click", toggleMenu);
     closeBtn?.addEventListener("click", toggleMenu);
+    backdrop?.addEventListener("click", toggleMenu);
 
     menu?.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", toggleMenu);

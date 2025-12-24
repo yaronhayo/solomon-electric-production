@@ -1,15 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import heroImage from "../assets/images/hero.webp";
+import heroImage from "../assets/images/heroes/reviews.png";
+import PageHero from "../components/PageHero.astro";
 import Button from "../components/ui/Button.astro";
+import { SITE_CONFIG } from "../config/site";
+import { Star, MessageSquare, Phone } from "lucide-astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 
 const reviews = [
     {
         name: "Sarah Jenkins",
         location: "Miami Beach",
         stars: 5,
-        text: "Solomon Electric saved the day! We lost power in half our house on a Sunday night. They arrived within an hour and fixed the issue in the breaker panel. Professional, courteous, and reasonably priced.",
+        text: "Solomon Electric saved the day! We lost power in half our house on a Sunday night. They came out and fixed the issue in the breaker panel. Professional, courteous, and reasonably priced.",
     },
     {
         name: "Michael Rodriguez",
@@ -41,71 +44,223 @@ const reviews = [
         stars: 5,
         text: "Called them for an emergency inspection after smelling burning plastic. They found a melted wire immediately and replaced it safely. I sleep better knowing my home is safe.",
     },
+    {
+        name: "Amanda Lee",
+        location: "Pembroke Pines",
+        stars: 5,
+        text: "Upgraded our entire electrical panel from 100A to 200A. The crew was professional, cleaned up after themselves, and the inspector approved everything on the first visit. Worth every penny!",
+    },
+    {
+        name: "Carlos Martinez",
+        location: "Hialeah",
+        stars: 5,
+        text: "Had them install ceiling fans throughout our home. They arrived on time, finished quickly, and the fans work perfectly. Great attention to detail and very respectful of our home.",
+    },
+    {
+        name: "Jennifer Wong",
+        location: "Sunny Isles",
+        stars: 5,
+        text: "They installed outdoor lighting for our backyard patio. The design suggestions they made transformed our space into an evening paradise. Highly professional team!",
+    },
+    {
+        name: "Thomas Baker",
+        location: "Doral",
+        stars: 5,
+        text: "Emergency service on a Saturday night when our AC compressor tripped the breaker. They diagnosed and fixed the electrical issue within an hour. Lifesavers in Miami heat!",
+    },
+    {
+        name: "Maria Gonzalez",
+        location: "Kendall",
+        stars: 5,
+        text: "Fantastic experience from start to finish. They rewired our kitchen for new appliances and added dedicated circuits. Clean work, fair pricing, and excellent communication.",
+    },
+    {
+        name: "Kevin O'Brien",
+        location: "Miami Shores",
+        stars: 5,
+        text: "Installed a whole-home generator and it works flawlessly. During the last storm, we were the only house on our block with power. Best investment we've made!",
+    },
+    {
+        name: "Lisa Patel",
+        location: "Aventura",
+        stars: 5,
+        text: "They troubleshot a complex electrical issue that two other electricians couldn't figure out. Found the problem in 20 minutes and had it fixed in another 30. True professionals!",
+    },
+    {
+        name: "James Wilson",
+        location: "Miami Lakes",
+        stars: 5,
+        text: "Solar panel installation and electrical work was top-notch. They coordinated everything with the solar company and handled all the permits. Couldn't be happier!",
+    },
+    {
+        name: "Rebecca Stevens",
+        location: "Coconut Grove",
+        stars: 5,
+        text: "Converting our garage into a home office required new circuits and outlets. Solomon Electric planned everything perfectly and the inspector had zero issues. Excellent work!",
+    },
+    {
+        name: "Daniel Kim",
+        location: "North Miami",
+        stars: 5,
+        text: "Pool equipment electrical upgrade was handled professionally. They explained everything clearly, worked efficiently, and left the area cleaner than they found it.",
+    },
+    {
+        name: "Patricia Brown",
+        location: "Pinecrest",
+        stars: 5,
+        text: "Smart home integration throughout our house. They installed smart switches, outlets, and integrated everything with our system. Technical expertise is outstanding!",
+    },
+    {
+        name: "Steven Garcia",
+        location: "Miami Beach",
+        stars: 5,
+        text: "Commercial electrical work for our restaurant. They worked around our schedule, completed everything on time, and we passed inspection without any issues. Highly recommend!",
+    },
+    {
+        name: "Nicole Thompson",
+        location: "Coral Gables",
+        stars: 5,
+        text: "Landscape lighting installation exceeded our expectations. The design is beautiful and the quality of work is impressive. Our home looks amazing at night!",
+    },
+    {
+        name: "Andrew Miller",
+        location: "Key Biscayne",
+        stars: 5,
+        text: "EV charger installation for two vehicles. They planned the electrical load perfectly and the chargers work flawlessly. Professional service from quote to completion.",
+    },
+    {
+        name: "Christine Davis",
+        location: "Palmetto Bay",
+        stars: 5,
+        text: "Rewired our 1960s home to modern standards. It was a big job but they handled it professionally, stayed on budget, and the quality is exceptional. Peace of mind achieved!",
+    },
+    {
+        name: "Richard Anderson",
+        location: "South Miami",
+        stars: 5,
+        text: "Smoke detector and CO detector installation throughout our home. They positioned everything perfectly according to code and tested each unit thoroughly. Great service!",
+    },
+    {
+        name: "Michelle Torres",
+        location: "Doral",
+        stars: 5,
+        text: "HVAC electrical upgrade for our new AC system. They coordinated with the HVAC company seamlessly and ensured everything was code-compliant. Professional and efficient!",
+    },
+    {
+        name: "Paul Jenkins",
+        location: "Homestead",
+        stars: 5,
+        text: "Surge protection installation for our entire home. Living in South Florida, this was essential. They explained all options clearly and the installation was quick and clean.",
+    },
+    {
+        name: "Sandra Martinez",
+        location: "Miami Gardens",
+        stars: 5,
+        text: "Bathroom remodel electrical work was perfect. New lighting, exhaust fan, and GFCI outlets all installed expertly. They work well with other contractors too!",
+    },
+    {
+        name: "Christopher Lee",
+        location: "Aventura",
+        stars: 5,
+        text: "Office electrical setup for our home business. They planned the circuits for all our equipment, added network outlets, and everything works perfectly. Very knowledgeable team!",
+    },
+    {
+        name: "Angela White",
+        location: "Brickell",
+        stars: 5,
+        text: "Condo electrical inspection and repairs before we moved in. They found several safety issues the previous inspector missed and fixed everything promptly. Trustworthy and thorough!",
+    },
+    {
+        name: "Brian Clark",
+        location: "Coral Gables",
+        stars: 5,
+        text: "Outdoor outlet and lighting installation for our holiday decorations. Now we have permanent proper outlets and our display looks amazing. Great planning and execution!",
+    },
+    {
+        name: "Melissa Rodriguez",
+        location: "Kendall",
+        stars: 5,
+        text: "Kitchen renovation electrical work was handled perfectly. New appliances, under-cabinet lighting, and additional outlets all installed to code. They're true craftsmen!",
+    },
+    {
+        name: "Gregory Taylor",
+        location: "Miami Shores",
+        stars: 5,
+        text: "Electrical inspection identified several potential fire hazards in our older home. They fixed everything same day and explained each issue clearly. Safety first with these professionals!",
+    },
 ];
+
+// Generate AggregateRating Schema
+const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Solomon Electric",
+    aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: SITE_CONFIG.stats.averageRating,
+        reviewCount: parseInt(
+            SITE_CONFIG.stats.totalReviews.replace("+", "").replace(",", ""),
+        ),
+        bestRating: "5",
+        worstRating: "1",
+    },
+};
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_CONFIG.seo.siteUrl,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Reviews",
+            item: `${SITE_CONFIG.seo.siteUrl}/reviews`,
+        },
+    ],
+};
 ---
 
 <Layout
-    title="Customer Reviews - Solomon Electric | 5-Star Rated Miami Electricians"
-    description="Read verified reviews from 1,200+ satisfied customers. Solomon Electric maintains a 4.9-star rating for electrical services in Miami. Licensed, trusted, and customer-approved."
+    title="Customer Reviews | 4.9★ Rated Electrician Miami FL | Solomon Electric"
+    description="Read 1,200+ verified reviews from real customers. See why South Florida homeowners trust Solomon Electric for panel upgrades, emergency repairs, EV chargers & more. 4.9 average rating."
 >
-    <!-- Hero Section - Matching Homepage Grid Layout -->
-    <section
-        class="relative flex items-center overflow-hidden"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); min-height: 60vh;"
-    >
-        <div class="absolute inset-0 z-0">
-            <Image
-                src={heroImage}
-                alt="Happy Solomon Electric Customers"
-                class="w-full h-full object-cover"
-            />
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
-            >
-            </div>
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
-            >
-            </div>
-        </div>
-        <div class="container-custom relative z-10 w-full">
-            <div
-                class="grid grid-cols-1 lg:grid-cols-12 items-center"
-                style="gap: var(--spacing-xl);"
-            >
-                <div class="lg:col-span-7">
-                    <p
-                        class="text-accent tracking-[0.3em] font-bold uppercase"
-                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
-                    >
-                        Customer Testimonials
-                    </p>
-                    <h1
-                        class="font-black text-white leading-[0.9]"
-                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
-                    >
-                        Client <br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
-                        >
-                            Reviews
-                        </span>
-                    </h1>
-                    <p
-                        class="text-gray-200 font-light leading-relaxed"
-                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
-                    >
-                        Don't just take our word for it—hear from 1,200+
-                        satisfied customers across South Florida who trust
-                        Solomon Electric with their electrical needs.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- AggregateRating Schema Markup -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(aggregateRatingSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+    />
+
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} />
+
+    <!-- Hero Section -->
+    <PageHero
+        title="Don't Just Take Our Word For It<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Hear From Real Customers</span>"
+        subtitle="Verified Reviews • 4.9★ Average"
+        description="Hiring an electrician is a big decision—your family's safety is on the line. That's why we invite you to read what real homeowners and business owners say about working with us. No cherry-picked testimonials. Just honest feedback from people who trusted us with their electrical needs."
+        image={heroImage}
+        trustIndicators={true}
+        primaryCta={{
+            text: "Share Your Experience",
+            href: SITE_CONFIG.social.googleMaps,
+            icon: Star,
+        }}
+    />
 
     <!-- Review Statistics -->
     <section
+        id="review-stats"
+        aria-labelledby="stats-heading"
         class="bg-white"
         style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-2xl);"
     >
@@ -115,32 +270,38 @@ const reviews = [
             >
                 <div class="text-center mb-12">
                     <h2
+                        id="stats-heading"
                         class="text-3xl md:text-5xl font-black text-primary uppercase mb-4"
                     >
-                        Trusted by <span class="text-accent">Thousands</span>
+                        Trusted by <span class="text-accent-text"
+                            >Thousands</span
+                        >
                     </h2>
-                    <p class="text-gray-600 text-lg font-medium">
+                    <p class="text-[var(--text-body)] text-lg font-medium">
                         Our commitment to excellence shows in every review
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+                        class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
                         <div class="text-5xl font-black text-accent mb-2">
                             4.9
                         </div>
-                        <div class="text-[#CDAC4F] text-2xl mb-2">★★★★★</div>
                         <div
-                            class="text-sm font-bold text-gray-600 uppercase tracking-wide"
+                            class="text-[var(--color-star-gold)] text-2xl mb-2"
+                        >
+                            ★★★★★
+                        </div>
+                        <div
+                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
                         >
                             Average Rating
                         </div>
                     </div>
-
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+                        class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
                         <div class="text-5xl font-black text-primary mb-2">
                             1,200+
@@ -149,14 +310,13 @@ const reviews = [
                             ◆◆◆
                         </div>
                         <div
-                            class="text-sm font-bold text-gray-600 uppercase tracking-wide"
+                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
                         >
                             Total Reviews
                         </div>
                     </div>
-
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+                        class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
                         <div class="text-5xl font-black text-primary mb-2">
                             96%
@@ -165,14 +325,13 @@ const reviews = [
                             ✓✓✓
                         </div>
                         <div
-                            class="text-sm font-bold text-gray-600 uppercase tracking-wide"
+                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
                         >
                             5-Star Reviews
                         </div>
                     </div>
-
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+                        class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
                         <div class="text-5xl font-black text-accent mb-2">
                             100%
@@ -181,7 +340,7 @@ const reviews = [
                             ♦♦♦
                         </div>
                         <div
-                            class="text-sm font-bold text-gray-600 uppercase tracking-wide"
+                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
                         >
                             Would Recommend
                         </div>
@@ -193,35 +352,46 @@ const reviews = [
 
     <!-- Reviews Grid -->
     <section
+        id="reviews-list"
+        aria-labelledby="reviews-list-heading"
         class="bg-light"
         style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-3xl);"
     >
         <div class="container-custom">
             <div class="text-center mb-12">
                 <h2
+                    id="reviews-list-heading"
                     class="text-3xl md:text-4xl font-black text-primary uppercase mb-4"
                 >
-                    What Our <span class="text-accent">Customers Say</span>
+                    What Our <span class="text-accent-text">Customers Say</span>
                 </h2>
-                <p class="text-gray-600 text-lg font-medium">
+                <p class="text-[var(--text-body)] text-lg font-medium">
                     Real experiences from real customers. Every review is
                     verified and represents the quality service we deliver
                     daily.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                id="reviews-grid"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
                 {
-                    reviews.map((review) => (
-                        <div class="bg-white p-10 rounded-2xl border border-gray-100 relative hover:border-accent hover:shadow-lg transition-all duration-300 group shadow-sm">
-                            <div class="text-[#CDAC4F] text-xl mb-6 tracking-widest">
+                    reviews.map((review, index) => (
+                        <div
+                            class={`review-card bg-[var(--bg-surface)] p-10 rounded-[var(--radius-xl)] border border-[var(--border-light)] relative hover:border-[var(--border-focus)] hover:shadow-[var(--shadow-brand)] transition-all duration-[var(--transition-base)] group shadow-[var(--shadow-sm)] ${
+                                index >= 6 ? "hidden" : ""
+                            }`}
+                            data-index={index}
+                        >
+                            <div class="text-[var(--color-star-gold)] text-xl mb-6 tracking-widest">
                                 {"★".repeat(review.stars)}
                             </div>
-                            <p class="text-gray-600 italic mb-8 leading-relaxed text-lg font-medium">
+                            <p class="text-[var(--text-body)] italic mb-8 leading-relaxed text-lg font-medium">
                                 "{review.text}"
                             </p>
                             <div class="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
-                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-black text-xl shadow-md">
+                                <div class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center text-white font-black text-xl shadow-[var(--shadow-md)]">
                                     {review.name.charAt(0)}
                                 </div>
                                 <div>
@@ -237,8 +407,49 @@ const reviews = [
                     ))
                 }
             </div>
+
+            <div id="load-more-container" class="text-center mt-12">
+                <button
+                    id="load-more-btn"
+                    class="inline-block bg-primary text-white font-black text-lg px-12 py-4 rounded-full hover:bg-primary/90 transition-all shadow-md hover:shadow-lg uppercase tracking-wide"
+                >
+                    Load More Reviews
+                </button>
+            </div>
         </div>
     </section>
+
+    <script is:inline>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadMoreBtn = document.getElementById("load-more-btn");
+            const reviewCards = document.querySelectorAll(".review-card");
+            let currentlyShown = 6;
+            const incrementBy = 6;
+            const totalReviews = reviewCards.length;
+
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener("click", function () {
+                    // Show next batch of reviews
+                    const nextBatch = currentlyShown + incrementBy;
+                    for (
+                        let i = currentlyShown;
+                        i < nextBatch && i < totalReviews;
+                        i++
+                    ) {
+                        reviewCards[i].classList.remove("hidden");
+                    }
+                    currentlyShown = Math.min(nextBatch, totalReviews);
+
+                    // Hide button if all reviews are shown
+                    if (currentlyShown >= totalReviews) {
+                        document
+                            .getElementById("load-more-container")
+                            .classList.add("hidden");
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- Third-Party Review Links -->
     <section
@@ -250,19 +461,19 @@ const reviews = [
                 <h2
                     class="text-3xl md:text-4xl font-black text-primary uppercase mb-4"
                 >
-                    Find Us <span class="text-accent">Everywhere</span>
+                    Find Us <span class="text-accent-text">Everywhere</span>
                 </h2>
-                <p class="text-gray-600 text-lg font-medium">
+                <p class="text-[var(--text-body)] text-lg font-medium">
                     Check out our reviews on your favorite platforms
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <a
-                    href="https://www.google.com/maps"
+                    href={SITE_CONFIG.social.googleMaps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-light p-8 rounded-2xl border border-gray-100 hover:border-accent transition-all text-center group"
+                    class="bg-[var(--bg-body)] p-8 rounded-[var(--radius-xl)] border border-[var(--border-light)] hover:border-[var(--border-focus)] transition-all text-center group"
                 >
                     <div
                         class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm group-hover:shadow-md transition-all"
@@ -280,7 +491,7 @@ const reviews = [
                     <h3 class="font-black text-primary text-lg uppercase mb-2">
                         Google Reviews
                     </h3>
-                    <p class="text-sm text-gray-600 font-medium mb-3">
+                    <p class="text-sm text-[var(--text-body)] font-medium mb-3">
                         4.9 stars • 800+ reviews
                     </p>
                     <span
@@ -290,10 +501,10 @@ const reviews = [
                 </a>
 
                 <a
-                    href="https://www.yelp.com"
+                    href={SITE_CONFIG.social.yelp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-light p-8 rounded-2xl border border-gray-100 hover:border-accent transition-all text-center group"
+                    class="bg-[var(--bg-body)] p-8 rounded-[var(--radius-xl)] border border-[var(--border-light)] hover:border-[var(--border-focus)] transition-all text-center group"
                 >
                     <div
                         class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm group-hover:shadow-md transition-all"
@@ -311,7 +522,7 @@ const reviews = [
                     <h3 class="font-black text-primary text-lg uppercase mb-2">
                         Yelp Reviews
                     </h3>
-                    <p class="text-sm text-gray-600 font-medium mb-3">
+                    <p class="text-sm text-[var(--text-body)] font-medium mb-3">
                         4.8 stars • 250+ reviews
                     </p>
                     <span
@@ -321,10 +532,10 @@ const reviews = [
                 </a>
 
                 <a
-                    href="https://www.facebook.com"
+                    href={SITE_CONFIG.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-light p-8 rounded-2xl border border-gray-100 hover:border-accent transition-all text-center group"
+                    class="bg-[var(--bg-body)] p-8 rounded-[var(--radius-xl)] border border-[var(--border-light)] hover:border-[var(--border-focus)] transition-all text-center group"
                 >
                     <div
                         class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm group-hover:shadow-md transition-all"
@@ -342,7 +553,7 @@ const reviews = [
                     <h3 class="font-black text-primary text-lg uppercase mb-2">
                         Facebook Reviews
                     </h3>
-                    <p class="text-sm text-gray-600 font-medium mb-3">
+                    <p class="text-sm text-[var(--text-body)] font-medium mb-3">
                         5.0 stars • 150+ reviews
                     </p>
                     <span
@@ -384,14 +595,20 @@ const reviews = [
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button
-                            href="https://www.google.com/maps"
+                            href={SITE_CONFIG.social.googleMaps}
                             variant="secondary"
                             size="lg"
+                            class="gap-2"
                         >
-                            Leave a Google Review
+                            <Star class="w-5 h-5" /> Review on Google
                         </Button>
-                        <Button href="/contact" variant="primary" size="lg">
-                            Contact Us
+                        <Button
+                            href="/contact"
+                            variant="primary"
+                            size="lg"
+                            class="gap-2"
+                        >
+                            <MessageSquare class="w-5 h-5" /> Get In Touch
                         </Button>
                     </div>
                 </div>
@@ -405,6 +622,17 @@ const reviews = [
         style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
     >
         <div class="container-custom text-center">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-12 h-12 text-accent mx-auto mb-6 animate-pulse"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+                    clip-rule="evenodd"></path>
+            </svg>
             <h2
                 class="text-3xl md:text-5xl font-black text-primary uppercase mb-6"
             >
@@ -413,14 +641,16 @@ const reviews = [
                 >
             </h2>
             <p
-                class="text-gray-600 text-lg md:text-xl mb-12 font-medium leading-relaxed"
+                class="text-[var(--text-body)] text-lg md:text-xl mb-12 font-medium leading-relaxed"
             >
                 Join 1,200+ satisfied customers who chose Solomon Electric for
                 their electrical needs. Licensed, insured, and available 24/7.
             </p>
-            <Button href="/book" size="lg" class="px-12 py-6 text-xl">
-                Book Your Service Today
-            </Button>
+            <div class="final-cta-buttons">
+                <Button href="/book" size="lg" class="px-12 py-6 text-xl gap-2">
+                    <Star class="w-5 h-5" /> Book Your Service
+                </Button>
+            </div>
         </div>
     </section>
 </Layout>

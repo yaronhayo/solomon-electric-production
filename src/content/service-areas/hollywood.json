@@ -1,0 +1,100 @@
+{
+    "name": "Hollywood",
+    "slug": "hollywood",
+    "county": "Broward",
+    "description": "Licensed Hollywood electricians serving Broward County, Florida. Solomon Electric provides professional residential and commercial electrical services, from beachfront properties to historic homes near Young Circle.",
+    "population": "150,000+",
+    "founded": "1925",
+    "areaSquareMiles": "30",
+    "tagline": "Diamond of the Gold Coast",
+    "landmarks": [
+        "Hollywood Beach Broadwalk",
+        "Young Circle",
+        "Anne Kolb Nature Center",
+        "Hard Rock Hotel & Casino",
+        "Yellow Green Farmers Market"
+    ],
+    "neighborhoods": [
+        "Hollywood Hills",
+        "Emerald Hills",
+        "Hollywood Lakes",
+        "Oakwood",
+        "Taft",
+        "Boulevard Heights",
+        "Beach District"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Florida Turnpike",
+        "Sheridan Street",
+        "Hollywood Boulevard",
+        "Federal Highway (US-1)"
+    ],
+    "coordinates": {
+        "lat": 26.0112,
+        "lng": -80.1495
+    },
+    "challenges": [
+        {
+            "title": "Coastal Electrical Durability",
+            "description": "Hollywood's beachfront properties face constant salt air. We use corrosion-proof materials and specialized techniques to ensure long-lasting outdoor electrical performance.",
+            "icon": "Umbrella"
+        },
+        {
+            "title": "Historic Home Restoration",
+            "description": "Central Hollywood and Hollywood Lakes feature many beautiful historic properties with aging electrical systems. We specialize in modernizing these homes while preserving their character.",
+            "icon": "Home"
+        },
+        {
+            "title": "Commercial Entertainment Needs",
+            "description": "With the nearby Hard Rock and the vibrant Broadwalk, Hollywood businesses require specialized lighting, audio-visual wiring, and high-capacity power systems.",
+            "icon": "Zap"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "landscape-outdoor-lighting",
+        "recessed-lighting-installation",
+        "ec-charging-system-setup",
+        "whole-home-surge-protection"
+    ],
+    "stats": [
+        {
+            "value": "150K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you provide emergency service in Hollywood Hills and Emerald Hills?",
+            "answer": "Yes, we offer full 24/7 emergency electrical service to all Hollywood neighborhoods. If you have a tripping breaker, partial power loss, or any electrical concern, we're ready to help."
+        },
+        {
+            "question": "Are your Hollywood electricians familiar with city permits?",
+            "answer": "Absolutely. We frequently work with the Hollywood Building Department and ensure all our projects are fully permitted and meet both local and NEC code requirements."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Your Trusted Hollywood, FL Electrical Partners",
+            "body": "Hollywood, the 'Diamond of the Gold Coast,' is a beautiful city that bridges the gap between Fort Lauderdale and Miami. From the family-friendly hills to the world-famous Broadwalk, Hollywood is a community of diverse needs. Solomon Electric has been a staple in Hollywood for over 15 years, providing safe and reliable power to our neighbors."
+        },
+        {
+            "heading": "Serving Every Hollywood Neighborhood with Excellence",
+            "body": "Whether you're starting a renovation in Emerald Hills, upgrading the electrical at a beachfront rental, or need the peace of mind of a whole-home surge protector in Oakwood, Solomon Electric is your first choice. Our licensed electricians understand the specific challenges of Hollywood's coastal and historic properties, ensuring your home is safe and compliant."
+        }
+    ]
+}

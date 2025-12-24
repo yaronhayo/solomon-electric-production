@@ -1,0 +1,180 @@
+{
+  "name": "Electrical Code Compliance Audit",
+  "slug": "electrical-code-compliance-audit",
+  "description": "Is your electrical system up to code? Solomon Electric provides comprehensive code compliance audits for South Florida properties—identifying violations, safety hazards, and areas needing updates to meet current National Electrical Code standards. Whether you're addressing permit issues, preparing for sale, or simply want peace of mind, we document your electrical compliance status.",
+  "shortDescription": "NEC compliance verification",
+  "icon": "FileCheck",
+  "image": "../../assets/images/services/panel-work.png",
+  "category": "Commercial & Inspections",
+  "order": 43,
+  "features": [
+    "NEC compliance assessment",
+    "Violation identification",
+    "Permit verification",
+    "Safety hazard documentation",
+    "Prioritized repair recommendations",
+    "Compliance remediation planning"
+  ],
+  "warningSignsHeading": "When You Need Code Compliance Audit",
+  "warningSignsSubheading": "Code compliance matters for safety, insurance, and property transactions. Here's when audits help.",
+  "problems": [
+    {
+      "title": "Permit Violations or Unpermitted Work",
+      "description": "Previous owners or contractors may have done work without permits. Compliance audit identifies unpermitted modifications and what's needed to correct them.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Preparing Property for Sale",
+      "description": "Buyers and their lenders increasingly scrutinize electrical compliance. Addressing violations before listing prevents negotiation complications.",
+      "icon": "Home"
+    },
+    {
+      "title": "Commercial Occupancy Requirements",
+      "description": "Commercial spaces require code compliance for occupancy permits. We identify violations that could delay or prevent certificate of occupancy.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Insurance Concerns",
+      "description": "Insurers may refuse coverage or claims on properties with known code violations. Compliance audit documents your status and remediation path.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Major Renovation Planning",
+      "description": "Before major remodeling, understanding existing electrical compliance helps plan necessary upgrades and avoid surprises during permit inspection.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Safety Concerns",
+      "description": "Code requirements exist for safety reasons. If you're concerned about your electrical system's safety, compliance audit reveals hazardous conditions.",
+      "icon": "Zap"
+    }
+  ],
+  "processHeading": "Our Code Compliance Audit Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Scope Definition",
+      "description": "We understand your goals—full compliance audit, specific concern investigation, or pre-sale documentation—and plan accordingly."
+    },
+    {
+      "step": 2,
+      "title": "Systematic Inspection",
+      "description": "We examine your electrical system against applicable NEC requirements—panel, wiring, outlets, safety devices, and general installation quality."
+    },
+    {
+      "step": 3,
+      "title": "Violation Identification",
+      "description": "We document any code violations found, noting the specific code section and severity of each issue."
+    },
+    {
+      "step": 4,
+      "title": "Prioritization",
+      "description": "We categorize findings by urgency—safety hazards requiring immediate attention vs. code updates that are important but not immediately dangerous."
+    },
+    {
+      "step": 5,
+      "title": "Report and Recommendations",
+      "description": "You receive a detailed report documenting compliance status, violations found, and recommended remediation with estimated costs."
+    }
+  ],
+  "benefitsHeading": "Benefits of Code Compliance Audit",
+  "benefits": [
+    {
+      "title": "Know Your Status",
+      "description": "Document exactly what's compliant and what isn't. This knowledge helps with selling, insuring, renovating, or simply understanding your property.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Prioritize Fixes",
+      "description": "Not all violations are equally urgent. We categorize findings so you can address safety hazards first and plan for lower-priority updates.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Avoid Surprises",
+      "description": "Better to know about violations before a sale, permit application, or insurance claim makes them expensive problems.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Clear Path Forward",
+      "description": "Our audit provides specific remediation recommendations—you know exactly what's needed to achieve compliance.",
+      "icon": "Zap"
+    }
+  ],
+  "stats": [
+    {
+      "value": "400+",
+      "label": "Compliance Audits"
+    },
+    {
+      "value": "NEC",
+      "label": "Code Standard"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "4.9",
+      "label": "Star Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the National Electrical Code (NEC)?",
+      "answer": "The NEC is the standard for safe electrical installation in the United States. It's updated every three years. Florida adopts the NEC (with some modifications) as state law. Our compliance audits reference the currently adopted code version."
+    },
+    {
+      "question": "Are older installations grandfathered?",
+      "answer": "Generally, installations that met code when installed remain legal ('grandfathered'). However, modifications to existing systems typically must meet current code. Safety hazards may require correction regardless of when installed. We explain what applies to your situation."
+    },
+    {
+      "question": "What if I have unpermitted work?",
+      "answer": "Unpermitted electrical work creates liability and can complicate sales. Options include: retroactive permitting (if work is up to code), correction and permitting, or disclosure and negotiation during sale. We identify unpermitted work and explain your options."
+    },
+    {
+      "question": "Do I need to bring everything up to current code?",
+      "answer": "Not necessarily. Existing compliant work is typically grandfathered. Current code applies when you modify or add to the system. However, safety hazards should be addressed regardless of grandfathering. We clarify what's required vs. recommended."
+    },
+    {
+      "question": "Will you provide repair estimates?",
+      "answer": "Yes. Our audit reports include estimated costs for recommended repairs. This helps you budget and make informed decisions about remediation priorities."
+    },
+    {
+      "question": "Can you handle the repairs after the audit?",
+      "answer": "Absolutely. Many clients prefer one company to handle both audit and remediation. We already understand your property and can execute repairs efficiently."
+    },
+    {
+      "question": "How is a compliance audit different from a safety inspection?",
+      "answer": "Safety inspections focus on immediate hazards—things that could cause fire or shock now. Compliance audits are more comprehensive, examining whether installations meet code requirements even when not immediately dangerous. Compliance audits include safety assessment but go further."
+    },
+    {
+      "question": "What documentation do I receive?",
+      "answer": "You receive a detailed written report documenting: compliance status, specific violations found (with code references), safety hazards identified, prioritized recommendations, and estimated repair costs. This documentation is suitable for insurance, real estate, or permit purposes."
+    }
+  ],
+  "relatedServices": [
+    "electrical-safety-inspection",
+    "electrical-code-compliance-violation-repairs",
+    "home-electrical-inspection-certification",
+    "permit-application-inspection-coordination"
+  ],
+  "seoContent": [
+    {
+      "heading": "Electrical Code Compliance Audit in South Florida",
+      "body": "Is your electrical system up to code? Solomon Electric provides comprehensive NEC compliance audits throughout Miami-Dade and Broward counties—identifying violations, safety hazards, and areas needing updates. Whether for permit issues, property sales, or peace of mind, we document your compliance status with clear recommendations."
+    },
+    {
+      "heading": "Identifying Code Violations",
+      "body": "Code violations range from minor (missing outlet covers) to serious (improper panel installation). We systematically examine your electrical system against applicable NEC requirements, documenting exactly what's compliant and what needs attention—with specific code references for each finding."
+    },
+    {
+      "heading": "Unpermitted Work Assessment",
+      "body": "Previous owners or contractors may have done electrical work without permits. Our compliance audit identifies modifications that appear unpermitted, assesses their quality, and recommends paths forward—whether retroactive permitting or correction is needed."
+    },
+    {
+      "heading": "Serving South Florida Properties",
+      "body": "Solomon Electric provides electrical compliance audits throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding areas. From residential properties to commercial spaces, we assess NEC compliance with detailed documentation and clear remediation recommendations."
+    }
+  ],
+  "relatedBlogPosts": []
+}

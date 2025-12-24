@@ -1,0 +1,97 @@
+{
+    "name": "Lauderhill",
+    "slug": "lauderhill",
+    "county": "Broward",
+    "description": "Licensed Lauderhill electricians providing expert residential and commercial electrical services. Solomon Electric is your local partner for safe, reliable power solutions throughout Lauderhill.",
+    "population": "70,000+",
+    "founded": "1959",
+    "areaSquareMiles": "8",
+    "tagline": "The City of Lauderhill",
+    "landmarks": [
+        "Central Broward Regional Park",
+        "Lauderhill Performing Arts Center",
+        "Inverrary Country Club",
+        "Jackie Gleason's Former Home"
+    ],
+    "neighborhoods": [
+        "Inverrary",
+        "Lauderhill Estates",
+        "West Ken Lark",
+        "Forest Lake",
+        "St. George"
+    ],
+    "majorRoads": [
+        "Florida Turnpike",
+        "Oakland Park Boulevard",
+        "University Drive",
+        "Commercial Boulevard",
+        "Sunrise Boulevard"
+    ],
+    "coordinates": {
+        "lat": 26.1404,
+        "lng": -80.2134
+    },
+    "challenges": [
+        {
+            "title": "Historical Infrastructure Demands",
+            "description": "Established communities like Inverrary feature large-scale residential complexes that require specialized knowledge of multi-unit electrical distribution and code compliance.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Suburban Energy Modernization",
+            "description": "Many Lauderhill homes require panel upgrades and energy efficiency updates to handle modern HVAC and appliance loads safely.",
+            "icon": "AlertTriangle"
+        },
+        {
+            "title": "Rapid Commercial Growth",
+            "description": "Lauderhill's commercial corridors require electricians who can deliver fast, reliable support for retail and service-oriented businesses.",
+            "icon": "Shield"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "recessed-lighting-installation",
+        "whole-home-surge-protection",
+        "commercial-led-lighting-retrofit",
+        "ceiling-fan-light-fixture-installation"
+    ],
+    "stats": [
+        {
+            "value": "70K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Do you offer emergency repairs in Lauderhill neighborhoods like Inverrary?",
+            "answer": "Yes, we provide 24/7 emergency electrical service throughout all of Lauderhill, ensuring your home or business is never left in the dark."
+        },
+        {
+            "question": "Are your electricians licensed to work in Lauderhill?",
+            "answer": "Absolutely. We are fully licensed (FL License #EC13012419) and insured, with extensive experience working in the City of Lauderhill."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Your Trusted Lauderhill Electrical Partners",
+            "body": "Lauderhill is a vibrant, diverse community that has grown from a small retirement village to a thriving city of 70,000 residents. Solomon Electric has been proud to witness and support this growth for over 15 years, providing the professional electrical services that Lauderhill families and businesses deserve."
+        },
+        {
+            "heading": "Reliable Electrical Solutions for Lauderhill Properties",
+            "body": "Whether you live in the historic Inverrary area or a business near Central Broward Regional Park, Solomon Electric is your first choice for quality. We provide upfront pricing, clean workmanship, and a dedication to safety on every project, no matter how large or small."
+        }
+    ]
+}

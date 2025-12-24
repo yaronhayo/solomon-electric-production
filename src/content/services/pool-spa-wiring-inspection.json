@@ -1,0 +1,180 @@
+{
+  "name": "Pool & Spa Wiring Inspection",
+  "slug": "pool-spa-wiring-inspection",
+  "description": "Pool and spa electrical systems operate in the most dangerous environment possible—water and electricity together. Florida's pool-heavy lifestyle makes proper electrical bonding, grounding, and GFCI protection absolutely critical for family safety. Solomon Electric provides comprehensive pool and spa electrical inspections, ensuring your equipment meets all Florida codes and NEC requirements for wet-location electrical work.",
+  "shortDescription": "Safety inspections for pool equipment",
+  "icon": "Shield",
+  "image": "../../assets/images/services/wiring.png",
+  "category": "Commercial & Inspections",
+  "order": 45,
+  "features": [
+    "Complete pool electrical safety inspection",
+    "Equipment bonding verification",
+    "GFCI protection testing",
+    "Pump and heater wiring assessment",
+    "Underwater lighting inspection",
+    "Code compliance documentation"
+  ],
+  "warningSignsHeading": "When You Need Pool Electrical Inspection",
+  "warningSignsSubheading": "Pool electrical problems can be deadly. These situations require immediate professional assessment.",
+  "problems": [
+    {
+      "title": "Tingling Sensation in Pool Water",
+      "description": "Any electrical sensation in or near pool water is a life-threatening emergency. Exit immediately, keep everyone out, and call an electrician. This indicates dangerous stray voltage.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Buying a Home with a Pool",
+      "description": "General home inspections don't adequately assess pool electrical systems. Before closing, get a dedicated pool electrical inspection to identify hidden hazards and needed repairs.",
+      "icon": "Home"
+    },
+    {
+      "title": "Pool Equipment Replacement",
+      "description": "When replacing pumps, heaters, or other equipment, existing wiring should be inspected. Older wiring may not meet current code or support new equipment electrical demands.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Tripping GFCI or Breakers",
+      "description": "Pool equipment that trips protection devices may indicate ground faults, damaged wiring, or failing equipment. Investigation is needed before the protection fails entirely.",
+      "icon": "AlertCircle"
+    },
+    {
+      "title": "Older Pool Installation",
+      "description": "Pools installed before current NEC requirements may lack proper bonding, GFCI protection, or adequate equipment grounding—hazards that aren't visible but are very real.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Insurance or Sale Requirements",
+      "description": "Insurance companies and buyers increasingly require pool electrical inspections. We provide documentation that satisfies these requirements.",
+      "icon": "FileCheck"
+    }
+  ],
+  "processHeading": "Our Pool Inspection Process",
+  "process": [
+    {
+      "step": 1,
+      "title": "Visual Equipment Assessment",
+      "description": "We examine all pool electrical equipment—pumps, heaters, lights, timers, automation—for visible damage, proper installation, and code compliance."
+    },
+    {
+      "step": 2,
+      "title": "Bonding Verification",
+      "description": "We test the equipotential bonding grid connecting pool shell, ladder, water, and equipment—critical for preventing voltage differences that cause electrocution."
+    },
+    {
+      "step": 3,
+      "title": "GFCI Protection Testing",
+      "description": "We verify all required circuits have functioning GFCI protection and test trip times to ensure protection operates properly when needed."
+    },
+    {
+      "step": 4,
+      "title": "Wiring and Connection Inspection",
+      "description": "We examine accessible wiring, connections, and junction boxes for damage, corrosion, improper splices, and code violations."
+    },
+    {
+      "step": 5,
+      "title": "Report and Recommendations",
+      "description": "You receive a detailed written report documenting our findings, any code violations, safety concerns, and prioritized repair recommendations."
+    }
+  ],
+  "benefitsHeading": "Why Pool Electrical Safety Matters",
+  "benefits": [
+    {
+      "title": "Prevent Electrocution",
+      "description": "Pool electrocution events claim lives every year—often from problems that proper inspection would have caught. Your family's safety is worth the inspection investment.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Insurance Compliance",
+      "description": "Many insurers require current pool electrical inspections. Our documented assessments satisfy insurance requirements and may reduce liability exposure.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Protect Your Investment",
+      "description": "Improper electrical installation damages expensive pool equipment. Proper wiring protects pumps, heaters, and automation systems from premature failure.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Peace of Mind",
+      "description": "Florida families spend significant time in and around pools. Knowing your electrical system is safe lets you enjoy pool time without worry.",
+      "icon": "Home"
+    }
+  ],
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Pools Inspected"
+    },
+    {
+      "value": "70%",
+      "label": "Have Code Issues"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Thorough Reports"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does pool electrical bonding mean?",
+      "answer": "Bonding connects all metal components (pool shell, ladder, rails, pump motor, heater) with continuous copper conductors to create equal electrical potential. Without proper bonding, voltage differences between components can electrocute swimmers touching two surfaces simultaneously. It's the most critical pool safety system."
+    },
+    {
+      "question": "How often should pool electrical systems be inspected?",
+      "answer": "We recommend inspection every 3-5 years, whenever you purchase or sell a home with a pool, after major equipment replacements, and immediately if you notice any electrical problems (tripping breakers, shocks, equipment issues). Florida's corrosive environment accelerates electrical degradation."
+    },
+    {
+      "question": "What's the difference between bonding and grounding?",
+      "answer": "Bonding connects metal components together to equalize voltage. Grounding connects equipment to earth to provide a fault path. Both are required for pool safety, but they serve different purposes. We verify both systems during inspection."
+    },
+    {
+      "question": "Do all pool circuits need GFCI protection?",
+      "answer": "Yes. The National Electrical Code requires GFCI protection for all pool equipment circuits—pumps, lights, heaters, and any receptacles within 20 feet of the pool. We test all GFCI protection to ensure proper operation."
+    },
+    {
+      "question": "Can you inspect pool electrical for home sales?",
+      "answer": "Absolutely. We provide detailed pool electrical inspection reports suitable for real estate transactions, insurance requirements, and buyer due diligence. Our reports document current conditions and clearly identify any safety concerns or code violations."
+    },
+    {
+      "question": "What if you find problems during inspection?",
+      "answer": "If we identify safety hazards, we'll explain the severity and recommend whether equipment should be shut down pending repairs. For code violations that aren't immediately dangerous, we'll provide prioritized recommendations. We can also quote repair work if you'd like us to correct the issues."
+    },
+    {
+      "question": "How long does a pool electrical inspection take?",
+      "answer": "A typical residential pool inspection takes 1-2 hours depending on equipment complexity. Pools with extensive automation, multiple pumps, or spa systems take longer. You'll receive your written report within 24-48 hours."
+    },
+    {
+      "question": "Do you inspect salt water pool systems?",
+      "answer": "Yes. Salt water chlorine generators have specific electrical requirements and can accelerate corrosion on bonding connections. We pay special attention to bonding integrity and ensure salt system installation meets manufacturer and code requirements."
+    }
+  ],
+  "relatedServices": [
+    "hot-tub-spa-installation",
+    "gfci-outlet-installation-repair",
+    "electrical-safety-inspection",
+    "outdoor-waterproof-outlet-installation"
+  ],
+  "seoContent": [
+    {
+      "heading": "Pool Electrical Safety Inspection in South Florida",
+      "body": "With thousands of residential pools across Miami-Dade and Broward counties, pool electrical safety is a critical concern for South Florida homeowners. Solomon Electric provides comprehensive pool and spa electrical inspections, verifying proper bonding, grounding, GFCI protection, and code compliance. Our inspections help prevent the tragic electrocution events that claim lives every swimming season."
+    },
+    {
+      "heading": "Critical Pool Bonding and Grounding",
+      "body": "Equipotential bonding is your pool's most important safety system—it prevents the voltage differences between metal components that cause electrocution. Yet many pools, especially older installations, have bonding that's corroded, damaged, or was never properly installed. We test bonding continuity and verify all required components are properly connected."
+    },
+    {
+      "heading": "Pre-Purchase Pool Inspections",
+      "body": "Buying a home with a pool? General home inspections barely scratch the surface of pool electrical safety. Our dedicated pool electrical inspection examines equipment bonding, GFCI protection, wiring condition, and code compliance—giving you complete understanding of any electrical repairs needed before you buy."
+    },
+    {
+      "heading": "Serving Pool Owners Throughout South Florida",
+      "body": "Solomon Electric inspects pool electrical systems throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, Boca Raton, and all surrounding communities. Whether you need inspection for insurance, home sale, or peace of mind, our licensed electricians provide thorough assessment and clear documentation."
+    }
+  ],
+  "relatedBlogPosts": []
+}

@@ -1,728 +1,1619 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import heroImage from "../../assets/images/service-panel.png";
-import ServiceCard from "../../components/ServiceCard.astro";
+import heroImage from "../../assets/images/heroes/services.png";
+import PageHero from "../../components/PageHero.astro";
+import Container from "../../components/ui/Container.astro";
+import CtaButton from "../../components/ui/CtaButton.astro";
+import FAQAccordion from "../../components/FAQAccordion.astro";
+import ReviewCarousel from "../../components/ReviewCarousel.astro";
 import {
-    services,
+    getServices,
     serviceCategories,
     getCategoryInfo,
-} from "../../data/services";
-import Button from "../../components/ui/Button.astro";
-import Container from "../../components/ui/Container.astro";
+    categoryDescriptions,
+} from "../../utils/services";
 import { SITE_CONFIG } from "../../config/site";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const services = await getServices();
+
+// Pre-fetch category info
+const categoryInfos = await Promise.all(
+    serviceCategories.map((cat) => getCategoryInfo(cat)),
+);
+const categoryInfoMap = serviceCategories.reduce(
+    (acc, cat, idx) => {
+        acc[cat] = categoryInfos[idx];
+        return acc;
+    },
+    {} as Record<string, (typeof categoryInfos)[0]>,
+);
+
+// Count services per category
+const serviceCounts = serviceCategories.reduce(
+    (acc, cat) => {
+        acc[cat] = services.filter((s) => s.category === cat).length;
+        return acc;
+    },
+    {} as Record<string, number>,
+);
+
+// Get services grouped by category for expanded display
+const servicesByCategory = serviceCategories.reduce(
+    (acc, cat) => {
+        acc[cat] = services.filter((s) => s.category === cat);
+        return acc;
+    },
+    {} as Record<string, typeof services>,
+);
+
+// Generate ItemList schema for all services (SEO)
+const servicesListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    numberOfItems: services.length,
+    itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+            "@type": "Service",
+            name: service.name,
+            description: service.description,
+            url: `${SITE_CONFIG.seo.siteUrl}/services/${service.slug}`,
+            provider: {
+                "@type": "LocalBusiness",
+                name: "Solomon Electric",
+            },
+        },
+    })),
+};
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_CONFIG.seo.siteUrl,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: `${SITE_CONFIG.seo.siteUrl}/services`,
+        },
+    ],
+};
+
+import {
+    Phone,
+    Calendar,
+    ArrowRight,
+    ClipboardCheck,
+    Zap,
+    Shield,
+    Clock,
+    Award,
+    CheckCircle,
+    Users,
+} from "lucide-astro";
 ---
 
 <Layout
-    title="Our Electrical Services - Solomon Electric"
-    description="Comprehensive residential and commercial electrical services in Miami. From panel upgrades to EV charging, smart homes to emergency repairs - we do it all."
+    title="Electrical Services South Florida | Residential & Commercial Electrician | Solomon Electric"
+    description="Professional electrical services in Miami-Dade & Broward. Panel upgrades, EV charging installation, smart home wiring, emergency repairs & more. Licensed electricians available 24/7."
 >
-    <!-- Hero Section - Matching Homepage Grid Layout -->
-    <section
-        class="relative min-h-[70vh] flex items-center overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32"
-    >
-        <div class="absolute inset-0 z-0">
-            <Image
-                src={heroImage}
-                alt="Professional Electrical Services"
-                class="w-full h-full object-cover"
-            />
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 md:via-primary/80 md:to-primary/40 lg:to-transparent"
-            >
-            </div>
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent md:hidden"
-            >
-            </div>
-        </div>
+    <!-- SEO Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(servicesListSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+    />
 
-        <Container class="relative z-10 w-full">
-            <div
-                class="grid grid-cols-1 lg:grid-cols-12 items-center"
-                style="gap: var(--spacing-xl);"
-            >
-                <!-- Left Column: Content -->
-                <div class="lg:col-span-7">
-                    <p
-                        class="text-accent tracking-[0.3em] font-bold uppercase"
-                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
-                    >
-                        Complete Electrical Solutions
-                    </p>
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
 
-                    <h1
-                        class="font-black text-white leading-[0.9]"
-                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
-                    >
-                        Expert Electrical<br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
+    <!-- Hero Section -->
+    <PageHero
+        title="Find the Right Fix<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>For Your Electrical Problem</span>"
+        subtitle="63 Services • Residential • Commercial • Industrial"
+        description="Outlet not working? Panel keeps tripping? Need to add circuits for a home addition? Whether it's a minor repair or a major installation, we've helped over 19,000 South Florida property owners solve their electrical problems permanently. Browse our services to find exactly what you need."
+        image={heroImage}
+        trustIndicators={true}
+        primaryCta={{
+            text: "Get Help Today",
+            href: "/book",
+            icon: Calendar,
+        }}
+        secondaryCta={{
+            text: "Call Now",
+            href: "tel:" + SITE_CONFIG.contact.phone.href,
+            icon: Phone,
+        }}
+    />
+
+    <!-- Quick Contact Bar -->
+    <section class="services-quick-contact">
+        <Container>
+            <div class="quick-contact-grid">
+                <a
+                    href={SITE_CONFIG.contact.phone.href}
+                    class="quick-contact-item emergency glass-bg glass-border"
+                >
+                    <div class="quick-contact-icon shimmer-authority">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
                         >
-                            Services You Trust
-                        </span>
-                    </h1>
-
-                    <p
-                        class="text-gray-200 font-light leading-relaxed"
-                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
-                    >
-                        From emergency repairs to complete
-                        installations—residential, commercial, and industrial
-                        electrical services across Miami-Dade and Broward
-                        counties.
-                    </p>
-
-                    <!-- Trust Indicators -->
-                    <div
-                        class="flex flex-wrap items-center"
-                        style="gap: var(--spacing-md); margin-bottom: var(--spacing-xl);"
-                    >
-                        <div
-                            class="flex items-center text-accent"
-                            style="gap: var(--spacing-xs);"
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="quick-contact-content">
+                        <span class="quick-contact-label font-secondary"
+                            >24/7 Emergency</span
                         >
-                            <svg
-                                class="w-5 h-5"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span
-                                class="font-bold text-white"
-                                style="font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem);"
-                                >Licensed FL EC13012419</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-2 text-accent">
-                            <svg
-                                class="w-5 h-5"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
-                                ></path>
-                            </svg>
-                            <span
-                                class="font-bold text-white"
-                                style="font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem);"
-                                >24/7 Emergency Service</span
-                            >
+                        <span class="quick-contact-value"
+                            >{SITE_CONFIG.contact.phone.formatted}</span
+                        >
+                    </div>
+                </a>
+                <a
+                    href={SITE_CONFIG.contact.bookingUrl}
+                    class="quick-contact-item scheduled"
+                >
+                    <div class="quick-contact-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="quick-contact-content">
+                        <span class="quick-contact-label font-secondary"
+                            >Schedule Service</span
+                        >
+                        <span class="quick-contact-value">Book Online</span>
+                    </div>
+                </a>
+                <a href="/contact" class="quick-contact-item estimate">
+                    <div class="quick-contact-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="quick-contact-content">
+                        <span class="quick-contact-label font-secondary"
+                            >Free Estimate</span
+                        >
+                        <span class="quick-contact-value">Get a Quote</span>
+                    </div>
+                </a>
+            </div>
+        </Container>
+    </section>
+
+    <!-- SEO Intro Section -->
+    <section class="seo-intro">
+        <Container>
+            <div class="seo-intro-content">
+                <div class="seo-intro-text">
+                    <h2 class="seo-intro-title">
+                        Complete Electrical Services for <span
+                            class="text-accent">South Florida</span
+                        >
+                    </h2>
+                    <p class="seo-intro-description">
+                        From emergency repairs to major installations, Solomon
+                        Electric provides {services.length}+ professional
+                        electrical services across Miami-Dade, Broward, and Palm
+                        Beach counties. As a licensed and insured electrical
+                        contractor (FL License #{
+                            SITE_CONFIG.credentials.license.number.replace(
+                                "#",
+                                "",
+                            )
+                        }), we deliver code-compliant work backed by our
+                        satisfaction guarantee.
+                    </p>
+                    <p class="seo-intro-secondary">
+                        Whether you need a 200-amp panel upgrade, Level 2 EV
+                        charger installation, smart home automation, or 24/7
+                        emergency electrical repair—our experienced electricians
+                        have you covered.
+                    </p>
+                </div>
+                <div class="seo-intro-stats">
+                    <div class="intro-stat-item">
+                        <Zap class="intro-stat-icon" />
+                        <span class="intro-stat-value">{services.length}+</span>
+                        <span class="intro-stat-label font-secondary"
+                            >Services</span
+                        >
+                    </div>
+                    <div class="intro-stat-item">
+                        <Shield class="intro-stat-icon" />
+                        <span class="intro-stat-value"
+                            >{serviceCategories.length}</span
+                        >
+                        <span class="intro-stat-label font-secondary"
+                            >Categories</span
+                        >
+                    </div>
+                    <div class="intro-stat-item">
+                        <Clock class="intro-stat-icon" />
+                        <span class="intro-stat-value">24/7</span>
+                        <span class="intro-stat-label font-secondary"
+                            >Available</span
+                        >
+                    </div>
+                    <div class="intro-stat-item">
+                        <Award class="intro-stat-icon" />
+                        <span class="intro-stat-value">15+</span>
+                        <span class="intro-stat-label font-secondary"
+                            >Years Exp.</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Service Categories - Curated Top Money Pages -->
+    <section class="services-categories">
+        <Container>
+            <header class="section-header">
+                <span class="section-label">Our Services</span>
+                <h2 class="section-title">
+                    Professional <span class="text-accent"
+                        >Electrical Services</span
+                    >
+                </h2>
+                <p class="section-description">
+                    Licensed electricians serving Miami-Dade & Broward. Click
+                    any service for details and free estimates.
+                </p>
+            </header>
+
+            <div class="categories-grid">
+                <!-- Electrical Panels & Power Systems -->
+                <article
+                    class="category-card glass-bg glass-border"
+                    id="panels-power"
+                >
+                    <div class="category-header">
+                        <Image
+                            src={categoryInfoMap[
+                                "Electrical Panels & Power Systems"
+                            ].image}
+                            alt="Electrical Panel Services"
+                            class="category-image"
+                            loading="lazy"
+                        />
+                        <div class="category-overlay"></div>
+                        <div class="category-header-content">
+                            <h3 class="category-title">
+                                Electrical Panels & Power
+                            </h3>
+                            <p class="category-description">
+                                Panel upgrades, generator installation, and
+                                whole-home surge protection for South Florida
+                                homes.
+                            </p>
                         </div>
                     </div>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-wrap gap-4">
-                        <Button
-                            href="/book"
-                            size="lg"
-                            class="flex items-center gap-3"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                class="w-5 h-5"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M5.5 3A2.5 2.5 0 003 5.5v2.879a2.5 2.5 0 00.732 1.767l6.5 6.5a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536l-6.5-6.5A2.5 2.5 0 008.38 3H5.5zM6 7a1 1 0 100-2 1 1 0 000 2z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            Book Service Online
-                        </Button>
-                        <Button
-                            href="tel:7868339211"
-                            variant="secondary"
-                            size="lg"
-                            class="flex items-center gap-3"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                class="w-5 h-5"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            Call (786) 833-9211
-                        </Button>
+                    <div class="category-services">
+                        <ul class="services-list" role="list">
+                            <li>
+                                <a
+                                    href="/services/electrical-panel-upgrade-100a-to-200a"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >200 Amp Panel Upgrade</span
+                                    ><ArrowRight class="service-arrow" />
+                                </a>
+                                <li>
+                                    <a
+                                        href="/services/home-standby-generator-installation"
+                                        class="service-link"
+                                        ><span class="service-name"
+                                            >Standby Generator Installation</span
+                                        ><svg
+                                            class="service-arrow"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            ><path d="M9 5l7 7-7 7"></path></svg
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/services/whole-home-surge-protection"
+                                        class="service-link"
+                                        ><span class="service-name"
+                                            >Whole-Home Surge Protection</span
+                                        ><svg
+                                            class="service-arrow"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            ><path d="M9 5l7 7-7 7"></path></svg
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/services/panel-repair-circuit-breaker-replacement"
+                                        class="service-link"
+                                        ><span class="service-name"
+                                            >Circuit Breaker Replacement</span
+                                        ><svg
+                                            class="service-arrow"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            ><path d="M9 5l7 7-7 7"></path></svg
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/services/home-electrical-system-upgrade"
+                                        class="service-link"
+                                        ><span class="service-name"
+                                            >Electrical System Upgrade</span
+                                        ><svg
+                                            class="service-arrow"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            ><path d="M9 5l7 7-7 7"></path></svg
+                                        ></a
+                                    >
+                                </li>
+                            </li>
+                            <div class="category-cta">
+                                <CtaButton
+                                    variant="primary"
+                                    action="book"
+                                    text="Get Panel Quote"
+                                />
+                            </div>
+                        </ul>
                     </div>
+                </article>
+
+                <!-- EV Charging & Solar -->
+                <article
+                    class="category-card glass-bg glass-border"
+                    id="ev-charging"
+                >
+                    <div class="category-header">
+                        <Image
+                            src={categoryInfoMap["EV Charging & Solar"].image}
+                            alt="EV Charger Installation"
+                            class="category-image"
+                            loading="lazy"
+                        />
+                        <div class="category-overlay"></div>
+                        <div class="category-header-content">
+                            <h3 class="category-title">EV Charging & Solar</h3>
+                            <p class="category-description">
+                                Tesla, ChargePoint & all EV charger brands. Home
+                                and commercial installations with FPL
+                                coordination.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="category-services">
+                        <ul class="services-list" role="list">
+                            <li>
+                                <a
+                                    href="/services/level-2-ev-charger-installation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Level 2 EV Charger Installation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/home-ev-charging-system-setup"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Home EV Charging Setup</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/electric-vehicle-outlet-installation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >240V EV Outlet Installation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/commercial-ev-charging-infrastructure"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Commercial EV Infrastructure</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/solar-panel-electrical-integration"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Solar Panel Integration</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                        </ul>
+                        <div class="category-cta">
+                            <CtaButton
+                                variant="primary"
+                                action="book"
+                                text="Get EV Quote"
+                            />
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Emergency Services -->
+                <article
+                    class="category-card glass-bg glass-border"
+                    id="emergency"
+                >
+                    <div class="category-header">
+                        <Image
+                            src={categoryInfoMap[
+                                "Emergency Electrical Services"
+                            ].image}
+                            alt="24/7 Emergency Electrician"
+                            class="category-image"
+                            loading="lazy"
+                        />
+                        <div class="category-overlay"></div>
+                        <div class="category-header-content">
+                            <h3 class="category-title">
+                                24/7 Emergency Services
+                            </h3>
+                            <p class="category-description">
+                                Power outages, sparking outlets, burning
+                                smells—we respond immediately throughout
+                                Miami-Dade & Broward.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="category-services">
+                        <ul class="services-list" role="list">
+                            <li>
+                                <a
+                                    href="/services/24-7-emergency-electrical-service"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >24/7 Emergency Response</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/power-outage-emergency-response"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Power Outage Response</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/sparking-outlet-circuit-breaker-repair"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Sparking Outlet Repair</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/electrical-burning-smell-investigation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Burning Smell Investigation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/storm-damage-electrical-repair"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Storm Damage Repair</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                        </ul>
+                        <div class="category-cta">
+                            <CtaButton
+                                variant="primary"
+                                action="call"
+                                text="Call Now 24/7"
+                            />
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Outlets, Switches & Wiring -->
+                <article
+                    class="category-card glass-bg glass-border"
+                    id="outlets-wiring"
+                >
+                    <div class="category-header">
+                        <Image
+                            src={categoryInfoMap["Outlets, Switches & Wiring"]
+                                .image}
+                            alt="Outlet and Wiring Services"
+                            class="category-image"
+                            loading="lazy"
+                        />
+                        <div class="category-overlay"></div>
+                        <div class="category-header-content">
+                            <h3 class="category-title">
+                                Outlets, Switches & Wiring
+                            </h3>
+                            <p class="category-description">
+                                New outlets, GFCI protection, rewiring, and
+                                specialty installations for residential and
+                                commercial.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="category-services">
+                        <ul class="services-list" role="list">
+                            <li>
+                                <a
+                                    href="/services/new-outlet-installation-repair"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Outlet Installation & Repair</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/gfci-outlet-installation-repair"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >GFCI Outlet Installation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/electrical-wiring-updates-rewiring"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Whole-Home Rewiring</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/240v-outlet-installation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >240V Outlet Installation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/hot-tub-spa-installation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Hot Tub & Spa Wiring</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                        </ul>
+                        <div class="category-cta">
+                            <CtaButton
+                                variant="primary"
+                                action="book"
+                                text="Get Wiring Quote"
+                            />
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lighting & Smart Home -->
+                <article
+                    class="category-card glass-bg glass-border"
+                    id="lighting-smart"
+                >
+                    <div class="category-header">
+                        <Image
+                            src={categoryInfoMap["Lighting & Smart Home"].image}
+                            alt="Lighting and Smart Home"
+                            class="category-image"
+                            loading="lazy"
+                        />
+                        <div class="category-overlay"></div>
+                        <div class="category-header-content">
+                            <h3 class="category-title">
+                                Lighting & Smart Home
+                            </h3>
+                            <p class="category-description">
+                                LED retrofits, recessed lighting, ceiling fans,
+                                smart switches, and home automation
+                                installation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="category-services">
+                        <ul class="services-list" role="list">
+                            <li>
+                                <a
+                                    href="/services/recessed-lighting-installation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Recessed Lighting Installation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/ceiling-fan-light-fixture-installation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Ceiling Fan Installation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/led-lighting-retrofit-conversion"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >LED Lighting Retrofit</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/smart-switch-home-automation"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Smart Home Automation</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/landscape-outdoor-lighting"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Landscape & Outdoor Lighting</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                        </ul>
+                        <div class="category-cta">
+                            <CtaButton
+                                variant="primary"
+                                action="book"
+                                text="Get Lighting Quote"
+                            />
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Commercial & Inspections -->
+                <article class="category-card" id="commercial-inspections">
+                    <div class="category-header">
+                        <Image
+                            src={categoryInfoMap["Commercial & Inspections"]
+                                .image}
+                            alt="Commercial Electrical Services"
+                            class="category-image"
+                            loading="lazy"
+                        />
+                        <div class="category-overlay"></div>
+                        <div class="category-header-content">
+                            <h3 class="category-title">
+                                Commercial & Inspections
+                            </h3>
+                            <p class="category-description">
+                                Code compliance inspections, commercial wiring,
+                                tenant build-outs, and FPL coordination.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="category-services">
+                        <ul class="services-list" role="list">
+                            <li>
+                                <a
+                                    href="/services/electrical-safety-inspection"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Electrical Safety Inspection</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/real-estate-inspection-services"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Real Estate Inspection</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/commercial-panel-installation-upgrades"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Commercial Panel Upgrade</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/tenant-build-out-electrical-work"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Tenant Build-Out Wiring</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/services/electrical-code-compliance-audit"
+                                    class="service-link"
+                                    ><span class="service-name"
+                                        >Code Compliance Audit</span
+                                    ><svg
+                                        class="service-arrow"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        ><path d="M9 5l7 7-7 7"></path></svg
+                                    ></a
+                                >
+                            </li>
+                        </ul>
+                        <div class="category-cta">
+                            <CtaButton
+                                variant="primary"
+                                action="book"
+                                text="Get Commercial Quote"
+                            />
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <Container>
+            <header class="section-header">
+                <span class="section-label">Why Solomon Electric</span>
+                <h2 class="section-title">
+                    Trusted by <span class="text-accent"
+                        >South Florida Families</span
+                    >
+                </h2>
+            </header>
+            <div class="trust-points">
+                <div class="trust-point">
+                    <div class="trust-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4>Licensed & Insured</h4>
+                    <p>FL License #EC13012419 with $2M liability coverage</p>
+                </div>
+                <div class="trust-point">
+                    <div class="trust-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4>24/7 Available</h4>
+                    <p>Emergency response for electrical issues any time</p>
+                </div>
+                <div class="trust-point">
+                    <div class="trust-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4>Free Estimates</h4>
+                    <p>Upfront pricing with no hidden fees or surprises</p>
+                </div>
+                <div class="trust-point">
+                    <div class="trust-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4>Satisfaction Guaranteed</h4>
+                    <p>Warranty-backed work with 100% satisfaction promise</p>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Reviews Section -->
+    <ReviewCarousel />
+
+    <!-- FAQs Section -->
+    <FAQAccordion />
+
+    <!-- Final CTA -->
+    <section class="services-final-cta">
+        <Container>
+            <div class="final-cta-content">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="cta-bolt"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <h2>Ready to Get Started?</h2>
+                <p>
+                    Contact us today for a free estimate on your electrical
+                    project. Our licensed electricians are standing by to help.
+                </p>
+                <div class="final-cta-buttons">
+                    <CtaButton
+                        variant="primary"
+                        action="book"
+                        text="Book Online"
+                    />
+                    <CtaButton
+                        variant="secondary"
+                        action="call"
+                        text="Call Now"
+                    />
                 </div>
             </div>
         </Container>
     </section>
 </Layout>
 
-<!-- Emergency vs. Scheduled Banner -->
-<section class="bg-gradient-to-r from-accent to-accent-dark py-16 md:py-24">
-    <Container>
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 text-white"
-            style="gap: var(--spacing-lg);"
-        >
-            <!-- Emergency Services -->
-            <div class="flex items-start" style="gap: var(--spacing-md);">
-                <div
-                    class="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center animate-pulse"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-                        ></path>
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-xl font-black uppercase mb-2">
-                        Emergency Services (24/7)
-                    </h3>
-                    <p
-                        class="text-white/90 font-medium text-sm leading-relaxed"
-                    >
-                        Power outages, sparking outlets, burning smells, exposed
-                        wiring—call immediately for 60-minute response.
-                    </p>
-                    <a
-                        href="tel:7868339211"
-                        class="inline-block mt-3 text-sm font-bold uppercase tracking-wide border-b-2 border-white hover:border-white/50 transition-colors"
-                    >
-                        Call (786) 833-9211 Now →
-                    </a>
-                </div>
-            </div>
+<style>
+    /* Quick Contact Bar */
+    .services-quick-contact {
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #0a3560 100%
+        );
+        padding: clamp(1rem, 2vw, 1.5rem) 0;
+    }
 
-            <!-- Scheduled Services -->
-            <div class="flex items-start" style="gap: var(--spacing-md);">
-                <div
-                    class="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
-                        ></path>
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-xl font-black uppercase mb-2">
-                        Scheduled Services
-                    </h3>
-                    <p
-                        class="text-white/90 font-medium text-sm leading-relaxed"
-                    >
-                        Installations, upgrades, inspections, EV charging—book
-                        online at your convenience for same-day or next-day
-                        service.
-                    </p>
-                    <a
-                        href="/book"
-                        class="inline-block mt-3 text-sm font-bold uppercase tracking-wide border-b-2 border-white hover:border-white/50 transition-colors"
-                    >
-                        Book Online →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </Container>
-</section>
+    .quick-contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+    }
 
-<!-- How It Works Process Section -->
-<section class="bg-gradient-to-b from-white to-light py-20 md:py-32">
-    <Container>
-        <div class="text-center" style="margin-bottom: var(--spacing-3xl);">
-            <h4
-                class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
-                style="margin-bottom: var(--spacing-md);"
-            >
-                Our Process
-            </h4>
-            <h2 class="text-3xl md:text-5xl font-black text-primary uppercase">
-                How It <span class="text-accent">Works</span>
-            </h2>
-            <p class="text-gray-600 font-medium text-lg mt-4 max-w-2xl mx-auto">
-                Simple, transparent process from inquiry to completion
-            </p>
-        </div>
+    .quick-contact-item {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.5rem);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+        color: white;
+        text-decoration: none;
+        transition:
+            background var(--transition-fast),
+            transform var(--transition-fast);
+    }
 
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-            style="gap: var(--spacing-2xl);"
-        >
-            <!-- Step 1 -->
-            <div
-                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-                <div
-                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-accent to-accent-dark rounded-2xl flex items-center justify-center transform -rotate-3 hover:rotate-0 transition-transform duration-300"
-                    style="margin-bottom: var(--spacing-lg);"
-                >
-                    <div
-                        class="absolute inset-0 bg-accent/20 rounded-2xl blur-xl"
-                    >
-                    </div>
-                    <span class="relative text-4xl font-black text-white"
-                        >1</span
-                    >
-                </div>
-                <h3
-                    class="text-xl font-black text-primary uppercase"
-                    style="margin-bottom: var(--spacing-md);"
-                >
-                    Contact Us
-                </h3>
-                <p class="text-gray-600 font-medium leading-relaxed">
-                    Call, book online, or request a free estimate. We're
-                    available 24/7 for emergencies.
-                </p>
-            </div>
+    .quick-contact-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
 
-            <!-- Step 2 -->
-            <div
-                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-                <div
-                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center transform rotate-3 hover:rotate-0 transition-transform duration-300"
-                    style="margin-bottom: var(--spacing-lg);"
-                >
-                    <div
-                        class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl"
-                    >
-                    </div>
-                    <span class="relative text-4xl font-black text-white"
-                        >2</span
-                    >
-                </div>
-                <h3
-                    class="text-xl font-black text-primary uppercase"
-                    style="margin-bottom: var(--spacing-md);"
-                >
-                    Fast Response
-                </h3>
-                <p class="text-gray-600 font-medium leading-relaxed">
-                    Same-day scheduling for regular work. Average 60-minute
-                    arrival for emergencies.
-                </p>
-            </div>
+    .quick-contact-item.emergency {
+        background: rgba(239, 68, 68, 0.3);
+    }
 
-            <!-- Step 3 -->
-            <div
-                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-                <div
-                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-accent to-accent-dark rounded-2xl flex items-center justify-center transform -rotate-3 hover:rotate-0 transition-transform duration-300"
-                    style="margin-bottom: var(--spacing-lg);"
-                >
-                    <div
-                        class="absolute inset-0 bg-accent/20 rounded-2xl blur-xl"
-                    >
-                    </div>
-                    <span class="relative text-4xl font-black text-white"
-                        >3</span
-                    >
-                </div>
-                <h3
-                    class="text-xl font-black text-primary uppercase"
-                    style="margin-bottom: var(--spacing-md);"
-                >
-                    Expert Service
-                </h3>
-                <p class="text-gray-600 font-medium leading-relaxed">
-                    Licensed electricians provide upfront pricing and
-                    professional workmanship.
-                </p>
-            </div>
+    .quick-contact-icon {
+        width: clamp(2rem, 4vw, 2.5rem);
+        height: clamp(2rem, 4vw, 2.5rem);
+        flex-shrink: 0;
+    }
 
-            <!-- Step 4 -->
-            <div
-                class="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-                <div
-                    class="relative mx-auto w-24 h-24 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center transform rotate-3 hover:rotate-0 transition-transform duration-300"
-                    style="margin-bottom: var(--spacing-lg);"
-                >
-                    <div
-                        class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl"
-                    >
-                    </div>
-                    <span class="relative text-4xl font-black text-white"
-                        >4</span
-                    >
-                </div>
-                <h3
-                    class="text-xl font-black text-primary uppercase"
-                    style="margin-bottom: var(--spacing-md);"
-                >
-                    Quality Guaranteed
-                </h3>
-                <p class="text-gray-600 font-medium leading-relaxed">
-                    All work backed by warranty. 100% satisfaction guarantee on
-                    every job.
-                </p>
-            </div>
-        </div>
-    </Container>
-</section>
+    .quick-contact-icon svg {
+        width: 100%;
+        height: 100%;
+    }
 
-<!-- Pricing Transparency -->
-<section class="bg-white py-20 md:py-32">
-    <Container>
-        <div class="text-center" style="margin-bottom: var(--spacing-3xl);">
-            <h4
-                class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-display"
-                style="margin-bottom: var(--spacing-md);"
-            >
-                Transparent Pricing
-            </h4>
-            <h2 class="text-3xl md:text-5xl font-black text-primary uppercase">
-                No <span class="text-accent">Hidden Fees</span>
-            </h2>
-        </div>
+    .quick-contact-content {
+        display: flex;
+        flex-direction: column;
+    }
 
-        <div
-            class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3"
-            style="gap: var(--spacing-2xl);"
-        >
-            <div
-                class="bg-light rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
-            >
-                <div
-                    class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-black text-primary uppercase mb-3">
-                    Upfront Pricing
-                </h3>
-                <p class="text-gray-600 font-medium leading-relaxed">
-                    No hidden fees or surprise charges. Know the exact cost
-                    before we start working.
-                </p>
-            </div>
-            <div
-                class="bg-light rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
-            >
-                <div
-                    class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 009-18 0 9 9 0 0118 0z"
-                        ></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-black text-primary uppercase mb-3">
-                    Free Estimates
-                </h3>
-                <p class="text-gray-600 font-medium leading-relaxed">
-                    Complimentary project quotes with detailed breakdowns and
-                    multiple options.
-                </p>
-            </div>
-            <div
-                class="bg-light rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 group"
-            >
-                <div
-                    class="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0121 12c0 5.591-3.824 10.29-9 11.622M3 12c0-5.591 3.824-10.29 9-11.622"
-                        ></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-black text-primary uppercase mb-3">
-                    Warranty Protected
-                </h3>
-                <p class="text-gray-600 font-medium leading-relaxed">
-                    All installations backed by comprehensive warranty for your
-                    peace of mind.
-                </p>
-            </div>
-        </div>
-    </Container>
-</section>
+    .quick-contact-label {
+        font-size: clamp(0.7rem, 1vw, 0.75rem);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        opacity: 0.8;
+    }
 
-<!-- Services Grid -->
-<section class="bg-gradient-to-b from-light to-white py-20 md:py-32">
-    <Container>
-        <!-- Services Categories -->
-        <div id="services-wrapper">
-            {
-                serviceCategories.map((category) => {
-                    const categoryServices = services.filter(
-                        (s) => s.category === category,
-                    );
-                    if (categoryServices.length === 0) return null;
+    .quick-contact-value {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        font-weight: 700;
+    }
 
-                    const info = getCategoryInfo(category);
+    /* SEO Intro Section */
+    .seo-intro {
+        background: linear-gradient(
+            180deg,
+            var(--bg-surface) 0%,
+            var(--bg-body) 100%
+        );
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
 
-                    return (
-                        <div
-                            class="category-section"
-                            style="margin-bottom: var(--spacing-4xl);"
-                            data-category={category}
-                        >
-                            <div class="relative rounded-2xl overflow-hidden mb-12 shadow-lg group">
-                                <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40 z-10" />
-                                <Image
-                                    src={info.image}
-                                    alt={category}
-                                    class="w-full h-48 md:h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div class="absolute inset-x-0 bottom-0 p-6 md:p-10 z-20">
-                                    <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">
-                                        {category}
-                                    </h2>
-                                    <p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed">
-                                        {info.description}
-                                    </p>
-                                </div>
-                            </div>
+    .seo-intro-content {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: clamp(2rem, 4vw, 4rem);
+        align-items: center;
+    }
 
-                            <div
-                                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-                                style="gap: var(--spacing-2xl);"
-                            >
-                                {categoryServices.map((service) => (
-                                    <ServiceCard service={service} />
-                                ))}
-                            </div>
-                        </div>
-                    );
-                })
-            }
-        </div>
+    @media (max-width: 900px) {
+        .seo-intro-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
 
-        <!-- Service FAQs -->
-        <div
-            class="max-w-4xl mx-auto bg-white border border-gray-100 rounded-2xl shadow-sm"
-            style="margin-top: var(--spacing-3xl); padding: var(--spacing-3xl);"
-        >
-            <div class="text-center" style="margin-bottom: var(--spacing-2xl);">
-                <h2
-                    class="text-3xl md:text-4xl font-black text-primary uppercase"
-                >
-                    Service <span class="text-accent">FAQs</span>
-                </h2>
-                <p class="text-gray-600 font-medium mt-4">
-                    Common questions about our electrical services
-                </p>
-            </div>
+    .seo-intro-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
 
-            <div class="space-y-6">
-                <!-- FAQ 1 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h3 class="text-xl font-black text-primary uppercase mb-3">
-                        How quickly can you respond to emergencies?
-                    </h3>
-                    <p class="text-gray-600 font-medium leading-relaxed">
-                        We average a 60-minute response time for emergency calls
-                        throughout Miami-Dade and Broward counties. Our dispatch
-                        team is staffed 24/7, and we strategically position
-                        electricians across the service area for rapid response.
-                    </p>
-                </div>
+    .seo-intro-description {
+        font-size: clamp(1rem, 1.25vw, 1.125rem);
+        color: var(--text-body);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
 
-                <!-- FAQ 2 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h3 class="text-xl font-black text-primary uppercase mb-3">
-                        Do you offer free estimates?
-                    </h3>
-                    <p class="text-gray-600 font-medium leading-relaxed">
-                        Yes! We provide complimentary estimates for all
-                        projects. We'll assess your needs, explain your options,
-                        and give you a detailed written quote with no
-                        obligation. All quotes include transparent pricing with
-                        no hidden fees.
-                    </p>
-                </div>
+    .seo-intro-secondary {
+        font-size: clamp(0.95rem, 1.1vw, 1rem);
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
 
-                <!-- FAQ 3 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h3 class="text-xl font-black text-primary uppercase mb-3">
-                        Are you licensed and insured?
-                    </h3>
-                    <p class="text-gray-600 font-medium leading-relaxed">
-                        Absolutely. We hold Florida state electrical license
-                        #EC13012419 and carry $2M in liability insurance. All of
-                        our electricians are licensed, continuously trained, and
-                        up-to-date on current electrical codes and safety
-                        standards.
-                    </p>
-                </div>
+    .seo-intro-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
 
-                <!-- FAQ 4 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h3 class="text-xl font-black text-primary uppercase mb-3">
-                        What payment methods do you accept?
-                    </h3>
-                    <p class="text-gray-600 font-medium leading-relaxed">
-                        We accept all major credit cards, debit cards, checks,
-                        and cash. For larger projects, we offer flexible
-                        financing options. Payment is due upon completion, and
-                        we'll never start work without your approval on the
-                        estimate.
-                    </p>
-                </div>
+    @media (max-width: 900px) {
+        .seo-intro-stats {
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
+        }
+    }
 
-                <!-- FAQ 5 -->
-                <div>
-                    <h3 class="text-xl font-black text-primary uppercase mb-3">
-                        Do you offer warranties on your work?
-                    </h3>
-                    <p class="text-gray-600 font-medium leading-relaxed">
-                        Yes, all of our work is backed by comprehensive
-                        warranties. Installation and repair warranties vary by
-                        scope of work—we'll explain specific coverage when we
-                        provide your estimate. We also offer a 100% satisfaction
-                        guarantee on every job.
-                    </p>
-                </div>
-            </div>
+    @media (max-width: 600px) {
+        .seo-intro-stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 
-            <div class="text-center mt-8">
-                <a
-                    href="/faq"
-                    class="text-accent font-bold uppercase tracking-widest hover:text-primary transition-colors border-b-2 border-accent hover:border-primary pb-1"
-                >
-                    View All FAQs →
-                </a>
-            </div>
-        </div>
+    .intro-stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        background: white;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        text-align: center;
+        transition:
+            transform var(--transition-fast),
+            box-shadow var(--transition-fast);
+    }
 
-        <!-- CTA Section -->
-        <div
-            class="text-center bg-white border border-gray-100 rounded-2xl shadow-sm"
-            style="margin-top: var(--spacing-3xl); padding: var(--spacing-2xl) var(--spacing-3xl);"
-        >
-            <h2
-                class="text-3xl md:text-4xl font-black text-primary uppercase"
-                style="margin-bottom: var(--spacing-md);"
-            >
-                Need a Custom Electrical Solution?
-            </h2>
-            <p
-                class="text-gray-600 text-lg font-medium"
-                style="margin-bottom: var(--spacing-xl);"
-            >
-                Can't find exactly what you're looking for? We handle custom
-                electrical projects of all sizes. Contact us to discuss your
-                specific needs.
-            </p>
-            <div
-                class="flex flex-col md:flex-row justify-center"
-                style="gap: var(--spacing-md);"
-            >
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <Button href="/contact" class="px-12 py-6 text-xl"
-                        >Contact Us Today</Button
-                    >
-                    <Button
-                        href={SITE_CONFIG.contact.phone.href}
-                        variant="secondary"
-                        class="flex items-center"
-                        style="gap: var(--spacing-xs); padding: var(--spacing-2xl) var(--spacing-3xl); font-size: clamp(1.125rem, 1.25vw, 1.25rem);"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        Call Now
-                    </Button>
-                </div>
-            </div>
+    .intro-stat-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+    }
 
-            <!-- Related Blog Posts Section -->
-            <div style="margin-top: var(--spacing-3xl);">
-                <div
-                    class="text-center"
-                    style="margin-bottom: var(--spacing-2xl);"
-                >
-                    <h2
-                        class="text-3xl md:text-4xl font-black text-primary uppercase"
-                        style="margin-bottom: var(--spacing-md);"
-                    >
-                        Learn More About Our <span class="text-accent"
-                            >Services</span
-                        >
-                    </h2>
-                    <p class="text-gray-600 font-medium">
-                        Dive deeper into our expertise with detailed guides and
-                        articles about electrical services.
-                    </p>
-                </div>
-                <div class="text-center">
-                    <a
-                        href="/blog"
-                        class="inline-block text-primary border-b-2 border-accent pb-1 hover:text-accent transition-colors uppercase tracking-widest font-bold"
-                    >
-                        Browse Our Blog →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </Container>
-</section>
+    .intro-stat-icon {
+        width: 28px;
+        height: 28px;
+        color: var(--color-accent);
+        margin-bottom: 0.5rem;
+    }
+
+    .intro-stat-value {
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        line-height: 1;
+    }
+
+    .intro-stat-label {
+        font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-top: 0.25rem;
+    }
+
+    /* Section Headers */
+    .section-header {
+        text-align: center;
+        margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .section-label {
+        display: block;
+        color: var(--color-accent);
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 800;
+        color: var(--color-primary);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+        text-transform: uppercase;
+        line-height: 1.15;
+    }
+
+    .section-description {
+        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        color: var(--text-body);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Service Categories Section */
+    .services-categories {
+        background: var(--bg-body);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1.5rem, 3vw, 2rem);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+        .categories-grid {
+            grid-template-columns: 1fr;
+            max-width: 700px;
+        }
+    }
+
+    .category-card {
+        background: var(--bg-surface);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition:
+            box-shadow var(--transition-base),
+            transform var(--transition-base);
+    }
+
+    .category-card:hover {
+        box-shadow: var(--shadow-xl);
+        transform: translateY(-4px);
+    }
+
+    .category-header {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+    }
+
+    .category-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .category-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(13, 67, 128, 0.88) 0%,
+            rgba(13, 67, 128, 0.7) 100%
+        );
+        transition: opacity var(--transition-base);
+    }
+
+    .category-card:hover .category-overlay {
+        opacity: 0.5;
+    }
+
+    .category-card:hover .category-image {
+        transform: scale(1.05);
+    }
+
+    .category-image {
+        transition: transform var(--transition-slow);
+    }
+
+    .category-header-content {
+        position: absolute;
+        inset: 0;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .category-title {
+        color: white;
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+        line-height: 1.2;
+    }
+
+    .category-description {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .category-services {
+        padding: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .services-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+
+    .services-list li {
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .services-list li:last-child {
+        border-bottom: none;
+    }
+
+    .service-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: clamp(0.75rem, 1.25vw, 1rem) 0;
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: color var(--transition-fast);
+    }
+
+    .service-link:hover {
+        color: var(--color-accent);
+    }
+
+    .service-name {
+        font-size: clamp(0.875rem, 1.1vw, 0.95rem);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .service-name::before {
+        content: "⚡";
+        font-size: 0.9em;
+        color: var(--color-accent);
+    }
+
+    .service-arrow {
+        width: clamp(1rem, 1.5vw, 1.25rem);
+        height: clamp(1rem, 1.5vw, 1.25rem);
+        flex-shrink: 0;
+        opacity: 0.5;
+        margin-left: auto;
+        transition:
+            opacity var(--transition-fast),
+            transform var(--transition-fast);
+    }
+
+    .service-link:hover .service-arrow {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
+    .category-cta {
+        display: flex;
+        justify-content: center;
+        padding-top: clamp(0.75rem, 1.5vw, 1rem);
+        border-top: 1px solid var(--border-light);
+    }
+
+    /* Why Choose Us */
+    .why-choose-us {
+        background: linear-gradient(180deg, white 0%, var(--bg-body) 100%);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .trust-points {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .trust-point {
+        text-align: center;
+        padding: clamp(1.25rem, 2.5vw, 2rem);
+        background: var(--bg-surface);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-sm);
+        transition:
+            box-shadow var(--transition-base),
+            transform var(--transition-base);
+    }
+
+    .trust-point:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+    }
+
+    .trust-icon {
+        width: clamp(2.5rem, 5vw, 3.5rem);
+        height: clamp(2.5rem, 5vw, 3.5rem);
+        margin: 0 auto clamp(0.75rem, 1.5vw, 1rem);
+        color: var(--color-accent);
+    }
+
+    .trust-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .trust-point h4 {
+        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        font-weight: 700;
+        color: var(--color-primary);
+        margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+        text-transform: uppercase;
+    }
+
+    .trust-point p {
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        color: var(--text-body);
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* Final CTA */
+    .services-final-cta {
+        background: var(--bg-surface);
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .final-cta-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .final-cta-content .cta-bolt {
+        width: 48px;
+        height: 48px;
+        color: var(--color-accent);
+        margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .final-cta-content h2 {
+        color: var(--color-primary);
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .final-cta-content p {
+        color: var(--text-body);
+        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        line-height: 1.6;
+        margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .final-cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        justify-content: center;
+    }
+
+    /* Utility */
+    .hidden {
+        display: none !important;
+    }
+</style>
