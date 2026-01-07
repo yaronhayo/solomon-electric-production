@@ -15,8 +15,8 @@ const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     mainEntity: {
+        "@type": "ElectricalContractor",
         "@id": `${SITE_CONFIG.seo.siteUrl}/#organization`,
-    },
         telephone: SITE_CONFIG.contact.phone.formatted,
         email: SITE_CONFIG.contact.email.primary,
         address: {
