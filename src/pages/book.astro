@@ -5,12 +5,38 @@ import heroImage from "../assets/images/heroes/book.png";
 import Button from "../components/ui/Button.astro";
 import BookingForm from "../components/BookingForm.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import { SITE_CONFIG } from "../config/site";
+
+// Breadcrumb schema for SEO
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_CONFIG.seo.siteUrl,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Book Online",
+            item: `${SITE_CONFIG.seo.siteUrl}/book`,
+        },
+    ],
+};
 ---
 
 <Layout
     title="Book Electrician Online | Schedule Service Miami FL"
     description="Schedule electrical service online with Solomon Electric. Fast, convenient booking for Miami and South Florida. Licensed electricians available for residential and commercial work."
 >
+    <!-- Breadcrumb Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+    />
     <!-- Breadcrumb Navigation -->
     <Breadcrumb
         items={[{ label: "Home", href: "/" }, { label: "Book Online" }]}

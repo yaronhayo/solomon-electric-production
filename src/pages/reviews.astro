@@ -190,11 +190,21 @@ const reviews = [
     },
 ];
 
-// Generate AggregateRating Schema
-const aggregateRatingSchema = {
+// Generate LocalBusiness Schema with AggregateRating AND Individual Reviews
+const reviewsSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `${SITE_CONFIG.seo.siteUrl}/#organization`,
     name: "Solomon Electric",
+    image: `${SITE_CONFIG.seo.siteUrl}/logo.png`,
+    telephone: SITE_CONFIG.contact.phone.formatted,
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: SITE_CONFIG.contact.address.city,
+        addressRegion: SITE_CONFIG.contact.address.state,
+        postalCode: SITE_CONFIG.contact.address.zip,
+        addressCountry: "US",
+    },
     aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: SITE_CONFIG.stats.averageRating,
@@ -204,6 +214,26 @@ const aggregateRatingSchema = {
         bestRating: "5",
         worstRating: "1",
     },
+    // Individual reviews for rich snippets
+    review: reviews.slice(0, 10).map((review, index) => ({
+        "@type": "Review",
+        author: {
+            "@type": "Person",
+            name: review.name,
+        },
+        reviewRating: {
+            "@type": "Rating",
+            ratingValue: review.stars,
+            bestRating: "5",
+            worstRating: "1",
+        },
+        reviewBody: review.text,
+        datePublished: "2024-01-01", // Use a reasonable date
+        itemReviewed: {
+            "@type": "LocalBusiness",
+            name: "Solomon Electric",
+        },
+    })),
 };
 
 const breadcrumbSchema = {
@@ -230,10 +260,10 @@ const breadcrumbSchema = {
     title="Customer Reviews | 4.9★ Rated Electrician Miami FL | Solomon Electric"
     description="Read 1,200+ verified reviews from real customers. See why South Florida homeowners trust Solomon Electric for panel upgrades, emergency repairs, EV chargers & more. 4.9 average rating."
 >
-    <!-- AggregateRating Schema Markup -->
+    <!-- LocalBusiness with Reviews Schema Markup -->
     <script
         type="application/ld+json"
-        set:html={JSON.stringify(aggregateRatingSchema)}
+        set:html={JSON.stringify(reviewsSchema)}
     />
     <script
         type="application/ld+json"

@@ -1,0 +1,637 @@
+---
+/**
+ * Service + Location Dynamic Page
+ * Generates hyper-local landing pages for every service in every city
+ * URL Pattern: /services/{service-slug}/{city-slug}
+ * Example: /services/electrical-panel-upgrade-100a-to-200a/miami
+ */
+
+import { getCollection, getEntry } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import Container from "../../../components/ui/Container.astro";
+import Button from "../../../components/ui/Button.astro";
+import CtaButton from "../../../components/ui/CtaButton.astro";
+import FAQAccordion from "../../../components/FAQAccordion.astro";
+import ReviewCarousel from "../../../components/ReviewCarousel.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import { SITE_CONFIG } from "../../../config/site";
+import {
+    generateIntro,
+    generateWhyChoose,
+    generateMetaTitle,
+    generateMetaDescription,
+    generateH1,
+    generateServiceLocationSchema,
+    getRelatedCities,
+} from "../../../utils/service-location-generator";
+import {
+    Zap,
+    MapPin,
+    Phone,
+    CheckCircle,
+    Shield,
+    Clock,
+    Star,
+    ArrowRight,
+    ChevronRight,
+} from "lucide-astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+    const services = await getCollection("services");
+    const serviceAreas = await getCollection("service-areas");
+
+    const paths = [];
+
+    for (const service of services) {
+        for (const city of serviceAreas) {
+            paths.push({
+                params: {
+                    service: service.id,
+                    city: city.id,
+                },
+                props: {
+                    service: service.data,
+                    serviceId: service.id,
+                    city: city.data,
+                    cityId: city.id,
+                    allCities: serviceAreas.map((c) => ({
+                        slug: c.id,
+                        name: c.data.name,
+                        county: c.data.county,
+                    })),
+                    allServices: services.map((s) => ({
+                        slug: s.id,
+                        name: s.data.name,
+                        category: s.data.category,
+                    })),
+                },
+            });
+        }
+    }
+
+    return paths;
+}
+
+const { service, serviceId, city, cityId, allCities, allServices } =
+    Astro.props;
+
+// Generate content
+const h1 = generateH1(service.name, city.name);
+const metaTitle = generateMetaTitle(service.name, city.name);
+const metaDescription = generateMetaDescription(
+    service.name,
+    city.name,
+    city.neighborhoods || [],
+);
+const introText = generateIntro(
+    service.name,
+    city.name,
+    city.county,
+    city.neighborhoods || [],
+);
+const whyChooseText = generateWhyChoose(
+    service.name,
+    city.name,
+    cityId,
+    city.county,
+);
+
+// Get related cities for this service
+const relatedCities = getRelatedCities(cityId, allCities, 6);
+
+// Get related services in this city (same category first)
+const relatedServices = allServices
+    .filter((s) => s.slug !== serviceId)
+    .sort((a, b) => {
+        if (a.category === service.category && b.category !== service.category)
+            return -1;
+        if (b.category === service.category && a.category !== service.category)
+            return 1;
+        return 0;
+    })
+    .slice(0, 6);
+
+// Generate schema
+const schema = generateServiceLocationSchema(
+    {
+        name: service.name,
+        slug: serviceId,
+        description: service.description,
+        category: service.category,
+    },
+    {
+        name: city.name,
+        slug: cityId,
+        county: city.county,
+        coordinates: city.coordinates,
+    },
+);
+
+// Combine FAQs from service with city context
+const combinedFaqs = (service.faqs || []).map(
+    (faq: { question: string; answer: string }) => ({
+        question: faq.question
+            .replace(/Miami/g, city.name)
+            .replace(
+                /South Florida/g,
+                `${city.name} and ${city.county} County`,
+            ),
+        answer: faq.answer
+            .replace(/Miami/g, city.name)
+            .replace(/Miami-Dade/g, city.county),
+    }),
+);
+
+// Add city-specific FAQ
+if (city.faqs && city.faqs.length > 0) {
+    combinedFaqs.push(...city.faqs.slice(0, 2));
+}
+
+const siteUrl = SITE_CONFIG.seo.siteUrl;
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+    <!-- Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <!-- Breadcrumb -->
+    <Breadcrumb
+        items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: service.name, href: `/services/${serviceId}` },
+            { label: city.name },
+        ]}
+    />
+
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-br from-primary via-primary to-primary/95 overflow-hidden"
+        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
+    >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--color-accent)_0%,_transparent_50%)]"
+            >
+            </div>
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,_var(--color-accent)_0%,_transparent_40%)]"
+            >
+            </div>
+        </div>
+
+        <Container class="relative z-10">
+            <div class="max-w-4xl">
+                <!-- Location Badge -->
+                <div class="flex items-center gap-2 mb-6">
+                    <span
+                        class="inline-flex items-center gap-2 bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-accent/30"
+                    >
+                        <MapPin class="w-4 h-4" />
+                        {city.name}, FL
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm font-medium px-4 py-2 rounded-full"
+                    >
+                        {city.county} County
+                    </span>
+                </div>
+
+                <!-- H1 -->
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase leading-tight"
+                >
+                    {service.name}
+                    <span
+                        class="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
+                    >
+                        in {city.name}
+                    </span>
+                </h1>
+
+                <!-- Intro -->
+                <p
+                    class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl"
+                >
+                    {introText}
+                </p>
+
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="flex items-center gap-2 text-white/90">
+                        <Shield class="w-5 h-5 text-accent" />
+                        <span class="font-medium">Licensed & Insured</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/90">
+                        <Clock class="w-5 h-5 text-accent" />
+                        <span class="font-medium">24/7 Available</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/90">
+                        <Star class="w-5 h-5 text-accent" />
+                        <span class="font-medium"
+                            >{SITE_CONFIG.stats.averageRating} Rating</span
+                        >
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <CtaButton
+                        action="call"
+                        variant="secondary"
+                        size="lg"
+                        text={`Call ${city.name} Electrician`}
+                    />
+                    <Button
+                        href="/book"
+                        variant="primary"
+                        size="lg"
+                        class="gap-2"
+                    >
+                        <Zap class="w-5 h-5" />
+                        Get Free Estimate
+                    </Button>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section
+        class="bg-white"
+        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-2xl);"
+    >
+        <Container>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span
+                        class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
+                    >
+                        Local Expertise
+                    </span>
+                    <h2
+                        class="text-3xl md:text-4xl font-black text-primary uppercase mb-6"
+                    >
+                        Why {city.name} Chooses
+                        <span class="text-accent"> Solomon Electric</span>
+                    </h2>
+                    <p
+                        class="text-[var(--text-body)] text-lg leading-relaxed mb-6"
+                    >
+                        {whyChooseText}
+                    </p>
+
+                    <!-- Features List -->
+                    <ul class="space-y-4">
+                        {
+                            (service.features || [])
+                                .slice(0, 5)
+                                .map((feature: string) => (
+                                    <li class="flex items-start gap-3">
+                                        <CheckCircle class="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                                        <span class="text-[var(--text-body)] font-medium">
+                                            {feature}
+                                        </span>
+                                    </li>
+                                ))
+                        }
+                    </ul>
+                </div>
+
+                <!-- Stats Card -->
+                <div
+                    class="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-8 md:p-10 text-white"
+                >
+                    <h3 class="text-2xl font-black uppercase mb-8 text-center">
+                        Our {city.name} Track Record
+                    </h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-accent mb-2">
+                                {SITE_CONFIG.stats.averageRating}
+                            </div>
+                            <div
+                                class="text-sm text-white/70 uppercase tracking-wide"
+                            >
+                                Star Rating
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-accent mb-2">
+                                {SITE_CONFIG.stats.totalReviews}
+                            </div>
+                            <div
+                                class="text-sm text-white/70 uppercase tracking-wide"
+                            >
+                                Reviews
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-accent mb-2">
+                                24/7
+                            </div>
+                            <div
+                                class="text-sm text-white/70 uppercase tracking-wide"
+                            >
+                                Emergency Service
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-accent mb-2">
+                                {SITE_CONFIG.credentials.yearsExperience}
+                            </div>
+                            <div
+                                class="text-sm text-white/70 uppercase tracking-wide"
+                            >
+                                Years Experience
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/20 text-center">
+                        <p class="text-sm text-white/70 mb-2">
+                            Florida License #{
+                                SITE_CONFIG.credentials.license.number
+                            }
+                        </p>
+                        <CtaButton
+                            action="call"
+                            variant="secondary"
+                            size="md"
+                            text="Call Now"
+                        />
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Service Process Section -->
+    {
+        service.process && service.process.length > 0 && (
+            <section
+                class="bg-light"
+                style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+            >
+                <Container>
+                    <div class="text-center mb-12">
+                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
+                            How It Works
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase">
+                            Our {city.name}{" "}
+                            <span class="text-accent">{service.name}</span>{" "}
+                            Process
+                        </h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {service.process
+                            .slice(0, 6)
+                            .map(
+                                (step: {
+                                    step: number;
+                                    title: string;
+                                    description: string;
+                                }) => (
+                                    <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                            <span class="text-accent font-black text-lg">
+                                                {step.step}
+                                            </span>
+                                        </div>
+                                        <h3 class="font-bold text-primary text-lg mb-2">
+                                            {step.title}
+                                        </h3>
+                                        <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                                            {step.description}
+                                        </p>
+                                    </div>
+                                ),
+                            )}
+                    </div>
+                </Container>
+            </section>
+        )
+    }
+
+    <!-- Benefits Section -->
+    {
+        service.benefits && service.benefits.length > 0 && (
+            <section
+                class="bg-white"
+                style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+            >
+                <Container>
+                    <div class="text-center mb-12">
+                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
+                            Why It Matters
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase">
+                            Benefits of {service.name}
+                            <span class="text-accent"> in {city.name}</span>
+                        </h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        {service.benefits.map(
+                            (benefit: {
+                                title: string;
+                                description: string;
+                                icon?: string;
+                            }) => (
+                                <div class="flex gap-4 p-6 bg-light rounded-xl border border-gray-100">
+                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <Zap class="w-6 h-6 text-accent" />
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-primary text-lg mb-2">
+                                            {benefit.title}
+                                        </h3>
+                                        <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                                            {benefit.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ),
+                        )}
+                    </div>
+                </Container>
+            </section>
+        )
+    }
+
+    <!-- FAQs Section -->
+    {
+        combinedFaqs.length > 0 && (
+            <section
+                class="bg-light"
+                style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+            >
+                <Container>
+                    <div class="text-center mb-12">
+                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
+                            Common Questions
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase">
+                            {service.name} FAQs
+                            <span class="text-accent"> for {city.name}</span>
+                        </h2>
+                    </div>
+
+                    <div class="max-w-3xl mx-auto">
+                        <FAQAccordion faqs={combinedFaqs.slice(0, 6)} />
+                    </div>
+                </Container>
+            </section>
+        )
+    }
+
+    <!-- Reviews -->
+    <ReviewCarousel />
+
+    <!-- Related Cities Section -->
+    <section
+        class="bg-white"
+        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+    >
+        <Container>
+            <div class="text-center mb-10">
+                <span
+                    class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
+                >
+                    Also Serving
+                </span>
+                <h2
+                    class="text-2xl md:text-3xl font-black text-primary uppercase"
+                >
+                    {service.name}
+                    <span class="text-accent"> in Nearby Cities</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {
+                    relatedCities.map((relatedCity) => (
+                        <a
+                            href={`/services/${serviceId}/${relatedCity.slug}`}
+                            class="group flex items-center gap-2 p-4 bg-light rounded-lg border border-gray-100 hover:border-accent hover:shadow-md transition-all"
+                        >
+                            <MapPin class="w-4 h-4 text-accent flex-shrink-0" />
+                            <span class="font-medium text-primary group-hover:text-accent transition-colors text-sm">
+                                {relatedCity.name}
+                            </span>
+                        </a>
+                    ))
+                }
+            </div>
+
+            <div class="text-center mt-8">
+                <Button
+                    href={`/services/${serviceId}`}
+                    variant="secondary"
+                    size="md"
+                    class="gap-2"
+                >
+                    View All {service.name} Locations
+                    <ArrowRight class="w-4 h-4" />
+                </Button>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Related Services Section -->
+    <section
+        class="bg-light"
+        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+    >
+        <Container>
+            <div class="text-center mb-10">
+                <span
+                    class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
+                >
+                    More Services
+                </span>
+                <h2
+                    class="text-2xl md:text-3xl font-black text-primary uppercase"
+                >
+                    Other Electrical Services
+                    <span class="text-accent"> in {city.name}</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {
+                    relatedServices.map((relatedService) => (
+                        <a
+                            href={`/services/${relatedService.slug}/${cityId}`}
+                            class="group flex items-center justify-between p-5 bg-white rounded-xl border border-gray-100 hover:border-accent hover:shadow-md transition-all"
+                        >
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <Zap class="w-5 h-5 text-accent" />
+                                </div>
+                                <span class="font-bold text-primary group-hover:text-accent transition-colors">
+                                    {relatedService.name}
+                                </span>
+                            </div>
+                            <ChevronRight class="w-5 h-5 text-gray-400 group-hover:text-accent transition-colors" />
+                        </a>
+                    ))
+                }
+            </div>
+
+            <div class="text-center mt-8">
+                <Button
+                    href={`/service-areas/${cityId}`}
+                    variant="secondary"
+                    size="md"
+                    class="gap-2"
+                >
+                    All Services in {city.name}
+                    <ArrowRight class="w-4 h-4" />
+                </Button>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Final CTA -->
+    <section
+        class="bg-gradient-to-br from-primary to-primary/95"
+        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
+    >
+        <Container class="text-center">
+            <Zap class="w-16 h-16 text-accent mx-auto mb-6 animate-pulse" />
+            <h2
+                class="text-3xl md:text-5xl font-black text-white uppercase mb-6"
+            >
+                Ready for {service.name}
+                <span
+                    class="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
+                >
+                    in {city.name}?
+                </span>
+            </h2>
+            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Get expert electrical service from {city.name}'s trusted
+                electricians. Licensed, insured, and available 24/7 for your
+                electrical needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <CtaButton
+                    action="call"
+                    variant="secondary"
+                    size="lg"
+                    text="Call Now"
+                />
+                <Button href="/book" variant="primary" size="lg" class="gap-2">
+                    <Zap class="w-5 h-5" />
+                    Book Online
+                </Button>
+            </div>
+        </Container>
+    </section>
+</Layout>

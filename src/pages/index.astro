@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import heroImage from "../assets/images/heroes/homepage.png"; // Updated hero image
 import customerInteractionImage from "../assets/images/enhancements/customer-interaction.png";
 import trustBgImage from "../assets/images/enhancements/trust-bg.png";
@@ -22,12 +23,22 @@ import Container from "../components/ui/Container.astro";
 import BookingForm from "../components/BookingForm.astro";
 import PageHero from "../components/PageHero.astro";
 import ServiceAreaMap from "../components/ServiceAreaMap.astro";
-import { generateHomepageSchema } from "../utils/seo";
+import { generateHomepageSchema, generateFAQSchema } from "../utils/seo";
 
 // For featured carousel, get first 3 services
 const allServices = await getServices();
 // featuredServices variable not used, using explicit getFeaturedServices call logic instead
 const featuredServicesList = await getFeaturedServices();
+
+// Get FAQs for schema (homepage displays first 6)
+const globalFaqs = await getCollection("faqs");
+const sortedFaqs = globalFaqs
+    .sort((a, b) => parseInt(a.data.id) - parseInt(b.data.id))
+    .slice(0, 6);
+const faqsForSchema = sortedFaqs.map((faq) => ({
+    question: faq.data.question,
+    answer: faq.data.answer,
+}));
 
 const stats = [
     {
@@ -47,6 +58,9 @@ const serviceAreas = SERVICE_AREAS;
 // Generate Consolidated Homepage Schema (@graph)
 const homepageSchema = generateHomepageSchema(SITE_CONFIG.seo.siteUrl);
 
+// Generate FAQ Schema for homepage FAQs (GSC rich result)
+const faqSchema = generateFAQSchema(faqsForSchema);
+
 import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 ---
 
@@ -59,6 +73,8 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
         type="application/ld+json"
         set:html={JSON.stringify(homepageSchema)}
     />
+    <!-- FAQ Schema for Rich Results -->
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <!-- Hero Section -->
     <PageHero

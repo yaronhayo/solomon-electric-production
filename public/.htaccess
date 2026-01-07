@@ -66,8 +66,8 @@ RewriteRule ^(.*)$ $1.html [L]
     # Permissions Policy
     Header set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
     
-    # Content Security Policy (adjust as needed)
-    # Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://api.dataforseo.com;"
+    # Content Security Policy - Production-ready CSP
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://api.dataforseo.com https://maps.googleapis.com https://challenges.cloudflare.com; frame-src https://www.google.com https://maps.google.com https://challenges.cloudflare.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.smtp2go.com;"
 </IfModule>
 
 # ==============================================================================
@@ -150,11 +150,64 @@ RewriteRule ^(.*)$ $1.html [L]
 
 # Homepage variations
 Redirect 301 /home /
+Redirect 301 /home/ /
 Redirect 301 /home-2 /
 Redirect 301 /home-2-2 /
+Redirect 301 /home-2-2/ /
 
 # About page
-Redirect 301 /about-us /about
+Redirect 301 /about-us /about/
+Redirect 301 /about-us/ /about/
+
+# Booking/Scheduling pages - redirect to new book page
+Redirect 301 /book-service /book/
+Redirect 301 /book-service/ /book/
+Redirect 301 /schedule-an-appointment /book/
+Redirect 301 /schedule-an-appointment/ /book/
+
+# ==============================================================================
+# AMP URL CLEANUP - Strip AMP query params and redirect to clean URLs
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Remove ?amp=1 and similar AMP query parameters
+RewriteCond %{QUERY_STRING} (^|&)amp=1(&|$) [NC]
+RewriteRule ^(.*)$ /$1? [R=301,L]
+
+# Remove ?is_otto_page_fetch query parameters
+RewriteCond %{QUERY_STRING} is_otto_page_fetch [NC]
+RewriteRule ^(.*)$ /$1? [R=301,L]
+
+# Remove ?noamp=mobile query parameters
+RewriteCond %{QUERY_STRING} noamp=mobile [NC]
+RewriteRule ^(.*)$ /$1? [R=301,L]
+</IfModule>
+
+# ==============================================================================
+# WORDPRESS LEGACY CLEANUP - Return 410 Gone for old WP paths
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+# WordPress paths that no longer exist - return 410 Gone
+RewriteRule ^wp-content/ - [G,L]
+RewriteRule ^wp-admin/ - [G,L]
+RewriteRule ^wp-includes/ - [G,L]
+RewriteRule ^wp-.*\.php$ - [G,L]
+</IfModule>
+
+# ==============================================================================
+# SERVICE AREA REDIRECTS - Missing from previous config
+# ==============================================================================
+
+# Deerfield (was missing - note: different from deerfield-beach)
+Redirect 301 /service-areas/electrician-in-deerfield-florida /service-areas/deerfield-beach/
+Redirect 301 /service-areas/electrician-in-deerfield-florida/ /service-areas/deerfield-beach/
+
+# Miami Gardens (note: typo in old URL was "gradens")
+Redirect 301 /service-areas/electrician-in-miami-gradens-florida /service-areas/miami-gardens/
+Redirect 301 /service-areas/electrician-in-miami-gradens-florida/ /service-areas/miami-gardens/
 
 # ==============================================================================
 # SERVICE AREA REDIRECTS
@@ -249,6 +302,59 @@ Redirect 301 /services/smart-home-automation /services/smart-switch-home-automat
 
 # Surge Protection
 Redirect 301 /services/surge-protection /services/whole-home-surge-protection/
+
+# ==============================================================================
+# ADDITIONAL SERVICE REDIRECTS (From GSC 404 Report)
+# ==============================================================================
+
+# Panel Services (additional)
+Redirect 301 /services/panel-repair /services/panel-repair-circuit-breaker-replacement/
+Redirect 301 /services/panel-repair/ /services/panel-repair-circuit-breaker-replacement/
+Redirect 301 /services/panel-upgrade /services/electrical-panel-upgrade-100a-to-200a/
+Redirect 301 /services/panel-upgrade/ /services/electrical-panel-upgrade-100a-to-200a/
+Redirect 301 /services/electrical-panel-repair /services/panel-repair-circuit-breaker-replacement/
+Redirect 301 /services/electrical-panel-repair/ /services/panel-repair-circuit-breaker-replacement/
+Redirect 301 /services/electrical-panel-replacement-or-upgrading /services/electrical-panel-upgrade-100a-to-200a/
+Redirect 301 /services/electrical-panel-replacement-or-upgrading/ /services/electrical-panel-upgrade-100a-to-200a/
+
+# Wiring Services (additional)
+Redirect 301 /services/wiring-installation /services/electrical-wiring-updates-rewiring/
+Redirect 301 /services/wiring-installation/ /services/electrical-wiring-updates-rewiring/
+Redirect 301 /services/wiring-repair /services/electrical-wiring-updates-rewiring/
+Redirect 301 /services/wiring-repair/ /services/electrical-wiring-updates-rewiring/
+Redirect 301 /services/pull-wires-underground /services/electrical-wiring-updates-rewiring/
+Redirect 301 /services/pull-wires-underground/ /services/electrical-wiring-updates-rewiring/
+
+# Outlet & Switch Services (additional)
+Redirect 301 /services/outlet-switch-relocation /services/new-outlet-installation-repair/
+Redirect 301 /services/outlet-switch-relocation/ /services/new-outlet-installation-repair/
+Redirect 301 /services/electrical-outlet-switch-installation /services/new-outlet-installation-repair/
+Redirect 301 /services/electrical-outlet-switch-installation/ /services/new-outlet-installation-repair/
+Redirect 301 /services/electrical-outlet-switch-relocation /services/new-outlet-installation-repair/
+Redirect 301 /services/electrical-outlet-switch-relocation/ /services/new-outlet-installation-repair/
+
+# Lighting Services (additional)
+Redirect 301 /services/sensor-light-installation /services/motion-sensor-dimmer-installation/
+Redirect 301 /services/sensor-light-installation/ /services/motion-sensor-dimmer-installation/
+Redirect 301 /services/chandelier-installation/ /services/ceiling-fan-light-fixture-installation/
+
+# Ceiling Fan Services
+Redirect 301 /services/ceiling-fan-installation /services/ceiling-fan-light-fixture-installation/
+Redirect 301 /services/ceiling-fan-installation/ /services/ceiling-fan-light-fixture-installation/
+
+# EV Charging (additional - Tesla specific)
+Redirect 301 /services/tesla-charger-installation /services/level-2-ev-charger-installation/
+Redirect 301 /services/tesla-charger-installation/ /services/level-2-ev-charger-installation/
+
+# General Electrical Services
+Redirect 301 /services/electrical-installation /services/
+Redirect 301 /services/electrical-installation/ /services/
+Redirect 301 /services/electrical-repair /services/sparking-outlet-circuit-breaker-repair/
+Redirect 301 /services/electrical-repair/ /services/sparking-outlet-circuit-breaker-repair/
+
+# Appliance Services (redirect to main services - no direct equivalent)
+Redirect 301 /services/microwave-installation /services/240v-outlet-installation/
+Redirect 301 /services/microwave-installation/ /services/240v-outlet-installation/
 
 # ==============================================================================
 # LEGACY DOMAIN REDIRECTS (if still getting traffic from old domain)

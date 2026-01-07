@@ -81,6 +81,55 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
 }
 
 /**
+ * Generate JSON-LD structured data for ImageObject
+ * Used for GSC image metadata and rich image results
+ */
+export interface ImageSchemaInput {
+    url: string;
+    alt: string;
+    caption?: string;
+    width?: number;
+    height?: number;
+    license?: string;
+    author?: string;
+}
+
+export function generateImageSchema(image: ImageSchemaInput, siteUrl: string) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'ImageObject',
+        '@id': `${siteUrl}${image.url}#image`,
+        contentUrl: image.url.startsWith('http') ? image.url : `${siteUrl}${image.url}`,
+        caption: image.caption || image.alt,
+        description: image.alt,
+        name: image.alt,
+        ...(image.width && { width: image.width }),
+        ...(image.height && { height: image.height }),
+        ...(image.license && { license: image.license }),
+        ...(image.author && {
+            author: {
+                '@type': 'Organization',
+                name: image.author
+            }
+        }),
+        copyrightHolder: {
+            '@type': 'Organization',
+            '@id': `${siteUrl}/#organization`,
+            name: 'Solomon Electric'
+        },
+        acquireLicensePage: `${siteUrl}/contact`,
+        creditText: 'Solomon Electric'
+    };
+}
+
+/**
+ * Generate multiple ImageObjects for a page
+ */
+export function generateImagesSchema(images: ImageSchemaInput[], siteUrl: string) {
+    return images.map(image => generateImageSchema(image, siteUrl));
+}
+
+/**
  * Generate JSON-LD structured data for organization
  */
 export function generateOrganizationSchema(siteUrl: string) {
