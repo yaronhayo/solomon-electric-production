@@ -33,50 +33,16 @@ export default defineConfig({
     icon(),
     compress(),
     sitemap({
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
+      // Filter out noindex pages and system routes from sitemap
+      filter: (page) =>
+        !page.includes('/thank-you') &&
+        !page.includes('/api/') &&
+        !page.includes('/404') &&
+        !page.includes('/500'),
+      // Note: priority and changefreq are NOT included as Google ignores them
+      // See: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
       serialize(item) {
-        // Homepage - highest priority, crawl daily
-        if (item.url === 'https://www.247electricianmiami.com/') {
-          item.priority = 1.0;
-          item.changefreq = 'daily';
-        } 
-        // Service pages - high priority transactional pages
-        else if (item.url.includes('/services/')) {
-          item.priority = 0.9;
-          item.changefreq = 'weekly';
-        } 
-        // Service area pages - location landing pages
-        else if (item.url.includes('/service-areas/')) {
-          item.priority = 0.8;
-          item.changefreq = 'weekly';
-        } 
-        // Guide pages - educational pillar content
-        else if (item.url.includes('/guides/')) {
-          item.priority = 0.85;
-          item.changefreq = 'monthly';
-        }
-        // Blog posts - informational content
-        else if (item.url.includes('/blog/')) {
-          item.priority = 0.7;
-          item.changefreq = 'monthly';
-        }
-        // Contact, About, Reviews - supporting pages
-        else if (item.url.includes('/contact/') || item.url.includes('/about/') || item.url.includes('/reviews/')) {
-          item.priority = 0.6;
-          item.changefreq = 'monthly';
-        }
-        // Legal/utility pages
-        else if (item.url.includes('/privacy/') || item.url.includes('/terms/')) {
-          item.priority = 0.3;
-          item.changefreq = 'yearly';
-        }
-        // Thank you pages should not be indexed (but can be in sitemap with low priority)
-        else if (item.url.includes('/thank-you/')) {
-          item.priority = 0.1;
-          item.changefreq = 'yearly';
-        }
+        // Return clean sitemap entries - Astro handles lastmod from file dates
         return item;
       }
     })

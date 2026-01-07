@@ -1,0 +1,123 @@
+{
+    "name": "Wellington",
+    "slug": "wellington",
+    "county": "Palm Beach",
+    "description": "Licensed Wellington electricians serving the 'Equestrian Capital of the World'. Solomon Electric provides professional residential and commercial services tailored for high-end estates and equestrian properties.",
+    "population": "65,000+",
+    "founded": "1995",
+    "areaSquareMiles": "45",
+    "tagline": "The Equestrian Capital of the World",
+    "landmarks": [
+        "Palm Beach International Equestrian Center",
+        "International Polo Club",
+        "Wellington Environmental Preserve",
+        "The Mall at Wellington Green"
+    ],
+    "neighborhoods": [
+        "Aeroclub",
+        "Wycliffe",
+        "Grand Isles",
+        "Olympia",
+        "Versailles",
+        "Paddock Park",
+        "Wellington Shores"
+    ],
+    "majorRoads": [
+        "Florida Turnpike",
+        "Southern Boulevard",
+        "441 (State Road 7)",
+        "Forest Hill Boulevard",
+        "Lake Worth Road"
+    ],
+    "coordinates": {
+        "lat": 26.6587,
+        "lng": -80.2414
+    },
+    "challenges": [
+        {
+            "title": "Equestrian Electrical Excellence",
+            "description": "Wellington's world-famous barns and stables require specialized wiring for safety, specialized arena lighting, and robust, weather-hardened power systems.",
+            "icon": "Zap"
+        },
+        {
+            "title": "High-End Estate Distribution",
+            "description": "Luxury homes in communities like Aeroclub and Versailles require massive power capacity, sophisticated automation integration, and significant backup power readiness.",
+            "icon": "Shield"
+        },
+        {
+            "title": "Western Storm Vulnerability",
+            "description": "As one of the westernmost Palm Beach cities, Wellington faces intense seasonal storms. We focus on high-performance surge protection to guard expensive estate systems.",
+            "icon": "CloudLightning"
+        }
+    ],
+    "featuredServices": [
+        "smart-home-automation",
+        "landscape-outdoor-lighting",
+        "home-standby-generator-installation",
+        "whole-home-surge-protection",
+        "24-7-emergency-electrical-service",
+        "electrical-panel-upgrade-100a-to-200a"
+    ],
+    "stats": [
+        {
+            "value": "65K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "What electrical services do you offer in Wellington?",
+            "answer": "We provide comprehensive electrical services throughout Wellington including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Wellington neighborhoods."
+        },
+        {
+            "question": "Are your electricians licensed to work in Wellington?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Palm Beach County permits for electrical work in Wellington, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "How do I know if my Wellington home needs a panel upgrade?",
+            "answer": "Many Wellington homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Wellington."
+        },
+        {
+            "question": "Do you offer 24/7 emergency electrical service in Wellington?",
+            "answer": "Yes! We provide round-the-clock emergency electrical service to all Wellington neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+        },
+        {
+            "question": "Do you work with equestrian facilities in Wellington?",
+            "answer": "Yes, we are specialists in equestrian electrical work. We understand the specific safety and aesthetic requirements of Wellington's world-class barns, stable areas, and polo facilities."
+        },
+        {
+            "question": "Can you handle smart home integration for Wellington estates?",
+            "answer": "Absolutely. We provide high-end automation, lighting control, and integrated power management for premier residences in communities like Aeroclub and Olympia."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Premier Wellington Electricians – Serving the World of Equestrian Excellence",
+            "body": "Wellington is a community of prestige and precision, known globally as the capital of equestrian sports. It's a city that values tradition, quality, and exceptional service. Solomon Electric is proud to provide the licensed expertise that Wellington's premier homes and facilities count on to stay powered and safe."
+        },
+        {
+            "heading": "Understanding Wellington's Electrical Needs",
+            "body": "Wellington homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Wellington's needs."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Your Wellington Home",
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Wellington. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
+        },
+        {
+            "heading": "Advanced Electrical Care for Your Wellington Property",
+            "body": "Whether you're upgrading the lighting in a luxury arena, modernizing the automation in an estate home, or requiring the peace of mind of a whole-home backup power system, our team is ready to assist. We provide clean, professional, and code-compliant work that matches the high standards of the Wellington community."
+        }
+    ]
+}

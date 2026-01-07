@@ -1,0 +1,132 @@
+{
+    "name": "Miami Gardens",
+    "slug": "miami-gardens",
+    "county": "Miami-Dade",
+    "description": "Professional electrical services for Miami Gardens, Florida. Solomon Electric provides licensed electricians for residential and commercial properties throughout the city's 20 square miles, from Hard Rock Stadium to Florida Memorial University.",
+    "population": "116,000+",
+    "founded": "2003",
+    "areaSquareMiles": "20",
+    "tagline": "Miami-Dade's Third Largest City",
+    "landmarks": [
+        "Hard Rock Stadium",
+        "Florida Memorial University",
+        "Calder Race Course",
+        "Miami Gardens City Hall",
+        "Betty T. Ferguson Recreational Complex"
+    ],
+    "neighborhoods": [
+        "Andover",
+        "Bunche Park",
+        "Carol City",
+        "Lake Lucerne",
+        "Norland",
+        "Opa-locka North",
+        "Rolling Oaks",
+        "Scott Lake",
+        "Sky Lake",
+        "Vista Verde"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Palmetto Expressway (SR 826)",
+        "Florida Turnpike",
+        "NW 27th Avenue",
+        "NW 183rd Street"
+    ],
+    "coordinates": {
+        "lat": 25.9420,
+        "lng": -80.2456
+    },
+    "challenges": [
+        {
+            "title": "Aging Infrastructure",
+            "description": "Many Miami Gardens homes were built between the 1960s-1980s and have outdated 100-amp panels, aluminum wiring, or Federal Pacific breakers that pose safety hazards.",
+            "icon": "AlertTriangle"
+        },
+        {
+            "title": "Hurricane & Storm Damage",
+            "description": "With South Florida's hurricane season, Miami Gardens properties regularly experience power surges, downed lines, and electrical damage requiring emergency repairs.",
+            "icon": "CloudLightning"
+        },
+        {
+            "title": "High Energy Demands",
+            "description": "Florida's year-round air conditioning needs strain older electrical systems. Many homes need panel upgrades to handle modern HVAC and appliance loads.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Outdoor & Pool Electrical",
+            "description": "Miami Gardens' tropical climate means pools, spas, and outdoor entertainment areas require proper GFCI protection and weatherproof installations.",
+            "icon": "Umbrella"
+        }
+    ],
+    "featuredServices": [
+        "electrical-panel-upgrade-100a-to-200a",
+        "24-7-emergency-electrical-service",
+        "whole-home-surge-protection",
+        "recessed-lighting-installation",
+        "ceiling-fan-light-fixture-installation",
+        "gfci-outlet-installation-outdoor-pool"
+    ],
+    "stats": [
+        {
+            "value": "116K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "What electrical services do you offer in Miami Gardens?",
+            "answer": "We provide comprehensive electrical services throughout Miami Gardens including panel upgrades (100A to 200A), whole-home rewiring, outlet and switch installation, lighting design, ceiling fan installation, EV charger installation, generator hookups, and 24/7 emergency repairs. Our licensed electricians serve both residential homes and commercial properties."
+        },
+        {
+            "question": "Do you provide 24/7 emergency electrical service in Miami Gardens?",
+            "answer": "Yes! We offer round-the-clock emergency electrical service to all Miami Gardens neighborhoods including Carol City, Andover, Bunche Park, and surrounding areas. If you're experiencing sparking outlets, burning smells, or sudden power loss, call us immediately—we respond quickly to protect your property and family."
+        },
+        {
+            "question": "How do I know if my Miami Gardens home needs a panel upgrade?",
+            "answer": "Miami Gardens has many homes built in the 1960s-1980s with original electrical panels. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, a 100-amp panel with modern HVAC, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections."
+        },
+        {
+            "question": "Are your electricians licensed to work in Miami Gardens?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Miami-Dade County permits for electrical work, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "Do you serve commercial properties in Miami Gardens?",
+            "answer": "Yes, we handle commercial electrical work throughout Miami Gardens including office buildings, retail spaces, restaurants, and industrial facilities near Hard Rock Stadium and along major corridors. Our services include three-phase power, tenant build-outs, lighting retrofits, and emergency repairs."
+        },
+        {
+            "question": "What areas of Miami Gardens do you cover?",
+            "answer": "We serve all Miami Gardens neighborhoods including Carol City, Andover, Bunche Park, Lake Lucerne, Norland, Opa-locka North, Rolling Oaks, Scott Lake, Sky Lake, and Vista Verde. We also serve neighboring communities like Opa-locka, North Miami Beach, and Miramar."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Trusted Electricians Serving Miami Gardens Since 2003",
+            "body": "Miami Gardens—incorporated in 2003 and now home to over 116,000 residents—is Miami-Dade County's third-largest city. From the excitement of Hard Rock Stadium to the historic campus of Florida Memorial University, this vibrant community deserves electrical service that's equally professional. Solomon Electric has been proud to serve Miami Gardens families and businesses since our founding, building a reputation for honest work, fair pricing, and genuine expertise."
+        },
+        {
+            "heading": "Understanding Miami Gardens' Electrical Needs",
+            "body": "Miami Gardens presents unique electrical challenges that require local knowledge. Many homes in neighborhoods like Carol City and Andover were built between the 1960s and 1980s—an era of 100-amp panels and aluminum wiring that can't safely support today's HVAC systems, home offices, and modern appliances. Add South Florida's notorious hurricane season and the constant demand of year-round air conditioning, and you have a recipe for electrical stress. Our electricians understand these challenges because we've spent years solving them for your neighbors."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Your Home",
+            "body": "Whether you need a panel upgrade to power your new EV charger, want to modernize your lighting with energy-efficient LEDs, or require emergency repairs after a storm, Solomon Electric delivers. We handle everything from small outlet repairs to complete home rewiring projects. Every job includes a thorough safety inspection, upfront pricing before work begins, and a satisfaction guarantee. We pull all required Miami-Dade County permits and ensure your electrical work passes inspection."
+        },
+        {
+            "heading": "Commercial Electrical Services in Miami Gardens",
+            "body": "Miami Gardens' commercial corridor along NW 27th Avenue and the businesses surrounding Hard Rock Stadium require reliable electrical infrastructure. Solomon Electric provides commercial electrical services including three-phase power installation, lighting retrofits, tenant improvements, code compliance updates, and emergency response for businesses that can't afford downtime. We work around your schedule to minimize disruption to your operations."
+        }
+    ]
+}

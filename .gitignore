@@ -38,6 +38,9 @@ gsc-credentials.json
 secrets/
 .secrets/
 
+# PHP Environment Config with real API keys
+public/api/env.php
+
 # ============================================
 # Logs & Debug
 # ============================================

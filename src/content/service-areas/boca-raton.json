@@ -1,0 +1,123 @@
+{
+    "name": "Boca Raton",
+    "slug": "boca-raton",
+    "county": "Palm Beach",
+    "description": "Licensed Boca Raton electricians providing premier residential and commercial electrical services. From high-end smart home integration to commercial support at Mizner Park, Solomon Electric is your trusted choice.",
+    "population": "100,000+",
+    "founded": "1925",
+    "areaSquareMiles": "31",
+    "tagline": "A City for All Seasons",
+    "landmarks": [
+        "Mizner Park",
+        "Florida Atlantic University",
+        "Boca Raton Resort & Club",
+        "Gumbo Limbo Nature Center",
+        "Town Center at Boca Raton"
+    ],
+    "neighborhoods": [
+        "Royal Palm Yacht & Country Club",
+        "Boca West",
+        "St. Andrews Country Club",
+        "Woodfield Country Club",
+        "Boca Falls",
+        "The Oaks"
+    ],
+    "majorRoads": [
+        "I-95",
+        "Florida Turnpike",
+        "Glades Road",
+        "Palmetto Park Road",
+        "Federal Highway (US-1)"
+    ],
+    "coordinates": {
+        "lat": 26.3683,
+        "lng": -80.1289
+    },
+    "challenges": [
+        {
+            "title": "Luxury Estate Power Distribution",
+            "description": "Boca's premier estates require massive power capacity, sophisticated multi-panel systems, and expertise in high-end lighting controls and smart automation.",
+            "icon": "Zap"
+        },
+        {
+            "title": "Strict Architectural Standards",
+            "description": "Working in Mizner-inspired neighborhoods requires exceptional attention to detail and adherence to strict aesthetic and electrical codes to maintain property value.",
+            "icon": "Shield"
+        },
+        {
+            "title": "Advanced Smart Integration",
+            "description": "Boca Raton residents demand the latest in intelligent home technology. We specialize in high-performance automation, clean-energy solutions, and advanced networking.",
+            "icon": "Home"
+        }
+    ],
+    "featuredServices": [
+        "smart-home-automation",
+        "landscape-outdoor-lighting",
+        "ev-charging-system-setup",
+        "whole-home-surge-protection",
+        "24-7-emergency-electrical-service",
+        "electrical-panel-upgrade-100a-to-200a"
+    ],
+    "stats": [
+        {
+            "value": "100K+",
+            "label": "Residents Served"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience"
+        },
+        {
+            "value": "24/7",
+            "label": "Emergency Service"
+        },
+        {
+            "value": "4.9★",
+            "label": "Customer Rating"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "What electrical services do you offer in Boca Raton?",
+            "answer": "We provide comprehensive electrical services throughout Boca Raton including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Boca Raton neighborhoods."
+        },
+        {
+            "question": "Are your electricians licensed to work in Boca Raton?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Palm Beach County permits for electrical work in Boca Raton, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "How do I know if my Boca Raton home needs a panel upgrade?",
+            "answer": "Many Boca Raton homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Boca Raton."
+        },
+        {
+            "question": "Do you offer 24/7 emergency electrical service in Boca Raton?",
+            "answer": "Yes! We provide round-the-clock emergency electrical service to all Boca Raton neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+        },
+        {
+            "question": "Do you provide electrical services for Boca Raton luxury estates?",
+            "answer": "Yes, we have extensive experience working in Boca's most exclusive communities, providing high-capacity service, sophisticated lighting, and robust backup power solutions."
+        },
+        {
+            "question": "Can you help with commercial electrical needs at Mizner Park?",
+            "answer": "Absolutely. we serve the premier commercial and retail districts of Boca Raton with maintenance, tenant improvements, and 24/7 emergency response."
+        }
+    ],
+    "seoContent": [
+        {
+            "heading": "Premier Boca Raton Electricians – Excellence in Every Detail",
+            "body": "Boca Raton is a city synonymous with luxury, culture, and high standards. From its mediterranean-inspired architecture to its status as a corporate and academic leader, Boca requires a level of electrical expertise that is truly world-class. Solomon Electric is proud to deliver that standard to our Boca Raton neighbors."
+        },
+        {
+            "heading": "Understanding Boca Raton's Electrical Needs",
+            "body": "Boca Raton homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Boca Raton's needs."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Your Boca Raton Home",
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Boca Raton. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
+        },
+        {
+            "heading": "Advanced Electrical Solutions for Your Boca Raton Property",
+            "body": "Whether you're integrating a state-of-the-art smart home system, upgrading the power for a grand estate, or needing the peace of mind of high-performance surge protection, our licensed team is ready. We provide the meticulous, professional results that Boca's most discerning homeowners and businesses expect."
+        }
+    ]
+}

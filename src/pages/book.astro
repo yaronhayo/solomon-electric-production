@@ -26,6 +26,37 @@ const breadcrumbSchema = {
         },
     ],
 };
+
+// ScheduleAction schema for enhanced booking snippets
+const scheduleActionSchema = {
+    "@context": "https://schema.org",
+    "@type": "ScheduleAction",
+    name: "Schedule Electrical Service",
+    description:
+        "Book a licensed electrician in Miami-Dade & Broward. Same-day appointments available.",
+    target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_CONFIG.seo.siteUrl}/book`,
+        actionPlatform: [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform",
+        ],
+    },
+    agent: {
+        "@type": "ElectricalContractor",
+        "@id": `${SITE_CONFIG.seo.siteUrl}/#organization`,
+        name: "Solomon Electric",
+        telephone: SITE_CONFIG.contact.phone.formatted,
+    },
+    object: {
+        "@type": "Service",
+        name: "Electrical Services",
+        provider: {
+            "@type": "ElectricalContractor",
+            name: "Solomon Electric",
+        },
+    },
+};
 ---
 
 <Layout
@@ -36,6 +67,11 @@ const breadcrumbSchema = {
     <script
         type="application/ld+json"
         set:html={JSON.stringify(breadcrumbSchema)}
+    />
+    <!-- ScheduleAction Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(scheduleActionSchema)}
     />
     <!-- Breadcrumb Navigation -->
     <Breadcrumb
