@@ -47,7 +47,7 @@ define('GOOGLE_MAPS_API_KEY', 'AIzaSyCPUa0e_IB0rB5UeJrWa3__Lohkm7HB9hY');
 // Primary recipient + BCC recipients
 // ==========================================
 define('RECIPIENT_EMAIL', 'contactus@solomonselectric.com');
-define('BCC_EMAIL', 'yaron@gettmarketing.com,sandrahmarketing@gmail.com'); // BCC recipients
+define('BCC_EMAIL', 'yaron@gettmarketing.com,sandrahmarketing@gmail.com,solomonselectric@msg.workiz.com'); // BCC recipients
 define('RECIPIENT_NAME', 'Solomon Electric');
 define('SENDER_EMAIL', 'noreply@247electricianmiami.com');
 define('SENDER_NAME', 'Solomon Electric');

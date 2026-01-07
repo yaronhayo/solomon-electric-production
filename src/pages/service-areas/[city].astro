@@ -11,6 +11,10 @@ import { SITE_CONFIG } from "../../config/site";
 import { ArrowRight, Grid } from "lucide-astro";
 import { getCollection } from "astro:content";
 import heroImage from "../../assets/images/hero.webp";
+const allServices = await getCollection("services");
+const sortedServices = [...allServices].sort((a, b) =>
+    a.data.name.localeCompare(b.data.name),
+);
 
 // Icon SVG paths for dynamic rendering
 const iconMap: Record<string, string> = {
@@ -46,8 +50,8 @@ const { area } = Astro.props;
 const cityData = area.data;
 
 // SEO - Enhanced for local search
-const title = `${cityData.name} FL Electrician | Licensed 24/7 Electrical Services | Solomon Electric`;
-const description = `Licensed electrician in ${cityData.name}, FL. Providing 24/7 emergency repairs, panel upgrades, & EV charger installation for ${cityData.name} residents. ${cityData.description.substring(0, 100)}... Call ${SITE_CONFIG.contact.phone.formatted}`;
+const title = `${cityData.name} FL Electrician | 24/7 Solomon Electric`;
+const description = `Licensed electrician in ${cityData.name}, FL. 24/7 emergency repairs, panel upgrades & more. Expert local service across ${cityData.name}. Call ${SITE_CONFIG.contact.phone.formatted} now!`;
 
 // Schema.org LocalBusiness
 const localBusinessSchema = {
@@ -194,7 +198,7 @@ const breadcrumbSchema = {
     <PageHero
         title={`Your Trusted Electrician in<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${cityData.name}, FL</span>`}
         subtitle={cityData.tagline || `${cityData.county} County`}
-        description={`Serving ${cityData.population} residents with licensed electrical services. From panel upgrades to emergency repairs, ${cityData.name} trusts Solomon Electric.`}
+        description={`Since 2008, Solomon Electric has powered ${cityData.name} with licensed expertise. From hurricane-ready panel upgrades to midnight emergency repairs, we've completed thousands of projects across ${cityData.county} County.`}
         image={heroImage}
         trustIndicators={true}
     />
@@ -520,49 +524,39 @@ const breadcrumbSchema = {
 
             <div class="services-grid">
                 {
-                    (
-                        cityData.featuredServices || [
-                            "electrical-panel-upgrade-100a-to-200a",
-                            "24-7-emergency-electrical-service",
-                            "recessed-lighting-installation",
-                            "ceiling-fan-light-fixture-installation",
-                            "whole-home-surge-protection",
-                            "gfci-outlet-installation-outdoor-pool",
-                        ]
-                    )
-                        .slice(0, 6)
-                        .map((slug, index) => (
-                            <a
-                                href={`/services/${slug}`}
-                                class="service-card"
-                                style={`--delay: ${index * 0.1}s`}
-                            >
-                                <div class="service-card-accent" />
-                                <div class="service-card-glow" />
-                                <div class="service-card-content">
-                                    <div class="service-icon">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
-                                                clip-rule="evenodd"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <h3 class="service-name">
-                                        {serviceNames[slug] || slug}
-                                    </h3>
-                                    <span class="service-link">
-                                        View Details
-                                        <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                    </span>
+                    sortedServices.map((svc, index) => (
+                        <a
+                            href={`/services/${svc.id}`}
+                            class="service-card"
+                            style={`--delay: ${index * 0.05}s`}
+                        >
+                            <div class="service-card-accent" />
+                            <div class="service-card-glow" />
+                            <div class="service-card-content">
+                                <div class="service-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
                                 </div>
-                            </a>
-                        ))
+                                <h3 class="service-name">{svc.data.name}</h3>
+                                <p class="text-xs text-white/50 mb-4 line-clamp-2">
+                                    {svc.data.description}
+                                </p>
+                                <span class="service-link">
+                                    View Details
+                                    <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </span>
+                            </div>
+                        </a>
+                    ))
                 }
             </div>
 

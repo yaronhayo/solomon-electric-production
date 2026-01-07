@@ -80,6 +80,22 @@
     ],
     "faqs": [
         {
+            "question": "What electrical services do you offer in North Miami?",
+            "answer": "We provide comprehensive electrical services throughout North Miami including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all North Miami neighborhoods."
+        },
+        {
+            "question": "Are your electricians licensed to work in North Miami?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Miami-Dade County permits for electrical work in North Miami, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "How do I know if my North Miami home needs a panel upgrade?",
+            "answer": "Many North Miami homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout North Miami."
+        },
+        {
+            "question": "Do you offer 24/7 emergency electrical service in North Miami?",
+            "answer": "Yes! We provide round-the-clock emergency electrical service to all North Miami neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+        },
+        {
             "question": "Do you provide emergency electrical services in North Miami?",
             "answer": "Yes, we offer 24/7 emergency electrical services to all North Miami residents and businesses. Whether you're in Keystone Islands or Arch Creek, our licensed electricians respond quickly to urgent issues like power loss, sparking panels, or burning smells."
         },
@@ -96,6 +112,14 @@
         {
             "heading": "Your Trusted North Miami Residential & Commercial Electrician",
             "body": "North Miami is one of South Florida's most diverse and established communities. From the cultural hub of MOCA to the natural beauty of Oleta River State Park, North Miami requires electrical expertise that understands both historic estates and modern developments. Solomon Electric has been a staple in the Miami-Dade community for over 15 years, providing safe, reliable, and professional electrical solutions for every type of property."
+        },
+        {
+            "heading": "Understanding North Miami's Electrical Needs",
+            "body": "North Miami homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to North Miami's needs."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Your North Miami Home",
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout North Miami. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
         },
         {
             "heading": "Serving Every Neighborhood in North Miami",

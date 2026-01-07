@@ -15,8 +15,8 @@ const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     mainEntity: {
-        "@type": "LocalBusiness",
-        name: "Solomon Electric",
+        "@id": `${SITE_CONFIG.seo.siteUrl}/#organization`,
+    },
         telephone: SITE_CONFIG.contact.phone.formatted,
         email: SITE_CONFIG.contact.email.primary,
         address: {
@@ -87,8 +87,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 ---
 
 <Layout
-    title="Contact Solomon Electric | 24/7 Emergency Electrician Miami"
-    description={`Contact Solomon Electric for professional electrical service in Miami-Dade & Broward. Licensed electricians available 24/7 for emergencies. Call ${SITE_CONFIG.contact.phone.formatted}.`}
+    title="Licensed Electrician Miami-Dade & Broward | Solomon Electric"
+    description="South Florida's trusted electrician since 2008. 19,400+ projects in Miami & Broward. Licensed, insured 24/7 electrical experts committed to your safety."
+    topBarDark={true}
 >
     <!-- ContactPage Schema Markup -->
     <script

@@ -77,6 +77,22 @@
     ],
     "faqs": [
         {
+            "question": "What electrical services do you offer in Miramar?",
+            "answer": "We provide comprehensive electrical services throughout Miramar including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Miramar neighborhoods."
+        },
+        {
+            "question": "Are your electricians licensed to work in Miramar?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Broward County permits for electrical work in Miramar, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "How do I know if my Miramar home needs a panel upgrade?",
+            "answer": "Many Miramar homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Miramar."
+        },
+        {
+            "question": "Do you offer 24/7 emergency electrical service in Miramar?",
+            "answer": "Yes! We provide round-the-clock emergency electrical service to all Miramar neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+        },
+        {
             "question": "Do you provide electrical services for Miramar businesses?",
             "answer": "Yes, we handle commercial electrical work for offices, retail, and industrial properties across Miramar, including the Miramar Town Center and corporate plazas along I-75."
         },
@@ -89,6 +105,14 @@
         {
             "heading": "Reliable Miramar Electricians – Serving Our Neighbors Since 2003",
             "body": "Miramar is a city defined by its rapid growth and commitment to progress. From its corporate centers to its beautiful gated communities, Miramar requires a level of electrical expertise that is both modern and highly professional. Solomon Electric is proud to be part of the Miramar community, keeping homes and businesses powered safely."
+        },
+        {
+            "heading": "Understanding Miramar's Electrical Needs",
+            "body": "Miramar homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Miramar's needs."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Your Miramar Home",
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Miramar. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
         },
         {
             "heading": "Expert Electrical Solutions for Miramar Families",

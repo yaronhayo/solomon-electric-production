@@ -1,24 +1,102 @@
-# build output
-dist/
+# Solomon Electric - Git Ignore Configuration
+# Optimized for Astro + SEO tools
 
-# generated types
-.astro/
-
-# dependencies
+# ============================================
+# Dependencies
+# ============================================
 node_modules/
+.pnpm-store/
 
-# logs
+# ============================================
+# Build Output
+# ============================================
+dist/
+.astro/
+.vercel/
+.output/
+
+# ============================================
+# Environment Variables (CRITICAL)
+# ============================================
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+*.env
+
+# Keep example file for reference
+!.env.example
+
+# ============================================
+# API Credentials & Secrets
+# ============================================
+gsc-credentials.json
+*-credentials.json
+*.pem
+*.key
+secrets/
+.secrets/
+
+# ============================================
+# Logs & Debug
+# ============================================
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
+.cache/
+.parcel-cache/
 
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
-.DS_Store
-
-# jetbrains setting folder
+# ============================================
+# Editor & IDE
+# ============================================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
 .idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================
+# Testing
+# ============================================
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# ============================================
+# SEO Data (Generated, not committed)
+# ============================================
+# Keep placeholder files, exclude generated data
+src/data/seo/*.generated.json
+src/data/seo/cache/
+
+# ============================================
+# TypeScript
+# ============================================
+*.tsbuildinfo
+
+# ============================================
+# Temporary Files
+# ============================================
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

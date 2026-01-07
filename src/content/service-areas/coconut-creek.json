@@ -76,18 +76,42 @@
     ],
     "faqs": [
         {
+            "question": "What electrical services do you offer in Coconut Creek?",
+            "answer": "We provide comprehensive electrical services throughout Coconut Creek including panel upgrades (100A to 200A), smart home automation, landscape lighting design, EV charger installation, ceiling fan installation, recessed lighting, outlet and switch upgrades, and 24/7 emergency repairs. Our licensed electricians serve homes in Wynmoor, Regency Lakes, and all Coconut Creek neighborhoods."
+        },
+        {
             "question": "Do you provide electrical services for Coconut Creek businesses?",
             "answer": "Yes, we serve the vibrant commercial sector of Coconut Creek, including the Promenade and surrounding business corridors, with maintenance and emergency repairs."
         },
         {
+            "question": "Are your electricians licensed to work in Coconut Creek?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Broward County permits for electrical work in Coconut Creek, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "How do I know if my Coconut Creek home needs a panel upgrade?",
+            "answer": "Many Coconut Creek homes in established neighborhoods like Wynmoor and Centura Village were built with 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections."
+        },
+        {
             "question": "Can you help with EV charger installation in Regency Lakes?",
             "answer": "Absolutely. We are experts in home EV charger setups, ensuring your panel is ready for the future and all installations meet strict local building codes."
+        },
+        {
+            "question": "Do you offer 24/7 emergency service in Coconut Creek?",
+            "answer": "Yes! We provide round-the-clock emergency electrical service to all Coconut Creek neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
         }
     ],
     "seoContent": [
         {
             "heading": "Trusted Coconut Creek Electricians Since 2003",
             "body": "Coconut Creek, the 'Butterfly Capital of the World,' is a city dedicated to its natural beauty and environmental sustainability. It's a community that values excellence and innovation. Solomon Electric is proud to serve Coconut Creek families with electrical services that are as professional as they are efficient."
+        },
+        {
+            "heading": "Understanding Coconut Creek's Unique Electrical Needs",
+            "body": "Coconut Creek's commitment to environmental sustainability and its established residential character create unique electrical opportunities. Many homes in Wynmoor and Regency Lakes are excellent candidates for energy-efficient LED retrofits and smart home automation that reduce energy consumption. The city's focus on recreation and outdoor living—from Butterfly World to Tradewinds Park—means outdoor lighting and GFCI-protected circuits are essential for safety and ambiance."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Every Coconut Creek Home",
+            "body": "Whether you're modernizing technology in your Wynmoor condo, installing elegant landscape lighting to complement our city's natural beauty, upgrading to energy-efficient systems, or facing an urgent electrical issue, our licensed team delivers professional solutions. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned Coconut Creek's trust for over 15 years."
         },
         {
             "heading": "Excellence in Electrical Care for Your Coconut Creek Home",

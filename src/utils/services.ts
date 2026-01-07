@@ -47,12 +47,12 @@ export const categoryImages: Record<ServiceCategory, ImageMetadata> = {
 };
 
 export const categoryDescriptions: Record<ServiceCategory, string> = {
-    'Electrical Panels & Power Systems': 'Upgrade your electrical infrastructure with panel upgrades, generator installations, and whole-home surge protection. Our licensed electricians ensure your Miami home or business has the power capacity it needs—safely and up to code.',
-    'Emergency Electrical Services': 'Electrical emergencies don\'t wait—and neither do we. Our team is available 24/7 for power outages, sparking outlets, burning smells, and storm damage repair throughout Miami-Dade and Broward counties.',
-    'EV Charging & Solar': 'Future-proof your property with electric vehicle charging stations and solar panel integration. From home Level 2 chargers to commercial EV infrastructure, we handle permits, installation, and FPL coordination.',
-    'Outlets, Switches & Wiring': 'From new outlet installation to whole-home rewiring, we handle all residential and commercial wiring needs. Includes outdoor outlets, GFCI protection, pool/spa wiring, and specialty installations.',
-    'Lighting & Smart Home': 'Transform your space with modern lighting solutions and smart home automation. LED retrofits, recessed lighting, ceiling fans, smart switches, security cameras, and home theater wiring.',
-    'Commercial & Inspections': 'Comprehensive commercial electrical services and code compliance inspections. Three-phase power, tenant build-outs, safety certifications, real estate inspections, and FPL coordination.'
+    'Electrical Panels & Power Systems': 'Ensure your property is hurricane-ready and code-compliant. Since 2008, we\'ve modernized 100A and 200A panels across Miami, providing the capacity needed for modern appliances and whole-home surge protection.',
+    'Emergency Electrical Services': 'Sparking outlets, burning smells, or total blackouts? Our 24/7 rapid-response team is on call throughout Miami-Dade and Broward to keep your family safe from electrical fire hazards.',
+    'EV Charging & Solar': 'Future-proof your South Florida home with Level 2 EV charging and solar-ready infrastructure. We handle the complex permitting and FPL coordination so you don\'t have to.',
+    'Outlets, Switches & Wiring': 'From resolving flickering lights to whole-home rewiring, we eliminate the risks of aging electrical systems. We use commercial-grade components for residential reliability.',
+    'Lighting & Smart Home': 'Enhance your security and efficiency with intelligent lighting. We specialize in LED retrofits and smart home integration that withstands the Florida humidity.',
+    'Commercial & Inspections': 'Keep your business running and insurance-compliant. We provide comprehensive safety inspections, three-phase power solutions, and verified code certifications.'
 };
 
 type ImageMetadata = typeof panelUpgradeImg;

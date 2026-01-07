@@ -78,6 +78,22 @@
     ],
     "faqs": [
         {
+            "question": "What electrical services do you offer in Plantation?",
+            "answer": "We provide comprehensive electrical services throughout Plantation including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Plantation neighborhoods."
+        },
+        {
+            "question": "Are your electricians licensed to work in Plantation?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Broward County permits for electrical work in Plantation, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "How do I know if my Plantation home needs a panel upgrade?",
+            "answer": "Many Plantation homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Plantation."
+        },
+        {
+            "question": "Do you offer 24/7 emergency electrical service in Plantation?",
+            "answer": "Yes! We provide round-the-clock emergency electrical service to all Plantation neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+        },
+        {
             "question": "Can you install an EV charger in a Plantation Acres estate?",
             "answer": "Yes, we specialize in high-capacity EV charger installations for larger homes, including coordinating with multiple vehicles and ensuring your electrical panel can support the load."
         },
@@ -90,6 +106,14 @@
         {
             "heading": "Premier Plantation Electricians – Your Local Connection",
             "body": "Plantation is a city that prides itself on its lush greenery and high quality of life. As a community that truly believes 'the grass is greener' here, your home or business deserves electrical service that is equally exceptional. Solomon Electric has been serving the Plantation community for over 15 years with professionalism and integrity."
+        },
+        {
+            "heading": "Understanding Plantation's Electrical Needs",
+            "body": "Plantation homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Plantation's needs."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Your Plantation Home",
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Plantation. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
         },
         {
             "heading": "Excellence in Electrical Care for Plantation Families",

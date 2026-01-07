@@ -62,8 +62,7 @@ const servicesListSchema = {
             description: service.description,
             url: `${SITE_CONFIG.seo.siteUrl}/services/${service.slug}`,
             provider: {
-                "@type": "LocalBusiness",
-                name: "Solomon Electric",
+                "@id": `${SITE_CONFIG.seo.siteUrl}/#organization`,
             },
         },
     })),
@@ -103,8 +102,8 @@ import {
 ---
 
 <Layout
-    title="Electrical Services South Florida | Residential & Commercial Electrician | Solomon Electric"
-    description="Professional electrical services in Miami-Dade & Broward. Panel upgrades, EV charging installation, smart home wiring, emergency repairs & more. Licensed electricians available 24/7."
+    title="Electrical Services in Miami-Dade & Broward | Solomon Electric"
+    description="Professional electrical services in Miami & Broward. Panel upgrades, EV charging, smart home wiring, & repairs. Licensed electricians available 24/7."
 >
     <!-- SEO Schema -->
     <script

@@ -61,6 +61,12 @@ const relatedServicesData = service.data.relatedServices
       )
     : [];
 
+// Get all service areas for "Areas Served" section
+const allServiceAreas = await getCollection("service-areas");
+const sortedAreas = [...allServiceAreas].sort((a, b) =>
+    a.data.name.localeCompare(b.data.name),
+);
+
 // Generate Service Schema with AggregateRating
 const serviceSchema = {
     "@context": "https://schema.org",
@@ -69,19 +75,7 @@ const serviceSchema = {
     name: service.data.name,
     description: service.data.description,
     provider: {
-        "@type": "Electrician",
-        name: "Solomon Electric",
-        telephone: SITE_CONFIG.contact.phone.formatted,
-        priceRange: "$$",
-        image: `${siteUrl}/og-default.jpg`,
-        address: {
-            "@type": "PostalAddress",
-            streetAddress: SITE_CONFIG.contact.address.street,
-            addressLocality: SITE_CONFIG.contact.address.city,
-            addressRegion: SITE_CONFIG.contact.address.state,
-            postalCode: SITE_CONFIG.contact.address.zip,
-            addressCountry: "US",
-        },
+        "@id": `${siteUrl}/#organization`,
     },
     areaServed: SITE_CONFIG.seo.schema.areaServed.map((city) => ({
         "@type": "City",
@@ -151,8 +145,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 ---
 
 <Layout
-    title={`${service.data.name} | Licensed Electrician Miami & Broward | Solomon Electric`}
-    description={`Professional ${service.data.name.toLowerCase()} in Miami-Dade, Broward & Palm Beach. Licensed & insured electricians. ${service.data.description.substring(0, 140)}... Call Solomon Electric at ${SITE_CONFIG.contact.phone.formatted}`}
+    title={`${service.data.name} Miami & Broward | Solomon Electric`}
+    description={`Top-rated ${service.data.name} in Miami & Broward. 24/7 emergency repairs, licensed & insured. Get a fast, free estimate from the local experts! ⚡`}
 >
     <!-- Service Schema Markup -->
     <script
@@ -567,6 +561,49 @@ const breadcrumbSchema = generateBreadcrumbSchema(
             </section>
         )
     }
+
+    <!-- Service Areas Section -->
+    <section class="service-areas-section">
+        <Container>
+            <header class="section-header reveal reveal-up">
+                <span class="section-label">📍 Serving Your Local Area</span>
+                <h2 class="section-title">
+                    Professional {service.data.name} in <span
+                        class="text-accent">South Florida</span
+                    >
+                </h2>
+                <p class="section-description">
+                    Solomon Electric provides {service.data.name.toLowerCase()} for
+                    residential and commercial customers across Miami-Dade and Broward
+                    counties. Select your city to see local projects and FAQs.
+                </p>
+            </header>
+
+            <div class="areas-grid reveal reveal-up">
+                {
+                    sortedAreas.map((area, index) => (
+                        <a
+                            href={`/service-areas/${area.data.slug}`}
+                            class="area-link-card glass-bg glass-border"
+                            style={`--delay: ${index * 0.05}s`}
+                        >
+                            <span class="area-name">{area.data.name}</span>
+                            <ArrowRight class="area-arrow" />
+                        </a>
+                    ))
+                }
+            </div>
+
+            <div class="all-areas-cta">
+                <a
+                    href="/service-areas"
+                    class="text-accent hover:text-white transition-colors flex items-center justify-center gap-2 font-medium"
+                >
+                    View All 27+ Service Areas <ArrowRight class="w-4 h-4" />
+                </a>
+            </div>
+        </Container>
+    </section>
 
     <!-- Final CTA Section -->
     <section class="final-cta">

@@ -25,6 +25,8 @@ import {
     Star,
     Map,
     HelpCircle,
+    Calendar,
+    BookOpen,
 } from "lucide-astro";
 
 const currentYear = new Date().getFullYear();
@@ -170,6 +172,7 @@ const currentYear = new Date().getFullYear();
                         href="/book"
                         class="text-gray-300 hover:text-accent transition-colors flex items-center gap-2"
                     >
+                        <Calendar class="w-4 h-4" />
                         <span>Book Service</span>
                     </a>
                     <a
@@ -183,6 +186,7 @@ const currentYear = new Date().getFullYear();
                         href="/blog"
                         class="text-gray-300 hover:text-accent transition-colors flex items-center gap-2"
                     >
+                        <BookOpen class="w-4 h-4" />
                         <span>Blog</span>
                     </a>
                     <a
@@ -373,7 +377,7 @@ const currentYear = new Date().getFullYear();
                         >♥</span
                     > by
                     <a
-                        href="https://gettmarketing.com"
+                        href="https://www.gettmarketing.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-gray-300 hover:text-accent transition-colors underline decoration-accent/30"

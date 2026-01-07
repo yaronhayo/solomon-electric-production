@@ -77,6 +77,22 @@
     ],
     "faqs": [
         {
+            "question": "What electrical services do you offer in Pompano Beach?",
+            "answer": "We provide comprehensive electrical services throughout Pompano Beach including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Pompano Beach neighborhoods."
+        },
+        {
+            "question": "Are your electricians licensed to work in Pompano Beach?",
+            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Broward County permits for electrical work in Pompano Beach, ensuring your project passes inspection and meets current NEC code requirements."
+        },
+        {
+            "question": "How do I know if my Pompano Beach home needs a panel upgrade?",
+            "answer": "Many Pompano Beach homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Pompano Beach."
+        },
+        {
+            "question": "Do you offer 24/7 emergency electrical service in Pompano Beach?",
+            "answer": "Yes! We provide round-the-clock emergency electrical service to all Pompano Beach neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+        },
+        {
             "question": "Are you licensed to perform electrical work in Pompano Beach?",
             "answer": "Yes, we are fully licensed (FL License #EC13012419) and insured. We frequently work with the Pompano Beach Building Department on both residential and commercial projects."
         },
@@ -89,6 +105,14 @@
         {
             "heading": "Trusted Pompano Beach Electricians Since 2003",
             "body": "Pompano Beach—the 'Heart of the Gold Coast'—is a city defined by its beautiful beaches, thriving industrial districts, and historic charm. Solomon Electric is proud to serve this multifaceted community with the highest standard of electrical expertise. Whether you're a long-time resident or a growing business, our team is dedicated to your safety."
+        },
+        {
+            "heading": "Understanding Pompano Beach's Electrical Needs",
+            "body": "Pompano Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Pompano Beach's needs."
+        },
+        {
+            "heading": "Comprehensive Electrical Services for Your Pompano Beach Home",
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Pompano Beach. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
         },
         {
             "heading": "Comprehensive Electrical Solutions for Pompano Properties",

@@ -5,32 +5,33 @@ import { SITE_CONFIG } from "../config/site";
  * Generate JSON-LD structured data for a blog post (Article)
  */
 export function generateArticleSchema(post: any, siteUrl: string) {
+    const canonical = `${siteUrl}/blog/${post.slug}`;
     return {
         '@context': 'https://schema.org',
         '@type': 'Article',
+        '@id': `${canonical}/#article`,
         headline: post.data.title,
         description: post.data.description,
-        image: post.data.image ? `${siteUrl}${typeof post.data.image === 'string' ? post.data.image : post.data.image.src}` : undefined,
+        image: post.data.image ? (typeof post.data.image === 'string' ? `${siteUrl}${post.data.image}` : `${siteUrl}${post.data.image.src}`) : `${siteUrl}/og-default.jpg`,
         datePublished: post.data.pubDate.toISOString(),
         dateModified: (post.data.updatedDate || post.data.pubDate).toISOString(),
-        author: {
-            '@type': 'Organization',
-            name: post.data.author || 'Solomon Electric',
-            url: siteUrl,
-        },
+        author: [
+            {
+                '@type': 'Organization',
+                '@id': `${siteUrl}/#organization`,
+                name: 'Solomon Electric Team'
+            }
+        ],
         publisher: {
-            '@type': 'Organization',
-            name: 'Solomon Electric',
-            url: siteUrl,
-            logo: {
-                '@type': 'ImageObject',
-                url: `${siteUrl}/logo.png`,
-            },
+            '@id': `${siteUrl}/#organization`
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `${siteUrl}/blog/${post.slug}`,
+            '@id': canonical,
         },
+        isPartOf: {
+            '@id': `${siteUrl}/#website`
+        }
     };
 }
 
@@ -46,12 +47,15 @@ export function generateServicesSchema(services: any[], siteUrl: string) {
             position: index + 1,
             item: {
                 '@type': 'Service',
+                '@id': `${siteUrl}/services/${service.slug || service.id}/#service`,
                 name: service.name,
                 description: service.description,
                 provider: {
-                    '@type': 'Organization',
+                    '@type': 'Electrician',
                     name: 'Solomon Electric',
                     url: siteUrl,
+                    telephone: SITE_CONFIG.contact.phone.formatted,
+                    image: `${siteUrl}/og-default.jpg`,
                 },
             },
         })),
@@ -267,27 +271,30 @@ export function generateOrganizationSchema(siteUrl: string) {
         },
         hasOfferCatalog: {
             "@type": "OfferCatalog",
-            "name": "Electrical Services",
+            "name": "Professional Electrical Services",
             "itemListElement": [
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Electrical Panel Upgrades"
+                        "name": "Electrical Panel Modernization",
+                        "description": "Professional 100A to 200A panel upgrades for modern South Florida homes."
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "24/7 Emergency Repairs"
+                        "name": "24/7 Emergency Response",
+                        "description": "Rapid electrical repair for sparking outlets and circuit breaker failures."
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "EV Charger Installation"
+                        "name": "Smart Home Automation",
+                        "description": "Installation of motion sensors, dimmers, and integrated smart lighting systems."
                     }
                 }
             ]
@@ -330,11 +337,15 @@ export function generateOrganizationSchema(siteUrl: string) {
         foundingDate: SITE_CONFIG.company.foundedYear.toString(),
         slogan: SITE_CONFIG.company.tagline,
         award: [
-            {
-                "@type": "Award",
-                "name": "Top Rated Electrician - South Florida"
-            }
-        ]
+            "Top Rated Electrician - South Florida",
+            "Best of Hollywood 2024 - Electrical Contractor",
+            "Angi Super Service Award Winner"
+        ],
+        brand: {
+            "@type": "Brand",
+            "name": "Solomon Electric",
+            "logo": `${siteUrl}/logo.png`
+        },
     };
 }
 
@@ -398,6 +409,55 @@ export function generateCanonicalUrl(path: string, siteUrl: string): string {
 }
 
 /**
+ * Generate consolidated @graph schema for Homepage
+ * Includes WebSite, Electrician (Organization), and BreadcrumbList
+ */
+export function generateHomepageSchema(siteUrl: string) {
+    const electrician = generateOrganizationSchema(siteUrl);
+    
+    return {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'WebSite',
+                '@id': `${siteUrl}/#website`,
+                'url': siteUrl,
+                'name': 'Solomon Electric',
+                'description': electrician.description,
+                'publisher': { '@id': `${siteUrl}/#organization` },
+                'potentialAction': [
+                    {
+                        '@type': 'SearchAction',
+                        'target': {
+                            '@type': 'EntryPoint',
+                            'urlTemplate': `${siteUrl}/search?q={search_term_string}`
+                        },
+                        'query-input': 'required name=search_term_string'
+                    }
+                ],
+                'inLanguage': 'en-US'
+            },
+            {
+                ...electrician,
+                'isPartOf': { '@id': `${siteUrl}/#website` }
+            },
+            {
+                '@type': 'BreadcrumbList',
+                '@id': `${siteUrl}/#breadcrumb`,
+                'itemListElement': [
+                    {
+                        '@type': 'ListItem',
+                        'position': 1,
+                        'name': 'Home',
+                        'item': siteUrl
+                    }
+                ]
+            }
+        ]
+    };
+}
+
+/**
  * Generate breadcrumb schema
  */
 export function generateBreadcrumbSchema(
@@ -411,7 +471,7 @@ export function generateBreadcrumbSchema(
             '@type': 'ListItem',
             position: index + 1,
             name: item.name,
-            item: `${siteUrl}${item.url}`,
+            item: item.url.startsWith('http') ? item.url : `${siteUrl}${item.url.startsWith('/') ? '' : '/'}${item.url}`,
         })),
     };
 }

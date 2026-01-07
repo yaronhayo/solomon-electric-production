@@ -1,6 +1,6 @@
 # ============================================
 # Solomon Electric - Robots.txt
-# https://www.247electricianmiami.com
+# https://247electricianmiami.com
 # ============================================
 
 # Default rules for all crawlers
@@ -103,14 +103,16 @@ Disallow: /
 # Sitemaps
 # ============================================
 
-Sitemap: https://www.247electricianmiami.com/sitemap-index.xml
+Sitemap: https://247electricianmiami.com/sitemap-index.xml
+Sitemap: https://247electricianmiami.com/sitemap-0.xml
 
 # ============================================
 # Additional Discovery Files
 # ============================================
 
 # LLM context file for AI assistants
-# https://www.247electricianmiami.com/llms.txt
+# https://247electricianmiami.com/llms.txt
 
 # Security contact
-# https://www.247electricianmiami.com/.well-known/security.txt
+# https://247electricianmiami.com/.well-known/security.txt
+

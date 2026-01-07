@@ -22,7 +22,7 @@ import Container from "../components/ui/Container.astro";
 import BookingForm from "../components/BookingForm.astro";
 import PageHero from "../components/PageHero.astro";
 import ServiceAreaMap from "../components/ServiceAreaMap.astro";
-import { generateOrganizationSchema } from "../utils/seo";
+import { generateHomepageSchema } from "../utils/seo";
 
 // For featured carousel, get first 3 services
 const allServices = await getServices();
@@ -44,42 +44,27 @@ const stats = [
 
 const serviceAreas = SERVICE_AREAS;
 
-// Generate Local Business Schema
-const orgSchema = generateOrganizationSchema(SITE_CONFIG.seo.siteUrl);
-
-// Generate Breadcrumb Schema (Home only)
-const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-        {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: SITE_CONFIG.seo.siteUrl,
-        },
-    ],
-};
+// Generate Consolidated Homepage Schema (@graph)
+const homepageSchema = generateHomepageSchema(SITE_CONFIG.seo.siteUrl);
 
 import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 ---
 
 <Layout
-    title="Licensed Electrician Miami | 24/7 Emergency Electrical Services | Solomon Electric"
-    description={`Professional electrician serving Miami-Dade & Broward. Licensed & insured for residential, commercial & industrial electrical services. Panel upgrades, EV charging, smart home, repairs. Call ${SITE_CONFIG.contact.phone.formatted}`}
+    title="Licensed Electrician Miami & Broward | Solomon Electric"
+    description={`Top-rated licensed electricians in Miami & Broward. 24/7 emergency service, repairs & panel upgrades. Get a fast, free estimate from the local experts! ⚡`}
 >
     <!-- Schema Markup -->
-    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <script
         type="application/ld+json"
-        set:html={JSON.stringify(breadcrumbSchema)}
+        set:html={JSON.stringify(homepageSchema)}
     />
 
     <!-- Hero Section -->
     <PageHero
         title="Electrical Problems?<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>We'll Fix Them Today</span>"
         subtitle="Licensed Electricians • Miami-Dade • Broward • Palm Beach"
-        description="Flickering lights keeping you up at night? Circuit breakers that won't stop tripping? An outlet that sparks when you plug something in? You're not alone—and you don't have to live with it. Our licensed electricians diagnose problems fast and fix them right the first time, so you can stop worrying and get back to your life."
+        description="Flickering lights, tripping breakers, or sparking outlets aren't just annoying—they're safety risks. Since 2008, South Florida families and businesses have trusted us to solve these exact problems. With 19,400+ projects completed, our licensed electricians diagnose your issues fast and fix them right the first time, giving you back the peace of mind you deserve."
         image={heroImage}
         trustIndicators={true}
         showScrollIndicator={true}
@@ -413,12 +398,14 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         class="text-[var(--text-body)] leading-relaxed text-lg font-medium"
                         style="margin-bottom: var(--spacing-2xl);"
                     >
-                        When you choose Solomon Electric, you're choosing safety
-                        and reliability. Whether it's a home safety concern, a
-                        commercial property upgrade, or an urgent repair, our
-                        dedicated team brings the expertise needed to protect
-                        your property and ensure your electrical systems are
-                        functioning correctly.
+                        Since 2008, Solomon Electric has been more than just a
+                        contractor—we've been a safety partner for over 19,400
+                        residential and commercial properties. We understand the
+                        unique challenges of South Florida's electrical systems,
+                        from hurricane season readiness to aging panel
+                        modernization. Our team brings the local expertise
+                        needed to protect your investment and ensure your
+                        safety.
                     </p>
 
                     <div class="space-y-6">
