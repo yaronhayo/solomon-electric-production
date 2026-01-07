@@ -78,19 +78,19 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 
     <!-- Hero Section -->
     <PageHero
-        title="Electrical Problems?<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>We'll Fix Them Today</span>"
-        subtitle="Licensed Electricians • Miami-Dade • Broward • Palm Beach"
-        description="Flickering lights, tripping breakers, or sparking outlets aren't just annoying—they're safety risks. Since 2008, South Florida families and businesses have trusted us to solve these exact problems. With 19,400+ projects completed, our licensed electricians diagnose your issues fast and fix them right the first time, giving you back the peace of mind you deserve."
+        title="Miami's #1 Licensed Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>24/7 Emergency & Repair Services</span>"
+        subtitle="Licensed #EC13012419 • Miami-Dade • Broward • Palm Beach"
+        description="Flickering lights, tripping breakers, or sparking outlets aren't just annoying—they're safety hazards. Since 2008, over 19,400 South Florida homes and businesses have trusted Solomon Electric to fix electrical problems fast. Our licensed electricians arrive same-day, diagnose issues accurately, and repair them right the first time."
         image={heroImage}
         trustIndicators={true}
         showScrollIndicator={true}
         primaryCta={{
-            text: "Get Help Now",
+            text: "Get Free Estimate",
             href: "/book",
             icon: Calendar,
         }}
         secondaryCta={{
-            text: "See What We Fix",
+            text: "View All Services",
             href: "/services",
             icon: Zap,
         }}
@@ -108,7 +108,7 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
         <div class="absolute inset-0 z-0">
             <Image
                 src={trustBgImage}
-                alt=""
+                alt="Licensed electrician installing electrical panel in Miami home"
                 class="w-full h-full object-cover opacity-5"
                 loading="lazy"
                 widths={[400, 800, 1200]}
@@ -278,13 +278,15 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
                     style="margin-bottom: var(--spacing-md);"
                 >
-                    How We Serve You
+                    Professional Electrical Services Miami
                 </p>
                 <h2
                     id="services-heading"
                     class="text-3xl md:text-5xl font-black text-primary uppercase"
                 >
-                    Expert <span class="text-accent">Electrical Solutions</span>
+                    Panel Upgrades, EV Chargers <span class="text-accent"
+                        >& More</span
+                    >
                 </h2>
             </div>
 
@@ -305,7 +307,7 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                                 {/* Background Image */}
                                 <Image
                                     src={bgImage}
-                                    alt={service.name}
+                                    alt={`${service.name} service in Miami - Solomon Electric`}
                                     width={600}
                                     height={450}
                                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -329,7 +331,7 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 
                                     {/* CTA */}
                                     <div class="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300">
-                                        <span>Learn More</span>
+                                        <span>Get Free Quote</span>
                                         <ArrowRight class="w-4 h-4" />
                                     </div>
                                 </div>
@@ -353,7 +355,7 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         class="text-xl font-black gap-2 magnetic-cta"
                     >
                         <Grid class="w-5 h-5" />
-                        View Full Service Menu
+                        View All 63+ Services
                     </Button>
                 </div>
             </div>
@@ -386,7 +388,7 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     </div>
                     <Image
                         src={customerInteractionImage}
-                        alt="Professional Electrician Team"
+                        alt="Solomon Electric technician consulting with Miami homeowner about electrical panel upgrade"
                         class="relative z-10 w-full shadow-[var(--shadow-xl)] rounded-[var(--radius-2xl)] grayscale hover:grayscale-0 transition-all duration-[var(--transition-slow)]"
                         loading="lazy"
                         widths={[400, 600, 800]}
@@ -399,29 +401,28 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
                         style="margin-bottom: var(--spacing-md);"
                     >
-                        What You Can Expect
+                        Why Choose Solomon Electric
                     </p>
                     <h2
                         id="story-heading"
                         class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase"
                         style="margin-bottom: var(--spacing-xl);"
                     >
-                        Safe Homes,<br />
-                        <span class="text-accent">Protected Investments</span>
+                        Miami's Trusted<br />
+                        <span class="text-accent">Licensed Electricians</span>
                     </h2>
 
                     <p
                         class="text-[var(--text-body)] leading-relaxed text-lg font-medium"
                         style="margin-bottom: var(--spacing-2xl);"
                     >
-                        Since 2008, Solomon Electric has been more than just a
-                        contractor—we've been a safety partner for over 19,400
-                        residential and commercial properties. We understand the
-                        unique challenges of South Florida's electrical systems,
-                        from hurricane season readiness to aging panel
-                        modernization. Our team brings the local expertise
-                        needed to protect your investment and ensure your
-                        safety.
+                        Since 2008, Solomon Electric has completed over 19,400
+                        residential and commercial electrical projects across
+                        Miami-Dade, Broward, and Palm Beach counties. From
+                        emergency repairs to complete panel upgrades, our
+                        Florida-licensed electricians (License #EC13012419)
+                        deliver code-compliant work with same-day service
+                        availability.
                     </p>
 
                     <div class="space-y-6">
@@ -447,14 +448,14 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                                     class="text-xl font-black text-primary uppercase"
                                     style="margin-bottom: var(--spacing-xs);"
                                 >
-                                    Reliable Emergency Support
+                                    24/7 Emergency Electrician
                                 </h3>
                                 <p class="text-body font-medium">
-                                    Electrical issues can happen at any time.
-                                    Our team is available to handle urgent
-                                    electrical needs across Miami-Dade and
-                                    Broward, ensuring your safety is never
-                                    compromised.
+                                    Electrical emergencies don't wait—neither do
+                                    we. Our licensed electricians respond to
+                                    sparking outlets, power outages, and
+                                    electrical fires across Miami-Dade and
+                                    Broward counties, day or night.
                                 </p>
                             </div>
                         </div>
@@ -622,7 +623,7 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 <h2
                     class="text-3xl md:text-5xl font-black text-white uppercase"
                 >
-                    South Florida <span class="text-accent">Trusts Us</span>
+                    19,400+ Projects <span class="text-accent">Completed</span>
                 </h2>
             </div>
 
@@ -691,9 +692,9 @@ import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 <p
                     class="text-lg md:text-xl text-body mb-12 leading-relaxed font-medium reveal reveal-up reveal-delay-2"
                 >
-                    Experience professional electrical service from licensed
-                    experts. Quality workmanship backed by our satisfaction
-                    guarantee.
+                    Get a free estimate from Miami's top-rated electricians.
+                    Same-day service available. Licensed, insured, and
+                    satisfaction guaranteed.
                 </p>
 
                 <div
