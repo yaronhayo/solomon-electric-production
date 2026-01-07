@@ -145,8 +145,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 ---
 
 <Layout
-    title={`${service.data.name} Miami & Broward | Solomon Electric`}
-    description={`Top-rated ${service.data.name} in Miami & Broward. 24/7 emergency repairs, licensed & insured. Get a fast, free estimate from the local experts! ⚡`}
+    title={`${service.data.name} Miami | 24/7 Licensed Electrician | Solomon Electric`}
+    description={`Professional ${service.data.name.toLowerCase()} in Miami-Dade & Broward. Licensed #EC13012419, 24/7 emergency service, free estimates. Call (786) 833-9211 for same-day appointments!`}
 >
     <!-- Service Schema Markup -->
     <script
@@ -196,7 +196,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
     <!-- Hero Section -->
     <PageHero
         title={service.data.name}
-        subtitle="Electrical Services"
+        subtitle={`Licensed Miami Electrician • #EC13012419 • 24/7 Available`}
         description={service.data.description}
         image={service.data.image || heroImage}
         trustIndicators={true}

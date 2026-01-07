@@ -50,8 +50,8 @@ const { area } = Astro.props;
 const cityData = area.data;
 
 // SEO - Enhanced for local search
-const title = `${cityData.name} FL Electrician | 24/7 Solomon Electric`;
-const description = `Licensed electrician in ${cityData.name}, FL. 24/7 emergency repairs, panel upgrades & more. Expert local service across ${cityData.name}. Call ${SITE_CONFIG.contact.phone.formatted} now!`;
+const title = `Electrician ${cityData.name} FL | 24/7 Licensed Service | Solomon Electric`;
+const description = `Need an electrician in ${cityData.name}? Solomon Electric offers 24/7 emergency repairs, panel upgrades, EV charger installation. Licensed #EC13012419. Call ${SITE_CONFIG.contact.phone.formatted}!`;
 
 // Schema.org LocalBusiness
 const localBusinessSchema = {
@@ -196,9 +196,9 @@ const breadcrumbSchema = {
 
     <!-- Page Hero -->
     <PageHero
-        title={`Your Trusted Electrician in<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${cityData.name}, FL</span>`}
-        subtitle={cityData.tagline || `${cityData.county} County`}
-        description={`Since 2008, Solomon Electric has powered ${cityData.name} with licensed expertise. From hurricane-ready panel upgrades to midnight emergency repairs, we've completed thousands of projects across ${cityData.county} County.`}
+        title={`${cityData.name} Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>24/7 Licensed Service</span>`}
+        subtitle={`Licensed #EC13012419 • ${cityData.county} County • Free Estimates`}
+        description={`Need an electrician in ${cityData.name}, FL? Solomon Electric provides 24/7 emergency repairs, panel upgrades, EV charger installation, and all electrical services. Serving ${cityData.name} since 2008 with 19,400+ projects completed across South Florida.`}
         image={heroImage}
         trustIndicators={true}
     />
