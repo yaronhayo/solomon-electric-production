@@ -29,7 +29,7 @@ const SITE_URL = SITE_CONFIG.seo.siteUrl;
 export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
   return {
     '@context': 'https://schema.org',
-    '@type': 'ElectricalContractor',
+    '@type': 'ElectricalContractor' as any,
     '@id': `${SITE_URL}/#organization`,
     name: BUSINESS_NAME,
     alternateName: 'Solomon Electric',
@@ -97,10 +97,10 @@ export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: String(SITE_CONFIG.stats.averageRating),
-      reviewCount: SITE_CONFIG.stats.totalReviews.replace(/\+/g, ''),
+      reviewCount: SITE_CONFIG.stats.totalReviews.replace(/\+/g, '') as any,
       bestRating: '5',
       worstRating: '1'
-    },
+    } as any,
     
     // Contact points
     contactPoint: [
@@ -143,10 +143,10 @@ export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'State Electrical License',
       recognizedBy: {
-        '@type': 'State',
+        '@type': 'State' as any,
         name: 'Florida'
       }
-    }
+    } as any
   };
 }
 
@@ -188,9 +188,9 @@ export function generateServiceSchema(service: ServiceSchemaInput): WithContext<
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: `${SITE_URL}/services/${service.slug}/`,
-      servicePhone: SITE_CONFIG.contact.phone.formatted,
+      servicePhone: SITE_CONFIG.contact.phone.formatted as any,
       availableLanguage: ['English', 'Spanish']
-    },
+    } as any,
     
     termsOfService: `${SITE_URL}/terms/`,
     
