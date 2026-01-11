@@ -17,6 +17,8 @@ dist/
 
 # ============================================
 # Environment Variables (CRITICAL)
+# ⚠️ NEVER commit .env files to Git!
+# ⚠️ Contains SMTP2GO, Google Maps, Turnstile, GA, GTM, and DataForSEO credentials
 # ============================================
 .env
 .env.local
@@ -30,6 +32,8 @@ dist/
 
 # ============================================
 # API Credentials & Secrets
+# ⚠️ CRITICAL: NEVER commit these files to Git!
+# ⚠️ If exposed, rotate ALL credentials immediately!
 # ============================================
 gsc-credentials.json
 *-credentials.json
@@ -39,6 +43,7 @@ secrets/
 .secrets/
 
 # PHP Environment Config with real API keys
+# ⚠️ CRITICAL: Contains SMTP, Google Maps, Turnstile, and DataForSEO credentials
 public/api/env.php
 
 # ============================================

@@ -1,6 +1,6 @@
 # ==============================================================================
 # Solomon Electric - Apache .htaccess Configuration
-# https://247electricianmiami.com
+# https://www.247electricianmiami.com
 # ==============================================================================
 
 # Hostinger - Force index.html as default document
@@ -9,6 +9,27 @@ DirectoryIndex index.html index.htm
 # Error pages
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
+
+# ==============================================================================
+# SITEMAP & XML FILE HANDLING - Ensure sitemaps are accessible to search engines
+# ==============================================================================
+
+# Set correct MIME type for XML files
+<IfModule mod_mime.c>
+    AddType application/xml .xml
+    AddType text/xml .xml
+</IfModule>
+
+# Explicitly allow access to sitemap files (override any blocking rules)
+<FilesMatch "^sitemap.*\.xml$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Allow from all
+    </IfModule>
+</FilesMatch>
 
 # ==============================================================================
 # URL CANONICALIZATION - Critical for SEO
@@ -21,9 +42,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 2. Remove www prefix (canonical: non-www)
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# 2. Add www prefix (canonical: www)
+RewriteCond %{HTTP_HOST} ^247electricianmiami\.com$ [NC]
+RewriteRule ^(.*)$ https://www.247electricianmiami.com/$1 [R=301,L]
 
 # 3. Add trailing slash to directories (SEO consistency)
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -59,6 +80,9 @@ RewriteRule ^(.*)$ $1.html [L]
     
     # Prevent clickjacking
     Header set X-Frame-Options "SAMEORIGIN"
+    
+    # HTTP Strict Transport Security (HSTS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     
     # Referrer Policy (SEO-friendly: sends referrer for analytics)
     Header set Referrer-Policy "strict-origin-when-cross-origin"
@@ -132,13 +156,14 @@ RewriteRule ^(.*)$ $1.html [L]
     Require all denied
 </Files>
 
-<Files "*.json">
+# Block credential and config JSON files (specific patterns only)
+<FilesMatch "^(gsc-credentials|.*-credentials|package|package-lock|tsconfig|.*\.config)\.json$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>
-</Files>
+</FilesMatch>
 
-# Allow specific JSON files
+# Explicitly allow public JSON files
 <FilesMatch "^(manifest|schema)\.json$">
     <IfModule mod_authz_core.c>
         Require all granted
@@ -148,6 +173,9 @@ RewriteRule ^(.*)$ $1.html [L]
 # ==============================================================================
 # URL REDIRECTS - Old Site Structure to New Site Structure
 # ==============================================================================
+
+# Sitemap legacy redirect (some systems expect /sitemap.xml)
+Redirect 301 /sitemap.xml /sitemap-index.xml
 
 # Homepage variations
 Redirect 301 /home /
