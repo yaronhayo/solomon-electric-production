@@ -48,6 +48,8 @@ jobs:
             **/.git*/**
             **/node_modules/**
             **/.DS_Store
+            **/env.php
+            **/.env*
 
       - name: Verify Deployment
         run: |
