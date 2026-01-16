@@ -50,6 +50,6 @@ jobs:
         run: |
           echo "## 🚀 Staging Deployment Complete!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**URL:** https://stagingnew.247electricianmiami.com" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** https://staging2026.247electricianmiami.com" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Deployed at:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
