@@ -3,7 +3,7 @@ import "../styles/global.css";
 import TopBar from "../components/TopBar.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import PageLoader from "../components/PageLoader.astro";
+// PageLoader removed for Core Web Vitals - was blocking LCP element
 import CookieBanner from "../components/CookieBanner.astro";
 import MobileFloatingCTA from "../components/MobileFloatingCTA.astro";
 import { SITE_CONFIG } from "../config/site";
@@ -17,6 +17,7 @@ interface Props {
 	title: string;
 	description?: string;
 	ogImage?: string;
+	ogImageAlt?: string;
 	ogType?: "website" | "article";
 	canonical?: string;
 	noindex?: boolean;
@@ -28,6 +29,7 @@ const {
 	title,
 	description = "24/7 Professional Electrical Services in Miami",
 	ogImage,
+	ogImageAlt,
 	ogType = "website",
 	canonical,
 	noindex = false,
@@ -45,6 +47,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).href;
 
 // Default OG image if none provided
 const ogImageURL = ogImage || `${siteUrl}/og-default.jpg`;
+const ogImageAltText = ogImageAlt || title;
 
 // Generate Speakable Schema
 const speakableSchema = generateSpeakableSchema(
@@ -56,8 +59,22 @@ const speakableSchema = generateSpeakableSchema(
 <!doctype html>
 <html lang="en">
 	<head>
-		<!-- Google Tag Manager -->
-		<script is:inline>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+		/>
+
+		<!-- Google Tag Manager - Offloaded to Partytown web worker for performance -->
+		<script type="text/partytown">
+			// Initialize dataLayer BEFORE GTM loads (required for proper tracking)
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				"gtm.start": new Date().getTime(),
+				event: "gtm.js",
+			});
+			// GTM script injection
 			(function (w, d, s, l, i) {
 				w[l] = w[l] || [];
 				w[l].push({
@@ -72,20 +89,14 @@ const speakableSchema = generateSpeakableSchema(
 				f.parentNode.insertBefore(j, f);
 			})(window, document, "script", "dataLayer", "GTM-KQQZXTZ6");
 		</script>
-		<!-- End Google Tag Manager -->
-
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
-		/>
 
 		<!-- Performance: Critical resource hints -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		<link rel="preconnect" href="https://www.googletagmanager.com" />
 		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+		<!-- Fonts loaded via @fontsource imports -->
 
 		<!-- Preload critical assets for faster LCP -->
 		<link rel="preload" href="/favicon.png" as="image" type="image/png" />
@@ -137,6 +148,7 @@ const speakableSchema = generateSpeakableSchema(
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:alt" content={ogImageAltText} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:locale" content="en_US" />
@@ -145,9 +157,11 @@ const speakableSchema = generateSpeakableSchema(
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@solomonelectric" />
+		<meta name="twitter:creator" content="@solomonelectric" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageURL} />
+		<meta name="twitter:image:alt" content={ogImageAltText} />
 
 		<!-- Local Business Info (for rich snippets) -->
 		<meta name="geo.region" content="US-FL" />
@@ -171,11 +185,13 @@ const speakableSchema = generateSpeakableSchema(
 		>
 		<!-- End Google Tag Manager (noscript) -->
 
-		<PageLoader />
+		<!-- Skip Navigation Link for Accessibility -->
+		<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
 		<TopBar isDark={topBarDark} />
 		<Header />
 
-		<main class="flex-grow">
+		<main id="main-content" class="flex-grow">
 			<slot />
 		</main>
 		<Footer />
@@ -247,4 +263,3 @@ const speakableSchema = generateSpeakableSchema(
 		</script>
 	</body>
 </html>
-```

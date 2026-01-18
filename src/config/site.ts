@@ -81,7 +81,7 @@ export const SITE_CONFIG = {
     seo: {
         defaultTitle: "Electrician Miami-Dade & Broward | 24/7 Emergency Services | Solomon Electric",
         defaultDescription: "Top-rated licensed electricians serving Miami-Dade & Broward. Residential & commercial repairs, installations, and 24/7 emergency service. Get your free estimate today! ⚡",
-        siteUrl: "https://247electricianmiami.com",
+        siteUrl: "https://www.247electricianmiami.com",
         tracking: {
             gtm: "GTM-KQQZXTZ6",
         },

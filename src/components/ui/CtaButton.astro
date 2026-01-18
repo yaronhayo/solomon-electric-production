@@ -38,8 +38,26 @@ const label = text || defaultText;
   variant={variant}
   size={size}
   class={`flex items-center gap-2 ${className}`}
+  data-cta-type={isCall ? "phone_click" : "book_click"}
   {...rest}
 >
   {isCall ? <Phone class="w-5 h-5" /> : <Calendar class="w-5 h-5" />}
   {label}
 </Button>
+
+<script>
+  // Track CTA button clicks in GTM dataLayer
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    const ctaButton = target.closest("[data-cta-type]");
+    if (ctaButton) {
+      const ctaType = ctaButton.getAttribute("data-cta-type");
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: ctaType,
+          element_text: ctaButton.textContent?.trim() || "Unknown",
+        });
+      }
+    }
+  });
+</script>

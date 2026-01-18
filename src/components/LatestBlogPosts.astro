@@ -63,7 +63,10 @@ function calculateReadingTime(content: string): number {
                                     {post.data.image ? (
                                         <Image
                                             src={post.data.image}
-                                            alt={post.data.title}
+                                            alt={
+                                                post.data.imageAlt ||
+                                                `${post.data.title} - electrical guide by Solomon Electric Miami`
+                                            }
                                             width={600}
                                             height={338}
                                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[var(--transition-slow)]"

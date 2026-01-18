@@ -147,6 +147,10 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 <Layout
     title={`${service.data.name} Miami | 24/7 Licensed Electrician | Solomon Electric`}
     description={`Professional ${service.data.name.toLowerCase()} in Miami-Dade & Broward. Licensed #EC13012419, 24/7 emergency service, free estimates. Call (786) 833-9211 for same-day appointments!`}
+    ogImage={service.data.image
+        ? `${siteUrl}${typeof service.data.image === "string" ? service.data.image : service.data.image.src}`
+        : `${siteUrl}/og-default.jpg`}
+    ogImageAlt={`Professional ${service.data.name} by Solomon Electric - Licensed Miami Electricians`}
 >
     <!-- Service Schema Markup -->
     <script
@@ -575,7 +579,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 <p class="section-description">
                     Solomon Electric provides {service.data.name.toLowerCase()} for
                     residential and commercial customers across Miami-Dade and Broward
-                    counties. Select your city to see local projects and FAQs.
+                    counties. Click your city to see local pricing, projects, and
+                    FAQs.
                 </p>
             </header>
 
@@ -583,7 +588,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 {
                     sortedAreas.map((area, index) => (
                         <a
-                            href={`/service-areas/${area.data.slug}`}
+                            href={`/services/${service.id}/${area.id}`}
                             class="area-link-card glass-bg glass-border"
                             style={`--delay: ${index * 0.05}s`}
                         >
@@ -595,12 +600,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
             </div>
 
             <div class="all-areas-cta">
-                <a
-                    href="/service-areas"
-                    class="text-accent hover:text-white transition-colors flex items-center justify-center gap-2 font-medium"
-                >
-                    View All 27+ Service Areas <ArrowRight class="w-4 h-4" />
-                </a>
+                <p class="text-center text-white/80 mb-4">
+                    Available in all 27 South Florida cities
+                </p>
             </div>
         </Container>
     </section>
@@ -1414,6 +1416,93 @@ const breadcrumbSchema = generateBreadcrumbSchema(
         color: var(--text-body);
         line-height: 1.8;
         margin: 0;
+    }
+
+    /* =========================================
+       SERVICE AREAS SECTION
+       ========================================= */
+    .service-areas-section {
+        background: linear-gradient(
+            180deg,
+            var(--bg-body) 0%,
+            var(--bg-surface) 100%
+        );
+        padding: clamp(4rem, 8vw, 6rem) 0;
+    }
+
+    .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .area-link-card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: clamp(0.875rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
+        background: var(--bg-surface);
+        border: 1px solid var(--border-light);
+        text-decoration: none;
+        overflow: hidden;
+        transition: all var(--transition-base);
+        animation: fadeInUp 0.4s ease-out backwards;
+        animation-delay: var(--delay);
+        clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    }
+
+    .area-link-card:hover {
+        border-color: var(--color-accent);
+        background: linear-gradient(
+            135deg,
+            rgba(20, 211, 227, 0.08) 0%,
+            var(--bg-surface) 100%
+        );
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(20, 211, 227, 0.15);
+    }
+
+    .area-name {
+        font-size: clamp(0.85rem, 1vw, 0.9375rem);
+        font-weight: 600;
+        color: var(--color-primary);
+        transition: color var(--transition-fast);
+    }
+
+    .area-link-card:hover .area-name {
+        color: var(--color-accent);
+    }
+
+    .area-arrow {
+        width: 1rem;
+        height: 1rem;
+        color: var(--text-muted);
+        transition: all var(--transition-fast);
+        flex-shrink: 0;
+    }
+
+    .area-link-card:hover .area-arrow {
+        color: var(--color-accent);
+        transform: translateX(4px);
+    }
+
+    .all-areas-cta {
+        text-align: center;
+        margin-top: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    @media (max-width: 768px) {
+        .areas-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+    }
+
+    @media (max-width: 480px) {
+        .areas-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     /* =========================================

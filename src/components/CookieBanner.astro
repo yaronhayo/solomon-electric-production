@@ -29,7 +29,7 @@
             <button id="reject-cookies" class="cookie-btn cookie-btn-secondary">
                 Reject
             </button>
-            <a href="/privacy-policy" class="cookie-link font-secondary"
+            <a href="/privacy" class="cookie-link font-secondary"
                 >Privacy Policy</a
             >
         </div>
@@ -170,7 +170,7 @@
 
 <script>
     // Check if user has already made a choice
-    const cookieConsent = localStorage.getItem("cookieConsent");
+    const cookieConsent = localStorage.getItem("cookie-consent");
 
     if (!cookieConsent) {
         // Show banner if no consent stored
@@ -185,14 +185,22 @@
 
     // Accept button
     document.getElementById("accept-cookies")?.addEventListener("click", () => {
-        localStorage.setItem("cookieConsent", "accepted");
+        localStorage.setItem("cookie-consent", "accepted");
+        localStorage.setItem(
+            "cookie-consent-timestamp",
+            new Date().toISOString(),
+        );
         hideBanner();
         loadAnalytics();
     });
 
     // Reject button
     document.getElementById("reject-cookies")?.addEventListener("click", () => {
-        localStorage.setItem("cookieConsent", "rejected");
+        localStorage.setItem("cookie-consent", "rejected");
+        localStorage.setItem(
+            "cookie-consent-timestamp",
+            new Date().toISOString(),
+        );
         hideBanner();
     });
 
@@ -213,6 +221,9 @@
             (window as any).dataLayer.push({
                 event: "cookie_consent_given",
                 consent_type: "analytics",
+                consent_timestamp: localStorage.getItem(
+                    "cookie-consent-timestamp",
+                ),
             });
         }
     }

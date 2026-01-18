@@ -79,28 +79,28 @@
     ],
     "faqs": [
         {
-            "question": "What electrical services do you offer in Pembroke Pines?",
-            "answer": "We provide comprehensive electrical services throughout Pembroke Pines including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Pembroke Pines neighborhoods."
+            "question": "We just bought a house in Pembroke Falls—the original owner never upgraded anything. Where do we start?",
+            "answer": "Many Pembroke Falls, Chapel Trail, and Pembroke Isles homes were built in the 1990s-2000s with 150-amp or 200-amp panels that are now 20-30 years old. We recommend starting with a full electrical safety inspection to identify immediate concerns, then prioritizing upgrades based on your needs. Common first projects include panel inspection, adding GFCI outlets where missing, and assessing capacity for EV chargers or pool equipment you may want to add."
         },
         {
-            "question": "Are your electricians licensed to work in Pembroke Pines?",
-            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Broward County permits for electrical work in Pembroke Pines, ensuring your project passes inspection and meets current NEC code requirements."
+            "question": "Do I need HOA approval for electrical work in my Pembroke Pines community?",
+            "answer": "Most interior electrical work doesn't require HOA approval, but anything visible from outside—outdoor lighting, EV charger installations, generator placement—often does. We're familiar with the HOA requirements in Silver Lakes, Pembroke Isles, Chapel Trail, and other Pines communities. We'll advise you on what needs approval and can provide documentation your HOA may request as part of their review process."
         },
         {
-            "question": "How do I know if my Pembroke Pines home needs a panel upgrade?",
-            "answer": "Many Pembroke Pines homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Pembroke Pines."
+            "question": "My parents live in Century Village—do you work with senior residents?",
+            "answer": "Absolutely. We serve many residents in Century Village and understand the unique considerations: fixed incomes requiring transparent service standards, accessibility considerations during work, and the specific electrical challenges of these multi-unit communities. We're patient, thorough, and happy to explain everything clearly. We also coordinate with building management when required for Century Village electrical work."
         },
         {
-            "question": "Do you offer 24/7 emergency electrical service in Pembroke Pines?",
-            "answer": "Yes! We provide round-the-clock emergency electrical service to all Pembroke Pines neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+            "question": "Can you add an EV charger to my Pembroke Pines home without upgrading the panel?",
+            "answer": "It depends on your current panel capacity and existing loads. Many Pembroke Pines homes built after 2000 have 200-amp service that can accommodate an EV charger without upgrades. Older homes or those with pools, hot tubs, or multiple AC units may need a load calculation to determine if you have room. We assess this during our free site evaluation and give you honest options—we won't sell you a panel upgrade unless you truly need it."
         },
         {
-            "question": "Can you help with smart home upgrades in Pembroke Pines?",
-            "answer": "Absolutely. We specialize in modernizing Pembroke Pines homes with smart switches, thermostats, lighting controls, and integrated automation systems that work seamlessly with your lifestyle."
+            "question": "Why do summer thunderstorms affect my Pembroke Pines home's electronics?",
+            "answer": "Western Broward gets more lightning strikes than almost anywhere in the country. Each strike on nearby power infrastructure sends voltage spikes through FPL lines into your home. These surges damage sensitive electronics over time—computers, smart TVs, gaming systems, smart home devices. Whole-home surge protection at your panel catches these spikes before they reach your devices. It's one of the most valuable upgrades for any Pembroke Pines home."
         },
         {
-            "question": "Do you offer emergency electrical repairs in Silver Lakes or Chapel Trail?",
-            "answer": "Yes, we provide 24/7 emergency electrical service to all communities in Pembroke Pines, from the eastern residential areas to the western master-planned developments."
+            "question": "How quickly can you respond to emergencies in western Pembroke Pines?",
+            "answer": "We maintain coverage throughout Broward County to assist with electrical requirements in Pembroke Pines. For situation-specific emergencies—such as sparking or burning smells—we prioritize the allocation of technical resources."
         }
     ],
     "seoContent": [
@@ -114,11 +114,11 @@
         },
         {
             "heading": "Comprehensive Electrical Services for Your Pembroke Pines Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Pembroke Pines. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Pembroke Pines. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
         },
         {
             "heading": "Excellence in Electrical Service for Western Broward",
-            "body": "Whether you're upgrading your lighting in Pembroke Falls, installing a new EV charger in Silver Lakes, or needing an emergency repair in Century Village, our team is ready to assist. We understand the specific needs of Pembroke Pines properties and provide upfront pricing, clean workmanship, and a dedication to safety that our neighbors have trusted for 15 years."
+            "body": "Whether you're upgrading your lighting in Pembroke Falls, installing a new EV charger in Silver Lakes, or needing an emergency repair in Century Village, our team is ready to assist. We understand the specific needs of Pembroke Pines properties and provide professional service, clean workmanship, and a dedication to safety that our neighbors have trusted for 15 years."
         }
     ]
 }

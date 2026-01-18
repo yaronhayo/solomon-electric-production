@@ -202,8 +202,8 @@
   h1,
   h2 {
     @apply font-display text-primary uppercase;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
   }
 
   h3,
@@ -211,8 +211,8 @@
   h5,
   h6 {
     @apply font-secondary text-primary uppercase;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
   }
 
   /* Fluid Typography with clamp() for perfect scaling */
@@ -220,14 +220,14 @@
     font-size: clamp(2.25rem, 4vw + 0.5rem, 4rem);
     font-weight: 700;
     margin-bottom: clamp(1rem, 2vw, 2rem);
-    letter-spacing: -0.03em;
+    letter-spacing: 0.04em;
   }
 
   h2 {
     font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
     font-weight: 600;
     margin-bottom: clamp(0.875rem, 1.5vw, 1.75rem);
-    letter-spacing: -0.025em;
+    letter-spacing: 0.03em;
   }
 
   h3 {
@@ -389,6 +389,26 @@ html {
 /* Hide focus ring for mouse users */
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+/* Skip to content link - accessible navigation */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
 }
 
 /* Selection styling */

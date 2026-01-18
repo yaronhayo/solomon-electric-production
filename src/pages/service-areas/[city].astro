@@ -153,7 +153,12 @@ const breadcrumbSchema = {
 };
 ---
 
-<Layout title={title} description={description}>
+<Layout
+    title={title}
+    description={description}
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    ogImageAlt={`Solomon Electric - Professional Electrician serving ${cityData.name}, Florida`}
+>
     <script
         type="application/ld+json"
         set:html={JSON.stringify(localBusinessSchema)}
@@ -520,13 +525,19 @@ const breadcrumbSchema = {
                         >{cityData.name}</span
                     >
                 </h2>
+                <p class="section-description">
+                    Professional electrical solutions tailored for {
+                        cityData.name
+                    } homes and businesses. Click any service to see local pricing,
+                    projects, and city-specific details.
+                </p>
             </header>
 
             <div class="services-grid">
                 {
                     sortedServices.map((svc, index) => (
                         <a
-                            href={`/services/${svc.id}`}
+                            href={`/services/${svc.id}/${cityData.slug}`}
                             class="service-card"
                             style={`--delay: ${index * 0.05}s`}
                         >
@@ -551,7 +562,7 @@ const breadcrumbSchema = {
                                     {svc.data.description}
                                 </p>
                                 <span class="service-link">
-                                    View Details
+                                    View in {cityData.name}
                                     <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </span>
                             </div>
@@ -561,10 +572,11 @@ const breadcrumbSchema = {
             </div>
 
             <div class="section-cta">
-                <Button href="/services" size="lg" class="gap-2">
-                    <Grid class="w-5 h-5" />
-                    View Full Service Menu
-                </Button>
+                <p class="text-center text-white/80 mb-4">
+                    All {sortedServices.length} services available in {
+                        cityData.name
+                    }
+                </p>
             </div>
         </Container>
     </section>

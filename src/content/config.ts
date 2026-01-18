@@ -16,6 +16,7 @@ const blog = defineCollection({
         description: z.string(),
         pubDate: z.date(),
         image: image().optional(),
+        imageAlt: z.string().optional(),
         icon: z.string().optional(), // Keeping icon as string path for now or separate handling
         tags: z.array(z.string()).optional(),
         category: z.string(),

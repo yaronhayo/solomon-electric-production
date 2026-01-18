@@ -36,6 +36,34 @@ const breadcrumbSchema = {
         },
     ],
 };
+
+// Collection Page schema for blog index
+const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE_CONFIG.seo.siteUrl}/blog/#webpage`,
+    name: "Electrical Blog | Tips & Guides",
+    description: "Expert electrical advice from licensed Miami electricians",
+    url: `${SITE_CONFIG.seo.siteUrl}/blog`,
+    isPartOf: { "@id": `${SITE_CONFIG.seo.siteUrl}/#website` },
+    mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: posts.length,
+        itemListElement: posts.map((post, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+                "@type": "Article",
+                "@id": `${SITE_CONFIG.seo.siteUrl}/blog/${post.slug}/#article`,
+                headline: post.data.title,
+                description: post.data.description,
+                url: `${SITE_CONFIG.seo.siteUrl}/blog/${post.slug}`,
+                datePublished: post.data.pubDate.toISOString(),
+                author: { "@id": `${SITE_CONFIG.seo.siteUrl}/#organization` },
+            },
+        })),
+    },
+};
 ---
 
 <Layout
@@ -46,6 +74,10 @@ const breadcrumbSchema = {
     <script
         type="application/ld+json"
         set:html={JSON.stringify(breadcrumbSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(collectionPageSchema)}
     />
     <!-- Breadcrumb Navigation -->
     <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />

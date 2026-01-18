@@ -28,7 +28,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // Configuration
 // Use Domain property format (sc-domain:) as detected from Search Console
 const SITE_URL = 'sc-domain:247electricianmiami.com';
-const SITEMAP_URL = 'https://247electricianmiami.com/sitemap-index.xml';
+const SITEMAP_URL = 'https://www.247electricianmiami.com/sitemap-index.xml';
 
 /**
  * Load Google Service Account credentials

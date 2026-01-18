@@ -89,6 +89,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 <Layout
     title="Contact Solomon Electric | 24/7 Miami Electrician | (786) 833-9211"
     description="Need an electrician? Call (786) 833-9211 for 24/7 emergency service in Miami-Dade & Broward. Free estimates, same-day appointments. Licensed & insured."
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    ogImageAlt="Contact Solomon Electric - 24/7 Emergency Electrical Service in Miami"
     topBarDark={true}
 >
     <!-- ContactPage Schema Markup -->
@@ -427,6 +429,25 @@ const breadcrumbSchema = generateBreadcrumbSchema(
     </section>
 
     <script>
+        // Load Google reCAPTCHA v3 Script dynamically
+        const loadRecaptcha = () => {
+            if (document.getElementById("recaptcha-script")) return;
+            const script = document.createElement("script");
+            script.id = "recaptcha-script";
+            script.src =
+                "https://www.google.com/recaptcha/api.js?render=6LeDDjUsAAAAAEJquohduwPouri3rOne3ahYp765";
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+        };
+
+        // Initialize on interaction
+        ["focusin", "touchstart", "mouseover"].forEach((event) => {
+            document
+                .getElementById("contact-form")
+                ?.addEventListener(event, loadRecaptcha, { once: true });
+        });
+
         const form = document.getElementById("contact-form") as HTMLFormElement;
         const statusDiv = document.getElementById("form-status");
         const submitBtn = document.getElementById(
@@ -442,32 +463,121 @@ const breadcrumbSchema = generateBreadcrumbSchema(
             submitBtn.textContent = "Sending...";
             statusDiv.classList.add("hidden");
             statusDiv.className =
-                "hidden text-center p-4 rounded-lg font-bold mt-4"; // Reset classes
-
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+                "hidden text-center p-4 rounded-lg font-bold mt-4";
 
             try {
-                // Submit to PHP backend (SMTP2GO integration)
+                // reCAPTCHA verification
+                let recaptchaVerified = false;
+                let recaptchaToken = "";
+                const grecaptcha = (window as any).grecaptcha;
+
+                if (grecaptcha) {
+                    await new Promise((resolve) => grecaptcha.ready(resolve));
+                    recaptchaToken = await grecaptcha.execute(
+                        "6LeDDjUsAAAAAEJquohduwPouri3rOne3ahYp765",
+                        { action: "submit" },
+                    );
+                    recaptchaVerified = true;
+                }
+
+                // Collect tracking data
+                const trackingData = {
+                    sessionStart:
+                        sessionStorage.getItem("sessionStart") ||
+                        new Date().toISOString(),
+                    timeOnSite: Math.round(
+                        (Date.now() -
+                            parseInt(
+                                sessionStorage.getItem("sessionStart") ||
+                                    Date.now().toString(),
+                            )) /
+                            1000,
+                    ),
+                    currentUrl: window.location.href,
+                    referrer: document.referrer || "Direct",
+                    clickPath:
+                        sessionStorage.getItem("clickPath") ||
+                        window.location.pathname,
+                    deviceType: /Mobile|Android|iPhone/i.test(
+                        navigator.userAgent,
+                    )
+                        ? "Mobile"
+                        : "Desktop",
+                    cookiesAccepted:
+                        localStorage.getItem("cookie-consent") === "accepted",
+                    consentTimestamp:
+                        localStorage.getItem("cookie-consent-timestamp") ||
+                        "N/A",
+                    recaptchaVerified,
+                    utmSource:
+                        new URLSearchParams(window.location.search).get(
+                            "utm_source",
+                        ) ||
+                        sessionStorage.getItem("utm_source") ||
+                        "N/A",
+                    utmMedium:
+                        new URLSearchParams(window.location.search).get(
+                            "utm_medium",
+                        ) ||
+                        sessionStorage.getItem("utm_medium") ||
+                        "N/A",
+                    utmCampaign:
+                        new URLSearchParams(window.location.search).get(
+                            "utm_campaign",
+                        ) ||
+                        sessionStorage.getItem("utm_campaign") ||
+                        "N/A",
+                    gclid:
+                        new URLSearchParams(window.location.search).get(
+                            "gclid",
+                        ) ||
+                        sessionStorage.getItem("gclid") ||
+                        null,
+                    trafficSource:
+                        new URLSearchParams(window.location.search).get(
+                            "gclid",
+                        ) || sessionStorage.getItem("gclid")
+                            ? "Google Ads"
+                            : document.referrer.includes("google.com")
+                              ? "Google Organic"
+                              : "Direct",
+                };
+
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                // Merge data
+                const payload = {
+                    ...data,
+                    "g-recaptcha-response": recaptchaToken,
+                };
+
+                // Add tracking data with prefix
+                Object.keys(trackingData).forEach((key) => {
+                    (payload as any)[`tracking_${key}`] = (trackingData as any)[
+                        key
+                    ];
+                });
+
                 const response = await fetch("/api/contact.php", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data),
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
                 });
                 const result = await response.json();
 
-                statusDiv.classList.remove("hidden");
                 if (response.ok && result.status === "success") {
-                    statusDiv.classList.add(
-                        "bg-green-500/10",
-                        "text-green-600",
-                        "border",
-                        "border-green-500/20",
-                    );
-                    statusDiv.textContent = result.message;
-                    form.reset();
+                    if (
+                        typeof window !== "undefined" &&
+                        (window as any).dataLayer
+                    ) {
+                        (window as any).dataLayer.push({
+                            event: "form_submission",
+                            form_type: "contact_form",
+                        });
+                    }
+                    sessionStorage.setItem("formSubmitted", "true");
+                    window.location.href = "/thank-you";
                 } else {
                     throw new Error(result.message || "Failed to send message");
                 }
@@ -482,7 +592,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 statusDiv.textContent =
                     error instanceof Error
                         ? error.message
-                        : "Something went wrong. Please try again or call us.";
+                        : "Something went wrong. Please try again.";
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = "Send Message";

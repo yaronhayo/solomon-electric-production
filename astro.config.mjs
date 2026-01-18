@@ -13,7 +13,7 @@ import icon from 'astro-icon';
 // https://astro.build/config
 // Configured for static output (Hostinger deployment)
 export default defineConfig({
-  site: 'https://247electricianmiami.com',
+  site: 'https://www.247electricianmiami.com',
   output: 'static',
   build: {
     // Output to dist folder for Hostinger upload
@@ -42,7 +42,12 @@ export default defineConfig({
       // Note: priority and changefreq are NOT included as Google ignores them
       // See: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
       serialize(item) {
-        // Return clean sitemap entries - Astro handles lastmod from file dates
+        // Add lastmod for service+location pages (freshness signal)
+        // Pattern: /services/{service}/{city}/
+        const urlParts = item.url.split('/');
+        if (urlParts.includes('services') && urlParts.length >= 6) {
+          item.lastmod = new Date().toISOString();
+        }
         return item;
       }
     })

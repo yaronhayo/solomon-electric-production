@@ -54,7 +54,7 @@
     {
       "step": 1,
       "title": "Scheduling",
-      "description": "We offer flexible scheduling including same-day and next-day availability for time-sensitive transactions."
+      "description": "We offer flexible scheduling for time-sensitive transactions."
     },
     {
       "step": 2,
@@ -125,11 +125,11 @@
     },
     {
       "question": "How quickly can you inspect?",
-      "answer": "We offer same-day and next-day scheduling for urgent transactions. Standard scheduling is usually within 2-3 business days. For large or complex properties, additional lead time helps us allocate appropriate resources."
+      "answer": "We offer flexible scheduling for urgent transactions. Standard scheduling is usually within a few business days. For large or complex properties, additional lead time helps us allocate appropriate resources."
     },
     {
       "question": "How soon do we get the report?",
-      "answer": "Standard turnaround is 24-48 hours. For urgent transactions, we can expedite to same-day in many cases. Let us know your deadline and we'll work to meet it."
+      "answer": "Reports are provided following the inspection. For urgent transactions, we can prioritize report delivery. Let us know your deadline and we'll work to meet it."
     },
     {
       "question": "Do you provide repair estimates?",

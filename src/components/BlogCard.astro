@@ -20,7 +20,10 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
             >
                 <Image
                     src={post.data.image}
-                    alt={post.data.title}
+                    alt={
+                        post.data.imageAlt ||
+                        `${post.data.title} - electrical tips from Solomon Electric Miami`
+                    }
                     width={600}
                     height={338}
                     loading="lazy"

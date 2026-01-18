@@ -78,28 +78,28 @@
     ],
     "faqs": [
         {
-            "question": "What electrical services do you offer in Jupiter?",
-            "answer": "We provide comprehensive electrical services throughout Jupiter including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Jupiter neighborhoods."
+            "question": "We have 5 acres in Jupiter Farms—can you handle the whole property?",
+            "answer": "Absolutely. Jupiter Farms properties often have multiple structures requiring coordinated electrical: main homes, guest houses, workshops, horse barns, and extensive landscape lighting. We design systems with proper sub-panels for each structure, underground runs between buildings, and generators sized to handle the full load when needed. Properties on well water need special consideration for pump backup."
         },
         {
-            "question": "Are your electricians licensed to work in Jupiter?",
-            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Palm Beach County permits for electrical work in Jupiter, ensuring your project passes inspection and meets current NEC code requirements."
+            "question": "Do you work in Admiral's Cove and other waterfront communities?",
+            "answer": "Yes, Jupiter's premier waterfront estates are a significant part of our luxury residential work. Admiral's Cove, The Bluffs, and Loxahatchee River properties require high-capacity electrical systems (often 400+ amps), marine-grade outdoor components, dock and seawall power, and integration with sophisticated automation systems. We understand the quality expectations in these communities."
         },
         {
-            "question": "How do I know if my Jupiter home needs a panel upgrade?",
-            "answer": "Many Jupiter homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Jupiter."
+            "question": "What's involved in installing dock power on the Loxahatchee River?",
+            "answer": "Loxahatchee waterfront properties need dock electrical that meets NEC Article 555 marina safety requirements. We install properly rated dock pedestals, shore power connections, boat lift circuits, underwater lighting, and all with GFCI protection and corrosion-resistant components. Salt exposure is less intense than oceanfront, but proper materials still matter for longevity."
         },
         {
-            "question": "Do you offer 24/7 emergency electrical service in Jupiter?",
-            "answer": "Yes! We provide round-the-clock emergency electrical service to all Jupiter neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+            "question": "Do you serve businesses in Abacoa Town Center?",
+            "answer": "Yes, we provide commercial electrical services in Abacoa and throughout Jupiter's business areas. Services include tenant buildouts, restaurant electrical, retail lighting, and 24/7 emergency response. We understand that Jupiter businesses have high standards and can't afford extended electrical downtime."
         },
         {
-            "question": "Do you offer electrical services for homes in Jupiter Farms?",
-            "answer": "Yes, we are experts in the unique electrical needs of Jupiter Farms properties, including outbuilding power, large-scale site lighting, and backup generator systems."
+            "question": "Jupiter Farms has frequent power outages—should we install a generator?",
+            "answer": "Generator installation is very common for Jupiter Farms properties. The area's rural nature and extensive tree cover mean outages happen more frequently and last longer than in urban areas. For properties on well water, generators are nearly essential—when power goes out, so does your water. We size generators to handle well pumps, AC, and essential circuits."
         },
         {
-            "question": "Can you handle high-end electrical projects in Admiral's Cove?",
-            "answer": "Absolutely. We specialize in luxury estate electrical work, providing high-capacity service and sophisticated lighting design for Jupiter's premier waterfront communities."
+            "question": "How quickly can you respond to emergencies in Jupiter?",
+            "answer": "We provide electrical services to the Jupiter area as part of our northern Palm Beach County coverage. For urgent requirements, we allocate technical resources based on the specific safety needs of the property."
         }
     ],
     "seoContent": [
@@ -113,11 +113,11 @@
         },
         {
             "heading": "Comprehensive Electrical Services for Your Jupiter Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Jupiter. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Jupiter. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
         },
         {
             "heading": "Reliable Electrical Care for the Jupiter Community",
-            "body": "Whether you're modernizing a beach house in The Bluffs, upgrading a professional office in Abacoa Town Center, or needing storm-ready protection in Jupiter Farms, our team is ready to serve. we provide upfront pricing, clean workmanship, and a dedication to safety that has been our hallmark for 15 years."
+            "body": "Whether you're modernizing a beach house in The Bluffs, upgrading a professional office in Abacoa Town Center, or needing storm-ready protection in Jupiter Farms, our team is ready to serve. we provide professional service, clean workmanship, and a dedication to safety that has been our hallmark for 15 years."
         }
     ]
 }

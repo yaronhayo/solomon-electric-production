@@ -225,6 +225,7 @@ export function generateServiceLocationSchema(
                 "@id": `${siteUrl}/services/${service.slug}/${city.slug}/#service`,
                 "name": `${service.name} in ${city.name}, FL`,
                 "description": service.description,
+                "serviceType": service.category,
                 "provider": {
                     "@id": `${siteUrl}/#organization`
                 },
@@ -237,12 +238,30 @@ export function generateServiceLocationSchema(
                         "alternateName": "FL"
                     }
                 },
-                "serviceType": service.category,
+                "url": `${siteUrl}/services/${service.slug}/${city.slug}`,
+                "image": `${siteUrl}/og-default.jpg`,
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "USD",
+                    "priceRange": "$$"
+                },
                 "availableChannel": {
                     "@type": "ServiceChannel",
                     "serviceUrl": `${siteUrl}/services/${service.slug}/${city.slug}`,
                     "servicePhone": SITE_CONFIG.contact.phone.formatted,
-                    "availableLanguage": ["English", "Spanish"]
+                    "availableLanguage": ["English", "Spanish"],
+                    ...(city.coordinates && {
+                        "serviceLocation": {
+                            "@type": "Place",
+                            "name": city.name,
+                            "geo": {
+                                "@type": "GeoCoordinates",
+                                "latitude": city.coordinates.lat,
+                                "longitude": city.coordinates.lng
+                            }
+                        }
+                    })
                 }
             },
             {

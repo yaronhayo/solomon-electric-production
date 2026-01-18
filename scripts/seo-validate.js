@@ -33,12 +33,32 @@ const SEO_REQUIREMENTS = {
   minDescriptionLength: 120,
   maxDescriptionLength: 160,
   minContentWords: 300,
-  maxH1Count: 1
+  maxH1Count: 1,
+  prohibitedTerms: [
+    { regex: /\b(60-minute|same-day|1-hour|within the hour|fastest response)\b/gi, message: "Response time mention prohibited" },
+    { regex: /\b(Call now|Book now|Call today|Click here)\b/gi, message: "Direct CTA prohibited" },
+    { regex: /\b(\$\d+|USD|dollars|save money|starting at)\b/gi, message: "Pricing mention prohibited" },
+    { regex: /\b(John|Jane|Mike|David|Sarah|Robert)\b/g, message: "Potential staff name found (Verify isolation)" }
+  ]
 };
 
 // ============================================
 // Validators
 // ============================================
+
+function checkProhibitedContent(file, content, issues) {
+  const contentString = typeof content === 'string' ? content : JSON.stringify(content);
+  SEO_REQUIREMENTS.prohibitedTerms.forEach(term => {
+    const match = contentString.match(term.regex);
+    if (match) {
+      issues.push({
+        file,
+        type: 'error',
+        message: `${term.message}: "${match[0]}"`
+      });
+    }
+  });
+}
 
 function validateServiceFiles() {
   const issues = [];
@@ -131,14 +151,8 @@ function validateServiceFiles() {
       });
     }
     
-    // Check SEO content sections
-    if (!data.seoContent || data.seoContent.length === 0) {
-      issues.push({
-        file: `services/${file}`,
-        type: 'warning',
-        message: 'No SEO content sections'
-      });
-    }
+    // Check for prohibited content
+    checkProhibitedContent(`services/${file}`, data, issues);
   }
   
   return issues;
@@ -212,6 +226,9 @@ function validateServiceAreaFiles() {
         message: `Only ${data.faqs?.length || 0} FAQs`
       });
     }
+
+    // Check for prohibited content
+    checkProhibitedContent(`service-areas/${file}`, data, issues);
   }
   
   return issues;

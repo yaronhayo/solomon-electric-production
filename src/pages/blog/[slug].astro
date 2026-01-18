@@ -4,10 +4,12 @@ import { getCollection } from "astro:content";
 export const prerender = true;
 
 import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/ui/Container.astro";
 import { Image } from "astro:assets";
 import SocialShare from "../../components/SocialShare.astro";
 import BlogCard from "../../components/BlogCard.astro";
 import Button from "../../components/ui/Button.astro";
+import CtaButton from "../../components/ui/CtaButton.astro";
 import {
     formatDate,
     calculateReadingTime,
@@ -20,6 +22,18 @@ import {
 } from "../../utils/seo";
 import { SITE_CONFIG } from "../../config/site";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import {
+    Calendar,
+    Clock,
+    User,
+    ArrowRight,
+    Zap,
+    Phone,
+    ChevronDown,
+    Share2,
+    CheckCircle,
+    MessageCircle,
+} from "lucide-astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -32,14 +46,10 @@ export async function getStaticPaths() {
 const post = Astro.props;
 const { Content } = await post.render();
 
-// Get all posts for related posts
 const allPosts = await getCollection("blog");
 const relatedPosts = findRelatedPosts(post, allPosts, 3);
-
-// Calculate reading time
 const readingTime = calculateReadingTime(post.body);
 
-// SEO Schema
 const siteUrl = SITE_CONFIG.seo.siteUrl;
 const articleSchema = generateArticleSchema(post, siteUrl);
 const breadcrumbSchema = generateBreadcrumbSchema(
@@ -53,18 +63,16 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
 const currentUrl = `${siteUrl}/blog/${post.slug}`;
 
-// Get the image URL for OG tags
 const getOgImageUrl = () => {
     if (!post.data.image) return undefined;
-    // For Astro Image imports, we need the src property
     const imageSrc =
         typeof post.data.image === "string"
             ? post.data.image
             : post.data.image.src;
-    // Make it an absolute URL
     return imageSrc.startsWith("http") ? imageSrc : `${siteUrl}${imageSrc}`;
 };
 const ogImageUrl = getOgImageUrl();
+const faqs = post.data.faqs || [];
 ---
 
 <Layout
@@ -73,7 +81,6 @@ const ogImageUrl = getOgImageUrl();
     ogImage={ogImageUrl}
     ogType="article"
 >
-    <!-- Structured Data -->
     <script
         type="application/ld+json"
         set:html={JSON.stringify(articleSchema)}
@@ -83,15 +90,14 @@ const ogImageUrl = getOgImageUrl();
         set:html={JSON.stringify(breadcrumbSchema)}
     />
     {
-        post.data.faqs && post.data.faqs.length > 0 && (
+        faqs.length > 0 && (
             <script
                 type="application/ld+json"
-                set:html={JSON.stringify(generateFAQSchema(post.data.faqs))}
+                set:html={JSON.stringify(generateFAQSchema(faqs))}
             />
         )
     }
 
-    <!-- SEO Meta Tags -->
     <meta slot="head" property="og:title" content={post.data.title} />
     <meta
         slot="head"
@@ -100,6 +106,22 @@ const ogImageUrl = getOgImageUrl();
     />
     <meta slot="head" property="og:type" content="article" />
     <meta slot="head" property="og:url" content={currentUrl} />
+    {
+        ogImageUrl && (
+            <meta slot="head" property="og:image" content={ogImageUrl} />
+        )
+    }
+    {
+        ogImageUrl && (
+            <meta
+                slot="head"
+                property="og:image:alt"
+                content={post.data.imageAlt || post.data.title}
+            />
+        )
+    }
+    <meta slot="head" property="og:site_name" content="Solomon Electric" />
+    <meta slot="head" property="og:locale" content="en_US" />
     <meta
         slot="head"
         property="article:published_time"
@@ -114,15 +136,44 @@ const ogImageUrl = getOgImageUrl();
             />
         )
     }
+    <meta
+        slot="head"
+        property="article:author"
+        content={post.data.author || "Solomon Electric Team"}
+    />
+    <meta slot="head" property="article:section" content={post.data.category} />
+    {
+        post.data.tags &&
+            post.data.tags.map((tag: string) => (
+                <meta slot="head" property="article:tag" content={tag} />
+            ))
+    }
+
+    <!-- Twitter Card Meta Tags -->
     <meta slot="head" name="twitter:card" content="summary_large_image" />
+    <meta slot="head" name="twitter:site" content="@solomonelectric" />
+    <meta slot="head" name="twitter:creator" content="@solomonelectric" />
     <meta slot="head" name="twitter:title" content={post.data.title} />
     <meta
         slot="head"
         name="twitter:description"
         content={post.data.description}
     />
+    {
+        ogImageUrl && (
+            <meta slot="head" name="twitter:image" content={ogImageUrl} />
+        )
+    }
+    {
+        ogImageUrl && (
+            <meta
+                slot="head"
+                name="twitter:image:alt"
+                content={post.data.imageAlt || post.data.title}
+            />
+        )
+    }
 
-    <!-- Breadcrumb Navigation -->
     <Breadcrumb
         items={[
             { label: "Home", href: "/" },
@@ -131,212 +182,958 @@ const ogImageUrl = getOgImageUrl();
         ]}
     />
 
-    <!-- Hero Section -->
-    <section class="relative bg-primary py-20 md:py-32 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            {
-                post.data.image && (
-                    <Image
-                        src={post.data.image}
-                        alt={post.data.title}
-                        loading="eager"
-                        fetchpriority="high"
-                        class="w-full h-full object-cover opacity-20"
-                    />
-                )
-            }
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-primary/40"
-            >
-            </div>
-        </div>
-
-        <div class="container-custom relative z-10">
-            <div class="max-w-5xl mx-auto">
-                <!-- Category Badge -->
-                <div class="mb-6">
+    <!-- HERO -->
+    <header class="blog-hero">
+        <div class="blog-hero__bg"></div>
+        <Container>
+            <div class="blog-hero__inner">
+                <span class="blog-hero__category">{post.data.category}</span>
+                <h1 class="blog-hero__title">{post.data.title}</h1>
+                <p class="blog-hero__desc">{post.data.description}</p>
+                <div class="blog-hero__meta">
                     <span
-                        class="inline-block bg-accent/20 text-accent text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-accent/20"
+                        ><Calendar class="icon" />
+                        {formatDate(post.data.pubDate)}</span
                     >
-                        {post.data.category}
-                    </span>
-                </div>
-
-                <!-- Title -->
-                <h1
-                    class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 shadow-black drop-shadow-lg leading-tight uppercase"
-                >
-                    {post.data.title}
-                </h1>
-
-                <!-- Meta Info -->
-                <div
-                    class="flex flex-wrap items-center gap-4 md:gap-6 text-white/80 font-medium"
-                >
-                    <div class="flex items-center gap-2">
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                            ></path>
-                        </svg>
-                        <span>{formatDate(post.data.pubDate)}</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                            ></path>
-                        </svg>
-                        <span>{readingTime} min read</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                            ></path>
-                        </svg>
-                        <span>{post.data.author}</span>
-                    </div>
+                    <span><Clock class="icon" /> {readingTime} min read</span>
+                    <span><User class="icon" /> {post.data.author}</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </Container>
+    </header>
 
-    <!-- Article Content -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="container-custom">
-            <div class="max-w-5xl mx-auto">
-                <!-- Main Content -->
-                <article
-                    class="prose prose-lg mx-auto prose-headings:font-display prose-headings:font-black prose-headings:text-primary prose-headings:tracking-tight prose-p:text-[var(--text-body)] prose-p:leading-relaxed prose-li:text-[var(--text-body)] prose-strong:text-accent prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-accent prose-blockquote:bg-light prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:not-italic prose-blockquote:rounded-r-lg prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-12 prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-8 prose-h2:uppercase prose-h3:uppercase"
-                >
-                    <Content />
-                </article>
+    <!-- FEATURED IMAGE -->
+    {
+        post.data.image && (
+            <section class="blog-image">
+                <Container>
+                    <figure class="blog-image__figure">
+                        <Image
+                            src={post.data.image}
+                            alt={post.data.imageAlt || post.data.title}
+                            loading="eager"
+                            fetchpriority="high"
+                            class="blog-image__img"
+                        />
+                    </figure>
+                </Container>
+            </section>
+        )
+    }
 
-                <!-- Tags -->
-                {
-                    post.data.tags && post.data.tags.length > 0 && (
-                        <div class="mt-12 pt-8 border-t border-gray-100">
-                            <div class="flex flex-wrap items-center gap-3">
-                                <span class="text-primary font-bold uppercase tracking-widest text-sm">
-                                    Tags:
-                                </span>
-                                {post.data.tags.map((tag: string) => (
-                                    <span class="px-4 py-2 bg-light border border-gray-200 rounded-full text-sm text-[var(--text-body)] hover:border-accent hover:text-accent transition-all font-medium">
-                                        {tag}
-                                    </span>
-                                ))}
+    <!-- CONTENT -->
+    <main class="blog-main">
+        <Container>
+            <div class="blog-layout">
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <div class="blog-sidebar__sticky">
+                        <div class="blog-sidebar__card">
+                            <div class="blog-sidebar__cta">
+                                <Zap class="blog-sidebar__icon" />
+                                <p class="blog-sidebar__cta-title">
+                                    Need Electrical Help?
+                                </p>
+                                <p class="blog-sidebar__cta-text">
+                                    Expert electricians available 24/7
+                                </p>
+                                <Button
+                                    href="/book"
+                                    variant="primary"
+                                    size="sm"
+                                    class="blog-sidebar__btn"
+                                >
+                                    Get Free Quote
+                                </Button>
+                                <a
+                                    href={SITE_CONFIG.contact.phone.href}
+                                    class="blog-sidebar__phone"
+                                >
+                                    <Phone class="icon" />
+                                    {SITE_CONFIG.contact.phone.display}
+                                </a>
                             </div>
                         </div>
-                    )
-                }
-
-                <!-- Social Share -->
-                <SocialShare currentUrl={currentUrl} title={post.data.title} />
-
-                <!-- CTA -->
-                <div
-                    class="mt-16 bg-light border border-gray-100 rounded-2xl p-8 md:p-12 text-center shadow-sm"
-                >
-                    <h3
-                        class="text-2xl md:text-3xl font-black text-primary mb-4 uppercase"
-                    >
-                        Ready for Professional Electrical Service?
-                    </h3>
-                    <p class="text-[var(--text-body)] mb-6 font-medium">
-                        Get expert electrical solutions from Miami's trusted
-                        contractors. 24/7 emergency service available.
-                    </p>
-                    <div class="flex flex-col md:flex-row gap-4 justify-center">
-                        <Button
-                            href="/contact"
-                            variant="primary"
-                            class="px-10 py-4 text-lg flex items-center gap-2"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                class="w-5 h-5"
-                            >
-                                <path
-                                    d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"
-                                ></path>
-                                <path
-                                    d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"
-                                ></path>
-                            </svg>
-                            Schedule Service
-                        </Button>
-                        <Button
-                            href={SITE_CONFIG.contact.phone.href}
-                            variant="secondary"
-                            class="px-10 py-4 text-lg flex items-center gap-2"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                class="w-5 h-5"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            Call Now
-                        </Button>
+                        <div class="blog-sidebar__share">
+                            <p class="blog-sidebar__share-label">
+                                Share Article
+                            </p>
+                            <SocialShare
+                                currentUrl={currentUrl}
+                                title={post.data.title}
+                            />
+                        </div>
                     </div>
+                </aside>
+
+                <!-- Article -->
+                <article class="blog-article">
+                    <div class="blog-content">
+                        <Content />
+                    </div>
+
+                    <!-- Tags -->
+                    {
+                        post.data.tags && post.data.tags.length > 0 && (
+                            <div class="blog-tags">
+                                <span class="blog-tags__label">Topics:</span>
+                                {post.data.tags.map((tag: string) => (
+                                    <span class="blog-tags__tag">{tag}</span>
+                                ))}
+                            </div>
+                        )
+                    }
+                </article>
+            </div>
+        </Container>
+    </main>
+
+    <!-- FAQ SECTION -->
+    {
+        faqs.length > 0 && (
+            <section class="blog-faq">
+                <Container>
+                    <div class="blog-faq__inner">
+                        <div class="blog-faq__header">
+                            <MessageCircle class="blog-faq__header-icon" />
+                            <h2 class="blog-faq__title">
+                                Frequently Asked Questions
+                            </h2>
+                        </div>
+                        <div class="blog-faq__list" id="faq-accordion">
+                            {faqs.map(
+                                (
+                                    faq: { question: string; answer: string },
+                                    i: number,
+                                ) => (
+                                    <div class="faq-item" data-faq>
+                                        <button
+                                            class="faq-item__q"
+                                            aria-expanded="false"
+                                            data-faq-btn={i}
+                                        >
+                                            <span>{faq.question}</span>
+                                            <ChevronDown class="faq-item__chevron" />
+                                        </button>
+                                        <div
+                                            class="faq-item__a"
+                                            data-faq-answer={i}
+                                        >
+                                            <p>{faq.answer}</p>
+                                        </div>
+                                    </div>
+                                ),
+                            )}
+                        </div>
+                    </div>
+                </Container>
+            </section>
+        )
+    }
+
+    <!-- CTA SECTION -->
+    <section class="blog-cta">
+        <Container>
+            <div class="blog-cta__inner">
+                <div class="blog-cta__content">
+                    <h2 class="blog-cta__title">Ready to Get Started?</h2>
+                    <p class="blog-cta__text">
+                        Professional electrical services in Miami. Licensed,
+                        insured, and available 24/7.
+                    </p>
+                </div>
+                <div class="blog-cta__actions">
+                    <Button href="/book" variant="primary" size="lg">
+                        <Zap class="icon" /> Schedule Service
+                    </Button>
+                    <CtaButton
+                        action="call"
+                        variant="secondary"
+                        size="lg"
+                        text="Call Now"
+                    />
                 </div>
             </div>
-        </div>
+        </Container>
     </section>
 
-    <!-- Related Posts -->
+    <!-- RELATED POSTS -->
     {
         relatedPosts.length > 0 && (
-            <section class="py-16 md:py-20 bg-light border-t border-gray-200">
-                <div class="container-custom">
-                    <div class="mb-12">
-                        <h2 class="text-3xl md:text-4xl font-black text-primary mb-2 uppercase">
-                            Related <span class="text-accent">Articles</span>
-                        </h2>
-                        <p class="text-[var(--text-body)] font-medium">
-                            Continue learning about electrical services
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        {relatedPosts.map((relatedPost: any) => (
-                            <BlogCard post={relatedPost} />
+            <section class="blog-related">
+                <Container>
+                    <h2 class="blog-related__title">Related Articles</h2>
+                    <div class="blog-related__grid">
+                        {relatedPosts.map((p: any) => (
+                            <BlogCard post={p} />
                         ))}
                     </div>
-                </div>
+                    <div class="blog-related__more">
+                        <Button href="/blog" variant="secondary">
+                            View All Articles <ArrowRight class="icon" />
+                        </Button>
+                    </div>
+                </Container>
             </section>
         )
     }
 </Layout>
+
+<style>
+    /* =============================================
+   PREMIUM BLOG POST TEMPLATE
+   Clean, Modern, Professional Design
+============================================= */
+
+    :root {
+        --blog-max: 720px;
+        --blog-wide: 900px;
+        --radius: 12px;
+        --radius-lg: 20px;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ---------- HERO ---------- */
+    .blog-hero {
+        position: relative;
+        padding: 80px 0 60px;
+        overflow: hidden;
+    }
+
+    .blog-hero__bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            #0a3666 0%,
+            #0d4380 50%,
+            #125a9e 100%
+        );
+        z-index: 0;
+    }
+
+    .blog-hero__bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314D3E3' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .blog-hero__inner {
+        position: relative;
+        z-index: 1;
+        max-width: var(--blog-wide);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .blog-hero__category {
+        display: inline-block;
+        background: rgba(20, 211, 227, 0.15);
+        color: #14d3e3;
+        padding: 8px 20px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 24px;
+    }
+
+    .blog-hero__title {
+        color: #fff;
+        font-size: clamp(28px, 5vw, 48px);
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 0 0 20px;
+        font-family: var(--font-display);
+    }
+
+    .blog-hero__desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 650px;
+        margin: 0 auto 28px;
+    }
+
+    .blog-hero__meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+    }
+
+    .blog-hero__meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .blog-hero__meta .icon {
+        width: 16px;
+        height: 16px;
+        color: #14d3e3;
+    }
+
+    /* ---------- FEATURED IMAGE ---------- */
+    .blog-image {
+        position: relative;
+        margin-top: -40px;
+        padding-bottom: 48px;
+        background: #f8f9fa;
+    }
+
+    .blog-image__figure {
+        max-width: var(--blog-wide);
+        margin: 0 auto;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .blog-image__img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ---------- MAIN LAYOUT ---------- */
+    .blog-main {
+        background: #fff;
+        padding: 60px 0 80px;
+    }
+
+    .blog-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 60px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+        .blog-layout {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    .blog-sidebar {
+        order: 2;
+    }
+
+    @media (max-width: 1024px) {
+        .blog-sidebar {
+            order: -1;
+        }
+    }
+
+    .blog-sidebar__sticky {
+        position: sticky;
+        top: 140px;
+        padding-top: 20px;
+    }
+
+    .blog-sidebar__card {
+        background: linear-gradient(145deg, #0d4380 0%, #0a3a6e 100%);
+        border-radius: var(--radius-lg);
+        padding: 32px 28px;
+        margin-bottom: 20px;
+        color: #fff;
+        box-shadow: 0 8px 32px rgba(13, 67, 128, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blog-sidebar__card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle,
+            rgba(20, 211, 227, 0.15) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+    }
+
+    .blog-sidebar__cta {
+        position: relative;
+        z-index: 1;
+    }
+
+    .blog-sidebar__icon {
+        width: 48px;
+        height: 48px;
+        padding: 10px;
+        background: rgba(20, 211, 227, 0.25);
+        border-radius: 12px;
+        color: #14d3e3;
+        margin-bottom: 20px;
+        border: 1px solid rgba(20, 211, 227, 0.3);
+    }
+
+    .blog-sidebar__cta-title {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 8px;
+        font-family: var(--font-display);
+        color: #ffffff;
+    }
+
+    .blog-sidebar__cta-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0 0 24px;
+        line-height: 1.5;
+    }
+
+    .blog-sidebar__btn {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .blog-sidebar__phone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 14px 16px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #14d3e3 0%, #0fb8c6 100%);
+        border: none;
+        transition: all 0.2s;
+        box-shadow: 0 4px 15px rgba(20, 211, 227, 0.3);
+    }
+
+    .blog-sidebar__phone:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(20, 211, 227, 0.4);
+    }
+
+    .blog-sidebar__phone .icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .blog-sidebar__share {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 24px 20px;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #e5e7eb;
+    }
+
+    .blog-sidebar__share-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #0d4380;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin: 0 0 16px;
+    }
+
+    /* ---------- ARTICLE CONTENT ---------- */
+    .blog-article {
+        order: 1;
+        min-width: 0;
+    }
+
+    .blog-content {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    /* Headings */
+    .blog-content :global(h1) {
+        font-size: 36px;
+        font-weight: 800;
+        color: #0d4380;
+        margin: 0 0 24px;
+        line-height: 1.2;
+        font-family: var(--font-display);
+    }
+
+    .blog-content :global(h2) {
+        font-size: 28px;
+        font-weight: 700;
+        color: #0d4380;
+        margin: 56px 0 20px;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #14d3e3;
+        line-height: 1.25;
+        font-family: var(--font-display);
+    }
+
+    .blog-content :global(h3) {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0d4380;
+        margin: 40px 0 16px;
+        line-height: 1.3;
+        font-family: var(--font-display);
+    }
+
+    .blog-content :global(h4) {
+        font-size: 18px;
+        font-weight: 700;
+        color: #14d3e3;
+        margin: 32px 0 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Paragraphs */
+    .blog-content :global(p) {
+        margin: 0 0 24px;
+    }
+
+    /* Lead paragraph */
+    .blog-content > :global(p:first-of-type) {
+        font-size: 20px;
+        color: #0d4380;
+        font-weight: 500;
+    }
+
+    /* Links */
+    .blog-content :global(a) {
+        color: #14d3e3;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+        transition: color 0.2s;
+    }
+
+    .blog-content :global(a:hover) {
+        color: #0d4380;
+    }
+
+    /* Strong */
+    .blog-content :global(strong) {
+        color: #0d4380;
+        font-weight: 700;
+    }
+
+    /* Lists */
+    .blog-content :global(ul),
+    .blog-content :global(ol) {
+        margin: 0 0 28px;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .blog-content :global(li) {
+        position: relative;
+        padding: 12px 0 12px 32px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .blog-content :global(li:last-child) {
+        border-bottom: none;
+    }
+
+    .blog-content :global(li::before) {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18px;
+        width: 8px;
+        height: 8px;
+        background: #14d3e3;
+        border-radius: 50%;
+    }
+
+    .blog-content :global(ol) {
+        counter-reset: list-counter;
+    }
+
+    .blog-content :global(ol li) {
+        counter-increment: list-counter;
+    }
+
+    .blog-content :global(ol li::before) {
+        content: counter(list-counter);
+        width: 24px;
+        height: 24px;
+        background: #0d4380;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 12px;
+    }
+
+    /* Nested lists */
+    .blog-content :global(li ul),
+    .blog-content :global(li ol) {
+        margin: 12px 0 0;
+    }
+
+    .blog-content :global(li li) {
+        padding: 8px 0 8px 24px;
+        font-size: 16px;
+    }
+
+    .blog-content :global(li li::before) {
+        width: 6px;
+        height: 6px;
+        top: 14px;
+        background: #aaa;
+    }
+
+    /* Blockquotes */
+    .blog-content :global(blockquote) {
+        margin: 40px 0;
+        padding: 24px 28px;
+        background: #f8f9fa;
+        border-left: 4px solid #14d3e3;
+        border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .blog-content :global(blockquote p) {
+        margin: 0;
+        font-size: 18px;
+        font-style: italic;
+        color: #0d4380;
+    }
+
+    /* HR */
+    .blog-content :global(hr) {
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #14d3e3, transparent);
+        margin: 48px 0;
+    }
+
+    /* Code */
+    .blog-content :global(code) {
+        background: #f0f4f8;
+        color: #0d4380;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 15px;
+        font-family: "SF Mono", Monaco, monospace;
+    }
+
+    .blog-content :global(pre) {
+        background: #1a2332;
+        color: #e2e8f0;
+        padding: 24px;
+        border-radius: var(--radius);
+        overflow-x: auto;
+        margin: 32px 0;
+    }
+
+    /* Images */
+    .blog-content :global(img) {
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+        margin: 32px 0;
+        max-width: 100%;
+    }
+
+    /* Inline CTA boxes */
+    .blog-content :global(.bg-gray-50),
+    .blog-content :global(div[class*="bg-gray"]) {
+        background: #f8f9fa;
+        border: 1px solid #e5e7eb;
+        padding: 24px;
+        border-radius: var(--radius);
+        margin: 32px 0;
+    }
+
+    /* Tables */
+    .blog-content :global(table) {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 32px 0;
+        font-size: 16px;
+    }
+
+    .blog-content :global(th),
+    .blog-content :global(td) {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .blog-content :global(th) {
+        background: #0d4380;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .blog-content :global(tr:hover) {
+        background: #f8f9fa;
+    }
+
+    /* ---------- TAGS ---------- */
+    .blog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin-top: 48px;
+        padding-top: 32px;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .blog-tags__label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #666;
+    }
+
+    .blog-tags__tag {
+        background: #f0f4f8;
+        color: #0d4380;
+        padding: 6px 14px;
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+
+    .blog-tags__tag:hover {
+        background: #14d3e3;
+        color: #fff;
+    }
+
+    /* ---------- FAQ SECTION ---------- */
+    .blog-faq {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 80px 0;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .blog-faq__inner {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .blog-faq__header {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .blog-faq__header-icon {
+        width: 56px;
+        height: 56px;
+        padding: 14px;
+        background: linear-gradient(135deg, #0d4380 0%, #14d3e3 100%);
+        color: #fff;
+        border-radius: 16px;
+        margin: 0 auto 20px;
+        box-shadow: 0 8px 25px rgba(13, 67, 128, 0.25);
+    }
+
+    .blog-faq__title {
+        font-size: 36px;
+        font-weight: 800;
+        color: #0d4380;
+        margin: 0;
+        font-family: var(--font-display);
+    }
+
+    .faq-item {
+        background: #fff;
+        border-radius: var(--radius);
+        margin-bottom: 12px;
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+        transition: all 0.2s;
+        border: 1px solid #e5e7eb;
+    }
+
+    .faq-item:hover {
+        box-shadow: var(--shadow-md);
+        border-color: #d0d5dd;
+    }
+
+    .faq-item.active {
+        border-color: #14d3e3;
+        box-shadow: 0 4px 20px rgba(20, 211, 227, 0.15);
+    }
+
+    .faq-item__q {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 22px 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-size: 17px;
+        font-weight: 600;
+        color: #0d4380;
+        font-family: var(--font-display);
+    }
+
+    .faq-item__chevron {
+        width: 22px;
+        height: 22px;
+        color: #14d3e3;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+        margin-left: 16px;
+    }
+
+    .faq-item.active .faq-item__chevron {
+        transform: rotate(180deg);
+    }
+
+    .faq-item__a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .faq-item__a p {
+        padding: 0 24px 24px;
+        margin: 0;
+        color: #555;
+        line-height: 1.75;
+        font-size: 16px;
+    }
+
+    /* ---------- CTA SECTION ---------- */
+    .blog-cta {
+        background: linear-gradient(135deg, #0d4380 0%, #0a3666 100%);
+        padding: 70px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blog-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314D3E3' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+    }
+
+    .blog-cta__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+    }
+
+    .blog-cta__content {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .blog-cta__title {
+        font-size: 32px;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 10px;
+        font-family: var(--font-display);
+    }
+
+    .blog-cta__text {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 17px;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .blog-cta__actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    /* ---------- RELATED POSTS ---------- */
+    .blog-related {
+        background: #ffffff;
+        padding: 80px 0;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .blog-related__title {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0d4380;
+        text-align: center;
+        margin: 0 0 48px;
+        font-family: var(--font-display);
+    }
+
+    .blog-related__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 28px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .blog-related__more {
+        text-align: center;
+        margin-top: 48px;
+    }
+
+    /* ---------- UTILITIES ---------- */
+    .icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll("[data-faq]");
+        items.forEach((item) => {
+            const btn = item.querySelector("[data-faq-btn]");
+            const answer = item.querySelector(
+                "[data-faq-answer]",
+            ) as HTMLElement;
+            if (btn && answer) {
+                btn.addEventListener("click", () => {
+                    const isOpen = item.classList.contains("active");
+                    // Close all
+                    items.forEach((i) => {
+                        i.classList.remove("active");
+                        const a = i.querySelector(
+                            "[data-faq-answer]",
+                        ) as HTMLElement;
+                        if (a) a.style.maxHeight = "0";
+                    });
+                    // Toggle current
+                    if (!isOpen) {
+                        item.classList.add("active");
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            }
+        });
+    });
+</script>

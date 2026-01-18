@@ -34,6 +34,9 @@ jobs:
         env:
           NODE_OPTIONS: '--max-old-space-size=8192'
 
+      - name: 🛡️ Premium SEO Validation
+        run: npm run seo:validate
+
       - name: Deploy to Production via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -63,6 +66,16 @@ jobs:
           echo "**URL:** https://www.247electricianmiami.com" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Deployed at:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🚀 Trigger IndexNow (Instant Indexing)
+        if: success()
+        run: node scripts/submit-indexnow.js ${{ secrets.INDEXNOW_KEY }}
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+
+      - name: Next Steps Summary
+        if: always()
+        run: |
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
           echo "- Verify live site functionality" >> $GITHUB_STEP_SUMMARY

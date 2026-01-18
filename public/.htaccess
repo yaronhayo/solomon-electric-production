@@ -194,6 +194,10 @@ Redirect 301 /book-service/ /book/
 Redirect 301 /schedule-an-appointment /book/
 Redirect 301 /schedule-an-appointment/ /book/
 
+# Privacy Policy (old URL structure)
+Redirect 301 /privacy-policy /privacy/
+Redirect 301 /privacy-policy/ /privacy/
+
 # ==============================================================================
 # AMP URL CLEANUP - Strip AMP query params and redirect to clean URLs
 # ==============================================================================

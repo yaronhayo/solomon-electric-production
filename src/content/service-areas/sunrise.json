@@ -76,28 +76,28 @@
     ],
     "faqs": [
         {
-            "question": "What electrical services do you offer in Sunrise?",
-            "answer": "We provide comprehensive electrical services throughout Sunrise including panel upgrades (100A to 200A), emergency repairs, outlet and switch installation, lighting upgrades, ceiling fan installation, GFCI protection, EV charger installation, generator hookups, and 24/7 emergency service. Our licensed electricians serve all Sunrise neighborhoods."
+            "question": "My Sunrise home was built in the 1970s and has a Federal Pacific panel—should I be worried?",
+            "answer": "Yes—Federal Pacific panels are a documented fire hazard. Breakers in these panels often fail to trip during overloads, allowing wires to overheat and potentially start fires. If your Sunrise home has a Federal Pacific (FPE) panel, we strongly recommend replacement. These panels were commonly installed in 1970s-80s Sunrise homes, and insurance companies are increasingly requiring their replacement before issuing policies."
         },
         {
-            "question": "Are your electricians licensed to work in Sunrise?",
-            "answer": "Absolutely. All Solomon Electric technicians are Florida State Licensed (License #EC13012419) and fully insured. We pull all required Broward County permits for electrical work in Sunrise, ensuring your project passes inspection and meets current NEC code requirements."
+            "question": "We live in a Sunrise senior community—do you work in places like Sunrise Lakes?",
+            "answer": "Absolutely. We serve many residents in Sunrise Lakes, Kings Point, and other 55+ communities. We understand the unique considerations: communicating clearly about work and costs, respecting your schedule and routines, and coordinating with building management when needed. We're patient, thorough, and happy to explain everything in detail."
         },
         {
-            "question": "How do I know if my Sunrise home needs a panel upgrade?",
-            "answer": "Many Sunrise homes have outdated 100-amp panels that can't handle modern electrical demands. Signs you need an upgrade include: frequently tripping breakers, dimming lights when appliances run, planning to add an EV charger or pool, or if you have a Federal Pacific, Zinsco, or fuse box. We offer free panel inspections throughout Sunrise."
+            "question": "Do you provide commercial electrical near Sawgrass Mills or the Arena?",
+            "answer": "Yes, we service the entire Sawgrass commercial district including retailers near Sawgrass Mills, businesses around Amerant Bank Arena, and the corporate offices along Sawgrass Expressway. Services include tenant buildouts, parking lot lighting, emergency repairs, and scheduled maintenance. We understand that retail and entertainment venues can't afford extended electrical downtime."
         },
         {
-            "question": "Do you offer 24/7 emergency electrical service in Sunrise?",
-            "answer": "Yes! We provide round-the-clock emergency electrical service to all Sunrise neighborhoods. If you're experiencing sparking outlets, burning smells, power outages, or any electrical emergency, call us immediately—we respond quickly to protect your property and family."
+            "question": "Why are my lights flickering in my 1980s Sunrise home?",
+            "answer": "Flickering lights in older Sunrise homes typically indicate one of several issues: loose connections at the panel, corroded breakers, overloaded circuits, or problems with the FPL connection. All of these are more common in 40-year-old electrical systems. We can diagnose the specific cause and recommend either targeted repairs or a more comprehensive upgrade depending on what we find."
         },
         {
-            "question": "Do you offer emergency electrical repairs for Sunrise residents?",
-            "answer": "Yes, we provide 24/7 emergency electrical service to all Sunrise neighborhoods, including Welleby, Springtree, and the Sawgrass area."
+            "question": "Can you add outlets in my Sunrise home? We never have enough.",
+            "answer": "Definitely—insufficient outlets are a hallmark of 1970s-80s construction. Homes built then typically have far fewer outlets than modern codes require or families need. We can add outlets to any room, including dedicated circuits for high-draw items like space heaters or window AC units. Adding outlets is relatively straightforward and much safer than relying on extension cords and power strips."
         },
         {
-            "question": "Can you handle commercial electrical for Sunrise businesses?",
-            "answer": "Absolutely. We serve the extensive commercial districts surrounding Sawgrass Mills and major corporate hubs with tenant build-outs, maintenance, and emergency service."
+            "question": "How quickly can you get to Sunrise for an emergency?",
+            "answer": "Sunrise is central to our Broward service area with direct access via I-595, the Sawgrass Expressway, and I-75.  For after-hours emergencies—sparking panels, burning smells, or complete outages—we allocate resources."
         }
     ],
     "seoContent": [
@@ -111,11 +111,11 @@
         },
         {
             "heading": "Comprehensive Electrical Services for Your Sunrise Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Sunrise. We provide transparent upfront pricing, respect your property, and stand behind our work with guarantees that have earned South Florida's trust for over 15 years."
+            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Sunrise. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
         },
         {
             "heading": "Excellence in Electrical Care for Sunrise Families",
-            "body": "Whether you're upgrading the lighting in your Sunrise home, requiring an urgent panel replacement, or needing the peace of mind of a whole-home surge protector, our team is ready to help. We provide upfront pricing, clean workmanship, and a dedication to safety that Sunrise families can rely on."
+            "body": "Whether you're upgrading the lighting in your Sunrise home, requiring an urgent panel replacement, or needing the peace of mind of a whole-home surge protector, our team is ready to help. We provide professional service, clean workmanship, and a dedication to safety that Sunrise families can rely on."
         }
     ]
 }

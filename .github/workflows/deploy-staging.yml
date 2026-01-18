@@ -31,6 +31,9 @@ jobs:
         env:
           NODE_OPTIONS: '--max-old-space-size=8192'
 
+      - name: 🛡️ Premium SEO Validation
+        run: npm run seo:validate
+
       - name: Deploy to Staging via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:

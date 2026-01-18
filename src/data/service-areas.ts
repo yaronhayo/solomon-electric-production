@@ -8,7 +8,7 @@ export const SERVICE_AREAS = [
     "Boynton Beach",
     "Coconut Creek",
     "Coral Springs",
-    "Deerfield",
+    "Deerfield Beach",
     "Delray Beach",
     "Davie",
     "Fort Lauderdale",
