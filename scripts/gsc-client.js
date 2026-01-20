@@ -86,15 +86,8 @@ async function submitSitemap(client, sitemapUrl = SITEMAP_URL) {
       siteUrl: SITE_URL,
       feedpath: sitemapUrl
     });
-    console.log('✅ Sitemap submitted successfully!');
-    
-    // Also submit the individual sitemap
-    const sitemap0 = 'https://www.247electricianmiami.com/sitemap-0.xml';
-    await client.sitemaps.submit({
-      siteUrl: SITE_URL,
-      feedpath: sitemap0
-    });
-    console.log('✅ sitemap-0.xml also submitted!');
+    console.log('✅ Sitemap index submitted successfully!');
+    console.log('   Google will automatically discover all child sitemaps referenced within it.');
     
   } catch (error) {
     console.error('❌ Failed to submit sitemap:', error.message);

@@ -92,7 +92,9 @@ RewriteRule ^(.*)$ $1.html [L]
     
     # Content Security Policy - Production-ready CSP
     # Includes: GTM, Google Analytics, Google Maps, Microsoft Clarity, Search Atlas
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://www.clarity.ms https://seo.gettmarketing.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://api.dataforseo.com https://maps.googleapis.com https://www.clarity.ms https://seo.gettmarketing.com; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.smtp2go.com;"
+    # Content Security Policy - Production-ready CSP
+    # Includes: GTM, GA4, Google Maps, Microsoft Clarity (all domains), Search Atlas, reCAPTCHA
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://www.clarity.ms https://j.clarity.ms https://seo.gettmarketing.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.clarity.ms https://c.bing.com https://api.dataforseo.com https://maps.googleapis.com https://seo.gettmarketing.com; frame-src https://www.google.com https://maps.google.com https://www.recaptcha.net; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.smtp2go.com;"
 </IfModule>
 
 # ==============================================================================

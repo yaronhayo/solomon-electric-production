@@ -92,7 +92,7 @@ export const SITE_CONFIG = {
             latitude: 26.035414,
             longitude: -80.170560,
             areaServed: [
-                "Miami", "Fort Lauderdale", "Hollywood", "Miami Beach", "Boca Raton", "Coral Springs", "Pembroke Pines", "Hialeah", "Homestead", "Jupiter"
+                "Boca Raton", "Boynton Beach", "Coconut Creek", "Coral Springs", "Deerfield Beach", "Delray Beach", "Davie", "Fort Lauderdale", "Hialeah", "Homestead", "Hollywood", "Jupiter", "Lauderhill", "Margate", "Miami", "Miami Beach", "Miami Gardens", "Miramar", "North Miami", "Pembroke Pines", "Plantation", "Pompano Beach", "Sunrise", "Tamarac", "Wellington", "Weston", "West Palm Beach"
             ],
             socialProfiles: [
                 "https://www.facebook.com/Solomonselectric",

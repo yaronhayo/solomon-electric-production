@@ -4,6 +4,7 @@ import { SITE_CONFIG } from "../config/site";
 import { IMAGES } from "../config/images";
 import Container from "./ui/Container.astro";
 import SocialIcon from "./ui/SocialIcon.astro";
+import { SERVICE_AREAS } from "../data/service-areas";
 
 // Use centralized image registry
 const logoWhite = IMAGES.branding.logoWhite;
@@ -199,64 +200,45 @@ const currentYear = new Date().getFullYear();
                 </div>
             </div>
 
-            <!-- Column 3: We're Here 24/7 -->
+            <!-- Column 3: Service Areas -->
             <div class="text-center md:text-left">
                 <h3
                     class="font-secondary text-2xl font-medium mb-6 text-white text-center md:text-left"
                 >
-                    We're Here 24/7
+                    Service Areas
                 </h3>
-                <ul class="flex flex-col gap-2 max-w-[280px] mx-auto md:mx-0">
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <Clock class="w-4 h-4 text-accent shrink-0" />
-                        <span class="flex justify-between w-full gap-1">
-                            <span class="font-medium">Monday</span>
-                            <span class="text-white">24 Hours</span>
-                        </span>
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <Clock class="w-4 h-4 text-accent shrink-0" />
-                        <span class="flex justify-between w-full gap-1">
-                            <span class="font-medium">Tuesday</span>
-                            <span class="text-white">24 Hours</span>
-                        </span>
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <Clock class="w-4 h-4 text-accent shrink-0" />
-                        <span class="flex justify-between w-full gap-1">
-                            <span class="font-medium">Wednesday</span>
-                            <span class="text-white">24 Hours</span>
-                        </span>
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <Clock class="w-4 h-4 text-accent shrink-0" />
-                        <span class="flex justify-between w-full gap-1">
-                            <span class="font-medium">Thursday</span>
-                            <span class="text-white">24 Hours</span>
-                        </span>
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <Clock class="w-4 h-4 text-accent shrink-0" />
-                        <span class="flex justify-between w-full gap-1">
-                            <span class="font-medium">Friday</span>
-                            <span class="text-white">24 Hours</span>
-                        </span>
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <Clock class="w-4 h-4 text-accent shrink-0" />
-                        <span class="flex justify-between w-full gap-1">
-                            <span class="font-medium">Saturday</span>
-                            <span class="text-white">24 Hours</span>
-                        </span>
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-300">
-                        <Clock class="w-4 h-4 text-accent shrink-0" />
-                        <span class="flex justify-between w-full gap-1">
-                            <span class="font-medium">Sunday</span>
-                            <span class="text-white">24 Hours</span>
-                        </span>
-                    </li>
-                </ul>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                    {
+                        [...SERVICE_AREAS].sort().map((city) => (
+                            <a
+                                href={`/service-areas/${city.toLowerCase().replace(/\s+/g, "-")}`}
+                                class="text-gray-300 hover:text-accent transition-colors text-sm flex items-center gap-2"
+                            >
+                                <MapPin class="w-3 h-3 text-accent/50" />
+                                <span>{city}</span>
+                            </a>
+                        ))
+                    }
+                </div>
+                <a
+                    href="/service-areas"
+                    class="inline-block mt-6 text-accent hover:text-white transition-colors text-sm font-bold uppercase tracking-wider flex items-center gap-2 justify-center md:justify-start group"
+                >
+                    View All Areas
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                    </svg>
+                </a>
             </div>
 
             <!-- Column 4: Contact Us -->

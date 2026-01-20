@@ -100,7 +100,8 @@ const whyChooseText = generateWhyChoose(
 );
 
 // Get related cities for this service
-const relatedCities = getRelatedCities(cityId, allCities, 6);
+// Get related cities for this service (All 27 for maximum internal linking)
+const relatedCities = getRelatedCities(cityId, allCities, 27);
 
 // Get related services in this city (same category first)
 const relatedServices = allServices
@@ -113,22 +114,6 @@ const relatedServices = allServices
         return 0;
     })
     .slice(0, 6);
-
-// Generate schema
-const schema = generateServiceLocationSchema(
-    {
-        name: service.name,
-        slug: serviceId,
-        description: service.description,
-        category: service.category,
-    },
-    {
-        name: city.name,
-        slug: cityId,
-        county: city.county,
-        coordinates: city.coordinates,
-    },
-);
 
 // Combine FAQs from service with city context
 const combinedFaqs = (service.faqs || []).map(
@@ -149,6 +134,23 @@ const combinedFaqs = (service.faqs || []).map(
 if (city.faqs && city.faqs.length > 0) {
     combinedFaqs.push(...city.faqs.slice(0, 2));
 }
+
+// Generate schema with FAQs for rich snippets
+const schema = generateServiceLocationSchema(
+    {
+        name: service.name,
+        slug: serviceId,
+        description: service.description,
+        category: service.category,
+    },
+    {
+        name: city.name,
+        slug: cityId,
+        county: city.county,
+        coordinates: city.coordinates,
+    },
+    combinedFaqs, // Include FAQs for FAQPage schema
+);
 
 const siteUrl = SITE_CONFIG.seo.siteUrl;
 ---
