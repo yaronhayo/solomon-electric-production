@@ -1,113 +1,113 @@
 {
-  "name": "Electrical Safety Inspection",
+  "name": "Electrical Safety Inspection & Certification",
   "slug": "electrical-safety-inspection",
-  "description": "Peace of mind starts with knowing your electrical system is safe. Solomon Electric provides comprehensive electrical safety inspections for South Florida homeowners—examining your panel, wiring, outlets, and connections to identify hidden hazards before they cause fires or shocks. Whether you're buying a home, planning renovations, or simply want assurance that your family is safe, our licensed electricians provide detailed assessments and honest recommendations.",
-  "shortDescription": "Complete electrical system evaluation",
+  "description": "Peace of mind starts with knowing your electrical system is safe. Solomon Electric provides comprehensive electrical safety inspections and professional certifications for South Florida homeowners and professionals—covering everything from 4-point insurance inspections and pre-purchase audits to real estate certifications. Our licensed electricians identify hidden hazards, verify code compliance, and deliver the official documentation you need for insurance, sales, or total peace of mind.",
+  "shortDescription": "Certified electrical system evaluation",
   "icon": "Shield",
   "image": "../../assets/images/services/panel-work.png",
   "category": "Commercial & Inspections",
   "order": 11,
   "features": [
     "Comprehensive panel and wiring inspection",
-    "Outlet and switch testing",
-    "Grounding system verification",
-    "GFCI and AFCI testing",
-    "Detailed written report",
+    "4-point electrical and safety certification",
+    "Insurance and real estate documentation",
+    "GFCI/AFCI and grounding verification",
+    "Detailed written reports with photos",
     "Prioritized repair recommendations"
   ],
-  "warningSignsHeading": "When You Need an Electrical Safety Inspection",
-  "warningSignsSubheading": "These situations call for professional electrical assessment. Don't wait for problems to become emergencies.",
+  "warningSignsHeading": "When You Need Electrical Inspection & Certification",
+  "warningSignsSubheading": "Whether for safety, compliance, or transactions, professional documentation ensures your system meets standard requirements.",
   "problems": [
     {
-      "title": "Buying or Selling a Home",
-      "description": "General home inspections barely scratch the surface of electrical safety. A dedicated electrical inspection reveals hidden issues that affect your investment and safety.",
+      "title": "Insurance & 4-Point Needs",
+      "description": "Florida insurers often require specific 4-point inspections for older homes or policy renewals. We provide accepted documentation they require.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Home Buying & Due Diligence",
+      "description": "General home inspections miss critical electrical hazards. A dedicated audit reveals hidden issues before you commit to a major investment.",
       "icon": "Home"
     },
     {
+      "title": "Selling or Real Estate Closing",
+      "description": "Proactive safety certification facilitates smoother transactions and prevents last-minute negotiation surprises regarding electrical condition.",
+      "icon": "TrendingUp"
+    },
+    {
       "title": "Home is Over 25 Years Old",
-      "description": "Electrical systems age invisibly. Wiring insulation degrades, connections loosen, and standards evolve. Older homes often have hidden hazards that need attention.",
+      "description": "Electrical systems age invisibly. Wiring insulation degrades and standards evolve. Older homes often have hidden hazards needing attention.",
       "icon": "AlertTriangle"
     },
     {
       "title": "Planning Major Renovations",
-      "description": "Before investing in renovations, understand your electrical system's condition and capacity. Inspections reveal what upgrades you'll need to support your plans.",
+      "description": "Before investing in renovations, understand your system's capacity. Inspections reveal what upgrades you'll need to support your plans.",
       "icon": "FileCheck"
     },
     {
-      "title": "Insurance Requirements",
-      "description": "Many insurance companies require electrical inspections for homes with older panels or after claims. We provide documentation that satisfies insurer requirements.",
-      "icon": "Shield"
-    },
-    {
-      "title": "Mysterious Electrical Problems",
-      "description": "Flickering lights, tripping breakers, or warm outlets indicate problems somewhere in your system. Inspections find root causes rather than just treating symptoms.",
+      "title": "Safety & Code Compliance",
+      "description": "Flickering lights or tripping breakers are warning signs. We identify code violations and hazardous DIY work hiding behind your walls.",
       "icon": "Zap"
-    },
-    {
-      "title": "New Homeowner Due Diligence",
-      "description": "Just moved in? The previous owner may have done DIY electrical work or ignored problems. An inspection establishes your baseline and identifies safety priorities.",
-      "icon": "AlertCircle"
     }
   ],
-  "processHeading": "Our Inspection Process",
+  "processHeading": "Our Comprehensive Inspection Process",
   "process": [
     {
       "step": 1,
-      "title": "Electrical Panel Examination",
-      "description": "We inspect your main panel for proper sizing, recalled brands, connection quality, labeling, and signs of overheating, arcing, or moisture intrusion."
+      "title": "Electrical Panel & Capacity Review",
+      "description": "We inspect your main panel for sizing, recalled brands (Federal Pacific, Zinsco), connection quality, and signs of overheating or arcing."
     },
     {
       "step": 2,
       "title": "Wiring & Connection Assessment",
-      "description": "We examine accessible wiring for damage, improper connections, outdated materials (aluminum, cloth-covered), and code violations."
+      "description": "We examine accessible wiring for type (copper vs aluminum), condition, and code violations in attics, crawlspaces, and service points."
     },
     {
       "step": 3,
-      "title": "Outlet & Switch Testing",
-      "description": "We test outlets for proper grounding, polarity, and function. We verify GFCI outlets trip correctly and identify any missing safety protection."
+      "title": "Outlet, Switch & Safety Testing",
+      "description": "We test outlets for polarity and grounding. We verify GFCI and AFCI protection works correctly in required safety zones."
     },
     {
       "step": 4,
-      "title": "Grounding System Verification",
-      "description": "Proper grounding is essential for safety and surge protection effectiveness. We verify your grounding system meets current standards."
+      "title": "Documentation & Issue Identification",
+      "description": "We document all findings with photographs and categorize any deficiencies as immediate hazards, code updates, or future goals."
     },
     {
       "step": 5,
-      "title": "Written Report & Recommendations",
-      "description": "You receive a detailed written report documenting our findings, prioritized recommendations, and honest assessment of urgency levels."
+      "title": "Official Report & Certification",
+      "description": "You receive a professional written report and, if qualified, the safety certification needed for insurance or real estate transactions."
     }
   ],
-  "benefitsHeading": "Benefits of Professional Electrical Inspection",
+  "benefitsHeading": "Benefits of Professional Certification",
   "benefits": [
     {
+      "title": "Insurer Accepted Documentation",
+      "description": "Our detailed reports satisfy Florida insurance requirements and 4-point inspection formats for policy issuance or renewal.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Negotiation & Market Value",
+      "description": "Documented electrical health provides leverage in real estate negotiations, whether you're asking for repairs or proving a home's value.",
+      "icon": "TrendingUp"
+    },
+    {
       "title": "Identify Hidden Hazards",
-      "description": "Electrical fires often start behind walls where you can't see problems developing. Professional inspection catches issues before they become disasters.",
+      "description": "Electrical fires often start behind walls. Professional inspection catches issues before they become disasters, protecting your family.",
       "icon": "Shield"
     },
     {
       "title": "Prioritized Action Plan",
-      "description": "Not everything needs immediate attention. We categorize findings by urgency—safety hazards vs. code updates vs. future improvements—so you can budget accordingly.",
-      "icon": "FileCheck"
-    },
-    {
-      "title": "Insurance Documentation",
-      "description": "Our detailed inspection reports satisfy insurance company requirements and provide documentation for claims, home sales, or peace of mind.",
-      "icon": "TrendingUp"
-    },
-    {
-      "title": "Informed Decision Making",
-      "description": "Whether buying, selling, or maintaining your home, understanding your electrical system's condition empowers better decisions about repairs and upgrades.",
+      "description": "Not everything needs immediate attention. We give you a clear roadmap of what's urgent versus what can wait, helping you budget wisely.",
       "icon": "Home"
     }
   ],
   "stats": [
     {
-      "value": "1,000+",
+      "value": "2,500+",
       "label": "Inspections Completed"
     },
     {
-      "value": "47K",
-      "label": "US Home Electrical Fires/Year"
+      "value": "100%",
+      "label": "Insurer Acceptance"
     },
     {
       "value": "15+",
@@ -120,60 +120,52 @@
   ],
   "faqs": [
     {
-      "question": "What does an electrical safety inspection include?",
-      "answer": "Our comprehensive inspection covers your electrical panel (capacity, connections, recalls), visible wiring (condition, materials, code compliance), outlets and switches (grounding, polarity, GFCI function), grounding system, and any areas of concern you've noticed. You receive a detailed written report with findings and recommendations."
+      "question": "What is the difference between this and a home inspection?",
+      "answer": "Significantly different. General home inspectors check basic functions—a 5-10 minute review. Professional electrical inspections involve deep examination by licensed electricians who understand code requirements, hidden hazards, and system integrity."
     },
     {
-      "question": "How long does an electrical inspection take?",
-      "answer": "A thorough residential inspection typically takes 1-2 hours depending on home size and complexity. We don't rush—proper inspection requires methodical examination. You'll receive your written report within 24-48 hours."
+      "question": "Is this the same as a 4-point inspection?",
+      "answer": "We provide the comprehensive electrical component of the 4-point inspection. We deliver the specific documentation required by Florida insurers to verify the panel, wiring, and safety systems meet their coverage standards."
     },
     {
-      "question": "Is electrical inspection different from home inspection?",
-      "answer": "Yes, significantly. General home inspectors check that outlets work and the panel has no obvious problems—a 5-10 minute electrical review. Professional electrical inspections involve detailed examination by licensed electricians who understand code requirements, hidden hazards, and system integrity."
+      "question": "What happens if you find serious problems?",
+      "answer": "If we identify immediate safety hazards (fire risks or shock hazards), we explain the situation clearly and recommend immediate fixes. For other items, we include them in a prioritized report so you can plan repairs on your timeline."
     },
     {
-      "question": "Will you test outlets behind furniture?",
-      "answer": "We test all reasonably accessible outlets. We can move light furniture, but we won't disassemble rooms. Let us know about any outlets you've had concerns with so we can prioritize those locations."
+      "question": "Can you provide certification for real estate closings?",
+      "answer": "Yes. We offer pre-purchase and pre-sale inspection certifications that provide the documentation buyers, lenders, and real estate professionals need to proceed with confidence."
     },
     {
-      "question": "What if you find serious problems?",
-      "answer": "If we identify immediate safety hazards (active fire risks, shock hazards), we'll explain the situation clearly and recommend shutting off affected circuits until repairs are made. For less urgent issues, we'll include them in your prioritized report so you can plan repairs on your timeline."
+      "question": "How long does the inspection take?",
+      "answer": "Typically 1-2 hours depending on the home size. We are methodical and do not rush. You will receive your written report and any applicable certifications within 24-48 hours."
     },
     {
-      "question": "Do you do inspections for insurance companies?",
-      "answer": "Yes. We provide electrical inspections that satisfy insurance company requirements, including 4-point inspections frequently required for homes over 30 years old. Our reports include the documentation insurers need to assess or renew coverage."
-    },
-    {
-      "question": "Can you inspect before I buy a home?",
-      "answer": "Pre-purchase electrical inspections are one of our most important services. General home inspections miss significant electrical issues. Before committing to a major purchase, understand exactly what electrical work you'll need—often saving negotiations money or avoiding costly surprises."
-    },
-    {
-      "question": "What are common problems you find?",
-      "answer": "Common issues include double-tapped breakers, missing GFCI protection, ungrounded outlets, recalled panel brands (Federal Pacific, Zinsco), improper DIY wiring, undersized circuits for modern loads, and degraded aluminum wiring connections. Most aren't immediately dangerous but should be addressed."
+      "question": "Will an old panel fail the inspection automatically?",
+      "answer": "Age alone isn't always a failure, but safety and condition are. However, certain recalled brands like Federal Pacific or Zinsco are known hazards and will be noted as such, as most insurers require their replacement for coverage."
     }
   ],
   "relatedServices": [
-    "home-electrical-inspection-certification",
+    "electrical-code-compliance-audit",
     "pre-purchase-electrical-inspection",
     "insurance-electrical-inspection",
-    "electrical-code-compliance-audit"
+    "service-panel-replacement"
   ],
   "seoContent": [
     {
-      "heading": "Electrical Safety Inspections in Miami & South Florida",
-      "body": "Nearly 47,000 home electrical fires occur annually in the United States—many caused by problems that a professional inspection would have caught. Solomon Electric provides comprehensive electrical safety inspections throughout South Florida, helping homeowners identify hidden hazards before they cause fires, shocks, or expensive damage. Our licensed electricians examine every aspect of your electrical system."
+      "heading": "Certified Electrical Safety Inspections in South Florida",
+      "body": "Solomon Electric provides the professional electrical safety inspections and certifications required for Florida's unique real estate and insurance market. Serving Miami-Dade, Broward, and Palm Beach counties, our licensed electricians deliver the 4-point inspection data and safety certifications you need to maintain coverage or close a sale."
     },
     {
-      "heading": "Beyond the General Home Inspection",
-      "body": "When you buy a home, the general inspector spends maybe 10 minutes on electrical—checking that lights work and the panel looks okay. A dedicated electrical inspection goes far deeper: examining connection quality, testing outlet grounding, verifying GFCI function, identifying recalled equipment, and assessing wiring condition. If you're buying a home over 25 years old, electrical inspection isn't optional—it's essential."
+      "heading": "4-Point Insurance & Real Estate Documentation",
+      "body": "Florida insurance companies increasingly require electrical documentation for policy renewals, especially on homes over 25 years old. Our inspection reports are designed to satisfy insurer requirements, documenting connection quality, testing GFCI function, and identifying recalled equipment before it causes a problem."
     },
     {
-      "heading": "Insurance & Certification Inspections",
-      "body": "Many Florida insurance companies require electrical inspections for older homes, particularly for 4-point inspections. Some insurers won't cover homes with certain panel brands (Federal Pacific, Zinsco) or require documentation that electrical systems meet current standards. Solomon Electric provides inspection reports that satisfy insurance requirements."
+      "heading": "Peace of Mind for Home Buyers & Sellers",
+      "body": "Don't inherit someone else's electrical mistakes. Our pre-purchase inspections identify unpermitted DIY work, code violations, and aging infrastructure that general home inspectors miss. For sellers, proactive certification ensures your home is market-ready and prevents last-minute negotiation credits."
     },
     {
-      "heading": "Honest Assessments, Prioritized Recommendations",
-      "body": "We don't create unnecessary work. Our inspection reports prioritize findings by urgency—immediate safety hazards that need prompt attention, code updates that should be addressed, and improvements to consider for the future. You'll understand what's truly important versus what's merely not up to current standards in older homes."
+      "heading": "Honest Assessments, Professional Results",
+      "body": "We don't create unnecessary work. Our reports prioritize findings by urgency—immediate safety hazards vs. code updates vs. future improvements. You'll understand exactly what's important for your safety and your property value."
     }
   ],
   "relatedBlogPosts": [

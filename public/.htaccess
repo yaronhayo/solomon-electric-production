@@ -297,8 +297,13 @@ Redirect 301 /services/expert-electrical-diagnostics-repair /services/sparking-o
 Redirect 301 /services/electrical-diagnostics /services/sparking-outlet-circuit-breaker-repair/
 
 # Inspection Services
-Redirect 301 /services/comprehensive-electrical-safety-inspections /services/electrical-safety-inspection-certification/
-Redirect 301 /services/electrical-inspections /services/electrical-safety-inspection-certification/
+Redirect 301 /services/comprehensive-electrical-safety-inspections /services/electrical-safety-inspection/
+Redirect 301 /services/electrical-safety-inspection-certification /services/electrical-safety-inspection/
+Redirect 301 /services/home-electrical-inspection-certification /services/electrical-safety-inspection/
+Redirect 301 /services/pre-purchase-electrical-inspection /services/electrical-safety-inspection/
+Redirect 301 /services/real-estate-inspection-services /services/electrical-safety-inspection/
+Redirect 301 /services/insurance-electrical-inspection /services/electrical-safety-inspection/
+Redirect 301 /services/electrical-inspections /services/electrical-safety-inspection/
 
 # Lighting Services
 Redirect 301 /services/lighting-fixture-installation /services/indoor-outdoor-lighting-installation/
