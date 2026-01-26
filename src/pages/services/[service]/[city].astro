@@ -6,13 +6,11 @@
  * Example: /services/electrical-panel-upgrade-100a-to-200a/miami
  */
 
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
-import PageHero from "../../../components/PageHero.astro";
 import Container from "../../../components/ui/Container.astro";
 import Button from "../../../components/ui/Button.astro";
 import CtaButton from "../../../components/ui/CtaButton.astro";
-import FAQAccordion from "../../../components/FAQAccordion.astro";
 import ReviewCarousel from "../../../components/ReviewCarousel.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import { SITE_CONFIG } from "../../../config/site";
@@ -21,18 +19,20 @@ import {
     generateWhyChoose,
     generateMetaTitle,
     generateMetaDescription,
-    generateH1,
     generateServiceLocationSchema,
+    generateLocalRegulatoryInfo,
     getRelatedCities,
 } from "../../../utils/service-location-generator";
+
 import {
     Zap,
     MapPin,
-    Phone,
     CheckCircle,
     Shield,
     Clock,
     Star,
+    Home,
+    Umbrella,
     ArrowRight,
     ChevronRight,
 } from "lucide-astro";
@@ -79,7 +79,6 @@ const { service, serviceId, city, cityId, allCities, allServices } =
     Astro.props;
 
 // Generate content
-const h1 = generateH1(service.name, city.name);
 const metaTitle = generateMetaTitle(service.name, city.name);
 const metaDescription = generateMetaDescription(
     service.name,
@@ -132,7 +131,20 @@ const combinedFaqs = (service.faqs || []).map(
 
 // Add city-specific FAQ
 if (city.faqs && city.faqs.length > 0) {
-    combinedFaqs.push(...city.faqs.slice(0, 2));
+    // Try to find FAQs that match the service category
+    const relevantCityFaqs = city.faqs.filter(
+        (faq: any) =>
+            faq.question
+                .toLowerCase()
+                .includes(service.category.toLowerCase()) ||
+            faq.answer.toLowerCase().includes(service.category.toLowerCase()),
+    );
+
+    if (relevantCityFaqs.length > 0) {
+        combinedFaqs.unshift(...relevantCityFaqs.slice(0, 2));
+    } else {
+        combinedFaqs.push(...city.faqs.slice(0, 2));
+    }
 }
 
 // Generate schema with FAQs for rich snippets
@@ -152,7 +164,8 @@ const schema = generateServiceLocationSchema(
     combinedFaqs, // Include FAQs for FAQPage schema
 );
 
-const siteUrl = SITE_CONFIG.seo.siteUrl;
+// Generate local regulatory info
+const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
 ---
 
 <Layout title={metaTitle} description={metaDescription}>
@@ -186,8 +199,10 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
             </div>
         </div>
 
-        <Container class="relative z-10">
-            <div class="max-w-4xl">
+        <Container class="relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-[var(--spacing-xl)]">
+                <!-- Left Column: Text - spans 8 columns on large screens -->
+                <div class="lg:col-span-8">
                 <!-- Location Badge -->
                 <div class="flex items-center gap-2 mb-6">
                     <span
@@ -205,7 +220,8 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
 
                 <!-- H1 -->
                 <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase leading-tight"
+                    class="font-black text-white mb-6 uppercase leading-[0.9] tracking-[-0.04em]"
+                    style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem);"
                 >
                     {service.name}
                     <span
@@ -217,7 +233,8 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
 
                 <!-- Intro -->
                 <p
-                    class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl"
+                    class="text-gray-200 font-light leading-relaxed mb-[var(--spacing-lg)]"
+                    style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem);"
                 >
                     {introText}
                 </p>
@@ -257,6 +274,7 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
                         <Zap class="w-5 h-5" />
                         Get Free Estimate
                     </Button>
+                </div>
                 </div>
             </div>
         </Container>
@@ -354,7 +372,7 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
                         </div>
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/20 text-center">
-                        <p class="text-sm text-white/70 mb-2">
+                        <p class="text-sm text-white/70 mb-4">
                             Florida License #{
                                 SITE_CONFIG.credentials.license.number
                             }
@@ -363,9 +381,193 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
                             action="call"
                             variant="secondary"
                             size="md"
-                            text="Call Now"
+                            text="Call Local Electrician"
                         />
                     </div>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Local Challenges & Solutions -->
+    {
+        city.challenges && city.challenges.length > 0 && (
+            <section
+                class="bg-light border-b border-gray-100"
+                style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+            >
+                <Container>
+                    <div class="mb-12">
+                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
+                            Specific Local Solutions
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase mb-6">
+                            Addressing {city.name}'s Unique
+                            <span class="text-accent">
+                                {" "}
+                                Electrical Challenges
+                            </span>
+                        </h2>
+                        <p class="text-[var(--text-body)] text-lg">
+                            South Florida's environment demands specialized
+                            electrical knowledge. Our {service.name} solutions
+                            in {city.name} are engineered to handle these local
+                            factors effectively.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        {city.challenges.map((challenge: any) => (
+                            <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                                <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center mb-6">
+                                    {challenge.icon === "Zap" && (
+                                        <Zap class="w-6 h-6 text-accent" />
+                                    )}
+                                    {challenge.icon === "Umbrella" && (
+                                        <Umbrella class="w-6 h-6 text-accent" />
+                                    )}
+                                    {challenge.icon === "Home" && (
+                                        <Home class="w-6 h-6 text-accent" />
+                                    )}
+                                    {!["Zap", "Umbrella", "Home"].includes(
+                                        challenge.icon,
+                                    ) && <Zap class="w-6 h-6 text-accent" />}
+                                </div>
+                                <h3 class="text-xl font-bold text-primary mb-4 uppercase">
+                                    {challenge.title}
+                                </h3>
+                                <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                                    {challenge.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
+            </section>
+        )
+    }
+
+    <!-- Compliance & Regulatory -->
+    <section
+        class="bg-white"
+        style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);"
+    >
+        <Container>
+            <div
+                class="bg-primary/5 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 border border-primary/10"
+            >
+                <div
+                    class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                    <Shield class="w-8 h-8" />
+                </div>
+                <div class="flex-grow text-center md:text-left">
+                    <h3 class="text-xl font-bold text-primary mb-2 uppercase">
+                        {regulatoryInfo.title}
+                    </h3>
+                    <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                        {regulatoryInfo.content} We maintain full compliance with
+                        <strong class="text-primary"
+                            >{regulatoryInfo.jurisdiction}</strong
+                        > standards for every {service.name} project.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <div
+                        class="text-xs font-bold text-primary/60 uppercase tracking-widest mb-1 text-center md:text-right"
+                    >
+                        Permit Coordination
+                    </div>
+                    <div
+                        class="text-sm font-black text-primary text-center md:text-right"
+                    >
+                        100% HANDLED BY US
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <!-- Competitive Edge Section -->
+    <section
+        class="bg-light border-y border-gray-100"
+        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+    >
+        <Container>
+            <div class="text-center mb-12">
+                <span
+                    class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
+                >
+                    The Solomon Advantage
+                </span>
+                <h2
+                    class="text-3xl md:text-4xl font-black text-primary uppercase"
+                >
+                    Our {city.name}
+                    <span class="text-accent"> Competitive Edge</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                >
+                    <div
+                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                    >
+                        <Star class="w-6 h-6 text-accent" />
+                    </div>
+                    <h3 class="font-bold text-primary mb-2">Local Trust</h3>
+                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                        Most regional contractors don't understand {
+                            city.name
+                        }-specific codes. We've been local since day one.
+                    </p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                >
+                    <div
+                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                    >
+                        <Clock class="w-6 h-6 text-accent" />
+                    </div>
+                    <h3 class="font-bold text-primary mb-2">Rapid Response</h3>
+                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                        strategic coverage across {city.county} means we're often
+                        at your {city.name} door in under 60 minutes.
+                    </p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                >
+                    <div
+                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                    >
+                        <Shield class="w-6 h-6 text-accent" />
+                    </div>
+                    <h3 class="font-bold text-primary mb-2">
+                        Bonded & Insured
+                    </h3>
+                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                        Full $2M liability coverage for every {service.name} project
+                        in {city.name}. Total peace of mind.
+                    </p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                >
+                    <div
+                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                    >
+                        <CheckCircle class="w-6 h-6 text-accent" />
+                    </div>
+                    <h3 class="font-bold text-primary mb-2">Code Experts</h3>
+                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                        We specialize in {city.county} County permits and {
+                            regulatoryInfo.jurisdiction
+                        } coordination.
+                    </p>
                 </div>
             </div>
         </Container>
@@ -484,13 +686,132 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
                         </h2>
                     </div>
 
-                    <div class="max-w-3xl mx-auto">
-                        <FAQAccordion faqs={combinedFaqs.slice(0, 6)} />
+                    <!-- Inline FAQ Accordion -->
+                    <div class="space-y-4 max-w-4xl mx-auto">
+                        {combinedFaqs.slice(0, 6).map((faq: { question: string; answer: string }, index: number) => (
+                            <div class="faq-item group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 overflow-hidden">
+                                <button
+                                    class="faq-question w-full text-left p-5 md:p-6 flex items-center gap-4"
+                                    data-index={`city-${index}`}
+                                    aria-expanded="false"
+                                >
+                                    <span class="flex-1 font-bold text-primary group-hover:text-accent transition-colors duration-300 font-secondary uppercase tracking-tight text-sm md:text-base">
+                                        {faq.question}
+                                    </span>
+                                    <div class="faq-icon flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary group-hover:bg-accent transition-all duration-300 rounded-lg">
+                                        <span class="text-white font-bold text-xl leading-none transition-transform duration-300">+</span>
+                                    </div>
+                                </button>
+                                <div
+                                    class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+                                    style="max-height: 0;"
+                                    data-index={`city-${index}`}
+                                >
+                                    <div class="px-5 md:px-8 pb-5 md:pb-8 text-[var(--text-body)] leading-relaxed border-t border-gray-100 pt-4 text-sm md:text-base">
+                                        {faq.answer}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </Container>
             </section>
         )
     }
+
+    <!-- Neighborhoods & Local Trust -->
+    <section
+        class="bg-white border-t border-gray-100"
+        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
+    >
+        <Container>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span
+                        class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
+                    >
+                        Nearby Presence
+                    </span>
+                    <h2
+                        class="text-3xl md:text-4xl font-black text-primary uppercase mb-6"
+                    >
+                        Serving All {city.name}
+                        <span class="text-accent"> Neighborhoods</span>
+                    </h2>
+                    <p class="text-[var(--text-body)] text-lg mb-8">
+                        Our technicians are active throughout {city.name},
+                        providing {service.name} to residential and commercial properties.
+                        From the city center to the surrounding areas, we know the
+                        local requirements of your specific community.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        {
+                            (city.neighborhoods || [])
+                                .slice(0, 12)
+                                .map((neighborhood: string) => (
+                                    <div class="flex items-center gap-2 text-primary font-bold text-sm uppercase">
+                                        <div class="w-1.5 h-1.5 bg-accent rounded-full" />
+                                        {neighborhood}
+                                    </div>
+                                ))
+                        }
+                    </div>
+                </div>
+
+                <div
+                    class="bg-light p-8 rounded-3xl border border-gray-100 relative overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16"
+                    >
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-primary uppercase mb-6 flex items-center gap-3"
+                    >
+                        <MapPin class="w-6 h-6 text-accent" />
+                        Local Landmarks
+                    </h3>
+                    <p
+                        class="text-sm text-[var(--text-body)] mb-6 leading-relaxed"
+                    >
+                        We provide expert electrical services near major {
+                            city.name
+                        } landmarks, ensuring efficient response times for all local
+                        homeowners and business owners.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        {
+                            (city.landmarks || []).map((landmark: string) => (
+                                <span class="px-3 py-1.5 bg-white rounded-lg border border-gray-200 text-[10px] font-black text-primary uppercase tracking-wider shadow-sm">
+                                    {landmark}
+                                </span>
+                            ))
+                        }
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-primary text-white p-3 rounded-xl">
+                                <Shield class="w-6 h-6" />
+                            </div>
+                            <div>
+                                <p
+                                    class="text-sm font-black text-primary uppercase tracking-tight"
+                                >
+                                    Verified Local Provider
+                                </p>
+                                <p class="text-xs text-[var(--text-body)]">
+                                    Full coverage for {city.name} and surrounding
+                                    communities in {city.county} County.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
 
     <!-- Reviews -->
     <ReviewCarousel />
@@ -617,7 +938,7 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
                     in {city.name}?
                 </span>
             </h2>
-            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            <p class="text-gray-200 text-lg md:text-xl mb-10">
                 Get expert electrical service from {city.name}'s trusted
                 electricians. Licensed, insured, and available 24/7 for your
                 electrical needs.
@@ -636,4 +957,69 @@ const siteUrl = SITE_CONFIG.seo.siteUrl;
             </div>
         </Container>
     </section>
+
+<!-- FAQ Accordion Script -->
+<script>
+    // FAQ Accordion Logic for inline FAQs
+    document.addEventListener('DOMContentLoaded', () => {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach((question) => {
+            question.addEventListener('click', () => {
+                const index = question.getAttribute('data-index');
+                const answer = document.querySelector(
+                    `.faq-answer[data-index="${index}"]`
+                ) as HTMLElement;
+                const icon = question.querySelector('.faq-icon') as HTMLElement;
+                const isExpanded =
+                    question.getAttribute('aria-expanded') === 'true';
+                const parentItem = question.closest('.faq-item');
+
+                // Close all other FAQs
+                faqQuestions.forEach((q) => {
+                    const qIndex = q.getAttribute('data-index');
+                    if (qIndex !== index) {
+                        const qAnswer = document.querySelector(
+                            `.faq-answer[data-index="${qIndex}"]`
+                        ) as HTMLElement;
+                        const qIcon = q.querySelector('.faq-icon') as HTMLElement;
+                        const qParent = q.closest('.faq-item');
+
+                        if (qAnswer) {
+                            qAnswer.style.maxHeight = '0';
+                        }
+                        q.setAttribute('aria-expanded', 'false');
+                        if (qIcon) {
+                            qIcon.style.transform = 'rotate(0deg)';
+                        }
+                        qParent?.classList.remove('ring-2', 'ring-accent/30');
+                    }
+                });
+
+                // Toggle current FAQ
+                if (isExpanded) {
+                    // Close it
+                    if (answer) {
+                        answer.style.maxHeight = '0';
+                    }
+                    question.setAttribute('aria-expanded', 'false');
+                    if (icon) {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                    parentItem?.classList.remove('ring-2', 'ring-accent/30');
+                } else {
+                    // Open it
+                    if (answer) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                    question.setAttribute('aria-expanded', 'true');
+                    if (icon) {
+                        icon.style.transform = 'rotate(45deg)';
+                    }
+                    parentItem?.classList.add('ring-2', 'ring-accent/30');
+                }
+            });
+        });
+    });
+</script>
 </Layout>

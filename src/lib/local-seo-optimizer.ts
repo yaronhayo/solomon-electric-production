@@ -232,7 +232,6 @@ export function generateContentRecommendations(
   const issues: SEOIssue[] = [];
   const recommendations: Recommendation[] = [];
   
-  const keywords = generateKeywordVariations(targetService, targetCity);
   const primaryKeyword = `${targetService} ${targetCity}`.toLowerCase();
   
   // Title analysis

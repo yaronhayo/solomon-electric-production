@@ -6,8 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
-import partytown from '@astrojs/partytown';
-import compress from 'astro-compress';
+// import compress from 'astro-compress'; // Disabled - causes OOM on 1600+ pages
 import icon from 'astro-icon';
 
 // https://astro.build/config
@@ -25,13 +24,9 @@ export default defineConfig({
   integrations: [
     mdx(), 
     react(),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    }),
+    // Note: Partytown removed - GTM runs in main thread for full tracking capability
+    // Scripts loaded via GTM (Clarity, GA4) need main thread access
     icon(),
-    compress(),
     sitemap({
       // Filter out noindex pages and system routes from sitemap
       filter: (page) =>
@@ -51,5 +46,9 @@ export default defineConfig({
         return item;
       }
     })
+    // NOTE: astro-compress disabled - causes out-of-memory errors with 1600+ pages
+    // Compression is handled by:
+    // 1. Hostinger's server-side gzip (automatic)
+    // 2. .htaccess mod_deflate configuration
   ]
 });

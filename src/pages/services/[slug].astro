@@ -5,12 +5,12 @@ export const prerender = true;
 
 import Layout from "../../layouts/Layout.astro";
 import heroImage from "../../assets/images/hero.webp";
-import Button from "../../components/ui/Button.astro";
 import CtaButton from "../../components/ui/CtaButton.astro";
 import Container from "../../components/ui/Container.astro";
 import PageHero from "../../components/PageHero.astro";
 import FAQAccordion from "../../components/FAQAccordion.astro";
 import ReviewCarousel from "../../components/ReviewCarousel.astro";
+import DefinitionBlock from "../../components/DefinitionBlock.astro";
 import { SITE_CONFIG } from "../../config/site";
 import { generateBreadcrumbSchema, generateFAQSchema } from "../../utils/seo";
 import {
@@ -205,6 +205,17 @@ const breadcrumbSchema = generateBreadcrumbSchema(
         image={service.data.image || heroImage}
         trustIndicators={true}
     />
+
+    <!-- Definition Block for Featured Snippets -->
+    <section class="py-8 md:py-12 bg-light">
+        <Container>
+            <DefinitionBlock
+                term={service.data.name}
+                definition={`is a professional electrical service that ${service.data.description.toLowerCase().replace(/^[a-z]/, (c: string) => c.toLowerCase())} Our licensed electricians in Miami-Dade and Broward counties provide expert ${service.data.name.toLowerCase()} with guaranteed satisfaction.`}
+                relatedTerms={service.data.relatedServices?.slice(0, 3) || []}
+            />
+        </Container>
+    </section>
 
     <!-- Stats Bar -->
     {

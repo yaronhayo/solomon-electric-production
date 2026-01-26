@@ -54,7 +54,7 @@ $name = sanitizeInput($input['name']);
 $phone = sanitizeInput($input['phone']);
 $email = isset($input['email']) && !empty($input['email']) ? sanitizeInput($input['email']) : null;
 
-// Tracking Data
+// Tracking Data - Comprehensive Marketing Analytics
 $trackingData = [
     'sessionStart' => isset($input['tracking_sessionStart']) ? sanitizeInput($input['tracking_sessionStart']) : 'N/A',
     'timeOnSite' => isset($input['tracking_timeOnSite']) ? sanitizeInput($input['tracking_timeOnSite']) : '0',
@@ -62,6 +62,9 @@ $trackingData = [
     'referrer' => isset($input['tracking_referrer']) ? sanitizeInput($input['tracking_referrer']) : 'Direct',
     'clickPath' => isset($input['tracking_clickPath']) ? sanitizeInput($input['tracking_clickPath']) : 'N/A',
     'deviceType' => isset($input['tracking_deviceType']) ? sanitizeInput($input['tracking_deviceType']) : 'Unknown',
+    'screenResolution' => isset($input['tracking_screenResolution']) ? sanitizeInput($input['tracking_screenResolution']) : 'N/A',
+    'userAgent' => isset($input['tracking_userAgent']) ? sanitizeInput($input['tracking_userAgent']) : $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
+    'language' => isset($input['tracking_language']) ? sanitizeInput($input['tracking_language']) : 'N/A',
     'cookiesAccepted' => isset($input['tracking_cookiesAccepted']) ? ($input['tracking_cookiesAccepted'] === 'true' ? 'Yes' : 'No') : 'Unknown',
     'consentTimestamp' => isset($input['tracking_consentTimestamp']) ? sanitizeInput($input['tracking_consentTimestamp']) : 'N/A',
     'recaptchaVerified' => isset($input['tracking_recaptchaVerified']) ? ($input['tracking_recaptchaVerified'] === 'true' ? 'Yes ✓' : 'No') : 'No',
@@ -69,7 +72,8 @@ $trackingData = [
     'utmSource' => isset($input['tracking_utmSource']) ? sanitizeInput($input['tracking_utmSource']) : 'N/A',
     'utmMedium' => isset($input['tracking_utmMedium']) ? sanitizeInput($input['tracking_utmMedium']) : 'N/A',
     'utmCampaign' => isset($input['tracking_utmCampaign']) ? sanitizeInput($input['tracking_utmCampaign']) : 'N/A',
-    'gclid' => isset($input['tracking_gclid']) && $input['tracking_gclid'] !== 'null' ? sanitizeInput($input['tracking_gclid']) : null
+    'gclid' => isset($input['tracking_gclid']) && $input['tracking_gclid'] !== 'null' ? sanitizeInput($input['tracking_gclid']) : null,
+    'newReturning' => isset($input['tracking_newReturning']) ? sanitizeInput($input['tracking_newReturning']) : 'Unknown'
 ];
 
 // Formatting
@@ -206,40 +210,77 @@ $leadEmailHtml = "
         </div>
 
         <div class='section' style='background-color: #fafafa; border-top: 8px solid #F3F3F3;'>
-            <div class='section-title'>📊 Marketing Analytics</div>
+            <div class='section-title'>📊 Marketing & Analytics</div>
             <div class='analytics-box'>
-                <table width='100%' cellspacing='0' cellpadding='0'>
+                <!-- Traffic Source & Attribution -->
+                <table width='100%' cellspacing='0' cellpadding='0' style='margin-bottom: 16px;'>
                     <tr>
-                        <td width='50%' style='padding-bottom: 15px;'>
-                            <div class='data-label'>Traffic Source</div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>🎯 Traffic Source</div>
                             <div class='data-value'>{$trackingData['trafficSource']}</div>
                         </td>
-                        <td width='50%' style='padding-bottom: 15px;'>
-                            <div class='data-label'>Time on Site</div>
-                            <div class='data-value'>{$trackingData['timeOnSite']}s</div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>👤 Visitor Type</div>
+                            <div class='data-value'>{$trackingData['newReturning']}</div>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2' style='padding-bottom: 15px;'>
-                            <div class='data-label'>UTM Journey</div>
-                            <div style='font-size: 11px; color: #666;'>
-                                Source: {$trackingData['utmSource']} • Medium: {$trackingData['utmMedium']} • Campaign: {$trackingData['utmCampaign']}
-                            </div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>📱 Device Type</div>
+                            <div class='data-value'>{$trackingData['deviceType']}</div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td width='50%'>
-                            <div class='data-label'>Cookies Accepted</div>
-                            <div class='data-value'>" . ($trackingData['cookiesAccepted'] === 'Yes' ? "<span class='badge badge-success'>Yes</span>" : "<span class='badge badge-error'>No</span>") . "</div>
-                        </td>
-                        <td width='50%'>
-                            <div class='data-label'>reCAPTCHA Security</div>
-                            <div class='data-value'>" . ($trackingData['recaptchaVerified'] === 'Yes ✓' ? "<span class='badge badge-success'>Verified</span>" : "<span class='badge badge-error'>Unverified</span>") . "</div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>⏱️ Time on Site</div>
+                            <div class='data-value'>{$trackingData['timeOnSite']} seconds</div>
                         </td>
                     </tr>
                 </table>
-                <div style='margin-top: 15px; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 10px;'>
-                    IP: $clientIp • Device: {$trackingData['deviceType']} • Consent Date: {$trackingData['consentTimestamp']}
+                
+                <!-- Click Path -->
+                <div style='margin-bottom: 16px; padding: 12px; background-color: #fff; border-radius: 6px; border: 1px solid #e9ecef;'>
+                    <div class='data-label'>🛤️ Click Path (User Journey)</div>
+                    <div style='font-size: 12px; color: #555; margin-top: 6px; word-break: break-word; font-family: monospace;'>{$trackingData['clickPath']}</div>
+                </div>
+                
+                <!-- Referrer -->
+                <div style='margin-bottom: 16px;'>
+                    <div class='data-label'>🔗 Referrer / Landing Source</div>
+                    <div style='font-size: 12px; color: #555; margin-top: 4px; word-break: break-word;'>{$trackingData['referrer']}</div>
+                </div>
+
+                <!-- UTM Campaign Data -->
+                <div style='margin-bottom: 16px; padding: 12px; background-color: #e8f4f8; border-radius: 6px;'>
+                    <div class='data-label'>📈 UTM Campaign Data</div>
+                    <table width='100%' cellspacing='0' cellpadding='0' style='margin-top: 8px;'>
+                        <tr>
+                            <td style='padding: 4px 0; font-size: 12px;'><strong>Source:</strong> {$trackingData['utmSource']}</td>
+                            <td style='padding: 4px 0; font-size: 12px;'><strong>Medium:</strong> {$trackingData['utmMedium']}</td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='padding: 4px 0; font-size: 12px;'><strong>Campaign:</strong> {$trackingData['utmCampaign']}</td>
+                        </tr>
+                    </table>
+                    " . ($trackingData['gclid'] ? "<div style='margin-top: 8px; padding: 6px 10px; background-color: #fef3c7; border-radius: 4px; font-size: 11px;'><strong>🎯 Google Ads Click ID:</strong> " . substr($trackingData['gclid'], 0, 20) . "...</div>" : "") . "
+                </div>
+                
+                <!-- Security & Consent -->
+                <table width='100%' cellspacing='0' cellpadding='0'>
+                    <tr>
+                        <td width='50%' style='padding-bottom: 8px;'>
+                            <div class='data-label'>🍪 Cookies Accepted</div>
+                            <div class='data-value'>" . ($trackingData['cookiesAccepted'] === 'Yes' ? "<span class='badge badge-success'>Yes ✓</span>" : "<span class='badge badge-error'>No</span>") . "</div>
+                        </td>
+                        <td width='50%' style='padding-bottom: 8px;'>
+                            <div class='data-label'>🛡️ reCAPTCHA</div>
+                            <div class='data-value'>" . ($trackingData['recaptchaVerified'] === 'Yes ✓' ? "<span class='badge badge-success'>Verified ✓</span>" : "<span class='badge badge-error'>Unverified</span>") . "</div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Technical Details -->
+                <div style='margin-top: 16px; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 12px;'>
+                    <strong>Technical:</strong> IP: $clientIp • Screen: {$trackingData['screenResolution']} • Lang: {$trackingData['language']}<br>
+                    <strong>Consent:</strong> {$trackingData['consentTimestamp']}
                 </div>
             </div>
         </div>

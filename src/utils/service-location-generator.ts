@@ -257,6 +257,47 @@ export function getRelatedCities(
 }
 
 /**
+ * Generate local regulatory and permit information by county
+ */
+export function generateLocalRegulatoryInfo(county: string): {
+    title: string;
+    content: string;
+    jurisdiction: string;
+} {
+    const normalizedCounty = county.toLowerCase();
+    
+    if (normalizedCounty.includes('miami-dade')) {
+        return {
+            title: "Miami-Dade County Compliance",
+            content: "All electrical installations in Miami-Dade require specialized permitting through the RER Department. We coordinate all inspections, including the mandatory 40-year recertification checks for older properties.",
+            jurisdiction: "Miami-Dade RER"
+        };
+    }
+    
+    if (normalizedCounty.includes('broward')) {
+        return {
+            title: "Broward County Standards",
+            content: "Electrical work in Broward County must comply with the Florida Building Code and local amendments. We handle all permit applications and coordinate with municipal building departments across the county.",
+            jurisdiction: "Broward County Planning & Development"
+        };
+    }
+    
+    if (normalizedCounty.includes('palm beach')) {
+        return {
+            title: "Palm Beach County Requirements",
+            content: "Palm Beach County has strict standards for coastal electrical exposed to salt air. We ensure all materials used meet the PZ&B requirements for longevity and safety in this environment.",
+            jurisdiction: "Palm Beach County PZ&B"
+        };
+    }
+    
+    return {
+        title: "Florida Building Code Compliance",
+        content: "Our work follows the latest NEC (National Electrical Code) and Florida Building Code standards to ensure your safety and passing inspections.",
+        jurisdiction: "Local Building Department"
+    };
+}
+
+/**
  * Simple string hash for deterministic template selection
  */
 function hashString(str: string): number {

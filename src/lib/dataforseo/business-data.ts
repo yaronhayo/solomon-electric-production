@@ -6,7 +6,7 @@
  */
 
 import { getClient, DataForSEOClient } from './client';
-import type { GoogleBusinessItem, GoogleReview, GoogleReviewResult } from './types';
+import type { GoogleBusinessItem, GoogleReviewResult } from './types';
 
 // ============================================
 // Business Data Interfaces

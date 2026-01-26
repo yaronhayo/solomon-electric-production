@@ -188,7 +188,7 @@ const speakableSchema = generateSpeakableSchema(
 		<Footer />
 		<MobileFloatingCTA />
 		<CookieBanner />
-		<ExitIntentPopup />
+<ExitIntentPopup />
 		<script is:inline>
 			// Scroll Reveal System - Intersection Observer (scoped to avoid conflicts)
 			(function () {
@@ -252,12 +252,6 @@ const speakableSchema = generateSpeakableSchema(
 					);
 				}
 			})();
-		</script>
-
-		<!-- Enhanced Analytics Tracking -->
-		<script>
-			import { initAllTracking } from "../utils/enhanced-tracking";
-			initAllTracking();
 		</script>
 	</body>
 </html>

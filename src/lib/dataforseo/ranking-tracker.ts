@@ -10,8 +10,7 @@ import {
   getComprehensiveRanking,
   generateKeywordVariations,
   FLORIDA_LOCATIONS,
-  type FloridaCity,
-  type RankingResult
+  type FloridaCity
 } from './serp';
 import type { RankingData, ServiceAreaKeyword } from './types';
 

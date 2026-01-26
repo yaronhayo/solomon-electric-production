@@ -8,14 +8,7 @@ import trustBgImage from "../assets/images/enhancements/trust-bg.png";
 import ReviewCarousel from "../components/ReviewCarousel.astro";
 import FAQAccordion from "../components/FAQAccordion.astro";
 import LatestBlogPosts from "../components/LatestBlogPosts.astro";
-import {
-    getServices,
-    getFeaturedServices,
-    serviceCategories,
-    getCategoryInfo,
-    categoryImages,
-} from "../utils/services";
-import { SERVICE_AREAS } from "../data/service-areas";
+import { getFeaturedServices, categoryImages } from "../utils/services";
 import { SITE_CONFIG } from "../config/site";
 import Button from "../components/ui/Button.astro";
 import CtaButton from "../components/ui/CtaButton.astro";
@@ -25,9 +18,7 @@ import PageHero from "../components/PageHero.astro";
 import ServiceAreaMap from "../components/ServiceAreaMap.astro";
 import { generateHomepageSchema, generateFAQSchema } from "../utils/seo";
 
-// For featured carousel, get first 3 services
-const allServices = await getServices();
-// featuredServices variable not used, using explicit getFeaturedServices call logic instead
+// For featured carousel, get featured services
 const featuredServicesList = await getFeaturedServices();
 
 // Get FAQs for schema (homepage displays first 6)
@@ -53,15 +44,13 @@ const stats = [
     { number: SITE_CONFIG.stats.happyClients, label: "Happy Clients" },
 ];
 
-const serviceAreas = SERVICE_AREAS;
-
 // Generate Consolidated Homepage Schema (@graph)
 const homepageSchema = generateHomepageSchema(SITE_CONFIG.seo.siteUrl);
 
 // Generate FAQ Schema for homepage FAQs (GSC rich result)
 const faqSchema = generateFAQSchema(faqsForSchema);
 
-import { Phone, Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
+import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 ---
 
 <Layout

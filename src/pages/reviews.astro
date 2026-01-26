@@ -4,7 +4,7 @@ import heroImage from "../assets/images/heroes/reviews.png";
 import PageHero from "../components/PageHero.astro";
 import Button from "../components/ui/Button.astro";
 import { SITE_CONFIG } from "../config/site";
-import { Star, MessageSquare, Phone } from "lucide-astro";
+import { Star, MessageSquare } from "lucide-astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 
 const reviews = [
@@ -215,7 +215,7 @@ const reviewsSchema = {
         worstRating: "1",
     },
     // Individual reviews for rich snippets
-    review: reviews.slice(0, 10).map((review, index) => ({
+    review: reviews.slice(0, 10).map((review, _index) => ({
         "@type": "Review",
         author: {
             "@type": "Person",

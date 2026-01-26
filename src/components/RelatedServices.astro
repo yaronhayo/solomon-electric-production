@@ -1,0 +1,241 @@
+---
+/**
+ * Related Services Component
+ * Shows contextual links to related electrical services
+ * Improves internal linking and reduces bounce rate
+ */
+
+interface Props {
+  currentService: string; // Current service slug
+  className?: string;
+}
+
+// Service relationship mapping
+const serviceRelationships: Record<string, string[]> = {
+  "electrical-panel-upgrade-100a-to-200a": [
+    "whole-home-surge-protection",
+    "level-2-ev-charger-installation",
+    "generator-installation-standby-backup",
+  ],
+  "level-2-ev-charger-installation": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "240v-outlet-installation",
+    "dedicated-circuit-installation",
+  ],
+  "whole-home-surge-protection": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "smart-switch-home-automation",
+    "electrical-safety-inspection",
+  ],
+  "generator-installation-standby-backup": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "transfer-switch-installation",
+    "emergency-electrical-service",
+  ],
+  "gfci-outlet-installation-repair": [
+    "new-outlet-installation-repair",
+    "electrical-safety-inspection",
+    "pool-spa-wiring-inspection",
+  ],
+  "ceiling-fan-light-fixture-installation": [
+    "recessed-lighting-installation",
+    "smart-lighting-installation",
+    "dimmer-switch-installation",
+  ],
+};
+
+// Import all services data
+import { getCollection } from "astro:content";
+const allServices = await getCollection("services");
+
+const { currentService, className = "" } = Astro.props;
+
+// Get related service slugs
+const relatedSlugs = serviceRelationships[currentService] || [];
+
+// Get full service data for related services
+const relatedServices = allServices
+  .filter((service) => relatedSlugs.includes(service.id))
+  .slice(0, 3)
+  .map((service) => ({
+    name: service.data.name,
+    slug: service.id,
+    icon: service.data.icon || "/icons/electrical-default.svg",
+    description: service.data.shortDescription || service.data.description,
+  }));
+
+// Only render if we have related services
+if (relatedServices.length === 0) {
+  return null;
+}
+---
+
+<section class={`related-services ${className}`} data-related-services>
+  <div class="container">
+    <h2 class="section-title">Related Services You May Need</h2>
+    <p class="section-description">
+      Complete your electrical project with these complementary services
+    </p>
+
+    <div class="services-grid">
+      {
+        relatedServices.map((service) => (
+          <a
+            href={`/services/${service.slug}/`}
+            class="service-card reveal"
+            data-cta-type="related_service"
+            data-cta-target={service.slug}
+          >
+            <div class="service-icon">
+              <img src={service.icon} alt={`${service.name} icon`} loading="lazy" width="48" height="48" />
+            </div>
+            <h3 class="service-name">{service.name}</h3>
+            <p class="service-description">
+              {service.description.slice(0, 120)}...
+            </p>
+            <span class="service-link">
+              Learn More
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 12L10 8L6 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .related-services {
+    padding: var(--spacing-section) 0;
+    background: var(--bg-surface);
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+  }
+
+  .section-description {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 1.1rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-center;
+  }
+
+  .service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .service-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .service-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: auto;
+  }
+
+  .service-link svg {
+    transition: transform var(--transition-base);
+  }
+
+  .service-card:hover .service-link svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

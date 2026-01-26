@@ -1,0 +1,150 @@
+---
+/**
+ * DefinitionBlock Component
+ * Optimized for featured snippets targeting "What is..." queries
+ *
+ * SEO Benefits:
+ * - Structured definition format favored by Google
+ * - Schema.org DefinedTerm markup
+ * - Clean paragraph structure for extraction
+ */
+
+interface Props {
+    term: string;
+    definition: string;
+    additionalInfo?: string;
+    relatedTerms?: string[];
+    showSchema?: boolean;
+}
+
+const {
+    term,
+    definition,
+    additionalInfo,
+    relatedTerms = [],
+    showSchema = true,
+} = Astro.props;
+
+// Generate DefinedTerm schema for the definition
+const definitionSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: term,
+    description: definition,
+    ...(relatedTerms.length > 0 && {
+        sameAs: relatedTerms.map(
+            (t) =>
+                `https://en.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, "_"))}`,
+        ),
+    }),
+};
+---
+
+<div
+    class="definition-block bg-gradient-to-br from-light to-white border-l-4 border-accent rounded-r-xl p-6 md:p-8 my-8 shadow-sm"
+>
+    {
+        showSchema && (
+            <script
+                type="application/ld+json"
+                set:html={JSON.stringify(definitionSchema)}
+            />
+        )
+    }
+
+    <!-- Term Header -->
+    <div class="flex items-center gap-3 mb-4">
+        <div
+            class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-accent"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+            </svg>
+        </div>
+        <h3
+            class="text-xl md:text-2xl font-black text-primary uppercase tracking-tight"
+        >
+            What is {term}?
+        </h3>
+    </div>
+
+    <!-- Definition (optimized for featured snippet extraction) -->
+    <p
+        class="definition-text text-[var(--text-body)] text-lg leading-relaxed mb-4"
+    >
+        <strong class="text-primary">{term}</strong>
+        {definition}
+    </p>
+
+    {
+        additionalInfo && (
+            <p class="text-[var(--text-body)] text-base leading-relaxed opacity-90">
+                {additionalInfo}
+            </p>
+        )
+    }
+
+    {
+        relatedTerms.length > 0 && (
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <span class="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                    Related:
+                </span>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    {relatedTerms.map((related) => (
+                        <span class="inline-block px-3 py-1 bg-primary/5 text-primary text-sm font-medium rounded-full">
+                            {related}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+</div>
+
+<style>
+    .definition-block {
+        position: relative;
+    }
+
+    .definition-block::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            var(--color-accent) 0%,
+            var(--color-primary) 100%
+        );
+        border-radius: 4px 0 0 4px;
+    }
+
+    .definition-text {
+        /* Optimized line length for readability and snippet extraction */
+        max-width: 75ch;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .definition-block {
+            background: linear-gradient(
+                135deg,
+                rgba(var(--color-primary-rgb), 0.1) 0%,
+                rgba(var(--color-primary-rgb), 0.05) 100%
+            );
+        }
+    }
+</style>

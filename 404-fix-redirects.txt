@@ -1,0 +1,39 @@
+# ==============================================================================
+# ADDITIONAL 404 FIX REDIRECTS (Added 2026-01-22)
+# Based on GSC 404 analysis - 952 problematic URLs identified
+# ==============================================================================
+
+# Service Pages - High Traffic 404s
+# These were getting significant impressions but had no redirects
+
+# Outlet/Switch Services (923 impressions)
+Redirect 301 /services/outlet-switch-installation /services/new-outlet-installation-repair/
+Redirect 301 /services/outlet-switch-installation-repair /services/new-outlet-installation-repair/
+
+# Blog/Service Page Confusion - redirect to correct locations  
+Redirect 301 /category/services /services/
+Redirect 301 /category/services/ /services/
+
+# Ceiling Fan variations
+Redirect 301 /ceiling-fan-installation /services/ceiling-fan-light-fixture-installation/
+Redirect 301 /ceiling-fan-installation/ /services/ceiling-fan-light-fixture-installation/
+
+# Hot Tub service (missing trailing slash variations)
+Redirect 301 /services/hot-tub-spa-installation /services/hot-tub-spa-installation/
+
+# Service+City pages missing trailing slash
+# Pattern: /services/[service]/[city] → /services/[service]/[city]/
+RedirectMatch 301 ^/services/([^/]+)/([^/]+)$ /services/$1/$2/
+
+# Site Map page
+Redirect 301 /site-map /services/
+Redirect 301 /site-map/ /services/
+
+# ==============================================================================
+# STAGING SUBDOMAIN CLEANUP
+# Redirect any staging subdomain traffic to production
+# ==============================================================================
+
+RewriteCond %{HTTP_HOST} ^stagingnew\.247electricianmiami\.com$ [NC]
+RewriteRule ^(.*)$ https://www.247electricianmiami.com/$1 [R=301,L]
+

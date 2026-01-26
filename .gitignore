@@ -45,6 +45,10 @@ secrets/
 # PHP Environment Config with real API keys
 # ⚠️ CRITICAL: Contains SMTP, Google Maps, Turnstile, and DataForSEO credentials
 public/api/env.php
+server-config/
+
+# Allow example template
+!public/api/env.example.php
 
 # ============================================
 # Logs & Debug
@@ -108,3 +112,4 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.deploy/

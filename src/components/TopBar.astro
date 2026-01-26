@@ -2,7 +2,8 @@
 // TopBar.astro - Utility bar above main header
 import Container from "./ui/Container.astro";
 
-const { isDark = false } = Astro.props;
+// isDark prop available for future theming but not currently used
+const { isDark: _isDark = false } = Astro.props;
 ---
 
 <div

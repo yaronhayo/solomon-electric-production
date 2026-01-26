@@ -3,6 +3,7 @@ import { SITE_CONFIG } from "../config/site";
 
 /**
  * Generate JSON-LD structured data for a blog post (Article)
+ * Enhanced with E-E-A-T signals for author expertise and credentials
  */
 export function generateArticleSchema(post: any, siteUrl: string) {
     const canonical = `${siteUrl}/blog/${post.slug}`;
@@ -19,7 +20,29 @@ export function generateArticleSchema(post: any, siteUrl: string) {
             {
                 '@type': 'Organization',
                 '@id': `${siteUrl}/#organization`,
-                name: 'Solomon Electric Team'
+                name: 'Solomon Electric Team',
+                url: `${siteUrl}/about`,
+                description: 'Licensed Florida electricians with 15+ years experience serving Miami-Dade and Broward counties.',
+                hasCredential: {
+                    '@type': 'EducationalOccupationalCredential',
+                    credentialCategory: 'license',
+                    name: 'Florida Electrical Contractor License',
+                    recognizedBy: {
+                        '@type': 'Organization',
+                        name: 'Florida Department of Business and Professional Regulation'
+                    },
+                    validIn: {
+                        '@type': 'AdministrativeArea',
+                        name: 'Florida'
+                    }
+                },
+                knowsAbout: [
+                    'Electrical Panel Upgrades',
+                    'EV Charger Installation',
+                    'Emergency Electrical Repair',
+                    'Residential Electrical Services',
+                    'Commercial Electrical Services'
+                ]
             }
         ],
         publisher: {
@@ -31,9 +54,15 @@ export function generateArticleSchema(post: any, siteUrl: string) {
         },
         isPartOf: {
             '@id': `${siteUrl}/#website`
+        },
+        about: {
+            '@type': 'Thing',
+            name: 'Electrical Services',
+            sameAs: 'https://en.wikipedia.org/wiki/Electrician'
         }
     };
 }
+
 
 /**
  * Generate JSON-LD structured data for services list

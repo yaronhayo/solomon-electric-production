@@ -6,7 +6,7 @@
  */
 
 import { getClient, DataForSEOClient } from './client';
-import type { KeywordsDataResult, KeywordSuggestionsResult, KeywordInfo } from './types';
+import type { KeywordsDataResult, KeywordInfo } from './types';
 
 // ============================================
 // Configuration
@@ -14,7 +14,6 @@ import type { KeywordsDataResult, KeywordSuggestionsResult, KeywordInfo } from '
 
 // US location code for Keywords Data API
 const US_LOCATION_CODE = 2840;
-const FLORIDA_LOCATION_CODE = 21142;
 
 // ============================================
 // Keywords Data Result Interfaces

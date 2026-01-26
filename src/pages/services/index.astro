@@ -11,10 +11,14 @@ import {
     getServices,
     serviceCategories,
     getCategoryInfo,
-    categoryDescriptions,
 } from "../../utils/services";
 import { SITE_CONFIG } from "../../config/site";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import {
+    generateOfferCatalogSchema,
+    type ServiceOffer,
+} from "../../utils/schemas/offer-catalog";
+import { generateHurricaneSeasonSchema } from "../../utils/schemas/event-schema";
 
 const services = await getServices();
 
@@ -30,23 +34,27 @@ const categoryInfoMap = serviceCategories.reduce(
     {} as Record<string, (typeof categoryInfos)[0]>,
 );
 
-// Count services per category
-const serviceCounts = serviceCategories.reduce(
-    (acc, cat) => {
-        acc[cat] = services.filter((s) => s.category === cat).length;
-        return acc;
-    },
-    {} as Record<string, number>,
-);
+// Convert services to ServiceOffer format for OfferCatalog schema
+const serviceOffers: ServiceOffer[] = services.map((service) => ({
+    name: service.name,
+    slug: service.slug,
+    description: service.description,
+    category: service.category || "Electrical Services",
+    priceRange: "Call for quote",
+}));
 
-// Get services grouped by category for expanded display
-const servicesByCategory = serviceCategories.reduce(
-    (acc, cat) => {
-        acc[cat] = services.filter((s) => s.category === cat);
-        return acc;
+// Generate OfferCatalog schema for rich pricing display
+const offerCatalogSchema = generateOfferCatalogSchema(serviceOffers, {
+    includeProvider: true,
+    aggregateRating: {
+        ratingValue: SITE_CONFIG.stats.averageRating,
+        reviewCount: Number(SITE_CONFIG.stats.totalReviews.replace("+", "")),
     },
-    {} as Record<string, typeof services>,
-);
+});
+
+// Generate Hurricane Season Event schema (June-November)
+const currentYear = new Date().getFullYear();
+const hurricaneEventSchema = generateHurricaneSeasonSchema(currentYear);
 
 // Generate ItemList schema for all services (SEO)
 const servicesListSchema = {
@@ -91,13 +99,10 @@ import {
     Phone,
     Calendar,
     ArrowRight,
-    ClipboardCheck,
     Zap,
     Shield,
     Clock,
     Award,
-    CheckCircle,
-    Users,
 } from "lucide-astro";
 ---
 
@@ -115,6 +120,16 @@ import {
     <script
         type="application/ld+json"
         set:html={JSON.stringify(breadcrumbSchema)}
+    />
+    <!-- OfferCatalog for pricing display in search results -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(offerCatalogSchema)}
+    />
+    <!-- Hurricane Season Event (June-November) -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(hurricaneEventSchema)}
     />
 
     <!-- Breadcrumb Navigation -->
@@ -930,7 +945,7 @@ import {
                             </li>
                             <li>
                                 <a
-                                    href="/services/real-estate-inspection-services"
+                                    href="/services/electrical-safety-inspection"
                                     class="service-link"
                                     ><span class="service-name"
                                         >Real Estate Inspection</span

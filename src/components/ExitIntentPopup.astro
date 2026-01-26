@@ -1,0 +1,390 @@
+---
+/**
+ * Exit Intent Popup Component
+ * Captures leaving visitors with special offer
+ * Fires when mouse moves toward browser close
+ */
+
+import { SITE_CONFIG } from "../config/site";
+
+const phone = SITE_CONFIG.contact.phone.formatted;
+---
+
+<div id="exit-intent-popup" class="exit-popup hidden" aria-hidden="true">
+  <div class="exit-popup-overlay" data-close-popup></div>
+  <div class="exit-popup-content flex items-center justify-center">
+    <button class="exit-popup-close" aria-label="Close popup" data-close-popup>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M18 6L6 18M6 6l12 12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+      </svg>
+    </button>
+
+    <div class="exit-popup-body">
+      <div class="exit-popup-icon">⚡</div>
+      <h2 class="exit-popup-title">Wait! Before You Go...</h2>
+      <p class="exit-popup-message">
+        Get a <strong>FREE Safety Inspection</strong> with any service! ($200 value)
+      </p>
+
+      <div class="exit-popup-benefits">
+        <div class="benefit-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M16.667 5L7.5 14.167 3.333 10"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span>Licensed & Insured</span>
+        </div>
+        <div class="benefit-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M16.667 5L7.5 14.167 3.333 10"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span>24/7 Emergency Service</span>
+        </div>
+        <div class="benefit-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M16.667 5L7.5 14.167 3.333 10"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span>Same-Day Service Available</span>
+        </div>
+      </div>
+
+      <div class="exit-popup-actions">
+        <a
+          href={`tel:${phone.replace(/[^0-9]/g, "")}`}
+          class="btn btn-primary btn-lg"
+          data-cta-type="exit_intent_call"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          Call Now: {phone}
+        </a>
+        <a
+          href="/book/"
+          class="btn btn-secondary btn-lg"
+          data-cta-type="exit_intent_book"
+        >
+          Book Online & Save
+        </a>
+      </div>
+
+      <p class="exit-popup-disclaimer">
+        *New customers only. Includes full electrical system check, safety
+        assessment, and written recommendations. Mention this offer when
+        booking.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .exit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+  }
+
+  .exit-popup.hidden {
+    display: none;
+  }
+
+  .exit-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+  }
+
+  .exit-popup-content {
+    position: relative;
+    background: var(--bg-body);
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideInDown 0.3s ease-out;
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .exit-popup-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    z-index: 1;
+  }
+
+  .exit-popup-close:hover {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    transform: scale(1.1);
+  }
+
+  .exit-popup-body {
+    padding: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .exit-popup-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .exit-popup-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+  }
+
+  .exit-popup-message {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+  }
+
+  .exit-popup-message strong {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+  }
+
+  .exit-popup-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+  }
+
+  .benefit-item svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .exit-popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-lg {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .exit-popup-disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    .exit-popup-title {
+      font-size: 1.5rem;
+    }
+
+    .exit-popup-message {
+      font-size: 1.1rem;
+    }
+
+    .benefit-item {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  // Exit intent detection and popup management
+  (function () {
+    const popup = document.getElementById("exit-intent-popup");
+    if (!popup) return;
+
+    let hasShown = false;
+
+    // Check if already shown this session
+    if (sessionStorage.getItem("exit_intent_shown")) {
+      return;
+    }
+
+    // Detect exit intent (mouse leaving viewport from top)
+    function handleMouseOut(e: MouseEvent) {
+      // Only trigger if mouse is leaving from top and moving fast
+      if (e.clientY < 50 && e.movementY < -10 && !hasShown) {
+        showPopup();
+      }
+    }
+
+    // Show popup
+    function showPopup() {
+      hasShown = true;
+      popup?.classList.remove("hidden");
+      popup?.setAttribute("aria-hidden", "false");
+      sessionStorage.setItem("exit_intent_shown", "true");
+
+      // Track event
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: "exit_intent_shown",
+          popup_type: "discount_offer",
+        });
+      }
+
+      // Prevent body scroll
+      document.body.style.overflow = "hidden";
+    }
+
+    // Close popup
+    function closePopup() {
+      popup?.classList.add("hidden");
+      popup?.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      // Track close event
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: "exit_intent_closed",
+        });
+      }
+    }
+
+    // Add event listeners
+    document.addEventListener("mouseout", handleMouseOut);
+
+    // Close on overlay/button click
+    const closeElements = popup?.querySelectorAll("[data-close-popup]");
+    closeElements?.forEach((el) => {
+      el.addEventListener("click", closePopup);
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !popup?.classList.contains("hidden")) {
+        closePopup();
+      }
+    });
+
+    // Don't trigger if user is on booking page
+    if (window.location.pathname.includes("/book")) {
+      document.removeEventListener("mouseout", handleMouseOut);
+    }
+
+    // Also trigger on mobile when user tries to go back
+    let isBackButtonClicked = false;
+    window.addEventListener("popstate", () => {
+      if (!hasShown && !isBackButtonClicked) {
+        isBackButtonClicked = true;
+        showPopup();
+        // Push state back so popup doesn't interfere with navigation
+        window.history.pushState(null, "", window.location.href);
+      }
+    });
+
+    // Add initial history entry for mobile back button detection
+    window.history.pushState(null, "", window.location.href);
+  })();
+</script>

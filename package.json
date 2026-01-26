@@ -25,6 +25,9 @@
     "seo:validate": "node scripts/seo-validate.js",
     "seo:unified": "node scripts/seo-orchestrator.js",
     "seo:gaps": "node scripts/seo-orchestrator.js gaps",
+    "indexnow:submit": "node scripts/indexnow.js",
+    "indexnow:sitemap": "node scripts/indexnow.js sitemap",
+    "indexnow:auto": "npm run build && npm run indexnow:sitemap",
     "validate:html": "html-validate \"dist/**/*.html\"",
     "check:compliance": "npm run validate:html",
     "prepare": "cp scripts/pre-commit.sh .git/hooks/pre-commit 2>/dev/null || true && chmod +x .git/hooks/pre-commit 2>/dev/null || true"

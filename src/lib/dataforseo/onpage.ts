@@ -11,9 +11,7 @@ import type {
   OnPageSummaryResult,
   OnPagePageResult,
   OnPageKeywordDensityResult,
-  SEOAuditResult,
-  SEOIssue,
-  PageMetrics
+  SEOIssue
 } from './types';
 
 // ============================================

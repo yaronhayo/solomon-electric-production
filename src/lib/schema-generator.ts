@@ -13,7 +13,7 @@
  */
 
 import { SITE_CONFIG } from '../config/site';
-import type { WithContext, LocalBusiness, Service, FAQPage, BreadcrumbList, Review, AggregateRating } from 'schema-dts';
+import type { WithContext, LocalBusiness, Service, FAQPage, BreadcrumbList } from 'schema-dts';
 
 // ============================================
 // Configuration

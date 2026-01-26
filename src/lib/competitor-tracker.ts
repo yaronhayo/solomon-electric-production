@@ -8,9 +8,8 @@
  * - Specific actions to outrank them
  */
 
-import { SITE_CONFIG } from '../config/site';
 import { getClient, DataForSEOClient } from './dataforseo/client';
-import type { GoogleMapsItem, LocalFinderItem } from './dataforseo/types';
+import type { GoogleMapsItem } from './dataforseo/types';
 
 // ============================================
 // Types

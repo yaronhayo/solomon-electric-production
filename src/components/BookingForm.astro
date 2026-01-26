@@ -1269,6 +1269,19 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                                     : document.referrer
                                       ? "Referral"
                                       : "Direct",
+
+                        // New vs Returning visitor detection
+                        newReturning: (() => {
+                            const lastVisit =
+                                localStorage.getItem("lastVisitTimestamp");
+                            const isReturning = lastVisit !== null;
+                            // Update last visit timestamp
+                            localStorage.setItem(
+                                "lastVisitTimestamp",
+                                new Date().toISOString(),
+                            );
+                            return isReturning ? "Returning" : "New";
+                        })(),
                     };
 
                     // Add tracking data as hidden fields
