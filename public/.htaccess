@@ -22,7 +22,7 @@ Redirect 301 /book-service /book/
 Redirect 301 /book-service/ /book/
 Redirect 301 /about-us/ /about/
 Redirect 301 /site-map/ /sitemap-index.xml
-Redirect 301 /reviews/ /about/#reviews
+# Note: /reviews/ page EXISTS - do NOT redirect (has valid aggregateRating schema)
 Redirect 301 /category/services/ /services/
 
 # --- Service URL Consolidations ---
@@ -82,23 +82,11 @@ Redirect 301 /service-areas/electrician-in-wellington-florida/ /service-areas/we
 # Catch-all for /electrician-in/ pattern (incomplete URLs)
 Redirect 301 /service-areas/electrician-in/ /service-areas/
 
-# --- Old Blog URL Patterns ---
-Redirect 301 /blog/comprehensive-electrical-installation-services/ /blog/residential-electrical-services-guide/
-Redirect 301 /blog/comprehensive-electrical-safety-inspections/ /blog/electrical-safety-inspection-ultimate-guide/
-Redirect 301 /blog/electrical-panel-modernization-upgrades /blog/electrical-panel-upgrade-guide/
-Redirect 301 /blog/electrical-panel-modernization-upgrades/ /blog/electrical-panel-upgrade-guide/
-# Additional old blog slugs
-Redirect 301 /blog/architectural-lighting-chandelier-installation/ /blog/light-fixture-installation-guide/
-Redirect 301 /blog/expert-electrical-diagnostics-repair/ /blog/electrical-troubleshooting-guide/
-Redirect 301 /blog/intelligent-sensor-security-lighting-systems/ /blog/smart-lighting-installation-guide/
-Redirect 301 /blog/kitchen-appliance-specialty-equipment-wiring/ /blog/appliance-circuit-installation-guide/
-Redirect 301 /blog/life-safety-detection-system-installation/ /blog/smoke-detector-installation-guide/
-Redirect 301 /blog/lighting-fixture-installation/ /blog/light-fixture-installation-guide/
-Redirect 301 /blog/outlet-switch-modernization-services/ /blog/outlet-installation-guide/
-Redirect 301 /blog/pull-wires-underground /blog/underground-electrical-lines-guide/
-Redirect 301 /blog/pull-wires-underground/ /blog/underground-electrical-lines-guide/
-Redirect 301 /blog/rewiring-historic-miami-homes/ /blog/whole-house-rewiring-guide/
-Redirect 301 /blog/tesla-universal-ev-charging-station-installation/ /blog/ev-charger-installation-guide/
+# --- Blog URL Patterns ---
+# NOTE: Previous redirects removed - they were redirecting existing blog posts 
+# to non-existent placeholder URLs (causing 404 loops). The current blog slugs
+# are correct and indexed: comprehensive-electrical-installation-services,
+# architectural-lighting-chandelier-installation, etc.
 
 # ==============================================================================
 # SITEMAP & XML FILE HANDLING
