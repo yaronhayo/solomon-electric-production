@@ -395,6 +395,37 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     </span>
                 </label>
 
+                <!-- SMS Consent Checkbox (TCR Compliance Required) -->
+                <label class="flex items-start cursor-pointer group">
+                    <input
+                        type="checkbox"
+                        name="smsConsent"
+                        required
+                        class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent"
+                    />
+                    <span
+                        class="ml-2 text-xs text-[var(--text-body)] font-medium leading-tight font-body"
+                    >
+                        By submitting this form and signing up for texts, you
+                        consent to receive text messages from Solomon Electric,
+                        LLC at the number provided, including messages sent by
+                        auto dialer. Consent is not a condition of purchase. Msg
+                        & data rates may apply. Msg frequency varies.
+                        Unsubscribe at any time by replying STOP or clicking the
+                        unsubscribe link (where available) and no further
+                        messages will be sent. Reply HELP for help.
+                        <button
+                            type="button"
+                            class="legal-link text-accent hover:underline font-medium"
+                            data-modal="privacy">Privacy Policy</button
+                        > | <button
+                            type="button"
+                            class="legal-link text-accent hover:underline font-medium"
+                            data-modal="terms">Terms & Conditions</button
+                        >
+                    </span>
+                </label>
+
                 <label class="flex items-start cursor-pointer group">
                     <input
                         type="checkbox"
