@@ -93,14 +93,8 @@ export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
       height: '512'
     },
     
-    // Aggregate rating
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: String(SITE_CONFIG.stats.averageRating),
-      reviewCount: SITE_CONFIG.stats.totalReviews.replace(/\+/g, '') as any,
-      bestRating: '5',
-      worstRating: '1'
-    } as any,
+    // Note: aggregateRating removed - must have review array alongside
+    // See /reviews page for valid aggregateRating with individual reviews
     
     // Contact points
     contactPoint: [

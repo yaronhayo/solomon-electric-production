@@ -340,13 +340,8 @@ export function generateOrganizationSchema(siteUrl: string) {
             }
         ],
         sameAs: SITE_CONFIG.seo.schema.socialProfiles,
-        aggregateRating: {
-            "@type": "AggregateRating",
-            "ratingValue": SITE_CONFIG.stats.averageRating,
-            "reviewCount": parseInt(SITE_CONFIG.stats.totalReviews.replace(/[^0-9]/g, '')) || 1200,
-            "bestRating": "5",
-            "worstRating": "1"
-        },
+        // Note: aggregateRating removed - must have review array or link to reviews page
+        // See /reviews page for valid aggregateRating with individual reviews
         hasOfferCatalog: {
             "@type": "OfferCatalog",
             "name": "Professional Electrical Services",
