@@ -719,7 +719,11 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         }
 
         .step-indicator.active .step-icon {
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark, #10b8c6) 100%);
+            background: linear-gradient(
+                135deg,
+                var(--color-accent) 0%,
+                var(--color-accent-dark, #10b8c6) 100%
+            );
             border-color: var(--color-accent);
             color: white;
             box-shadow:
@@ -771,7 +775,11 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             top: 0;
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark, #10b8c6));
+            background: linear-gradient(
+                90deg,
+                var(--color-accent),
+                var(--color-accent-dark, #10b8c6)
+            );
             transition: width 0.5s ease;
         }
 
@@ -1354,9 +1362,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             const serviceType = document.getElementById(
                 "serviceType",
             ) as HTMLSelectElement;
-            const additionalDetailsContainer = document.getElementById(
-                "additionalDetailsContainer",
-            );
+            // Note: additionalDetailsContainer is no longer used - notes field is always visible
             const addressInput = document.getElementById(
                 "address",
             ) as HTMLInputElement;
@@ -1364,14 +1370,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                 "addressFieldsContainer",
             );
 
-            // Show additional details only after service selection
-            if (serviceType && additionalDetailsContainer) {
-                serviceType.addEventListener("change", () => {
-                    if (serviceType.value) {
-                        additionalDetailsContainer.classList.remove("hidden");
-                    }
-                });
-            }
+            // Note: additionalDetailsContainer is now always visible (no service selection required)
 
             // Show address fields after address is entered
             if (addressInput && addressFieldsContainer) {
