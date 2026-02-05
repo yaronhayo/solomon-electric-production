@@ -427,13 +427,7 @@ export function generateServiceLocationSchema(
                     "opens": "00:00",
                     "closes": "23:59"
                 },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": SITE_CONFIG.stats.averageRating,
-                    "reviewCount": parseInt(SITE_CONFIG.stats.totalReviews.replace(/[^0-9]/g, '')) || 1000,
-                    "bestRating": 5,
-                    "worstRating": 1
-                },
+                // Note: aggregateRating removed - Google requires first-party review data
                 "parentOrganization": {
                     "@id": `${siteUrl}/#organization`
                 }

@@ -94,15 +94,7 @@ const localBusinessSchema = {
               longitude: cityData.coordinates.lng,
           }
         : undefined,
-    aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: SITE_CONFIG.stats.averageRating,
-        reviewCount:
-            parseInt(SITE_CONFIG.stats.totalReviews.replace(/[^0-9]/g, "")) ||
-            1200,
-        bestRating: 5,
-        worstRating: 1,
-    },
+    // Note: aggregateRating removed - Google requires first-party review data
     knowsAbout: [
         "Residential Electrical Services",
         "Commercial Electrical Services",

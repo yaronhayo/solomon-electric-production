@@ -46,10 +46,7 @@ const serviceOffers: ServiceOffer[] = services.map((service) => ({
 // Generate OfferCatalog schema for rich pricing display
 const offerCatalogSchema = generateOfferCatalogSchema(serviceOffers, {
     includeProvider: true,
-    aggregateRating: {
-        ratingValue: SITE_CONFIG.stats.averageRating,
-        reviewCount: Number(SITE_CONFIG.stats.totalReviews.replace("+", "")),
-    },
+    // Note: aggregateRating removed - Google requires first-party review data
 });
 
 // Generate Hurricane Season Event schema (June-November)
