@@ -1,10 +1,10 @@
 {
   "name": "Three-Phase Power Installation",
   "slug": "three-phase-power-installation",
-  "description": "Large commercial equipment, industrial machinery, and high-power systems often require three-phase power that standard single-phase service can't provide. Solomon Electric installs three-phase electrical service throughout South Florida—coordinating with utilities, installing appropriate panels and wiring, and connecting equipment that demands three-phase power.",
+  "description": "Large commercial equipment, industrial machinery, and high-power systems often require three-phase power that standard single-phase service can't provide. Solomon Electric installs three-phase electrical service throughout South Florida\u2014coordinating with utilities, installing appropriate panels and wiring, and connecting equipment that demands three-phase power.",
   "shortDescription": "Industrial three-phase electrical",
   "icon": "Zap",
-  "image": "../../assets/images/services/commercial.png",
+  "image": "../../assets/images/services/commercial.webp",
   "category": "Commercial & Inspections",
   "order": 55,
   "features": [
@@ -40,7 +40,7 @@
     },
     {
       "title": "Commercial Kitchen Equipment",
-      "description": "Large commercial kitchen equipment—high-volume ovens, mixers, refrigeration—may require three-phase power.",
+      "description": "Large commercial kitchen equipment\u2014high-volume ovens, mixers, refrigeration\u2014may require three-phase power.",
       "icon": "Flame"
     },
     {
@@ -64,7 +64,7 @@
     {
       "step": 3,
       "title": "Design and Permitting",
-      "description": "We design the complete three-phase system—service entrance, panels, feeders—and handle all permit applications."
+      "description": "We design the complete three-phase system\u2014service entrance, panels, feeders\u2014and handle all permit applications."
     },
     {
       "step": 4,
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Three-Phase Power Installation in South Florida",
-      "body": "Large equipment and industrial operations require three-phase power that single-phase service can't provide. Solomon Electric installs three-phase electrical service throughout Miami-Dade and Broward counties—coordinating with FPL, installing appropriate infrastructure, and connecting equipment that demands three-phase power."
+      "body": "Large equipment and industrial operations require three-phase power that single-phase service can't provide. Solomon Electric installs three-phase electrical service throughout Miami-Dade and Broward counties\u2014coordinating with FPL, installing appropriate infrastructure, and connecting equipment that demands three-phase power."
     },
     {
       "heading": "Utility Coordination for 3-Phase",
@@ -169,12 +169,13 @@
     },
     {
       "heading": "Industrial and Commercial Applications",
-      "body": "Manufacturing facilities, machine shops, commercial kitchens, and data centers commonly require three-phase power. We install complete three-phase systems—service entrance, panels, feeders, and equipment connections—for industrial and commercial applications."
+      "body": "Manufacturing facilities, machine shops, commercial kitchens, and data centers commonly require three-phase power. We install complete three-phase systems\u2014service entrance, panels, feeders, and equipment connections\u2014for industrial and commercial applications."
     },
     {
       "heading": "Serving South Florida Industrial Needs",
       "body": "Solomon Electric provides three-phase power installation throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding industrial areas. From equipment upgrades to complete facility power, we deliver the three-phase infrastructure your operations require."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Three-Phase Power Installation service provided by licensed electricians in South Florida"
 }

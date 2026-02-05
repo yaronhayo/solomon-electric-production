@@ -4,7 +4,7 @@
   "description": "South Florida experiences a high frequency of lightning activity, which poses a risk to residential electrical systems. Solomon Electric installs comprehensive surge protection devices (SPDs) at the main electrical panel to mitigate high-voltage spikes caused by external weather events or utility grid fluctuations.",
   "shortDescription": "Panel-integrated surge protection for southern Florida properties",
   "icon": "Shield",
-  "image": "../../assets/images/services/panel-work.png",
+  "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
   "order": 1,
   "features": [
@@ -159,5 +159,6 @@
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
-  ]
+  ],
+  "imageAlt": "Whole-Home Surge Protection service provided by licensed electricians in South Florida"
 }

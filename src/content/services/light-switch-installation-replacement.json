@@ -1,10 +1,10 @@
 {
   "name": "Light Switch Installation & Replacement",
   "slug": "light-switch-installation-replacement",
-  "description": "Need new light switches, want to add a dimmer, or replacing worn-out switches that buzz or feel loose? Solomon Electric installs and replaces all types of light switches throughout South Florida homes—from standard toggles to dimmers, timers, and multi-way configurations. We ensure proper wiring, smooth operation, and code compliance.",
+  "description": "Need new light switches, want to add a dimmer, or replacing worn-out switches that buzz or feel loose? Solomon Electric installs and replaces all types of light switches throughout South Florida homes\u2014from standard toggles to dimmers, timers, and multi-way configurations. We ensure proper wiring, smooth operation, and code compliance.",
   "shortDescription": "Switch installation and upgrades",
   "icon": "Lightbulb",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Outlets, Switches & Wiring",
   "order": 18,
   "features": [
@@ -16,7 +16,7 @@
     "Combination switch/outlet units"
   ],
   "warningSignsHeading": "When to Replace Your Light Switches",
-  "warningSignsSubheading": "Light switches may seem simple, but worn or faulty switches can cause problems—or indicate bigger issues.",
+  "warningSignsSubheading": "Light switches may seem simple, but worn or faulty switches can cause problems\u2014or indicate bigger issues.",
   "problems": [
     {
       "title": "Switch Feels Loose or Wobbly",
@@ -25,7 +25,7 @@
     },
     {
       "title": "Buzzing or Crackling Sounds",
-      "description": "Audible buzzing from a switch indicates arcing—electrical sparks jumping inside the switch. This is a fire hazard requiring immediate replacement.",
+      "description": "Audible buzzing from a switch indicates arcing\u2014electrical sparks jumping inside the switch. This is a fire hazard requiring immediate replacement.",
       "icon": "Flame"
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "title": "Want Dimming Capability",
-      "description": "Upgrading from standard switches to dimmers provides ambiance control and extends LED bulb life—a popular upgrade for living areas and bedrooms.",
+      "description": "Upgrading from standard switches to dimmers provides ambiance control and extends LED bulb life\u2014a popular upgrade for living areas and bedrooms.",
       "icon": "TrendingUp"
     }
   ],
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Product Selection",
-      "description": "We recommend appropriate switches based on your needs—dimmer compatibility with your bulbs, smart switch requirements, or specialized controls."
+      "description": "We recommend appropriate switches based on your needs\u2014dimmer compatibility with your bulbs, smart switch requirements, or specialized controls."
     },
     {
       "step": 3,
@@ -69,7 +69,7 @@
     {
       "step": 4,
       "title": "Cover Plate Finishing",
-      "description": "We install appropriate cover plates, ensuring a clean finished appearance that matches your décor."
+      "description": "We install appropriate cover plates, ensuring a clean finished appearance that matches your d\u00e9cor."
     },
     {
       "step": 5,
@@ -96,7 +96,7 @@
     },
     {
       "title": "Quick, Clean Service",
-      "description": "Switch replacements are fast—most installations take under an hour. We leave your home clean with no mess to clean up.",
+      "description": "Switch replacements are fast\u2014most installations take under an hour. We leave your home clean with no mess to clean up.",
       "icon": "TrendingUp"
     }
   ],
@@ -133,11 +133,11 @@
     },
     {
       "question": "What's an occupancy sensor switch?",
-      "answer": "Occupancy sensors automatically turn lights on when you enter a room and off when you leave—perfect for closets, laundry rooms, and bathrooms. They save energy and add convenience. We install motion-detecting and vacancy sensor switches."
+      "answer": "Occupancy sensors automatically turn lights on when you enter a room and off when you leave\u2014perfect for closets, laundry rooms, and bathrooms. They save energy and add convenience. We install motion-detecting and vacancy sensor switches."
     },
     {
       "question": "Why does my switch buzz?",
-      "answer": "Buzzing typically indicates a dimmer that's incompatible with your bulbs or a switch with failing internal contacts. For dimmers, the solution is usually a compatible switch and/or compatible bulbs. For standard switches, replacement is needed—buzzing indicates arcing."
+      "answer": "Buzzing typically indicates a dimmer that's incompatible with your bulbs or a switch with failing internal contacts. For dimmers, the solution is usually a compatible switch and/or compatible bulbs. For standard switches, replacement is needed\u2014buzzing indicates arcing."
     },
     {
       "question": "Can you add a switch where there isn't one?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "What's the difference between single-pole and single-location switches?",
-      "answer": "Single-pole switches are the standard type—one switch controls one light. Double-pole switches handle 240V circuits (rare in residential). 3-way switches work in pairs to control one light from two locations. We determine which type you need based on your wiring."
+      "answer": "Single-pole switches are the standard type\u2014one switch controls one light. Double-pole switches handle 240V circuits (rare in residential). 3-way switches work in pairs to control one light from two locations. We determine which type you need based on your wiring."
     },
     {
       "question": "Do you install timer switches?",
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Light Switch Installation in Miami & South Florida",
-      "body": "Whether you're replacing a worn-out switch, upgrading to dimmers, or adding switches for convenience, Solomon Electric handles all residential switch work throughout South Florida. Our licensed electricians install standard switches, dimmers, timers, occupancy sensors, and multi-way switch configurations—quickly and correctly."
+      "body": "Whether you're replacing a worn-out switch, upgrading to dimmers, or adding switches for convenience, Solomon Electric handles all residential switch work throughout South Florida. Our licensed electricians install standard switches, dimmers, timers, occupancy sensors, and multi-way switch configurations\u2014quickly and correctly."
     },
     {
       "heading": "LED-Compatible Dimmer Switches",
@@ -176,5 +176,6 @@
       "body": "Most switch installations take under an hour, meaning minimal disruption to your day. Solomon Electric provides fast, professional switch service throughout Miami, Fort Lauderdale, Hollywood, and all surrounding communities. We are available for professional switch installation and replacement."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Light Switch Installation & Replacement service provided by licensed electricians in South Florida"
 }

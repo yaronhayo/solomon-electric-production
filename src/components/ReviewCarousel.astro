@@ -262,7 +262,7 @@ import Container from "./ui/Container.astro";
     carousel?.addEventListener("mouseleave", startAutoRotate);
 
     // Handle resize
-    window.addEventListener("resize", updateCarousel);
+    window.addEventListener("resize", updateCarousel, { passive: true });
 
     // Initialize
     updateCarousel();

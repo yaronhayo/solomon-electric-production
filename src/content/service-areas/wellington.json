@@ -1,123 +1,125 @@
 {
-    "name": "Wellington",
-    "slug": "wellington",
-    "county": "Palm Beach",
-    "description": "Licensed Wellington electricians serving the 'Equestrian Capital of the World'. Solomon Electric provides professional residential and commercial services tailored for high-end estates and equestrian properties.",
-    "population": "65,000+",
-    "founded": "1995",
-    "areaSquareMiles": "45",
-    "tagline": "The Equestrian Capital of the World",
-    "landmarks": [
-        "Palm Beach International Equestrian Center",
-        "International Polo Club",
-        "Wellington Environmental Preserve",
-        "The Mall at Wellington Green"
-    ],
-    "neighborhoods": [
-        "Aeroclub",
-        "Wycliffe",
-        "Grand Isles",
-        "Olympia",
-        "Versailles",
-        "Paddock Park",
-        "Wellington Shores"
-    ],
-    "majorRoads": [
-        "Florida Turnpike",
-        "Southern Boulevard",
-        "441 (State Road 7)",
-        "Forest Hill Boulevard",
-        "Lake Worth Road"
-    ],
-    "coordinates": {
-        "lat": 26.6587,
-        "lng": -80.2414
+  "name": "Wellington",
+  "slug": "wellington",
+  "county": "Palm Beach",
+  "description": "Licensed Wellington electricians serving the 'Equestrian Capital of the World'. Solomon Electric provides professional residential and commercial services tailored for high-end estates and equestrian properties.",
+  "population": "65,000+",
+  "founded": "1995",
+  "areaSquareMiles": "45",
+  "tagline": "The Equestrian Capital of the World",
+  "landmarks": [
+    "Palm Beach International Equestrian Center",
+    "International Polo Club",
+    "Wellington Environmental Preserve",
+    "The Mall at Wellington Green"
+  ],
+  "neighborhoods": [
+    "Aeroclub",
+    "Wycliffe",
+    "Grand Isles",
+    "Olympia",
+    "Versailles",
+    "Paddock Park",
+    "Wellington Shores"
+  ],
+  "majorRoads": [
+    "Florida Turnpike",
+    "Southern Boulevard",
+    "441 (State Road 7)",
+    "Forest Hill Boulevard",
+    "Lake Worth Road"
+  ],
+  "coordinates": {
+    "lat": 26.6587,
+    "lng": -80.2414
+  },
+  "challenges": [
+    {
+      "title": "Equestrian Electrical Excellence",
+      "description": "Wellington's world-famous barns and stables require specialized wiring for safety, specialized arena lighting, and robust, weather-hardened power systems.",
+      "icon": "Zap"
     },
-    "challenges": [
-        {
-            "title": "Equestrian Electrical Excellence",
-            "description": "Wellington's world-famous barns and stables require specialized wiring for safety, specialized arena lighting, and robust, weather-hardened power systems.",
-            "icon": "Zap"
-        },
-        {
-            "title": "High-End Estate Distribution",
-            "description": "Luxury homes in communities like Aeroclub and Versailles require massive power capacity, sophisticated automation integration, and significant backup power readiness.",
-            "icon": "Shield"
-        },
-        {
-            "title": "Western Storm Vulnerability",
-            "description": "As one of the westernmost Palm Beach cities, Wellington faces intense seasonal storms. We focus on high-performance surge protection to guard expensive estate systems.",
-            "icon": "CloudLightning"
-        }
-    ],
-    "featuredServices": [
-        "smart-home-automation",
-        "landscape-outdoor-lighting",
-        "home-standby-generator-installation",
-        "whole-home-surge-protection",
-        "24-7-emergency-electrical-service",
-        "electrical-panel-upgrade-100a-to-200a"
-    ],
-    "stats": [
-        {
-            "value": "65K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "Do you understand the electrical requirements for world-class equestrian barns?",
-            "answer": "Yes, Wellington's equestrian facilities are part of our specialty work. Horse barns require dust-tight fixtures to handle hay and bedding, GFCI protection throughout, safe switch and outlet placement away from horse contact, and properly rated circuits for fans, heaters, and wash stall equipment. Arena lighting is another specialty—we design and install arena systems that meet competition standards."
-        },
-        {
-            "question": "Our Wellington estate needs more than 200 amps—can you handle that?",
-            "answer": "Absolutely. Many Wellington estates require 400-600 amp service to power main homes, guest houses, pools, outdoor entertainment, barns, and extensive landscape lighting. We design multi-panel systems with proper load balancing, coordinate with FPL for service upgrades, and ensure your estate has the capacity for current needs plus future additions."
-        },
-        {
-            "question": "During polo season, our property hosts events—can you handle temporary electrical?",
-            "answer": "Yes, we understand the seasonal surge in electrical demand during Wellington's equestrian and polo season. We can install temporary power for tents and hospitality areas, ensure existing systems are ready for heavy use, and provide on-call support during events. Planning ahead is key—book early for polo season electrical needs."
-        },
-        {
-            "question": "Can you integrate with high-end home automation systems like Savant or Control4?",
-            "answer": "Yes, we're experienced with luxury automation platforms including Savant, Control4, Crestron, and Lutron. For Wellington estates, we provide the electrical infrastructure that automation systems require—proper panel capacity, dedicated control circuits, low-voltage wiring runs, and coordination with automation integrators."
-        },
-        {
-            "question": "Wellington has intense summer lightning—how do we protect our systems?",
-            "answer": "Western Palm Beach County is extremely lightning-prone. For Wellington properties with significant electronics, automation, and expensive equestrian equipment, we recommend comprehensive surge protection: whole-home protection at the main panel, plus point-of-use protection for sensitive systems. This multi-layer approach catches surges before they damage expensive equipment."
-        },
-        {
-            "question": "How quickly can you respond to emergencies in Wellington?",
-            "answer": "Wellington is on the northern edge of our service area in Palm Beach County.  "
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Premier Wellington Electricians – Serving the World of Equestrian Excellence",
-            "body": "Wellington is a community of prestige and precision, known globally as the capital of equestrian sports. It's a city that values tradition, quality, and exceptional service. Solomon Electric is proud to provide the licensed expertise that Wellington's premier homes and facilities count on to stay powered and safe."
-        },
-        {
-            "heading": "Understanding Wellington's Electrical Needs",
-            "body": "Wellington homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Wellington's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Wellington Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Wellington. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Advanced Electrical Care for Your Wellington Property",
-            "body": "Whether you're upgrading the lighting in a luxury arena, modernizing the automation in an estate home, or requiring the peace of mind of a whole-home backup power system, our team is ready to assist. We provide clean, professional, and code-compliant work that matches the high standards of the Wellington community."
-        }
-    ]
+    {
+      "title": "High-End Estate Distribution",
+      "description": "Luxury homes in communities like Aeroclub and Versailles require massive power capacity, sophisticated automation integration, and significant backup power readiness.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Western Storm Vulnerability",
+      "description": "As one of the westernmost Palm Beach cities, Wellington faces intense seasonal storms. We focus on high-performance surge protection to guard expensive estate systems.",
+      "icon": "CloudLightning"
+    }
+  ],
+  "featuredServices": [
+    "smart-home-automation",
+    "landscape-outdoor-lighting",
+    "home-standby-generator-installation",
+    "whole-home-surge-protection",
+    "24-7-emergency-electrical-service",
+    "electrical-panel-upgrade-100a-to-200a"
+  ],
+  "stats": [
+    {
+      "value": "65K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you understand the electrical requirements for world-class equestrian barns?",
+      "answer": "Yes, Wellington's equestrian facilities are part of our specialty work. Horse barns require dust-tight fixtures to handle hay and bedding, GFCI protection throughout, safe switch and outlet placement away from horse contact, and properly rated circuits for fans, heaters, and wash stall equipment. Arena lighting is another specialty\u2014we design and install arena systems that meet competition standards."
+    },
+    {
+      "question": "Our Wellington estate needs more than 200 amps\u2014can you handle that?",
+      "answer": "Absolutely. Many Wellington estates require 400-600 amp service to power main homes, guest houses, pools, outdoor entertainment, barns, and extensive landscape lighting. We design multi-panel systems with proper load balancing, coordinate with FPL for service upgrades, and ensure your estate has the capacity for current needs plus future additions."
+    },
+    {
+      "question": "During polo season, our property hosts events\u2014can you handle temporary electrical?",
+      "answer": "Yes, we understand the seasonal surge in electrical demand during Wellington's equestrian and polo season. We can install temporary power for tents and hospitality areas, ensure existing systems are ready for heavy use, and provide on-call support during events. Planning ahead is key\u2014book early for polo season electrical needs."
+    },
+    {
+      "question": "Can you integrate with high-end home automation systems like Savant or Control4?",
+      "answer": "Yes, we're experienced with luxury automation platforms including Savant, Control4, Crestron, and Lutron. For Wellington estates, we provide the electrical infrastructure that automation systems require\u2014proper panel capacity, dedicated control circuits, low-voltage wiring runs, and coordination with automation integrators."
+    },
+    {
+      "question": "Wellington has intense summer lightning\u2014how do we protect our systems?",
+      "answer": "Western Palm Beach County is extremely lightning-prone. For Wellington properties with significant electronics, automation, and expensive equestrian equipment, we recommend comprehensive surge protection: whole-home protection at the main panel, plus point-of-use protection for sensitive systems. This multi-layer approach catches surges before they damage expensive equipment."
+    },
+    {
+      "question": "How quickly can you respond to emergencies in Wellington?",
+      "answer": "Wellington is on the northern edge of our service area in Palm Beach County.  "
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Premier Wellington Electricians \u2013 Serving the World of Equestrian Excellence",
+      "body": "Wellington is a community of prestige and precision, known globally as the capital of equestrian sports. It's a city that values tradition, quality, and exceptional service. Solomon Electric is proud to provide the licensed expertise that Wellington's premier homes and facilities count on to stay powered and safe."
+    },
+    {
+      "heading": "Understanding Wellington's Electrical Needs",
+      "body": "Wellington homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Wellington's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Wellington Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Wellington. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Advanced Electrical Care for Your Wellington Property",
+      "body": "Whether you're upgrading the lighting in a luxury arena, modernizing the automation in an estate home, or requiring the peace of mind of a whole-home backup power system, our team is ready to assist. We provide clean, professional, and code-compliant work that matches the high standards of the Wellington community."
+    }
+  ],
+  "imageAlt": "Professional electrical services in Wellington, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

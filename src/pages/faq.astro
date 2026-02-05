@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/heroes/faq.png";
+import heroImage from "../assets/images/heroes/faq.webp";
 import PageHero from "../components/PageHero.astro";
 import Button from "../components/ui/Button.astro";
 import { SITE_CONFIG } from "../config/site";
@@ -18,7 +18,7 @@ const faqs = [
     {
         id: "2",
         question: "Are you licensed and insured?",
-        answer: "Absolutely. We hold Florida state electrical license #EC13012419 and carry $2M in liability insurance. All of our electricians are licensed, continuously trained, and up-to-date on current electrical codes and safety standards.",
+        answer: `Absolutely. We hold Florida state electrical license #${SITE_CONFIG.credentials.license.number} and carry $2M in liability insurance. All of our electricians are licensed, continuously trained, and up-to-date on current electrical codes and safety standards.`,
     },
     {
         id: "3",
@@ -446,8 +446,8 @@ const breadcrumbSchema = {
                     </p>
                     <p class="seo-intro-secondary">
                         Solomon Electric (FL License #{SITE_CONFIG.credentials.license.number.replace('#', '')}) 
-                        has completed 19,400+ electrical projects since 2008. Can't find your answer? 
-                        Call (786) 833-9211 for personalized help—we're available 24/7.
+                        has completed {SITE_CONFIG.stats.totalProjects}+ electrical projects since {SITE_CONFIG.company.foundedYear}. Can't find your answer? 
+                        Call {SITE_CONFIG.contact.phone.formatted} for personalized help—we're available 24/7.
                     </p>
                 </div>
                 <div class="seo-intro-stats">

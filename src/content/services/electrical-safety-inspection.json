@@ -1,10 +1,10 @@
 {
   "name": "Electrical Safety Inspection & Certification",
   "slug": "electrical-safety-inspection",
-  "description": "Peace of mind starts with knowing your electrical system is safe. Solomon Electric provides comprehensive electrical safety inspections and professional certifications for South Florida homeowners and professionals—covering everything from 4-point insurance inspections and pre-purchase audits to real estate certifications. Our licensed electricians identify hidden hazards, verify code compliance, and deliver the official documentation you need for insurance, sales, or total peace of mind.",
+  "description": "Peace of mind starts with knowing your electrical system is safe. Solomon Electric provides comprehensive electrical safety inspections and professional certifications for South Florida homeowners and professionals\u2014covering everything from 4-point insurance inspections and pre-purchase audits to real estate certifications. Our licensed electricians identify hidden hazards, verify code compliance, and deliver the official documentation you need for insurance, sales, or total peace of mind.",
   "shortDescription": "Certified electrical system evaluation",
   "icon": "Shield",
-  "image": "../../assets/images/services/panel-work.png",
+  "image": "../../assets/images/services/panel-work.webp",
   "category": "Commercial & Inspections",
   "order": 11,
   "features": [
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "What is the difference between this and a home inspection?",
-      "answer": "Significantly different. General home inspectors check basic functions—a 5-10 minute review. Professional electrical inspections involve deep examination by licensed electricians who understand code requirements, hidden hazards, and system integrity."
+      "answer": "Significantly different. General home inspectors check basic functions\u2014a 5-10 minute review. Professional electrical inspections involve deep examination by licensed electricians who understand code requirements, hidden hazards, and system integrity."
     },
     {
       "question": "Is this the same as a 4-point inspection?",
@@ -165,10 +165,11 @@
     },
     {
       "heading": "Honest Assessments, Professional Results",
-      "body": "We don't create unnecessary work. Our reports prioritize findings by urgency—immediate safety hazards vs. code updates vs. future improvements. You'll understand exactly what's important for your safety and your property value."
+      "body": "We don't create unnecessary work. Our reports prioritize findings by urgency\u2014immediate safety hazards vs. code updates vs. future improvements. You'll understand exactly what's important for your safety and your property value."
     }
   ],
   "relatedBlogPosts": [
     "comprehensive-electrical-safety-inspections"
-  ]
+  ],
+  "imageAlt": "Electrical Safety Inspection & Certification service provided by licensed electricians in South Florida"
 }

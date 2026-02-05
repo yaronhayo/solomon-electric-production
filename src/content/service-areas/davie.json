@@ -1,123 +1,125 @@
 {
-    "name": "Davie",
-    "slug": "davie",
-    "county": "Broward",
-    "description": "Licensed Davie electricians serving the 'Town of Davie'. Solomon Electric provides professional residential and commercial electrical services for Davie's diverse properties, from equestrian estates to university campuses.",
-    "population": "110,000+",
-    "founded": "1925",
-    "areaSquareMiles": "35",
-    "tagline": "Always Davie",
-    "landmarks": [
-        "Flamingo Gardens",
-        "Nova Southeastern University",
-        "Bergeron Rodeo Grounds",
-        "Davie Pine Island Park",
-        "Vista View Park"
-    ],
-    "neighborhoods": [
-        "Davie West",
-        "Forest Ridge",
-        "Long Lake Ranches",
-        "Ivanhoe",
-        "Rolling Hills",
-        "Sugar Ridge"
-    ],
-    "majorRoads": [
-        "I-75",
-        "I-595",
-        "Florida Turnpike",
-        "University Drive",
-        "Griffin Road"
-    ],
-    "coordinates": {
-        "lat": 26.0629,
-        "lng": -80.2331
+  "name": "Davie",
+  "slug": "davie",
+  "county": "Broward",
+  "description": "Licensed Davie electricians serving the 'Town of Davie'. Solomon Electric provides professional residential and commercial electrical services for Davie's diverse properties, from equestrian estates to university campuses.",
+  "population": "110,000+",
+  "founded": "1925",
+  "areaSquareMiles": "35",
+  "tagline": "Always Davie",
+  "landmarks": [
+    "Flamingo Gardens",
+    "Nova Southeastern University",
+    "Bergeron Rodeo Grounds",
+    "Davie Pine Island Park",
+    "Vista View Park"
+  ],
+  "neighborhoods": [
+    "Davie West",
+    "Forest Ridge",
+    "Long Lake Ranches",
+    "Ivanhoe",
+    "Rolling Hills",
+    "Sugar Ridge"
+  ],
+  "majorRoads": [
+    "I-75",
+    "I-595",
+    "Florida Turnpike",
+    "University Drive",
+    "Griffin Road"
+  ],
+  "coordinates": {
+    "lat": 26.0629,
+    "lng": -80.2331
+  },
+  "challenges": [
+    {
+      "title": "Equestrian & Rural Power Needs",
+      "description": "Davie's unique equestrian character often requires specialized wiring for barns, stables, arenas, and large rural properties.",
+      "icon": "Zap"
     },
-    "challenges": [
-        {
-            "title": "Equestrian & Rural Power Needs",
-            "description": "Davie's unique equestrian character often requires specialized wiring for barns, stables, arenas, and large rural properties.",
-            "icon": "Zap"
-        },
-        {
-            "title": "Education Hub Technicality",
-            "description": "With a massive university presence, Davie businesses and student housing require advanced electrical infrastructure for data and high-capacity residency.",
-            "icon": "Shield"
-        },
-        {
-            "title": "Western Storm Vulnerability",
-            "description": "Davie's proximity to the Everglades makes it susceptible to intense seasonal storms. We emphasize robust surge protection and backup generator readiness.",
-            "icon": "CloudLightning"
-        }
-    ],
-    "featuredServices": [
-        "electrical-panel-upgrade-100a-to-200a",
-        "landscape-outdoor-lighting",
-        "whole-home-surge-protection",
-        "home-standby-generator-installation",
-        "24-7-emergency-electrical-service",
-        "recessed-lighting-installation"
-    ],
-    "stats": [
-        {
-            "value": "110K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "We have horses—do you understand the electrical requirements for barns and stables?",
-            "answer": "Yes, equestrian electrical is one of our specialties in Davie. Horse barns have specific requirements: dust-tight fixtures to handle hay and shavings, GFCI protection throughout, properly rated circuits for fans and heaters, and safe placement of outlets and switches where horses can't reach them. We also install arena lighting, wash stall power, and electric fence controllers—all common needs in Davie's equestrian community."
-        },
-        {
-            "question": "Our Long Lake Ranches property has multiple structures—can you handle the whole compound?",
-            "answer": "Absolutely. Large acreage properties in Davie—Long Lake Ranches, Rolling Hills, and Ivanhoe—often have main homes, guest houses, pool houses, barns, and workshops that all need coordinated electrical service. We design systems with proper sub-panels, underground runs between structures, and load balancing to ensure reliable power across your entire property."
-        },
-        {
-            "question": "Do you work near Nova Southeastern University?",
-            "answer": "Yes, we serve the entire University Drive corridor in Davie, including commercial properties near NSU and the educational campus complex. Services include tenant buildouts, classroom lighting upgrades, lab electrical requirements, and 24/7 emergency support for businesses serving the university community."
-        },
-        {
-            "question": "Davie gets hit hard by afternoon thunderstorms—should I get surge protection?",
-            "answer": "Definitely. Western Broward is among the most lightning-prone areas in the country, and Davie's proximity to the Everglades means intense summer storms. Whole-home surge protection at your panel is essential—it catches voltage spikes from nearby strikes before they damage your electronics, appliances, and HVAC equipment. We recommend this for every Davie home."
-        },
-        {
-            "question": "Can you install a generator for our Davie property with well water?",
-            "answer": "Yes—and for properties on well water, generator installation is even more critical. When power goes out, you lose not just AC but also your water supply. We size generators to handle well pumps, AC systems, and essential circuits simultaneously. Many Davie homeowners with wells consider generators essential, not optional."
-        },
-        {
-            "question": "How quickly can you respond to emergencies near Griffin Road or Orange Drive?",
-            "answer": "We maintain coverage in Davie to assist with residential and commercial electrical requirements. For situation-specific emergencies—such as sparking or burning smells—we prioritize the allocation of technical resources across the service area."
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Trusted Davie Electricians – Serving the Heart of Broward",
-            "body": "Davie is a town that beautifully balances its western roots with its status as an educational and residential leader. From the rodeo grounds to the halls of Nova Southeastern, Davie is a community that values hard work and professional integrity. Solomon Electric is proud to deliver that same level of service to Davie families and businesses."
-        },
-        {
-            "heading": "Understanding Davie's Electrical Needs",
-            "body": "Davie homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Davie's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Davie Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Davie. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Professional Electrical Care for Your Davie Home or Business",
-            "body": "Whether you're moving into a new home in Long Lake Ranches, upgrading your business space near the university, or needing storm repairs in Ivanhoe, our licensed electricians are ready to help. We provide professional service, code-compliant work, and a commitment to safety that is 'Always Davie.'"
-        }
-    ]
+    {
+      "title": "Education Hub Technicality",
+      "description": "With a massive university presence, Davie businesses and student housing require advanced electrical infrastructure for data and high-capacity residency.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Western Storm Vulnerability",
+      "description": "Davie's proximity to the Everglades makes it susceptible to intense seasonal storms. We emphasize robust surge protection and backup generator readiness.",
+      "icon": "CloudLightning"
+    }
+  ],
+  "featuredServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "landscape-outdoor-lighting",
+    "whole-home-surge-protection",
+    "home-standby-generator-installation",
+    "24-7-emergency-electrical-service",
+    "recessed-lighting-installation"
+  ],
+  "stats": [
+    {
+      "value": "110K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "We have horses\u2014do you understand the electrical requirements for barns and stables?",
+      "answer": "Yes, equestrian electrical is one of our specialties in Davie. Horse barns have specific requirements: dust-tight fixtures to handle hay and shavings, GFCI protection throughout, properly rated circuits for fans and heaters, and safe placement of outlets and switches where horses can't reach them. We also install arena lighting, wash stall power, and electric fence controllers\u2014all common needs in Davie's equestrian community."
+    },
+    {
+      "question": "Our Long Lake Ranches property has multiple structures\u2014can you handle the whole compound?",
+      "answer": "Absolutely. Large acreage properties in Davie\u2014Long Lake Ranches, Rolling Hills, and Ivanhoe\u2014often have main homes, guest houses, pool houses, barns, and workshops that all need coordinated electrical service. We design systems with proper sub-panels, underground runs between structures, and load balancing to ensure reliable power across your entire property."
+    },
+    {
+      "question": "Do you work near Nova Southeastern University?",
+      "answer": "Yes, we serve the entire University Drive corridor in Davie, including commercial properties near NSU and the educational campus complex. Services include tenant buildouts, classroom lighting upgrades, lab electrical requirements, and 24/7 emergency support for businesses serving the university community."
+    },
+    {
+      "question": "Davie gets hit hard by afternoon thunderstorms\u2014should I get surge protection?",
+      "answer": "Definitely. Western Broward is among the most lightning-prone areas in the country, and Davie's proximity to the Everglades means intense summer storms. Whole-home surge protection at your panel is essential\u2014it catches voltage spikes from nearby strikes before they damage your electronics, appliances, and HVAC equipment. We recommend this for every Davie home."
+    },
+    {
+      "question": "Can you install a generator for our Davie property with well water?",
+      "answer": "Yes\u2014and for properties on well water, generator installation is even more critical. When power goes out, you lose not just AC but also your water supply. We size generators to handle well pumps, AC systems, and essential circuits simultaneously. Many Davie homeowners with wells consider generators essential, not optional."
+    },
+    {
+      "question": "How quickly can you respond to emergencies near Griffin Road or Orange Drive?",
+      "answer": "We maintain coverage in Davie to assist with residential and commercial electrical requirements. For situation-specific emergencies\u2014such as sparking or burning smells\u2014we prioritize the allocation of technical resources across the service area."
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Trusted Davie Electricians \u2013 Serving the Heart of Broward",
+      "body": "Davie is a town that beautifully balances its western roots with its status as an educational and residential leader. From the rodeo grounds to the halls of Nova Southeastern, Davie is a community that values hard work and professional integrity. Solomon Electric is proud to deliver that same level of service to Davie families and businesses."
+    },
+    {
+      "heading": "Understanding Davie's Electrical Needs",
+      "body": "Davie homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Davie's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Davie Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Davie. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Professional Electrical Care for Your Davie Home or Business",
+      "body": "Whether you're moving into a new home in Long Lake Ranches, upgrading your business space near the university, or needing storm repairs in Ivanhoe, our licensed electricians are ready to help. We provide professional service, code-compliant work, and a commitment to safety that is 'Always Davie.'"
+    }
+  ],
+  "imageAlt": "Professional electrical services in Davie, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

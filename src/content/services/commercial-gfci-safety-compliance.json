@@ -1,10 +1,10 @@
 {
   "name": "Commercial GFCI Safety Compliance",
   "slug": "commercial-gfci-safety-compliance",
-  "description": "Commercial facilities have specific GFCI requirements that protect employees, customers, and you from liability. Solomon Electric ensures commercial GFCI compliance throughout South Florida—installing and maintaining ground fault protection in kitchens, bathrooms, outdoor areas, and all locations code requires.",
+  "description": "Commercial facilities have specific GFCI requirements that protect employees, customers, and you from liability. Solomon Electric ensures commercial GFCI compliance throughout South Florida\u2014installing and maintaining ground fault protection in kitchens, bathrooms, outdoor areas, and all locations code requires.",
   "shortDescription": "Commercial ground fault protection",
   "icon": "Shield",
-  "image": "../../assets/images/services/wiring.png",
+  "image": "../../assets/images/services/wiring.webp",
   "category": "Commercial & Inspections",
   "order": 47,
   "features": [
@@ -30,7 +30,7 @@
     },
     {
       "title": "Outdoor Receptacles",
-      "description": "All outdoor outlets at commercial properties require GFCI protection—parking areas, patios, loading docks.",
+      "description": "All outdoor outlets at commercial properties require GFCI protection\u2014parking areas, patios, loading docks.",
       "icon": "Plug"
     },
     {
@@ -59,17 +59,17 @@
     {
       "step": 2,
       "title": "Gap Identification",
-      "description": "We document specifically where GFCI protection is required but missing—with code references if needed for budget justification."
+      "description": "We document specifically where GFCI protection is required but missing\u2014with code references if needed for budget justification."
     },
     {
       "step": 3,
       "title": "Installation",
-      "description": "We install GFCI protection—either GFCI receptacles at point-of-use or GFCI breakers protecting entire circuits as appropriate."
+      "description": "We install GFCI protection\u2014either GFCI receptacles at point-of-use or GFCI breakers protecting entire circuits as appropriate."
     },
     {
       "step": 4,
       "title": "Testing and Verification",
-      "description": "We test all GFCI devices to verify proper function—both trip and reset operation."
+      "description": "We test all GFCI devices to verify proper function\u2014both trip and reset operation."
     },
     {
       "step": 5,
@@ -129,11 +129,11 @@
     },
     {
       "question": "How often should commercial GFCI be tested?",
-      "answer": "Monthly testing is recommended—press test button, verify trip, press reset. Some facilities require documented testing. We can provide periodic testing services or train your staff on proper testing procedures."
+      "answer": "Monthly testing is recommended\u2014press test button, verify trip, press reset. Some facilities require documented testing. We can provide periodic testing services or train your staff on proper testing procedures."
     },
     {
       "question": "Can GFCI cause nuisance tripping?",
-      "answer": "GFCI trips when it detects current leakage—sometimes from equipment with normal leakage (old refrigerators, certain tools). If tripping is frequent, the solution may be equipment repair, dedicated circuits, or addressing actual leakage issues."
+      "answer": "GFCI trips when it detects current leakage\u2014sometimes from equipment with normal leakage (old refrigerators, certain tools). If tripping is frequent, the solution may be equipment repair, dedicated circuits, or addressing actual leakage issues."
     },
     {
       "question": "Are older buildings exempt from GFCI requirements?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "What if GFCI keeps tripping in our commercial kitchen?",
-      "answer": "Kitchen GFCI tripping usually indicates moisture issues, equipment problems, or circuit overloads. We diagnose the cause—it may be equipment needing repair, circuit reorganization, or addressing moisture intrusion."
+      "answer": "Kitchen GFCI tripping usually indicates moisture issues, equipment problems, or circuit overloads. We diagnose the cause\u2014it may be equipment needing repair, circuit reorganization, or addressing moisture intrusion."
     }
   ],
   "relatedServices": [
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Commercial GFCI Compliance in South Florida",
-      "body": "Commercial facilities have specific GFCI requirements protecting employees, customers, and limiting liability. Solomon Electric ensures GFCI compliance throughout Miami-Dade and Broward counties—installing ground fault protection in kitchens, restrooms, outdoor areas, and all required locations."
+      "body": "Commercial facilities have specific GFCI requirements protecting employees, customers, and limiting liability. Solomon Electric ensures GFCI compliance throughout Miami-Dade and Broward counties\u2014installing ground fault protection in kitchens, restrooms, outdoor areas, and all required locations."
     },
     {
       "heading": "Required GFCI Locations",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric provides commercial GFCI compliance services throughout Miami, Fort Lauderdale, Hollywood, and all surrounding commercial areas. Protect your employees, customers, and business with proper ground fault protection."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Commercial GFCI Safety Compliance service provided by licensed electricians in South Florida"
 }

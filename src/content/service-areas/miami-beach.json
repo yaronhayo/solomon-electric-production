@@ -1,126 +1,128 @@
 {
-    "name": "Miami Beach",
-    "slug": "miami-beach",
-    "county": "Miami-Dade",
-    "description": "Expert licensed electricians serving Miami Beach, Florida. Solomon Electric provides high-end electrical services tailored for coastal resilience, from Art Deco restorations in South Beach to luxury estates on North Beach.",
-    "population": "85,000+",
-    "founded": "1915",
-    "areaSquareMiles": "8",
-    "tagline": "The World's Playground",
-    "landmarks": [
-        "Ocean Drive",
-        "Lincoln Road",
-        "Miami Beach Convention Center",
-        "South Pointe Park",
-        "The Fillmore"
-    ],
-    "neighborhoods": [
-        "South Beach (SoBe)",
-        "Mid-Beach",
-        "North Beach",
-        "Star Island",
-        "Fisher Island",
-        "Sunset Islands",
-        "Venetian Islands",
-        "Belle Isle",
-        "La Gorce"
-    ],
-    "majorRoads": [
-        "Collins Avenue (A1A)",
-        "MacArthur Causeway",
-        "Julia Tuttle Causeway",
-        "Alton Road",
-        "Ocean Drive"
-    ],
-    "coordinates": {
-        "lat": 25.7907,
-        "lng": -80.13
+  "name": "Miami Beach",
+  "slug": "miami-beach",
+  "county": "Miami-Dade",
+  "description": "Expert licensed electricians serving Miami Beach, Florida. Solomon Electric provides high-end electrical services tailored for coastal resilience, from Art Deco restorations in South Beach to luxury estates on North Beach.",
+  "population": "85,000+",
+  "founded": "1915",
+  "areaSquareMiles": "8",
+  "tagline": "The World's Playground",
+  "landmarks": [
+    "Ocean Drive",
+    "Lincoln Road",
+    "Miami Beach Convention Center",
+    "South Pointe Park",
+    "The Fillmore"
+  ],
+  "neighborhoods": [
+    "South Beach (SoBe)",
+    "Mid-Beach",
+    "North Beach",
+    "Star Island",
+    "Fisher Island",
+    "Sunset Islands",
+    "Venetian Islands",
+    "Belle Isle",
+    "La Gorce"
+  ],
+  "majorRoads": [
+    "Collins Avenue (A1A)",
+    "MacArthur Causeway",
+    "Julia Tuttle Causeway",
+    "Alton Road",
+    "Ocean Drive"
+  ],
+  "coordinates": {
+    "lat": 25.7907,
+    "lng": -80.13
+  },
+  "challenges": [
+    {
+      "title": "Extreme Salt Air Corrosion",
+      "description": "Miami Beach's literal island geography means electrical systems face constant salt spray. We use specialized marine-grade coatings and corrosion-resistant hardware for all outdoor installations.",
+      "icon": "Umbrella"
     },
-    "challenges": [
-        {
-            "title": "Extreme Salt Air Corrosion",
-            "description": "Miami Beach's literal island geography means electrical systems face constant salt spray. We use specialized marine-grade coatings and corrosion-resistant hardware for all outdoor installations.",
-            "icon": "Umbrella"
-        },
-        {
-            "title": "Art Deco & Historic Code Compliance",
-            "description": "Restoring many of Miami Beach's iconic 1920s-1940s buildings requires a delicate balance of preserving historic character while modernizing systems to meet current safety and fire codes.",
-            "icon": "Home"
-        },
-        {
-            "title": "High-End Lighting & Smart Luxury",
-            "description": "Miami Beach luxury properties demand sophisticated lighting design and advanced home automation systems that integrate seamlessly with high-end architecture.",
-            "icon": "Zap"
-        }
-    ],
-    "featuredServices": [
-        "condo-electrical-upgrades-miami",
-        "smart-lighting-installation",
-        "24-7-emergency-electrical-service",
-        "landscape-outdoor-lighting",
-        "whole-home-surge-protection",
-        "ev-charging-system-setup"
-    ],
-    "stats": [
-        {
-            "value": "85K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "Why do electrical systems in Miami Beach fail faster than on the mainland?",
-            "answer": "Miami Beach is literally surrounded by salt water on all sides. Salt spray accelerates corrosion of every exposed metal surface—weatherheads, panel enclosures, exterior outlets, junction boxes. We see Miami Beach electrical components fail in 5-7 years that would last 15-20 years in inland Broward. For Miami Beach properties, we exclusively use marine-grade stainless steel hardware, corrosion-resistant enclosures, and sealed connections designed for constant salt exposure."
-        },
-        {
-            "question": "We're renovating an Art Deco building in South Beach—can you update the electrical while preserving the historic character?",
-            "answer": "Absolutely. We've completed electrical upgrades in numerous buildings within the Miami Beach Architectural Historic District. The challenge is installing modern wiring and panels without visible impact to historic elements—no surface-mounted conduit, no inappropriate covers, hidden panel locations. We work with historic preservation requirements and understand what inspectors in the district expect. The result is a fully modern, code-compliant electrical system that's invisible within your Art Deco masterpiece."
-        },
-        {
-            "question": "Is electrical flooding damage a concern for Miami Beach properties?",
-            "answer": "Yes—Miami Beach experiences tidal flooding even without storms. If your panel or electrical equipment is in a garage or ground-floor utility room, it may have been exposed to salt water at some point. After flooding events, we recommend an electrical inspection to check for corroded breakers, damaged connections, and compromised grounding. Saltwater damage is often invisible initially but causes failures months or years later."
-        },
-        {
-            "question": "Do you service the private islands—Star Island, Fisher Island, Venetian Islands?",
-            "answer": "Yes, we regularly work on Star Island, the Venetian Islands, Sunset Islands, La Gorce Island, and in Fisher Island (ferry access). These properties have unique requirements: massive power capacity (often 400-800 amp service), sophisticated landscape lighting, marine dock power, and whole-estate automation. We understand the level of quality expected and the logistics of working on access-controlled islands."
-        },
-        {
-            "question": "Can you install an EV charger in my Mid-Beach condo building?",
-            "answer": "We specialize in Miami Beach condo EV installations. The challenges include limited parking space electrical infrastructure, building management approval, load capacity concerns, and Florida's condo EV rights law (Statute 718.113). We've successfully installed chargers in buildings that initially seemed impossible—the key is proper load assessment and creative solutions. We handle all coordination with your building management and HOA."
-        },
-        {
-            "question": "How quickly can you respond to emergencies on Miami Beach?",
-            "answer": "We maintain coverage in Miami Beach to assist with coastal electrical requirements. For situation-specific emergencies—such as active sparking or complete outages—we prioritize the allocation of technical resources."
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Luxury Electrical Services in Miami Beach",
-            "body": "Miami Beach is more than a destination; it's a lifestyle. From the historic neon of South Beach to the ultra-exclusive estates on the Venetian Islands, Miami Beach requires a level of electrical service that is both technically superior and aesthetically conscious. Solomon Electric provides that expertise, ensuring your coastal home is both beautiful and resilient."
-        },
-        {
-            "heading": "Understanding Miami Beach's Electrical Needs",
-            "body": "Miami Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Miami Beach's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Miami Beach Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Miami Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Coastal Resilience for Your Beachfront Property",
-            "body": "Living on an island brings unique challenges to your electrical system. Corrosion is a constant threat, and storm surge protection is a necessity. Our team is specifically trained in coastal electrical best practices, using materials and techniques that withstand the harsh Miami Beach environment. We ensure your luxury investment is protected by a safe, robust, and modern electrical foundation."
-        }
-    ]
+    {
+      "title": "Art Deco & Historic Code Compliance",
+      "description": "Restoring many of Miami Beach's iconic 1920s-1940s buildings requires a delicate balance of preserving historic character while modernizing systems to meet current safety and fire codes.",
+      "icon": "Home"
+    },
+    {
+      "title": "High-End Lighting & Smart Luxury",
+      "description": "Miami Beach luxury properties demand sophisticated lighting design and advanced home automation systems that integrate seamlessly with high-end architecture.",
+      "icon": "Zap"
+    }
+  ],
+  "featuredServices": [
+    "condo-electrical-upgrades-miami",
+    "smart-lighting-installation",
+    "24-7-emergency-electrical-service",
+    "landscape-outdoor-lighting",
+    "whole-home-surge-protection",
+    "ev-charging-system-setup"
+  ],
+  "stats": [
+    {
+      "value": "85K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why do electrical systems in Miami Beach fail faster than on the mainland?",
+      "answer": "Miami Beach is literally surrounded by salt water on all sides. Salt spray accelerates corrosion of every exposed metal surface\u2014weatherheads, panel enclosures, exterior outlets, junction boxes. We see Miami Beach electrical components fail in 5-7 years that would last 15-20 years in inland Broward. For Miami Beach properties, we exclusively use marine-grade stainless steel hardware, corrosion-resistant enclosures, and sealed connections designed for constant salt exposure."
+    },
+    {
+      "question": "We're renovating an Art Deco building in South Beach\u2014can you update the electrical while preserving the historic character?",
+      "answer": "Absolutely. We've completed electrical upgrades in numerous buildings within the Miami Beach Architectural Historic District. The challenge is installing modern wiring and panels without visible impact to historic elements\u2014no surface-mounted conduit, no inappropriate covers, hidden panel locations. We work with historic preservation requirements and understand what inspectors in the district expect. The result is a fully modern, code-compliant electrical system that's invisible within your Art Deco masterpiece."
+    },
+    {
+      "question": "Is electrical flooding damage a concern for Miami Beach properties?",
+      "answer": "Yes\u2014Miami Beach experiences tidal flooding even without storms. If your panel or electrical equipment is in a garage or ground-floor utility room, it may have been exposed to salt water at some point. After flooding events, we recommend an electrical inspection to check for corroded breakers, damaged connections, and compromised grounding. Saltwater damage is often invisible initially but causes failures months or years later."
+    },
+    {
+      "question": "Do you service the private islands\u2014Star Island, Fisher Island, Venetian Islands?",
+      "answer": "Yes, we regularly work on Star Island, the Venetian Islands, Sunset Islands, La Gorce Island, and in Fisher Island (ferry access). These properties have unique requirements: massive power capacity (often 400-800 amp service), sophisticated landscape lighting, marine dock power, and whole-estate automation. We understand the level of quality expected and the logistics of working on access-controlled islands."
+    },
+    {
+      "question": "Can you install an EV charger in my Mid-Beach condo building?",
+      "answer": "We specialize in Miami Beach condo EV installations. The challenges include limited parking space electrical infrastructure, building management approval, load capacity concerns, and Florida's condo EV rights law (Statute 718.113). We've successfully installed chargers in buildings that initially seemed impossible\u2014the key is proper load assessment and creative solutions. We handle all coordination with your building management and HOA."
+    },
+    {
+      "question": "How quickly can you respond to emergencies on Miami Beach?",
+      "answer": "We maintain coverage in Miami Beach to assist with coastal electrical requirements. For situation-specific emergencies\u2014such as active sparking or complete outages\u2014we prioritize the allocation of technical resources."
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Luxury Electrical Services in Miami Beach",
+      "body": "Miami Beach is more than a destination; it's a lifestyle. From the historic neon of South Beach to the ultra-exclusive estates on the Venetian Islands, Miami Beach requires a level of electrical service that is both technically superior and aesthetically conscious. Solomon Electric provides that expertise, ensuring your coastal home is both beautiful and resilient."
+    },
+    {
+      "heading": "Understanding Miami Beach's Electrical Needs",
+      "body": "Miami Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Miami Beach's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Miami Beach Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Miami Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Coastal Resilience for Your Beachfront Property",
+      "body": "Living on an island brings unique challenges to your electrical system. Corrosion is a constant threat, and storm surge protection is a necessity. Our team is specifically trained in coastal electrical best practices, using materials and techniques that withstand the harsh Miami Beach environment. We ensure your luxury investment is protected by a safe, robust, and modern electrical foundation."
+    }
+  ],
+  "imageAlt": "Professional electrical services in Miami Beach, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

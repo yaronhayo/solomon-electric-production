@@ -54,6 +54,30 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# AI21
+User-agent: AI21
+Allow: /
+
+# xAI (Grok)
+User-agent: Grok
+Allow: /
+
+# Mistral
+User-agent: MistralBot
+Allow: /
+
+# Apple Siri/Spotlight
+User-agent: Applebot
+Allow: /
+
 # ============================================
 # Search Engine Bots - ALLOW
 # ============================================

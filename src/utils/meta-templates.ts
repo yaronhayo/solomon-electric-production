@@ -53,7 +53,7 @@ export function generateServiceMeta(input: ServiceMetaInput): string {
   }
   
   // Without city (main service page)
-  const base = `Expert ${serviceName.toLowerCase()} services in South Florida. FL License #EC13012419, 24/7 emergency service.`;
+  const base = `Expert ${serviceName.toLowerCase()} services in South Florida. FL License #${SITE_CONFIG.credentials.license.number}, 24/7 emergency service.`;
   const cta = ' Get a free estimate today!';
   return truncateMeta(base + cta);
 }
@@ -97,7 +97,7 @@ export function generateServiceAreaMeta(input: ServiceAreaMetaInput): string {
  * Generate meta description for homepage
  */
 export function generateHomepageMeta(): string {
-  return `${SITE_CONFIG.company.name} - Licensed electricians serving Miami-Dade & Broward. 24/7 emergency service, free estimates. FL License #EC13012419. Call now!`;
+  return `${SITE_CONFIG.company.name} - Licensed electricians serving Miami-Dade & Broward. 24/7 emergency service, free estimates. FL License #${SITE_CONFIG.credentials.license.number}. Call now!`;
 }
 
 /**
@@ -113,7 +113,7 @@ export function generateContactMeta(): string {
 export function generateReviewsMeta(): string {
   const rating = SITE_CONFIG.stats.averageRating;
   const count = SITE_CONFIG.stats.totalReviews;
-  return `See why ${SITE_CONFIG.company.name} has ${rating}★ rating from ${count}+ reviews. Read customer testimonials from Miami-Dade & Broward. Licensed & trusted since 2008.`;
+  return `See why ${SITE_CONFIG.company.name} has ${rating}★ rating from ${count}+ reviews. Read customer testimonials from Miami-Dade & Broward. Licensed & trusted since ${SITE_CONFIG.company.foundedYear}.`;
 }
 
 /**
@@ -121,7 +121,7 @@ export function generateReviewsMeta(): string {
  */
 export function generateAboutMeta(): string {
   const years = SITE_CONFIG.credentials.yearsExperience;
-  return `About ${SITE_CONFIG.company.name} - ${years}+ years serving South Florida. FL License #EC13012419. Family-owned, satisfaction guaranteed. Meet our team.`;
+  return `About ${SITE_CONFIG.company.name} - ${years}+ years serving South Florida. FL License #${SITE_CONFIG.credentials.license.number}. Family-owned, satisfaction guaranteed. Meet our team.`;
 }
 
 // ============================================

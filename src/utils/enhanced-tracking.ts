@@ -179,7 +179,7 @@ export function initScrollTracking() {
       clearTimeout(scrollTimeout);
     }
     scrollTimeout = setTimeout(checkScrollDepth, 100);
-  });
+  }, { passive: true });
 }
 
 // Video interaction tracking (if videos exist)

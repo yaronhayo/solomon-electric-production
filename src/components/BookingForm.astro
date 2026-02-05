@@ -1,8 +1,7 @@
 ---
+import { SITE_CONFIG } from "../config/site";
 import Button from "./ui/Button.astro";
 import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
-
-// Props if needed
 ---
 
 <div
@@ -140,7 +139,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                 </div>
             </div>
 
-            <div id="additionalDetailsContainer" class="mb-6 hidden">
+            <div id="additionalDetailsContainer" class="mb-6">
                 <label
                     for="serviceDetails"
                     class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
@@ -406,16 +405,14 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     <span
                         class="ml-2 text-xs text-[var(--text-body)] font-medium leading-tight font-body"
                     >
-                        I agree to the <a
-                            href="/privacy"
-                            target="_blank"
-                            class="text-accent hover:underline"
-                            >Privacy Policy</a
-                        > and <a
-                            href="/terms"
-                            target="_blank"
-                            class="text-accent hover:underline"
-                            >Terms & Conditions</a
+                        I agree to the <button
+                            type="button"
+                            class="legal-link text-accent hover:underline font-medium"
+                            data-modal="privacy">Privacy Policy</button
+                        > and <button
+                            type="button"
+                            class="legal-link text-accent hover:underline font-medium"
+                            data-modal="terms">Terms & Conditions</button
                         >.
                     </span>
                 </label>
@@ -590,6 +587,76 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         </div>
     </form>
 
+    <!-- Legal Modal -->
+    <div
+        id="legalModal"
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+    >
+        <!-- Backdrop -->
+        <div
+            class="modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm"
+        >
+        </div>
+
+        <!-- Modal Content -->
+        <div
+            class="modal-content relative bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden transform transition-all"
+        >
+            <!-- Modal Header -->
+            <div
+                class="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50"
+            >
+                <h3
+                    id="modalTitle"
+                    class="text-lg font-bold text-primary font-display uppercase tracking-wide"
+                >
+                    Privacy Policy
+                </h3>
+                <button
+                    type="button"
+                    class="modal-close p-2 rounded-full hover:bg-gray-200 transition-colors text-gray-500 hover:text-gray-700"
+                    aria-label="Close modal"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div id="modalBody" class="flex-1 overflow-y-auto p-6">
+                <div class="animate-pulse">
+                    <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                    <div class="h-4 bg-gray-200 rounded w-full mb-4"></div>
+                    <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div
+                class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end"
+            >
+                <button
+                    type="button"
+                    class="modal-close px-6 py-2 bg-primary text-white font-bold uppercase text-sm tracking-wide rounded hover:bg-primary/90 transition-colors"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
     <style>
         /* Header Gradient */
         .header-gradient {
@@ -652,8 +719,8 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         }
 
         .step-indicator.active .step-icon {
-            background: linear-gradient(135deg, #14d3e3 0%, #10b8c6 100%);
-            border-color: #14d3e3;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark, #10b8c6) 100%);
+            border-color: var(--color-accent);
             color: white;
             box-shadow:
                 0 0 20px rgba(20, 211, 227, 0.5),
@@ -682,7 +749,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         }
 
         .step-indicator.active .step-label {
-            color: #14d3e3;
+            color: var(--color-accent);
         }
 
         .step-indicator.completed .step-label {
@@ -704,7 +771,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             top: 0;
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #14d3e3, #10b8c6);
+            background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark, #10b8c6));
             transition: width 0.5s ease;
         }
 
@@ -846,7 +913,12 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         }
     </style>
 
-    <script>
+    <script
+        define:vars={{
+            googleMapsApiKey: SITE_CONFIG.seo.integrations.googleMaps,
+            recaptchaKey: SITE_CONFIG.seo.integrations.recaptcha,
+        }}
+    >
         // Load Google Maps Script dynamically
         const loadGoogleMaps = () => {
             const existingScript =
@@ -856,7 +928,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             const script = document.createElement("script");
             script.id = "google-maps-script";
             // Use environment variable for Google Maps API key
-            const apiKey = "AIzaSyCPUa0e_IB0rB5UeJrWa3__Lohkm7HB9hY";
+            const apiKey = googleMapsApiKey;
             if (!apiKey) {
                 console.warn(
                     "Google Maps API key not configured. Address autocomplete disabled.",
@@ -948,7 +1020,8 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             const script = document.createElement("script");
             script.id = "recaptcha-script";
             script.src =
-                "https://www.google.com/recaptcha/api.js?render=6LeDDjUsAAAAAEJquohduwPouri3rOne3ahYp765";
+                "https://www.google.com/recaptcha/api.js?render=" +
+                recaptchaKey;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
@@ -978,6 +1051,304 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             const nextBtns = document.querySelectorAll(".next-step-btn");
             const prevBtns = document.querySelectorAll(".prev-step-btn");
             const submitBtn = form.querySelector('button[type="submit"]');
+
+            // =====================================================
+            // FORM VALIDATION UTILITIES
+            // =====================================================
+
+            // Format US phone number - accepts various input formats
+            const formatPhoneNumber = (value: string): string => {
+                // Remove all non-digit characters
+                const digits = value.replace(/\D/g, "");
+
+                // Handle different lengths
+                if (digits.length === 0) return "";
+                if (digits.length <= 3) return `(${digits}`;
+                if (digits.length <= 6)
+                    return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+                if (digits.length <= 10)
+                    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+
+                // For 11 digits (with country code 1)
+                if (digits.length === 11 && digits[0] === "1") {
+                    return `(${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 11)}`;
+                }
+
+                // Limit to 10 digits
+                return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+            };
+
+            // Validate US phone number
+            const isValidUSPhone = (value: string): boolean => {
+                const digits = value.replace(/\D/g, "");
+                return (
+                    digits.length === 10 ||
+                    (digits.length === 11 && digits[0] === "1")
+                );
+            };
+
+            // Capitalize name properly (handles McName, O'Brien, etc.)
+            const capitalizeName = (name: string): string => {
+                return name
+                    .toLowerCase()
+                    .split(/(\s+)/)
+                    .map((part) => {
+                        if (!part.trim()) return part;
+
+                        // Handle Mc/Mac prefixes
+                        if (part.startsWith("mc") && part.length > 2) {
+                            return (
+                                "Mc" +
+                                part.charAt(2).toUpperCase() +
+                                part.slice(3)
+                            );
+                        }
+                        if (part.startsWith("mac") && part.length > 3) {
+                            return (
+                                "Mac" +
+                                part.charAt(3).toUpperCase() +
+                                part.slice(4)
+                            );
+                        }
+
+                        // Handle O' prefix
+                        if (part.startsWith("o'") && part.length > 2) {
+                            return (
+                                "O'" +
+                                part.charAt(2).toUpperCase() +
+                                part.slice(3)
+                            );
+                        }
+
+                        // Standard capitalization
+                        return part.charAt(0).toUpperCase() + part.slice(1);
+                    })
+                    .join("")
+                    .split("-")
+                    .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
+                    .join("-");
+            };
+
+            // Validate email format
+            const isValidEmail = (email: string): boolean => {
+                if (!email) return true; // Optional field
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            };
+
+            // Show validation error
+            const showFieldError = (
+                input: HTMLInputElement,
+                message: string,
+            ) => {
+                input.classList.add("border-red-500", "focus:ring-red-500");
+                input.classList.remove("focus:ring-[var(--color-accent)]");
+
+                let errorEl =
+                    input.parentElement?.querySelector(".field-error");
+                if (!errorEl) {
+                    errorEl = document.createElement("p");
+                    errorEl.className =
+                        "field-error text-red-500 text-xs mt-1 font-medium";
+                    input.parentElement?.appendChild(errorEl);
+                }
+                errorEl.textContent = message;
+            };
+
+            // Clear validation error
+            const clearFieldError = (input: HTMLInputElement) => {
+                input.classList.remove("border-red-500", "focus:ring-red-500");
+                input.classList.add("focus:ring-[var(--color-accent)]");
+                const errorEl =
+                    input.parentElement?.querySelector(".field-error");
+                if (errorEl) errorEl.remove();
+            };
+
+            // =====================================================
+            // FORM INPUT HANDLERS
+            // =====================================================
+
+            // Phone input formatting
+            const phoneInput = document.getElementById(
+                "phone",
+            ) as HTMLInputElement;
+            if (phoneInput) {
+                phoneInput.addEventListener("input", (e) => {
+                    const target = e.target as HTMLInputElement;
+                    const cursorPos = target.selectionStart || 0;
+                    const prevLen = target.value.length;
+
+                    target.value = formatPhoneNumber(target.value);
+
+                    // Maintain cursor position
+                    const newLen = target.value.length;
+                    const newPos = cursorPos + (newLen - prevLen);
+                    target.setSelectionRange(newPos, newPos);
+
+                    // Validate
+                    if (target.value && !isValidUSPhone(target.value)) {
+                        showFieldError(
+                            target,
+                            "Please enter a valid 10-digit US phone number",
+                        );
+                    } else {
+                        clearFieldError(target);
+                    }
+                });
+
+                phoneInput.addEventListener("blur", () => {
+                    if (phoneInput.value && !isValidUSPhone(phoneInput.value)) {
+                        showFieldError(
+                            phoneInput,
+                            "Please enter a valid 10-digit US phone number",
+                        );
+                    }
+                });
+            }
+
+            // Name input capitalization
+            const nameInput = document.getElementById(
+                "name",
+            ) as HTMLInputElement;
+            if (nameInput) {
+                nameInput.addEventListener("blur", () => {
+                    if (nameInput.value.trim()) {
+                        nameInput.value = capitalizeName(
+                            nameInput.value.trim(),
+                        );
+                    }
+                });
+            }
+
+            // Email validation
+            const emailInput = document.getElementById(
+                "email",
+            ) as HTMLInputElement;
+            if (emailInput) {
+                emailInput.addEventListener("blur", () => {
+                    if (emailInput.value && !isValidEmail(emailInput.value)) {
+                        showFieldError(
+                            emailInput,
+                            "Please enter a valid email address",
+                        );
+                    } else {
+                        clearFieldError(emailInput);
+                    }
+                });
+            }
+
+            // Service details capitalization
+            const detailsInput = document.getElementById(
+                "serviceDetails",
+            ) as HTMLTextAreaElement;
+            if (detailsInput) {
+                detailsInput.addEventListener("blur", () => {
+                    if (detailsInput.value.trim()) {
+                        // Capitalize first letter of each sentence
+                        detailsInput.value = detailsInput.value
+                            .trim()
+                            .replace(/(^\s*\w|[.!?]\s*\w)/g, (c) =>
+                                c.toUpperCase(),
+                            );
+                    }
+                });
+            }
+
+            // =====================================================
+            // LEGAL MODAL FUNCTIONALITY
+            // =====================================================
+
+            const legalModal = document.getElementById("legalModal");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalBody = document.getElementById("modalBody");
+            const legalLinks = document.querySelectorAll(".legal-link");
+            const modalCloseButtons = document.querySelectorAll(".modal-close");
+            const modalBackdrop = document.querySelector(".modal-backdrop");
+
+            const legalContent = {
+                privacy: {
+                    title: "Privacy Policy",
+                    content: `
+                        <h4 class="font-bold text-primary mb-3">Information We Collect</h4>
+                        <p class="mb-4 text-gray-600">We collect information you provide directly, including your name, phone number, email address, and service request details.</p>
+
+                        <h4 class="font-bold text-primary mb-3">How We Use Your Information</h4>
+                        <p class="mb-4 text-gray-600">Your information is used to respond to your service requests, schedule appointments, and provide customer support. We may also use it to send service updates and promotional communications.</p>
+
+                        <h4 class="font-bold text-primary mb-3">Information Sharing</h4>
+                        <p class="mb-4 text-gray-600">We do not sell your personal information. We may share information with service providers who assist in our operations, or as required by law.</p>
+
+                        <h4 class="font-bold text-primary mb-3">Data Security</h4>
+                        <p class="mb-4 text-gray-600">We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.</p>
+
+                        <h4 class="font-bold text-primary mb-3">Contact Us</h4>
+                        <p class="text-gray-600">For questions about this Privacy Policy, contact us at ${SITE_CONFIG.contact.phone.formatted} or ${SITE_CONFIG.contact.email.primary}.</p>
+                    `,
+                },
+                terms: {
+                    title: "Terms & Conditions",
+                    content: `
+                        <h4 class="font-bold text-primary mb-3">Service Agreement</h4>
+                        <p class="mb-4 text-gray-600">By submitting a service request, you agree to allow Solomon Electric to contact you regarding your request via phone, email, or text message.</p>
+
+                        <h4 class="font-bold text-primary mb-3">Estimates & Pricing</h4>
+                        <p class="mb-4 text-gray-600">All estimates are provided free of charge. Final pricing may vary based on actual work required and will be confirmed before any work begins.</p>
+
+                        <h4 class="font-bold text-primary mb-3">Service Hours</h4>
+                        <p class="mb-4 text-gray-600">Standard business hours are Monday-Friday, 8AM-6PM. Emergency services are available 24/7 and may incur additional fees.</p>
+
+                        <h4 class="font-bold text-primary mb-3">Licensing & Insurance</h4>
+                        <p class="mb-4 text-gray-600">Solomon Electric is fully licensed (${SITE_CONFIG.credentials.license.number}) and insured. All work is performed according to local codes and regulations.</p>
+
+                        <h4 class="font-bold text-primary mb-3">Warranty</h4>
+                        <p class="text-gray-600">We stand behind our work. All electrical services come with a satisfaction guarantee. Specific warranty terms will be provided with your service agreement.</p>
+                    `,
+                },
+            };
+
+            const openModal = (type: string) => {
+                if (!legalModal || !modalTitle || !modalBody) return;
+                const content = legalContent[type];
+                if (!content) return;
+
+                modalTitle.textContent = content.title;
+                modalBody.innerHTML = content.content;
+                legalModal.classList.remove("hidden");
+                legalModal.classList.add("flex");
+                document.body.style.overflow = "hidden";
+            };
+
+            const closeModal = () => {
+                if (!legalModal) return;
+                legalModal.classList.add("hidden");
+                legalModal.classList.remove("flex");
+                document.body.style.overflow = "";
+            };
+
+            legalLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    const modalType = link.getAttribute("data-modal");
+                    if (modalType) openModal(modalType);
+                });
+            });
+
+            modalCloseButtons.forEach((btn) => {
+                btn.addEventListener("click", closeModal);
+            });
+
+            if (modalBackdrop) {
+                modalBackdrop.addEventListener("click", closeModal);
+            }
+
+            // Close on Escape key
+            document.addEventListener("keydown", (e) => {
+                if (
+                    e.key === "Escape" &&
+                    !legalModal?.classList.contains("hidden")
+                ) {
+                    closeModal();
+                }
+            });
 
             // Conditional field displays
             const serviceType = document.getElementById(
@@ -1173,7 +1544,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                                     grecaptcha.ready(resolve),
                                 );
                                 const token = await grecaptcha.execute(
-                                    "6LeDDjUsAAAAAEJquohduwPouri3rOne3ahYp765",
+                                    recaptchaKey,
                                     { action: "submit" },
                                 );
 
@@ -1257,18 +1628,57 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                             ) ||
                             sessionStorage.getItem("gclid") ||
                             null,
-                        trafficSource:
-                            new URLSearchParams(window.location.search).get(
-                                "gclid",
-                            ) || sessionStorage.getItem("gclid")
-                                ? "Google Ads"
-                                : document.referrer.includes("google.com")
-                                  ? "Google Organic"
-                                  : document.referrer.includes("facebook.com")
-                                    ? "Facebook"
-                                    : document.referrer
-                                      ? "Referral"
-                                      : "Direct",
+                        trafficSource: (() => {
+                            const ref = document.referrer.toLowerCase();
+                            const params = new URLSearchParams(
+                                window.location.search,
+                            );
+                            // Check for Google Ads first
+                            if (
+                                params.get("gclid") ||
+                                sessionStorage.getItem("gclid")
+                            ) {
+                                return "Google Ads";
+                            }
+                            // Check referrer-based sources
+                            if (
+                                ref.includes("business.google.com") ||
+                                ref.includes("business.google")
+                            ) {
+                                return "Google Business Profile";
+                            }
+                            if (
+                                ref.includes("google.com/maps") ||
+                                ref.includes("maps.google.com")
+                            ) {
+                                return "Google Maps";
+                            }
+                            if (ref.includes("google.com")) {
+                                return "Google Organic";
+                            }
+                            if (ref.includes("bing.com")) {
+                                return "Bing Organic";
+                            }
+                            if (ref.includes("facebook.com")) {
+                                return "Facebook";
+                            }
+                            if (ref.includes("instagram.com")) {
+                                return "Instagram";
+                            }
+                            if (ref.includes("yelp.com")) {
+                                return "Yelp";
+                            }
+                            if (ref.includes("nextdoor.com")) {
+                                return "Nextdoor";
+                            }
+                            if (
+                                ref &&
+                                !ref.includes(window.location.hostname)
+                            ) {
+                                return "Referral";
+                            }
+                            return "Direct";
+                        })(),
 
                         // New vs Returning visitor detection
                         newReturning: (() => {

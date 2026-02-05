@@ -4,7 +4,7 @@
   "description": "Electrical emergencies require professional attention to ensure safety. Solomon Electric provides 24/7 emergency response throughout Miami-Dade and Broward for residential and commercial properties experiencing electrical hazards such as burning smells, visible sparks, or total power failure.",
   "shortDescription": "24/7 emergency electrical response for southern Florida",
   "icon": "Wrench",
-  "image": "../../assets/images/services/emergency.png",
+  "image": "../../assets/images/services/emergency.webp",
   "category": "Emergency Electrical Services",
   "order": 1,
   "features": [
@@ -13,7 +13,7 @@
     "Live communication with trained coordinators",
     "Service vehicles equipped for immediate repairs",
     "FPL power restoration coordination",
-    "Licensed & Insured Florida Experts (#EC13012419)"
+    "Licensed & Insured Florida Experts (#{{LICENSE}})"
   ],
   "warningSignsHeading": "Identifying Electrical Emergencies",
   "warningSignsSubheading": "Recognizing the symptoms of a critical electrical failure is essential for property safety. These conditions indicate active electrical hazards.",
@@ -158,5 +158,6 @@
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
-  ]
+  ],
+  "imageAlt": "24/7 Emergency Electrical Service service provided by licensed electricians in South Florida"
 }

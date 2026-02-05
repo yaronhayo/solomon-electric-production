@@ -22,7 +22,7 @@ export function generateArticleSchema(post: any, siteUrl: string) {
                 '@id': `${siteUrl}/#organization`,
                 name: 'Solomon Electric Team',
                 url: `${siteUrl}/about`,
-                description: 'Licensed Florida electricians with 15+ years experience serving Miami-Dade and Broward counties.',
+                description: `Licensed Florida electricians with ${SITE_CONFIG.credentials.yearsExperience} experience serving Miami-Dade and Broward counties.`,
                 hasCredential: {
                     '@type': 'EducationalOccupationalCredential',
                     credentialCategory: 'license',
@@ -168,7 +168,7 @@ export function generateOrganizationSchema(siteUrl: string) {
         '@id': `${siteUrl}/#organization`,
         name: 'Solomon Electric',
         image: `${siteUrl}/og-default.jpg`,
-        description: "Miami's Premier 24/7 Electrical Services - Licensed, Insured, and Ready to Power Your World. Serving Miami-Dade and Broward counties since 2008.",
+        description: `Miami's Premier 24/7 Electrical Services - Licensed, Insured, and Ready to Power Your World. Serving Miami-Dade and Broward counties since ${SITE_CONFIG.company.foundedYear}.`,
         url: siteUrl,
         telephone: SITE_CONFIG.contact.phone.formatted,
         email: SITE_CONFIG.contact.email.primary,

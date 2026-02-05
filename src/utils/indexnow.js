@@ -7,13 +7,14 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import { SITE_CONFIG } from '../config/site.js';
 
 const INDEXNOW_CONFIG = {
   // Your IndexNow API key
   apiKey: 'index-now-5520a66a-8172-47e6-9857-ada854872cb2',
   
-  // Your website URL (canonical)
-  siteUrl: 'https://www.247electricianmiami.com',
+  // Your website URL (canonical) - from central config
+  siteUrl: SITE_CONFIG.seo.siteUrl,
   
   // IndexNow endpoints (Bing and Yandex)
   endpoints: [

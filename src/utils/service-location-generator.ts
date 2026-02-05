@@ -23,7 +23,7 @@ export const CITY_CONTENT_TEMPLATES = {
     
     // Call to action templates
     ctaTemplates: [
-        "Ready for professional {serviceName} in {cityName}? Call (786) 833-9211 or book online for a free estimate.",
+        `Ready for professional {serviceName} in {cityName}? Call ${SITE_CONFIG.contact.phone.formatted} or book online for a free estimate.`,
         "Get expert {serviceName} services in {cityName} today. Our licensed electricians are standing by.",
         "Schedule your {serviceName} consultation in {cityName}. Fast response, fair pricing, guaranteed satisfaction.",
     ],
@@ -214,7 +214,7 @@ export function generateMetaDescription(
     neighborhoods: string[]
 ): string {
     const neighborhoodText = neighborhoods.slice(0, 2).join(', ');
-    return `Professional ${serviceName.toLowerCase()} in ${cityName}, FL. Licensed electrician serving ${neighborhoodText}. 24/7 service, free estimates. Call (786) 833-9211.`;
+    return `Professional ${serviceName.toLowerCase()} in ${cityName}, FL. Licensed electrician serving ${neighborhoodText}. 24/7 service, free estimates. Call ${SITE_CONFIG.contact.phone.formatted}.`;
 }
 
 /**

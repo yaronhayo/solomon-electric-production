@@ -4,7 +4,7 @@
   "description": "Create the perfect ambiance with smart lighting that responds to your commands, schedule, and home automation. Solomon Electric installs smart bulbs, smart switches, and complete smart lighting systems throughout South Florida homes. Control lights from your phone, set automated schedules, and integrate with Alexa, Google Home, or Apple HomeKit.",
   "shortDescription": "App and voice-controlled lighting",
   "icon": "Lightbulb",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Lighting & Smart Home",
   "order": 29,
   "features": [
@@ -25,7 +25,7 @@
     },
     {
       "title": "Forget to Turn Off Lights",
-      "description": "Smart lighting with schedules and motion sensing ensures lights turn off automatically—saving energy and eliminating forgotten lights.",
+      "description": "Smart lighting with schedules and motion sensing ensures lights turn off automatically\u2014saving energy and eliminating forgotten lights.",
       "icon": "AlertTriangle"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "title": "Want Perfect Ambiance",
-      "description": "Set different moods with scenes: bright for cleaning, dim for movies, colorful for parties—all with one command.",
+      "description": "Set different moods with scenes: bright for cleaning, dim for movies, colorful for parties\u2014all with one command.",
       "icon": "Lightbulb"
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "title": "Kids Keep Lights On",
-      "description": "Automatic schedules and motion sensing mean lights turn off whether kids remember or not—teaching good habits while saving energy.",
+      "description": "Automatic schedules and motion sensing mean lights turn off whether kids remember or not\u2014teaching good habits while saving energy.",
       "icon": "TrendingUp"
     }
   ],
@@ -120,12 +120,12 @@
   ],
   "faqs": [
     {
-      "question": "Smart bulbs vs. smart switches—which is better?",
-      "answer": "Smart switches replace your wall switches and work with any bulb—family members can still use physical switches normally. Smart bulbs offer color changing but require the switch to stay on. We often recommend smart switches for convenience and smart bulbs where color is desired."
+      "question": "Smart bulbs vs. smart switches\u2014which is better?",
+      "answer": "Smart switches replace your wall switches and work with any bulb\u2014family members can still use physical switches normally. Smart bulbs offer color changing but require the switch to stay on. We often recommend smart switches for convenience and smart bulbs where color is desired."
     },
     {
       "question": "Do smart lights work without WiFi?",
-      "answer": "Smart bulbs and WiFi switches require internet for remote control and voice commands. Zigbee and Z-Wave devices work locally through their hubs even without internet. Most smart lights still function as regular lights if WiFi fails—you just lose smart features."
+      "answer": "Smart bulbs and WiFi switches require internet for remote control and voice commands. Zigbee and Z-Wave devices work locally through their hubs even without internet. Most smart lights still function as regular lights if WiFi fails\u2014you just lose smart features."
     },
     {
       "question": "Will smart lighting work with my existing fixtures?",
@@ -165,7 +165,7 @@
     },
     {
       "heading": "Voice Control with Alexa, Google & Siri",
-      "body": "Control your lights without lifting a finger. We integrate smart lighting with your preferred voice assistant—Alexa, Google Home, or Apple HomeKit. Say 'turn off all lights' at bedtime, 'dim the living room' for movies, or set any scene with a simple voice command."
+      "body": "Control your lights without lifting a finger. We integrate smart lighting with your preferred voice assistant\u2014Alexa, Google Home, or Apple HomeKit. Say 'turn off all lights' at bedtime, 'dim the living room' for movies, or set any scene with a simple voice command."
     },
     {
       "heading": "Automated Lighting Schedules and Scenes",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric installs smart lighting systems throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-room upgrades to whole-home smart lighting, we provide professional installation with complete app and voice setup."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Smart Lighting Installation service provided by licensed electricians in South Florida"
 }

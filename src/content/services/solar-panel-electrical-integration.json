@@ -1,10 +1,10 @@
 {
   "name": "Solar Panel Electrical Integration",
   "slug": "solar-panel-electrical-integration",
-  "description": "Adding solar to your South Florida home requires more than just panels on the roof. Solomon Electric provides the electrical integration that makes solar systems work—service upgrades when needed, panel modifications for solar connection, inverter wiring, monitoring systems, and all the electrical work between your solar installer and your home's power system.",
+  "description": "Adding solar to your South Florida home requires more than just panels on the roof. Solomon Electric provides the electrical integration that makes solar systems work\u2014service upgrades when needed, panel modifications for solar connection, inverter wiring, monitoring systems, and all the electrical work between your solar installer and your home's power system.",
   "shortDescription": "Electrical for solar installations",
   "icon": "Zap",
-  "image": "../../assets/images/services/ev-charging.png",
+  "image": "../../assets/images/services/ev-charging.webp",
   "category": "Electrical Panels & Power Systems",
   "order": 15,
   "features": [
@@ -30,12 +30,12 @@
     },
     {
       "title": "Inverter Wiring",
-      "description": "Solar inverters require proper electrical connection to your panel—conduit runs, appropriate wiring, and code-compliant installation.",
+      "description": "Solar inverters require proper electrical connection to your panel\u2014conduit runs, appropriate wiring, and code-compliant installation.",
       "icon": "Home"
     },
     {
       "title": "Battery Backup Addition",
-      "description": "Adding battery storage to solar requires additional electrical work—battery wiring, critical load panels, and proper integration.",
+      "description": "Adding battery storage to solar requires additional electrical work\u2014battery wiring, critical load panels, and proper integration.",
       "icon": "Shield"
     },
     {
@@ -86,7 +86,7 @@
     },
     {
       "title": "Proper Panel Sizing",
-      "description": "We ensure your panel can handle solar back-feed without exceeding conductor ratings—the #1 code violation in amateur solar installations.",
+      "description": "We ensure your panel can handle solar back-feed without exceeding conductor ratings\u2014the #1 code violation in amateur solar installations.",
       "icon": "Zap"
     },
     {
@@ -133,7 +133,7 @@
     },
     {
       "question": "What about battery backup with solar?",
-      "answer": "Battery systems (Tesla Powerwall, Generac PWRcell, etc.) require additional electrical work—battery connections, critical load subpanels, and proper integration with both solar and grid power. We install the electrical infrastructure batteries require."
+      "answer": "Battery systems (Tesla Powerwall, Generac PWRcell, etc.) require additional electrical work\u2014battery connections, critical load subpanels, and proper integration with both solar and grid power. We install the electrical infrastructure batteries require."
     },
     {
       "question": "Will solar work during a power outage?",
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Solar Electrical Integration in South Florida",
-      "body": "Adding solar to your South Florida home requires more than panels on the roof. Solomon Electric provides the electrical integration that makes solar work—panel modifications, inverter wiring, battery connections, and all electrical between your solar system and your home's power."
+      "body": "Adding solar to your South Florida home requires more than panels on the roof. Solomon Electric provides the electrical integration that makes solar work\u2014panel modifications, inverter wiring, battery connections, and all electrical between your solar system and your home's power."
     },
     {
       "heading": "Panel Upgrades for Solar",
@@ -169,12 +169,13 @@
     },
     {
       "heading": "Battery Backup Integration",
-      "body": "Solar battery systems like Tesla Powerwall require additional electrical infrastructure—battery wiring, critical load panels, and proper integration. We install the electrical components that make battery backup work, whether installed with solar or added later."
+      "body": "Solar battery systems like Tesla Powerwall require additional electrical infrastructure\u2014battery wiring, critical load panels, and proper integration. We install the electrical components that make battery backup work, whether installed with solar or added later."
     },
     {
       "heading": "Serving South Florida Solar Installations",
       "body": "Solomon Electric provides solar electrical integration throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Partner with experienced electricians for the electrical work your solar installation requires."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Solar Panel Electrical Integration service provided by licensed electricians in South Florida"
 }

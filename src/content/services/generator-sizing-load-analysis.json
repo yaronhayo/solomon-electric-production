@@ -1,10 +1,10 @@
 {
   "name": "Generator Sizing & Load Analysis",
   "slug": "generator-sizing-load-analysis",
-  "description": "Undersized generators can't handle your loads. Oversized generators waste money on purchase and fuel. Solomon Electric provides professional generator sizing and load analysis for South Florida homes and businesses—calculating exactly what capacity you need based on your essential loads, growth plans, and usage patterns.",
+  "description": "Undersized generators can't handle your loads. Oversized generators waste money on purchase and fuel. Solomon Electric provides professional generator sizing and load analysis for South Florida homes and businesses\u2014calculating exactly what capacity you need based on your essential loads, growth plans, and usage patterns.",
   "shortDescription": "Right-size your backup power",
   "icon": "Zap",
-  "image": "../../assets/images/services/panel-work.png",
+  "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
   "order": 17,
   "features": [
@@ -54,7 +54,7 @@
     {
       "step": 1,
       "title": "Load Inventory",
-      "description": "We document all electrical loads in your home or facility—HVAC, appliances, equipment—with their power requirements."
+      "description": "We document all electrical loads in your home or facility\u2014HVAC, appliances, equipment\u2014with their power requirements."
     },
     {
       "step": 2,
@@ -96,7 +96,7 @@
     },
     {
       "title": "Future-Ready",
-      "description": "We factor in planned additions—EV charger, pool pump, home addition—so your generator works today and tomorrow.",
+      "description": "We factor in planned additions\u2014EV charger, pool pump, home addition\u2014so your generator works today and tomorrow.",
       "icon": "Home"
     }
   ],
@@ -133,11 +133,11 @@
     },
     {
       "question": "What's the difference between running and starting watts?",
-      "answer": "Running watts are continuous load when equipment operates. Starting watts are the brief surge when motors start—typically 3-6x running watts. Generators must handle peak starting loads plus running loads of already-operating equipment."
+      "answer": "Running watts are continuous load when equipment operates. Starting watts are the brief surge when motors start\u2014typically 3-6x running watts. Generators must handle peak starting loads plus running loads of already-operating equipment."
     },
     {
       "question": "Should I size for future needs?",
-      "answer": "If you're planning additions—EV charger, pool, expanding your home—sizing for future loads costs less than upgrading later. We help you plan appropriate capacity for both current and planned needs."
+      "answer": "If you're planning additions\u2014EV charger, pool, expanding your home\u2014sizing for future loads costs less than upgrading later. We help you plan appropriate capacity for both current and planned needs."
     },
     {
       "question": "What if I can only afford a smaller generator?",
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Generator Sizing & Load Analysis in South Florida",
-      "body": "Undersized generators can't handle your loads. Oversized generators waste money. Solomon Electric provides professional generator sizing throughout Miami-Dade and Broward counties—calculating exactly what capacity your home or business needs for reliable backup power."
+      "body": "Undersized generators can't handle your loads. Oversized generators waste money. Solomon Electric provides professional generator sizing throughout Miami-Dade and Broward counties\u2014calculating exactly what capacity your home or business needs for reliable backup power."
     },
     {
       "heading": "Right-Size Your Investment",
@@ -169,14 +169,15 @@
     },
     {
       "heading": "Residential Generator Sizing",
-      "body": "Every home is different. We analyze your specific loads—HVAC size, well pump, appliances, and priorities—to determine the right generator for your family's needs. Whether you want essential-only backup or whole-house power, we size appropriately."
+      "body": "Every home is different. We analyze your specific loads\u2014HVAC size, well pump, appliances, and priorities\u2014to determine the right generator for your family's needs. Whether you want essential-only backup or whole-house power, we size appropriately."
     },
     {
       "heading": "Serving South Florida Properly",
-      "body": "Solomon Electric provides generator sizing and load analysis throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Get expert sizing before your generator purchase—know exactly what you need."
+      "body": "Solomon Electric provides generator sizing and load analysis throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Get expert sizing before your generator purchase\u2014know exactly what you need."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
-  ]
+  ],
+  "imageAlt": "Generator Sizing & Load Analysis service provided by licensed electricians in South Florida"
 }

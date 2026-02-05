@@ -255,7 +255,7 @@ const dataProps = {
     defaultCenter,
     defaultZoom,
     averageRating: SITE_CONFIG.stats.averageRating,
-    GOOGLE_MAPS_API_KEY: "AIzaSyCPUa0e_IB0rB5UeJrWa3__Lohkm7HB9hY",
+    GOOGLE_MAPS_API_KEY: SITE_CONFIG.seo.integrations.googleMaps,
 };
 ---
 
@@ -638,7 +638,7 @@ const dataProps = {
                                 <span style="color: #CDAC4F; font-size: 14px;">★★★★★</span>
                                 <span style="font-size: 12px; font-weight: 700; color: #666;">${data.averageRating} Rating</span>
                             </div>
-                            <p style="margin: 0 0 12px 0; font-size: 12px; color: #444; line-height: 1.4;">24/7 Professional Electrical Services in ${city.name}. Licensed Florida Contractor #EC13012419.</p>
+                            <p style="margin: 0 0 12px 0; font-size: 12px; color: #444; line-height: 1.4;">24/7 Professional Electrical Services in ${city.name}. Licensed Florida Contractor #${SITE_CONFIG.credentials.license.number}.</p>
                             <p style="margin: 0; font-size: 11px; color: #14D3E3; font-weight: 700;">Click again to view service details →</p>
                         </div>
                     `;
@@ -767,11 +767,40 @@ const dataProps = {
     // Make initMap globally available
     (window as any).initMap = initMap;
 
+    // Lazy-load Google Maps API only when map container is about to enter viewport
+    function setupMapLazyLoading() {
+        const mapContainer = document.querySelector(
+            ".service-area-map-container",
+        );
+        if (!mapContainer) {
+            // Fallback: load immediately if container not found
+            loadGoogleMapsScript();
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        loadGoogleMapsScript();
+                        observer.disconnect(); // Only load once
+                    }
+                });
+            },
+            {
+                rootMargin: "200px", // Start loading 200px before visible
+                threshold: 0,
+            },
+        );
+
+        observer.observe(mapContainer);
+    }
+
     // Initialize when DOM is ready
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", loadGoogleMapsScript);
+        document.addEventListener("DOMContentLoaded", setupMapLazyLoading);
     } else {
-        loadGoogleMapsScript();
+        setupMapLazyLoading();
     }
 </script>
 

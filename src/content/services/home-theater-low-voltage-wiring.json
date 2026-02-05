@@ -1,10 +1,10 @@
 {
   "name": "Home Theater & Low Voltage Wiring",
   "slug": "home-theater-low-voltage-wiring",
-  "description": "Create the ultimate entertainment experience with professional home theater wiring. Solomon Electric installs hidden speaker wire, HDMI runs, network cabling, and projector power—creating clean installations without visible wires. Whether you're building a dedicated theater room or upgrading your living room TV setup, we handle the wiring that makes great audio/video possible.",
+  "description": "Create the ultimate entertainment experience with professional home theater wiring. Solomon Electric installs hidden speaker wire, HDMI runs, network cabling, and projector power\u2014creating clean installations without visible wires. Whether you're building a dedicated theater room or upgrading your living room TV setup, we handle the wiring that makes great audio/video possible.",
   "shortDescription": "Hidden AV and network wiring",
   "icon": "Home",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Lighting & Smart Home",
   "order": 30,
   "features": [
@@ -40,7 +40,7 @@
     },
     {
       "title": "Planning New Construction",
-      "description": "Building or renovating? Now is the time to run all AV wiring before drywall goes up—much easier and cheaper than retrofitting later.",
+      "description": "Building or renovating? Now is the time to run all AV wiring before drywall goes up\u2014much easier and cheaper than retrofitting later.",
       "icon": "TrendingUp"
     },
     {
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Route Assessment",
-      "description": "We identify the best paths for running cables—through attics, walls, and crawl spaces—to achieve hidden installation with minimal wall cuts."
+      "description": "We identify the best paths for running cables\u2014through attics, walls, and crawl spaces\u2014to achieve hidden installation with minimal wall cuts."
     },
     {
       "step": 3,
@@ -121,15 +121,15 @@
   "faqs": [
     {
       "question": "Can you run HDMI cables through walls?",
-      "answer": "Yes, with appropriate cables. Regular HDMI cables aren't rated for in-wall use—we use in-wall rated HDMI cables or conduit to meet code. For long runs, active HDMI cables or fiber HDMI maintain signal quality. We select appropriate cables for your specific situation."
+      "answer": "Yes, with appropriate cables. Regular HDMI cables aren't rated for in-wall use\u2014we use in-wall rated HDMI cables or conduit to meet code. For long runs, active HDMI cables or fiber HDMI maintain signal quality. We select appropriate cables for your specific situation."
     },
     {
       "question": "How do you hide TV power cords?",
-      "answer": "We install a recessed outlet box behind the TV and an inlet plate at the bottom of the wall near your equipment. Power runs inside the wall from outlet to inlet. This is the code-compliant way to eliminate visible power cords—not just cable covers."
+      "answer": "We install a recessed outlet box behind the TV and an inlet plate at the bottom of the wall near your equipment. Power runs inside the wall from outlet to inlet. This is the code-compliant way to eliminate visible power cords\u2014not just cable covers."
     },
     {
-      "question": "What about wireless speakers—do I still need wiring?",
-      "answer": "Wireless speakers still need power, and many 'wireless' systems use wired rear speakers. Even fully wireless systems benefit from strategic outlets. However, wireless technology has advanced significantly—we can discuss whether wired installation makes sense for your setup."
+      "question": "What about wireless speakers\u2014do I still need wiring?",
+      "answer": "Wireless speakers still need power, and many 'wireless' systems use wired rear speakers. Even fully wireless systems benefit from strategic outlets. However, wireless technology has advanced significantly\u2014we can discuss whether wired installation makes sense for your setup."
     },
     {
       "question": "Can you install for Sonos, Bose, and other systems?",
@@ -137,7 +137,7 @@
     },
     {
       "question": "Is it too late to add wiring after construction?",
-      "answer": "No—retrofit wiring is more challenging but usually possible. We route through attics, crawl spaces, and strategic wall cuts to achieve hidden installation. It costs more than pre-wire but the results are nearly identical."
+      "answer": "No\u2014retrofit wiring is more challenging but usually possible. We route through attics, crawl spaces, and strategic wall cuts to achieve hidden installation. It costs more than pre-wire but the results are nearly identical."
     },
     {
       "question": "What cable do you recommend for 4K/8K video?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "Do you install the actual equipment?",
-      "answer": "Our focus is the wiring infrastructure—cables, outlets, and proper terminations. Some clients prefer to handle their own equipment installation; others want complete installation help. We can discuss how much installation support you need."
+      "answer": "Our focus is the wiring infrastructure\u2014cables, outlets, and proper terminations. Some clients prefer to handle their own equipment installation; others want complete installation help. We can discuss how much installation support you need."
     }
   ],
   "relatedServices": [
@@ -161,11 +161,11 @@
   "seoContent": [
     {
       "heading": "Home Theater Wiring in Miami & South Florida",
-      "body": "Create the ultimate entertainment experience with professional home theater wiring from Solomon Electric. We install hidden HDMI cables, speaker wire, network runs, and dedicated power throughout South Florida homes—eliminating visible cables for clean, professional installations."
+      "body": "Create the ultimate entertainment experience with professional home theater wiring from Solomon Electric. We install hidden HDMI cables, speaker wire, network runs, and dedicated power throughout South Florida homes\u2014eliminating visible cables for clean, professional installations."
     },
     {
       "heading": "Wall-Mounted TV Wiring",
-      "body": "A beautiful wall-mounted TV deserves invisible wiring. We install recessed outlet boxes behind TVs and run power and HDMI through walls—code-compliant installations that eliminate dangling cables. The result is a clean, professional look worthy of your investment."
+      "body": "A beautiful wall-mounted TV deserves invisible wiring. We install recessed outlet boxes behind TVs and run power and HDMI through walls\u2014code-compliant installations that eliminate dangling cables. The result is a clean, professional look worthy of your investment."
     },
     {
       "heading": "Surround Sound and Whole-Home Audio",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric provides home theater and low voltage wiring throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single TV setups to dedicated theater rooms, we deliver the wiring that makes great entertainment possible."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Home Theater & Low Voltage Wiring service provided by licensed electricians in South Florida"
 }

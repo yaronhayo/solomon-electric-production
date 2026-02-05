@@ -1,10 +1,10 @@
 {
   "name": "New Outlet Installation & Repair",
   "slug": "new-outlet-installation-repair",
-  "description": "Need more outlets? Tired of extension cords and power strips cluttering your home? Solomon Electric installs additional outlets exactly where you need them—behind mounted TVs, in home offices, kitchen islands, garage workshops, and anywhere else your South Florida home lacks convenient power access. We also repair faulty outlets that spark, feel loose, or no longer hold plugs securely.",
+  "description": "Need more outlets? Tired of extension cords and power strips cluttering your home? Solomon Electric installs additional outlets exactly where you need them\u2014behind mounted TVs, in home offices, kitchen islands, garage workshops, and anywhere else your South Florida home lacks convenient power access. We also repair faulty outlets that spark, feel loose, or no longer hold plugs securely.",
   "shortDescription": "Add outlets and repair existing ones",
   "icon": "Plug",
-  "image": "../../assets/images/services/wiring.png",
+  "image": "../../assets/images/services/wiring.webp",
   "category": "Outlets, Switches & Wiring",
   "order": 15,
   "features": [
@@ -30,7 +30,7 @@
     },
     {
       "title": "Outlets That Don't Hold Plugs",
-      "description": "When plugs fall out or feel loose, the outlet contacts are worn. This creates arcing and fire risk—replacement is needed.",
+      "description": "When plugs fall out or feel loose, the outlet contacts are worn. This creates arcing and fire risk\u2014replacement is needed.",
       "icon": "Plug"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "title": "Outlets Warm to Touch",
-      "description": "Warm or hot outlets indicate overloading or poor connections—both fire hazards requiring professional diagnosis and repair.",
+      "description": "Warm or hot outlets indicate overloading or poor connections\u2014both fire hazards requiring professional diagnosis and repair.",
       "icon": "AlertCircle"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Code Compliance",
-      "description": "Professional installation meets current code requirements for spacing, protection, and installation—important for insurance and future home sales.",
+      "description": "Professional installation meets current code requirements for spacing, protection, and installation\u2014important for insurance and future home sales.",
       "icon": "FileCheck"
     }
   ],
@@ -137,7 +137,7 @@
     },
     {
       "question": "Why do plugs fall out of my outlets?",
-      "answer": "Outlet contacts wear over time, losing their grip on plugs. This creates loose connections that can arc and cause fires. Outlets with poor plug retention should be replaced—it's a straightforward repair that eliminates a real hazard."
+      "answer": "Outlet contacts wear over time, losing their grip on plugs. This creates loose connections that can arc and cause fires. Outlets with poor plug retention should be replaced\u2014it's a straightforward repair that eliminates a real hazard."
     },
     {
       "question": "What's a dedicated circuit and when do I need one?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "Can you add an outlet behind my mounted TV?",
-      "answer": "Absolutely—this is one of our most popular requests. We install recessed outlet boxes with cable pass-through designed specifically for wall-mounted TVs. This eliminates visible cords for a clean, professional look."
+      "answer": "Absolutely\u2014this is one of our most popular requests. We install recessed outlet boxes with cable pass-through designed specifically for wall-mounted TVs. This eliminates visible cords for a clean, professional look."
     },
     {
       "question": "What's the difference between 15-amp and 20-amp outlets?",
@@ -161,11 +161,11 @@
   "seoContent": [
     {
       "heading": "Professional Outlet Installation in Miami & South Florida",
-      "body": "Solomon Electric installs new electrical outlets throughout South Florida homes—adding convenient power access exactly where you need it. Whether you need outlets for a home office, behind-TV power for clean cable management, kitchen island receptacles, or garage workshop circuits, our licensed electricians provide safe, code-compliant installation."
+      "body": "Solomon Electric installs new electrical outlets throughout South Florida homes\u2014adding convenient power access exactly where you need it. Whether you need outlets for a home office, behind-TV power for clean cable management, kitchen island receptacles, or garage workshop circuits, our licensed electricians provide safe, code-compliant installation."
     },
     {
       "heading": "Outlet Repair & Replacement Services",
-      "body": "Sparking outlets, loose connections, and worn receptacles aren't just inconveniences—they're fire hazards. We diagnose and repair faulty outlets, replace worn units, and upgrade outdated two-prong outlets to modern grounded receptacles. Don't ignore outlet problems—they rarely improve on their own."
+      "body": "Sparking outlets, loose connections, and worn receptacles aren't just inconveniences\u2014they're fire hazards. We diagnose and repair faulty outlets, replace worn units, and upgrade outdated two-prong outlets to modern grounded receptacles. Don't ignore outlet problems\u2014they rarely improve on their own."
     },
     {
       "heading": "USB & Smart Outlet Options",
@@ -178,5 +178,6 @@
   ],
   "relatedBlogPosts": [
     "outlet-switch-modernization-services"
-  ]
+  ],
+  "imageAlt": "New Outlet Installation & Repair service provided by licensed electricians in South Florida"
 }

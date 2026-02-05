@@ -4,7 +4,7 @@
   "description": "Reduce your business's energy costs by 50-75% with commercial LED lighting retrofit. Solomon Electric converts fluorescent, HID, and older lighting systems to energy-efficient LED throughout South Florida commercial properties. Our retrofit solutions maintain or improve light quality while slashing electricity bills and reducing maintenance costs.",
   "shortDescription": "Energy-efficient commercial lighting",
   "icon": "Lightbulb",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Commercial & Inspections",
   "order": 35,
   "features": [
@@ -25,7 +25,7 @@
     },
     {
       "title": "Frequent Lamp Replacements",
-      "description": "Fluorescent and HID lamps require regular replacement—labor costs, lift rentals, and business disruption. LEDs last 50,000+ hours, dramatically reducing maintenance.",
+      "description": "Fluorescent and HID lamps require regular replacement\u2014labor costs, lift rentals, and business disruption. LEDs last 50,000+ hours, dramatically reducing maintenance.",
       "icon": "AlertTriangle"
     },
     {
@@ -35,17 +35,17 @@
     },
     {
       "title": "Dim Areas in Your Space",
-      "description": "As lamps age, light output degrades. LED retrofit restores—and often improves—light levels throughout your facility.",
+      "description": "As lamps age, light output degrades. LED retrofit restores\u2014and often improves\u2014light levels throughout your facility.",
       "icon": "Plug"
     },
     {
       "title": "Heat Load from Lighting",
-      "description": "Traditional lighting generates significant heat, adding to cooling costs. LEDs run cool, reducing HVAC load—additional savings in Florida's climate.",
+      "description": "Traditional lighting generates significant heat, adding to cooling costs. LEDs run cool, reducing HVAC load\u2014additional savings in Florida's climate.",
       "icon": "Flame"
     },
     {
       "title": "Sustainability Goals",
-      "description": "LED conversion reduces carbon footprint and supports corporate sustainability initiatives—increasingly important for customers and employees.",
+      "description": "LED conversion reduces carbon footprint and supports corporate sustainability initiatives\u2014increasingly important for customers and employees.",
       "icon": "Shield"
     }
   ],
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Solution Design",
-      "description": "We design LED solutions matching or exceeding your current light levels—selecting appropriate color temperature, brightness, and fixture styles for each area."
+      "description": "We design LED solutions matching or exceeding your current light levels\u2014selecting appropriate color temperature, brightness, and fixture styles for each area."
     },
     {
       "step": 3,
@@ -69,7 +69,7 @@
     {
       "step": 4,
       "title": "Professional Installation",
-      "description": "Our crews work efficiently to minimize business disruption—often performing installations during off-hours. We handle all fixture conversions and lamp replacements."
+      "description": "Our crews work efficiently to minimize business disruption\u2014often performing installations during off-hours. We handle all fixture conversions and lamp replacements."
     },
     {
       "step": 5,
@@ -125,7 +125,7 @@
     },
     {
       "question": "What's the payback period for commercial LED retrofit?",
-      "answer": "Most commercial LED conversions pay back in 2-4 years through energy and maintenance savings, often faster with utility rebates. After payback, savings continue for the life of the LEDs—typically 10+ years of pure savings."
+      "answer": "Most commercial LED conversions pay back in 2-4 years through energy and maintenance savings, often faster with utility rebates. After payback, savings continue for the life of the LEDs\u2014typically 10+ years of pure savings."
     },
     {
       "question": "Do I need to replace entire fixtures or just lamps?",
@@ -137,7 +137,7 @@
     },
     {
       "question": "Will LED lighting provide the same light levels?",
-      "answer": "Properly designed LED retrofit matches or improves existing light levels. We use lighting design calculations to ensure adequate illumination. Often, newer LEDs actually improve light quality—better color rendering, no flicker, and more uniform distribution."
+      "answer": "Properly designed LED retrofit matches or improves existing light levels. We use lighting design calculations to ensure adequate illumination. Often, newer LEDs actually improve light quality\u2014better color rendering, no flicker, and more uniform distribution."
     },
     {
       "question": "Can you work around our business hours?",
@@ -165,7 +165,7 @@
     },
     {
       "heading": "Warehouse and Industrial LED Conversion",
-      "body": "High-bay warehouse lighting is one of the best LED conversion opportunities—high-wattage metal halide fixtures running extended hours see dramatic savings. We install LED high-bays that reduce energy use by 70%+ while improving light quality and eliminating frequent lamp changes on tall ceilings."
+      "body": "High-bay warehouse lighting is one of the best LED conversion opportunities\u2014high-wattage metal halide fixtures running extended hours see dramatic savings. We install LED high-bays that reduce energy use by 70%+ while improving light quality and eliminating frequent lamp changes on tall ceilings."
     },
     {
       "heading": "FPL Commercial Lighting Rebates",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric provides commercial LED retrofit throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding areas. From small retail spaces to large industrial facilities, we deliver energy-efficient lighting solutions that reduce costs and improve illumination."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Commercial LED Lighting Retrofit service provided by licensed electricians in South Florida"
 }

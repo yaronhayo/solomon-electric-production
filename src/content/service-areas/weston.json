@@ -1,122 +1,124 @@
 {
-    "name": "Weston",
-    "slug": "weston",
-    "county": "Broward",
-    "description": "Licensed Weston electricians serving Broward's premier master-planned city. Solomon Electric provides high-end residential and commercial electrical services, including smart home integration and safety inspections.",
-    "population": "70,000+",
-    "founded": "1996",
-    "areaSquareMiles": "27",
-    "tagline": "A World-Class City to Live, Work and Play",
-    "landmarks": [
-        "Weston Town Center",
-        "Weston Regional Park",
-        "Cleveland Clinic Florida",
-        "Library Park"
-    ],
-    "neighborhoods": [
-        "Saddle Club Estates",
-        "Savanna",
-        "Windmill Ranch Estates",
-        "The Ridges",
-        "Bonaventure",
-        "The Meadows"
-    ],
-    "majorRoads": [
-        "I-75",
-        "I-595",
-        "US-27",
-        "Weston Road",
-        "Royal Palm Boulevard"
-    ],
-    "coordinates": {
-        "lat": 26.1031,
-        "lng": -80.3959
+  "name": "Weston",
+  "slug": "weston",
+  "county": "Broward",
+  "description": "Licensed Weston electricians serving Broward's premier master-planned city. Solomon Electric provides high-end residential and commercial electrical services, including smart home integration and safety inspections.",
+  "population": "70,000+",
+  "founded": "1996",
+  "areaSquareMiles": "27",
+  "tagline": "A World-Class City to Live, Work and Play",
+  "landmarks": [
+    "Weston Town Center",
+    "Weston Regional Park",
+    "Cleveland Clinic Florida",
+    "Library Park"
+  ],
+  "neighborhoods": [
+    "Saddle Club Estates",
+    "Savanna",
+    "Windmill Ranch Estates",
+    "The Ridges",
+    "Bonaventure",
+    "The Meadows"
+  ],
+  "majorRoads": [
+    "I-75",
+    "I-595",
+    "US-27",
+    "Weston Road",
+    "Royal Palm Boulevard"
+  ],
+  "coordinates": {
+    "lat": 26.1031,
+    "lng": -80.3959
+  },
+  "challenges": [
+    {
+      "title": "Luxury Estate Distribution",
+      "description": "Weston's high-end estates in Windmill Ranch and Saddle Club require complex electrical systems, including multiple panels, advanced lighting controls, and significant power capacity.",
+      "icon": "Zap"
     },
-    "challenges": [
-        {
-            "title": "Luxury Estate Distribution",
-            "description": "Weston's high-end estates in Windmill Ranch and Saddle Club require complex electrical systems, including multiple panels, advanced lighting controls, and significant power capacity.",
-            "icon": "Zap"
-        },
-        {
-            "title": "Strict Uniformity Codes",
-            "description": "Weston's reputation for perfection means all electrical work must be exceptionally clean, following strict municipal codes and neighborhood aesthetic requirements.",
-            "icon": "Shield"
-        },
-        {
-            "title": "Intelligent Modernization",
-            "description": "Weston residents demand the latest in smart home technology, requiring electricians who are experts in high-performance automation and energy-efficient systems.",
-            "icon": "Home"
-        }
-    ],
-    "featuredServices": [
-        "smart-home-automation",
-        "whole-home-surge-protection",
-        "smart-lighting-installation",
-        "ev-charging-system-setup",
-        "24-7-emergency-electrical-service",
-        "electrical-panel-upgrade-100a-to-200a"
-    ],
-    "stats": [
-        {
-            "value": "70K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "Weston homes are relatively new—why would we need electrical upgrades?",
-            "answer": "While Weston is newer than most South Florida cities, many homes here are now 20-30 years old with electrical systems designed for 1990s-2000s technology. Today's smart homes, EV chargers, multiple AC zones, and home offices demand more than original installations provided. We see many Weston homes running at or near capacity. Additionally, some early Weston developments used builder-grade components that are now showing their age."
-        },
-        {
-            "question": "Do you work on the large estate properties in Windmill Ranch and Saddle Club?",
-            "answer": "Absolutely. Windmill Ranch Estates and Saddle Club Estates have some of the largest residential properties in South Florida—homes that often require 400-amp service, multiple sub-panels, extensive landscape lighting systems, pool/spa equipment, and whole-home generators. We have extensive experience with estate-scale electrical systems and understand the expectations for quality and reliability in these communities."
-        },
-        {
-            "question": "Our Weston home loses power during summer storms—what can we do?",
-            "answer": "Western Broward is one of the most lightning-prone areas in America, and the power infrastructure serving Weston is vulnerable to storm damage. Two solutions: whole-home surge protection (critical to protect electronics from voltage spikes when power fluctuates) and standby generator installation (automatic power restoration within seconds of an outage). Many Weston families consider both essential—especially those working from home."
-        },
-        {
-            "question": "Can you install charging for two EVs at our Weston home?",
-            "answer": "Yes—dual EV household setups are becoming common in Weston. The key is ensuring your panel has capacity for both chargers (typically 80-100 amps total) or implementing load-sharing solutions. Many Weston homes built with 200-amp service can accommodate dual EVs. Larger homes with 400-amp service have plenty of capacity. We assess your specific situation and recommend the most practical approach."
-        },
-        {
-            "question": "Do your electricians speak Spanish? Many Weston residents prefer it.",
-            "answer": "Sí, varios de nuestros electricistas hablan español con fluidez. Weston has a large Venezuelan and Latin American community, and we're happy to conduct consultations, explain work, and provide documentation in Spanish. Clear communication is important—especially for complex electrical projects—and we want you fully informed in whichever language you prefer."
-        },
-        {
-            "question": "How quickly can you respond to emergencies in western Weston near I-75?",
-            "answer": "We maintain electricians in western Broward specifically because Weston, Pembroke Pines, and Miramar are significant parts of our service area.   The I-595 and I-75 corridors give us direct access to all Weston neighborhoods."
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Premier Weston Electricians – A World-Class Standard",
-            "body": "Weston is a city defined by excellence, from its award-winning landscaping to its top-tier corporate residents. As a community that prides itself on being 'world-class,' your home or business deserves an electrical partner who delivers that same level of quality. Solomon Electric is proud to be that choice for Weston families."
-        },
-        {
-            "heading": "Understanding Weston's Electrical Needs",
-            "body": "Weston homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Weston's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Weston Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Weston. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Exceeding Expectations for Weston's Electrical Needs",
-            "body": "Whether you're upgrading the smart technology in your Savanna home, requiring emergency repairs near Weston Town Center, or seeking the ultimate in surge protection for your luxury estate, our licensed electricians are ready to assist. We provide clean, professional, and code-compliant work that meets the high standards Weston is known for."
-        }
-    ]
+    {
+      "title": "Strict Uniformity Codes",
+      "description": "Weston's reputation for perfection means all electrical work must be exceptionally clean, following strict municipal codes and neighborhood aesthetic requirements.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Intelligent Modernization",
+      "description": "Weston residents demand the latest in smart home technology, requiring electricians who are experts in high-performance automation and energy-efficient systems.",
+      "icon": "Home"
+    }
+  ],
+  "featuredServices": [
+    "smart-home-automation",
+    "whole-home-surge-protection",
+    "smart-lighting-installation",
+    "ev-charging-system-setup",
+    "24-7-emergency-electrical-service",
+    "electrical-panel-upgrade-100a-to-200a"
+  ],
+  "stats": [
+    {
+      "value": "70K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Weston homes are relatively new\u2014why would we need electrical upgrades?",
+      "answer": "While Weston is newer than most South Florida cities, many homes here are now 20-30 years old with electrical systems designed for 1990s-2000s technology. Today's smart homes, EV chargers, multiple AC zones, and home offices demand more than original installations provided. We see many Weston homes running at or near capacity. Additionally, some early Weston developments used builder-grade components that are now showing their age."
+    },
+    {
+      "question": "Do you work on the large estate properties in Windmill Ranch and Saddle Club?",
+      "answer": "Absolutely. Windmill Ranch Estates and Saddle Club Estates have some of the largest residential properties in South Florida\u2014homes that often require 400-amp service, multiple sub-panels, extensive landscape lighting systems, pool/spa equipment, and whole-home generators. We have extensive experience with estate-scale electrical systems and understand the expectations for quality and reliability in these communities."
+    },
+    {
+      "question": "Our Weston home loses power during summer storms\u2014what can we do?",
+      "answer": "Western Broward is one of the most lightning-prone areas in America, and the power infrastructure serving Weston is vulnerable to storm damage. Two solutions: whole-home surge protection (critical to protect electronics from voltage spikes when power fluctuates) and standby generator installation (automatic power restoration within seconds of an outage). Many Weston families consider both essential\u2014especially those working from home."
+    },
+    {
+      "question": "Can you install charging for two EVs at our Weston home?",
+      "answer": "Yes\u2014dual EV household setups are becoming common in Weston. The key is ensuring your panel has capacity for both chargers (typically 80-100 amps total) or implementing load-sharing solutions. Many Weston homes built with 200-amp service can accommodate dual EVs. Larger homes with 400-amp service have plenty of capacity. We assess your specific situation and recommend the most practical approach."
+    },
+    {
+      "question": "Do your electricians speak Spanish? Many Weston residents prefer it.",
+      "answer": "S\u00ed, varios de nuestros electricistas hablan espa\u00f1ol con fluidez. Weston has a large Venezuelan and Latin American community, and we're happy to conduct consultations, explain work, and provide documentation in Spanish. Clear communication is important\u2014especially for complex electrical projects\u2014and we want you fully informed in whichever language you prefer."
+    },
+    {
+      "question": "How quickly can you respond to emergencies in western Weston near I-75?",
+      "answer": "We maintain electricians in western Broward specifically because Weston, Pembroke Pines, and Miramar are significant parts of our service area.   The I-595 and I-75 corridors give us direct access to all Weston neighborhoods."
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Premier Weston Electricians \u2013 A World-Class Standard",
+      "body": "Weston is a city defined by excellence, from its award-winning landscaping to its top-tier corporate residents. As a community that prides itself on being 'world-class,' your home or business deserves an electrical partner who delivers that same level of quality. Solomon Electric is proud to be that choice for Weston families."
+    },
+    {
+      "heading": "Understanding Weston's Electrical Needs",
+      "body": "Weston homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Weston's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Weston Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Weston. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Exceeding Expectations for Weston's Electrical Needs",
+      "body": "Whether you're upgrading the smart technology in your Savanna home, requiring emergency repairs near Weston Town Center, or seeking the ultimate in surge protection for your luxury estate, our licensed electricians are ready to assist. We provide clean, professional, and code-compliant work that meets the high standards Weston is known for."
+    }
+  ],
+  "imageAlt": "Professional electrical services in Weston, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

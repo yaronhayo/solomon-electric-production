@@ -4,7 +4,7 @@
   "description": "Modernizing a residential electrical system involves adjusting existing infrastructure to support current power demands and technical safety standards. Solomon Electric provides comprehensive engineering and installation for residential system upgrades, addressing the requirements for added capacity and code compliance in older South Florida properties.",
   "shortDescription": "Modernization of residential electrical infrastructure",
   "icon": "CircuitBoard",
-  "image": "../../assets/images/services/wiring.png",
+  "image": "../../assets/images/services/wiring.webp",
   "category": "Outlets, Switches & Wiring",
   "order": 18,
   "features": [
@@ -162,5 +162,6 @@
   ],
   "relatedBlogPosts": [
     "rewiring-historic-miami-homes"
-  ]
+  ],
+  "imageAlt": "Home Electrical System Upgrade service provided by licensed electricians in South Florida"
 }

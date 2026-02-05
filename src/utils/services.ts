@@ -1,5 +1,6 @@
 
 import { getCollection } from 'astro:content';
+import { SITE_CONFIG } from '../config/site';
 import {
     CircuitBoard,
     Zap,
@@ -13,12 +14,7 @@ import {
     Cable
 } from 'lucide-astro';
 
-import panelUpgradeImg from '../assets/images/services/panel-work.png';
-import emergencyImg from '../assets/images/services/emergency.png';
-import wiringImg from '../assets/images/services/wiring.png';
-import lightingImg from '../assets/images/services/lighting.png';
-import evChargingImg from '../assets/images/services/ev-charging.png';
-import commercialImg from '../assets/images/services/commercial.png';
+import { IMAGES } from '../config/images';
 
 export type ServiceCategory =
     | 'Electrical Panels & Power Systems'
@@ -37,17 +33,17 @@ export const serviceCategories: ServiceCategory[] = [
     'Commercial & Inspections'
 ];
 
-export const categoryImages: Record<ServiceCategory, ImageMetadata> = {
-    'Electrical Panels & Power Systems': panelUpgradeImg,
-    'Emergency Electrical Services': emergencyImg,
-    'EV Charging & Solar': evChargingImg,
-    'Outlets, Switches & Wiring': wiringImg,
-    'Lighting & Smart Home': lightingImg,
-    'Commercial & Inspections': commercialImg
+export const categoryImages: Record<ServiceCategory, any> = {
+    'Electrical Panels & Power Systems': IMAGES.categories.panelUpgrade,
+    'Emergency Electrical Services': IMAGES.categories.emergency,
+    'EV Charging & Solar': IMAGES.categories.evCharging,
+    'Outlets, Switches & Wiring': IMAGES.categories.wiring,
+    'Lighting & Smart Home': IMAGES.categories.lighting,
+    'Commercial & Inspections': IMAGES.categories.commercial
 };
 
 export const categoryDescriptions: Record<ServiceCategory, string> = {
-    'Electrical Panels & Power Systems': 'Ensure your property is hurricane-ready and code-compliant. Since 2008, we\'ve modernized 100A and 200A panels across Miami, providing the capacity needed for modern appliances and whole-home surge protection.',
+    'Electrical Panels & Power Systems': `Ensure your property is hurricane-ready and code-compliant. Since ${SITE_CONFIG.company.foundedYear}, we've modernized 100A and 200A panels across Miami, providing the capacity needed for modern appliances and whole-home surge protection.`,
     'Emergency Electrical Services': 'Sparking outlets, burning smells, or total blackouts? Our 24/7 rapid-response team is on call throughout Miami-Dade and Broward to keep your family safe from electrical fire hazards.',
     'EV Charging & Solar': 'Future-proof your South Florida home with Level 2 EV charging and solar-ready infrastructure. We handle the complex permitting and FPL coordination so you don\'t have to.',
     'Outlets, Switches & Wiring': 'From resolving flickering lights to whole-home rewiring, we eliminate the risks of aging electrical systems. We use commercial-grade components for residential reliability.',

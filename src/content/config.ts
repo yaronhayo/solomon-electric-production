@@ -53,6 +53,7 @@ const services = defineCollection({
             shortDescription: z.string(),
             icon: z.string(), // Storing icon name (e.g., 'Zap')
             image: image().optional(),
+            imageAlt: z.string().optional(),
             category: z.enum([
                 'Electrical Panels & Power Systems',
                 'Emergency Electrical Services',
@@ -108,6 +109,8 @@ const serviceAreas = defineCollection({
         slug: z.string(),
         county: z.enum(["Miami-Dade", "Broward", "Palm Beach"]),
         description: z.string(),
+        image: z.string().optional(), // Adding image field if needed for city layouts
+        imageAlt: z.string().optional(),
         
         // City Facts
         population: z.string(),

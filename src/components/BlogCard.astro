@@ -45,7 +45,7 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
             <div
                 class="flex items-center gap-[var(--gap-md)] mb-4 text-xs text-[var(--text-muted)] font-bold uppercase tracking-wider"
             >
-                <span class="text-accent">{post.data.category}</span>
+                <span class="text-primary">{post.data.category}</span>
                 <span>•</span>
                 <span>{readingTime} min read</span>
             </div>
@@ -71,7 +71,7 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
                 {formatDate(post.data.pubDate)}
             </span>
             <span
-                class="text-accent font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-[var(--transition-base)] flex items-center"
+                class="text-primary font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-[var(--transition-base)] flex items-center"
             >
                 Read More <ArrowRight class="w-4 h-4 ml-2" />
             </span>

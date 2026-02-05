@@ -1,10 +1,10 @@
 {
   "name": "GFCI Outlet Installation & Repair",
   "slug": "gfci-outlet-installation-repair",
-  "description": "GFCI outlets save lives—they're designed to prevent electrical shock in wet locations like kitchens, bathrooms, and outdoor areas. If your South Florida home still has standard outlets in these areas, or if your existing GFCI outlets are failing their monthly tests, Solomon Electric can bring your home up to code with professional GFCI installation. Protect your family from dangerous ground faults with outlets that react in milliseconds.",
+  "description": "GFCI outlets save lives\u2014they're designed to prevent electrical shock in wet locations like kitchens, bathrooms, and outdoor areas. If your South Florida home still has standard outlets in these areas, or if your existing GFCI outlets are failing their monthly tests, Solomon Electric can bring your home up to code with professional GFCI installation. Protect your family from dangerous ground faults with outlets that react in milliseconds.",
   "shortDescription": "Shock protection for wet locations",
   "icon": "Shield",
-  "image": "../../assets/images/services/wiring.png",
+  "image": "../../assets/images/services/wiring.webp",
   "category": "Outlets, Switches & Wiring",
   "order": 14,
   "features": [
@@ -30,7 +30,7 @@
     },
     {
       "title": "Outdoor Outlets Without Protection",
-      "description": "Every outdoor outlet exposed to weather requires GFCI protection—and often weatherproof covers. Rain and moisture create serious shock hazards.",
+      "description": "Every outdoor outlet exposed to weather requires GFCI protection\u2014and often weatherproof covers. Rain and moisture create serious shock hazards.",
       "icon": "Home"
     },
     {
@@ -54,7 +54,7 @@
     {
       "step": 1,
       "title": "Location Assessment",
-      "description": "We identify all locations requiring GFCI protection—bathrooms, kitchens, outdoor areas, garages, laundry rooms, pool equipment, and anywhere else water and electricity might meet."
+      "description": "We identify all locations requiring GFCI protection\u2014bathrooms, kitchens, outdoor areas, garages, laundry rooms, pool equipment, and anywhere else water and electricity might meet."
     },
     {
       "step": 2,
@@ -69,7 +69,7 @@
     {
       "step": 4,
       "title": "Downstream Protection Setup",
-      "description": "A single GFCI outlet can protect multiple downstream outlets on the same circuit—we configure this when appropriate to provide efficient protection."
+      "description": "A single GFCI outlet can protect multiple downstream outlets on the same circuit\u2014we configure this when appropriate to provide efficient protection."
     },
     {
       "step": 5,
@@ -81,7 +81,7 @@
   "benefits": [
     {
       "title": "Prevents Electrical Shock",
-      "description": "GFCI outlets detect ground faults and cut power in 1/40th of a second—fast enough to prevent electrocution. Standard outlets cannot do this.",
+      "description": "GFCI outlets detect ground faults and cut power in 1/40th of a second\u2014fast enough to prevent electrocution. Standard outlets cannot do this.",
       "icon": "Shield"
     },
     {
@@ -121,11 +121,11 @@
   "faqs": [
     {
       "question": "Where are GFCI outlets required by Florida code?",
-      "answer": "Florida requires GFCI protection in bathrooms, kitchens (countertop outlets), garages, outdoors, laundry areas, basements, crawl spaces, pool/spa areas, and within 6 feet of any sink. Requirements have expanded over the years—older homes often lack protection in locations now required by code."
+      "answer": "Florida requires GFCI protection in bathrooms, kitchens (countertop outlets), garages, outdoors, laundry areas, basements, crawl spaces, pool/spa areas, and within 6 feet of any sink. Requirements have expanded over the years\u2014older homes often lack protection in locations now required by code."
     },
     {
       "question": "What's the difference between a GFCI outlet and a regular outlet?",
-      "answer": "A GFCI (Ground Fault Circuit Interrupter) constantly monitors current flow, detecting if electricity is escaping through an unintended path (like through a person). When it detects this 'ground fault,' it cuts power in milliseconds—before the current can cause electrocution. Standard outlets provide no such protection."
+      "answer": "A GFCI (Ground Fault Circuit Interrupter) constantly monitors current flow, detecting if electricity is escaping through an unintended path (like through a person). When it detects this 'ground fault,' it cuts power in milliseconds\u2014before the current can cause electrocution. Standard outlets provide no such protection."
     },
     {
       "question": "Why does my GFCI outlet keep tripping?",
@@ -137,7 +137,7 @@
     },
     {
       "question": "How often should I test my GFCI outlets?",
-      "answer": "The National Electrical Code recommends monthly testing. Simply press the TEST button—the outlet should trip and cut power. Then press RESET to restore power. If either function fails, the GFCI needs replacement. Most people never test their GFCIs, which is why we recommend annual professional inspection."
+      "answer": "The National Electrical Code recommends monthly testing. Simply press the TEST button\u2014the outlet should trip and cut power. Then press RESET to restore power. If either function fails, the GFCI needs replacement. Most people never test their GFCIs, which is why we recommend annual professional inspection."
     },
     {
       "question": "Are GFCI outlets required for home sale in Florida?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "What's a GFCI breaker vs. a GFCI outlet?",
-      "answer": "A GFCI breaker installs in your electrical panel and protects the entire circuit—useful when you want to protect multiple outlets or hardwired devices. GFCI outlets install at the point of use and can protect downstream outlets. Both provide the same life-saving protection; we'll recommend the best approach for your situation."
+      "answer": "A GFCI breaker installs in your electrical panel and protects the entire circuit\u2014useful when you want to protect multiple outlets or hardwired devices. GFCI outlets install at the point of use and can protect downstream outlets. Both provide the same life-saving protection; we'll recommend the best approach for your situation."
     },
     {
       "question": "Do outdoor outlets need special GFCI covers?",
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "GFCI Outlet Installation in Miami & South Florida",
-      "body": "GFCI outlets are proven lifesavers—they prevent approximately 300 electrocution deaths annually in the United States. Solomon Electric installs GFCI protection throughout South Florida homes, ensuring your family is protected from electrical shock in bathrooms, kitchens, outdoor areas, and anywhere water and electricity might meet. Our licensed electricians ensure code-compliant installation with proper testing."
+      "body": "GFCI outlets are proven lifesavers\u2014they prevent approximately 300 electrocution deaths annually in the United States. Solomon Electric installs GFCI protection throughout South Florida homes, ensuring your family is protected from electrical shock in bathrooms, kitchens, outdoor areas, and anywhere water and electricity might meet. Our licensed electricians ensure code-compliant installation with proper testing."
     },
     {
       "heading": "Florida Electrical Code GFCI Requirements",
@@ -169,14 +169,15 @@
     },
     {
       "heading": "GFCI Outlet Repair & Troubleshooting",
-      "body": "Is your GFCI outlet tripping constantly or refusing to reset? Don't ignore these warning signs. Frequent tripping may indicate moisture problems, wiring faults, or failing appliances that could cause shock or fire. Our electricians diagnose the underlying cause—not just replace the outlet—ensuring the problem is truly resolved."
+      "body": "Is your GFCI outlet tripping constantly or refusing to reset? Don't ignore these warning signs. Frequent tripping may indicate moisture problems, wiring faults, or failing appliances that could cause shock or fire. Our electricians diagnose the underlying cause\u2014not just replace the outlet\u2014ensuring the problem is truly resolved."
     },
     {
       "heading": "Serving Homeowners Throughout South Florida",
-      "body": "Solomon Electric provides GFCI outlet installation and repair throughout Miami-Dade, Broward, and Palm Beach counties. Our service areas include Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Gables, Kendall, Plantation, and all surrounding communities. Protect your family with professional GFCI installation—contact us for a safety assessment."
+      "body": "Solomon Electric provides GFCI outlet installation and repair throughout Miami-Dade, Broward, and Palm Beach counties. Our service areas include Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Gables, Kendall, Plantation, and all surrounding communities. Protect your family with professional GFCI installation\u2014contact us for a safety assessment."
     }
   ],
   "relatedBlogPosts": [
     "comprehensive-electrical-safety-inspections"
-  ]
+  ],
+  "imageAlt": "GFCI Outlet Installation & Repair service provided by licensed electricians in South Florida"
 }

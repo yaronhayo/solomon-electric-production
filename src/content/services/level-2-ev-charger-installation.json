@@ -4,7 +4,7 @@
   "description": "Level 2 home charging provides the necessary 240V infrastructure for efficient electric vehicle replenishment. Solomon Electric performs professional installation of charging stations including Tesla Wall Connectors and universal J1772 systems, ensuring all circuitry meets high-amperage continuous load standards.",
   "shortDescription": "240V Level 2 home charging infrastructure",
   "icon": "Zap",
-  "image": "../../assets/images/services/ev-charging.png",
+  "image": "../../assets/images/services/ev-charging.webp",
   "category": "EV Charging & Solar",
   "order": 1,
   "features": [
@@ -159,5 +159,6 @@
   "relatedBlogPosts": [
     "condo-electrical-upgrades-miami",
     "tesla-universal-ev-charging-station-installation"
-  ]
+  ],
+  "imageAlt": "Level 2 EV Charger Installation (240V) service provided by licensed electricians in South Florida"
 }

@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import heroImage from "../assets/images/heroes/about.png";
-import dispatcherImage from "../assets/images/enhancements/dispatcher.png";
+import { IMAGES } from "../config/images";
+const heroImage = IMAGES.heroes.about;
+const dispatcherImage = IMAGES.site.dispatcher;
 import Button from "../components/ui/Button.astro";
 import Container from "../components/ui/Container.astro";
 import { SITE_CONFIG } from "../config/site";
@@ -35,10 +36,10 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 ---
 
 <Layout
-    title="About Solomon Electric | Licensed Miami Electricians Since 2008"
-    description="Meet South Florida's trusted electrical team. 19,400+ projects completed. FL License #EC13012419. Family-owned, 24/7 service, satisfaction guaranteed."
+    title={`About Solomon Electric | Licensed Miami Electricians Since ${SITE_CONFIG.company.foundedYear}`}
+    description={`Meet South Florida's trusted electrical team. ${SITE_CONFIG.stats.totalProjects}+ projects completed. FL License #${SITE_CONFIG.credentials.license.number}. Family-owned, 24/7 service, satisfaction guaranteed.`}
     ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
-    ogImageAlt="Solomon Electric Team - Licensed Miami Electricians since 2008"
+    ogImageAlt={`Solomon Electric Team - Licensed Miami Electricians since ${SITE_CONFIG.company.foundedYear}`}
     topBarDark={true}
 >
     <!-- Schema Markup -->
@@ -56,8 +57,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
     <!-- Hero Section -->
     <PageHero
-        title="Licensed Miami Electricians<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>19,400+ Projects Since 2008</span>"
-        subtitle="About Solomon Electric • FL License #EC13012419"
+        title={`Licensed Miami Electricians<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${SITE_CONFIG.stats.totalProjects}+ Projects Since ${SITE_CONFIG.company.foundedYear}</span>`}
+        subtitle={`About Solomon Electric • FL License #${SITE_CONFIG.credentials.license.number}`}
         description="From homeowners protecting their families to business owners keeping operations running—Solomon Electric is the licensed electrical contractor South Florida trusts. Available 24/7 for emergency repairs, panel upgrades, and all electrical services."
         image={heroImage}
     />
@@ -75,8 +76,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                     >
                     </div>
                     <Image
-                        src={dispatcherImage}
-                        alt="Solomon Electric licensed electricians team serving Miami-Dade and Broward counties"
+                        src={dispatcherImage.src}
+                        alt={dispatcherImage.alt}
                         class="relative z-10 w-full shadow-2xl rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
                     />
                 </div>
@@ -87,7 +88,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                         class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
                         style="margin-bottom: var(--spacing-md);"
                     >
-                        Miami's Trusted Electricians Since 2008
+                        Miami's Trusted Electricians Since {
+                            SITE_CONFIG.company.foundedYear
+                        }
                     </h4>
                     <h2
                         class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase font-display"
@@ -105,20 +108,23 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                             <span class="text-primary font-bold"
                                 >Solomon Electric protects Miami families and
                                 businesses.</span
-                            > Since 2008, we've been the licensed electrician South
-                            Florida trusts for panel upgrades, emergency repairs,
-                            EV charger installation, and all electrical services.
-                            From Miami Beach to Fort Lauderdale to Coral Gables—our
-                            experienced team delivers safe, code-compliant electrical
-                            work.
+                            > Since {SITE_CONFIG.company.foundedYear}, we've
+                            been the licensed electrician South Florida trusts
+                            for panel upgrades, emergency repairs, EV charger
+                            installation, and all electrical services. From
+                            Miami Beach to Fort Lauderdale to Coral Gables—our
+                            experienced team delivers safe, code-compliant
+                            electrical work.
                         </p>
                         <p>
                             With <span class="font-bold text-primary"
-                                >19,400+ residential and commercial projects</span
-                            > completed since 2008, we've helped thousands of homeowners
-                            solve electrical problems that other contractors couldn't
-                            figure out. We've seen the damage that DIY fixes and unlicensed
-                            work can cause—and we've fixed it all.
+                                >{SITE_CONFIG.stats.totalProjects}+ residential
+                                and commercial projects</span
+                            > completed since {SITE_CONFIG.company.foundedYear},
+                            we've helped thousands of homeowners solve
+                            electrical problems that other contractors couldn't
+                            figure out. We've seen the damage that DIY fixes and
+                            unlicensed work can cause—and we've fixed it all.
                         </p>
                         <p>
                             Our licensed electricians don't just show up and
@@ -241,7 +247,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                     A Legacy of <span
                         class="text-accent underline decoration-accent/20 underline-offset-8"
                         >Excellence</span
-                    > Since 2008
+                    > Since {SITE_CONFIG.company.foundedYear}
                 </h2>
                 <p
                     class="text-[var(--text-body)] text-lg font-medium max-w-5xl mx-auto font-body"
@@ -272,7 +278,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                             FL Licensed
                         </h3>
                         <p class="text-sm font-bold text-accent font-secondary">
-                            EC13012419
+                            {SITE_CONFIG.credentials.license.number}
                         </p>
                     </div>
                 </div>
@@ -291,7 +297,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                             class="font-black text-primary uppercase font-display"
                             style="font-size: clamp(1.25rem, 2vw, 1.5rem); margin-bottom: 0.5rem;"
                         >
-                            15+ Years
+                            {SITE_CONFIG.credentials.yearsExperience}+ Years
                         </h3>
                         <p class="text-sm font-bold text-accent font-secondary">
                             Local Experience
@@ -370,8 +376,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 class="text-white/80 text-lg md:text-xl font-medium max-w-4xl mx-auto mb-12 font-body reveal reveal-up reveal-delay-1"
             >
                 Don't settle for "good enough" when it comes to your family's
-                safety. Join the 19,400+ satisfied customers who trust Solomon
-                Electric.
+                safety. Join the {SITE_CONFIG.stats.totalProjects}+ satisfied
+                customers who trust Solomon Electric.
             </p>
             <div
                 class="flex flex-col sm:flex-row gap-6 justify-center items-center reveal reveal-up reveal-delay-2"

@@ -4,7 +4,7 @@
   "description": "Modern electrical demands often exceed the capacity of older residential systems. Solomon Electric specializes in upgrading 100-amp panels to 200-amp service, providing the necessary capacity for central air conditioning, electric vehicle charging, and smart home technology while complying with current Florida building and insurance standards.",
   "shortDescription": "Panel modernization to 200-amp capacity",
   "icon": "CircuitBoard",
-  "image": "../../assets/images/services/panel-work.png",
+  "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
   "order": 1,
   "features": [
@@ -159,5 +159,6 @@
   "relatedBlogPosts": [
     "rewiring-historic-miami-homes",
     "electrical-panel-modernization-upgrades"
-  ]
+  ],
+  "imageAlt": "Electrical Panel Upgrade (100A to 200A) service provided by licensed electricians in South Florida"
 }

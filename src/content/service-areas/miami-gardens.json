@@ -1,132 +1,134 @@
 {
-    "name": "Miami Gardens",
-    "slug": "miami-gardens",
-    "county": "Miami-Dade",
-    "description": "Professional electrical services for Miami Gardens, Florida. Solomon Electric provides licensed electricians for residential and commercial properties throughout the city's 20 square miles, from Hard Rock Stadium to Florida Memorial University.",
-    "population": "116,000+",
-    "founded": "2003",
-    "areaSquareMiles": "20",
-    "tagline": "Miami-Dade's Third Largest City",
-    "landmarks": [
-        "Hard Rock Stadium",
-        "Florida Memorial University",
-        "Calder Race Course",
-        "Miami Gardens City Hall",
-        "Betty T. Ferguson Recreational Complex"
-    ],
-    "neighborhoods": [
-        "Andover",
-        "Bunche Park",
-        "Carol City",
-        "Lake Lucerne",
-        "Norland",
-        "Opa-locka North",
-        "Rolling Oaks",
-        "Scott Lake",
-        "Sky Lake",
-        "Vista Verde"
-    ],
-    "majorRoads": [
-        "I-95",
-        "Palmetto Expressway (SR 826)",
-        "Florida Turnpike",
-        "NW 27th Avenue",
-        "NW 183rd Street"
-    ],
-    "coordinates": {
-        "lat": 25.9420,
-        "lng": -80.2456
+  "name": "Miami Gardens",
+  "slug": "miami-gardens",
+  "county": "Miami-Dade",
+  "description": "Professional electrical services for Miami Gardens, Florida. Solomon Electric provides licensed electricians for residential and commercial properties throughout the city's 20 square miles, from Hard Rock Stadium to Florida Memorial University.",
+  "population": "116,000+",
+  "founded": "2003",
+  "areaSquareMiles": "20",
+  "tagline": "Miami-Dade's Third Largest City",
+  "landmarks": [
+    "Hard Rock Stadium",
+    "Florida Memorial University",
+    "Calder Race Course",
+    "Miami Gardens City Hall",
+    "Betty T. Ferguson Recreational Complex"
+  ],
+  "neighborhoods": [
+    "Andover",
+    "Bunche Park",
+    "Carol City",
+    "Lake Lucerne",
+    "Norland",
+    "Opa-locka North",
+    "Rolling Oaks",
+    "Scott Lake",
+    "Sky Lake",
+    "Vista Verde"
+  ],
+  "majorRoads": [
+    "I-95",
+    "Palmetto Expressway (SR 826)",
+    "Florida Turnpike",
+    "NW 27th Avenue",
+    "NW 183rd Street"
+  ],
+  "coordinates": {
+    "lat": 25.942,
+    "lng": -80.2456
+  },
+  "challenges": [
+    {
+      "title": "Aging Infrastructure",
+      "description": "Many Miami Gardens homes were built between the 1960s-1980s and have outdated 100-amp panels, aluminum wiring, or Federal Pacific breakers that pose safety hazards.",
+      "icon": "AlertTriangle"
     },
-    "challenges": [
-        {
-            "title": "Aging Infrastructure",
-            "description": "Many Miami Gardens homes were built between the 1960s-1980s and have outdated 100-amp panels, aluminum wiring, or Federal Pacific breakers that pose safety hazards.",
-            "icon": "AlertTriangle"
-        },
-        {
-            "title": "Hurricane & Storm Damage",
-            "description": "With South Florida's hurricane season, Miami Gardens properties regularly experience power surges, downed lines, and electrical damage requiring emergency repairs.",
-            "icon": "CloudLightning"
-        },
-        {
-            "title": "High Energy Demands",
-            "description": "Florida's year-round air conditioning needs strain older electrical systems. Many homes need panel upgrades to handle modern HVAC and appliance loads.",
-            "icon": "Zap"
-        },
-        {
-            "title": "Outdoor & Pool Electrical",
-            "description": "Miami Gardens' tropical climate means pools, spas, and outdoor entertainment areas require proper GFCI protection and weatherproof installations.",
-            "icon": "Umbrella"
-        }
-    ],
-    "featuredServices": [
-        "electrical-panel-upgrade-100a-to-200a",
-        "24-7-emergency-electrical-service",
-        "whole-home-surge-protection",
-        "recessed-lighting-installation",
-        "ceiling-fan-light-fixture-installation",
-        "gfci-outlet-installation-outdoor-pool"
-    ],
-    "stats": [
-        {
-            "value": "116K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "My Carol City home was built in the 1970s and has aluminum wiring—is that dangerous?",
-            "answer": "Aluminum wiring requires attention. When aluminum meets copper—at outlets, switches, and panel connections—the different expansion rates create loose connections that can arc and overheat. We don't necessarily recommend a full rewire, but aluminum wiring does need proper remediation: special AL/CU connectors, COPALUM crimps, or in some cases, targeted copper pigtailing. We'll inspect your home and recommend the most cost-effective solution."
-        },
-        {
-            "question": "Do you work with the commercial properties near Hard Rock Stadium?",
-            "answer": "Yes, the Hard Rock Stadium area brings unique electrical needs—businesses preparing for event surges, temporary power for vendors, parking lot lighting upgrades, and commercial tenant buildouts. We handle everything from small retail electrical to large-scale commercial projects. We're experienced with the event-day power demands and can help businesses prepare for game days and concerts."
-        },
-        {
-            "question": "Our Miami Gardens home keeps tripping the main breaker when the AC runs—why?",
-            "answer": "This is extremely common in Miami Gardens homes with original 100-amp or 150-amp panels. Modern 3-4 ton AC units draw significant power, and combined with a pool pump, appliances, and electronics, these older panels simply can't keep up. The solution is typically a panel upgrade to 200 amps, which provides headroom for current and future electrical demands. This is one of our most common Miami Gardens projects."
-        },
-        {
-            "question": "Is my Federal Pacific panel really a fire hazard?",
-            "answer": "Yes—Federal Pacific Stab-Lok panels have a well-documented history of breakers failing to trip during overloads. This means wires can overheat without protection, creating fire risk. If your Miami Gardens home has an FPE panel (common in 1970s-80s construction), we strongly recommend replacement. Many insurance companies now require it. We can inspect your panel and provide an honest assessment."
-        },
-        {
-            "question": "Can you add more outlets in an older Miami Gardens home?",
-            "answer": "Yes, and it's one of our common projects. 1960s-80s homes were built with far fewer outlets than modern electrical codes require or families need today. Adding outlets is relatively straightforward and much safer than relying on extension cords and power strips. We can add outlets to any room and include dedicated circuits for high-draw items like space heaters or window AC units."
-        },
-        {
-            "question": "How quickly can you respond to emergencies in Miami Gardens?",
-            "answer": "Miami Gardens is well within our primary service area, with excellent access via I-95, the Palmetto Expressway, and 27th Avenue.  For after-hours emergencies involving sparking, burning smells, or complete outages, we allocate resources."
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Trusted Electricians Serving Miami Gardens Since 2003",
-            "body": "Miami Gardens—incorporated in 2003 and now home to over 116,000 residents—is Miami-Dade County's third-largest city. From the excitement of Hard Rock Stadium to the historic campus of Florida Memorial University, this vibrant community deserves electrical service that's equally professional. Solomon Electric has been proud to serve Miami Gardens families and businesses since our founding, building a reputation for honest work, professional service, and genuine expertise."
-        },
-        {
-            "heading": "Understanding Miami Gardens' Electrical Needs",
-            "body": "Miami Gardens presents unique electrical challenges that require local knowledge. Many homes in neighborhoods like Carol City and Andover were built between the 1960s and 1980s—an era of 100-amp panels and aluminum wiring that can't safely support today's HVAC systems, home offices, and modern appliances. Add South Florida's notorious hurricane season and the constant demand of year-round air conditioning, and you have a recipe for electrical stress. Our electricians understand these challenges because we've spent years solving them for your neighbors."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Home",
-            "body": "Whether you need a panel upgrade to power your new EV charger, want to modernize your lighting with energy-efficient LEDs, or require emergency repairs after a storm, Solomon Electric delivers. We handle everything from small outlet repairs to complete home rewiring projects. Every job includes a thorough safety inspection, professional service before work begins, and a satisfaction guarantee. We pull all required Miami-Dade County permits and ensure your electrical work passes inspection."
-        },
-        {
-            "heading": "Commercial Electrical Services in Miami Gardens",
-            "body": "Miami Gardens' commercial corridor along NW 27th Avenue and the businesses surrounding Hard Rock Stadium require reliable electrical infrastructure. Solomon Electric provides commercial electrical services including three-phase power installation, lighting retrofits, tenant improvements, code compliance updates, and emergency response for businesses that can't afford downtime. We work around your schedule to minimize disruption to your operations."
-        }
-    ]
+    {
+      "title": "Hurricane & Storm Damage",
+      "description": "With South Florida's hurricane season, Miami Gardens properties regularly experience power surges, downed lines, and electrical damage requiring emergency repairs.",
+      "icon": "CloudLightning"
+    },
+    {
+      "title": "High Energy Demands",
+      "description": "Florida's year-round air conditioning needs strain older electrical systems. Many homes need panel upgrades to handle modern HVAC and appliance loads.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Outdoor & Pool Electrical",
+      "description": "Miami Gardens' tropical climate means pools, spas, and outdoor entertainment areas require proper GFCI protection and weatherproof installations.",
+      "icon": "Umbrella"
+    }
+  ],
+  "featuredServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "24-7-emergency-electrical-service",
+    "whole-home-surge-protection",
+    "recessed-lighting-installation",
+    "ceiling-fan-light-fixture-installation",
+    "gfci-outlet-installation-outdoor-pool"
+  ],
+  "stats": [
+    {
+      "value": "116K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "My Carol City home was built in the 1970s and has aluminum wiring\u2014is that dangerous?",
+      "answer": "Aluminum wiring requires attention. When aluminum meets copper\u2014at outlets, switches, and panel connections\u2014the different expansion rates create loose connections that can arc and overheat. We don't necessarily recommend a full rewire, but aluminum wiring does need proper remediation: special AL/CU connectors, COPALUM crimps, or in some cases, targeted copper pigtailing. We'll inspect your home and recommend the most cost-effective solution."
+    },
+    {
+      "question": "Do you work with the commercial properties near Hard Rock Stadium?",
+      "answer": "Yes, the Hard Rock Stadium area brings unique electrical needs\u2014businesses preparing for event surges, temporary power for vendors, parking lot lighting upgrades, and commercial tenant buildouts. We handle everything from small retail electrical to large-scale commercial projects. We're experienced with the event-day power demands and can help businesses prepare for game days and concerts."
+    },
+    {
+      "question": "Our Miami Gardens home keeps tripping the main breaker when the AC runs\u2014why?",
+      "answer": "This is extremely common in Miami Gardens homes with original 100-amp or 150-amp panels. Modern 3-4 ton AC units draw significant power, and combined with a pool pump, appliances, and electronics, these older panels simply can't keep up. The solution is typically a panel upgrade to 200 amps, which provides headroom for current and future electrical demands. This is one of our most common Miami Gardens projects."
+    },
+    {
+      "question": "Is my Federal Pacific panel really a fire hazard?",
+      "answer": "Yes\u2014Federal Pacific Stab-Lok panels have a well-documented history of breakers failing to trip during overloads. This means wires can overheat without protection, creating fire risk. If your Miami Gardens home has an FPE panel (common in 1970s-80s construction), we strongly recommend replacement. Many insurance companies now require it. We can inspect your panel and provide an honest assessment."
+    },
+    {
+      "question": "Can you add more outlets in an older Miami Gardens home?",
+      "answer": "Yes, and it's one of our common projects. 1960s-80s homes were built with far fewer outlets than modern electrical codes require or families need today. Adding outlets is relatively straightforward and much safer than relying on extension cords and power strips. We can add outlets to any room and include dedicated circuits for high-draw items like space heaters or window AC units."
+    },
+    {
+      "question": "How quickly can you respond to emergencies in Miami Gardens?",
+      "answer": "Miami Gardens is well within our primary service area, with excellent access via I-95, the Palmetto Expressway, and 27th Avenue.  For after-hours emergencies involving sparking, burning smells, or complete outages, we allocate resources."
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Trusted Electricians Serving Miami Gardens Since 2003",
+      "body": "Miami Gardens\u2014incorporated in 2003 and now home to over 116,000 residents\u2014is Miami-Dade County's third-largest city. From the excitement of Hard Rock Stadium to the historic campus of Florida Memorial University, this vibrant community deserves electrical service that's equally professional. Solomon Electric has been proud to serve Miami Gardens families and businesses since our founding, building a reputation for honest work, professional service, and genuine expertise."
+    },
+    {
+      "heading": "Understanding Miami Gardens' Electrical Needs",
+      "body": "Miami Gardens presents unique electrical challenges that require local knowledge. Many homes in neighborhoods like Carol City and Andover were built between the 1960s and 1980s\u2014an era of 100-amp panels and aluminum wiring that can't safely support today's HVAC systems, home offices, and modern appliances. Add South Florida's notorious hurricane season and the constant demand of year-round air conditioning, and you have a recipe for electrical stress. Our electricians understand these challenges because we've spent years solving them for your neighbors."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Home",
+      "body": "Whether you need a panel upgrade to power your new EV charger, want to modernize your lighting with energy-efficient LEDs, or require emergency repairs after a storm, Solomon Electric delivers. We handle everything from small outlet repairs to complete home rewiring projects. Every job includes a thorough safety inspection, professional service before work begins, and a satisfaction guarantee. We pull all required Miami-Dade County permits and ensure your electrical work passes inspection."
+    },
+    {
+      "heading": "Commercial Electrical Services in Miami Gardens",
+      "body": "Miami Gardens' commercial corridor along NW 27th Avenue and the businesses surrounding Hard Rock Stadium require reliable electrical infrastructure. Solomon Electric provides commercial electrical services including three-phase power installation, lighting retrofits, tenant improvements, code compliance updates, and emergency response for businesses that can't afford downtime. We work around your schedule to minimize disruption to your operations."
+    }
+  ],
+  "imageAlt": "Professional electrical services in Miami Gardens, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

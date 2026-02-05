@@ -1,10 +1,10 @@
 {
   "name": "Holiday Lighting Installation & Removal",
   "slug": "holiday-lighting-installation-removal",
-  "description": "Let professionals handle your holiday lights this year. Solomon Electric provides holiday lighting installation and removal throughout South Florida—eliminating ladder climbing, frustrated troubleshooting, and storage hassles. We install residential and commercial holiday displays safely and beautifully, then remove and store them when the season ends.",
+  "description": "Let professionals handle your holiday lights this year. Solomon Electric provides holiday lighting installation and removal throughout South Florida\u2014eliminating ladder climbing, frustrated troubleshooting, and storage hassles. We install residential and commercial holiday displays safely and beautifully, then remove and store them when the season ends.",
   "shortDescription": "Professional holiday display service",
   "icon": "Lightbulb",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Lighting & Smart Home",
   "order": 32,
   "features": [
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Product Selection",
-      "description": "We recommend appropriate lights—LED for efficiency, commercial-grade for durability—and any accessories needed for your display."
+      "description": "We recommend appropriate lights\u2014LED for efficiency, commercial-grade for durability\u2014and any accessories needed for your display."
     },
     {
       "step": 3,
@@ -96,7 +96,7 @@
     },
     {
       "title": "Complete Service",
-      "description": "Installation, maintenance, removal, and storage—we handle the entire lifecycle so lights are never your problem.",
+      "description": "Installation, maintenance, removal, and storage\u2014we handle the entire lifecycle so lights are never your problem.",
       "icon": "TrendingUp"
     }
   ],
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "When should I book holiday lighting installation?",
-      "answer": "Book early—October or early November. Popular installation dates fill quickly. Early booking ensures installation before Thanksgiving and allows time for any custom lights to arrive. Last-minute requests may not be accommodable during peak season."
+      "answer": "Book early\u2014October or early November. Popular installation dates fill quickly. Early booking ensures installation before Thanksgiving and allows time for any custom lights to arrive. Last-minute requests may not be accommodable during peak season."
     },
     {
       "question": "Do you provide the lights or do I?",
@@ -129,7 +129,7 @@
     },
     {
       "question": "How do you attach lights without damaging my home?",
-      "answer": "We use clips designed for each application—shingle clips, gutter clips, tree clips—that attach without nails or screws. When we remove lights, no damage remains. The same clips work year after year."
+      "answer": "We use clips designed for each application\u2014shingle clips, gutter clips, tree clips\u2014that attach without nails or screws. When we remove lights, no damage remains. The same clips work year after year."
     },
     {
       "question": "What about lights for my palm trees?",
@@ -137,11 +137,11 @@
     },
     {
       "question": "Can you repair or troubleshoot existing displays?",
-      "answer": "Yes. If your existing lights have problems—burned sections, flickering, timer issues—we can troubleshoot and repair. Sometimes repair is more cost-effective than replacement; other times new lights make more sense."
+      "answer": "Yes. If your existing lights have problems\u2014burned sections, flickering, timer issues\u2014we can troubleshoot and repair. Sometimes repair is more cost-effective than replacement; other times new lights make more sense."
     },
     {
       "question": "What happens if lights stop working during the season?",
-      "answer": "Lights we provide include service during the season. If sections fail, we return to repair or replace. This is one advantage of professional service over DIY—you have support if problems occur."
+      "answer": "Lights we provide include service during the season. If sections fail, we return to repair or replace. This is one advantage of professional service over DIY\u2014you have support if problems occur."
     },
     {
       "question": "Do you install for businesses too?",
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Holiday Lighting Installation in Miami & South Florida",
-      "body": "Transform your South Florida home into a holiday spectacle without the ladder climbing, tangled lights, and frustration. Solomon Electric provides professional holiday lighting installation and removal—delivering spectacular displays safely while you enjoy the season."
+      "body": "Transform your South Florida home into a holiday spectacle without the ladder climbing, tangled lights, and frustration. Solomon Electric provides professional holiday lighting installation and removal\u2014delivering spectacular displays safely while you enjoy the season."
     },
     {
       "heading": "Commercial Holiday Displays",
@@ -173,8 +173,9 @@
     },
     {
       "heading": "Serving South Florida Holidays",
-      "body": "Solomon Electric installs holiday lighting throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Book early for the best installation dates—popular times fill quickly."
+      "body": "Solomon Electric installs holiday lighting throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Book early for the best installation dates\u2014popular times fill quickly."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Holiday Lighting Installation & Removal service provided by licensed electricians in South Florida"
 }

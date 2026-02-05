@@ -1,10 +1,10 @@
 {
   "name": "Emergency Power System Design",
   "slug": "emergency-power-system-design",
-  "description": "When your operation can't tolerate power interruptions, you need more than a generator—you need a complete emergency power system. Solomon Electric designs comprehensive backup power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida. From generator sizing to transfer systems to load prioritization, we create backup power that keeps you running.",
+  "description": "When your operation can't tolerate power interruptions, you need more than a generator\u2014you need a complete emergency power system. Solomon Electric designs comprehensive backup power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida. From generator sizing to transfer systems to load prioritization, we create backup power that keeps you running.",
   "shortDescription": "Mission-critical backup power design",
   "icon": "Shield",
-  "image": "../../assets/images/services/panel-work.png",
+  "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
   "order": 16,
   "features": [
@@ -54,17 +54,17 @@
     {
       "step": 1,
       "title": "Requirements Analysis",
-      "description": "We understand your operational requirements—what can't lose power, acceptable transition times, and runtime needs."
+      "description": "We understand your operational requirements\u2014what can't lose power, acceptable transition times, and runtime needs."
     },
     {
       "step": 2,
       "title": "Load Analysis",
-      "description": "We inventory and calculate loads requiring backup power—critical vs. optional, continuous vs. cyclical—to properly size generation."
+      "description": "We inventory and calculate loads requiring backup power\u2014critical vs. optional, continuous vs. cyclical\u2014to properly size generation."
     },
     {
       "step": 3,
       "title": "System Design",
-      "description": "We design the complete system—generators, transfer equipment, distribution, and any UPS or ride-through requirements."
+      "description": "We design the complete system\u2014generators, transfer equipment, distribution, and any UPS or ride-through requirements."
     },
     {
       "step": 4,
@@ -81,7 +81,7 @@
   "benefits": [
     {
       "title": "Right-Sized Systems",
-      "description": "Proper load analysis ensures generators are sized correctly—not undersized (won't carry load) or oversized (wasted capital and operating cost).",
+      "description": "Proper load analysis ensures generators are sized correctly\u2014not undersized (won't carry load) or oversized (wasted capital and operating cost).",
       "icon": "Zap"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Optimized Investment",
-      "description": "Thoughtful design balances protection needs with cost—possibly including tiered backup for different criticality levels.",
+      "description": "Thoughtful design balances protection needs with cost\u2014possibly including tiered backup for different criticality levels.",
       "icon": "TrendingUp"
     }
   ],
@@ -129,7 +129,7 @@
     },
     {
       "question": "What's N+1 redundancy?",
-      "answer": "N+1 means having one more generator than minimum required. If your load needs three generators, N+1 provides four—so any one can fail or need maintenance without losing backup capability. Critical facilities like data centers often require N+1."
+      "answer": "N+1 means having one more generator than minimum required. If your load needs three generators, N+1 provides four\u2014so any one can fail or need maintenance without losing backup capability. Critical facilities like data centers often require N+1."
     },
     {
       "question": "Do we need UPS in addition to generators?",
@@ -141,11 +141,11 @@
     },
     {
       "question": "What about code requirements for healthcare?",
-      "answer": "NFPA 99 and NEC govern healthcare electrical. Requirements include emergency system, life safety system, critical system, and equipment system—each with specific loads and transfer requirements. We design compliant systems for healthcare facilities."
+      "answer": "NFPA 99 and NEC govern healthcare electrical. Requirements include emergency system, life safety system, critical system, and equipment system\u2014each with specific loads and transfer requirements. We design compliant systems for healthcare facilities."
     },
     {
       "question": "Can you upgrade our existing backup system?",
-      "answer": "Absolutely. We evaluate existing systems, identify limitations, and design upgrades—larger generators, additional transfer capacity, improved redundancy, or better load management. Upgrades often provide significantly better protection than original installations."
+      "answer": "Absolutely. We evaluate existing systems, identify limitations, and design upgrades\u2014larger generators, additional transfer capacity, improved redundancy, or better load management. Upgrades often provide significantly better protection than original installations."
     },
     {
       "question": "What maintenance do emergency power systems need?",
@@ -161,11 +161,11 @@
   "seoContent": [
     {
       "heading": "Emergency Power System Design in South Florida",
-      "body": "Mission-critical operations can't tolerate power interruptions. Solomon Electric designs comprehensive emergency power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida—from generator sizing to complete redundant systems."
+      "body": "Mission-critical operations can't tolerate power interruptions. Solomon Electric designs comprehensive emergency power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida\u2014from generator sizing to complete redundant systems."
     },
     {
       "heading": "Healthcare and Life Safety Compliance",
-      "body": "Healthcare facilities, high-rise buildings, and assembly occupancies have code-mandated emergency power requirements. We design systems meeting NEC, NFPA 99, and NFPA 110 requirements—ensuring proper emergency, life safety, and critical branch separation."
+      "body": "Healthcare facilities, high-rise buildings, and assembly occupancies have code-mandated emergency power requirements. We design systems meeting NEC, NFPA 99, and NFPA 110 requirements\u2014ensuring proper emergency, life safety, and critical branch separation."
     },
     {
       "heading": "Data Center and IT Critical Power",
@@ -178,5 +178,6 @@
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
-  ]
+  ],
+  "imageAlt": "Emergency Power System Design service provided by licensed electricians in South Florida"
 }

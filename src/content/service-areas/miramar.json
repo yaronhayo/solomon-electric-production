@@ -1,122 +1,124 @@
 {
-    "name": "Miramar",
-    "slug": "miramar",
-    "county": "Broward",
-    "description": "Licensed Miramar electricians serving Southern Broward County. Solomon Electric provides professional residential and commercial electrical services for Miramar's homes and booming corporate centers.",
-    "population": "140,000+",
-    "founded": "1955",
-    "areaSquareMiles": "31",
-    "tagline": "Beauty and Progress",
-    "landmarks": [
-        "Miramar Cultural Center",
-        "Miramar Regional Park",
-        "Ansin Sports Complex",
-        "Miramar Town Center"
-    ],
-    "neighborhoods": [
-        "Silver Lakes",
-        "Sunset Lakes",
-        "Miramar Isles",
-        "Country Club Ranches",
-        "Mirabella",
-        "Monarch Lakes"
-    ],
-    "majorRoads": [
-        "I-75",
-        "Florida Turnpike",
-        "Miramar Parkway",
-        "University Drive",
-        "Red Road"
-    ],
-    "coordinates": {
-        "lat": 25.9873,
-        "lng": -80.3012
+  "name": "Miramar",
+  "slug": "miramar",
+  "county": "Broward",
+  "description": "Licensed Miramar electricians serving Southern Broward County. Solomon Electric provides professional residential and commercial electrical services for Miramar's homes and booming corporate centers.",
+  "population": "140,000+",
+  "founded": "1955",
+  "areaSquareMiles": "31",
+  "tagline": "Beauty and Progress",
+  "landmarks": [
+    "Miramar Cultural Center",
+    "Miramar Regional Park",
+    "Ansin Sports Complex",
+    "Miramar Town Center"
+  ],
+  "neighborhoods": [
+    "Silver Lakes",
+    "Sunset Lakes",
+    "Miramar Isles",
+    "Country Club Ranches",
+    "Mirabella",
+    "Monarch Lakes"
+  ],
+  "majorRoads": [
+    "I-75",
+    "Florida Turnpike",
+    "Miramar Parkway",
+    "University Drive",
+    "Red Road"
+  ],
+  "coordinates": {
+    "lat": 25.9873,
+    "lng": -80.3012
+  },
+  "challenges": [
+    {
+      "title": "Corporate & Industrial Power",
+      "description": "Miramar's status as a corporate hub requires electricians who understand high-capacity commercial power distribution and data center electrical needs.",
+      "icon": "Zap"
     },
-    "challenges": [
-        {
-            "title": "Corporate & Industrial Power",
-            "description": "Miramar's status as a corporate hub requires electricians who understand high-capacity commercial power distribution and data center electrical needs.",
-            "icon": "Zap"
-        },
-        {
-            "title": "Modern Suburban Wiring",
-            "description": "Miramar's many newer residential communities feature complex wiring that needs professional maintenance and integration for modern smart home features.",
-            "icon": "Home"
-        },
-        {
-            "title": "Storm Surge Protection",
-            "description": "Protecting expensive home electronics from South Florida's frequent lightning strikes is a top priority for Miramar families. We specialize in tiered surge protection systems.",
-            "icon": "CloudLightning"
-        }
-    ],
-    "featuredServices": [
-        "electrical-panel-upgrade-100a-to-200a",
-        "ev-charging-system-setup",
-        "whole-home-surge-protection",
-        "commercial-led-lighting-retrofit",
-        "recessed-lighting-installation",
-        "24-7-emergency-electrical-service"
-    ],
-    "stats": [
-        {
-            "value": "140K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "Why is Miramar attracting so many corporate headquarters, and how does that affect electrical needs?",
-            "answer": "Miramar's I-75 corridor has become a major corporate hub—Spirit Airlines, Carnival, and numerous tech companies have headquarters here. This growth means more work-from-home professionals who need dedicated home office circuits, robust internet infrastructure support, and backup power capabilities. We're helping many Miramar homeowners upgrade their electrical systems to handle the demands of remote work and high-speed networking."
-        },
-        {
-            "question": "Our Miramar home was built in the early 2000s—do we really need electrical upgrades already?",
-            "answer": "Many Monarch Lakes, Sunset Lakes, and Silver Lakes homes are now 20+ years old with builder-grade panels and components that are showing their age. Additionally, 2000s homes weren't designed for today's EV chargers, smart home systems, and home offices. We recommend a free electrical inspection to assess capacity and identify any components that may be nearing end of life."
-        },
-        {
-            "question": "We moved from the Caribbean and prefer to discuss electrical work in Spanish or Creole—is that possible?",
-            "answer": "Absolutely. Miramar has a vibrant Caribbean community, and we're proud to serve neighbors from Jamaica, Haiti, Trinidad, and throughout the islands. Several of our electricians speak Spanish fluently, and we make sure every customer fully understands the work, options, and service standards—regardless of language preference."
-        },
-        {
-            "question": "Can you install a backup generator for our Miramar home before hurricane season?",
-            "answer": "Yes, and we recommend booking generator installations well before June 1st. Miramar sees high demand for generators after hurricane threats, and by then it's often too late to get equipment and schedule installation. A whole-home standby generator with automatic transfer switch means your power comes back within seconds of an outage—no extension cords, no gas cans, no waiting."
-        },
-        {
-            "question": "Do you provide commercial electrical for the office parks near Miramar Parkway?",
-            "answer": "Yes, we service the commercial and corporate districts along Miramar Parkway, I-75, and near Miramar Town Center. Services include tenant buildouts, parking lot lighting, signage circuits, data center power infrastructure, and 24/7 emergency response for businesses that can't afford downtime."
-        },
-        {
-            "question": "How quickly can you respond to electrical emergencies in Miramar?",
-            "answer": "Miramar is centrally located in our service area between Pembroke Pines and Hollywood.  For after-hours emergencies involving sparking, burning smells, or complete power loss, we allocate resources. All Miramar neighborhoods—from Country Club Ranches to Mirabella—are within our rapid response zone."
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Reliable Miramar Electricians – Serving Our Neighbors Since 2003",
-            "body": "Miramar is a city defined by its rapid growth and commitment to progress. From its corporate centers to its beautiful gated communities, Miramar requires a level of electrical expertise that is both modern and highly professional. Solomon Electric is proud to be part of the Miramar community, keeping homes and businesses powered safely."
-        },
-        {
-            "heading": "Understanding Miramar's Electrical Needs",
-            "body": "Miramar homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Miramar's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Miramar Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Miramar. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Expert Electrical Solutions for Miramar Families",
-            "body": "Whether you're in Sunset Lakes, Silver Lakes, or a business near the Miramar Cultural Center, Solomon Electric is your first choice for licensed electrical work. We provide 24/7 emergency response, professional service, and a dedication to quality that has made us a leader in Broward County's electrical industry."
-        }
-    ]
+    {
+      "title": "Modern Suburban Wiring",
+      "description": "Miramar's many newer residential communities feature complex wiring that needs professional maintenance and integration for modern smart home features.",
+      "icon": "Home"
+    },
+    {
+      "title": "Storm Surge Protection",
+      "description": "Protecting expensive home electronics from South Florida's frequent lightning strikes is a top priority for Miramar families. We specialize in tiered surge protection systems.",
+      "icon": "CloudLightning"
+    }
+  ],
+  "featuredServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "ev-charging-system-setup",
+    "whole-home-surge-protection",
+    "commercial-led-lighting-retrofit",
+    "recessed-lighting-installation",
+    "24-7-emergency-electrical-service"
+  ],
+  "stats": [
+    {
+      "value": "140K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why is Miramar attracting so many corporate headquarters, and how does that affect electrical needs?",
+      "answer": "Miramar's I-75 corridor has become a major corporate hub\u2014Spirit Airlines, Carnival, and numerous tech companies have headquarters here. This growth means more work-from-home professionals who need dedicated home office circuits, robust internet infrastructure support, and backup power capabilities. We're helping many Miramar homeowners upgrade their electrical systems to handle the demands of remote work and high-speed networking."
+    },
+    {
+      "question": "Our Miramar home was built in the early 2000s\u2014do we really need electrical upgrades already?",
+      "answer": "Many Monarch Lakes, Sunset Lakes, and Silver Lakes homes are now 20+ years old with builder-grade panels and components that are showing their age. Additionally, 2000s homes weren't designed for today's EV chargers, smart home systems, and home offices. We recommend a free electrical inspection to assess capacity and identify any components that may be nearing end of life."
+    },
+    {
+      "question": "We moved from the Caribbean and prefer to discuss electrical work in Spanish or Creole\u2014is that possible?",
+      "answer": "Absolutely. Miramar has a vibrant Caribbean community, and we're proud to serve neighbors from Jamaica, Haiti, Trinidad, and throughout the islands. Several of our electricians speak Spanish fluently, and we make sure every customer fully understands the work, options, and service standards\u2014regardless of language preference."
+    },
+    {
+      "question": "Can you install a backup generator for our Miramar home before hurricane season?",
+      "answer": "Yes, and we recommend booking generator installations well before June 1st. Miramar sees high demand for generators after hurricane threats, and by then it's often too late to get equipment and schedule installation. A whole-home standby generator with automatic transfer switch means your power comes back within seconds of an outage\u2014no extension cords, no gas cans, no waiting."
+    },
+    {
+      "question": "Do you provide commercial electrical for the office parks near Miramar Parkway?",
+      "answer": "Yes, we service the commercial and corporate districts along Miramar Parkway, I-75, and near Miramar Town Center. Services include tenant buildouts, parking lot lighting, signage circuits, data center power infrastructure, and 24/7 emergency response for businesses that can't afford downtime."
+    },
+    {
+      "question": "How quickly can you respond to electrical emergencies in Miramar?",
+      "answer": "Miramar is centrally located in our service area between Pembroke Pines and Hollywood.  For after-hours emergencies involving sparking, burning smells, or complete power loss, we allocate resources. All Miramar neighborhoods\u2014from Country Club Ranches to Mirabella\u2014are within our rapid response zone."
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Reliable Miramar Electricians \u2013 Serving Our Neighbors Since 2003",
+      "body": "Miramar is a city defined by its rapid growth and commitment to progress. From its corporate centers to its beautiful gated communities, Miramar requires a level of electrical expertise that is both modern and highly professional. Solomon Electric is proud to be part of the Miramar community, keeping homes and businesses powered safely."
+    },
+    {
+      "heading": "Understanding Miramar's Electrical Needs",
+      "body": "Miramar homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Miramar's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Miramar Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Miramar. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Expert Electrical Solutions for Miramar Families",
+      "body": "Whether you're in Sunset Lakes, Silver Lakes, or a business near the Miramar Cultural Center, Solomon Electric is your first choice for licensed electrical work. We provide 24/7 emergency response, professional service, and a dedication to quality that has made us a leader in Broward County's electrical industry."
+    }
+  ],
+  "imageAlt": "Professional electrical services in Miramar, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

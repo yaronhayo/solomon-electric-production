@@ -56,6 +56,7 @@ export const SITE_CONFIG = {
     },
 
     stats: {
+        totalProjects: "19,400",
         residentialProjects: "12,000+",
         commercialJobs: "4,500+",
         industrialSystems: "2,000+",
@@ -84,6 +85,10 @@ export const SITE_CONFIG = {
         siteUrl: "https://www.247electricianmiami.com",
         tracking: {
             gtm: "GTM-KQQZXTZ6",
+        },
+        integrations: {
+            googleMaps: "AIzaSyCPUa0e_IB0rB5UeJrWa3__Lohkm7HB9hY",
+            recaptcha: "6LeDDjUsAAAAAEJquohduwPouri3rOne3ahYp765",
         },
         schema: {
             businessName: "Solomon Electric",

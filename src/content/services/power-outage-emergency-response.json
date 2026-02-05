@@ -1,10 +1,10 @@
 {
   "name": "Power Outage & Emergency Response",
   "slug": "power-outage-emergency-response",
-  "description": "When the power goes out in your South Florida home or business, you need answers fast. Is it an FPL issue or a problem on your side? Solomon Electric provides emergency power outage response—diagnosing whether you need utility service or electrician repairs and getting your power back on as quickly as possible.",
+  "description": "When the power goes out in your South Florida home or business, you need answers fast. Is it an FPL issue or a problem on your side? Solomon Electric provides emergency power outage response\u2014diagnosing whether you need utility service or electrician repairs and getting your power back on as quickly as possible.",
   "shortDescription": "Fast power restoration",
   "icon": "Zap",
-  "image": "../../assets/images/services/emergency.png",
+  "image": "../../assets/images/services/emergency.webp",
   "category": "Emergency Electrical Services",
   "order": 9,
   "features": [
@@ -35,7 +35,7 @@
     },
     {
       "title": "Breaker Won't Reset",
-      "description": "A breaker that trips immediately when reset indicates a short circuit or ground fault on that circuit. Don't keep trying—call an electrician to find the cause.",
+      "description": "A breaker that trips immediately when reset indicates a short circuit or ground fault on that circuit. Don't keep trying\u2014call an electrician to find the cause.",
       "icon": "Zap"
     },
     {
@@ -59,12 +59,12 @@
     {
       "step": 2,
       "title": "Safety Assessment",
-      "description": "We check for hazardous conditions—smoke, burning smell, arcing, flooding—that require immediate attention or evacuation."
+      "description": "We check for hazardous conditions\u2014smoke, burning smell, arcing, flooding\u2014that require immediate attention or evacuation."
     },
     {
       "step": 3,
       "title": "Problem Location",
-      "description": "For internal problems, we trace the issue to its source—main breaker, service entrance, individual circuits, or specific equipment."
+      "description": "For internal problems, we trace the issue to its source\u2014main breaker, service entrance, individual circuits, or specific equipment."
     },
     {
       "step": 4,
@@ -91,7 +91,7 @@
     },
     {
       "title": "Complete Repairs",
-      "description": "If your electrical system is the problem, we repair it—from tripped breakers to damaged service entrances to failed panels.",
+      "description": "If your electrical system is the problem, we repair it\u2014from tripped breakers to damaged service entrances to failed panels.",
       "icon": "Home"
     },
     {
@@ -121,19 +121,19 @@
   "faqs": [
     {
       "question": "How do I know if it's FPL's problem or mine?",
-      "answer": "Check your neighbors—if they're also out, it's likely FPL. If they have power but you don't, check your main breaker first. If the main breaker is on or won't reset, the problem is your electrical system. We can help diagnose either way."
+      "answer": "Check your neighbors\u2014if they're also out, it's likely FPL. If they have power but you don't, check your main breaker first. If the main breaker is on or won't reset, the problem is your electrical system. We can help diagnose either way."
     },
     {
-      "question": "My main breaker tripped—should I reset it?",
-      "answer": "You can try resetting once. If it immediately trips again, don't keep trying—repeated tripping can damage the breaker and indicates a fault that needs investigation. If it stays on after reset, monitor closely for any problems."
+      "question": "My main breaker tripped\u2014should I reset it?",
+      "answer": "You can try resetting once. If it immediately trips again, don't keep trying\u2014repeated tripping can damage the breaker and indicates a fault that needs investigation. If it stays on after reset, monitor closely for any problems."
     },
     {
       "question": "Why do I only have power in half my house?",
-      "answer": "Your home receives power on two 'legs' from the utility. If one leg fails (utility side) or you have a main panel problem, you'll have partial power. This needs professional diagnosis—it could be FPL or your panel."
+      "answer": "Your home receives power on two 'legs' from the utility. If one leg fails (utility side) or you have a main panel problem, you'll have partial power. This needs professional diagnosis\u2014it could be FPL or your panel."
     },
     {
       "question": "Can you help during a major storm outage?",
-      "answer": "We prioritize storm damage repairs that enable FPL reconnection—service entrance repairs, weather head replacement, and panel damage. If FPL is your issue, we can help with generator hookup until power returns."
+      "answer": "We prioritize storm damage repairs that enable FPL reconnection\u2014service entrance repairs, weather head replacement, and panel damage. If FPL is your issue, we can help with generator hookup until power returns."
     },
     {
       "question": "How fast can you respond to power emergencies?",
@@ -165,7 +165,7 @@
     },
     {
       "heading": "Is It FPL or Your Electrical System?",
-      "body": "The first critical question during any outage: is this a utility problem or something on your side? We answer this quickly through proper diagnosis—checking your service entrance, panel, and connections. If it's FPL, we tell you and help with generator options. If it's your system, we repair it."
+      "body": "The first critical question during any outage: is this a utility problem or something on your side? We answer this quickly through proper diagnosis\u2014checking your service entrance, panel, and connections. If it's FPL, we tell you and help with generator options. If it's your system, we repair it."
     },
     {
       "heading": "24/7 Emergency Electrician Available",
@@ -178,5 +178,6 @@
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
-  ]
+  ],
+  "imageAlt": "Power Outage & Emergency Response service provided by licensed electricians in South Florida"
 }

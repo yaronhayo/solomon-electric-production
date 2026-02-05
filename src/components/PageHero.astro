@@ -2,12 +2,14 @@
 import Container from "./ui/Container.astro";
 import Button from "./ui/Button.astro";
 import { Image } from "astro:assets";
+import { SITE_CONFIG } from "../config/site";
 
 interface Props {
     title: string;
     subtitle?: string;
     description?: string;
-    image: ImageMetadata;
+    image: ImageMetadata | { src: ImageMetadata; alt: string };
+    imageAlt?: string;
     primaryCta?: {
         text: string;
         href: string;
@@ -28,6 +30,7 @@ const {
     subtitle,
     description,
     image,
+    imageAlt,
     primaryCta,
     secondaryCta,
     trustIndicators = false,
@@ -39,11 +42,17 @@ const {
 <section
     class="relative min-h-[60vh] flex items-center overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32"
 >
-    <!-- Background Image -->
     <div class="absolute inset-0 z-0">
         <Image
-            src={image}
-            alt={`${title.replace(/<[^>]*>/g, "")} - Solomon Electric Miami licensed electricians`}
+            src={typeof image === "object" &&
+            "src" in image &&
+            typeof image.src === "object"
+                ? image.src
+                : image}
+            alt={imageAlt ||
+                ("alt" in image
+                    ? image.alt
+                    : `${title.replace(/<[^>]*>/g, "")} - Solomon Electric Miami licensed electricians`)}
             class="w-full h-full object-cover"
             loading="eager"
             fetchpriority="high"
@@ -122,7 +131,8 @@ const {
                                     class="font-extrabold text-white tracking-wider uppercase"
                                     style="font-size: clamp(0.7rem, 0.8vw, 0.9rem);"
                                 >
-                                    Licensed FL EC13012419
+                                    Licensed FL{" "}
+                                    {SITE_CONFIG.credentials.license.number}
                                 </span>
                             </div>
                             <div class="flex items-center gap-2 text-accent glass-bg glass-border px-4 py-2 rounded-xl">

@@ -1,10 +1,10 @@
 {
   "name": "Service Panel Replacement",
   "slug": "service-panel-replacement",
-  "description": "When your electrical panel is damaged, recalled, or simply worn out, replacement is the right answer. Solomon Electric provides service panel replacement throughout South Florida—removing problematic panels and installing modern, code-compliant electrical distribution that protects your home and provides reliable power.",
+  "description": "When your electrical panel is damaged, recalled, or simply worn out, replacement is the right answer. Solomon Electric provides service panel replacement throughout South Florida\u2014removing problematic panels and installing modern, code-compliant electrical distribution that protects your home and provides reliable power.",
   "shortDescription": "Replace outdated or dangerous panels",
   "icon": "Zap",
-  "image": "../../assets/images/services/panel-work.png",
+  "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
   "order": 8,
   "features": [
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "Why is my specific panel brand a problem?",
-      "answer": "Federal Pacific (FPE/Stab-Lok) and Zinsco breakers have documented failure rates—they don't trip when they should, leading to overheating and fires. The problem is the breaker design, not just age. These panels should be replaced regardless of condition."
+      "answer": "Federal Pacific (FPE/Stab-Lok) and Zinsco breakers have documented failure rates\u2014they don't trip when they should, leading to overheating and fires. The problem is the breaker design, not just age. These panels should be replaced regardless of condition."
     },
     {
       "question": "How do I know if I have a recalled panel?",
@@ -129,15 +129,15 @@
     },
     {
       "question": "Will my insurance cover panel replacement?",
-      "answer": "Insurance typically doesn't cover replacement of functioning but hazardous panels—that's maintenance, not damage. However, if your insurer requires replacement for continued coverage, the alternative is losing insurance. The cost of replacement versus uninsured status makes the decision clear."
+      "answer": "Insurance typically doesn't cover replacement of functioning but hazardous panels\u2014that's maintenance, not damage. However, if your insurer requires replacement for continued coverage, the alternative is losing insurance. The cost of replacement versus uninsured status makes the decision clear."
     },
     {
       "question": "How long does panel replacement take?",
-      "answer": "Typically one full day for direct replacement (same size panel). Power is off for most of that time—usually 6-10 hours. We coordinate to minimize disruption and complete work efficiently."
+      "answer": "Typically one full day for direct replacement (same size panel). Power is off for most of that time\u2014usually 6-10 hours. We coordinate to minimize disruption and complete work efficiently."
     },
     {
       "question": "Should I upgrade size while replacing?",
-      "answer": "If your panel is being replaced anyway, upgrading from 100A to 200A adds relatively little to the project (vs. separate upgrade later). Consider future needs—EV charging, additions, modern electrical loads. We can advise whether upgrade makes sense."
+      "answer": "If your panel is being replaced anyway, upgrading from 100A to 200A adds relatively little to the project (vs. separate upgrade later). Consider future needs\u2014EV charging, additions, modern electrical loads. We can advise whether upgrade makes sense."
     },
     {
       "question": "What about my breakers?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "Will replacement solve my electrical problems?",
-      "answer": "Panel replacement addresses panel-specific issues—recalled equipment, corrosion, physical damage. If you have wiring problems, overloaded circuits, or other issues, those may need separate attention. We identify what panel replacement will and won't solve."
+      "answer": "Panel replacement addresses panel-specific issues\u2014recalled equipment, corrosion, physical damage. If you have wiring problems, overloaded circuits, or other issues, those may need separate attention. We identify what panel replacement will and won't solve."
     },
     {
       "question": "Do I need to coordinate with FPL?",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric provides panel replacement throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Remove dangerous equipment and install reliable, safe electrical distribution."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Service Panel Replacement service provided by licensed electricians in South Florida"
 }

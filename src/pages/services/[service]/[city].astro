@@ -7,6 +7,7 @@
  */
 
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../../layouts/Layout.astro";
 import Container from "../../../components/ui/Container.astro";
 import Button from "../../../components/ui/Button.astro";
@@ -23,6 +24,7 @@ import {
     generateLocalRegulatoryInfo,
     getRelatedCities,
 } from "../../../utils/service-location-generator";
+import { replacePlaceholder } from "../../../utils/content";
 
 import {
     Zap,
@@ -85,18 +87,18 @@ const metaDescription = generateMetaDescription(
     city.name,
     city.neighborhoods || [],
 );
-const introText = generateIntro(
+const introText = replacePlaceholder(generateIntro(
     service.name,
     city.name,
     city.county,
     city.neighborhoods || [],
-);
-const whyChooseText = generateWhyChoose(
+));
+const whyChooseText = replacePlaceholder(generateWhyChoose(
     service.name,
     city.name,
     cityId,
     city.county,
-);
+));
 
 // Get related cities for this service
 // Get related cities for this service (All 27 for maximum internal linking)
@@ -168,7 +170,12 @@ const schema = generateServiceLocationSchema(
 const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
 ---
 
-<Layout title={metaTitle} description={metaDescription}>
+<Layout 
+    title={metaTitle} 
+    description={metaDescription}
+    ogImage={service.image ? (typeof service.image === 'string' ? service.image : service.image.src) : "/og-default.jpg"}
+    ogImageAlt={service.imageAlt || `${service.name} in ${city.name}`}
+>
     <!-- Schema Markup -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
@@ -200,81 +207,47 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
         </div>
 
         <Container class="relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-[var(--spacing-xl)]">
-                <!-- Left Column: Text - spans 8 columns on large screens -->
-                <div class="lg:col-span-8">
-                <!-- Location Badge -->
-                <div class="flex items-center gap-2 mb-6">
-                    <span
-                        class="inline-flex items-center gap-2 bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-accent/30"
-                    >
-                        <MapPin class="w-4 h-4" />
-                        {city.name}, FL
-                    </span>
-                    <span
-                        class="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm font-medium px-4 py-2 rounded-full"
-                    >
-                        {city.county} County
-                    </span>
-                </div>
-
-                <!-- H1 -->
-                <h1
-                    class="font-black text-white mb-6 uppercase leading-[0.9] tracking-[-0.04em]"
-                    style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem);"
-                >
-                    {service.name}
-                    <span
-                        class="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
-                    >
-                        in {city.name}
-                    </span>
-                </h1>
-
-                <!-- Intro -->
-                <p
-                    class="text-gray-200 font-light leading-relaxed mb-[var(--spacing-lg)]"
-                    style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem);"
-                >
-                    {introText}
-                </p>
-
-                <!-- Trust Indicators -->
-                <div class="flex flex-wrap gap-4 mb-8">
-                    <div class="flex items-center gap-2 text-white/90">
-                        <Shield class="w-5 h-5 text-accent" />
-                        <span class="font-medium">Licensed & Insured</span>
+                <!-- Right Column: Image - spans 4 columns -->
+                <div class="hidden lg:block lg:col-span-4 relative">
+                    <div class="absolute -inset-4 bg-accent/20 blur-3xl rounded-full"></div>
+                    <div class="relative glass-card overflow-hidden rounded-2xl border border-white/10 shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+                        {service.image && (
+                            <Image 
+                                src={service.image} 
+                                alt={service.imageAlt || `${service.name} service in ${city.name}`}
+                                class="w-full h-auto object-cover"
+                                loading="eager"
+                                fetchpriority="high"
+                            />
+                        )}
+                        {!service.image && (
+                            <div class="aspect-[4/5] bg-primary/40 flex items-center justify-center p-8 text-center">
+                                <Zap class="w-20 h-20 text-accent/20 absolute opacity-20" />
+                                <div class="relative z-10">
+                                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                                        <Zap class="w-8 h-8 text-accent" />
+                                    </div>
+                                    <p class="text-white font-bold uppercase tracking-widest text-sm">
+                                        Solomon Electric
+                                    </p>
+                                    <p class="text-accent text-xs mt-1">
+                                        Licensed & Insured
+                                    </p>
+                                </div>
+                            </div>
+                        )}
                     </div>
-                    <div class="flex items-center gap-2 text-white/90">
-                        <Clock class="w-5 h-5 text-accent" />
-                        <span class="font-medium">24/7 Available</span>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 hidden xl:flex items-center gap-3">
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <Star class="w-6 h-6 text-accent fill-accent" />
+                        </div>
+                        <div>
+                            <p class="text-primary font-black leading-none">{SITE_CONFIG.stats.averageRating} RATING</p>
+                            <p class="text-[10px] text-primary/60 font-bold uppercase tracking-wider">{SITE_CONFIG.stats.totalReviews} LOCAL REVIEWS</p>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-2 text-white/90">
-                        <Star class="w-5 h-5 text-accent" />
-                        <span class="font-medium"
-                            >{SITE_CONFIG.stats.averageRating} Rating</span
-                        >
-                    </div>
-                </div>
-
-                <!-- CTAs -->
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <CtaButton
-                        action="call"
-                        variant="secondary"
-                        size="lg"
-                        text={`Call ${city.name} Electrician`}
-                    />
-                    <Button
-                        href="/book"
-                        variant="primary"
-                        size="lg"
-                        class="gap-2"
-                    >
-                        <Zap class="w-5 h-5" />
-                        Get Free Estimate
-                    </Button>
-                </div>
                 </div>
             </div>
         </Container>

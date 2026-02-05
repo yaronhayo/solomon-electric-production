@@ -49,6 +49,9 @@ $serviceDetails = isset($input['serviceDetails']) ? sanitizeInput($input['servic
 $address = sanitizeInput($input['address']);
 $aptUnit = isset($input['aptUnit']) ? sanitizeInput($input['aptUnit']) : '';
 $gateCode = isset($input['gateCode']) ? sanitizeInput($input['gateCode']) : '';
+$zipCode = isset($input['zipCode']) ? sanitizeInput($input['zipCode']) : '';
+$city = isset($input['city']) ? sanitizeInput($input['city']) : '';
+$state = isset($input['state']) ? sanitizeInput($input['state']) : '';
 $urgency = sanitizeInput($input['urgency']);
 $name = sanitizeInput($input['name']);
 $phone = sanitizeInput($input['phone']);
@@ -67,7 +70,7 @@ $trackingData = [
     'language' => isset($input['tracking_language']) ? sanitizeInput($input['tracking_language']) : 'N/A',
     'cookiesAccepted' => isset($input['tracking_cookiesAccepted']) ? ($input['tracking_cookiesAccepted'] === 'true' ? 'Yes' : 'No') : 'Unknown',
     'consentTimestamp' => isset($input['tracking_consentTimestamp']) ? sanitizeInput($input['tracking_consentTimestamp']) : 'N/A',
-    'recaptchaVerified' => isset($input['tracking_recaptchaVerified']) ? ($input['tracking_recaptchaVerified'] === 'true' ? 'Yes ✓' : 'No') : 'No',
+    'recaptchaVerified' => !empty($input['g-recaptcha-response']) ? 'Yes ✓' : 'No',
     'trafficSource' => isset($input['tracking_trafficSource']) ? sanitizeInput($input['tracking_trafficSource']) : 'Unknown',
     'utmSource' => isset($input['tracking_utmSource']) ? sanitizeInput($input['tracking_utmSource']) : 'N/A',
     'utmMedium' => isset($input['tracking_utmMedium']) ? sanitizeInput($input['tracking_utmMedium']) : 'N/A',
@@ -76,87 +79,449 @@ $trackingData = [
     'newReturning' => isset($input['tracking_newReturning']) ? sanitizeInput($input['tracking_newReturning']) : 'Unknown'
 ];
 
+// Enhanced traffic source detection based on referrer
+$referrer = $trackingData['referrer'];
+if ($trackingData['trafficSource'] === 'Unknown' || $trackingData['trafficSource'] === 'Referral') {
+    if (stripos($referrer, 'business.google.com') !== false || stripos($referrer, 'business.google') !== false) {
+        $trackingData['trafficSource'] = 'Google Business Profile';
+    } elseif (stripos($referrer, 'google.com/maps') !== false || stripos($referrer, 'maps.google.com') !== false) {
+        $trackingData['trafficSource'] = 'Google Maps';
+    } elseif (stripos($referrer, 'google.com') !== false && empty($trackingData['gclid'])) {
+        $trackingData['trafficSource'] = 'Google Organic';
+    } elseif (stripos($referrer, 'bing.com') !== false) {
+        $trackingData['trafficSource'] = 'Bing Organic';
+    } elseif (stripos($referrer, 'facebook.com') !== false) {
+        $trackingData['trafficSource'] = 'Facebook';
+    } elseif (stripos($referrer, 'instagram.com') !== false) {
+        $trackingData['trafficSource'] = 'Instagram';
+    } elseif (stripos($referrer, 'yelp.com') !== false) {
+        $trackingData['trafficSource'] = 'Yelp';
+    } elseif (!empty($referrer) && $referrer !== 'Direct') {
+        $trackingData['trafficSource'] = 'Referral: ' . parse_url($referrer, PHP_URL_HOST);
+    } elseif (empty($referrer) || $referrer === 'Direct') {
+        $trackingData['trafficSource'] = 'Direct';
+    }
+}
+
 // Formatting
 date_default_timezone_set('America/New_York');
 $submittedDate = date('F j, Y');
 $submittedTime = date('g:i A');
 $clientIp = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
 
-// Branding
-$brandPrimary = BRAND_PRIMARY;
-$brandAccent = BRAND_ACCENT;
-$logoUrl = WEBSITE_URL . '/logo.png';
+// =====================================================
+// SOLOMON ELECTRIC BRAND SYSTEM
+// =====================================================
+// Primary: #0D4380 (Navy Blue)
+// Accent: #14D3E3 (Electric Cyan)
+// Light: #F3F3F3
+// Dark: #111111
+// Star Gold: #CDAC4F
+// =====================================================
 
-// SHARED STYLES FOR DARK/LIGHT MODE - FULLY RESPONSIVE
+$brandPrimary = '#0D4380';
+$brandAccent = '#14D3E3';
+$brandLight = '#F3F3F3';
+$brandDark = '#111111';
+$brandGold = '#CDAC4F';
+$logoUrl = WEBSITE_URL . '/logo.png';
+$faviconUrl = WEBSITE_URL . '/favicon.svg';
+
+// SOLOMON ELECTRIC EMAIL DESIGN SYSTEM
+// Pixel-perfect responsive templates with brand consistency
 $styles = "
-    /* Reset & Base */
+    /* =====================================================
+       RESET & BASE - Email Client Normalization
+       ===================================================== */
     * { box-sizing: border-box; }
     :root { color-scheme: light dark; supported-color-schemes: light dark; }
-    body, .body { margin: 0 !important; padding: 0 !important; width: 100% !important; min-width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background-color: #F3F3F3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333333; }
-    .email-wrapper { width: 100% !important; background-color: #F3F3F3; padding: 20px 10px; margin: 0; }
-    .email-container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-    .header { background: linear-gradient(135deg, $brandPrimary 0%, #0a3a6e 100%); padding: 32px 20px; text-align: center; color: #ffffff; }
-    .header img { max-width: 150px; height: auto; margin-bottom: 12px; }
-    .header h1 { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.3; }
-    .section { padding: 24px 20px; }
-    .section-title { color: $brandPrimary; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; border-bottom: 2px solid $brandAccent; display: inline-block; padding-bottom: 4px; }
-    .data-row { padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
-    .data-row:last-child { border-bottom: none; }
-    .data-label { color: #888888; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-    .data-value { color: #333333; font-size: 15px; font-weight: 600; word-break: break-word; }
-    .data-value a { color: $brandAccent; text-decoration: none; }
-    .urgency-asap { display: inline-block; background-color: #DC2626; color: #ffffff !important; padding: 6px 14px; border-radius: 4px; font-size: 12px; font-weight: 700; }
-    .urgency-standard { display: inline-block; background-color: #E0F2FE; color: $brandPrimary !important; padding: 6px 14px; border-radius: 4px; font-size: 12px; font-weight: 700; }
-    .analytics-box { background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 16px; border-radius: 8px; margin-top: 16px; }
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
-    .badge-success { background-color: #DCFCE7; color: #166534; }
-    .badge-error { background-color: #FEE2E2; color: #991B1B; }
-    .footer { background-color: $brandPrimary; padding: 24px 20px; text-align: center; color: #ffffff; font-size: 12px; line-height: 1.5; }
-    .cta-button { display: inline-block; background-color: $brandAccent; color: $brandPrimary !important; padding: 14px 28px; border-radius: 8px; font-weight: 800; font-size: 16px; text-decoration: none; text-align: center; }
-    .emergency-box { background-color: #f0fdfa; border: 2px solid $brandAccent; border-radius: 12px; padding: 20px; margin: 24px 0; text-align: center; }
-    .emergency-box h3 { margin: 0 0 8px 0; color: $brandPrimary; font-size: 18px; }
-    .emergency-box p { margin: 0 0 16px 0; color: #444444; }
     
-    /* Mobile Responsive */
+    body, .body { 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        width: 100% !important; 
+        min-width: 100% !important; 
+        -webkit-text-size-adjust: 100%; 
+        -ms-text-size-adjust: 100%; 
+        background-color: $brandLight; 
+        font-family: 'Outfit', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+        font-size: 16px; 
+        line-height: 1.6; 
+        color: $brandDark;
+    }
+    
+    /* =====================================================
+       LAYOUT STRUCTURE
+       ===================================================== */
+    .email-wrapper { 
+        width: 100% !important; 
+        background-color: $brandLight; 
+        padding: 32px 16px; 
+        margin: 0; 
+    }
+    
+    .email-container { 
+        width: 100%; 
+        max-width: 600px; 
+        margin: 0 auto; 
+        background-color: #ffffff; 
+        border-radius: 4px; /* Brand uses subtle radius */
+        overflow: hidden; 
+        box-shadow: 0 4px 24px rgba(13, 67, 128, 0.12); /* Navy-tinted shadow */
+        border-left: 4px solid $brandAccent; /* Signature accent stripe */
+    }
+    
+    /* =====================================================
+       HEADER - Brand Gradient with Logo
+       ===================================================== */
+    .header { 
+        background: linear-gradient(135deg, $brandPrimary 0%, #092d5a 100%); 
+        padding: 40px 24px; 
+        text-align: center; 
+        color: #ffffff;
+        position: relative;
+    }
+    
+    .header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, $brandAccent, transparent);
+    }
+    
+    .header img { 
+        max-width: 180px; 
+        height: auto; 
+        margin-bottom: 16px; 
+    }
+    
+    .header h1 { 
+        margin: 0; 
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 24px; 
+        font-weight: 700; 
+        line-height: 1.3; 
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    
+    .header-subtitle {
+        margin: 8px 0 0 0;
+        font-size: 13px;
+        font-weight: 600;
+        color: $brandAccent;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+    
+    /* =====================================================
+       CONTENT SECTIONS
+       ===================================================== */
+    .section { 
+        padding: 28px 24px; 
+        background-color: #ffffff;
+    }
+    
+    .section-title { 
+        color: $brandPrimary; 
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 12px; 
+        font-weight: 800; 
+        text-transform: uppercase; 
+        letter-spacing: 0.12em; 
+        margin-bottom: 20px; 
+        border-bottom: 2px solid $brandAccent; 
+        display: inline-block; 
+        padding-bottom: 6px; 
+    }
+    
+    .data-row { 
+        padding: 14px 0; 
+        border-bottom: 1px solid #e5e7eb; 
+    }
+    
+    .data-row:last-child { 
+        border-bottom: none; 
+    }
+    
+    .data-label { 
+        color: #6b7280; 
+        font-size: 11px; 
+        font-weight: 700; 
+        text-transform: uppercase; 
+        letter-spacing: 0.08em; 
+        margin-bottom: 4px; 
+    }
+    
+    .data-value { 
+        color: $brandDark; 
+        font-size: 15px; 
+        font-weight: 600; 
+        word-break: break-word; 
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    .data-value a { 
+        color: $brandPrimary; 
+        text-decoration: none;
+        font-weight: 700;
+    }
+    
+    .data-value a:hover {
+        color: $brandAccent;
+    }
+    
+    /* =====================================================
+       BADGES & STATUS INDICATORS
+       ===================================================== */
+    .urgency-asap { 
+        display: inline-block; 
+        background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%); 
+        color: #ffffff !important; 
+        padding: 8px 16px; 
+        border-radius: 4px; 
+        font-size: 12px; 
+        font-weight: 800; 
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+    }
+    
+    .urgency-standard { 
+        display: inline-block; 
+        background-color: rgba(20, 211, 227, 0.15); 
+        color: $brandPrimary !important; 
+        padding: 8px 16px; 
+        border-radius: 4px; 
+        font-size: 12px; 
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    
+    .badge { 
+        display: inline-block; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        font-size: 10px; 
+        font-weight: 800; 
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    
+    .badge-success { 
+        background-color: #DCFCE7; 
+        color: #166534; 
+    }
+    
+    .badge-error { 
+        background-color: #FEE2E2; 
+        color: #991B1B; 
+    }
+    
+    .badge-info {
+        background-color: rgba(20, 211, 227, 0.2);
+        color: $brandPrimary;
+    }
+    
+    /* =====================================================
+       ANALYTICS BOX - Marketing Data Display
+       ===================================================== */
+    .analytics-box { 
+        background-color: #f8fafc; 
+        border: 1px solid #e2e8f0; 
+        padding: 20px; 
+        border-radius: 8px; 
+        margin-top: 20px; 
+    }
+    
+    /* =====================================================
+       CTA BUTTON - Brand Accent Styling
+       ===================================================== */
+    .cta-button { 
+        display: inline-block; 
+        background: linear-gradient(135deg, $brandAccent 0%, #10b8c6 100%); 
+        color: $brandPrimary !important; 
+        padding: 16px 32px; 
+        border-radius: 4px; 
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 800; 
+        font-size: 14px; 
+        text-decoration: none; 
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        box-shadow: 0 4px 14px rgba(20, 211, 227, 0.4);
+    }
+    
+    /* =====================================================
+       EMERGENCY BOX - Highlighted Call-to-Action
+       ===================================================== */
+    .emergency-box { 
+        background: linear-gradient(135deg, rgba(20, 211, 227, 0.08) 0%, rgba(13, 67, 128, 0.05) 100%);
+        border: 2px solid $brandAccent; 
+        border-radius: 8px; 
+        padding: 28px 24px; 
+        margin: 28px 0; 
+        text-align: center; 
+    }
+    
+    .emergency-box h3 { 
+        margin: 0 0 10px 0; 
+        color: $brandPrimary; 
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    
+    .emergency-box p { 
+        margin: 0 0 20px 0; 
+        color: #4b5563;
+        font-size: 15px;
+    }
+    
+    /* =====================================================
+       FOOTER - Brand Navy Background
+       ===================================================== */
+    .footer { 
+        background: linear-gradient(135deg, $brandPrimary 0%, #092d5a 100%); 
+        padding: 28px 24px; 
+        text-align: center; 
+        color: rgba(255, 255, 255, 0.9); 
+        font-size: 12px; 
+        line-height: 1.6; 
+    }
+    
+    .footer-brand {
+        color: $brandAccent;
+        font-weight: 700;
+    }
+    
+    /* =====================================================
+       MOBILE RESPONSIVE - 600px Breakpoint
+       ===================================================== */
     @media only screen and (max-width: 600px) {
-        .email-wrapper { padding: 10px 8px !important; }
-        .email-container { border-radius: 8px !important; }
-        .header { padding: 24px 16px !important; }
+        .email-wrapper { padding: 16px 12px !important; }
+        .email-container { border-radius: 4px !important; }
+        .header { padding: 28px 20px !important; }
         .header h1 { font-size: 20px !important; }
-        .section { padding: 20px 16px !important; }
-        .section-title { font-size: 12px !important; }
+        .header img { max-width: 140px !important; }
+        .section { padding: 24px 20px !important; }
+        .section-title { font-size: 11px !important; }
         .data-value { font-size: 14px !important; }
-        table td { display: block !important; width: 100% !important; padding: 8px 0 !important; }
-        .cta-button { display: block !important; width: 100% !important; padding: 16px 20px !important; }
-        .footer { padding: 20px 16px !important; }
+        table td { display: block !important; width: 100% !important; padding: 10px 0 !important; }
+        .cta-button { display: block !important; width: 100% !important; padding: 18px 24px !important; }
+        .footer { padding: 24px 20px !important; }
+        .emergency-box { padding: 24px 20px !important; margin: 24px 0 !important; }
     }
     
-    /* Dark Mode Support - Apple Mail, iOS, macOS */
+    /* =====================================================
+       DARK MODE - Apple Mail, iOS, macOS, Gmail
+       Brand-tinted dark theme for consistency
+       ===================================================== */
     @media (prefers-color-scheme: dark) {
-        body, .body, .email-wrapper { background-color: #1a1a1a !important; }
-        .email-container { background-color: #2d2d2d !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; }
-        .header { background: linear-gradient(135deg, #1a3a5c 0%, #0d1f33 100%) !important; }
-        .section { background-color: #2d2d2d !important; }
-        .section-title { color: $brandAccent !important; border-bottom-color: $brandAccent !important; }
-        .data-row { border-bottom-color: #404040 !important; }
-        .data-label { color: #a0a0a0 !important; }
-        .data-value { color: #f0f0f0 !important; }
-        .data-value a { color: $brandAccent !important; }
-        .analytics-box { background-color: #363636 !important; border-color: #4a4a4a !important; }
-        .emergency-box { background-color: #1a3a3a !important; border-color: $brandAccent !important; }
-        .emergency-box h3 { color: $brandAccent !important; }
-        .emergency-box p { color: #cccccc !important; }
-        .footer { background-color: #1a3a5c !important; }
-        .badge-success { background-color: #166534 !important; color: #DCFCE7 !important; }
-        .badge-error { background-color: #991B1B !important; color: #FEE2E2 !important; }
-        .urgency-standard { background-color: #1a3a5c !important; color: $brandAccent !important; }
+        body, .body, .email-wrapper { 
+            background-color: $brandDark !important; 
+        }
+        
+        .email-container { 
+            background-color: #1a1a1a !important; 
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+            border-left-color: $brandAccent !important;
+        }
+        
+        .header { 
+            background: linear-gradient(135deg, #0a2d4d 0%, #061a2e 100%) !important; 
+        }
+        
+        .section { 
+            background-color: #1a1a1a !important; 
+        }
+        
+        .section-title { 
+            color: $brandAccent !important; 
+            border-bottom-color: rgba(20, 211, 227, 0.5) !important; 
+        }
+        
+        .data-row { 
+            border-bottom-color: #2d2d2d !important; 
+        }
+        
+        .data-label { 
+            color: #9ca3af !important; 
+        }
+        
+        .data-value { 
+            color: #f1f5f9 !important; 
+        }
+        
+        .data-value a { 
+            color: $brandAccent !important; 
+        }
+        
+        .analytics-box { 
+            background-color: #252525 !important; 
+            border-color: #3d3d3d !important; 
+        }
+        
+        .emergency-box { 
+            background: linear-gradient(135deg, rgba(20, 211, 227, 0.1) 0%, rgba(13, 67, 128, 0.1) 100%) !important;
+            border-color: $brandAccent !important; 
+        }
+        
+        .emergency-box h3 { 
+            color: $brandAccent !important; 
+        }
+        
+        .emergency-box p { 
+            color: #d1d5db !important; 
+        }
+        
+        .footer { 
+            background: linear-gradient(135deg, #0a2d4d 0%, #061a2e 100%) !important; 
+        }
+        
+        .badge-success { 
+            background-color: rgba(22, 101, 52, 0.3) !important; 
+            color: #86efac !important; 
+        }
+        
+        .badge-error { 
+            background-color: rgba(153, 27, 27, 0.3) !important; 
+            color: #fca5a5 !important; 
+        }
+        
+        .badge-info {
+            background-color: rgba(20, 211, 227, 0.2) !important;
+            color: $brandAccent !important;
+        }
+        
+        .urgency-standard { 
+            background-color: rgba(20, 211, 227, 0.15) !important; 
+            color: $brandAccent !important; 
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, $brandAccent 0%, #10b8c6 100%) !important;
+            color: #ffffff !important;
+        }
     }
     
-    /* Outlook Dark Mode Fix */
-    [data-ogsc] .email-container { background-color: #2d2d2d !important; }
-    [data-ogsc] .data-value { color: #f0f0f0 !important; }
-    [data-ogsc] .data-label { color: #a0a0a0 !important; }
+    /* =====================================================
+       OUTLOOK DARK MODE FIX
+       ===================================================== */
+    [data-ogsc] .email-container { background-color: #1a1a1a !important; }
+    [data-ogsc] .data-value { color: #f1f5f9 !important; }
+    [data-ogsc] .data-label { color: #9ca3af !important; }
+    [data-ogsc] .section { background-color: #1a1a1a !important; }
 ";
+
+
 
 
 // LEAD EMAIL
@@ -185,7 +550,11 @@ $leadEmailHtml = "
             </div>
             <div class='data-row'>
                 <div class='data-label'>Address</div>
-                <div class='data-value'>📍 $address " . ($aptUnit ? " (Unit $aptUnit)" : "") . "</div>
+                <div class='data-value'>📍 $address" . ($aptUnit ? " (Unit $aptUnit)" : "") . "</div>
+            </div>
+            <div class='data-row'>
+                <div class='data-label'>City / State / Zip</div>
+                <div class='data-value'>" . ($city ? "$city, " : "") . ($state ?: "") . " " . ($zipCode ?: "(zip not provided)") . "</div>
             </div>
             <div class='data-row' style='border: none;'>
                 <div class='data-label'>Details</div>

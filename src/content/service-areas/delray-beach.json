@@ -1,123 +1,125 @@
 {
-    "name": "Delray Beach",
-    "slug": "delray-beach",
-    "county": "Palm Beach",
-    "description": "Licensed Delray Beach electricians providing 24/7 expert services. From Atlantic Avenue commercial support to historic residential restorations, Solomon Electric is your trusted local choice.",
-    "population": "70,000+",
-    "founded": "1911",
-    "areaSquareMiles": "16",
-    "tagline": "Village by the Sea",
-    "landmarks": [
-        "Atlantic Avenue",
-        "Old School Square",
-        "Morikami Museum and Japanese Gardens",
-        "Delray Municipal Beach",
-        "Pineapple Grove Arts District"
-    ],
-    "neighborhoods": [
-        "Lake Ida",
-        "Delray Isle",
-        "Tropic Isle",
-        "Del-Ida Park",
-        "Kenland",
-        "Valencia Falls"
-    ],
-    "majorRoads": [
-        "I-95",
-        "Federal Highway (US-1)",
-        "Atlantic Avenue",
-        "Congress Avenue",
-        "Linton Boulevard"
-    ],
-    "coordinates": {
-        "lat": 26.4615,
-        "lng": -80.0728
+  "name": "Delray Beach",
+  "slug": "delray-beach",
+  "county": "Palm Beach",
+  "description": "Licensed Delray Beach electricians providing 24/7 expert services. From Atlantic Avenue commercial support to historic residential restorations, Solomon Electric is your trusted local choice.",
+  "population": "70,000+",
+  "founded": "1911",
+  "areaSquareMiles": "16",
+  "tagline": "Village by the Sea",
+  "landmarks": [
+    "Atlantic Avenue",
+    "Old School Square",
+    "Morikami Museum and Japanese Gardens",
+    "Delray Municipal Beach",
+    "Pineapple Grove Arts District"
+  ],
+  "neighborhoods": [
+    "Lake Ida",
+    "Delray Isle",
+    "Tropic Isle",
+    "Del-Ida Park",
+    "Kenland",
+    "Valencia Falls"
+  ],
+  "majorRoads": [
+    "I-95",
+    "Federal Highway (US-1)",
+    "Atlantic Avenue",
+    "Congress Avenue",
+    "Linton Boulevard"
+  ],
+  "coordinates": {
+    "lat": 26.4615,
+    "lng": -80.0728
+  },
+  "challenges": [
+    {
+      "title": "Historic preservation & Modernization",
+      "description": "Delray's charm lies in its history. Neighborhoods like Lake Ida require specialized electrical skills to safely modernize systems while respecting architectural heritage.",
+      "icon": "Home"
     },
-    "challenges": [
-        {
-            "title": "Historic preservation & Modernization",
-            "description": "Delray's charm lies in its history. Neighborhoods like Lake Ida require specialized electrical skills to safely modernize systems while respecting architectural heritage.",
-            "icon": "Home"
-        },
-        {
-            "title": "High-Density Commercial Support",
-            "description": "The vibrancy of Atlantic Avenue requires electricians who can deliver fast, professional support for high-traffic retail, dining, and entertainment spaces.",
-            "icon": "Zap"
-        },
-        {
-            "title": "Coastal Electrical Durability",
-            "description": "Delray's coastal properties face salt air corrosion. We use marine-grade fixtures and specialized materials to ensure long-lasting outdoor power and lighting.",
-            "icon": "Umbrella"
-        }
-    ],
-    "featuredServices": [
-        "commercial-led-lighting-retrofit",
-        "electrical-panel-upgrade-100a-to-200a",
-        "24-7-emergency-electrical-service",
-        "landscape-outdoor-lighting",
-        "whole-home-surge-protection",
-        "recessed-lighting-installation"
-    ],
-    "stats": [
-        {
-            "value": "70K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "Do you work with restaurants and businesses on Atlantic Avenue?",
-            "answer": "Yes, Atlantic Avenue's dining and entertainment district is a key part of our commercial work in Delray Beach. We understand the specific needs: kitchen electrical for restaurants, high-capacity circuits for commercial equipment, outdoor patio lighting and power, signage circuits, and the urgency of emergency repairs when every hour of downtime costs money. We work efficiently and around your business schedule."
-        },
-        {
-            "question": "Our Lake Ida home is historic—can you modernize the electrical sensitively?",
-            "answer": "Absolutely. Lake Ida's historic homes require electricians who understand how to add modern capacity while respecting architectural character. We can update panels, add grounded circuits, and install modern lighting without visible conduit runs or damage to historic features. We've worked on many downtown Delray historic properties and understand the aesthetic considerations."
-        },
-        {
-            "question": "What's different about electrical work in Delray's beach homes?",
-            "answer": "Properties east of the Intracoastal face constant salt exposure that accelerates corrosion on electrical components. We use marine-grade enclosures, stainless hardware, and sealed connections for all beachfront work. Outdoor outlets, lighting fixtures, and panel enclosures all need upgraded materials to last in the coastal environment."
-        },
-        {
-            "question": "Do you serve artists and galleries in Pineapple Grove?",
-            "answer": "Yes, we provide electrical services for the creative businesses in Pineapple Grove Arts District. Gallery lighting, studio circuits for equipment, and the specialized needs of creative spaces are all within our expertise. We understand that lighting design is critical for showcasing art properly."
-        },
-        {
-            "question": "Is there anything unique about permitting in Delray Beach?",
-            "answer": "Delray Beach is part of Palm Beach County's permitting jurisdiction, with additional requirements for work in the historic district. We handle all permitting and ensure work meets both county codes and any additional local requirements. Understanding the specific rules is part of our job."
-        },
-        {
-            "question": "How quickly can you respond to emergencies in Delray Beach?",
-            "answer": "Delray Beach is on the northern edge of our service area.  "
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Trusted Delray Beach Electricians – Village by the Sea",
-            "body": "Delray Beach is a city that perfectly balances its award-winning 'Village by the Sea' charm with a sophisticated, modern energy. From Pineapple Grove to the sands of Atlantic Avenue, it's a community that values quality and character. Solomon Electric is proud to deliver that same standard of excellence to our Delray neighbors."
-        },
-        {
-            "heading": "Understanding Delray Beach's Electrical Needs",
-            "body": "Delray Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Delray Beach's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Delray Beach Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Delray Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Expert Electrical Solutions for Delray Residents and Businesses",
-            "body": "Whether you're restoring a historic gem in Lake Ida, upgrading a boutique on Atlantic Ave, or needing urgent help near the beach, our licensed team is ready. We provide professional service, clean workmanship, and a dedication to safety that Delray Beach has trusted for over 15 years."
-        }
-    ]
+    {
+      "title": "High-Density Commercial Support",
+      "description": "The vibrancy of Atlantic Avenue requires electricians who can deliver fast, professional support for high-traffic retail, dining, and entertainment spaces.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Coastal Electrical Durability",
+      "description": "Delray's coastal properties face salt air corrosion. We use marine-grade fixtures and specialized materials to ensure long-lasting outdoor power and lighting.",
+      "icon": "Umbrella"
+    }
+  ],
+  "featuredServices": [
+    "commercial-led-lighting-retrofit",
+    "electrical-panel-upgrade-100a-to-200a",
+    "24-7-emergency-electrical-service",
+    "landscape-outdoor-lighting",
+    "whole-home-surge-protection",
+    "recessed-lighting-installation"
+  ],
+  "stats": [
+    {
+      "value": "70K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you work with restaurants and businesses on Atlantic Avenue?",
+      "answer": "Yes, Atlantic Avenue's dining and entertainment district is a key part of our commercial work in Delray Beach. We understand the specific needs: kitchen electrical for restaurants, high-capacity circuits for commercial equipment, outdoor patio lighting and power, signage circuits, and the urgency of emergency repairs when every hour of downtime costs money. We work efficiently and around your business schedule."
+    },
+    {
+      "question": "Our Lake Ida home is historic\u2014can you modernize the electrical sensitively?",
+      "answer": "Absolutely. Lake Ida's historic homes require electricians who understand how to add modern capacity while respecting architectural character. We can update panels, add grounded circuits, and install modern lighting without visible conduit runs or damage to historic features. We've worked on many downtown Delray historic properties and understand the aesthetic considerations."
+    },
+    {
+      "question": "What's different about electrical work in Delray's beach homes?",
+      "answer": "Properties east of the Intracoastal face constant salt exposure that accelerates corrosion on electrical components. We use marine-grade enclosures, stainless hardware, and sealed connections for all beachfront work. Outdoor outlets, lighting fixtures, and panel enclosures all need upgraded materials to last in the coastal environment."
+    },
+    {
+      "question": "Do you serve artists and galleries in Pineapple Grove?",
+      "answer": "Yes, we provide electrical services for the creative businesses in Pineapple Grove Arts District. Gallery lighting, studio circuits for equipment, and the specialized needs of creative spaces are all within our expertise. We understand that lighting design is critical for showcasing art properly."
+    },
+    {
+      "question": "Is there anything unique about permitting in Delray Beach?",
+      "answer": "Delray Beach is part of Palm Beach County's permitting jurisdiction, with additional requirements for work in the historic district. We handle all permitting and ensure work meets both county codes and any additional local requirements. Understanding the specific rules is part of our job."
+    },
+    {
+      "question": "How quickly can you respond to emergencies in Delray Beach?",
+      "answer": "Delray Beach is on the northern edge of our service area.  "
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Trusted Delray Beach Electricians \u2013 Village by the Sea",
+      "body": "Delray Beach is a city that perfectly balances its award-winning 'Village by the Sea' charm with a sophisticated, modern energy. From Pineapple Grove to the sands of Atlantic Avenue, it's a community that values quality and character. Solomon Electric is proud to deliver that same standard of excellence to our Delray neighbors."
+    },
+    {
+      "heading": "Understanding Delray Beach's Electrical Needs",
+      "body": "Delray Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Delray Beach's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Delray Beach Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Delray Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Expert Electrical Solutions for Delray Residents and Businesses",
+      "body": "Whether you're restoring a historic gem in Lake Ida, upgrading a boutique on Atlantic Ave, or needing urgent help near the beach, our licensed team is ready. We provide professional service, clean workmanship, and a dedication to safety that Delray Beach has trusted for over {{YEARS_EXPERIENCE}} years."
+    }
+  ],
+  "imageAlt": "Professional electrical services in Delray Beach, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

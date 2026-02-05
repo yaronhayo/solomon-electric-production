@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/heroes/contact.png";
+import heroImage from "../assets/images/heroes/contact.webp";
 import Container from "../components/ui/Container.astro";
 import PageHero from "../components/PageHero.astro";
 import { SITE_CONFIG } from "../config/site";
@@ -85,8 +85,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 ---
 
 <Layout
-    title="Contact Solomon Electric | 24/7 Miami Electrician | (786) 833-9211"
-    description="Need an electrician? Call (786) 833-9211 for 24/7 emergency service in Miami-Dade & Broward. Free estimates, same-day appointments. Licensed & insured."
+    title={`Contact Solomon Electric | 24/7 Miami Electrician | ${SITE_CONFIG.contact.phone.formatted}`}
+    description={`Need an electrician? Call ${SITE_CONFIG.contact.phone.formatted} for 24/7 emergency service in Miami-Dade & Broward. Free estimates, same-day appointments. Licensed & insured.`}
     ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
     ogImageAlt="Contact Solomon Electric - 24/7 Emergency Electrical Service in Miami"
     topBarDark={true}
@@ -106,8 +106,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
     <!-- Hero Section -->
     <PageHero
-        title="Call Miami's Top Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>(786) 833-9211 • 24/7 Service</span>"
-        subtitle="Licensed #EC13012419 • Free Estimates • Same-Day Available"
+        title={`Call Miami's Top Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${SITE_CONFIG.contact.phone.formatted} • 24/7 Service</span>`}
+        subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} • Free Estimates • Same-Day Available`}
         description="Emergency electrical repair? Panel upgrade questions? EV charger installation quote? Contact Solomon Electric anytime—we answer calls 24/7 and provide free estimates for all electrical services in Miami-Dade and Broward counties."
         image={heroImage}
         trustIndicators={true}
@@ -480,6 +480,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
                 // Collect tracking data
                 const trackingData = {
+                    // Session & timing
                     sessionStart:
                         sessionStorage.getItem("sessionStart") ||
                         new Date().toISOString(),
@@ -491,22 +492,33 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                             )) /
                             1000,
                     ),
+
+                    // Navigation
                     currentUrl: window.location.href,
                     referrer: document.referrer || "Direct",
                     clickPath:
                         sessionStorage.getItem("clickPath") ||
                         window.location.pathname,
+
+                    // Device & browser
+                    userAgent: navigator.userAgent,
                     deviceType: /Mobile|Android|iPhone/i.test(
                         navigator.userAgent,
                     )
                         ? "Mobile"
                         : "Desktop",
+                    screenResolution: `${screen.width}x${screen.height}`,
+                    language: navigator.language,
+
+                    // Consent & cookies
                     cookiesAccepted:
                         localStorage.getItem("cookie-consent") === "accepted",
                     consentTimestamp:
                         localStorage.getItem("cookie-consent-timestamp") ||
                         "N/A",
                     recaptchaVerified,
+
+                    // Traffic source
                     utmSource:
                         new URLSearchParams(window.location.search).get(
                             "utm_source",
@@ -531,14 +543,67 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                         ) ||
                         sessionStorage.getItem("gclid") ||
                         null,
-                    trafficSource:
-                        new URLSearchParams(window.location.search).get(
-                            "gclid",
-                        ) || sessionStorage.getItem("gclid")
-                            ? "Google Ads"
-                            : document.referrer.includes("google.com")
-                              ? "Google Organic"
-                              : "Direct",
+                    trafficSource: (() => {
+                        const ref = document.referrer.toLowerCase();
+                        const params = new URLSearchParams(
+                            window.location.search,
+                        );
+                        // Check for Google Ads first
+                        if (
+                            params.get("gclid") ||
+                            sessionStorage.getItem("gclid")
+                        ) {
+                            return "Google Ads";
+                        }
+                        // Check referrer-based sources
+                        if (
+                            ref.includes("business.google.com") ||
+                            ref.includes("business.google")
+                        ) {
+                            return "Google Business Profile";
+                        }
+                        if (
+                            ref.includes("google.com/maps") ||
+                            ref.includes("maps.google.com")
+                        ) {
+                            return "Google Maps";
+                        }
+                        if (ref.includes("google.com")) {
+                            return "Google Organic";
+                        }
+                        if (ref.includes("bing.com")) {
+                            return "Bing Organic";
+                        }
+                        if (ref.includes("facebook.com")) {
+                            return "Facebook";
+                        }
+                        if (ref.includes("instagram.com")) {
+                            return "Instagram";
+                        }
+                        if (ref.includes("yelp.com")) {
+                            return "Yelp";
+                        }
+                        if (ref.includes("nextdoor.com")) {
+                            return "Nextdoor";
+                        }
+                        if (ref && !ref.includes(window.location.hostname)) {
+                            return "Referral";
+                        }
+                        return "Direct";
+                    })(),
+
+                    // New vs Returning visitor detection
+                    newReturning: (() => {
+                        const lastVisit =
+                            localStorage.getItem("lastVisitTimestamp");
+                        const isReturning = lastVisit !== null;
+                        // Update last visit timestamp
+                        localStorage.setItem(
+                            "lastVisitTimestamp",
+                            new Date().toISOString(),
+                        );
+                        return isReturning ? "Returning" : "New";
+                    })(),
                 };
 
                 const formData = new FormData(form);

@@ -1,10 +1,10 @@
 {
   "name": "Sauna & Steam Room Electrical",
   "slug": "sauna-steam-room-electrical",
-  "description": "Installing a sauna or steam room requires specialized electrical work. The combination of high heat, high humidity, and high power demands specific wiring methods, equipment ratings, and safety considerations. Solomon Electric provides professional sauna and steam room electrical installation throughout South Florida—ensuring your wellness installation operates safely and reliably.",
+  "description": "Installing a sauna or steam room requires specialized electrical work. The combination of high heat, high humidity, and high power demands specific wiring methods, equipment ratings, and safety considerations. Solomon Electric provides professional sauna and steam room electrical installation throughout South Florida\u2014ensuring your wellness installation operates safely and reliably.",
   "shortDescription": "Sauna and steam electrical specialists",
   "icon": "Flame",
-  "image": "../../assets/images/services/wiring.png",
+  "image": "../../assets/images/services/wiring.webp",
   "category": "Outlets, Switches & Wiring",
   "order": 58,
   "features": [
@@ -16,21 +16,21 @@
     "Humidity-rated equipment"
   ],
   "warningSignsHeading": "Sauna & Steam Electrical Requirements",
-  "warningSignsSubheading": "These installations combine extreme conditions with high power—requiring specialized electrical approach.",
+  "warningSignsSubheading": "These installations combine extreme conditions with high power\u2014requiring specialized electrical approach.",
   "problems": [
     {
       "title": "High Power Requirements",
-      "description": "Sauna heaters and steam generators draw significant power—typically 30-60 amps at 240V. Dedicated circuits sized for equipment ratings are essential.",
+      "description": "Sauna heaters and steam generators draw significant power\u2014typically 30-60 amps at 240V. Dedicated circuits sized for equipment ratings are essential.",
       "icon": "Zap"
     },
     {
       "title": "Extreme Heat Exposure",
-      "description": "Saunas reach 180°F+. Electrical components inside the sauna must be rated for these temperatures—standard wiring and devices fail.",
+      "description": "Saunas reach 180\u00b0F+. Electrical components inside the sauna must be rated for these temperatures\u2014standard wiring and devices fail.",
       "icon": "Flame"
     },
     {
       "title": "High Humidity Environment",
-      "description": "Steam rooms are 100% humidity. All electrical components need appropriate moisture ratings—switches outside, wet-rated if inside.",
+      "description": "Steam rooms are 100% humidity. All electrical components need appropriate moisture ratings\u2014switches outside, wet-rated if inside.",
       "icon": "AlertTriangle"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "title": "Control System Wiring",
-      "description": "Sauna controls—timers, thermostats, low-voltage components—require proper wiring separate from power circuits.",
+      "description": "Sauna controls\u2014timers, thermostats, low-voltage components\u2014require proper wiring separate from power circuits.",
       "icon": "Plug"
     },
     {
@@ -54,7 +54,7 @@
     {
       "step": 1,
       "title": "Equipment Review",
-      "description": "We review your sauna or steam generator specifications to determine exact electrical requirements—voltage, amperage, and control needs."
+      "description": "We review your sauna or steam generator specifications to determine exact electrical requirements\u2014voltage, amperage, and control needs."
     },
     {
       "step": 2,
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "What electrical does a sauna heater need?",
-      "answer": "Most residential sauna heaters require 240V, 30-50 amp circuits. Larger commercial saunas may need multiple heaters or higher amperage. Exact requirements are on heater specifications—we match wiring to manufacturer requirements."
+      "answer": "Most residential sauna heaters require 240V, 30-50 amp circuits. Larger commercial saunas may need multiple heaters or higher amperage. Exact requirements are on heater specifications\u2014we match wiring to manufacturer requirements."
     },
     {
       "question": "Can my existing panel handle a sauna?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "Do infrared saunas have different requirements?",
-      "answer": "Infrared saunas operate at lower temperatures and often lower power than traditional saunas. Many plug into standard 120V outlets or need simple 240V circuits. Requirements vary by unit—we match installation to your specific infrared sauna specs."
+      "answer": "Infrared saunas operate at lower temperatures and often lower power than traditional saunas. Many plug into standard 120V outlets or need simple 240V circuits. Requirements vary by unit\u2014we match installation to your specific infrared sauna specs."
     }
   ],
   "relatedServices": [
@@ -161,11 +161,11 @@
   "seoContent": [
     {
       "heading": "Sauna & Steam Room Electrical in South Florida",
-      "body": "Installing a sauna or steam room requires specialized electrical work. Solomon Electric provides professional sauna and steam room electrical installation throughout Miami-Dade and Broward counties—ensuring your wellness installation operates safely with proper wiring, disconnects, and code-compliant installation."
+      "body": "Installing a sauna or steam room requires specialized electrical work. Solomon Electric provides professional sauna and steam room electrical installation throughout Miami-Dade and Broward counties\u2014ensuring your wellness installation operates safely with proper wiring, disconnects, and code-compliant installation."
     },
     {
       "heading": "High-Temperature Electrical Requirements",
-      "body": "Saunas reach temperatures exceeding 180°F—beyond what standard wiring and fixtures can handle. We install high-temperature rated wiring inside sauna enclosures and sauna-rated lighting fixtures designed for the extreme heat environment."
+      "body": "Saunas reach temperatures exceeding 180\u00b0F\u2014beyond what standard wiring and fixtures can handle. We install high-temperature rated wiring inside sauna enclosures and sauna-rated lighting fixtures designed for the extreme heat environment."
     },
     {
       "heading": "Steam Generator Electrical Connection",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric provides sauna and steam room electrical throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Trust specialists for your home wellness installation electrical needs."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Sauna & Steam Room Electrical service provided by licensed electricians in South Florida"
 }

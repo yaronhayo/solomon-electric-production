@@ -30,71 +30,71 @@ import badgeGuarantee from '../assets/images/badge-guarantee.png';
 // ==========================================
 // PAGE HERO BACKGROUNDS
 // ==========================================
-import heroHomepage from '../assets/images/heroes/homepage.png';
-import heroAbout from '../assets/images/heroes/about.png';
-import heroContact from '../assets/images/heroes/contact.png';
-import heroServices from '../assets/images/heroes/services.png';
-import heroServiceAreas from '../assets/images/heroes/service-areas.png';
-import heroBlog from '../assets/images/heroes/blog.png';
-import heroReviews from '../assets/images/heroes/reviews.png';
-import heroFaq from '../assets/images/heroes/faq.png';
-import heroBook from '../assets/images/heroes/book.png';
+import heroHomepage from '../assets/images/heroes/homepage.webp';
+import heroAbout from '../assets/images/heroes/about.webp';
+import heroContact from '../assets/images/heroes/contact.webp';
+import heroServices from '../assets/images/heroes/services.webp';
+import heroServiceAreas from '../assets/images/heroes/service-areas.webp';
+import heroBlog from '../assets/images/heroes/blog.webp';
+import heroReviews from '../assets/images/heroes/reviews.webp';
+import heroFaq from '../assets/images/heroes/faq.webp';
+import heroBook from '../assets/images/heroes/book.webp';
 
 // ==========================================
 // SERVICE CATEGORIES (Homepage/Services Index)
 // ==========================================
-import categoryEmergency from '../assets/images/categories/emergency.png';
-import categoryPanelUpgrade from '../assets/images/categories/panel-upgrade.png';
-import categoryEvCharging from '../assets/images/categories/ev-charging.png';
-import categoryLighting from '../assets/images/categories/lighting.png';
-import categoryWiring from '../assets/images/categories/wiring.png';
-import categoryGenerators from '../assets/images/categories/generators.png';
-import categorySmartHome from '../assets/images/categories/smart-home.png';
-import categoryCommercial from '../assets/images/categories/commercial.png';
-import categoryInspection from '../assets/images/categories/inspection.png';
-import categoryOutdoor from '../assets/images/categories/outdoor.png';
+import categoryEmergency from '../assets/images/categories/emergency.webp';
+import categoryPanelUpgrade from '../assets/images/categories/panel-upgrade.webp';
+import categoryEvCharging from '../assets/images/categories/ev-charging.webp';
+import categoryLighting from '../assets/images/categories/lighting.webp';
+import categoryWiring from '../assets/images/categories/wiring.webp';
+import categoryGenerators from '../assets/images/categories/generators.webp';
+import categorySmartHome from '../assets/images/categories/smart-home.webp';
+import categoryCommercial from '../assets/images/categories/commercial.webp';
+import categoryInspection from '../assets/images/categories/inspection.webp';
+import categoryOutdoor from '../assets/images/categories/outdoor.webp';
 
 // ==========================================
 // SITE ENHANCEMENTS (About, Story sections)
 // ==========================================
-import enhDispatcher from '../assets/images/enhancements/dispatcher.png';
-import enhTrustBg from '../assets/images/enhancements/trust-bg.png';
-import enhCustomerInteraction from '../assets/images/enhancements/customer-interaction.png';
-import heroTeam from '../assets/images/hero-team.png';
-import heroTruck from '../assets/images/hero-truck.png';
-import servicePanel from '../assets/images/service-panel.png';
+import enhDispatcher from '../assets/images/enhancements/dispatcher.webp';
+import enhTrustBg from '../assets/images/enhancements/trust-bg.webp';
+import enhCustomerInteraction from '../assets/images/enhancements/customer-interaction.webp';
+import heroTeam from '../assets/images/hero-team.webp';
+import heroTruck from '../assets/images/hero-truck.webp';
+import servicePanel from '../assets/images/service-panel.webp';
 
 // ==========================================
 // BLOG POST FEATURED IMAGES
 // ==========================================
-import blogElectricalSafety from '../assets/images/blog/electrical-safety-inspection.png';
-import blogKitchenWiring from '../assets/images/blog/kitchen-wiring.png';
-import blogArchitecturalLighting from '../assets/images/blog/architectural-lighting.png';
-import blogEvCharger from '../assets/images/blog/ev-charger-install.png';
-import blogUndergroundWiring from '../assets/images/blog/underground-wiring.png';
-import blogLightingFixture from '../assets/images/blog/lighting-fixture.png';
-import blogHistoricHome from '../assets/images/blog/historic-home-wiring.png';
-import blogMaintenance from '../assets/images/blog/electrical-maintenance.png';
-import blogInstallation from '../assets/images/blog/electrical-installation.png';
-import blogCeilingFan from '../assets/images/blog/ceiling-fan.png';
-import blogHurricanePrep from '../assets/images/blog/hurricane-prep-miami.png';
-import blogPanelRepair from '../assets/images/blog/panel-repair.png';
-import blogSmokeDetector from '../assets/images/blog/smoke-detector.png';
-import blogPanelUpgrade from '../assets/images/blog/panel-upgrade.png';
-import blogSecurityLighting from '../assets/images/blog/security-lighting.png';
-import blogDiagnostics from '../assets/images/blog/electrical-diagnostics.png';
-import blogOutletSwitch from '../assets/images/blog/outlet-switch.png';
-import blogMiamiCondo from '../assets/images/blog/miami-condo-renovation.png';
+import blogElectricalSafety from '../assets/images/blog/electrical-safety-inspection.webp';
+import blogKitchenWiring from '../assets/images/blog/kitchen-wiring.webp';
+import blogArchitecturalLighting from '../assets/images/blog/architectural-lighting.webp';
+import blogEvCharger from '../assets/images/blog/ev-charger-install.webp';
+import blogUndergroundWiring from '../assets/images/blog/underground-wiring.webp';
+import blogLightingFixture from '../assets/images/blog/lighting-fixture.webp';
+import blogHistoricHome from '../assets/images/blog/historic-home-wiring.webp';
+import blogMaintenance from '../assets/images/blog/electrical-maintenance.webp';
+import blogInstallation from '../assets/images/blog/electrical-installation.webp';
+import blogCeilingFan from '../assets/images/blog/ceiling-fan.webp';
+import blogHurricanePrep from '../assets/images/blog/hurricane-prep-miami.webp';
+import blogPanelRepair from '../assets/images/blog/panel-repair.webp';
+import blogSmokeDetector from '../assets/images/blog/smoke-detector.webp';
+import blogPanelUpgrade from '../assets/images/blog/panel-upgrade.webp';
+import blogSecurityLighting from '../assets/images/blog/security-lighting.webp';
+import blogDiagnostics from '../assets/images/blog/electrical-diagnostics.webp';
+import blogOutletSwitch from '../assets/images/blog/outlet-switch.webp';
+import blogMiamiCondo from '../assets/images/blog/miami-condo-renovation.webp';
 
 // ==========================================
 // SERVICE PAGE IMAGES
 // ==========================================
-import svcCommercial from '../assets/images/services/commercial.png';
-import svcEmergency from '../assets/images/services/emergency.png';
-import svcEvCharging from '../assets/images/services/ev-charging.png';
-import svcLighting from '../assets/images/services/lighting.png';
-import svcWiring from '../assets/images/services/wiring.png';
-import svcPanelWork from '../assets/images/services/panel-work.png';
+import svcCommercial from '../assets/images/services/commercial.webp';
+import svcEmergency from '../assets/images/services/emergency.webp';
+import svcEvCharging from '../assets/images/services/ev-charging.webp';
+import svcLighting from '../assets/images/services/lighting.webp';
+import svcWiring from '../assets/images/services/wiring.webp';
+import svcPanelWork from '../assets/images/services/panel-work.webp';
 
 // ==========================================
 // EXPORT: Central Image Registry
@@ -102,102 +102,202 @@ import svcPanelWork from '../assets/images/services/panel-work.png';
 export const IMAGES = {
     // Branding
     branding: {
-        logo,
-        logoWhite,
-        logoNew,
-        /** URL for email templates (must match public/logo.png) */
-        logoUrl: '/logo.png',
+        logo: {
+            src: logo,
+            alt: "Solomon Electric - Primary Logo"
+        },
+        logoWhite: {
+            src: logoWhite,
+            alt: "Solomon Electric - White Logo"
+        },
+        logoNew: {
+            src: logoNew,
+            alt: `Solomon Electric - Licensed Miami Electricians Since 2008`
+        },
+        /** URL for email templates */
+        logoUrl: '/logo.webp',
     },
 
     // Trust Badges
     badges: {
-        satisfaction: badgeSatisfaction,
-        angi: badgeAngi,
-        yelp: badgeYelp,
-        bbb: badgeBBB,
-        guarantee: badgeGuarantee,
+        satisfaction: {
+            src: badgeSatisfaction,
+            alt: "100% Satisfaction Guaranteed Badge"
+        },
+        angi: {
+            src: badgeAngi,
+            alt: "Angi Super Service Award Badge"
+        },
+        yelp: {
+            src: badgeYelp,
+            alt: "Top Rated on Yelp Badge"
+        },
+        bbb: {
+            src: badgeBBB,
+            alt: "BBB Accredited Business A+ Rating"
+        },
+        guarantee: {
+            src: badgeGuarantee,
+            alt: "Licensed and Insured Electrical Contractor"
+        },
     },
 
     // Page Heroes
     heroes: {
-        homepage: heroHomepage,
-        about: heroAbout,
-        contact: heroContact,
-        services: heroServices,
-        serviceAreas: heroServiceAreas,
-        blog: heroBlog,
-        reviews: heroReviews,
-        faq: heroFaq,
-        book: heroBook,
+        homepage: {
+            src: heroHomepage,
+            alt: "Professional electrician team ready for service in Miami"
+        },
+        about: {
+            src: heroAbout,
+            alt: "Our experienced electrical contractors team in uniform"
+        },
+        contact: {
+            src: heroContact,
+            alt: "Ready to answer your electrical service calls in South Florida"
+        },
+        services: {
+            src: heroServices,
+            alt: "Wide range of residential and commercial electrical solutions"
+        },
+        serviceAreas: {
+            src: heroServiceAreas,
+            alt: "Serving Miami-Dade, Broward, and Palm Beach counties"
+        },
+        blog: {
+            src: heroBlog,
+            alt: "Electrical safety tips and regional service updates"
+        },
+        reviews: {
+            src: heroReviews,
+            alt: "Highly rated electrical services by South Florida homeowners"
+        },
+        faq: {
+            src: heroFaq,
+            alt: "Expert answers to common electrical questions"
+        },
+        book: {
+            src: heroBook,
+            alt: "Schedule your electrical inspection or repair online"
+        },
     },
 
     // Service Categories
     categories: {
-        emergency: categoryEmergency,
-        panelUpgrade: categoryPanelUpgrade,
-        evCharging: categoryEvCharging,
-        lighting: categoryLighting,
-        wiring: categoryWiring,
-        generators: categoryGenerators,
-        smartHome: categorySmartHome,
-        commercial: categoryCommercial,
-        inspection: categoryInspection,
-        outdoor: categoryOutdoor,
+        emergency: {
+            src: categoryEmergency,
+            alt: "24/7 Rapid Response Emergency Electrical Repairs"
+        },
+        panelUpgrade: {
+            src: categoryPanelUpgrade,
+            alt: "Main Electrical Panel Modernization (100A to 200A)"
+        },
+        evCharging: {
+            src: categoryEvCharging,
+            alt: "Level 2 and Level 3 EV Charger Installation"
+        },
+        lighting: {
+            src: categoryLighting,
+            alt: "Modern Interior and Exterior LED Lighting Solutions"
+        },
+        wiring: {
+            src: categoryWiring,
+            alt: "Safe Residential and Commercial Electrical Rewiring"
+        },
+        generators: {
+            src: categoryGenerators,
+            alt: "Automatic Home Backup Generator Systems"
+        },
+        smartHome: {
+            src: categorySmartHome,
+            alt: "Intelligent Home Automation and Smart Device Setup"
+        },
+        commercial: {
+            src: categoryCommercial,
+            alt: "Professional Commercial and Industrial Power Solutions"
+        },
+        inspection: {
+            src: categoryInspection,
+            alt: "Comprehensive Electrical Safety and Compliance Inspections"
+        },
+        outdoor: {
+            src: categoryOutdoor,
+            alt: "Security and Landscape Architectural Lighting"
+        },
     },
 
     // Site Enhancements
     site: {
-        dispatcher: enhDispatcher,
-        trustBg: enhTrustBg,
-        customerInteraction: enhCustomerInteraction,
-        heroTeam,
-        heroTruck,
-        servicePanel,
+        dispatcher: {
+            src: enhDispatcher,
+            alt: "Our professional dispatch team coordinating service calls"
+        },
+        trustBg: {
+            src: enhTrustBg,
+            alt: "Close-up of a high-quality electrical installation"
+        },
+        customerInteraction: {
+            src: enhCustomerInteraction,
+            alt: "Electrician explaining service options to a satisfied client"
+        },
+        heroTeam: {
+            src: heroTeam,
+            alt: "The Solomon Electric team of licensed professionals"
+        },
+        heroTruck: {
+            src: heroTruck,
+            alt: "Solomon Electric clearly marked service vehicle on site"
+        },
+        servicePanel: {
+            src: servicePanel,
+            alt: "Modern electrical panel installation detail"
+        },
     },
 
     // Blog Post Images
     blog: {
-        electricalSafety: blogElectricalSafety,
-        kitchenWiring: blogKitchenWiring,
-        architecturalLighting: blogArchitecturalLighting,
-        evCharger: blogEvCharger,
-        undergroundWiring: blogUndergroundWiring,
-        lightingFixture: blogLightingFixture,
-        historicHome: blogHistoricHome,
-        maintenance: blogMaintenance,
-        installation: blogInstallation,
-        ceilingFan: blogCeilingFan,
-        hurricanePrep: blogHurricanePrep,
-        panelRepair: blogPanelRepair,
-        smokeDetector: blogSmokeDetector,
-        panelUpgrade: blogPanelUpgrade,
-        securityLighting: blogSecurityLighting,
-        diagnostics: blogDiagnostics,
-        outletSwitch: blogOutletSwitch,
-        miamiCondo: blogMiamiCondo,
+        electricalSafety: { src: blogElectricalSafety, alt: "Home electrical safety inspection checklist" },
+        kitchenWiring: { src: blogKitchenWiring, alt: "Modern kitchen GFCI and appliance wiring" },
+        architecturalLighting: { src: blogArchitecturalLighting, alt: "Stunning outdoor architectural lighting at night" },
+        evCharger: { src: blogEvCharger, alt: "Wall-mounted Level 2 EV charging station installation" },
+        undergroundWiring: { src: blogUndergroundWiring, alt: "Safe installation of underground electrical conduits" },
+        lightingFixture: { src: blogLightingFixture, alt: "Installation of custom designer lighting fixtures" },
+        historicHome: { src: blogHistoricHome, alt: "Rewiring solutions for historic Florida properties" },
+        maintenance: { src: blogMaintenance, alt: "Preventative electrical system maintenance service" },
+        installation: { src: blogInstallation, alt: "New construction electrical system installation" },
+        ceilingFan: { src: blogCeilingFan, alt: "Fast and safe ceiling fan mounting and wiring" },
+        hurricanePrep: { src: blogHurricanePrep, alt: "Electrical surge protection for hurricane preparation" },
+        panelRepair: { src: blogPanelRepair, alt: "Expert circuit breaker and panel repair service" },
+        smokeDetector: { src: blogSmokeDetector, alt: "Proper smoke and CO detector placement and wiring" },
+        panelUpgrade: { src: blogPanelUpgrade, alt: "Complete service panel upgrade to 200 amps" },
+        securityLighting: { src: blogSecurityLighting, alt: "Motion-activated security floodlight installation" },
+        diagnostics: { src: blogDiagnostics, alt: "Advanced electrical troubleshooting and diagnostics" },
+        outletSwitch: { src: blogOutletSwitch, alt: "New electrical outlet and dimmer switch installation" },
+        miamiCondo: { src: blogMiamiCondo, alt: "Electrical renovation for Miami luxury condominiums" },
     },
 
-    // Service Page Images
+    // Service Page Images (Direct Service Imports)
     services: {
-        commercial: svcCommercial,
-        emergency: svcEmergency,
-        evCharging: svcEvCharging,
-        lighting: svcLighting,
-        wiring: svcWiring,
-        panelWork: svcPanelWork,
+        commercial: { src: svcCommercial, alt: "Professional commercial electrical infrastructure" },
+        emergency: { src: svcEmergency, alt: "Same-day 24/7 emergency electrical repairs" },
+        evCharging: { src: svcEvCharging, alt: "Certified Level 2 home EV charger installation" },
+        lighting: { src: svcLighting, alt: "Energy-efficient LED lighting retrofit and design" },
+        wiring: { src: svcWiring, alt: "Whole-home electrical rewiring for safety and code" },
+        panelWork: { src: svcPanelWork, alt: "Professional main service panel modernization" },
     },
 
     // Static URLs (for email templates, external references)
     static: {
-        logo: '/logo.png',
+        logo: '/logo.webp',
         ogDefault: '/og-default.jpg',
-        favicon: '/favicon.png',
+        favicon: '/favicon.webp',
     },
 } as const;
 
 // ==========================================
 // TYPE EXPORTS (for future CMS)
 // ==========================================
+export type ImageObject = { src: ImageMetadata; alt: string };
 export type ImageCategory = keyof typeof IMAGES;
 export type BrandingImage = keyof typeof IMAGES.branding;
 export type HeroImage = keyof typeof IMAGES.heroes;
@@ -208,8 +308,8 @@ export type ServiceImage = keyof typeof IMAGES.services;
 // ==========================================
 // HELPER: Get image by slug (for dynamic pages)
 // ==========================================
-export function getHeroImage(page: string) {
-    const heroMap: Record<string, typeof IMAGES.heroes[keyof typeof IMAGES.heroes]> = {
+export function getHeroImage(page: string): ImageObject {
+    const heroMap: Record<string, ImageObject> = {
         'index': IMAGES.heroes.homepage,
         'about': IMAGES.heroes.about,
         'contact': IMAGES.heroes.contact,
@@ -223,8 +323,8 @@ export function getHeroImage(page: string) {
     return heroMap[page] || IMAGES.heroes.homepage;
 }
 
-export function getCategoryImage(slug: string) {
-    const categoryMap: Record<string, typeof IMAGES.categories[keyof typeof IMAGES.categories]> = {
+export function getCategoryImage(slug: string): ImageObject {
+    const categoryMap: Record<string, ImageObject> = {
         'emergency': IMAGES.categories.emergency,
         'panel-upgrade': IMAGES.categories.panelUpgrade,
         'ev-charging': IMAGES.categories.evCharging,

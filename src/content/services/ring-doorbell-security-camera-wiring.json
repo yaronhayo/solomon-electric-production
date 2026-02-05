@@ -4,7 +4,7 @@
   "description": "Protect your South Florida home with professionally wired security cameras and video doorbells. While battery-powered options exist, hardwired security cameras provide reliable, uninterrupted operation without changing batteries or worrying about WiFi range. Solomon Electric installs low-voltage wiring for Ring, Nest, Arlo, and all major security camera brands, plus doorbell transformers for video doorbells.",
   "shortDescription": "Professional security camera wiring",
   "icon": "Shield",
-  "image": "../../assets/images/services/wiring.png",
+  "image": "../../assets/images/services/wiring.webp",
   "category": "Lighting & Smart Home",
   "order": 27,
   "features": [
@@ -20,7 +20,7 @@
   "problems": [
     {
       "title": "Battery Cameras Dying",
-      "description": "Tired of climbing ladders to change batteries every few months? Wired cameras run continuously without battery maintenance—set and forget.",
+      "description": "Tired of climbing ladders to change batteries every few months? Wired cameras run continuously without battery maintenance\u2014set and forget.",
       "icon": "AlertTriangle"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "title": "Gaps in Coverage",
-      "description": "Professional assessment identifies optimal camera placement for complete coverage—eliminating blind spots and ensuring every entry point is monitored.",
+      "description": "Professional assessment identifies optimal camera placement for complete coverage\u2014eliminating blind spots and ensuring every entry point is monitored.",
       "icon": "Shield"
     },
     {
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Wiring Route Planning",
-      "description": "We plan cable routes that hide wiring inside walls, attics, and soffits—minimizing visible cables while ensuring proper cable protection."
+      "description": "We plan cable routes that hide wiring inside walls, attics, and soffits\u2014minimizing visible cables while ensuring proper cable protection."
     },
     {
       "step": 3,
@@ -91,7 +91,7 @@
     },
     {
       "title": "Reliable Connection",
-      "description": "POE cameras eliminate WiFi dependency—they work reliably regardless of router placement or wireless interference.",
+      "description": "POE cameras eliminate WiFi dependency\u2014they work reliably regardless of router placement or wireless interference.",
       "icon": "Shield"
     },
     {
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "Can you install security cameras I've already purchased?",
-      "answer": "Yes. We install cameras from all major brands—Ring, Nest, Arlo, Wyze, Hikvision, Reolink, and others. We can also recommend cameras if you haven't decided yet. Bring your own equipment and we'll handle professional installation and wiring."
+      "answer": "Yes. We install cameras from all major brands\u2014Ring, Nest, Arlo, Wyze, Hikvision, Reolink, and others. We can also recommend cameras if you haven't decided yet. Bring your own equipment and we'll handle professional installation and wiring."
     },
     {
       "question": "What does POE camera wiring involve?",
@@ -133,7 +133,7 @@
     },
     {
       "question": "Can you hide camera wires inside walls?",
-      "answer": "Yes—this is our standard approach. We route wiring through attics, walls, and soffits to hide cables. Low-voltage camera wiring doesn't require the same separation rules as electrical wiring, giving us flexibility in routing. The result is a clean, professional installation."
+      "answer": "Yes\u2014this is our standard approach. We route wiring through attics, walls, and soffits to hide cables. Low-voltage camera wiring doesn't require the same separation rules as electrical wiring, giving us flexibility in routing. The result is a clean, professional installation."
     },
     {
       "question": "Do I need an NVR or is cloud storage enough?",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric installs security cameras and video doorbells throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single doorbell installations to complete multi-camera security systems, we provide professional installation with hidden wiring and full configuration."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Ring Doorbell & Security Camera Wiring service provided by licensed electricians in South Florida"
 }

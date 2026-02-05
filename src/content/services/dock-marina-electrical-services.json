@@ -1,10 +1,10 @@
 {
   "name": "Dock & Marina Electrical Services",
   "slug": "dock-marina-electrical-services",
-  "description": "South Florida's waterfront lifestyle demands proper dock and marina electrical. Solomon Electric provides marine electrical services throughout the region—shore power pedestals, dock lighting, boat lift wiring, and all the specialized electrical waterfront properties require. We understand the unique challenges of marine electrical: saltwater corrosion, GFCI requirements, and code-compliant installations.",
+  "description": "South Florida's waterfront lifestyle demands proper dock and marina electrical. Solomon Electric provides marine electrical services throughout the region\u2014shore power pedestals, dock lighting, boat lift wiring, and all the specialized electrical waterfront properties require. We understand the unique challenges of marine electrical: saltwater corrosion, GFCI requirements, and code-compliant installations.",
   "shortDescription": "Waterfront electrical specialists",
   "icon": "Zap",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Commercial & Inspections",
   "order": 57,
   "features": [
@@ -16,7 +16,7 @@
     "Marine-grade equipment"
   ],
   "warningSignsHeading": "Dock Electrical Warning Signs",
-  "warningSignsSubheading": "Dock electrical combines water and electricity—requiring special attention to safety.",
+  "warningSignsSubheading": "Dock electrical combines water and electricity\u2014requiring special attention to safety.",
   "problems": [
     {
       "title": "Need Shore Power for Boat",
@@ -30,7 +30,7 @@
     },
     {
       "title": "Boat Lift Needs Power",
-      "description": "Electric boat lifts require proper wiring—appropriately sized circuits, weatherproof connections, and code-compliant installation.",
+      "description": "Electric boat lifts require proper wiring\u2014appropriately sized circuits, weatherproof connections, and code-compliant installation.",
       "icon": "TrendingUp"
     },
     {
@@ -64,7 +64,7 @@
     {
       "step": 3,
       "title": "Marine-Grade Selection",
-      "description": "We specify marine-grade equipment—pedestals, outlets, lighting, and enclosures—designed for saltwater environments."
+      "description": "We specify marine-grade equipment\u2014pedestals, outlets, lighting, and enclosures\u2014designed for saltwater environments."
     },
     {
       "step": 4,
@@ -81,7 +81,7 @@
   "benefits": [
     {
       "title": "Safety First",
-      "description": "Dock electrical combines water and electricity—serious hazards if not installed correctly. Proper GFCI protection prevents electric shock drowning.",
+      "description": "Dock electrical combines water and electricity\u2014serious hazards if not installed correctly. Proper GFCI protection prevents electric shock drowning.",
       "icon": "Shield"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Convenience",
-      "description": "Properly powered docks let you enjoy your boat—keeping batteries charged, running lights, and powering equipment.",
+      "description": "Properly powered docks let you enjoy your boat\u2014keeping batteries charged, running lights, and powering equipment.",
       "icon": "Zap"
     }
   ],
@@ -129,7 +129,7 @@
     },
     {
       "question": "Why do docks need GFCI protection?",
-      "answer": "GFCIs detect current leakage and trip before dangerous amounts enter water. NEC requires GFCI protection for all dock circuits, and newer codes require equipment ground fault protection (EGFP) for larger circuits. This protection is essential—not optional."
+      "answer": "GFCIs detect current leakage and trip before dangerous amounts enter water. NEC requires GFCI protection for all dock circuits, and newer codes require equipment ground fault protection (EGFP) for larger circuits. This protection is essential\u2014not optional."
     },
     {
       "question": "Can I use regular outdoor outlets on my dock?",
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Dock & Marina Electrical in South Florida",
-      "body": "South Florida's waterfront lifestyle demands proper dock electrical. Solomon Electric provides marine electrical services throughout Miami-Dade and Broward counties—shore power pedestals, dock lighting, boat lift wiring, and all the specialized electrical your waterfront property requires."
+      "body": "South Florida's waterfront lifestyle demands proper dock electrical. Solomon Electric provides marine electrical services throughout Miami-Dade and Broward counties\u2014shore power pedestals, dock lighting, boat lift wiring, and all the specialized electrical your waterfront property requires."
     },
     {
       "heading": "Shore Power Pedestal Installation",
@@ -169,12 +169,13 @@
     },
     {
       "heading": "Electric Shock Drowning Prevention",
-      "body": "Dock electrical safety is critical—improper installations cause electric shock drowning fatalities. We install dock electrical with required GFCI protection, proper bonding, and code-compliant methods that protect everyone in the water."
+      "body": "Dock electrical safety is critical\u2014improper installations cause electric shock drowning fatalities. We install dock electrical with required GFCI protection, proper bonding, and code-compliant methods that protect everyone in the water."
     },
     {
       "heading": "Serving South Florida Waterfront Properties",
       "body": "Solomon Electric provides dock and marina electrical services throughout Miami, Fort Lauderdale, Hollywood, and all South Florida waterfront communities. Trust marine electrical specialists for your dock power needs."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Dock & Marina Electrical Services service provided by licensed electricians in South Florida"
 }

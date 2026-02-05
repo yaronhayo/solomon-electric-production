@@ -1,10 +1,10 @@
 {
   "name": "High-Voltage Electrical Services",
   "slug": "high-voltage-electrical-services",
-  "description": "Industrial and large commercial operations often require high-voltage electrical systems beyond standard commercial service. Solomon Electric provides high-voltage electrical services throughout South Florida—medium voltage distribution, switchgear installation, transformer work, and specialized industrial electrical for facilities requiring more than typical 480V systems.",
+  "description": "Industrial and large commercial operations often require high-voltage electrical systems beyond standard commercial service. Solomon Electric provides high-voltage electrical services throughout South Florida\u2014medium voltage distribution, switchgear installation, transformer work, and specialized industrial electrical for facilities requiring more than typical 480V systems.",
   "shortDescription": "Industrial high-voltage specialists",
   "icon": "Zap",
-  "image": "../../assets/images/services/commercial.png",
+  "image": "../../assets/images/services/commercial.webp",
   "category": "Commercial & Inspections",
   "order": 59,
   "features": [
@@ -20,7 +20,7 @@
   "problems": [
     {
       "title": "Large Industrial Loads",
-      "description": "Facilities with total loads exceeding 500 kVA often receive medium voltage service and step down on-site—more efficient and cost-effective.",
+      "description": "Facilities with total loads exceeding 500 kVA often receive medium voltage service and step down on-site\u2014more efficient and cost-effective.",
       "icon": "Zap"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "title": "Switchgear Maintenance",
-      "description": "High-voltage switchgear requires specialized maintenance—testing, lubrication, and inspection that general electricians aren't equipped to perform.",
+      "description": "High-voltage switchgear requires specialized maintenance\u2014testing, lubrication, and inspection that general electricians aren't equipped to perform.",
       "icon": "Shield"
     },
     {
@@ -59,12 +59,12 @@
     {
       "step": 2,
       "title": "Utility Coordination",
-      "description": "Medium voltage service requires extensive utility coordination—service agreements, transformer specifications, and protection coordination."
+      "description": "Medium voltage service requires extensive utility coordination\u2014service agreements, transformer specifications, and protection coordination."
     },
     {
       "step": 3,
       "title": "Engineering Design",
-      "description": "High-voltage systems require professional engineering—one-line diagrams, protection coordination studies, and arc flash analysis."
+      "description": "High-voltage systems require professional engineering\u2014one-line diagrams, protection coordination studies, and arc flash analysis."
     },
     {
       "step": 4,
@@ -74,7 +74,7 @@
     {
       "step": 5,
       "title": "Testing and Commissioning",
-      "description": "High-voltage systems require specialized testing before energization—insulation testing, protection verification, and coordinated startup."
+      "description": "High-voltage systems require specialized testing before energization\u2014insulation testing, protection verification, and coordinated startup."
     }
   ],
   "benefitsHeading": "Benefits of Proper High-Voltage Infrastructure",
@@ -129,11 +129,11 @@
     },
     {
       "question": "What's involved in switchgear maintenance?",
-      "answer": "Switchgear requires periodic inspection, cleaning, lubrication of mechanisms, protective relay testing, and insulation testing. Frequency depends on equipment type and usage—typically annual or biennial for critical systems."
+      "answer": "Switchgear requires periodic inspection, cleaning, lubrication of mechanisms, protective relay testing, and insulation testing. Frequency depends on equipment type and usage\u2014typically annual or biennial for critical systems."
     },
     {
       "question": "Do you perform arc flash studies?",
-      "answer": "Yes. Arc flash studies calculate incident energy levels at each point in the electrical system, determining required PPE for safe work. OSHA requires employers to assess and label electrical hazards—arc flash studies fulfill this requirement."
+      "answer": "Yes. Arc flash studies calculate incident energy levels at each point in the electrical system, determining required PPE for safe work. OSHA requires employers to assess and label electrical hazards\u2014arc flash studies fulfill this requirement."
     },
     {
       "question": "Can you work on energized high-voltage systems?",
@@ -141,7 +141,7 @@
     },
     {
       "question": "What about power factor correction?",
-      "answer": "Poor power factor increases utility bills (power factor penalties) and reduces system capacity. We design and install power factor correction equipment—typically capacitor banks—to improve power factor to acceptable levels."
+      "answer": "Poor power factor increases utility bills (power factor penalties) and reduces system capacity. We design and install power factor correction equipment\u2014typically capacitor banks\u2014to improve power factor to acceptable levels."
     },
     {
       "question": "How long do high-voltage projects take?",
@@ -173,8 +173,9 @@
     },
     {
       "heading": "Serving South Florida Industrial Facilities",
-      "body": "Solomon Electric provides high-voltage electrical services throughout South Florida industrial areas—from manufacturing facilities to processing plants to large commercial complexes requiring specialized industrial electrical expertise."
+      "body": "Solomon Electric provides high-voltage electrical services throughout South Florida industrial areas\u2014from manufacturing facilities to processing plants to large commercial complexes requiring specialized industrial electrical expertise."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "High-Voltage Electrical Services service provided by licensed electricians in South Florida"
 }

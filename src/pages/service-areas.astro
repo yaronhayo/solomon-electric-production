@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/heroes/service-areas.png";
+import heroImage from "../assets/images/heroes/service-areas.webp";
 import PageHero from "../components/PageHero.astro";
 import Container from "../components/ui/Container.astro";
 import CtaButton from "../components/ui/CtaButton.astro";
@@ -145,7 +145,11 @@ const counties = {
 };
 
 const trustPoints = [
-    { icon: Shield, title: "Licensed & Insured", desc: "Florida EC13012419" },
+    {
+        icon: Shield,
+        title: "Licensed & Insured",
+        desc: SITE_CONFIG.credentials.license.display,
+    },
     { icon: Clock, title: "24/7 Emergency", desc: "Always available" },
     { icon: Award, title: "Satisfaction Guaranteed", desc: "100% commitment" },
     { icon: CheckCircle, title: "Free Estimates", desc: "No obligation" },

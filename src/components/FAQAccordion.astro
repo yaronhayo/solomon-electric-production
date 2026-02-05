@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Button from "./ui/Button.astro";
 import Container from "./ui/Container.astro";
 import { HelpCircle } from "lucide-astro";
+import { SITE_CONFIG } from "../config/site";
+import { replacePlaceholder } from "../utils/content";
 
 interface FAQData {
     question: string;
@@ -19,21 +21,30 @@ interface Props {
 
 const { faqs: propFaqs } = Astro.props;
 
-let displayFaqs: FAQItem[] = [];
+// FAQs to display after processing
+let displayFaqs = [];
 
-if (propFaqs) {
+if (propFaqs && propFaqs.length > 0) {
   // Normalize prop data to match collection structure (access via .data or direct)
   displayFaqs = propFaqs.map((f: any) => ({
     data: {
-      question: f.question || f.data?.question,
-      answer: f.answer || f.data?.answer
+      question: replacePlaceholder(f.question || f.data?.question),
+      answer: replacePlaceholder(f.answer || f.data?.answer)
     }
   }));
 } else {
   const globalFaqs = await getCollection("faqs");
-  displayFaqs = globalFaqs.sort(
-    (a, b) => parseInt(a.data.id) - parseInt(b.data.id),
-  );
+  const sorted = [...globalFaqs].sort((a, b) => {
+    const orderA = a.data.order ?? 99;
+    const orderB = b.data.order ?? 99;
+    return orderA - orderB;
+  });
+  displayFaqs = sorted.map(faq => ({
+      data: {
+          question: replacePlaceholder(faq.data.question),
+          answer: replacePlaceholder(faq.data.answer)
+      }
+  }));
 }
 ---
 
@@ -48,14 +59,14 @@ if (propFaqs) {
         <!-- Section Header -->
         <div class="text-center mb-16">
             <p
-                class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary"
+                class="text-primary font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary"
             >
                 Common Questions
             </p>
             <h2
                 class="text-4xl md:text-6xl font-bold text-primary mb-6 font-display"
             >
-                Frequently Asked <span class="text-accent">Questions</span>
+                Frequently Asked <span class="text-primary">Questions</span>
             </h2>
             <p class="text-[var(--text-body)] text-lg font-medium">
                 Get answers to the most common questions about our electrical

@@ -1,124 +1,126 @@
 {
-    "name": "Coral Springs",
-    "slug": "coral-springs",
-    "county": "Broward",
-    "description": "Licensed Coral Springs electricians providing professional residential and commercial electrical services. From modern kitchen remodels in Wyndham Lakes to commercial projects on Sample Road, Solomon Electric is your local partner.",
-    "population": "135,000+",
-    "founded": "1963",
-    "areaSquareMiles": "24",
-    "tagline": "Everything Under the Sun",
-    "landmarks": [
-        "Coral Springs Center for the Arts",
-        "The Walk of Coral Springs",
-        "Museum of Art",
-        "Mullins Park",
-        "Tallavast Park"
-    ],
-    "neighborhoods": [
-        "Wyndham Lakes",
-        "Eagle Ridge",
-        "Shadow Wood",
-        "Parkside",
-        "Ramblewood",
-        "Maplewood",
-        "Whispering Woods"
-    ],
-    "majorRoads": [
-        "Sawgrass Expressway (SR 869)",
-        "Sample Road",
-        "University Drive",
-        "Coral Springs Drive",
-        "Wiles Road"
-    ],
-    "coordinates": {
-        "lat": 26.2712,
-        "lng": -80.2706
+  "name": "Coral Springs",
+  "slug": "coral-springs",
+  "county": "Broward",
+  "description": "Licensed Coral Springs electricians providing professional residential and commercial electrical services. From modern kitchen remodels in Wyndham Lakes to commercial projects on Sample Road, Solomon Electric is your local partner.",
+  "population": "135,000+",
+  "founded": "1963",
+  "areaSquareMiles": "24",
+  "tagline": "Everything Under the Sun",
+  "landmarks": [
+    "Coral Springs Center for the Arts",
+    "The Walk of Coral Springs",
+    "Museum of Art",
+    "Mullins Park",
+    "Tallavast Park"
+  ],
+  "neighborhoods": [
+    "Wyndham Lakes",
+    "Eagle Ridge",
+    "Shadow Wood",
+    "Parkside",
+    "Ramblewood",
+    "Maplewood",
+    "Whispering Woods"
+  ],
+  "majorRoads": [
+    "Sawgrass Expressway (SR 869)",
+    "Sample Road",
+    "University Drive",
+    "Coral Springs Drive",
+    "Wiles Road"
+  ],
+  "coordinates": {
+    "lat": 26.2712,
+    "lng": -80.2706
+  },
+  "challenges": [
+    {
+      "title": "Master-Planned Community Standards",
+      "description": "Coral Springs' strict aesthetic and building standards require electricians who understand local HOA requirements and municipal codes for consistent quality.",
+      "icon": "Shield"
     },
-    "challenges": [
-        {
-            "title": "Master-Planned Community Standards",
-            "description": "Coral Springs' strict aesthetic and building standards require electricians who understand local HOA requirements and municipal codes for consistent quality.",
-            "icon": "Shield"
-        },
-        {
-            "title": "Aging Suburban Infrastructure",
-            "description": "Neighborhoods built in the 70s and 80s, like Ramblewood, often require panel upgrades and aluminum wiring remediation to support modern electrical loads.",
-            "icon": "AlertTriangle"
-        },
-        {
-            "title": "Smart Irrigation & Landscape Power",
-            "description": "Many Coral Springs properties feature extensive landscaping and smart irrigation that require specialized outdoor power solutions and GFCI protection.",
-            "icon": "Umbrella"
-        }
-    ],
-    "featuredServices": [
-        "electrical-panel-upgrade-100a-to-200a",
-        "smart-home-automation",
-        "whole-home-surge-protection",
-        "landscape-outdoor-lighting",
-        "24-7-emergency-electrical-service",
-        "recessed-lighting-installation"
-    ],
-    "stats": [
-        {
-            "value": "135K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "I heard many Coral Springs homes have aluminum wiring—is that true?",
-            "answer": "Yes, many homes built in Coral Springs during the 1970s aluminum wiring boom—particularly in Ramblewood, Shadow Wood, and older sections of the city—contain aluminum branch wiring. Aluminum wiring isn't inherently dangerous, but it requires proper connections and maintenance. The real issue is when aluminum connects to outlets and switches designed for copper only. We provide aluminum wiring assessments and, when needed, install COPALUM or AlumiConn connectors that make these connections safe, often without complete rewiring."
-        },
-        {
-            "question": "We're adding a pool to our Coral Springs backyard—what electrical work is needed?",
-            "answer": "Pool installations require significant electrical work: a dedicated 220V circuit for the pump (sometimes 50+ amps for variable-speed pumps), pool light circuit, GFCI protection for all pool-area receptacles, proper bonding of metal components, and often a sub-panel near the equipment pad. Coral Springs requires permits for pool electrical, and inspectors here are thorough. We handle everything from planning through final inspection—it's one of our most common Coral Springs projects."
-        },
-        {
-            "question": "Can you install landscape lighting in my Coral Springs HOA community?",
-            "answer": "Absolutely—we work frequently in Wyndham Lakes, Eagle Ridge, Whispering Woods, and other Coral Springs HOA communities. Most landscape lighting doesn't require HOA approval, but we advise confirming before installation. We install low-voltage LED landscape systems that highlight your home's best features, improve security, and use minimal electricity. For permanent uplighting or pathway lights, we run proper wiring with waterproof connections designed for Florida's weather."
-        },
-        {
-            "question": "Our Coral Springs home's breakers keep tripping when we run the AC and oven together—why?",
-            "answer": "This classic sign of an overloaded electrical system is extremely common in 1970s-80s Coral Springs homes. These homes were built with 100-amp or 150-amp panels that simply can't handle modern AC systems, electric ovens, multiple refrigerators, and all the electronics we use today. The solution is typically a panel upgrade to 200 amps, giving your home the capacity to run everything simultaneously without constantly tripping breakers."
-        },
-        {
-            "question": "Do you work on the commercial buildings along Sample Road and University Drive?",
-            "answer": "Yes, we provide commercial electrical services throughout Coral Springs, including the retail and office corridors along Sample Road, University Drive, and The Walk at Coral Springs. Services include lighting retrofits, electrical maintenance agreements, tenant buildout wiring, sign circuits, and 24/7 emergency response for commercial power issues."
-        },
-        {
-            "question": "How fast can you get to Coral Springs for an electrical emergency?",
-            "answer": "We maintain electricians in northwest Broward County specifically to serve Coral Springs, Parkland, and Coconut Creek quickly.  For after-hours emergencies—especially those involving safety hazards like sparking, burning smells, or complete power loss—we allocate resources and can often arrive within an hour."
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Trusted Coral Springs Electricians At Your Service",
-            "body": "Coral Springs is a premier master-planned city known for its family values and beautiful green spaces. As a city that prides itself on 'Everything Under the Sun,' it deserves electrical service that is reliable, professional, and code-compliant. Solomon Electric has been providing top-tier electrical solutions to Coral Springs families since 2003."
-        },
-        {
-            "heading": "Understanding Coral Springs's Electrical Needs",
-            "body": "Coral Springs homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Coral Springs's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your Coral Springs Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Coral Springs. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Expert Electrical Modernization for Your Coral Springs Home",
-            "body": "Whether you're updating your kitchen lighting at The Walk, installing a whole-home surge protector to guard against Florida storms, or need an urgent panel upgrade in Maplewood, our team is ready to help. We provide professional service and a satisfaction guarantee on every Coral Springs project."
-        }
-    ]
+    {
+      "title": "Aging Suburban Infrastructure",
+      "description": "Neighborhoods built in the 70s and 80s, like Ramblewood, often require panel upgrades and aluminum wiring remediation to support modern electrical loads.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Smart Irrigation & Landscape Power",
+      "description": "Many Coral Springs properties feature extensive landscaping and smart irrigation that require specialized outdoor power solutions and GFCI protection.",
+      "icon": "Umbrella"
+    }
+  ],
+  "featuredServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "smart-home-automation",
+    "whole-home-surge-protection",
+    "landscape-outdoor-lighting",
+    "24-7-emergency-electrical-service",
+    "recessed-lighting-installation"
+  ],
+  "stats": [
+    {
+      "value": "135K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "I heard many Coral Springs homes have aluminum wiring\u2014is that true?",
+      "answer": "Yes, many homes built in Coral Springs during the 1970s aluminum wiring boom\u2014particularly in Ramblewood, Shadow Wood, and older sections of the city\u2014contain aluminum branch wiring. Aluminum wiring isn't inherently dangerous, but it requires proper connections and maintenance. The real issue is when aluminum connects to outlets and switches designed for copper only. We provide aluminum wiring assessments and, when needed, install COPALUM or AlumiConn connectors that make these connections safe, often without complete rewiring."
+    },
+    {
+      "question": "We're adding a pool to our Coral Springs backyard\u2014what electrical work is needed?",
+      "answer": "Pool installations require significant electrical work: a dedicated 220V circuit for the pump (sometimes 50+ amps for variable-speed pumps), pool light circuit, GFCI protection for all pool-area receptacles, proper bonding of metal components, and often a sub-panel near the equipment pad. Coral Springs requires permits for pool electrical, and inspectors here are thorough. We handle everything from planning through final inspection\u2014it's one of our most common Coral Springs projects."
+    },
+    {
+      "question": "Can you install landscape lighting in my Coral Springs HOA community?",
+      "answer": "Absolutely\u2014we work frequently in Wyndham Lakes, Eagle Ridge, Whispering Woods, and other Coral Springs HOA communities. Most landscape lighting doesn't require HOA approval, but we advise confirming before installation. We install low-voltage LED landscape systems that highlight your home's best features, improve security, and use minimal electricity. For permanent uplighting or pathway lights, we run proper wiring with waterproof connections designed for Florida's weather."
+    },
+    {
+      "question": "Our Coral Springs home's breakers keep tripping when we run the AC and oven together\u2014why?",
+      "answer": "This classic sign of an overloaded electrical system is extremely common in 1970s-80s Coral Springs homes. These homes were built with 100-amp or 150-amp panels that simply can't handle modern AC systems, electric ovens, multiple refrigerators, and all the electronics we use today. The solution is typically a panel upgrade to 200 amps, giving your home the capacity to run everything simultaneously without constantly tripping breakers."
+    },
+    {
+      "question": "Do you work on the commercial buildings along Sample Road and University Drive?",
+      "answer": "Yes, we provide commercial electrical services throughout Coral Springs, including the retail and office corridors along Sample Road, University Drive, and The Walk at Coral Springs. Services include lighting retrofits, electrical maintenance agreements, tenant buildout wiring, sign circuits, and 24/7 emergency response for commercial power issues."
+    },
+    {
+      "question": "How fast can you get to Coral Springs for an electrical emergency?",
+      "answer": "We maintain electricians in northwest Broward County specifically to serve Coral Springs, Parkland, and Coconut Creek quickly.  For after-hours emergencies\u2014especially those involving safety hazards like sparking, burning smells, or complete power loss\u2014we allocate resources and can often arrive within an hour."
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Trusted Coral Springs Electricians At Your Service",
+      "body": "Coral Springs is a premier master-planned city known for its family values and beautiful green spaces. As a city that prides itself on 'Everything Under the Sun,' it deserves electrical service that is reliable, professional, and code-compliant. Solomon Electric has been providing top-tier electrical solutions to Coral Springs families since {{FOUNDED_YEAR}}."
+    },
+    {
+      "heading": "Understanding Coral Springs's Electrical Needs",
+      "body": "Coral Springs homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Coral Springs's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your Coral Springs Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Coral Springs. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Expert Electrical Modernization for Your Coral Springs Home",
+      "body": "Whether you're updating your kitchen lighting at The Walk, installing a whole-home surge protector to guard against Florida storms, or need an urgent panel upgrade in Maplewood, our team is ready to help. We provide professional service and a satisfaction guarantee on every Coral Springs project."
+    }
+  ],
+  "imageAlt": "Professional electrical services in Coral Springs, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

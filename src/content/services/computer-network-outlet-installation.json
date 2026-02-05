@@ -4,7 +4,7 @@
   "description": "WiFi isn't enough for everything. When you need reliable, fast network connections for home offices, gaming, streaming, or smart home hubs, Solomon Electric installs professional Ethernet wiring throughout South Florida homes. We run Cat5e and Cat6 cable through walls with clean terminations and proper testing.",
   "shortDescription": "Wired network infrastructure",
   "icon": "Plug",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Lighting & Smart Home",
   "order": 31,
   "features": [
@@ -35,7 +35,7 @@
     },
     {
       "title": "Smart Home Hub Reliability",
-      "description": "Smart home hubs control your entire automation system—they shouldn't rely on WiFi. Wired connections ensure hub reliability.",
+      "description": "Smart home hubs control your entire automation system\u2014they shouldn't rely on WiFi. Wired connections ensure hub reliability.",
       "icon": "Shield"
     },
     {
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Cable Selection",
-      "description": "We recommend appropriate cable—Cat5e handles gigabit speeds, Cat6 supports faster connections and future expansion. Cable type affects long-term capabilities."
+      "description": "We recommend appropriate cable\u2014Cat5e handles gigabit speeds, Cat6 supports faster connections and future expansion. Cable type affects long-term capabilities."
     },
     {
       "step": 3,
@@ -86,7 +86,7 @@
     },
     {
       "title": "Speed",
-      "description": "Cat6 supports 10 gigabit speeds—far beyond what WiFi can deliver. Even Cat5e provides reliable gigabit connections.",
+      "description": "Cat6 supports 10 gigabit speeds\u2014far beyond what WiFi can deliver. Even Cat5e provides reliable gigabit connections.",
       "icon": "Zap"
     },
     {
@@ -137,19 +137,19 @@
     },
     {
       "question": "Where should the central network panel be?",
-      "answer": "Ideally near where internet service enters your home—often near the electrical panel or utility closet. We install patch panels and leave space for your router and switch equipment in an organized, accessible location."
+      "answer": "Ideally near where internet service enters your home\u2014often near the electrical panel or utility closet. We install patch panels and leave space for your router and switch equipment in an organized, accessible location."
     },
     {
       "question": "Do I still need WiFi if I have wired connections?",
-      "answer": "Yes—phones, tablets, and many devices use WiFi exclusively. Wired connections are for stationary devices that benefit most: TVs, gaming consoles, desktops, NVRs. Wired access points improve WiFi for mobile devices."
+      "answer": "Yes\u2014phones, tablets, and many devices use WiFi exclusively. Wired connections are for stationary devices that benefit most: TVs, gaming consoles, desktops, NVRs. Wired access points improve WiFi for mobile devices."
     },
     {
       "question": "Can you install during renovation or after?",
-      "answer": "Either works. Pre-wire during construction is easier and cheaper. Retrofit installation after construction requires fishing cables through existing walls—more challenging but achievable in most homes."
+      "answer": "Either works. Pre-wire during construction is easier and cheaper. Retrofit installation after construction requires fishing cables through existing walls\u2014more challenging but achievable in most homes."
     },
     {
       "question": "Do you test the cables after installation?",
-      "answer": "Yes—every cable is tested for proper termination and speed capability. We verify each run works correctly before finishing. You'll know your network infrastructure is solid."
+      "answer": "Yes\u2014every cable is tested for proper termination and speed capability. We verify each run works correctly before finishing. You'll know your network infrastructure is solid."
     }
   ],
   "relatedServices": [
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Network Cable Installation in Miami & South Florida",
-      "body": "WiFi isn't reliable enough for everything. Solomon Electric installs professional Ethernet wiring throughout South Florida homes—Cat5e and Cat6 cable through walls with proper terminations and testing. Get the fast, reliable connections your home office, gaming setup, and smart home deserve."
+      "body": "WiFi isn't reliable enough for everything. Solomon Electric installs professional Ethernet wiring throughout South Florida homes\u2014Cat5e and Cat6 cable through walls with proper terminations and testing. Get the fast, reliable connections your home office, gaming setup, and smart home deserve."
     },
     {
       "heading": "Home Office Network Connectivity",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric installs network wiring throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-room home offices to whole-home structured wiring, we provide professional network infrastructure."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Computer & Network Outlet Installation service provided by licensed electricians in South Florida"
 }

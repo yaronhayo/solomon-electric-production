@@ -4,7 +4,8 @@ import { getCollection } from "astro:content";
 export const prerender = true;
 
 import Layout from "../../layouts/Layout.astro";
-import heroImage from "../../assets/images/hero.webp";
+import { IMAGES } from "../../config/images";
+const heroImage = IMAGES.heroes.services;
 import CtaButton from "../../components/ui/CtaButton.astro";
 import Container from "../../components/ui/Container.astro";
 import PageHero from "../../components/PageHero.astro";
@@ -13,6 +14,7 @@ import ReviewCarousel from "../../components/ReviewCarousel.astro";
 import DefinitionBlock from "../../components/DefinitionBlock.astro";
 import { SITE_CONFIG } from "../../config/site";
 import { generateBreadcrumbSchema, generateFAQSchema } from "../../utils/seo";
+import { replacePlaceholder } from "../../utils/content";
 import {
     AlertTriangle,
     Lightbulb,
@@ -146,7 +148,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
 <Layout
     title={`${service.data.name} Miami | 24/7 Licensed Electrician | Solomon Electric`}
-    description={`Professional ${service.data.name.toLowerCase()} in Miami-Dade & Broward. Licensed #EC13012419, 24/7 emergency service, free estimates. Call (786) 833-9211 for same-day appointments!`}
+    description={replacePlaceholder(
+        `Professional ${service.data.name.toLowerCase()} in Miami-Dade & Broward. Licensed #${SITE_CONFIG.credentials.license.number}, 24/7 emergency service, free estimates. Call ${SITE_CONFIG.contact.phone.formatted} for same-day appointments!`,
+    )}
     ogImage={service.data.image
         ? `${siteUrl}${typeof service.data.image === "string" ? service.data.image : service.data.image.src}`
         : `${siteUrl}/og-default.jpg`}
@@ -200,9 +204,12 @@ const breadcrumbSchema = generateBreadcrumbSchema(
     <!-- Hero Section -->
     <PageHero
         title={service.data.name}
-        subtitle={`Licensed Miami Electrician • #EC13012419 • 24/7 Available`}
+        subtitle={replacePlaceholder(
+            `Licensed Miami Electrician • #${SITE_CONFIG.credentials.license.number} • 24/7 Available`,
+        )}
         description={service.data.description}
         image={service.data.image || heroImage}
+        imageAlt={service.data.imageAlt}
         trustIndicators={true}
     />
 
@@ -324,7 +331,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                                 {problem.title}
                                             </h3>
                                             <p class="problem-description">
-                                                {problem.description}
+                                                {replacePlaceholder(
+                                                    problem.description,
+                                                )}
                                             </p>
                                         </div>
                                     </div>
@@ -391,7 +400,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                         <div class="step-card-accent" />
                                         <h3 class="step-title">{step.title}</h3>
                                         <p class="step-description">
-                                            {step.description}
+                                            {replacePlaceholder(
+                                                step.description,
+                                            )}
                                         </p>
                                     </div>
                                 </div>
@@ -456,7 +467,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                             {benefit.title}
                                         </h3>
                                         <p class="benefit-description">
-                                            {benefit.description}
+                                            {replacePlaceholder(
+                                                benefit.description,
+                                            )}
                                         </p>
                                     </div>
                                 );
@@ -482,7 +495,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                     <div class="feature-check">
                                         <Check strokeWidth={3} />
                                     </div>
-                                    <span>{feature}</span>
+                                    <span>{replacePlaceholder(feature)}</span>
                                 </li>
                             ))}
                         </ul>
@@ -504,7 +517,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                     <h2 class="seo-heading">
                                         {content.heading}
                                     </h2>
-                                    <p class="seo-body">{content.body}</p>
+                                    <p class="seo-body">
+                                        {replacePlaceholder(content.body)}
+                                    </p>
                                 </article>
                             ),
                         )}
@@ -1877,5 +1892,5 @@ const breadcrumbSchema = generateBreadcrumbSchema(
         }
     }
     setHeaderHeight();
-    window.addEventListener("resize", setHeaderHeight);
+    window.addEventListener("resize", setHeaderHeight, { passive: true });
 </script>

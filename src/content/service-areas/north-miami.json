@@ -1,125 +1,127 @@
 {
-    "name": "North Miami",
-    "slug": "north-miami",
-    "county": "Miami-Dade",
-    "description": "Expert licensed electricians serving North Miami, Florida. Solomon Electric provides professional residential and commercial electrical services throughout North Miami, from Biscayne Blvd to Florida International University's Biscayne Bay Campus.",
-    "population": "60,000+",
-    "founded": "1926",
-    "areaSquareMiles": "10",
-    "tagline": "Gateway to the Bay",
-    "landmarks": [
-        "Museum of Contemporary Art (MOCA)",
-        "FIU Biscayne Bay Campus",
-        "Oleta River State Park",
-        "North Miami Public Library",
-        "Enchanted Forest Elaine Gordon Park"
-    ],
-    "neighborhoods": [
-        "Arch Creek",
-        "Biscayne Park Estates",
-        "Keystone Islands",
-        "Sanhsouci",
-        "Sunkist Grove",
-        "Uleta",
-        "Breezeswept Estates",
-        "Alhambra Circle"
-    ],
-    "majorRoads": [
-        "I-95",
-        "Biscayne Blvd (US-1)",
-        "NW 7th Avenue",
-        "NE 125th Street",
-        "NE 135th Street"
-    ],
-    "coordinates": {
-        "lat": 25.8901,
-        "lng": -80.1867
+  "name": "North Miami",
+  "slug": "north-miami",
+  "county": "Miami-Dade",
+  "description": "Expert licensed electricians serving North Miami, Florida. Solomon Electric provides professional residential and commercial electrical services throughout North Miami, from Biscayne Blvd to Florida International University's Biscayne Bay Campus.",
+  "population": "60,000+",
+  "founded": "1926",
+  "areaSquareMiles": "10",
+  "tagline": "Gateway to the Bay",
+  "landmarks": [
+    "Museum of Contemporary Art (MOCA)",
+    "FIU Biscayne Bay Campus",
+    "Oleta River State Park",
+    "North Miami Public Library",
+    "Enchanted Forest Elaine Gordon Park"
+  ],
+  "neighborhoods": [
+    "Arch Creek",
+    "Biscayne Park Estates",
+    "Keystone Islands",
+    "Sanhsouci",
+    "Sunkist Grove",
+    "Uleta",
+    "Breezeswept Estates",
+    "Alhambra Circle"
+  ],
+  "majorRoads": [
+    "I-95",
+    "Biscayne Blvd (US-1)",
+    "NW 7th Avenue",
+    "NE 125th Street",
+    "NE 135th Street"
+  ],
+  "coordinates": {
+    "lat": 25.8901,
+    "lng": -80.1867
+  },
+  "challenges": [
+    {
+      "title": "Coastal Electrical Issues",
+      "description": "North Miami's proximity to the bay means salt air can accelerate corrosion on outdoor electrical components and service masts, requiring marine-grade materials.",
+      "icon": "Umbrella"
     },
-    "challenges": [
-        {
-            "title": "Coastal Electrical Issues",
-            "description": "North Miami's proximity to the bay means salt air can accelerate corrosion on outdoor electrical components and service masts, requiring marine-grade materials.",
-            "icon": "Umbrella"
-        },
-        {
-            "title": "Historic Home Wiring",
-            "description": "Many properties in established North Miami neighborhoods feature original cloth wiring or outdated panels that need modernization to meet current safety codes.",
-            "icon": "AlertTriangle"
-        },
-        {
-            "title": "Storm Preparedness",
-            "description": "Low-lying areas of North Miami are prone to flooding during heavy tropical storms, making proper GFCI protection and elevated electrical systems critical.",
-            "icon": "CloudLightning"
-        }
-    ],
-    "featuredServices": [
-        "electrical-panel-upgrade-100a-to-200a",
-        "24-7-emergency-electrical-service",
-        "whole-home-surge-protection",
-        "recessed-lighting-installation",
-        "ceiling-fan-light-fixture-installation",
-        "gfci-outlet-installation-outdoor-pool"
-    ],
-    "stats": [
-        {
-            "value": "60K+",
-            "label": "Residents Served"
-        },
-        {
-            "value": "15+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "24/7",
-            "label": "Emergency Service"
-        },
-        {
-            "value": "4.9★",
-            "label": "Customer Rating"
-        }
-    ],
-    "faqs": [
-        {
-            "question": "We live in Keystone Islands—do you understand waterfront electrical challenges?",
-            "answer": "Yes, Keystone Islands and the other waterfront areas of North Miami require specialized electrical knowledge. Salt air corrodes standard components faster, dock and seawall electrical must meet NEC Article 555 marina standards, and outdoor fixtures need marine-grade ratings. We use corrosion-resistant enclosures, stainless hardware, and sealed connections that withstand the bay environment."
-        },
-        {
-            "question": "Our North Miami home is on a flood-prone street—should we be concerned about our electrical panel?",
-            "answer": "Yes—if your panel is in a garage, utility room, or anywhere that could flood, you're at risk. After flooding, salt water damages breakers, wiring connections, and grounding systems in ways that aren't immediately visible. We recommend elevating panels above flood levels when possible, and if your home has ever flooded, scheduling an inspection to check for hidden damage that could cause failures months later."
-        },
-        {
-            "question": "Do you serve businesses near FIU's Biscayne Bay Campus?",
-            "answer": "Yes, we provide commercial electrical services throughout North Miami, including the areas near FIU Biscayne Bay, the NE 125th Street corridor, and downtown North Miami. Services include tenant buildouts, restaurant electrical, retail lighting upgrades, and 24/7 emergency response for businesses that can't afford extended outages."
-        },
-        {
-            "question": "My North Miami home was built in the 1950s—is rewiring necessary?",
-            "answer": "Not always, but homes from the 1950s often have original fabric-insulated wiring, undersized panels, and two-prong ungrounded outlets. A complete rewire may not be necessary if the wiring is still in good condition—sometimes targeted upgrades (panel replacement, GFCI addition, adding grounded circuits where needed) address the main concerns. We provide honest assessments of what you actually need."
-        },
-        {
-            "question": "Can you install outdoor lighting along our North Miami bayfront?",
-            "answer": "Absolutely. Waterfront landscape lighting enhances security and views while increasing property value. For bayfront properties, we use marine-grade fixtures designed for salt exposure and ensure all connections are properly sealed and GFCI protected. Low-voltage LED systems are ideal—they're energy efficient, safer near water, and provide beautiful nighttime illumination."
-        },
-        {
-            "question": "How quickly can you respond to emergencies in North Miami?",
-            "answer": "North Miami is in the heart of our Miami-Dade service area.  For after-hours emergencies—sparking, burning smells, or complete power loss—we allocate resources. We serve all North Miami neighborhoods from Arch Creek to Keystone Islands."
-        }
-    ],
-    "seoContent": [
-        {
-            "heading": "Your Trusted North Miami Residential & Commercial Electrician",
-            "body": "North Miami is one of South Florida's most diverse and established communities. From the cultural hub of MOCA to the natural beauty of Oleta River State Park, North Miami requires electrical expertise that understands both historic estates and modern developments. Solomon Electric has been a staple in the Miami-Dade community for over 15 years, providing safe, reliable, and professional electrical solutions for every type of property."
-        },
-        {
-            "heading": "Understanding North Miami's Electrical Needs",
-            "body": "North Miami homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to North Miami's needs."
-        },
-        {
-            "heading": "Comprehensive Electrical Services for Your North Miami Home",
-            "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout North Miami. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over 15 years."
-        },
-        {
-            "heading": "Serving Every Neighborhood in North Miami",
-            "body": "Whether you live in the waterfront Keystone Islands, the historic Arch Creek area, or near the FIU Biscayne Bay Campus, Solomon Electric is just a phone call away. We understand the specific municipal requirements of North Miami and handle everything from permit acquisition to final inspection, ensuring your project is compliant and safe."
-        }
-    ]
+    {
+      "title": "Historic Home Wiring",
+      "description": "Many properties in established North Miami neighborhoods feature original cloth wiring or outdated panels that need modernization to meet current safety codes.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "title": "Storm Preparedness",
+      "description": "Low-lying areas of North Miami are prone to flooding during heavy tropical storms, making proper GFCI protection and elevated electrical systems critical.",
+      "icon": "CloudLightning"
+    }
+  ],
+  "featuredServices": [
+    "electrical-panel-upgrade-100a-to-200a",
+    "24-7-emergency-electrical-service",
+    "whole-home-surge-protection",
+    "recessed-lighting-installation",
+    "ceiling-fan-light-fixture-installation",
+    "gfci-outlet-installation-outdoor-pool"
+  ],
+  "stats": [
+    {
+      "value": "60K+",
+      "label": "Residents Served"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency Service"
+    },
+    {
+      "value": "4.9\u2605",
+      "label": "Customer Rating"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "We live in Keystone Islands\u2014do you understand waterfront electrical challenges?",
+      "answer": "Yes, Keystone Islands and the other waterfront areas of North Miami require specialized electrical knowledge. Salt air corrodes standard components faster, dock and seawall electrical must meet NEC Article 555 marina standards, and outdoor fixtures need marine-grade ratings. We use corrosion-resistant enclosures, stainless hardware, and sealed connections that withstand the bay environment."
+    },
+    {
+      "question": "Our North Miami home is on a flood-prone street\u2014should we be concerned about our electrical panel?",
+      "answer": "Yes\u2014if your panel is in a garage, utility room, or anywhere that could flood, you're at risk. After flooding, salt water damages breakers, wiring connections, and grounding systems in ways that aren't immediately visible. We recommend elevating panels above flood levels when possible, and if your home has ever flooded, scheduling an inspection to check for hidden damage that could cause failures months later."
+    },
+    {
+      "question": "Do you serve businesses near FIU's Biscayne Bay Campus?",
+      "answer": "Yes, we provide commercial electrical services throughout North Miami, including the areas near FIU Biscayne Bay, the NE 125th Street corridor, and downtown North Miami. Services include tenant buildouts, restaurant electrical, retail lighting upgrades, and 24/7 emergency response for businesses that can't afford extended outages."
+    },
+    {
+      "question": "My North Miami home was built in the 1950s\u2014is rewiring necessary?",
+      "answer": "Not always, but homes from the 1950s often have original fabric-insulated wiring, undersized panels, and two-prong ungrounded outlets. A complete rewire may not be necessary if the wiring is still in good condition\u2014sometimes targeted upgrades (panel replacement, GFCI addition, adding grounded circuits where needed) address the main concerns. We provide honest assessments of what you actually need."
+    },
+    {
+      "question": "Can you install outdoor lighting along our North Miami bayfront?",
+      "answer": "Absolutely. Waterfront landscape lighting enhances security and views while increasing property value. For bayfront properties, we use marine-grade fixtures designed for salt exposure and ensure all connections are properly sealed and GFCI protected. Low-voltage LED systems are ideal\u2014they're energy efficient, safer near water, and provide beautiful nighttime illumination."
+    },
+    {
+      "question": "How quickly can you respond to emergencies in North Miami?",
+      "answer": "North Miami is in the heart of our Miami-Dade service area.  For after-hours emergencies\u2014sparking, burning smells, or complete power loss\u2014we allocate resources. We serve all North Miami neighborhoods from Arch Creek to Keystone Islands."
+    }
+  ],
+  "seoContent": [
+    {
+      "heading": "Your Trusted North Miami Residential & Commercial Electrician",
+      "body": "North Miami is one of South Florida's most diverse and established communities. From the cultural hub of MOCA to the natural beauty of Oleta River State Park, North Miami requires electrical expertise that understands both historic estates and modern developments. Solomon Electric has been a staple in the Miami-Dade community for over {{YEARS_EXPERIENCE}} years, providing safe, reliable, and professional electrical solutions for every type of property."
+    },
+    {
+      "heading": "Understanding North Miami's Electrical Needs",
+      "body": "North Miami homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to North Miami's needs."
+    },
+    {
+      "heading": "Comprehensive Electrical Services for Your North Miami Home",
+      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout North Miami. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+    },
+    {
+      "heading": "Serving Every Neighborhood in North Miami",
+      "body": "Whether you live in the waterfront Keystone Islands, the historic Arch Creek area, or near the FIU Biscayne Bay Campus, Solomon Electric is just a phone call away. We understand the specific municipal requirements of North Miami and handle everything from permit acquisition to final inspection, ensuring your project is compliant and safe."
+    }
+  ],
+  "imageAlt": "Professional electrical services in North Miami, Florida provided by Solomon Electric",
+  "image": "../../assets/images/heroes/service-areas.webp"
 }

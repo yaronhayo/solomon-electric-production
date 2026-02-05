@@ -1,0 +1,27 @@
+{
+  "indexed": [
+    {
+      "url": "/",
+      "lastCrawl": "2026-02-02T06:57:07Z"
+    },
+    {
+      "url": "/services/",
+      "lastCrawl": "2026-01-24T22:29:02Z"
+    },
+    {
+      "url": "/about/",
+      "lastCrawl": "2026-01-31T04:10:30Z"
+    },
+    {
+      "url": "/contact/",
+      "lastCrawl": "2026-02-04T06:35:39Z"
+    },
+    {
+      "url": "/service-areas/",
+      "lastCrawl": "2026-01-30T02:30:27Z"
+    }
+  ],
+  "notIndexed": [],
+  "errors": [],
+  "crawledNotIndexed": []
+}

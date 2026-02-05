@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import heroImage from "../../assets/images/heroes/services.png";
+import heroImage from "../../assets/images/heroes/services.webp";
 import PageHero from "../../components/PageHero.astro";
 import Container from "../../components/ui/Container.astro";
 import CtaButton from "../../components/ui/CtaButton.astro";
@@ -138,8 +138,8 @@ import {
     <!-- Hero Section -->
     <PageHero
         title="Electrical Services Miami<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Panel Upgrades, EV Chargers & Repairs</span>"
-        subtitle="63+ Services • Licensed #EC13012419 • Same-Day Available"
-        description="Need an electrician in Miami? From 200-amp panel upgrades to EV charger installation, emergency repairs to smart home wiring—we've completed 19,400+ projects across Miami-Dade and Broward. Browse our complete service menu below and request your free estimate."
+        subtitle={`63+ Services • Licensed #${SITE_CONFIG.credentials.license.number} • Same-Day Available`}
+        description={`Need an electrician in Miami? From 200-amp panel upgrades to EV charger installation, emergency repairs to smart home wiring—we've completed ${SITE_CONFIG.stats.totalProjects}+ projects across Miami-Dade and Broward. Browse our complete service menu below and request your free estimate.`}
         image={heroImage}
         trustIndicators={true}
         primaryCta={{
@@ -148,8 +148,8 @@ import {
             icon: Calendar,
         }}
         secondaryCta={{
-            text: "Call (786) 833-9211",
-            href: "tel:" + SITE_CONFIG.contact.phone.href,
+            text: `Call ${SITE_CONFIG.contact.phone.formatted}`,
+            href: SITE_CONFIG.contact.phone.href,
             icon: Phone,
         }}
     />
@@ -332,8 +332,10 @@ import {
                         <Image
                             src={categoryInfoMap[
                                 "Electrical Panels & Power Systems"
-                            ].image}
-                            alt="200 amp electrical panel upgrade service in Miami - Solomon Electric"
+                            ].image.src}
+                            alt={categoryInfoMap[
+                                "Electrical Panels & Power Systems"
+                            ].image.alt}
                             class="category-image"
                             loading="lazy"
                         />
@@ -442,8 +444,10 @@ import {
                 >
                     <div class="category-header">
                         <Image
-                            src={categoryInfoMap["EV Charging & Solar"].image}
-                            alt="EV Charger Installation"
+                            src={categoryInfoMap["EV Charging & Solar"].image
+                                .src}
+                            alt={categoryInfoMap["EV Charging & Solar"].image
+                                .alt}
                             class="category-image"
                             loading="lazy"
                         />
@@ -559,8 +563,10 @@ import {
                         <Image
                             src={categoryInfoMap[
                                 "Emergency Electrical Services"
-                            ].image}
-                            alt="24/7 Emergency Electrician"
+                            ].image.src}
+                            alt={categoryInfoMap[
+                                "Emergency Electrical Services"
+                            ].image.alt}
                             class="category-image"
                             loading="lazy"
                         />
@@ -677,8 +683,9 @@ import {
                     <div class="category-header">
                         <Image
                             src={categoryInfoMap["Outlets, Switches & Wiring"]
-                                .image}
-                            alt="Outlet and Wiring Services"
+                                .image.src}
+                            alt={categoryInfoMap["Outlets, Switches & Wiring"]
+                                .image.alt}
                             class="category-image"
                             loading="lazy"
                         />
@@ -794,8 +801,10 @@ import {
                 >
                     <div class="category-header">
                         <Image
-                            src={categoryInfoMap["Lighting & Smart Home"].image}
-                            alt="Lighting and Smart Home"
+                            src={categoryInfoMap["Lighting & Smart Home"].image
+                                .src}
+                            alt={categoryInfoMap["Lighting & Smart Home"].image
+                                .alt}
                             class="category-image"
                             loading="lazy"
                         />
@@ -909,8 +918,9 @@ import {
                     <div class="category-header">
                         <Image
                             src={categoryInfoMap["Commercial & Inspections"]
-                                .image}
-                            alt="Commercial Electrical Services"
+                                .image.src}
+                            alt={categoryInfoMap["Commercial & Inspections"]
+                                .image.alt}
                             class="category-image"
                             loading="lazy"
                         />
@@ -1050,7 +1060,7 @@ import {
                         </svg>
                     </div>
                     <h4>Licensed & Insured</h4>
-                    <p>FL License #EC13012419 with $2M liability coverage</p>
+                    <p>{SITE_CONFIG.credentials.license.fullDisplay}</p>
                 </div>
                 <div class="trust-point">
                     <div class="trust-icon">

@@ -1,10 +1,10 @@
 {
   "name": "240V Outlet Installation",
   "slug": "240v-outlet-installation",
-  "description": "Need 240V power for heavy-duty equipment? Solomon Electric installs dedicated 240-volt outlets for electric dryers, ranges, welders, air compressors, EV chargers, and other high-power devices throughout South Florida homes and workshops. We handle the complete installation—from load calculation and panel capacity assessment to running new circuits and installing the proper outlet configuration for your equipment.",
+  "description": "Need 240V power for heavy-duty equipment? Solomon Electric installs dedicated 240-volt outlets for electric dryers, ranges, welders, air compressors, EV chargers, and other high-power devices throughout South Florida homes and workshops. We handle the complete installation\u2014from load calculation and panel capacity assessment to running new circuits and installing the proper outlet configuration for your equipment.",
   "shortDescription": "High-voltage outlets for heavy equipment",
   "icon": "Zap",
-  "image": "../../assets/images/services/wiring.png",
+  "image": "../../assets/images/services/wiring.webp",
   "category": "Outlets, Switches & Wiring",
   "order": 16,
   "features": [
@@ -30,7 +30,7 @@
     },
     {
       "title": "Level 2 EV Charger",
-      "description": "Home EV charging requires 240V—typically a NEMA 14-50 outlet or hardwired connection. We size circuits for your charger's requirements.",
+      "description": "Home EV charging requires 240V\u2014typically a NEMA 14-50 outlet or hardwired connection. We size circuits for your charger's requirements.",
       "icon": "Zap"
     },
     {
@@ -54,7 +54,7 @@
     {
       "step": 1,
       "title": "Equipment Assessment",
-      "description": "We verify your equipment's electrical requirements—voltage, amperage, outlet type—and any specific installation requirements from the manufacturer."
+      "description": "We verify your equipment's electrical requirements\u2014voltage, amperage, outlet type\u2014and any specific installation requirements from the manufacturer."
     },
     {
       "step": 2,
@@ -86,7 +86,7 @@
     },
     {
       "title": "Code Compliance",
-      "description": "240V installations have specific code requirements—proper outlet types, grounding, and sometimes GFCI protection. Professional installation meets all requirements.",
+      "description": "240V installations have specific code requirements\u2014proper outlet types, grounding, and sometimes GFCI protection. Professional installation meets all requirements.",
       "icon": "FileCheck"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Future Flexibility",
-      "description": "We install to proper specifications so you can change equipment in the future without rewiring—a NEMA 14-50 today works for EV chargers tomorrow.",
+      "description": "We install to proper specifications so you can change equipment in the future without rewiring\u2014a NEMA 14-50 today works for EV chargers tomorrow.",
       "icon": "TrendingUp"
     }
   ],
@@ -133,7 +133,7 @@
     },
     {
       "question": "How far can 240V outlets be from the panel?",
-      "answer": "Distance affects wire gauge requirements—longer runs require heavier wire to prevent voltage drop. We calculate proper wire sizes for your specific installation, ensuring full voltage reaches your equipment regardless of distance from the panel."
+      "answer": "Distance affects wire gauge requirements\u2014longer runs require heavier wire to prevent voltage drop. We calculate proper wire sizes for your specific installation, ensuring full voltage reaches your equipment regardless of distance from the panel."
     },
     {
       "question": "Do 240V circuits need GFCI protection?",
@@ -141,11 +141,11 @@
     },
     {
       "question": "Can I convert a gas dryer connection to electric?",
-      "answer": "You'll need a new electrical circuit—there's no way to convert existing gas piping to electrical. We install the 240V, 30-amp circuit required for electric dryers, including proper outlet placement where your dryer will be located."
+      "answer": "You'll need a new electrical circuit\u2014there's no way to convert existing gas piping to electrical. We install the 240V, 30-amp circuit required for electric dryers, including proper outlet placement where your dryer will be located."
     },
     {
       "question": "What if I have an old 3-prong dryer outlet?",
-      "answer": "Older 3-prong dryer outlets (NEMA 10-30) lack a ground wire—a safety concern. Modern dryers require 4-prong outlets (NEMA 14-30) with separate neutral and ground. We can upgrade your outlet and circuit to current standards."
+      "answer": "Older 3-prong dryer outlets (NEMA 10-30) lack a ground wire\u2014a safety concern. Modern dryers require 4-prong outlets (NEMA 14-30) with separate neutral and ground. We can upgrade your outlet and circuit to current standards."
     },
     {
       "question": "Can you install 240V in a detached garage or workshop?",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric installs 240V circuits throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single appliance circuits to complete workshop electrical systems, we provide the 240V power your equipment demands."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "240V Outlet Installation service provided by licensed electricians in South Florida"
 }

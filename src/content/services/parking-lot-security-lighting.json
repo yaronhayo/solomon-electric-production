@@ -1,10 +1,10 @@
 {
   "name": "Parking Lot & Security Lighting",
   "slug": "parking-lot-security-lighting",
-  "description": "Well-lit parking lots protect your customers, employees, and property while reducing liability exposure. Solomon Electric designs and installs commercial parking lot lighting throughout South Florida—pole lights, wall packs, security lighting, and complete lighting systems that meet safety requirements while controlling energy costs with LED technology.",
+  "description": "Well-lit parking lots protect your customers, employees, and property while reducing liability exposure. Solomon Electric designs and installs commercial parking lot lighting throughout South Florida\u2014pole lights, wall packs, security lighting, and complete lighting systems that meet safety requirements while controlling energy costs with LED technology.",
   "shortDescription": "Commercial parking area lighting",
   "icon": "Lightbulb",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Commercial & Inspections",
   "order": 60,
   "features": [
@@ -54,17 +54,17 @@
     {
       "step": 1,
       "title": "Site Assessment",
-      "description": "We evaluate your lot layout, existing infrastructure, and lighting needs—identifying dark areas and opportunities for improvement."
+      "description": "We evaluate your lot layout, existing infrastructure, and lighting needs\u2014identifying dark areas and opportunities for improvement."
     },
     {
       "step": 2,
       "title": "Lighting Design",
-      "description": "We design appropriate lighting levels across your property—meeting IES recommendations while avoiding light pollution to neighbors."
+      "description": "We design appropriate lighting levels across your property\u2014meeting IES recommendations while avoiding light pollution to neighbors."
     },
     {
       "step": 3,
       "title": "Product Selection",
-      "description": "We recommend appropriate fixtures—LED pole lights, wall packs, and controls—matched to your needs and budget."
+      "description": "We recommend appropriate fixtures\u2014LED pole lights, wall packs, and controls\u2014matched to your needs and budget."
     },
     {
       "step": 4,
@@ -125,7 +125,7 @@
     },
     {
       "question": "What light level should a parking lot have?",
-      "answer": "IES recommends 1-5 foot-candles for parking areas, with higher levels (5-10 fc) near entrances and pedestrian paths. We design to appropriate levels for your use—higher for high-crime areas or evening-primary businesses."
+      "answer": "IES recommends 1-5 foot-candles for parking areas, with higher levels (5-10 fc) near entrances and pedestrian paths. We design to appropriate levels for your use\u2014higher for high-crime areas or evening-primary businesses."
     },
     {
       "question": "Should we retrofit existing fixtures or replace poles?",
@@ -133,23 +133,23 @@
     },
     {
       "question": "How should parking lot lights be controlled?",
-      "answer": "Photocells (dusk-to-dawn) are standard—lights automatically activate at dusk. Timer overrides can turn lights off late at night if the lot is closed. Some systems include motion dimming—lights dim when the lot is empty, brighten with activity."
+      "answer": "Photocells (dusk-to-dawn) are standard\u2014lights automatically activate at dusk. Timer overrides can turn lights off late at night if the lot is closed. Some systems include motion dimming\u2014lights dim when the lot is empty, brighten with activity."
     },
     {
       "question": "What about light pollution to neighbors?",
-      "answer": "Modern fixtures include optics that direct light downward rather than outward. We select and aim fixtures to light your lot while minimizing spill to adjacent properties—important for good neighbor relations and some zoning requirements."
+      "answer": "Modern fixtures include optics that direct light downward rather than outward. We select and aim fixtures to light your lot while minimizing spill to adjacent properties\u2014important for good neighbor relations and some zoning requirements."
     },
     {
       "question": "How long does installation take?",
-      "answer": "Retrofit projects converting existing poles to LED can often complete in 1-2 days. New installations with new poles take longer—typically 1-2 weeks depending on lot size. We schedule to minimize disruption to your operations."
+      "answer": "Retrofit projects converting existing poles to LED can often complete in 1-2 days. New installations with new poles take longer\u2014typically 1-2 weeks depending on lot size. We schedule to minimize disruption to your operations."
     },
     {
       "question": "Do you provide maintenance after installation?",
-      "answer": "Yes. We offer maintenance programs for commercial lighting—periodic inspection, cleaning, and rapid response for any failures. LEDs fail rarely, but when fixtures or controls need attention, we respond quickly."
+      "answer": "Yes. We offer maintenance programs for commercial lighting\u2014periodic inspection, cleaning, and rapid response for any failures. LEDs fail rarely, but when fixtures or controls need attention, we respond quickly."
     },
     {
       "question": "Are there utility incentives for LED parking lights?",
-      "answer": "FPL offers rebates for commercial LED lighting retrofits. Incentives vary by fixture type and efficiency. We identify applicable incentives during project planning—often covering 20-30% of upgrade costs."
+      "answer": "FPL offers rebates for commercial LED lighting retrofits. Incentives vary by fixture type and efficiency. We identify applicable incentives during project planning\u2014often covering 20-30% of upgrade costs."
     }
   ],
   "relatedServices": [
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Parking Lot Lighting Installation in South Florida",
-      "body": "Well-lit parking lots protect your customers, employees, and property. Solomon Electric designs and installs commercial parking lot lighting throughout Miami-Dade and Broward counties—LED pole lights, wall packs, and complete lighting systems that meet safety requirements while cutting energy costs."
+      "body": "Well-lit parking lots protect your customers, employees, and property. Solomon Electric designs and installs commercial parking lot lighting throughout Miami-Dade and Broward counties\u2014LED pole lights, wall packs, and complete lighting systems that meet safety requirements while cutting energy costs."
     },
     {
       "heading": "LED Parking Lot Retrofit",
@@ -176,5 +176,6 @@
       "body": "Solomon Electric provides parking lot lighting services throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding commercial areas. From small retail lots to large commercial properties, we deliver parking lighting that works."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Parking Lot & Security Lighting service provided by licensed electricians in South Florida"
 }

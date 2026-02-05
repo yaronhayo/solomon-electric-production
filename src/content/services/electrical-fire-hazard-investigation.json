@@ -1,10 +1,10 @@
 {
   "name": "Electrical Fire Hazard Investigation",
   "slug": "electrical-fire-hazard-investigation",
-  "description": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive electrical fire hazard investigation throughout South Florida—identifying conditions that could lead to fires: overloaded circuits, damaged wiring, improper installations, and failing equipment. Proactive investigation prevents fires; reactive investigation follows them.",
+  "description": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive electrical fire hazard investigation throughout South Florida\u2014identifying conditions that could lead to fires: overloaded circuits, damaged wiring, improper installations, and failing equipment. Proactive investigation prevents fires; reactive investigation follows them.",
   "shortDescription": "Identify fire risks before they ignite",
   "icon": "Flame",
-  "image": "../../assets/images/services/emergency.png",
+  "image": "../../assets/images/services/emergency.webp",
   "category": "Emergency Electrical Services",
   "order": 19,
   "features": [
@@ -30,12 +30,12 @@
     },
     {
       "title": "Purchased Home with Concerns",
-      "description": "If you've purchased a home with electrical concerns—old panel, evidence of DIY work—investigation quantifies the risks.",
+      "description": "If you've purchased a home with electrical concerns\u2014old panel, evidence of DIY work\u2014investigation quantifies the risks.",
       "icon": "AlertTriangle"
     },
     {
       "title": "Unexplained Electrical Symptoms",
-      "description": "Flickering lights, warm outlets, intermittent problems—these symptoms may indicate fire hazards requiring investigation.",
+      "description": "Flickering lights, warm outlets, intermittent problems\u2014these symptoms may indicate fire hazards requiring investigation.",
       "icon": "Zap"
     },
     {
@@ -64,7 +64,7 @@
     {
       "step": 3,
       "title": "Thermal Inspection",
-      "description": "We use thermal imaging to identify hot spots indicating overheating—in panels, at outlets, and in accessible wiring areas."
+      "description": "We use thermal imaging to identify hot spots indicating overheating\u2014in panels, at outlets, and in accessible wiring areas."
     },
     {
       "step": 4,
@@ -96,7 +96,7 @@
     },
     {
       "title": "Clear Path Forward",
-      "description": "You'll know exactly what hazards exist and what's needed to resolve them—no more wondering or worrying.",
+      "description": "You'll know exactly what hazards exist and what's needed to resolve them\u2014no more wondering or worrying.",
       "icon": "Home"
     }
   ],
@@ -125,7 +125,7 @@
     },
     {
       "question": "How common are electrical fires?",
-      "answer": "Electrical problems cause approximately 47,000 home fires annually in the US, resulting in hundreds of deaths. Most are preventable—caused by conditions that proper inspection could identify and remediate."
+      "answer": "Electrical problems cause approximately 47,000 home fires annually in the US, resulting in hundreds of deaths. Most are preventable\u2014caused by conditions that proper inspection could identify and remediate."
     },
     {
       "question": "What's a thermal imaging inspection?",
@@ -137,7 +137,7 @@
     },
     {
       "question": "What about aluminum wiring?",
-      "answer": "Aluminum branch circuit wiring (1965-1975 era) presents fire risks at connections—aluminum expands/contracts differently than the copper/brass fittings it connects to. It doesn't require removal, but connections need proper treatment or replacement."
+      "answer": "Aluminum branch circuit wiring (1965-1975 era) presents fire risks at connections\u2014aluminum expands/contracts differently than the copper/brass fittings it connects to. It doesn't require removal, but connections need proper treatment or replacement."
     },
     {
       "question": "Can DIY electrical work cause fires?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "What if you find serious hazards?",
-      "answer": "We'll explain the severity and recommend actions—potentially shutting off specific circuits until repairs are complete. For hazards, we provide repair availability based on the urgency of the situation. Safety is the priority."
+      "answer": "We'll explain the severity and recommend actions\u2014potentially shutting off specific circuits until repairs are complete. For hazards, we provide repair availability based on the urgency of the situation. Safety is the priority."
     },
     {
       "question": "Does investigation damage walls or finishes?",
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Electrical Fire Hazard Investigation in South Florida",
-      "body": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive fire hazard investigation throughout Miami-Dade and Broward counties—identifying overloaded circuits, damaged wiring, and failing equipment before they cause fires."
+      "body": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive fire hazard investigation throughout Miami-Dade and Broward counties\u2014identifying overloaded circuits, damaged wiring, and failing equipment before they cause fires."
     },
     {
       "heading": "Thermal Imaging for Hidden Hazards",
@@ -169,12 +169,13 @@
     },
     {
       "heading": "Proactive Prevention",
-      "body": "Electrical fires are largely preventable. Conditions that cause fires—loose connections, overloaded circuits, degraded wiring—can be identified and corrected before ignition. Proactive investigation is far better than reactive fire response."
+      "body": "Electrical fires are largely preventable. Conditions that cause fires\u2014loose connections, overloaded circuits, degraded wiring\u2014can be identified and corrected before ignition. Proactive investigation is far better than reactive fire response."
     },
     {
       "heading": "Protecting South Florida Homes",
       "body": "Solomon Electric provides electrical fire hazard investigation throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Know your risks. Address hazards. Protect your family and home."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Electrical Fire Hazard Investigation service provided by licensed electricians in South Florida"
 }

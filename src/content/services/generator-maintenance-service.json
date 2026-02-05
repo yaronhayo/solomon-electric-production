@@ -1,10 +1,10 @@
 {
   "name": "Generator Maintenance Service",
   "slug": "generator-maintenance-service",
-  "description": "Your backup generator only works if it's maintained. When the power goes out isn't the time to discover maintenance issues. Solomon Electric provides comprehensive generator maintenance services throughout South Florida—keeping your standby generator ready to protect your home when hurricanes and outages strike.",
+  "description": "Your backup generator only works if it's maintained. When the power goes out isn't the time to discover maintenance issues. Solomon Electric provides comprehensive generator maintenance services throughout South Florida\u2014keeping your standby generator ready to protect your home when hurricanes and outages strike.",
   "shortDescription": "Keep your generator ready",
   "icon": "Shield",
-  "image": "../../assets/images/services/panel-work.png",
+  "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
   "order": 14,
   "features": [
@@ -20,7 +20,7 @@
   "problems": [
     {
       "title": "Hasn't Been Serviced Annually",
-      "description": "Generators need annual maintenance—oil change, filter replacement, battery check. Skipping maintenance invites failure when you need power.",
+      "description": "Generators need annual maintenance\u2014oil change, filter replacement, battery check. Skipping maintenance invites failure when you need power.",
       "icon": "AlertTriangle"
     },
     {
@@ -35,12 +35,12 @@
     },
     {
       "title": "Fuel Problems",
-      "description": "Fuel systems can develop issues—clogged filters, stale fuel (propane excepted), water contamination. Regular service prevents fuel-related failures.",
+      "description": "Fuel systems can develop issues\u2014clogged filters, stale fuel (propane excepted), water contamination. Regular service prevents fuel-related failures.",
       "icon": "Flame"
     },
     {
       "title": "Transfer Switch Not Tested",
-      "description": "The transfer switch is critical—if it fails, your generator can't power your home. Annual testing verifies proper operation.",
+      "description": "The transfer switch is critical\u2014if it fails, your generator can't power your home. Annual testing verifies proper operation.",
       "icon": "Shield"
     },
     {
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Oil and Filter Service",
-      "description": "We change oil and filters according to manufacturer specifications—essential for long engine life and reliable operation."
+      "description": "We change oil and filters according to manufacturer specifications\u2014essential for long engine life and reliable operation."
     },
     {
       "step": 3,
@@ -74,7 +74,7 @@
     {
       "step": 5,
       "title": "Documentation",
-      "description": "We provide a service report documenting work performed and any recommendations—important for warranty and maintenance records."
+      "description": "We provide a service report documenting work performed and any recommendations\u2014important for warranty and maintenance records."
     }
   ],
   "benefitsHeading": "Benefits of Regular Generator Maintenance",
@@ -137,7 +137,7 @@
     },
     {
       "question": "Do I need to change the oil if my generator rarely runs?",
-      "answer": "Yes—annual oil changes are recommended regardless of runtime. Oil degrades over time even when not running. Contaminants from combustion accumulate during exercise runs. Fresh oil protects the engine whether it runs 10 hours or 100."
+      "answer": "Yes\u2014annual oil changes are recommended regardless of runtime. Oil degrades over time even when not running. Contaminants from combustion accumulate during exercise runs. Fresh oil protects the engine whether it runs 10 hours or 100."
     },
     {
       "question": "What's load bank testing?",
@@ -161,22 +161,23 @@
   "seoContent": [
     {
       "heading": "Generator Maintenance Service in South Florida",
-      "body": "Your backup generator only works if it's maintained. Solomon Electric provides comprehensive generator maintenance throughout Miami-Dade and Broward counties—keeping your standby generator ready to protect your home when hurricanes and outages strike."
+      "body": "Your backup generator only works if it's maintained. Solomon Electric provides comprehensive generator maintenance throughout Miami-Dade and Broward counties\u2014keeping your standby generator ready to protect your home when hurricanes and outages strike."
     },
     {
       "heading": "Annual Generator Service",
-      "body": "Generators need annual maintenance including oil and filter changes, battery testing, fuel system service, and operational verification. Regular service prevents the failures that occur with neglected generators—don't wait until an outage to discover problems."
+      "body": "Generators need annual maintenance including oil and filter changes, battery testing, fuel system service, and operational verification. Regular service prevents the failures that occur with neglected generators\u2014don't wait until an outage to discover problems."
     },
     {
       "heading": "Pre-Hurricane Season Maintenance",
-      "body": "Schedule generator maintenance before hurricane season—not during. Spring service ensures your generator is ready when you need it. When storms threaten, everyone calls for service and availability becomes limited."
+      "body": "Schedule generator maintenance before hurricane season\u2014not during. Spring service ensures your generator is ready when you need it. When storms threaten, everyone calls for service and availability becomes limited."
     },
     {
       "heading": "Serving South Florida Generator Owners",
-      "body": "Solomon Electric provides generator maintenance throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Keep your backup power ready—schedule your annual maintenance today."
+      "body": "Solomon Electric provides generator maintenance throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Keep your backup power ready\u2014schedule your annual maintenance today."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
-  ]
+  ],
+  "imageAlt": "Generator Maintenance Service service provided by licensed electricians in South Florida"
 }

@@ -2,9 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import heroImage from "../assets/images/heroes/homepage.png"; // Updated hero image
-import customerInteractionImage from "../assets/images/enhancements/customer-interaction.png";
-import trustBgImage from "../assets/images/enhancements/trust-bg.png";
+import { IMAGES } from "../config/images";
+const heroImage = IMAGES.heroes.homepage;
+const customerInteractionImage = IMAGES.site.customerInteraction;
+const trustBgImage = IMAGES.site.trustBg;
 import ReviewCarousel from "../components/ReviewCarousel.astro";
 import FAQAccordion from "../components/FAQAccordion.astro";
 import LatestBlogPosts from "../components/LatestBlogPosts.astro";
@@ -55,7 +56,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 
 <Layout
     title="Electrician Miami | 24/7 Licensed Electrical Services | Solomon Electric"
-    description="Top-rated electrician in Miami, Fort Lauderdale & South Florida. 24/7 emergency service, panel upgrades, EV charger installation. Licensed #EC13012419. Call (786) 833-9211!"
+    description={`Top-rated electrician in Miami, Fort Lauderdale & South Florida. 24/7 emergency service, panel upgrades, EV charger installation. Licensed #${SITE_CONFIG.credentials.license.number}. Call ${SITE_CONFIG.contact.phone.formatted}!`}
     ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
     ogImageAlt="Solomon Electric - Licensed Miami Electricians providing 24/7 emergency electrical services"
 >
@@ -70,8 +71,8 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
     <!-- Hero Section -->
     <PageHero
         title="Miami's #1 Licensed Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>24/7 Emergency & Repair Services</span>"
-        subtitle="Licensed #EC13012419 • Miami-Dade • Broward • Palm Beach"
-        description="Flickering lights, tripping breakers, or sparking outlets aren't just annoying—they're safety hazards. Since 2008, over 19,400 South Florida homes and businesses have trusted Solomon Electric to fix electrical problems fast. Our licensed electricians arrive same-day, diagnose issues accurately, and repair them right the first time."
+        subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} • Miami-Dade • Broward • Palm Beach`}
+        description={`Flickering lights, tripping breakers, or sparking outlets aren't just annoying—they're safety hazards. Since ${SITE_CONFIG.company.foundedYear}, over ${SITE_CONFIG.stats.totalProjects} South Florida homes and businesses have trusted Solomon Electric to fix electrical problems fast. Our licensed electricians arrive same-day, diagnose issues accurately, and repair them right the first time.`}
         image={heroImage}
         trustIndicators={true}
         showScrollIndicator={true}
@@ -98,8 +99,8 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
         <h2 id="trust-heading" class="sr-only">Why Trust Solomon Electric</h2>
         <div class="absolute inset-0 z-0">
             <Image
-                src={trustBgImage}
-                alt="Licensed electrician installing electrical panel in Miami home"
+                src={trustBgImage.src}
+                alt={trustBgImage.alt}
                 class="w-full h-full object-cover opacity-5"
                 loading="lazy"
                 widths={[400, 800, 1200]}
@@ -266,7 +267,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 style="margin-bottom: var(--spacing-3xl);"
             >
                 <p
-                    class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                    class="text-primary font-bold text-lg tracking-[0.2em] uppercase font-secondary"
                     style="margin-bottom: var(--spacing-md);"
                 >
                     Professional Electrical Services Miami
@@ -275,7 +276,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     id="services-heading"
                     class="text-3xl md:text-5xl font-black text-primary uppercase"
                 >
-                    Panel Upgrades, EV Chargers <span class="text-accent"
+                    Panel Upgrades, EV Chargers <span class="text-primary"
                         >& More</span
                     >
                 </h2>
@@ -297,8 +298,8 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                             >
                                 {/* Background Image */}
                                 <Image
-                                    src={bgImage}
-                                    alt={`${service.name} service in Miami - Solomon Electric`}
+                                    src={bgImage.src}
+                                    alt={bgImage.alt}
                                     width={600}
                                     height={450}
                                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -378,8 +379,8 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     >
                     </div>
                     <Image
-                        src={customerInteractionImage}
-                        alt="Solomon Electric technician consulting with Miami homeowner about electrical panel upgrade"
+                        src={customerInteractionImage.src}
+                        alt={customerInteractionImage.alt}
                         class="relative z-10 w-full shadow-[var(--shadow-xl)] rounded-[var(--radius-2xl)] grayscale hover:grayscale-0 transition-all duration-[var(--transition-slow)]"
                         loading="lazy"
                         widths={[400, 600, 800]}
@@ -389,7 +390,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 <!-- Right: Content -->
                 <div class="order-1 md:order-2">
                     <p
-                        class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                        class="text-primary font-bold text-lg tracking-[0.2em] uppercase font-secondary"
                         style="margin-bottom: var(--spacing-md);"
                     >
                         Why Choose Solomon Electric
@@ -400,18 +401,21 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         style="margin-bottom: var(--spacing-xl);"
                     >
                         Miami's Trusted<br />
-                        <span class="text-accent">Licensed Electricians</span>
+                        <span class="text-primary">Licensed Electricians</span>
                     </h2>
 
                     <p
                         class="text-[var(--text-body)] leading-relaxed text-lg font-medium"
                         style="margin-bottom: var(--spacing-2xl);"
                     >
-                        Since 2008, Solomon Electric has completed over 19,400
-                        residential and commercial electrical projects across
-                        Miami-Dade, Broward, and Palm Beach counties. From
-                        emergency repairs to complete panel upgrades, our
-                        Florida-licensed electricians (License #EC13012419)
+                        Since {SITE_CONFIG.company.foundedYear}, Solomon
+                        Electric has completed over {
+                            SITE_CONFIG.stats.totalProjects
+                        }
+                        residential and commercial electrical projects across Miami-Dade,
+                        Broward, and Palm Beach counties. From emergency repairs to
+                        complete panel upgrades, our Florida-licensed electricians
+                        (License #{SITE_CONFIG.credentials.license.number})
                         deliver code-compliant work with same-day service
                         availability.
                     </p>
@@ -614,7 +618,9 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 <h2
                     class="text-3xl md:text-5xl font-black text-white uppercase"
                 >
-                    19,400+ Projects <span class="text-accent">Completed</span>
+                    {SITE_CONFIG.stats.totalProjects}+ Projects <span
+                        class="text-accent">Completed</span
+                    >
                 </h2>
             </div>
 

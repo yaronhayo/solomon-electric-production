@@ -53,9 +53,11 @@ const topServiceAreas = [
                 <!-- Left: Logo -->
                 <a href="/" class="block w-full max-w-[220px]">
                     <Image
-                        src={logoImage}
-                        alt="Solomon Electric - Licensed Miami Electricians Since 2008"
+                        src={logoImage.src}
+                        alt={logoImage.alt}
                         class="w-full h-auto"
+                        loading="eager"
+                        fetchpriority="high"
                     />
                 </a>
 
@@ -185,9 +187,10 @@ const topServiceAreas = [
             <div class="flex lg:hidden items-center justify-between">
                 <a href="/" class="block w-32 md:w-40 flex-shrink-0">
                     <Image
-                        src={logoImage}
-                        alt="Solomon Electric - Licensed Miami Electricians Since 2008"
+                        src={logoImage.src}
+                        alt={logoImage.alt}
                         class="w-full h-auto"
+                        loading="eager"
                     />
                 </a>
                 <button
@@ -205,7 +208,7 @@ const topServiceAreas = [
 <!-- Mobile Menu Overlay (for phones and tablets) -->
 <div
     id="mobile-menu"
-    class="fixed inset-y-0 right-0 w-full max-w-[400px] bg-gradient-to-br from-[#0e4380] via-[#0a3a6e] to-[#082a50] z-[var(--z-modal)] transform translate-x-full transition-all duration-300 ease-out lg:hidden flex flex-col shadow-2xl overflow-y-auto backdrop-blur-sm"
+    class="fixed inset-y-0 right-0 w-full max-w-[400px] bg-gradient-to-br from-primary via-[var(--color-primary-dark)] to-[var(--color-primary-dark)] z-[var(--z-modal)] transform translate-x-full transition-all duration-300 ease-out lg:hidden flex flex-col shadow-2xl overflow-y-auto backdrop-blur-sm"
 >
     <!-- Glass Overlay Effect -->
     <div class="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
@@ -216,9 +219,10 @@ const topServiceAreas = [
     >
         <a href="/" class="transition-transform hover:scale-105">
             <Image
-                src={logoImage}
-                alt="Solomon Electric - Licensed Miami Electricians Since 2008"
+                src={logoImage.src}
+                alt={logoImage.alt}
                 class="h-[60px] w-auto object-contain"
+                loading="eager"
             />
         </a>
         <button

@@ -19,7 +19,29 @@ export default defineConfig({
     format: 'directory'
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      // Enable code-splitting for smaller chunks
+      rollupOptions: {
+        output: {
+          // Split vendor chunks for better caching
+          manualChunks: {
+            'vendor-react': ['react', 'react-dom'],
+          },
+          // Optimize chunk file names for caching
+          chunkFileNames: '_astro/[name].[hash].js',
+          assetFileNames: '_astro/[name].[hash][extname]'
+        }
+      },
+      // Target modern browsers for smaller bundles
+      target: 'esnext',
+      // Enable minification
+      minify: 'esbuild',
+      // CSS code-splitting
+      cssCodeSplit: true,
+      // Inline assets under 4KB
+      assetsInlineLimit: 4096
+    }
   },
   integrations: [
     mdx(), 

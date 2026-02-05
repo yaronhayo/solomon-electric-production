@@ -186,7 +186,7 @@ import { SITE_CONFIG } from "../config/site";
 
         // Update on scroll and resize
         window.addEventListener("scroll", updateCTAPosition, { passive: true });
-        window.addEventListener("resize", updateCTAPosition);
+        window.addEventListener("resize", updateCTAPosition, { passive: true });
 
         // Initial check
         updateCTAPosition();

@@ -4,7 +4,7 @@
   "description": "Professional planning and implementation of home electric vehicle charging systems ensures a reliable and code-compliant installation. Solomon Electric provides complete setup services throughout South Florida, managing the requirements for electrical capacity assessments, hardware selection, and final integration.",
   "shortDescription": "Complete home EV charging infrastructure setup",
   "icon": "Zap",
-  "image": "../../assets/images/services/ev-charging.png",
+  "image": "../../assets/images/services/ev-charging.webp",
   "category": "EV Charging & Solar",
   "order": 53,
   "features": [
@@ -64,7 +64,7 @@
     {
       "step": 3,
       "title": "Hardware Configuration",
-      "description": "Based on technical requirements, the appropriate charging hardware—either hardwired Level 2 or high-amperage outlet—is selected for installation."
+      "description": "Based on technical requirements, the appropriate charging hardware\u2014either hardwired Level 2 or high-amperage outlet\u2014is selected for installation."
     },
     {
       "step": 4,
@@ -160,5 +160,6 @@
       "body": "Evaluations of electrical capacity and hardware compatibility are performed to identify the optimal integration strategy for new electric vehicle owners. All work is conducted in compliance with the National Electrical Code."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Home EV Charging System Setup service provided by licensed electricians in South Florida"
 }

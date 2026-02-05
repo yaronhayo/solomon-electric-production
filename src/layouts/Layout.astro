@@ -9,8 +9,8 @@ import MobileFloatingCTA from "../components/MobileFloatingCTA.astro";
 import ExitIntentPopup from "../components/ExitIntentPopup.astro";
 import { SITE_CONFIG } from "../config/site";
 
-import "@fontsource/manrope";
-import "@fontsource/outfit";
+import "@fontsource/manrope/latin.css";
+import "@fontsource/outfit/latin.css";
 
 import { generateSpeakableSchema } from "../utils/seo";
 
@@ -59,117 +59,126 @@ const speakableSchema = generateSpeakableSchema(
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
-		/>
+	<!-- Critical inline style for instant render + FOUC prevention -->
+	<style>
+		html:not(.css-loaded) body {
+			opacity: 0;
+		}
+		body {
+			margin: 0;
+			min-height: 100vh;
+		}
+		header {
+			min-height: 60px;
+		}
+	</style>
+	<script>
+		document.documentElement.classList.add("css-loaded");
+	</script>
 
-		<!-- Google Tag Manager - Runs in main thread for full tracking capability -->
-		<script is:inline>
-			// Initialize dataLayer BEFORE GTM loads (required for proper tracking)
-			window.dataLayer = window.dataLayer || [];
-			window.dataLayer.push({
-				"gtm.start": new Date().getTime(),
-				event: "gtm.js",
-			});
-		</script>
-		<script
-			async
-			src="https://www.googletagmanager.com/gtm.js?id=GTM-KQQZXTZ6"
-		></script>
+	<meta charset="UTF-8" />
+	<meta name="description" content={description} />
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+	/>
 
-		<!-- Performance: Critical resource hints -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preconnect" href="https://www.googletagmanager.com" />
-		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+	<!-- Google Tag Manager - Immediate load for full tracking -->
+	<script is:inline>
+		// Initialize dataLayer BEFORE GTM loads (required for proper tracking)
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			"gtm.start": new Date().getTime(),
+			event: "gtm.js",
+		});
+	</script>
+	<script
+		async
+		src={`https://www.googletagmanager.com/gtm.js?id=${SITE_CONFIG.seo.tracking.gtm}`}
+	></script>
 
-		<!-- Fonts loaded via @fontsource imports -->
+	<!-- Performance: Critical resource hints -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://www.googletagmanager.com" />
+	<link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-		<!-- Preload critical assets for faster LCP -->
-		<link rel="preload" href="/favicon.png" as="image" type="image/png" />
+	<!-- Fonts loaded via @fontsource imports -->
 
-		<link
-			rel="icon"
-			type="image/png"
-			href="/favicon.png"
-			fetchpriority="high"
-		/>
-		<link rel="manifest" href="/manifest.json" />
-		<meta
-			name="theme-color"
-			content={SITE_CONFIG.company.branding.primary}
-		/>
+	<!-- Preload critical fonts for faster LCP -->
+	<link
+		rel="preload"
+		href="/fonts/LEMONMILK-Regular.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
 
-		<!-- iOS PWA Support -->
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta
-			name="apple-mobile-web-app-status-bar-style"
-			content="black-translucent"
-		/>
-		<meta name="apple-mobile-web-app-title" content="Solomon Electric" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<meta name="theme-color" content={SITE_CONFIG.company.branding.primary} />
 
-		<!-- Mobile App Meta -->
-		<meta name="mobile-web-app-capable" content="yes" />
-		<meta name="format-detection" content="telephone=yes" />
+	<!-- Mobile Meta -->
+	<meta name="format-detection" content="telephone=yes" />
 
-		<meta name="generator" content={Astro.generator} />
+	<meta name="generator" content={Astro.generator} />
 
-		<!-- Canonical URL -->
-		<link rel="canonical" href={canonicalURL} />
+	<!-- Canonical URL -->
+	<link rel="canonical" href={canonicalURL} />
 
-		<!-- Robots -->
-		{noindex && <meta name="robots" content="noindex, nofollow" />}
+	<!-- Robots -->
+	{noindex && <meta name="robots" content="noindex, nofollow" />}
 
-		<title>{title}</title>
+	<title>{title}</title>
 
-		<!-- Speakable Schema for Voice AI -->
-		<script
-			type="application/ld+json"
-			set:html={JSON.stringify(speakableSchema)}
-		/>
+	<!-- Speakable Schema for Voice AI -->
+	<script
+		type="application/ld+json"
+		set:html={JSON.stringify(speakableSchema)}
+	/>
 
-		<!-- Open Graph -->
-		<meta property="og:type" content={ogType} />
-		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content={ogImageURL} />
-		<meta property="og:image:alt" content={ogImageAltText} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:site_name" content="Solomon Electric" />
+	<!-- Open Graph -->
+	<meta property="og:type" content={ogType} />
+	<meta property="og:url" content={canonicalURL} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={ogImageURL} />
+	<meta property="og:image:alt" content={ogImageAltText} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content={SITE_CONFIG.company.name} />
 
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@solomonelectric" />
-		<meta name="twitter:creator" content="@solomonelectric" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={ogImageURL} />
-		<meta name="twitter:image:alt" content={ogImageAltText} />
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@solomonelectric" />
+	<meta name="twitter:creator" content="@solomonelectric" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={ogImageURL} />
+	<meta name="twitter:image:alt" content={ogImageAltText} />
 
-		<!-- Local Business Info (for rich snippets) -->
-		<meta name="geo.region" content="US-FL" />
-		<meta name="geo.placename" content="Miami" />
-		<meta name="geo.position" content="25.7617;-80.1918" />
-		<meta name="ICBM" content="25.7617, -80.1918" />
+	<!-- Local Business Info (for rich snippets) -->
+	<meta name="geo.region" content="US-FL" />
+	<meta name="geo.placename" content={SITE_CONFIG.contact.address.city} />
+	<meta
+		name="geo.position"
+		content={`${SITE_CONFIG.seo.schema.latitude};${SITE_CONFIG.seo.schema.longitude}`}
+	/>
+	<meta
+		name="ICBM"
+		content={`${SITE_CONFIG.seo.schema.latitude}, ${SITE_CONFIG.seo.schema.longitude}`}
+	/>
 
-		<!-- Allow additional head content via slots -->
-		<slot name="head" />
-	</head>
+	<!-- Allow additional head content via slots -->
+	<slot name="head" />
+
 	<body
 		class="bg-[var(--bg-body)] text-[var(--text-primary)] flex flex-col min-h-screen font-body selection:bg-[var(--bg-accent)] selection:text-[var(--text-inverse)]"
 	>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript
 			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-KQQZXTZ6"
+				src={`https://www.googletagmanager.com/ns.html?id=${SITE_CONFIG.seo.tracking.gtm}`}
 				height="0"
 				width="0"
 				style="display:none;visibility:hidden"></iframe></noscript

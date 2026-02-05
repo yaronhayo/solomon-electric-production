@@ -11,6 +11,96 @@ ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
 
 # ==============================================================================
+# 301 REDIRECTS - Fix GSC 404 Errors
+# Updated: 2026-02-04
+# ==============================================================================
+
+# --- Legacy Page Redirects ---
+Redirect 301 /home/ /
+Redirect 301 /home-2-2/ /
+Redirect 301 /book-service /book/
+Redirect 301 /book-service/ /book/
+Redirect 301 /about-us/ /about/
+Redirect 301 /site-map/ /sitemap-index.xml
+Redirect 301 /reviews/ /about/#reviews
+Redirect 301 /category/services/ /services/
+
+# --- Service URL Consolidations ---
+Redirect 301 /ceiling-fan-installation/ /services/ceiling-fan-installation/
+Redirect 301 /services/microwave-installation/ /services/appliance-circuit-installation/
+Redirect 301 /services/chandelier-installation/ /services/ceiling-fan-light-fixture-installation/
+Redirect 301 /services/pull-wires-underground/ /services/underground-electrical-lines/
+Redirect 301 /services/electrical-installation/ /services/
+Redirect 301 /services/outlet-switch-installation/ /services/outlet-installation/
+Redirect 301 /services/smoke-detectors-installation/ /services/smoke-carbon-monoxide-detector-installation/
+Redirect 301 /services/hot-tub-spa-installation /services/hot-tub-wiring/
+
+# --- Additional Service Consolidation Redirects (Feb 2026) ---
+Redirect 301 /services/tesla-charger-installation/ /services/level-2-ev-charger-installation/
+Redirect 301 /services/electrical-repair/ /services/24-7-emergency-electrical-service/
+Redirect 301 /services/sensor-light-installation/ /services/motion-sensor-dimmer-installation/
+Redirect 301 /services/outlet-switch-relocation/ /services/new-outlet-installation-repair/
+Redirect 301 /services/panel-repair/ /services/panel-repair-circuit-breaker-replacement/
+Redirect 301 /services/ceiling-fan-installation/ /services/ceiling-fan-light-fixture-installation/
+Redirect 301 /services/outlet-switch-repair/ /services/new-outlet-installation-repair/
+Redirect 301 /services/light-fixture-installation/ /services/ceiling-fan-light-fixture-installation/
+Redirect 301 /services/wiring-installation/ /services/electrical-wiring-updates-rewiring/
+Redirect 301 /services/outdoor-lighting-installation/ /services/indoor-outdoor-lighting-installation/
+Redirect 301 /services/electrical-inspections/ /services/electrical-safety-inspection/
+Redirect 301 /services/panel-upgrade/ /services/electrical-panel-upgrade-100a-to-200a/
+Redirect 301 /services/emergency-light-installation/ /services/exit-emergency-lighting-systems/
+
+# --- Old Service Area URL Pattern: /electrician-in-X-florida/ → /service-areas/X/ ---
+Redirect 301 /service-areas/electrician-in-miami-florida/ /service-areas/miami/
+Redirect 301 /service-areas/electrician-in-hollywood-florida/ /service-areas/hollywood/
+Redirect 301 /service-areas/electrician-in-north-miami-florida/ /service-areas/north-miami/
+Redirect 301 /service-areas/electrician-in-pembroke-pines-florida/ /service-areas/pembroke-pines/
+Redirect 301 /service-areas/electrician-in-miramar-florida/ /service-areas/miramar/
+Redirect 301 /service-areas/electrician-in-boca-raton-florida/ /service-areas/boca-raton/
+Redirect 301 /service-areas/electrician-in-coral-springs-florida/ /service-areas/coral-springs/
+Redirect 301 /service-areas/electrician-in-delray-beach-florida/ /service-areas/delray-beach/
+Redirect 301 /service-areas/electrician-in-fort-lauderdale-florida/ /service-areas/fort-lauderdale/
+Redirect 301 /service-areas/electrician-in-homestead-florida/ /service-areas/homestead/
+Redirect 301 /service-areas/electrician-in-plantation-florida/ /service-areas/plantation/
+Redirect 301 /service-areas/electrician-in-sunrise-florida/ /service-areas/sunrise/
+Redirect 301 /service-areas/electrician-in-west-palm-beach-florida/ /service-areas/west-palm-beach/
+Redirect 301 /service-areas/electrician-in-weston-florida/ /service-areas/weston/
+# Additional old service-area slugs
+Redirect 301 /service-areas/electrician-in-boynton-beach-florida/ /service-areas/boynton-beach/
+Redirect 301 /service-areas/electrician-in-coconut-creek-florida/ /service-areas/coconut-creek/
+Redirect 301 /service-areas/electrician-in-davie-florida/ /service-areas/davie/
+Redirect 301 /service-areas/electrician-in-deerfield-florida/ /service-areas/deerfield-beach/
+Redirect 301 /service-areas/electrician-in-hialeah-florida/ /service-areas/hialeah/
+Redirect 301 /service-areas/electrician-in-jupiter-florida/ /service-areas/jupiter/
+Redirect 301 /service-areas/electrician-in-lauderhill-florida/ /service-areas/lauderhill/
+Redirect 301 /service-areas/electrician-in-margate-florida/ /service-areas/margate/
+Redirect 301 /service-areas/electrician-in-miami-beach-florida/ /service-areas/miami-beach/
+Redirect 301 /service-areas/electrician-in-miami-gradens-florida/ /service-areas/miami-gardens/
+Redirect 301 /service-areas/electrician-in-pompano-beach-florida/ /service-areas/pompano-beach/
+Redirect 301 /service-areas/electrician-in-tamarac-florida/ /service-areas/tamarac/
+Redirect 301 /service-areas/electrician-in-wellington-florida/ /service-areas/wellington/
+# Catch-all for /electrician-in/ pattern (incomplete URLs)
+Redirect 301 /service-areas/electrician-in/ /service-areas/
+
+# --- Old Blog URL Patterns ---
+Redirect 301 /blog/comprehensive-electrical-installation-services/ /blog/residential-electrical-services-guide/
+Redirect 301 /blog/comprehensive-electrical-safety-inspections/ /blog/electrical-safety-inspection-ultimate-guide/
+Redirect 301 /blog/electrical-panel-modernization-upgrades /blog/electrical-panel-upgrade-guide/
+Redirect 301 /blog/electrical-panel-modernization-upgrades/ /blog/electrical-panel-upgrade-guide/
+# Additional old blog slugs
+Redirect 301 /blog/architectural-lighting-chandelier-installation/ /blog/light-fixture-installation-guide/
+Redirect 301 /blog/expert-electrical-diagnostics-repair/ /blog/electrical-troubleshooting-guide/
+Redirect 301 /blog/intelligent-sensor-security-lighting-systems/ /blog/smart-lighting-installation-guide/
+Redirect 301 /blog/kitchen-appliance-specialty-equipment-wiring/ /blog/appliance-circuit-installation-guide/
+Redirect 301 /blog/life-safety-detection-system-installation/ /blog/smoke-detector-installation-guide/
+Redirect 301 /blog/lighting-fixture-installation/ /blog/light-fixture-installation-guide/
+Redirect 301 /blog/outlet-switch-modernization-services/ /blog/outlet-installation-guide/
+Redirect 301 /blog/pull-wires-underground /blog/underground-electrical-lines-guide/
+Redirect 301 /blog/pull-wires-underground/ /blog/underground-electrical-lines-guide/
+Redirect 301 /blog/rewiring-historic-miami-homes/ /blog/whole-house-rewiring-guide/
+Redirect 301 /blog/tesla-universal-ev-charging-station-installation/ /blog/ev-charger-installation-guide/
+
+# ==============================================================================
 # SITEMAP & XML FILE HANDLING
 # ==============================================================================
 
@@ -76,7 +166,7 @@ RewriteRule ^(.*)$ $1.html [L]
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://scripts.clarity.ms https://www.googleadservices.com https://googleads.g.doubleclick.net https://seo.gettmarketing.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://api.dataforseo.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://seo.gettmarketing.com https://sa.searchatlas.com https://*.searchatlas.com; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.smtp2go.com;"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://scripts.clarity.ms https://www.googleadservices.com https://googleads.g.doubleclick.net https://seo.gettmarketing.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://api.dataforseo.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://seo.gettmarketing.com https://sa.searchatlas.com https://*.searchatlas.com; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.smtp2go.com;"
 </IfModule>
 
 # ==============================================================================

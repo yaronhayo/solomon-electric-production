@@ -1,10 +1,10 @@
 {
   "name": "Smart Thermostat Installation",
   "slug": "smart-thermostat-installation",
-  "description": "Take control of your South Florida cooling costs with professional smart thermostat installation. Smart thermostats like Nest, Ecobee, and Honeywell learn your schedule, adjust automatically, and let you control temperature from anywhere. Solomon Electric ensures proper wiring—including the common wire (C-wire) most smart thermostats need—and complete app setup.",
+  "description": "Take control of your South Florida cooling costs with professional smart thermostat installation. Smart thermostats like Nest, Ecobee, and Honeywell learn your schedule, adjust automatically, and let you control temperature from anywhere. Solomon Electric ensures proper wiring\u2014including the common wire (C-wire) most smart thermostats need\u2014and complete app setup.",
   "shortDescription": "Connected temperature control",
   "icon": "Home",
-  "image": "../../assets/images/services/lighting.png",
+  "image": "../../assets/images/services/lighting.webp",
   "category": "Lighting & Smart Home",
   "order": 25,
   "features": [
@@ -25,7 +25,7 @@
     },
     {
       "title": "Coming Home to a Hot House",
-      "description": "Forget to adjust the thermostat before leaving? Smart thermostats learn your schedule and cool down before you arrive—or control them from your phone.",
+      "description": "Forget to adjust the thermostat before leaving? Smart thermostats learn your schedule and cool down before you arrive\u2014or control them from your phone.",
       "icon": "Home"
     },
     {
@@ -169,12 +169,13 @@
     },
     {
       "heading": "Energy Savings in Florida's Climate",
-      "body": "With AC running 8+ months per year, Florida homeowners see significant returns from smart thermostat efficiency. Learning schedules, remote control, and optimized operation typically reduce HVAC energy use by 10-15%—meaningful savings that add up over Florida's long cooling season."
+      "body": "With AC running 8+ months per year, Florida homeowners see significant returns from smart thermostat efficiency. Learning schedules, remote control, and optimized operation typically reduce HVAC energy use by 10-15%\u2014meaningful savings that add up over Florida's long cooling season."
     },
     {
       "heading": "Expert Installation Throughout South Florida",
       "body": "Solomon Electric installs smart thermostats throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-thermostat installations to multi-zone smart home integration, we deliver professional installation with complete setup and training."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Smart Thermostat Installation service provided by licensed electricians in South Florida"
 }

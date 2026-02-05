@@ -120,7 +120,7 @@ const { items } = Astro.props;
     setHeaderHeight();
 
     // Run on resize (header height may change on mobile)
-    window.addEventListener("resize", setHeaderHeight);
+    window.addEventListener("resize", setHeaderHeight, { passive: true });
 
     // Run on Astro page transitions
     document.addEventListener("astro:page-load", setHeaderHeight);

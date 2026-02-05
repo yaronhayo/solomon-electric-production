@@ -9,7 +9,9 @@ import CityMap from "../../components/CityMap.astro";
 import { SITE_CONFIG } from "../../config/site";
 import { ArrowRight } from "lucide-astro";
 import { getCollection } from "astro:content";
-import heroImage from "../../assets/images/hero.webp";
+import { replacePlaceholder } from "../../utils/content";
+import { IMAGES } from "../../config/images";
+const heroImage = IMAGES.heroes.serviceAreas;
 const allServices = await getCollection("services");
 const sortedServices = [...allServices].sort((a, b) =>
     a.data.name.localeCompare(b.data.name),
@@ -38,7 +40,9 @@ const cityData = area.data;
 
 // SEO - Enhanced for local search
 const title = `Electrician ${cityData.name} FL | 24/7 Licensed Service | Solomon Electric`;
-const description = `Need an electrician in ${cityData.name}? Solomon Electric offers 24/7 emergency repairs, panel upgrades, EV charger installation. Licensed #EC13012419. Call ${SITE_CONFIG.contact.phone.formatted}!`;
+const description = replacePlaceholder(
+    `Need an electrician in ${cityData.name}? Solomon Electric offers 24/7 emergency repairs, panel upgrades, EV charger installation. Licensed #${SITE_CONFIG.credentials.license.number}. Call ${SITE_CONFIG.contact.phone.formatted}!`,
+);
 
 // Schema.org LocalBusiness
 const localBusinessSchema = {
@@ -138,12 +142,31 @@ const breadcrumbSchema = {
         },
     ],
 };
+
+// FAQPage Schema for rich results
+const faqSchema =
+    cityData.faqs && cityData.faqs.length > 0
+        ? {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: cityData.faqs.map(
+                  (faq: { question: string; answer: string }) => ({
+                      "@type": "Question",
+                      name: faq.question,
+                      acceptedAnswer: {
+                          "@type": "Answer",
+                          text: faq.answer,
+                      },
+                  }),
+              ),
+          }
+        : null;
 ---
 
 <Layout
     title={title}
     description={description}
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    ogImage={IMAGES.static.ogDefault}
     ogImageAlt={`Solomon Electric - Professional Electrician serving ${cityData.name}, Florida`}
 >
     <script
@@ -154,6 +177,14 @@ const breadcrumbSchema = {
         type="application/ld+json"
         set:html={JSON.stringify(breadcrumbSchema)}
     />
+    {
+        faqSchema && (
+            <script
+                type="application/ld+json"
+                set:html={JSON.stringify(faqSchema)}
+            />
+        )
+    }
 
     <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb-nav">
@@ -189,8 +220,8 @@ const breadcrumbSchema = {
     <!-- Page Hero -->
     <PageHero
         title={`${cityData.name} Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>24/7 Licensed Service</span>`}
-        subtitle={`Licensed #EC13012419 • ${cityData.county} County • Free Estimates`}
-        description={`Need an electrician in ${cityData.name}, FL? Solomon Electric provides 24/7 emergency repairs, panel upgrades, EV charger installation, and all electrical services. Serving ${cityData.name} since 2008 with 19,400+ projects completed across South Florida.`}
+        subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} • ${cityData.county} County • Free Estimates`}
+        description={`Need an electrician in ${cityData.name}, FL? Solomon Electric provides 24/7 emergency repairs, panel upgrades, EV charger installation, and all electrical services. Serving ${cityData.name} since ${SITE_CONFIG.company.foundedYear} with ${SITE_CONFIG.stats.totalProjects}+ projects completed across South Florida.`}
         image={heroImage}
         trustIndicators={true}
     />
@@ -249,7 +280,9 @@ const breadcrumbSchema = {
                         cityData.seoContent &&
                             cityData.seoContent.length > 0 && (
                                 <p class="overview-text">
-                                    {cityData.seoContent[0].body}
+                                    {replacePlaceholder(
+                                        cityData.seoContent[0].body,
+                                    )}
                                 </p>
                             )
                     }

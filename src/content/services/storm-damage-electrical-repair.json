@@ -4,7 +4,7 @@
   "description": "Severe weather events in South Florida can result in structural damage to residential electrical systems. Solomon Electric provides professional repair services for downed service lines, flooded panels, and compromised service entrances, ensuring all work is performed in coordination with utility providers and insurance standards.",
   "shortDescription": "Post-storm electrical infrastructure repair and recovery",
   "icon": "Zap",
-  "image": "../../assets/images/services/emergency.png",
+  "image": "../../assets/images/services/emergency.webp",
   "category": "Emergency Electrical Services",
   "order": 1,
   "features": [
@@ -13,7 +13,7 @@
     "Coordination with utility providers for service reconnection",
     "Technical evaluation of flood-affected electrical equipment",
     "Documentation of repairs for property insurance records",
-    "Licensed electrical contracting services (#EC13012419)"
+    "Licensed & Insured Florida Experts (#{{LICENSE}})"
   ],
   "warningSignsHeading": "Post-Storm Electrical Hazard Identification",
   "warningSignsSubheading": "After a tropical storm or hurricane, property owners should be aware of potential failures in their electrical infrastructure. These conditions represent serious hazards that require isolation.",
@@ -158,5 +158,6 @@
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
-  ]
+  ],
+  "imageAlt": "Storm Damage Electrical Repair service provided by licensed electricians in South Florida"
 }

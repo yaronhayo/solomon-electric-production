@@ -4,7 +4,7 @@
   "description": "Attract EV drivers to your South Florida business with commercial EV charging infrastructure. Solomon Electric designs and installs commercial charging stations for retail parking, office buildings, hotels, restaurants, and apartment complexes. From single Level 2 chargers to multi-station DC fast charging installations, we deliver the infrastructure that serves your customers and future-proofs your property.",
   "shortDescription": "EV charging for commercial properties",
   "icon": "Zap",
-  "image": "../../assets/images/services/ev-charging.png",
+  "image": "../../assets/images/services/ev-charging.webp",
   "category": "EV Charging & Solar",
   "order": 50,
   "features": [
@@ -40,7 +40,7 @@
     },
     {
       "title": "Sustainability Goals",
-      "description": "EV charging demonstrates environmental commitment—increasingly important for customers, employees, and corporate responsibility programs.",
+      "description": "EV charging demonstrates environmental commitment\u2014increasingly important for customers, employees, and corporate responsibility programs.",
       "icon": "Zap"
     },
     {
@@ -64,7 +64,7 @@
     {
       "step": 3,
       "title": "Incentive Identification",
-      "description": "We identify available utility incentives, state programs, and federal tax credits that reduce your installation cost—often significantly."
+      "description": "We identify available utility incentives, state programs, and federal tax credits that reduce your installation cost\u2014often significantly."
     },
     {
       "step": 4,
@@ -81,12 +81,12 @@
   "benefits": [
     {
       "title": "Revenue Opportunity",
-      "description": "Charging can be free, paid, or subsidized—your choice. Paid charging creates revenue while still attracting customers.",
+      "description": "Charging can be free, paid, or subsidized\u2014your choice. Paid charging creates revenue while still attracting customers.",
       "icon": "TrendingUp"
     },
     {
       "title": "Extended Dwell Time",
-      "description": "EV charging takes time. Customers charging vehicles spend more time—and money—at your location while waiting.",
+      "description": "EV charging takes time. Customers charging vehicles spend more time\u2014and money\u2014at your location while waiting.",
       "icon": "Home"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Brand Enhancement",
-      "description": "Visible EV charging demonstrates environmental commitment and forward-thinking—positive brand associations for your business.",
+      "description": "Visible EV charging demonstrates environmental commitment and forward-thinking\u2014positive brand associations for your business.",
       "icon": "Zap"
     }
   ],
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "What's the difference between Level 2 and DC fast charging?",
-      "answer": "Level 2 charging uses AC power and adds about 25 miles of range per hour—suitable for destinations where cars park 2+ hours (workplaces, hotels, restaurants). DC fast charging adds 100+ miles in 20-30 minutes—suitable for highway locations and quick-stop retail."
+      "answer": "Level 2 charging uses AC power and adds about 25 miles of range per hour\u2014suitable for destinations where cars park 2+ hours (workplaces, hotels, restaurants). DC fast charging adds 100+ miles in 20-30 minutes\u2014suitable for highway locations and quick-stop retail."
     },
     {
       "question": "How many chargers should we install?",
@@ -129,11 +129,11 @@
     },
     {
       "question": "What incentives are available for commercial EV charging?",
-      "answer": "FPL offers commercial EV infrastructure rebates. Federal tax credits may apply. Some municipalities have additional incentives. We identify all available programs during project planning—incentives often cover 30-50% of installation costs."
+      "answer": "FPL offers commercial EV infrastructure rebates. Federal tax credits may apply. Some municipalities have additional incentives. We identify all available programs during project planning\u2014incentives often cover 30-50% of installation costs."
     },
     {
       "question": "Can we charge for EV charging?",
-      "answer": "Yes. Networked chargers can process payments via app or credit card. You set pricing—free, at-cost, or for profit. Payment systems include monthly reporting on usage and revenue. Free charging is also valid for customer attraction."
+      "answer": "Yes. Networked chargers can process payments via app or credit card. You set pricing\u2014free, at-cost, or for profit. Payment systems include monthly reporting on usage and revenue. Free charging is also valid for customer attraction."
     },
     {
       "question": "What if our electrical service can't handle the additional load?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "What brands of chargers do you install?",
-      "answer": "We install all major commercial brands—ChargePoint, Enel X, Blink, EvoCharge, and others. Brand selection depends on your needs: networked vs. non-networked, payment capability, warranty, and monitoring features."
+      "answer": "We install all major commercial brands\u2014ChargePoint, Enel X, Blink, EvoCharge, and others. Brand selection depends on your needs: networked vs. non-networked, payment capability, warranty, and monitoring features."
     }
   ],
   "relatedServices": [
@@ -161,7 +161,7 @@
   "seoContent": [
     {
       "heading": "Commercial EV Charging Installation in South Florida",
-      "body": "Attract EV-driving customers and future-proof your property with commercial EV charging infrastructure from Solomon Electric. We design and install charging solutions for retail, hospitality, office, and multi-family properties throughout Miami-Dade and Broward counties—from single Level 2 stations to multi-charger installations."
+      "body": "Attract EV-driving customers and future-proof your property with commercial EV charging infrastructure from Solomon Electric. We design and install charging solutions for retail, hospitality, office, and multi-family properties throughout Miami-Dade and Broward counties\u2014from single Level 2 stations to multi-charger installations."
     },
     {
       "heading": "Workplace and Office Charging",
@@ -169,12 +169,13 @@
     },
     {
       "heading": "Multi-Family and Apartment Charging",
-      "body": "Residents of apartment communities expect EV charging availability. We design multi-family charging solutions that address the unique challenges of shared parking—load management, billing, and phased expansion as EV adoption grows."
+      "body": "Residents of apartment communities expect EV charging availability. We design multi-family charging solutions that address the unique challenges of shared parking\u2014load management, billing, and phased expansion as EV adoption grows."
     },
     {
       "heading": "Serving South Florida Commercial Properties",
       "body": "Solomon Electric installs commercial EV charging infrastructure throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding areas. From single-charger retail installations to major property-wide deployments, we deliver commercial EV infrastructure."
     }
   ],
-  "relatedBlogPosts": []
+  "relatedBlogPosts": [],
+  "imageAlt": "Commercial EV Charging Infrastructure service provided by licensed electricians in South Florida"
 }

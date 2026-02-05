@@ -236,45 +236,9 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     margin-bottom: var(--spacing-md);
   }
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    padding: var(--spacing-md) var(--spacing-lg);
+  /* Button overrides specific to popup context */
+  .exit-popup-actions .btn {
     border-radius: var(--radius-full);
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all var(--transition-base);
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn-lg {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: 1.1rem;
-  }
-
-  .btn-primary {
-    background: var(--gradient-primary);
-    color: white;
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    border: 2px solid var(--color-accent);
-    color: var(--color-accent);
-  }
-
-  .btn-secondary:hover {
-    background: var(--color-accent);
-    color: white;
   }
 
   .exit-popup-disclaimer {

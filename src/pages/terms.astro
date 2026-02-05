@@ -59,11 +59,13 @@ const lastUpdated = new Date().toLocaleDateString("en-US", {
                 <h2>2. Services</h2>
                 <p>
                     Solomon Electric provides electrical contractor services in
-                    the State of Florida (License EC13012419). All services
-                    provided are subject to a separate service agreement or
-                    contract between you and the Company. Requesting a quote or
-                    service through this Website does not create a binding
-                    contract for services until confirmed by our team.
+                    the State of Florida (License #{
+                        SITE_CONFIG.credentials.license.number
+                    }). All services provided are subject to a separate service
+                    agreement or contract between you and the Company.
+                    Requesting a quote or service through this Website does not
+                    create a binding contract for services until confirmed by
+                    our team.
                 </p>
 
                 <h2>3. Intellectual Property Rights</h2>
