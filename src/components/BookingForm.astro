@@ -12,7 +12,7 @@ const getPrefixedId = (id: string) => `${idPrefix}-${id}`;
 ---
 
 <div
-    class="booking-form-container bg-white/95 backdrop-blur-sm shadow-[0_20px_60px_rgba(var(--color-accent-rgb),0.15)] overflow-hidden relative z-20 border-l-4 border-l-[var(--color-accent)] rounded-[var(--radius-sm)] max-w-[500px] mx-auto lg:mx-0"
+    class="booking-form-container w-full min-w-0 bg-white/95 backdrop-blur-sm shadow-[0_20px_60px_rgba(var(--color-accent-rgb),0.15)] overflow-hidden relative z-20 border-l-4 border-l-[var(--color-accent)] rounded-[var(--radius-sm)] max-w-[500px] mx-auto lg:mx-0"
     data-id-prefix={idPrefix}
     data-gmaps-key={SITE_CONFIG.seo.integrations.googleMaps}
     data-recaptcha-key={SITE_CONFIG.seo.integrations.recaptcha}

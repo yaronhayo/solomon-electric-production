@@ -74,15 +74,17 @@ const {
     </div>
 
     <!-- Hero Content -->
-    <Container class="relative z-10 w-full">
+    <Container class="relative z-10 w-full min-w-0">
         <div
-            class={`grid grid-cols-1 lg:grid-cols-12 items-center gap-[var(--spacing-xl)] ${align === "center" ? "justify-center text-center" : ""}`}
+            class={`grid w-full min-w-0 grid-cols-1 lg:grid-cols-12 items-center gap-[var(--spacing-xl)] ${align === "center" ? "justify-center text-center" : ""}`}
         >
             <!-- Left Column: Text -->
             <div
-                class={Astro.slots.has("visual")
-                    ? "lg:col-span-7"
-                    : "lg:col-span-12 lg:max-w-5xl"}
+                class={`min-w-0 w-full ${
+                    Astro.slots.has("visual")
+                        ? "lg:col-span-7"
+                        : "lg:col-span-12 lg:max-w-5xl"
+                }`}
             >
                 {
                     subtitle && (
@@ -189,7 +191,7 @@ const {
             <!-- Right Column: Visual/Widget -->
             {
                 Astro.slots.has("visual") && (
-                    <div class="lg:col-span-5 relative">
+                    <div class="lg:col-span-5 relative w-full min-w-0">
                         <slot name="visual" />
                     </div>
                 )
