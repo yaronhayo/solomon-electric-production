@@ -1,21 +1,21 @@
 {
   "name": "Storm Damage Electrical Repair",
   "slug": "storm-damage-electrical-repair",
-  "description": "Severe weather events in South Florida can result in structural damage to residential electrical systems. Solomon Electric provides professional repair services for downed service lines, flooded panels, and compromised service entrances, ensuring all work is performed in coordination with utility providers and insurance standards.",
+  "description": "After a hurricane or severe storm, damaged electrical systems pose immediate dangers: downed lines, water-compromised panels, and surge-damaged circuits that may not show visible signs of failure. Severe weather events in South Florida can result in structural damage to residential electrical systems. Solomon Electric's licensed electricians provide professional repair services for downed service lines, flooded panels, and compromised service entrances, ensuring all work is performed in coordination with utility providers and insurance standards. Licensed FL electricians providing emergency storm response across {cityName} and {county} County.",
   "shortDescription": "Post-storm electrical infrastructure repair and recovery",
   "icon": "Zap",
   "image": "../../assets/images/services/emergency.webp",
   "category": "Emergency Electrical Services",
-  "order": 1,
+  "order": 2,
   "features": [
     "Comprehensive post-storm electrical safety inspections",
     "Reconstruction of hurricane-damaged service masts",
     "Coordination with utility providers for service reconnection",
     "Technical evaluation of flood-affected electrical equipment",
     "Documentation of repairs for property insurance records",
-    "Licensed & Insured Florida Experts (#{{LICENSE}})"
+    "Licensed & Insured Florida Experts (#EC13012419)"
   ],
-  "warningSignsHeading": "Post-Storm Electrical Hazard Identification",
+  "warningSignsHeading": "Signs You May Need Storm Damage Electrical Repair",
   "warningSignsSubheading": "After a tropical storm or hurricane, property owners should be aware of potential failures in their electrical infrastructure. These conditions represent serious hazards that require isolation.",
   "problems": [
     {
@@ -49,7 +49,7 @@
       "icon": "Home"
     }
   ],
-  "processHeading": "Storm Recovery Protocol",
+  "processHeading": "How Our Storm Damage Electrical Repair Process Works",
   "process": [
     {
       "step": 1,
@@ -77,7 +77,7 @@
       "description": "A technical report including photographic documentation of the damage and repairs is provided for property insurance documentation."
     }
   ],
-  "benefitsHeading": "Regional Expertise in Storm Recovery",
+  "benefitsHeading": "Why Professional Storm Damage Electrical Repair Matters",
   "benefits": [
     {
       "title": "Code Compliance Expertise",
@@ -138,6 +138,18 @@
     {
       "question": "Are emergency power solutions available during a restoration?",
       "answer": "Transfer switches and interlock kits can be integrated into the panel to allow for the safe use of portable power sources until utility service is restored."
+    },
+    {
+      "question": "Should I turn off my main breaker during a hurricane?",
+      "answer": "If flooding is expected or you evacuate, yes—turn off the main breaker. This prevents damage to your electrical system from surges when power is restored. If you return to standing water near your panel, do not touch it—call a licensed electrician."
+    },
+    {
+      "question": "Does homeowner insurance cover storm electrical damage?",
+      "answer": "Most Florida homeowner policies cover electrical damage from named storms, including panel replacement, rewiring, and service mast repair. We provide detailed damage documentation and repair estimates formatted for insurance claim submission."
+    },
+    {
+      "question": "How soon after a storm can electrical repairs begin?",
+      "answer": "We begin assessments as soon as conditions are safe. Priority goes to homes with immediate safety hazards—downed service lines, water-damaged panels, and exposed wiring. Non-emergency repairs are typically scheduled within 24-48 hours of the storm passing."
     }
   ],
   "relatedServices": [
@@ -149,15 +161,37 @@
   "seoContent": [
     {
       "heading": "Storm and Hurricane Electrical Repair in South Florida",
-      "body": "Professional electrical services are available for the repair of property infrastructure damaged by tropical storms and hurricanes. Technicians manage the requirements for service mast reconstruction and utility coordination throughout Miami-Dade and Broward."
+      "body": "Professional electrical services are available for the repair of property infrastructure damaged by tropical storms and hurricanes. Technicians manage the requirements for service mast reconstruction and utility coordination throughout {county} and Broward. Every emergency call begins with a safety assessment. Our electricians use non-contact voltage testers, thermal imaging cameras, and circuit analyzers to identify the root cause—not just the symptom. We explain what we find in plain language before any work begins."
     },
     {
-      "heading": "Service Entrance Reconstruction for Code Compliance",
-      "body": "Rebuilding residential service masts to meet the latest NEC hurricane-zone requirements is a critical step in storm recovery. Licensed contractors handle the permitting and inspection processes necessary for the safe restoration of electrical power."
+      "heading": "Service Entrance Reconstruction in Miami-Dade & Broward",
+      "body": "Rebuilding residential service masts to meet the latest NEC hurricane-zone requirements is a critical step in storm recovery. Licensed contractors handle the permitting and inspection processes necessary for the safe restoration of electrical power. South Florida's combination of aging infrastructure, lightning exposure, and high humidity creates unique emergency scenarios. Our electricians are trained to handle salt-air corrosion, water intrusion in panels, and surge damage from frequent thunderstorms."
+    },
+    {
+      "heading": "Hurricane Season Electrical Preparedness in Miami",
+      "body": "South Florida's hurricane season runs June through November. Solomon Electric helps homeowners prepare with pre-storm electrical assessments, surge protection installation, generator hookups, and emergency service plans. Being prepared before the storm hits reduces damage and speeds recovery. We stock our service vehicles with the most commonly needed parts—breakers, GFCI outlets, wire nuts, connectors, and diagnostic equipment—so most emergency repairs are completed in a single visit without waiting for parts."
+    },
+    {
+      "heading": "Post-Storm Electrical Safety Assessment in South Florida",
+      "body": "After a storm, never assume your electrical system is safe. Water infiltration, wind damage to service masts, and utility surges can create hidden hazards. Our licensed electricians perform thorough post-storm assessments, identify all damage, and coordinate with FPL and your insurance company for a complete restoration. After every emergency repair, we provide a written safety assessment and recommend any additional work needed to prevent recurrence. We never upsell unnecessary services, and our upfront pricing means no surprises on your bill."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
   ],
-  "imageAlt": "Storm Damage Electrical Repair service provided by licensed electricians in South Florida"
+  "imageAlt": "Storm Damage Electrical Repair service provided by licensed electricians in South Florida",
+  "shortName": "Storm Damage Repair",
+  "metaDescription": "Storm damage electrical repair in Miami. Hurricane and weather damage restoration for panels, wiring & meters. Licensed, 24/7 emergency.",
+  "metaTitle": "Storm Damage Repair Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Emergency storm response within 2 hours; full repairs may require 1-3 days",
+    "priceRange": "Storm damage repairs range from $500–$5,000+ depending on extent of damage",
+    "commonBrands": [
+      "Square D",
+      "Eaton",
+      "Generac",
+      "Siemens"
+    ],
+    "permitNote": "Emergency authorization from {county} County for immediate safety work; full permits follow"
+  }
 }

@@ -19,7 +19,7 @@ export const SITE_CONFIG = {
     contact: {
         phone: {
             raw: "7868339211",
-            formatted: "(786) 833-9211",
+            formatted: "(786)\u00A0833\u20119211",
             display: "(786) 833-9211",
             href: "tel:7868339211"
         },
@@ -42,10 +42,9 @@ export const SITE_CONFIG = {
             state: "FL",
             number: "EC13012419",
             display: "FL EC13012419",
-            fullDisplay: "100% Licensed & Insured • Florida License: #EC13012419"
+            fullDisplay: "100% Licensed &amp; Insured • Florida License: #EC13012419"
         },
-        insurance: "Fully Insured",
-        yearsExperience: "15+"
+        yearsExperience: "18+"
     },
 
     social: {
@@ -61,27 +60,13 @@ export const SITE_CONFIG = {
         commercialJobs: "4,500+",
         industrialSystems: "2,000+",
         happyClients: "19,000+",
-        totalReviews: "1,000+",
+        totalReviews: "1,200+",
         averageRating: 4.9,
-        fiveStarPercentage: 98,
-        wouldRecommend: 100
-    },
-
-    hours: {
-        monday: "24 Hours",
-        tuesday: "24 Hours",
-        wednesday: "24 Hours",
-        thursday: "24 Hours",
-        friday: "24 Hours",
-        saturday: "24 Hours",
-        sunday: "24 Hours",
-        emergency: "24/7 Emergency Service",
-        isAlwaysOpen: true 
     },
 
     seo: {
-        defaultTitle: "Electrician Miami-Dade & Broward | 24/7 Emergency Services | Solomon Electric",
-        defaultDescription: "Top-rated licensed electricians serving Miami-Dade & Broward. Residential & commercial repairs, installations, and 24/7 emergency service. Get your free estimate today! ⚡",
+        defaultTitle: "Electrician Miami-Dade &amp; Broward | 24/7 Emergency Services | Solomon Electric",
+        defaultDescription: "Top-rated licensed electricians in Miami-Dade &amp; Broward. Residential &amp; commercial repairs, installations, and 24/7 emergency service. Get your free estimate today!",
         siteUrl: "https://www.247electricianmiami.com",
         tracking: {
             gtm: "GTM-KQQZXTZ6",

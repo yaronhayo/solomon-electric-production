@@ -33,6 +33,24 @@ const { class: className, ...rest } = Astro.props;
             4vw,
             var(--container-padding-md, 2rem)
         );
+
+        /* iOS Safe Area Support */
+        padding-left: max(
+            clamp(
+                var(--container-padding-sm, 1.25rem),
+                4vw,
+                var(--container-padding-md, 2rem)
+            ),
+            env(safe-area-inset-left)
+        );
+        padding-right: max(
+            clamp(
+                var(--container-padding-sm, 1.25rem),
+                4vw,
+                var(--container-padding-md, 2rem)
+            ),
+            env(safe-area-inset-right)
+        );
     }
 
     @media (min-width: 1920px) {

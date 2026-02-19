@@ -1,7 +1,7 @@
 {
   "name": "Generator Maintenance Service",
   "slug": "generator-maintenance-service",
-  "description": "Your backup generator only works if it's maintained. When the power goes out isn't the time to discover maintenance issues. Solomon Electric provides comprehensive generator maintenance services throughout South Florida\u2014keeping your standby generator ready to protect your home when hurricanes and outages strike.",
+  "description": "A generator that hasn't been maintained is a generator that may not start when you need it most. Annual service catches worn spark plugs, degraded oil, corroded batteries, and failed transfer switches before hurricane season. Your backup generator only works if it's maintained. When the power goes out isn't the time to discover maintenance issues. Solomon Electric's licensed electricians provide comprehensive generator maintenance services throughout South Florida—keeping your standby generator ready to protect your home when hurricanes and outages strike. Licensed FL electricians providing annual generator maintenance throughout {cityName} and {county} County.",
   "shortDescription": "Keep your generator ready",
   "icon": "Shield",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,12 +15,12 @@
     "Transfer switch testing",
     "Fuel system service"
   ],
-  "warningSignsHeading": "Signs Your Generator Needs Attention",
+  "warningSignsHeading": "How to Know You Need Professional Generator Maintenance",
   "warningSignsSubheading": "Regular maintenance prevents failures when you need backup power most.",
   "problems": [
     {
       "title": "Hasn't Been Serviced Annually",
-      "description": "Generators need annual maintenance\u2014oil change, filter replacement, battery check. Skipping maintenance invites failure when you need power.",
+      "description": "Generators need annual maintenance—oil change, filter replacement, battery check. Skipping maintenance invites failure when you need power.",
       "icon": "AlertTriangle"
     },
     {
@@ -35,12 +35,12 @@
     },
     {
       "title": "Fuel Problems",
-      "description": "Fuel systems can develop issues\u2014clogged filters, stale fuel (propane excepted), water contamination. Regular service prevents fuel-related failures.",
+      "description": "Fuel systems can develop issues—clogged filters, stale fuel (propane excepted), water contamination. Regular service prevents fuel-related failures.",
       "icon": "Flame"
     },
     {
       "title": "Transfer Switch Not Tested",
-      "description": "The transfer switch is critical\u2014if it fails, your generator can't power your home. Annual testing verifies proper operation.",
+      "description": "The transfer switch is critical—if it fails, your generator can't power your home. Annual testing verifies proper operation.",
       "icon": "Shield"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "Home"
     }
   ],
-  "processHeading": "Our Generator Maintenance Process",
+  "processHeading": "The Professional Generator Maintenance Process",
   "process": [
     {
       "step": 1,
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Oil and Filter Service",
-      "description": "We change oil and filters according to manufacturer specifications\u2014essential for long engine life and reliable operation."
+      "description": "We change oil and filters according to manufacturer specifications—essential for long engine life and reliable operation."
     },
     {
       "step": 3,
@@ -74,10 +74,10 @@
     {
       "step": 5,
       "title": "Documentation",
-      "description": "We provide a service report documenting work performed and any recommendations\u2014important for warranty and maintenance records."
+      "description": "We provide a service report documenting work performed and any recommendations—important for warranty and maintenance records."
     }
   ],
-  "benefitsHeading": "Benefits of Regular Generator Maintenance",
+  "benefitsHeading": "How Generator Maintenance Improves Your Property",
   "benefits": [
     {
       "title": "Reliable When Needed",
@@ -110,7 +110,7 @@
       "label": "Recommended Service"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -137,7 +137,7 @@
     },
     {
       "question": "Do I need to change the oil if my generator rarely runs?",
-      "answer": "Yes\u2014annual oil changes are recommended regardless of runtime. Oil degrades over time even when not running. Contaminants from combustion accumulate during exercise runs. Fresh oil protects the engine whether it runs 10 hours or 100."
+      "answer": "Yes—annual oil changes are recommended regardless of runtime. Oil degrades over time even when not running. Contaminants from combustion accumulate during exercise runs. Fresh oil protects the engine whether it runs 10 hours or 100."
     },
     {
       "question": "What's load bank testing?",
@@ -161,23 +161,37 @@
   "seoContent": [
     {
       "heading": "Generator Maintenance Service in South Florida",
-      "body": "Your backup generator only works if it's maintained. Solomon Electric provides comprehensive generator maintenance throughout Miami-Dade and Broward counties\u2014keeping your standby generator ready to protect your home when hurricanes and outages strike."
+      "body": "Your backup generator only works if it's maintained. Solomon Electric provides comprehensive generator maintenance throughout {county} and Broward counties—keeping your standby generator ready to protect your home when hurricanes and outages strike. Our licensed electricians perform a complete load calculation before any panel work, ensuring your new panel meets current NEC requirements and has room for future expansion. We use copper bus bars, properly torqued connections, and AFCI/GFCI breakers where required by Florida Building Code."
     },
     {
-      "heading": "Annual Generator Service",
-      "body": "Generators need annual maintenance including oil and filter changes, battery testing, fuel system service, and operational verification. Regular service prevents the failures that occur with neglected generators\u2014don't wait until an outage to discover problems."
+      "heading": "Annual Generator Service in Miami & South Florida",
+      "body": "Generators need annual maintenance including oil and filter changes, battery testing, fuel system service, and operational verification. Regular service prevents the failures that occur with neglected generators—don't wait until an outage to discover problems. South Florida's heat and humidity accelerate corrosion inside electrical panels. We inspect for oxidized bus bars, loose connections, and thermal damage that compromise safety. Every panel we install includes proper weather sealing rated for coastal environments."
     },
     {
-      "heading": "Pre-Hurricane Season Maintenance",
-      "body": "Schedule generator maintenance before hurricane season\u2014not during. Spring service ensures your generator is ready when you need it. When storms threaten, everyone calls for service and availability becomes limited."
+      "heading": "Pre-Hurricane Season Generator Maintenance in South Florida",
+      "body": "Schedule generator maintenance before hurricane season—not during. Spring service ensures your generator is ready when you need it. When storms threaten, everyone calls for service and availability becomes limited. Insurance companies increasingly require panel upgrades for policy renewals. Our electricians provide documented before-and-after reports that satisfy insurance requirements, and we coordinate directly with your insurer when needed."
     },
     {
       "heading": "Serving South Florida Generator Owners",
-      "body": "Solomon Electric provides generator maintenance throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Keep your backup power ready\u2014schedule your annual maintenance today."
+      "body": "Solomon Electric provides generator maintenance throughout {cityName}, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Keep your backup power ready—schedule your annual maintenance today. Modern electrical demands—EV chargers, home offices, pool equipment, smart home systems—require more capacity than panels installed even 15 years ago. We future-proof your installation with 20-30% additional capacity beyond your current needs."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
   ],
-  "imageAlt": "Generator Maintenance Service service provided by licensed electricians in South Florida"
+  "imageAlt": "Generator Maintenance Service service provided by licensed electricians in South Florida",
+  "shortName": "Generator Maintenance",
+  "metaDescription": "Generator maintenance service in Miami. Annual tune-ups, load testing & preventive care for standby generators. Licensed, fast scheduling.",
+  "metaTitle": "Generator Maintenance Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Annual maintenance service typically requires 1-2 hours on-site",
+    "priceRange": "Annual generator maintenance ranges from $250–$500 depending on unit size",
+    "commonBrands": [
+      "Generac",
+      "Kohler",
+      "Briggs & Stratton",
+      "Cummins"
+    ],
+    "permitNote": "Routine maintenance does not require permits; component replacements may trigger {county} County permits"
+  }
 }

@@ -3,7 +3,6 @@ import "../styles/global.css";
 import TopBar from "../components/TopBar.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-// PageLoader removed for Core Web Vitals - was blocking LCP element
 import CookieBanner from "../components/CookieBanner.astro";
 import MobileFloatingCTA from "../components/MobileFloatingCTA.astro";
 import ExitIntentPopup from "../components/ExitIntentPopup.astro";
@@ -46,8 +45,11 @@ const {
 const siteUrl = SITE_CONFIG.seo.siteUrl;
 const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).href;
 
-// Default OG image if none provided
-const ogImageURL = ogImage || `${siteUrl}/og-default.jpg`;
+// Ensure OG image is always an absolute URL (social platforms require this)
+const rawOgImage = ogImage || `${siteUrl}/og-default.webp`;
+const ogImageURL = rawOgImage.startsWith("http")
+	? rawOgImage
+	: `${siteUrl}${rawOgImage}`;
 const ogImageAltText = ogImageAlt || title;
 
 // Generate Speakable Schema
@@ -59,121 +61,189 @@ const speakableSchema = generateSpeakableSchema(
 
 <!doctype html>
 <html lang="en">
-	<!-- Critical inline style for instant render + FOUC prevention -->
-	<style>
-		html:not(.css-loaded) body {
-			opacity: 0;
+	<head>
+		<meta charset="UTF-8" />
+		<!-- Critical inline style for instant render + FOUC prevention -->
+		<style>
+			html:not(.css-loaded) body {
+				opacity: 0;
+			}
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				background-color: var(--bg-body);
+				font-family: var(--font-body);
+				color: var(--clr-primary);
+			}
+			header {
+				min-height: 70px;
+				background-color: #fff;
+			}
+			main {
+				flex-grow: 1;
+			}
+			.container-wrapper {
+				width: 100%;
+				max-width: var(--container-max);
+				margin: 0 auto;
+				padding-left: clamp(
+					var(--container-padding-sm),
+					4vw,
+					var(--container-padding-md)
+				);
+				padding-right: clamp(
+					var(--container-padding-sm),
+					4vw,
+					var(--container-padding-md)
+				);
+			}
+			@media (min-width: 1024px) {
+				header {
+					min-height: 100px;
+				}
+			}
+		</style>
+		<script is:inline>
+			// Optimized FOUC prevention using requestAnimationFrame
+			(function () {
+				const setLoaded = () =>
+					document.documentElement.classList.add("css-loaded");
+				if (document.fonts && document.fonts.ready) {
+					document.fonts.ready.then(setLoaded).catch(setLoaded);
+				} else {
+					setLoaded();
+				}
+				// Fail-safe
+				setTimeout(setLoaded, 1000);
+			})();
+		</script>
+
+		<meta name="description" content={description} />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+		/>
+
+		<!-- Google Tag Manager (GTM) - Optimized Loading -->
+		<script id="gtm-init" is:inline>
+			window.dataLayer = window.dataLayer || [];
+		</script>
+		<script
+			async
+			src={`https://www.googletagmanager.com/gtm.js?id=${SITE_CONFIG.seo.tracking.gtm}`}
+			id="gtm-script"></script>
+
+		<!-- Performance: Critical resource hints for faster connection to key domains -->
+		<link rel="preconnect" href="https://www.googletagmanager.com" />
+		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+		<link rel="preconnect" href="https://maps.googleapis.com" />
+		<link rel="dns-prefetch" href="https://maps.gstatic.com" />
+		<link rel="preconnect" href="https://api.smtp2go.com" />
+
+		<!-- Fonts loaded via @fontsource imports -->
+
+		<!-- Preload critical fonts for faster LCP -->
+		<link
+			rel="preload"
+			href="/fonts/LEMONMILK-Regular.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-900-normal.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-400-normal.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<meta
+			name="theme-color"
+			content={SITE_CONFIG.company.branding.primary}
+		/>
+
+		<!-- Mobile Meta -->
+		<meta name="format-detection" content="telephone=yes" />
+
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Robots -->
+		{
+			noindex ? (
+				<meta name="robots" content="noindex, nofollow" />
+			) : (
+				<meta
+					name="robots"
+					content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+				/>
+			)
 		}
-		body {
-			margin: 0;
-			min-height: 100vh;
-		}
-		header {
-			min-height: 60px;
-		}
-	</style>
-	<script>
-		document.documentElement.classList.add("css-loaded");
-	</script>
 
-	<meta charset="UTF-8" />
-	<meta name="description" content={description} />
-	<meta
-		name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
-	/>
+		<title>{title}</title>
 
-	<!-- Google Tag Manager - Immediate load for full tracking -->
-	<script is:inline>
-		// Initialize dataLayer BEFORE GTM loads (required for proper tracking)
-		window.dataLayer = window.dataLayer || [];
-		window.dataLayer.push({
-			"gtm.start": new Date().getTime(),
-			event: "gtm.js",
-		});
-	</script>
-	<script
-		async
-		src={`https://www.googletagmanager.com/gtm.js?id=${SITE_CONFIG.seo.tracking.gtm}`}
-	></script>
+		<!-- Speakable Schema for Voice AI -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify(speakableSchema)}
+		/>
 
-	<!-- Performance: Critical resource hints -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="preconnect" href="https://www.googletagmanager.com" />
-	<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+		<!-- Open Graph -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:alt" content={ogImageAltText} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="en_US" />
+		<meta
+			property="og:site_name"
+			content={SITE_CONFIG.company.name.replace(/&/g, "&amp;")}
+		/>
 
-	<!-- Fonts loaded via @fontsource imports -->
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@solomonelectric" />
+		<meta name="twitter:creator" content="@solomonelectric" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
+		<meta name="twitter:image:alt" content={ogImageAltText} />
 
-	<!-- Preload critical fonts for faster LCP -->
-	<link
-		rel="preload"
-		href="/fonts/LEMONMILK-Regular.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin
-	/>
+		<!-- Local Business Info (for rich snippets) -->
+		<meta name="geo.region" content="US-FL" />
+		<meta name="geo.placename" content={SITE_CONFIG.contact.address.city} />
+		<meta
+			name="geo.position"
+			content={`${SITE_CONFIG.seo.schema.latitude};${SITE_CONFIG.seo.schema.longitude}`}
+		/>
+		<meta
+			name="ICBM"
+			content={`${SITE_CONFIG.seo.schema.latitude}, ${SITE_CONFIG.seo.schema.longitude}`}
+		/>
 
-	<link rel="icon" type="image/png" href="/favicon.png" />
-	<meta name="theme-color" content={SITE_CONFIG.company.branding.primary} />
-
-	<!-- Mobile Meta -->
-	<meta name="format-detection" content="telephone=yes" />
-
-	<meta name="generator" content={Astro.generator} />
-
-	<!-- Canonical URL -->
-	<link rel="canonical" href={canonicalURL} />
-
-	<!-- Robots -->
-	{noindex && <meta name="robots" content="noindex, nofollow" />}
-
-	<title>{title}</title>
-
-	<!-- Speakable Schema for Voice AI -->
-	<script
-		type="application/ld+json"
-		set:html={JSON.stringify(speakableSchema)}
-	/>
-
-	<!-- Open Graph -->
-	<meta property="og:type" content={ogType} />
-	<meta property="og:url" content={canonicalURL} />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:image" content={ogImageURL} />
-	<meta property="og:image:alt" content={ogImageAltText} />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:site_name" content={SITE_CONFIG.company.name} />
-
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@solomonelectric" />
-	<meta name="twitter:creator" content="@solomonelectric" />
-	<meta name="twitter:title" content={title} />
-	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={ogImageURL} />
-	<meta name="twitter:image:alt" content={ogImageAltText} />
-
-	<!-- Local Business Info (for rich snippets) -->
-	<meta name="geo.region" content="US-FL" />
-	<meta name="geo.placename" content={SITE_CONFIG.contact.address.city} />
-	<meta
-		name="geo.position"
-		content={`${SITE_CONFIG.seo.schema.latitude};${SITE_CONFIG.seo.schema.longitude}`}
-	/>
-	<meta
-		name="ICBM"
-		content={`${SITE_CONFIG.seo.schema.latitude}, ${SITE_CONFIG.seo.schema.longitude}`}
-	/>
-
-	<!-- Allow additional head content via slots -->
-	<slot name="head" />
+		<!-- Allow additional head content via slots -->
+		<slot name="head" />
+	</head>
 
 	<body
-		class="bg-[var(--bg-body)] text-[var(--text-primary)] flex flex-col min-h-screen font-body selection:bg-[var(--bg-accent)] selection:text-[var(--text-inverse)]"
+		class="bg-[var(--bg-body)] text-[var(--clr-primary)] flex flex-col min-h-screen font-body selection:bg-[var(--bg-accent)] selection:text-[var(--clr-inverse)]"
 	>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript
@@ -181,7 +251,8 @@ const speakableSchema = generateSpeakableSchema(
 				src={`https://www.googletagmanager.com/ns.html?id=${SITE_CONFIG.seo.tracking.gtm}`}
 				height="0"
 				width="0"
-				style="display:none;visibility:hidden"></iframe></noscript
+				style="display:none;visibility:hidden"
+				title="Google Tag Manager (noscript)"></iframe></noscript
 		>
 		<!-- End Google Tag Manager (noscript) -->
 

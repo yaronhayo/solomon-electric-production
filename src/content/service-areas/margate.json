@@ -54,7 +54,7 @@
     "recessed-lighting-installation",
     "whole-home-surge-protection",
     "ceiling-fan-light-fixture-installation",
-    "gfci-outlet-installation-outdoor-pool"
+    "gfci-outlet-installation-repair"
   ],
   "stats": [
     {
@@ -62,7 +62,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -70,22 +70,22 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "Our Margate home was built in the 1960s\u2014what should we be concerned about?",
-      "answer": "Margate's 1960s homes often have original 100-amp panels (or even fuse boxes), outdated wiring that wasn't designed for modern AC loads, and minimal outlet coverage. Common issues include overloaded circuits, deteriorating insulation in attic wiring, and a lack of GFCI protection near water. We provide honest inspections that identify the most pressing issues\u2014we won't oversell, but we'll tell you what matters."
+      "question": "Our Margate home was built in the 1960s—what should we be concerned about?",
+      "answer": "Margate's 1960s homes often have original 100-amp panels (or even fuse boxes), outdated wiring that wasn't designed for modern AC loads, and minimal outlet coverage. Common issues include overloaded circuits, deteriorating insulation in attic wiring, and a lack of GFCI protection near water. We provide honest inspections that identify the most pressing issues—we won't oversell, but we'll tell you what matters."
     },
     {
-      "question": "We live in Holiday Springs\u2014do you understand senior community needs?",
-      "answer": "Yes, Holiday Springs and similar Margate communities are among our regular service areas. We understand the need for clear communication, professional service, and respectful service. We show up on time, explain everything before starting work, and leave your home clean. Many of our Holiday Springs customers have recommended us to their neighbors\u2014we take that trust seriously."
+      "question": "We live in Holiday Springs—do you understand senior community needs?",
+      "answer": "Yes, Holiday Springs and similar Margate communities are among our regular service areas. We understand the need for clear communication, professional service, and respectful service. We show up on time, explain everything before starting work, and leave your home clean. Many of our Holiday Springs customers have recommended us to their neighbors—we take that trust seriously."
     },
     {
       "question": "Do you work on manufactured or mobile homes in Margate?",
-      "answer": "Yes, we service manufactured homes and understand their specific electrical requirements\u2014smaller panel configurations, aluminum wiring considerations, and space constraints. Whether you need a panel upgrade, outlet additions, or generator installation, we can help."
+      "answer": "Yes, we service manufactured homes and understand their specific electrical requirements—smaller panel configurations, aluminum wiring considerations, and space constraints. Whether you need a panel upgrade, outlet additions, or generator installation, we can help."
     },
     {
       "question": "Is surge protection worth the cost for a Margate home?",
@@ -102,22 +102,23 @@
   ],
   "seoContent": [
     {
-      "heading": "Trusted Margate Electricians \u2013 Your Local Connection",
-      "body": "Margate is a community that lives by its motto 'Together We Make It Great.' It's a city of friendly neighbors and thriving local businesses. Solomon Electric is proud to be a part of that greatness, providing the professional electrical foundation that Margate homes and businesses need to flourish."
+      "heading": "Trusted Margate Electricians – Your Local Connection",
+      "body": "Margate is a community that lives by its motto 'Together We Make It Great.' It's a city of friendly neighbors and thriving local businesses. Solomon Electric is proud to be a part of that greatness, providing the professional electrical foundation that Margate homes and businesses need to flourish. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Margate's Electrical Needs",
-      "body": "Margate homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Margate's needs."
+      "heading": "Expert Electrical Solutions for Margate Properties",
+      "body": "Whether your Margate property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Margate is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Margate Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Margate. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Margate",
+      "body": "From Coral Bay, Margate Estates, Holiday Springs to Palm Lakes, our electricians provide full-service coverage throughout Margate. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Margate properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Reliable Electrical Solutions for Your Margate Home",
-      "body": "Whether you're in the beautiful Coral Bay area or a Business along State Road 7, our licensed team is ready to serve. We provide professional service, clean workmanship, and a dedication to safety that has made us a leader in Broward County's electrical industry for over {{YEARS_EXPERIENCE}} years."
+      "body": "Whether you're in the beautiful Coral Bay area or a Business along State Road 7, our licensed team is ready to serve. We provide professional service, clean workmanship, and a dedication to safety that has made us a leader in Broward County's electrical industry for over 18 years. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Margate. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Margate, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Margate, FL. Panel upgrades, efficiency retrofits, safety inspections & 24/7 emergency repairs. Serving Broward County."
 }

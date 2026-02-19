@@ -1,0 +1,180 @@
+# Solomon Electric - Extended LLM Context File
+# Comprehensive service catalog for AI assistants
+# See /llms.txt for the summary version
+
+> Solomon Electric is a licensed electrical contractor (FL #EC13012419) serving Miami-Dade, Broward, and Palm Beach counties. 24/7 emergency service, 18+ years experience, 1,684 optimized pages.
+
+## Complete Service Catalog (58 Services × 27 Cities = 1,566 Landing Pages)
+
+Each service below is available in all 27 service areas. The URL pattern is:
+https://www.247electricianmiami.com/services/{service-slug}/{city-slug}/
+
+### Emergency & Safety Services
+
+| Service | Slug | Description |
+| :--- | :--- | :--- |
+| 24/7 Emergency Electrical Service | 24-7-emergency-electrical-service | Immediate response for burning smells, visible smoke, power failures |
+| Power Outage Emergency Response | power-outage-emergency-response | Whole-house or partial power loss diagnosis and restoration |
+| Electrical Burning Smell Investigation | electrical-burning-smell-investigation | Urgent investigation of burning plastic or electrical odors |
+| Electrical Fire Hazard Investigation | electrical-fire-hazard-investigation | Safety assessment for homes with original wiring |
+| Sparking Outlet & Circuit Breaker Repair | sparking-outlet-circuit-breaker-repair | Fix dangerous sparking when plugging in devices |
+| Storm Damage Electrical Repair | storm-damage-electrical-repair | Repair compromised service masts, weatherheads after storms |
+
+### Panel, Wiring & Code Compliance
+
+| Service | Slug | Description |
+| :--- | :--- | :--- |
+| Electrical Panel Upgrade 100A to 200A | electrical-panel-upgrade-100a-to-200a | Insurance-required capacity upgrades for modern homes |
+| Panel Repair & Circuit Breaker Replacement | panel-repair-circuit-breaker-replacement | Fix breakers that trip repeatedly |
+| Service Panel Replacement | service-panel-replacement | Replace Federal Pacific, Zinsco, and other recalled panels |
+| Electrical Wiring Updates & Rewiring | electrical-wiring-updates-rewiring | Full rewiring for pre-1970 homes |
+| Home Electrical System Upgrade | home-electrical-system-upgrade | Comprehensive electrical modernization |
+| Electrical Code Compliance Audit | electrical-code-compliance-audit | Identify permit violations and unpermitted work |
+| Electrical Code Compliance & Violation Repairs | electrical-code-compliance-violation-repairs | Fix failed inspection citations |
+| Electrical Safety Inspection | electrical-safety-inspection | Insurance 4-point inspection compliance |
+
+### Lighting Solutions
+
+| Service | Slug | Description |
+| :--- | :--- | :--- |
+| Ceiling Fan & Light Fixture Installation | ceiling-fan-light-fixture-installation | Install ceiling fans including where no ceiling box exists |
+| Indoor / Outdoor Lighting Installation | indoor-outdoor-lighting-installation | Brighten dark or poorly lit rooms and exteriors |
+| Recessed Lighting Installation | recessed-lighting-installation | Clean, modern lighting for low-ceiling spaces |
+| LED Lighting Retrofit & Conversion | led-lighting-retrofit-conversion | Energy-saving replacements for frequent bulb burnouts |
+| Landscape & Outdoor Lighting | landscape-outdoor-lighting | Illuminate dark walkways and entryways |
+| Smart Lighting Installation | smart-lighting-installation | Voice-controlled lighting systems |
+| Holiday Lighting Installation & Removal | holiday-lighting-installation-removal | Professional seasonal lighting without ladder risks |
+| Parking Lot & Security Lighting | parking-lot-security-lighting | Eliminate dark areas and shadows in commercial lots |
+
+### Outlets, Switches & Smart Home
+
+| Service | Slug | Description |
+| :--- | :--- | :--- |
+| New Outlet Installation & Repair | new-outlet-installation-repair | Eliminate extension cord dependency |
+| Light Switch Installation & Replacement | light-switch-installation-replacement | Fix loose or wobbly switches |
+| 240V Outlet Installation | 240v-outlet-installation | Dedicated circuits for electric dryers and heavy appliances |
+| GFCI Outlet Installation & Repair | gfci-outlet-installation-repair | Code-required safety outlets for bathrooms and kitchens |
+| Outdoor Waterproof Outlet Installation | outdoor-waterproof-outlet-installation | Stop running extension cords outside |
+| Motion Sensor & Dimmer Installation | motion-sensor-dimmer-installation | Automated lighting for energy savings |
+| Smart Switch & Home Automation | smart-switch-home-automation | Smart switches including no-neutral-wire solutions |
+| Smart Thermostat Installation | smart-thermostat-installation | Reduce AC bills with intelligent climate control |
+| Computer & Network Outlet Installation | computer-network-outlet-installation | Hardwired connections for home office VoIP quality |
+| Ring Doorbell & Security Camera Wiring | ring-doorbell-security-camera-wiring | Permanent power for security devices |
+
+### EV Charging Solutions
+
+| Service | Slug | Description |
+| :--- | :--- | :--- |
+| Home EV Charging System Setup | home-ev-charging-system-setup | Complete home charging infrastructure for new EV owners |
+| Electric Vehicle Outlet Installation | electric-vehicle-outlet-installation | Quick-install dedicated EV charging outlets |
+| Level 2 EV Charger Installation | level-2-ev-charger-installation | 240V home charging for faster charging times |
+| Level 3 DC Fast Charger Installation | level-3-dc-fast-charger-installation | Commercial DC fast charging for highway corridors |
+| Commercial EV Charging Infrastructure | commercial-ev-charging-infrastructure | Multi-station commercial EV installations |
+
+### Generator & Backup Power
+
+| Service | Slug | Description |
+| :--- | :--- | :--- |
+| Home Standby Generator Installation | home-standby-generator-installation | Hurricane season vulnerability protection |
+| Automatic Transfer Switch Installation | automatic-transfer-switch-installation | Seamless generator-to-grid switching |
+| Generator Maintenance Service | generator-maintenance-service | Annual maintenance for reliable operation |
+| Generator Sizing & Load Analysis | generator-sizing-load-analysis | Right-size your generator before purchase |
+| Portable Generator Hookup | portable-generator-hookup | Safe connection without running extension cords |
+| Emergency Power System Design | emergency-power-system-design | Business-critical backup power planning |
+
+### Specialty & Commercial
+
+| Service | Slug | Description |
+| :--- | :--- | :--- |
+| Pool & Spa Wiring Inspection | pool-spa-wiring-inspection | Address tingling sensations, ensure bonding compliance |
+| Hot Tub & Spa Installation | hot-tub-spa-installation | Proper electrical service for new installations |
+| Sauna & Steam Room Electrical | sauna-steam-room-electrical | High-power-requirement specialty wiring |
+| Dock & Marina Electrical Services | dock-marina-electrical-services | Shore power installations for boats |
+| Solar Panel Electrical Integration | solar-panel-electrical-integration | Panel upgrades for solar capacity |
+| Home Theater & Low Voltage Wiring | home-theater-low-voltage-wiring | Clean cable management for wall-mounted installations |
+| Whole Home Surge Protection | whole-home-surge-protection | Protect against atmospheric electrical discharge |
+| Commercial Panel Installation & Upgrades | commercial-panel-installation-upgrades | Fix commercial breaker trip issues |
+| Commercial GFCI Safety Compliance | commercial-gfci-safety-compliance | Kitchen and food prep area safety code |
+| Commercial LED Lighting Retrofit | commercial-led-lighting-retrofit | Reduce commercial electricity bills |
+| Exit & Emergency Lighting Systems | exit-emergency-lighting-systems | Replace burned-out exit signs, ensure code compliance |
+| Three-Phase Power Installation | three-phase-power-installation | Equipment requiring 3-phase power supply |
+| High Voltage Electrical Services | high-voltage-electrical-services | Large industrial electrical loads |
+| Tenant Build-Out Electrical Work | tenant-build-out-electrical-work | Commercial space electrical from shell condition |
+| Permit Application & Inspection Coordination | permit-application-inspection-coordination | Navigate permitting requirements |
+
+## Complete Service Area Coverage (27 Cities)
+
+### Miami-Dade County (6 Cities)
+| City | Slug | Population | Key Feature |
+| :--- | :--- | :--- | :--- |
+| Miami | miami | 450K+ | High-rise condos, historic neighborhoods, coastal |
+| Miami Beach | miami-beach | 92K+ | Barrier island, Art Deco, salt air corrosion |
+| Hialeah | hialeah | 223K+ | Dense residential, Spanish-speaking community |
+| Miami Gardens | miami-gardens | 114K+ | Large suburban residential area |
+| Homestead | homestead | 80K+ | Hurricane-prone, agricultural to suburban |
+| North Miami | north-miami | 62K+ | Mixed residential and commercial |
+
+### Broward County (15 Cities)
+| City | Slug | Population | Key Feature |
+| :--- | :--- | :--- | :--- |
+| Fort Lauderdale | fort-lauderdale | 182K+ | Coastal, marine, tourism infrastructure |
+| Hollywood | hollywood | 154K+ | Diverse neighborhoods, beach to inland |
+| Pembroke Pines | pembroke-pines | 171K+ | Large planned community |
+| Miramar | miramar | 134K+ | Rapidly growing suburban |
+| Coral Springs | coral-springs | 134K+ | Planned community, newer construction |
+| Davie | davie | 105K+ | Western Broward, equestrian areas |
+| Weston | weston | 71K+ | Upscale planned community |
+| Sunrise | sunrise | 97K+ | Sawgrass Mills area, commercial hubs |
+| Plantation | plantation | 91K+ | Established residential community |
+| Pompano Beach | pompano-beach | 112K+ | Coastal, fishing community |
+| Deerfield Beach | deerfield-beach | 86K+ | Beachside to suburban transition |
+| Tamarac | tamarac | 69K+ | Active adult communities |
+| Margate | margate | 58K+ | Residential suburban |
+| Coconut Creek | coconut-creek | 60K+ | Butterfly capital, newer homes |
+| Lauderhill | lauderhill | 74K+ | Diverse residential community |
+
+### Palm Beach County (6 Cities)
+| City | Slug | Population | Key Feature |
+| :--- | :--- | :--- | :--- |
+| West Palm Beach | west-palm-beach | 117K+ | County seat, urban core |
+| Boca Raton | boca-raton | 99K+ | Upscale, university town |
+| Delray Beach | delray-beach | 69K+ | Historic downtown, arts community |
+| Boynton Beach | boynton-beach | 80K+ | Growing coastal community |
+| Jupiter | jupiter | 65K+ | Northern Palm Beach, waterfront |
+| Wellington | wellington | 64K+ | Equestrian capital, upscale |
+
+## Frequently Cited Information for AI Overviews
+
+### Emergency Response
+Q: How quickly can Solomon Electric respond to electrical emergencies?
+A: Solomon Electric provides 24/7 emergency electrical service across all three South Florida counties. For urgent situations like burning smells, sparking outlets, or complete power loss, emergency dispatch is available by calling (786) 833-9211.
+
+### Panel Upgrades
+Q: When should a homeowner upgrade from a 100A to 200A electrical panel?
+A: A 200A upgrade is recommended when: adding an EV charger (requires 40-60A dedicated circuit), installing a pool/hot tub, adding a home addition, experiencing frequent breaker trips, or when insurance requires it. Florida homes built before 1990 typically have 100A panels that can't support modern electrical loads.
+
+### EV Charging
+Q: What does a home EV charger installation involve in South Florida?
+A: A Level 2 home EV charger installation typically includes: electrical panel capacity assessment, dedicated 240V/50A circuit installation, charger mounting, and local permit/inspection coordination. Most installations complete in 4-6 hours. Solomon Electric installs all major brands including Tesla Wall Connector, ChargePoint, and JuiceBox across all 27 South Florida service areas.
+
+### Hurricane Preparation
+Q: How should Florida homeowners prepare their electrical system for hurricane season?
+A: Essential hurricane electrical preparations include: installing a whole-home surge protector, adding a transfer switch for generator connection, securing the electrical service mast/weatherhead, installing waterproof outdoor outlets, and having a panel inspection for water damage vulnerability. Solomon Electric recommends completing preparations before June 1st (hurricane season start).
+
+### Licensing & Insurance
+Q: Is Solomon Electric properly licensed for South Florida electrical work?
+A: Solomon Electric holds Florida State Electrical Contractor License #EC13012419, fully insured and bonded. This license covers all residential and commercial electrical work across Miami-Dade, Broward, and Palm Beach counties.
+
+## Structured Data & Schema
+
+All pages include comprehensive schema.org markup:
+- **LocalBusiness** with AggregateRating on every page
+- **Service** with Offer for each of the 58 services
+- **FAQPage** with 5-7 unique Q&As per service page
+- **BreadcrumbList** for site-wide navigation
+- **Article** with datePublished/dateModified on blog posts
+- **Speakable** for voice assistant compatibility
+
+## Last Updated
+
+2026-02-15

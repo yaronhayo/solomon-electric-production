@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/heroes/service-areas.webp";
+import { IMAGES } from "../config/images";
 import PageHero from "../components/PageHero.astro";
 import Container from "../components/ui/Container.astro";
 import CtaButton from "../components/ui/CtaButton.astro";
@@ -157,9 +157,9 @@ const trustPoints = [
 ---
 
 <Layout
-    title="Electrician Near Me | Miami-Dade, Broward & Palm Beach FL | Solomon Electric"
-    description="Find a licensed electrician in your neighborhood. Solomon Electric serves 27 cities across Miami-Dade, Broward, and Palm Beach counties. Available 24/7 for residential, commercial & emergency electrical service."
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    title="Electrician Near Me | Miami, Broward & Palm Beach FL"
+    description="Licensed electricians serving 27 cities across Miami-Dade, Broward & Palm Beach counties. 24/7 residential & commercial electrical service."
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
     ogImageAlt="Solomon Electric Service Areas - Licensed Electricians in Miami-Dade, Broward & Palm Beach Counties"
 >
     <script
@@ -182,10 +182,10 @@ const trustPoints = [
 
     <!-- Hero -->
     <PageHero
-        title="Your Local<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Electrician is Here</span>"
+        title="Your Local<br><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Electrician is Here</span>"
         subtitle="27 Cities • 3 Counties • 24/7 Response"
         description="Looking for a licensed electrician in your area? We serve the entire tri-county region—Miami-Dade, Broward, and Palm Beach—with the same commitment to safety and quality in every neighborhood. Find your city below and see how we can help."
-        image={heroImage}
+        image={IMAGES.heroes.serviceAreas.src}
         trustIndicators={true}
     />
 
@@ -235,7 +235,7 @@ const trustPoints = [
                                 <Icon size={24} />
                             </div>
                             <div class="trust-content">
-                                <h4>{title}</h4>
+                                <h3>{title}</h3>
                                 <p>{desc}</p>
                             </div>
                         </div>
@@ -256,8 +256,8 @@ const trustPoints = [
                     <div class="header-content">
                         <span class="header-eyebrow">Coverage by County</span>
                         <h2>
-                            Three Counties, <span class="text-accent"
-                                >One Call</span
+                            Licensed Electricians Across <span
+                                class="text-accent">Three Counties</span
                             >
                         </h2>
                     </div>
@@ -267,38 +267,38 @@ const trustPoints = [
                     class="flex items-center gap-3 md:gap-4 overflow-x-auto pb-2 md:pb-0"
                 >
                     <div
-                        class="flex flex-col items-center bg-primary/5 px-4 py-2 rounded-xl border border-primary/10 min-w-[80px]"
+                        class="flex flex-col items-center bg-primary/5 px-4 py-2 rounded-[var(--radius-xl)] border border-primary/10 min-w-[80px]"
                     >
                         <span
-                            class="text-xl font-black text-primary leading-none"
+                            class="text-[length:var(--text-h5)] font-black text-primary leading-none"
                             >27</span
                         >
                         <span
-                            class="text-[10px] font-bold text-primary/60 uppercase tracking-tighter"
+                            class="text-[length:var(--text-micro)] font-bold text-primary/60 uppercase tracking-tighter"
                             >Cities</span
                         >
                     </div>
                     <div
-                        class="flex flex-col items-center bg-primary/5 px-4 py-2 rounded-xl border border-primary/10 min-w-[80px]"
+                        class="flex flex-col items-center bg-primary/5 px-4 py-2 rounded-[var(--radius-xl)] border border-primary/10 min-w-[80px]"
                     >
                         <span
-                            class="text-xl font-black text-primary leading-none"
+                            class="text-[length:var(--text-h5)] font-black text-primary leading-none"
                             >3</span
                         >
                         <span
-                            class="text-[10px] font-bold text-primary/60 uppercase tracking-tighter"
+                            class="text-[length:var(--text-micro)] font-bold text-primary/60 uppercase tracking-tighter"
                             >Counties</span
                         >
                     </div>
                     <div
-                        class="flex flex-col items-center bg-accent/10 px-4 py-2 rounded-xl border border-accent/20 min-w-[80px]"
+                        class="flex flex-col items-center bg-accent/10 px-4 py-2 rounded-[var(--radius-xl)] border border-accent/20 min-w-[80px]"
                     >
                         <span
-                            class="text-xl font-black text-accent leading-none"
+                            class="text-[length:var(--text-h5)] font-black text-accent leading-none"
                             >24/7</span
                         >
                         <span
-                            class="text-[10px] font-bold text-accent/60 uppercase tracking-tighter"
+                            class="text-[length:var(--text-micro)] font-bold text-accent/60 uppercase tracking-tighter"
                             >Live</span
                         >
                     </div>
@@ -434,7 +434,7 @@ const trustPoints = [
             <Container>
                 <div class="cta-primary-inner">
                     <Zap class="cta-bolt" size={48} />
-                    <h2>Ready for Expert<br />Electrical Service?</h2>
+                    <h2>Schedule Your Free<br />Electrical Estimate Today</h2>
                 </div>
             </Container>
         </div>
@@ -456,7 +456,7 @@ const trustPoints = [
                         <CtaButton
                             variant="secondary"
                             action="call"
-                            text="Call Now"
+                            text="Call&nbsp;Now"
                             size="lg"
                         />
                     </div>
@@ -474,7 +474,7 @@ const trustPoints = [
         background: linear-gradient(
             135deg,
             var(--color-primary) 0%,
-            #0a3560 100%
+            var(--color-primary-dark) 100%
         );
         padding: clamp(1rem, 2vw, 1.5rem) 0;
         position: relative;
@@ -488,7 +488,7 @@ const trustPoints = [
         background: linear-gradient(
             90deg,
             transparent 0%,
-            rgba(20, 211, 227, 0.1) 50%,
+            rgba(var(--color-accent-rgb), 0.1) 50%,
             transparent 100%
         );
         animation: shimmer 3s ease-in-out infinite;
@@ -551,14 +551,14 @@ const trustPoints = [
 
     .stat-value {
         font-family: var(--font-display);
-        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-size: var(--text-h3);
         color: var(--text-inverse);
         line-height: 1;
-        text-shadow: 0 0 30px rgba(20, 211, 227, 0.3);
+        text-shadow: 0 0 30px rgba(var(--color-accent-rgb), 0.3);
     }
 
     .stat-label {
-        font-size: clamp(0.65rem, 1vw, 0.75rem);
+        font-size: var(--text-micro);
         color: rgba(255, 255, 255, 0.7);
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -598,25 +598,13 @@ const trustPoints = [
     }
 
     .seo-intro-title {
-        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-family: var(--font-display);
+        font-size: var(--text-h3);
         font-weight: 800;
         color: var(--color-primary);
         margin-bottom: clamp(1rem, 2vw, 1.5rem);
         text-transform: uppercase;
         line-height: 1.2;
-    }
-
-    .seo-intro-description {
-        font-size: clamp(1rem, 1.25vw, 1.125rem);
-        color: var(--text-body);
-        line-height: 1.8;
-        margin-bottom: 1rem;
-    }
-
-    .seo-intro-secondary {
-        font-size: clamp(0.95rem, 1.1vw, 1rem);
-        color: var(--text-muted);
-        line-height: 1.7;
     }
 
     /* ============================================
@@ -682,9 +670,9 @@ const trustPoints = [
         box-shadow: var(--shadow-md);
     }
 
-    .trust-content h4 {
+    .trust-content h3 {
         font-family: var(--font-secondary);
-        font-size: clamp(0.75rem, 1vw, 0.875rem);
+        font-size: var(--text-caption);
         color: var(--text-primary);
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -692,7 +680,7 @@ const trustPoints = [
     }
 
     .trust-content p {
-        font-size: clamp(0.7rem, 0.9vw, 0.75rem);
+        font-size: var(--text-caption);
         color: var(--text-muted);
     }
 
@@ -793,7 +781,7 @@ const trustPoints = [
         background: linear-gradient(
             135deg,
             var(--color-primary) 0%,
-            #0a3560 100%
+            var(--color-primary-dark) 100%
         );
         border-color: transparent;
         grid-row: span 1;
@@ -835,7 +823,7 @@ const trustPoints = [
     .county-badge {
         display: inline-block;
         font-family: var(--font-display);
-        font-size: 0.625rem;
+        font-size: var(--text-micro);
         text-transform: uppercase;
         letter-spacing: 0.15em;
         padding: 0.25rem 0.75rem;
@@ -848,7 +836,7 @@ const trustPoints = [
 
     .county-card h3 {
         font-family: var(--font-display);
-        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        font-size: var(--text-h5);
         color: var(--text-primary);
         text-transform: uppercase;
         margin-bottom: 0;
@@ -859,7 +847,7 @@ const trustPoints = [
     }
 
     .county-tagline {
-        font-size: clamp(0.8rem, 1vw, 0.875rem);
+        font-size: var(--text-label);
         color: var(--text-body);
         font-style: italic;
         margin-bottom: var(--spacing-md);
@@ -877,7 +865,7 @@ const trustPoints = [
     }
 
     .city-chip {
-        font-size: 0.75rem;
+        font-size: var(--text-caption);
         font-weight: 600;
         color: var(--text-primary);
         text-decoration: none;
@@ -907,7 +895,7 @@ const trustPoints = [
     }
 
     .city-more {
-        font-size: 0.75rem;
+        font-size: var(--text-caption);
         color: var(--text-muted);
         padding: 0.25rem 0.375rem;
         font-style: italic;
@@ -959,7 +947,7 @@ const trustPoints = [
     }
 
     .tile-name {
-        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-size: var(--text-label);
         font-weight: 600;
         color: var(--text-primary);
     }

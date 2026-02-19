@@ -13,20 +13,25 @@ import Container from "../../../components/ui/Container.astro";
 import Button from "../../../components/ui/Button.astro";
 import CtaButton from "../../../components/ui/CtaButton.astro";
 import ReviewCarousel from "../../../components/ReviewCarousel.astro";
+import BookingForm from "../../../components/BookingForm.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
+import PageHero from "../../../components/PageHero.astro";
 import { SITE_CONFIG } from "../../../config/site";
+import { IMAGES } from "../../../config/images";
 import {
-    generateIntro,
     generateWhyChoose,
     generateMetaTitle,
     generateMetaDescription,
     generateServiceLocationSchema,
     generateLocalRegulatoryInfo,
     getRelatedCities,
+    generateProblemCentricH2,
+    SERVICE_KEYWORDS as SERVICE_REGISTRY
 } from "../../../utils/service-location-generator";
-import { replacePlaceholder } from "../../../utils/content";
+import { replacePlaceholder, highlightKeywords } from "../../../utils/content";
 
 import {
+    AlertTriangle,
     Zap,
     MapPin,
     CheckCircle,
@@ -35,8 +40,24 @@ import {
     Star,
     Home,
     Umbrella,
+    Phone,
     ArrowRight,
     ChevronRight,
+    Wrench,
+    ClipboardList,
+    Trophy,
+    Settings,
+    HelpCircle,
+    Map,
+    Plug,
+    DollarSign,
+    Timer,
+    Tag,
+    FileText,
+    Flame,
+    AlertCircle,
+    TrendingUp,
+    FileCheck,
 } from "lucide-astro";
 
 export const prerender = true;
@@ -81,24 +102,19 @@ const { service, serviceId, city, cityId, allCities, allServices } =
     Astro.props;
 
 // Generate content
-const metaTitle = generateMetaTitle(service.name, city.name);
+const metaTitle = generateMetaTitle(service.shortName || service.name, city.name);
 const metaDescription = generateMetaDescription(
     service.name,
     city.name,
     city.neighborhoods || [],
 );
-const introText = replacePlaceholder(generateIntro(
-    service.name,
-    city.name,
-    city.county,
-    city.neighborhoods || [],
-));
 const whyChooseText = replacePlaceholder(generateWhyChoose(
     service.name,
     city.name,
     cityId,
     city.county,
 ));
+const serviceKeywords = SERVICE_REGISTRY[serviceId] || [];
 
 // Get related cities for this service
 // Get related cities for this service (All 27 for maximum internal linking)
@@ -117,19 +133,44 @@ const relatedServices = allServices
     .slice(0, 6);
 
 // Combine FAQs from service with city context
+// Localize FAQ content: support both old-format (hardcoded "Miami") and
+// new-format ({cityName}/{county} placeholders) for backwards compatibility
+const localizeFaqText = (text: string) => text
+    // New placeholders first
+    .replace(/\{cityName\}/g, city.name)
+    .replace(/\{county\}/g, city.county)
+    // Multi-city listings: "Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities"
+    .replace(/Miami,\s*Fort Lauderdale,\s*Hollywood,\s*Coral Gables,?\s*(?:and\s*)?(?:all\s*)?surrounding\s*communities/gi,
+        `${city.name} and surrounding communities`)
+    // Shorter multi-city pattern: "Miami, Fort Lauderdale, Hollywood, Coral Gables"
+    .replace(/Miami,\s*Fort Lauderdale,?\s*(?:Hollywood,?)?\s*(?:Coral Gables,?)?\s*(?:and\s*)?(?:all\s*)?(?:surrounding)?/gi,
+        `${city.name} and surrounding`)
+    // County patterns (before Miami to avoid partial replacement)
+    .replace(/Miami-Dade County/g, `${city.county} County`)
+    .replace(/Miami-Dade\s*(?:and|&)\s*Broward(?:\s*count(?:y|ies))?/gi, `${city.county} County`)
+    .replace(/Miami-Dade/g, city.county)
+    // Single city replacement
+    .replace(/Miami/g, city.name)
+    .replace(/South Florida/g, `${city.name} and ${city.county} County`);
+
 const combinedFaqs = (service.faqs || []).map(
     (faq: { question: string; answer: string }) => ({
-        question: faq.question
-            .replace(/Miami/g, city.name)
-            .replace(
-                /South Florida/g,
-                `${city.name} and ${city.county} County`,
-            ),
-        answer: faq.answer
-            .replace(/Miami/g, city.name)
-            .replace(/Miami-Dade/g, city.county),
+        question: localizeFaqText(faq.question),
+        answer: localizeFaqText(faq.answer),
     }),
 );
+
+const localizedSeoContent = (service.seoContent || []).map(
+    (block: { heading: string; body: string }) => ({
+        heading: localizeFaqText(block.heading),
+        body: localizeFaqText(block.body),
+    }),
+);
+
+// Problem-centric dynamic headings
+const problemsHeading = generateProblemCentricH2(service.category, city.name);
+const whyChooseHeading = generateProblemCentricH2(service.category, city.name);
+const complianceHeading = generateProblemCentricH2("Compliance", city.name);
 
 // Add city-specific FAQ
 if (city.faqs && city.faqs.length > 0) {
@@ -173,11 +214,22 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
 <Layout 
     title={metaTitle} 
     description={metaDescription}
-    ogImage={service.image ? (typeof service.image === 'string' ? service.image : service.image.src) : "/og-default.jpg"}
+    ogImage={service.image ? (typeof service.image === 'string' ? service.image : service.image.src) : "/og-default.webp"}
     ogImageAlt={service.imageAlt || `${service.name} in ${city.name}`}
 >
     <!-- Schema Markup -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <Fragment slot="head">
+        {service.image && (
+            <link 
+                rel="preload" 
+                as="image" 
+                href={typeof service.image === 'string' ? service.image : service.image.src} 
+                fetchpriority="high"
+            />
+        )}
+    </Fragment>
 
     <!-- Breadcrumb -->
     <Breadcrumb
@@ -190,90 +242,238 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
     />
 
     <!-- Hero Section -->
-    <section
-        class="relative bg-gradient-to-br from-primary via-primary to-primary/95 overflow-hidden"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
+    <PageHero
+        title={`${(service.shortName || service.name).replace(/&/g, '&amp;')} <span class="text-accent">in ${city.name}</span>`}
+        subtitle={`${city.name}, ${city.county} County`}
+        description={`${service.description} Licensed Florida electricians serving ${city.name} and ${city.county} County with 24/7 availability.`}
+        image={service.image || IMAGES.heroes.services}
+        imageAlt={service.imageAlt || `${service.name} service in ${city.name}`}
+        trustIndicators={true}
+        primaryCta={{
+            text: "Get Free Estimate",
+            href: "/book",
+        }}
+        secondaryCta={{
+            text: "Call&nbsp;Now",
+            href: SITE_CONFIG.contact.phone.href,
+        }}
     >
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--color-accent)_0%,_transparent_50%)]"
-            >
-            </div>
-            <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,_var(--color-accent)_0%,_transparent_40%)]"
-            >
-            </div>
-        </div>
-
-        <Container class="relative z-10 w-full">
-                <!-- Right Column: Image - spans 4 columns -->
-                <div class="hidden lg:block lg:col-span-4 relative">
-                    <div class="absolute -inset-4 bg-accent/20 blur-3xl rounded-full"></div>
-                    <div class="relative glass-card overflow-hidden rounded-2xl border border-white/10 shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
-                        {service.image && (
-                            <Image 
-                                src={service.image} 
-                                alt={service.imageAlt || `${service.name} service in ${city.name}`}
-                                class="w-full h-auto object-cover"
-                                loading="eager"
-                                fetchpriority="high"
-                            />
-                        )}
-                        {!service.image && (
-                            <div class="aspect-[4/5] bg-primary/40 flex items-center justify-center p-8 text-center">
-                                <Zap class="w-20 h-20 text-accent/20 absolute opacity-20" />
-                                <div class="relative z-10">
-                                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                                        <Zap class="w-8 h-8 text-accent" />
-                                    </div>
-                                    <p class="text-white font-bold uppercase tracking-widest text-sm">
-                                        Solomon Electric
-                                    </p>
-                                    <p class="text-accent text-xs mt-1">
-                                        Licensed & Insured
-                                    </p>
+        <Fragment slot="visual">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-accent/20 blur-3xl rounded-[var(--radius-full)]"></div>
+                <div class="relative glass-card overflow-hidden rounded-[var(--radius-2xl)] border border-white/10 shadow-[var(--shadow-xl)] transform hover:scale-[1.02] transition-transform duration-500">
+                    {service.image && (
+                        <Image 
+                            src={service.image} 
+                            alt={service.imageAlt || `${service.name} service in ${city.name}`}
+                            class="w-full h-auto object-cover"
+                            loading="eager"
+                            fetchpriority="high"
+                        />
+                    )}
+                    {!service.image && (
+                        <div class="aspect-[4/5] bg-primary/40 flex items-center justify-center p-8 text-center">
+                            <Zap class="w-20 h-20 text-accent/20 absolute opacity-20" />
+                            <div class="relative z-10">
+                                <div class="w-16 h-16 bg-accent/20 rounded-[var(--radius-2xl)] flex items-center justify-center mb-4 mx-auto">
+                                    <Zap class="w-8 h-8 text-accent" />
                                 </div>
+                                <p class="text-white font-bold uppercase tracking-widest text-[length:var(--text-label)]">
+                                    Solomon Electric
+                                </p>
+                                <p class="text-accent text-[length:var(--text-caption)] mt-1">
+                                    Licensed &amp; Insured
+                                </p>
                             </div>
-                        )}
-                    </div>
-                    
-                    <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 hidden xl:flex items-center gap-3">
-                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                            <Star class="w-6 h-6 text-accent fill-accent" />
                         </div>
-                        <div>
-                            <p class="text-primary font-black leading-none">{SITE_CONFIG.stats.averageRating} RATING</p>
-                            <p class="text-[10px] text-primary/60 font-bold uppercase tracking-wider">{SITE_CONFIG.stats.totalReviews} LOCAL REVIEWS</p>
-                        </div>
+                    )}
+                </div>
+                
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-[var(--radius-xl)] shadow-[var(--shadow-xl)] border border-[var(--border-light)] hidden xl:flex items-center gap-3">
+                    <div class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center">
+                        <Star class="w-6 h-6 text-accent fill-accent" />
                     </div>
+                    <div>
+                        <p class="text-primary font-black leading-none">{SITE_CONFIG.stats.averageRating} RATING</p>
+                        <p class="text-[length:var(--text-micro)] text-primary/60 font-bold uppercase tracking-wider">{SITE_CONFIG.stats.totalReviews} LOCAL REVIEWS</p>
+                    </div>
+                </div>
+            </div>
+        </Fragment>
+    </PageHero>
+
+    <!-- Social Proof Stats Bar -->
+    <section class="bg-gradient-to-r from-primary via-primary/95 to-primary relative overflow-hidden py-8 md:py-16">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(var(--color-accent-rgb),0.08)_0%,_transparent_70%)]"></div>
+        <Container class="relative z-10">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+                <div class="text-center">
+                    <div class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-accent font-display">{SITE_CONFIG.stats.averageRating}</div>
+                    <div class="text-[length:var(--text-micro)] text-white/70 uppercase tracking-wider font-bold mt-1">Star Rating</div>
+                </div>
+                <div class="hidden sm:block w-px h-10 bg-gradient-to-b from-transparent via-accent/50 to-transparent"></div>
+                <div class="text-center">
+                    <div class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-accent font-display">{SITE_CONFIG.stats.totalReviews}+</div>
+                    <div class="text-[length:var(--text-micro)] text-white/70 uppercase tracking-wider font-bold mt-1">Verified Reviews</div>
+                </div>
+                <div class="hidden sm:block w-px h-10 bg-gradient-to-b from-transparent via-accent/50 to-transparent"></div>
+                <div class="text-center">
+                    <div class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-accent font-display">24/7</div>
+                    <div class="text-[length:var(--text-micro)] text-white/70 uppercase tracking-wider font-bold mt-1">Emergency Service</div>
+                </div>
+                <div class="hidden sm:block w-px h-10 bg-gradient-to-b from-transparent via-accent/50 to-transparent"></div>
+                <div class="text-center">
+                    <div class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-accent font-display">{SITE_CONFIG.credentials.yearsExperience}+</div>
+                    <div class="text-[length:var(--text-micro)] text-white/70 uppercase tracking-wider font-bold mt-1">Years Experience</div>
                 </div>
             </div>
         </Container>
     </section>
 
+    <!-- Urgency Strip -->
+    <section class="bg-accent relative overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.1)_50%,transparent_100%)] animate-pulse"></div>
+        <Container class="relative z-10">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 py-3 text-center">
+                <p class="text-primary font-black uppercase tracking-wide text-[length:var(--text-label)]">
+                    <Zap class="w-4 h-4 inline-block align-middle mr-1" /> Same-Day Service Available in {city.name}
+                </p>
+                <span class="hidden sm:inline text-primary/40">|</span>
+                <a href={SITE_CONFIG.contact.phone.href} class="inline-flex items-center gap-2 bg-primary text-white font-black uppercase text-[length:var(--text-label)] px-5 py-2 rounded-[var(--radius-lg)] hover:bg-primary/90 transition-colors tracking-wide"><Phone class="w-4 h-4" />Call&nbsp;for&nbsp;Priority&nbsp;Dispatch</a>
+            </div>
+        </Container>
+    </section>
+
+    {/* What to Expect — localSignals Info Strip */}
+    {service.localSignals && (
+    <section class="bg-gray-50 border-y border-gray-200 py-12 md:py-20">
+        <Container>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {service.localSignals.typicalTimeline && (
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
+                        <Timer class="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                        <p class="text-[length:var(--text-label)] text-primary font-bold uppercase tracking-wider">Timeline</p>
+                        <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] mt-1 leading-snug">
+                            {localizeFaqText(service.localSignals.typicalTimeline)}
+                        </p>
+                    </div>
+                </div>
+                )}
+                {service.localSignals.priceRange && (
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
+                        <DollarSign class="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                        <p class="text-[length:var(--text-label)] text-primary font-bold uppercase tracking-wider">Typical Investment</p>
+                        <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] mt-1 leading-snug">
+                            {localizeFaqText(service.localSignals.priceRange)}
+                        </p>
+                    </div>
+                </div>
+                )}
+                {service.localSignals.commonBrands && service.localSignals.commonBrands.length > 0 && (
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
+                        <Tag class="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                        <p class="text-[length:var(--text-label)] text-primary font-bold uppercase tracking-wider">Brands We Work With</p>
+                        <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] mt-1 leading-snug">
+                            {service.localSignals.commonBrands.join(', ')}
+                        </p>
+                    </div>
+                </div>
+                )}
+                {service.localSignals.permitNote && (
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
+                        <FileText class="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                        <p class="text-[length:var(--text-label)] text-primary font-bold uppercase tracking-wider">Permits &amp; Compliance</p>
+                        <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] mt-1 leading-snug">
+                            {localizeFaqText(service.localSignals.permitNote)}
+                        </p>
+                    </div>
+                </div>
+                )}
+            </div>
+        </Container>
+    </section>
+    )}
+
+    <!-- Common Problems / Problems We Solve Section -->
+    {service.problems && service.problems.length > 0 && (
+    <section class="bg-white py-12 md:py-32">
+        <Container>
+            <header class="section-header">
+                <span class="section-label inline-flex items-center gap-1.5"><AlertTriangle class="w-4 h-4" /> Consumer Alert</span>
+                <h2 class="section-title">
+                    {problemsHeading}
+                </h2>
+                <p class="section-description">
+                    Electrical issues in {city.name} are often exacerbated by {city.county} County's high humidity and salt-air environment. Ignoring these warning signs can lead to property damage or safety hazards.
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {service.problems.map((problem: { title: string; description: string; icon?: string }) => (
+                    <div class="group p-8 rounded-[var(--radius-2xl)] border border-[var(--border-light)] bg-light/30 hover:bg-white hover:shadow-[var(--shadow-lg)] hover:border-accent/20 transition-all duration-300">
+                        <div class="w-14 h-14 bg-white rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-[var(--border-light)]">
+                            {problem.icon === 'Flame' && <Flame class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'AlertTriangle' && <AlertTriangle class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'Plug' && <Plug class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'AlertCircle' && <AlertCircle class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'Zap' && <Zap class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'TrendingUp' && <TrendingUp class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'Home' && <Home class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'Shield' && <Shield class="w-7 h-7 text-accent" />}
+                            {problem.icon === 'FileCheck' && <FileCheck class="w-7 h-7 text-accent" />}
+                            {!problem.icon && <AlertTriangle class="w-7 h-7 text-accent" />}
+                        </div>
+                        <h3 class="text-[length:var(--text-h5)] font-black text-primary mb-4 uppercase font-secondary tracking-tight">
+                            {localizeFaqText(problem.title)}
+                        </h3>
+                        <p 
+                            class="text-[var(--clr-body)] text-[length:var(--text-label)] leading-relaxed"
+                            set:html={highlightKeywords(localizeFaqText(problem.description), [city.name, ...serviceKeywords])}
+                        />
+                    </div>
+                ))}
+            </div>
+
+            <div class="mt-12 text-center">
+                <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-primary/5 p-4 rounded-[var(--radius-2xl)] border border-primary/10">
+                    <p class="text-primary font-bold text-[length:var(--text-label)]">
+                        Experiencing any of these issues at your {city.name} property?
+                    </p>
+                    <CtaButton action="call" variant="primary" size="md" text="Request Priority Inspection" />
+                </div>
+            </div>
+        </Container>
+    </section>
+    )}
+
     <!-- Why Choose Us Section -->
     <section
-        class="bg-white"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-2xl);"
+        class="bg-white py-12 md:py-32"
     >
         <Container>
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span
-                        class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
-                    >
-                        Local Expertise
-                    </span>
-                    <h2
-                        class="text-3xl md:text-4xl font-black text-primary uppercase mb-6"
-                    >
-                        Why {city.name} Chooses
-                        <span class="text-accent"> Solomon Electric</span>
-                    </h2>
+                    <header class="section-header section-header-left">
+                        <span class="section-label inline-flex items-center gap-1.5"><Zap class="w-4 h-4" /> Local Expertise</span>
+                        <h2 class="section-title">
+                            {whyChooseHeading}
+                        </h2>
+                    </header>
                     <p
-                        class="text-[var(--text-body)] text-lg leading-relaxed mb-6"
+                        class="text-[var(--clr-body)] text-[length:var(--text-body)] leading-relaxed mb-6"
                     >
                         {whyChooseText}
                     </p>
@@ -286,7 +486,7 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                                 .map((feature: string) => (
                                     <li class="flex items-start gap-3">
                                         <CheckCircle class="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                                        <span class="text-[var(--text-body)] font-medium">
+                                        <span class="text-[var(--clr-body)] font-medium">
                                             {feature}
                                         </span>
                                     </li>
@@ -297,55 +497,55 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
 
                 <!-- Stats Card -->
                 <div
-                    class="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-8 md:p-10 text-white"
+                    class="bg-gradient-to-br from-primary to-primary/90 rounded-[var(--radius-2xl)] p-8 md:p-10 text-white"
                 >
-                    <h3 class="text-2xl font-black uppercase mb-8 text-center">
+                    <h3 class="text-[length:var(--text-h4)] font-black uppercase mb-8 text-center font-secondary text-white">
                         Our {city.name} Track Record
                     </h3>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="text-center">
-                            <div class="text-4xl font-black text-accent mb-2">
+                            <div class="text-[length:var(--text-h1)] font-black text-accent mb-2">
                                 {SITE_CONFIG.stats.averageRating}
                             </div>
                             <div
-                                class="text-sm text-white/70 uppercase tracking-wide"
+                                class="text-[length:var(--text-label)] text-white/70 uppercase tracking-wide"
                             >
                                 Star Rating
                             </div>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-black text-accent mb-2">
+                            <div class="text-[length:var(--text-h1)] font-black text-accent mb-2">
                                 {SITE_CONFIG.stats.totalReviews}
                             </div>
                             <div
-                                class="text-sm text-white/70 uppercase tracking-wide"
+                                class="text-[length:var(--text-label)] text-white/70 uppercase tracking-wide"
                             >
                                 Reviews
                             </div>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-black text-accent mb-2">
+                            <div class="text-[length:var(--text-h1)] font-black text-accent mb-2">
                                 24/7
                             </div>
                             <div
-                                class="text-sm text-white/70 uppercase tracking-wide"
+                                class="text-[length:var(--text-label)] text-white/70 uppercase tracking-wide"
                             >
                                 Emergency Service
                             </div>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-black text-accent mb-2">
+                            <div class="text-[length:var(--text-h1)] font-black text-accent mb-2">
                                 {SITE_CONFIG.credentials.yearsExperience}
                             </div>
                             <div
-                                class="text-sm text-white/70 uppercase tracking-wide"
+                                class="text-[length:var(--text-label)] text-white/70 uppercase tracking-wide"
                             >
                                 Years Experience
                             </div>
                         </div>
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/20 text-center">
-                        <p class="text-sm text-white/70 mb-4">
+                        <p class="text-[length:var(--text-label)] text-white/70 mb-4">
                             Florida License #{
                                 SITE_CONFIG.credentials.license.number
                             }
@@ -362,37 +562,107 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
         </Container>
     </section>
 
+    <!-- Inline Booking Section -->
+    <section class="relative bg-gradient-to-br from-primary via-primary/95 to-primary overflow-hidden py-12 md:py-32">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,_var(--color-accent)_0%,_transparent_50%)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,_var(--color-accent)_0%,_transparent_40%)]"></div>
+        </div>
+        <Container class="relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="lg:sticky lg:top-28">
+                    <header class="section-header section-header-left section-header-light">
+                        <span class="section-label section-label-light inline-flex items-center gap-1.5"><ClipboardList class="w-4 h-4" /> Book Your Service</span>
+                        <h2 class="section-title section-title-light">
+                            Get Your Free
+                            <span class="text-accent"> {service.shortName || service.name}</span>
+                            Estimate in {city.name}
+                        </h2>
+                    </header>
+                    <p class="text-white/80 text-[length:var(--text-body)] leading-relaxed mb-8">
+                        Fill out the form and one of our licensed {city.county} County electricians 
+                        will contact you within 30 minutes during business hours. Emergency? 
+                        Call us 24/7 for immediate dispatch.
+                    </p>
+
+                    <!-- Trust Stack -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/10 border border-white/20 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
+                                <Shield class="w-5 h-5 text-accent" />
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-[length:var(--text-label)] uppercase">Licensed&nbsp;&amp;&nbsp;Insured</p>
+                                <p class="text-white/60 text-[length:var(--text-caption)]">FL License #{SITE_CONFIG.credentials.license.number}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/10 border border-white/20 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
+                                <Star class="w-5 h-5 text-accent" />
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-[length:var(--text-label)] uppercase">{SITE_CONFIG.stats.averageRating} Star Average</p>
+                                <p class="text-white/60 text-[length:var(--text-caption)]">{SITE_CONFIG.stats.totalReviews}+ verified customer reviews</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/10 border border-white/20 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
+                                <Clock class="w-5 h-5 text-accent" />
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-[length:var(--text-label)] uppercase">Same-Day Service</p>
+                                <p class="text-white/60 text-[length:var(--text-caption)]">Available for {city.name} and surrounding areas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <CtaButton
+                            action="call"
+                            variant="secondary"
+                            size="lg"
+                            text="Call&nbsp;Now 24/7"
+                        />
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div>
+                    <BookingForm idPrefix="booking-hero" />
+                </div>
+            </div>
+        </Container>
+    </section>
+
     <!-- Local Challenges & Solutions -->
     {
         city.challenges && city.challenges.length > 0 && (
             <section
-                class="bg-light border-b border-gray-100"
-                style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+                class="bg-light border-b border-[var(--border-light)] reveal"
+                style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl); content-visibility: auto; contain-intrinsic-size: auto 500px;"
             >
                 <Container>
-                    <div class="mb-12">
-                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
-                            Specific Local Solutions
-                        </span>
-                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase mb-6">
+                    <header class="section-header">
+                        <span class="section-label inline-flex items-center gap-1.5"><Wrench class="w-4 h-4" /> Specific Local Solutions</span>
+                        <h2 class="section-title">
                             Addressing {city.name}'s Unique
                             <span class="text-accent">
                                 {" "}
                                 Electrical Challenges
                             </span>
                         </h2>
-                        <p class="text-[var(--text-body)] text-lg">
+                        <p class="section-description">
                             South Florida's environment demands specialized
                             electrical knowledge. Our {service.name} solutions
                             in {city.name} are engineered to handle these local
                             factors effectively.
                         </p>
-                    </div>
+                    </header>
 
                     <div class="grid md:grid-cols-3 gap-8">
                         {city.challenges.map((challenge: any) => (
-                            <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                                <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center mb-6">
+                            <div class="bg-white p-8 rounded-[var(--radius-2xl)] border border-[var(--border-light)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all">
+                                <div class="w-12 h-12 bg-primary text-white rounded-[var(--radius-xl)] flex items-center justify-center mb-6">
                                     {challenge.icon === "Zap" && (
                                         <Zap class="w-6 h-6 text-accent" />
                                     )}
@@ -406,10 +676,10 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                                         challenge.icon,
                                     ) && <Zap class="w-6 h-6 text-accent" />}
                                 </div>
-                                <h3 class="text-xl font-bold text-primary mb-4 uppercase">
+                                <h3 class="text-[length:var(--text-h5)] font-bold text-primary mb-4 uppercase font-secondary">
                                     {challenge.title}
                                 </h3>
-                                <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                                <p class="text-[var(--clr-body)] text-[length:var(--text-label)] leading-relaxed">
                                     {challenge.description}
                                 </p>
                             </div>
@@ -422,23 +692,23 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
 
     <!-- Compliance & Regulatory -->
     <section
-        class="bg-white"
-        style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);"
+        class="bg-white reveal"
+        style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); content-visibility: auto; contain-intrinsic-size: auto 200px;"
     >
         <Container>
             <div
-                class="bg-primary/5 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 border border-primary/10"
+                class="bg-primary/5 rounded-[var(--radius-2xl)] p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 border border-primary/10"
             >
                 <div
-                    class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center flex-shrink-0"
+                    class="w-16 h-16 bg-primary text-white rounded-[var(--radius-full)] flex items-center justify-center flex-shrink-0"
                 >
                     <Shield class="w-8 h-8" />
                 </div>
                 <div class="flex-grow text-center md:text-left">
-                    <h3 class="text-xl font-bold text-primary mb-2 uppercase">
-                        {regulatoryInfo.title}
+                    <h3 class="text-[length:var(--text-h5)] font-bold text-primary mb-2 uppercase font-secondary">
+                        {complianceHeading}
                     </h3>
-                    <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                    <p class="text-[var(--clr-body)] text-[length:var(--text-label)] leading-relaxed">
                         {regulatoryInfo.content} We maintain full compliance with
                         <strong class="text-primary"
                             >{regulatoryInfo.jurisdiction}</strong
@@ -447,12 +717,12 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                 </div>
                 <div class="flex-shrink-0">
                     <div
-                        class="text-xs font-bold text-primary/60 uppercase tracking-widest mb-1 text-center md:text-right"
+                        class="text-[length:var(--text-caption)] font-bold text-primary/60 uppercase tracking-widest mb-1 text-center md:text-right"
                     >
                         Permit Coordination
                     </div>
                     <div
-                        class="text-sm font-black text-primary text-center md:text-right"
+                        class="text-[length:var(--text-label)] font-black text-primary text-center md:text-right"
                     >
                         100% HANDLED BY US
                     </div>
@@ -461,82 +731,111 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
         </Container>
     </section>
 
+    <!-- Mid-Page CTA Break -->
+    <section class="bg-gradient-to-r from-primary to-primary/95 relative overflow-hidden" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(var(--color-accent-rgb),0.1)_0%,_transparent_60%)]"></div>
+        <Container class="relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-[length:var(--text-h5)] md:text-[length:var(--text-h4)] font-black text-white uppercase font-display">
+                        Get Your Free {service.shortName || service.name} Quote
+                        <span class="text-accent"> in {city.name}</span>
+                    </h3>
+                    <p class="text-white/70 text-[length:var(--text-label)] mt-1">
+                        Licensed FL #{SITE_CONFIG.credentials.license.number} · {SITE_CONFIG.stats.totalReviews}+ Reviews · {city.county} County
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <CtaButton
+                        action="call"
+                        variant="secondary"
+                        size="md"
+                        text="Call&nbsp;Now"
+                    />
+                    <Button
+                        href="#booking-section"
+                        variant="primary"
+                        size="md"
+                        class="gap-2"
+                    >
+                        <Zap class="w-4 h-4" />
+                        Book Online
+                    </Button>
+                </div>
+            </div>
+        </Container>
+    </section>
+
     <!-- Competitive Edge Section -->
     <section
-        class="bg-light border-y border-gray-100"
+        class="bg-light border-y border-[var(--border-light)]"
         style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
     >
         <Container>
-            <div class="text-center mb-12">
-                <span
-                    class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
-                >
-                    The Solomon Advantage
-                </span>
-                <h2
-                    class="text-3xl md:text-4xl font-black text-primary uppercase"
-                >
-                    Our {city.name}
-                    <span class="text-accent"> Competitive Edge</span>
+            <header class="section-header">
+                <span class="section-label inline-flex items-center gap-1.5"><Trophy class="w-4 h-4" /> The Solomon Advantage</span>
+                <h2 class="section-title">
+                    Why {city.name} Homeowners Trust Us
+                    <span class="text-accent"> for {service.shortName || service.name}</span>
                 </h2>
-            </div>
+            </header>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div
-                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                    class="bg-white p-6 rounded-[var(--radius-xl)] border border-[var(--border-light)] shadow-[var(--shadow-sm)]"
                 >
                     <div
-                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                        class="bg-accent/10 w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center mb-4"
                     >
                         <Star class="w-6 h-6 text-accent" />
                     </div>
-                    <h3 class="font-bold text-primary mb-2">Local Trust</h3>
-                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                    <h3 class="font-bold text-primary mb-2 font-secondary">Local Trust</h3>
+                    <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] leading-relaxed">
                         Most regional contractors don't understand {
                             city.name
                         }-specific codes. We've been local since day one.
                     </p>
                 </div>
                 <div
-                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                    class="bg-white p-6 rounded-[var(--radius-xl)] border border-[var(--border-light)] shadow-[var(--shadow-sm)]"
                 >
                     <div
-                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                        class="bg-accent/10 w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center mb-4"
                     >
                         <Clock class="w-6 h-6 text-accent" />
                     </div>
-                    <h3 class="font-bold text-primary mb-2">Rapid Response</h3>
-                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                    <h3 class="font-bold text-primary mb-2 font-secondary">Rapid Response</h3>
+                    <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] leading-relaxed">
                         strategic coverage across {city.county} means we're often
                         at your {city.name} door in under 60 minutes.
                     </p>
                 </div>
                 <div
-                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                    class="bg-white p-6 rounded-[var(--radius-xl)] border border-[var(--border-light)] shadow-[var(--shadow-sm)]"
                 >
                     <div
-                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                        class="bg-accent/10 w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center mb-4"
                     >
                         <Shield class="w-6 h-6 text-accent" />
                     </div>
-                    <h3 class="font-bold text-primary mb-2">
-                        Bonded & Insured
+                    <h3 class="font-bold text-primary mb-2 font-secondary">
+                        Bonded &amp; Insured
                     </h3>
-                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                    <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] leading-relaxed">
                         Full $2M liability coverage for every {service.name} project
                         in {city.name}. Total peace of mind.
                     </p>
                 </div>
                 <div
-                    class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                    class="bg-white p-6 rounded-[var(--radius-xl)] border border-[var(--border-light)] shadow-[var(--shadow-sm)]"
                 >
                     <div
-                        class="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                        class="bg-accent/10 w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center mb-4"
                     >
                         <CheckCircle class="w-6 h-6 text-accent" />
                     </div>
-                    <h3 class="font-bold text-primary mb-2">Code Experts</h3>
-                    <p class="text-xs text-[var(--text-body)] leading-relaxed">
+                    <h3 class="font-bold text-primary mb-2 font-secondary">Code Experts</h3>
+                    <p class="text-[length:var(--text-caption)] text-[var(--clr-body)] leading-relaxed">
                         We specialize in {city.county} County permits and {
                             regulatoryInfo.jurisdiction
                         } coordination.
@@ -554,16 +853,14 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                 style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
             >
                 <Container>
-                    <div class="text-center mb-12">
-                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
-                            How It Works
-                        </span>
-                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase">
-                            Our {city.name}{" "}
+                    <header class="section-header">
+                        <span class="section-label inline-flex items-center gap-1.5"><Settings class="w-4 h-4" /> How It Works</span>
+                        <h2 class="section-title">
+                            How Our {city.name}{" "}
                             <span class="text-accent">{service.name}</span>{" "}
-                            Process
+                            Process Works
                         </h2>
-                    </div>
+                    </header>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {service.process
@@ -574,16 +871,16 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                                     title: string;
                                     description: string;
                                 }) => (
-                                    <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                                            <span class="text-accent font-black text-lg">
+                                    <div class="bg-white rounded-[var(--radius-xl)] p-6 border border-[var(--border-light)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow">
+                                        <div class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center mb-4">
+                                            <span class="text-accent font-black text-[length:var(--text-body)]">
                                                 {step.step}
                                             </span>
                                         </div>
-                                        <h3 class="font-bold text-primary text-lg mb-2">
+                                        <h3 class="font-bold text-primary text-[length:var(--text-body)] mb-2 font-secondary">
                                             {step.title}
                                         </h3>
-                                        <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                                        <p class="text-[var(--clr-body)] text-[length:var(--text-label)] leading-relaxed">
                                             {step.description}
                                         </p>
                                     </div>
@@ -603,15 +900,13 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                 style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
             >
                 <Container>
-                    <div class="text-center mb-12">
-                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
-                            Why It Matters
-                        </span>
-                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase">
-                            Benefits of {service.name}
-                            <span class="text-accent"> in {city.name}</span>
+                    <header class="section-header">
+                        <span class="section-label inline-flex items-center gap-1.5"><CheckCircle class="w-4 h-4" /> Why It Matters</span>
+                        <h2 class="section-title">
+                            {service.name} Benefits
+                            <span class="text-accent"> for {city.name} Homeowners</span>
                         </h2>
-                    </div>
+                    </header>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         {service.benefits.map(
@@ -620,15 +915,15 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                                 description: string;
                                 icon?: string;
                             }) => (
-                                <div class="flex gap-4 p-6 bg-light rounded-xl border border-gray-100">
-                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div class="flex gap-4 p-6 bg-light rounded-[var(--radius-xl)] border border-[var(--border-light)]">
+                                    <div class="w-12 h-12 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center flex-shrink-0">
                                         <Zap class="w-6 h-6 text-accent" />
                                     </div>
                                     <div>
-                                        <h3 class="font-bold text-primary text-lg mb-2">
+                                        <h3 class="font-bold text-primary text-[length:var(--text-body)] mb-2 font-secondary">
                                             {benefit.title}
                                         </h3>
-                                        <p class="text-[var(--text-body)] text-sm leading-relaxed">
+                                        <p class="text-[var(--clr-body)] text-[length:var(--text-label)] leading-relaxed">
                                             {benefit.description}
                                         </p>
                                     </div>
@@ -649,39 +944,38 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                 style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
             >
                 <Container>
-                    <div class="text-center mb-12">
-                        <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">
-                            Common Questions
-                        </span>
-                        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase">
-                            {service.name} FAQs
-                            <span class="text-accent"> for {city.name}</span>
+                    <header class="section-header">
+                        <span class="section-label inline-flex items-center gap-1.5"><HelpCircle class="w-4 h-4" /> Common Questions</span>
+                        <h2 class="section-title">
+                            Common {service.name} Questions
+                            <span class="text-accent"> from {city.name} Homeowners</span>
                         </h2>
-                    </div>
+                    </header>
 
                     <!-- Inline FAQ Accordion -->
                     <div class="space-y-4 max-w-4xl mx-auto">
                         {combinedFaqs.slice(0, 6).map((faq: { question: string; answer: string }, index: number) => (
-                            <div class="faq-item group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 overflow-hidden">
+                            <div class="faq-item group relative bg-white rounded-[var(--radius-2xl)] border border-[var(--border-light)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] hover:border-accent/30 transition-all duration-300 overflow-hidden">
                                 <button
+                                    type="button"
                                     class="faq-question w-full text-left p-5 md:p-6 flex items-center gap-4"
                                     data-index={`city-${index}`}
                                     aria-expanded="false"
                                 >
-                                    <span class="flex-1 font-bold text-primary group-hover:text-accent transition-colors duration-300 font-secondary uppercase tracking-tight text-sm md:text-base">
-                                        {faq.question}
+                                    <span class="flex-1 font-bold text-primary group-hover:text-accent transition-colors duration-300 font-secondary uppercase tracking-tight text-[length:var(--text-label)] md:text-[length:var(--text-body-sm)]">
+                                        {replacePlaceholder(faq.question)}
                                     </span>
-                                    <div class="faq-icon flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary group-hover:bg-accent transition-all duration-300 rounded-lg">
-                                        <span class="text-white font-bold text-xl leading-none transition-transform duration-300">+</span>
-                                    </div>
+                                    <span class="faq-icon flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary group-hover:bg-accent transition-all duration-300 rounded-[var(--radius-lg)]">
+                                        <span class="text-white font-bold text-[length:var(--text-h5)] leading-none transition-transform duration-300">+</span>
+                                    </span>
                                 </button>
                                 <div
                                     class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
                                     style="max-height: 0;"
                                     data-index={`city-${index}`}
                                 >
-                                    <div class="px-5 md:px-8 pb-5 md:pb-8 text-[var(--text-body)] leading-relaxed border-t border-gray-100 pt-4 text-sm md:text-base">
-                                        {faq.answer}
+                                    <div class="px-5 md:px-8 pb-5 md:pb-8 text-[var(--clr-body)] leading-relaxed border-t border-[var(--border-light)] pt-4 text-[length:var(--text-label)] md:text-[length:var(--text-body-sm)]">
+                                        {replacePlaceholder(faq.answer)}
                                     </div>
                                 </div>
                             </div>
@@ -692,26 +986,52 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
         )
     }
 
+    <!-- Service SEO Content (keyword-rich H2/body pairs from service data) -->
+    {
+        localizedSeoContent && localizedSeoContent.length > 0 && (
+            <section
+                class="bg-white border-t border-[var(--border-light)]"
+                style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+            >
+                <Container>
+                    <div class="max-w-4xl mx-auto space-y-16">
+                        {localizedSeoContent.map((block: { heading: string; body: string }) => (
+                            <article class="prose prose-slate max-w-none">
+                                <h2 class="text-[length:var(--text-h4)] md:text-[length:var(--text-h3)] font-black text-primary uppercase mb-6 font-display leading-tight border-l-4 border-accent pl-6">
+                                    {block.heading} 
+                                    <span class="block text-[length:var(--text-label)] text-accent font-bold mt-2 tracking-widest whitespace-nowrap">
+                                        SOLVING LOCAL ELECTRICAL CHALLENGES IN {city.name.toUpperCase()}
+                                    </span>
+                                </h2>
+                                <div class="text-[var(--clr-body)] text-[length:var(--text-body-sm)] md:text-[length:var(--text-body)] leading-relaxed space-y-4">
+                                    {block.body.split('\n\n').map(p => (
+                                        <p set:html={highlightKeywords(p, [city.name, ...serviceKeywords])} />
+                                    ))}
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </Container>
+            </section>
+        )
+    }
+
     <!-- Neighborhoods & Local Trust -->
     <section
-        class="bg-white border-t border-gray-100"
+        class="bg-white border-t border-[var(--border-light)]"
         style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
     >
         <Container>
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span
-                        class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
-                    >
-                        Nearby Presence
-                    </span>
-                    <h2
-                        class="text-3xl md:text-4xl font-black text-primary uppercase mb-6"
-                    >
-                        Serving All {city.name}
-                        <span class="text-accent"> Neighborhoods</span>
-                    </h2>
-                    <p class="text-[var(--text-body)] text-lg mb-8">
+                    <header class="section-header section-header-left">
+                        <span class="section-label inline-flex items-center gap-1.5"><MapPin class="w-4 h-4" /> Nearby Presence</span>
+                        <h2 class="section-title">
+                            Serving All {city.name}
+                            <span class="text-accent"> Neighborhoods</span>
+                        </h2>
+                    </header>
+                    <p class="text-[var(--clr-body)] text-[length:var(--text-body)] mb-8">
                         Our technicians are active throughout {city.name},
                         providing {service.name} to residential and commercial properties.
                         From the city center to the surrounding areas, we know the
@@ -723,7 +1043,7 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                             (city.neighborhoods || [])
                                 .slice(0, 12)
                                 .map((neighborhood: string) => (
-                                    <div class="flex items-center gap-2 text-primary font-bold text-sm uppercase">
+                                    <div class="flex items-center gap-2 text-primary font-bold text-[length:var(--text-label)] uppercase">
                                         <div class="w-1.5 h-1.5 bg-accent rounded-full" />
                                         {neighborhood}
                                     </div>
@@ -733,21 +1053,21 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                 </div>
 
                 <div
-                    class="bg-light p-8 rounded-3xl border border-gray-100 relative overflow-hidden"
+                    class="bg-light p-8 rounded-[var(--radius-2xl)] border border-[var(--border-light)] relative overflow-hidden"
                 >
                     <div
-                        class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16"
+                        class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-[var(--radius-full)] -mr-16 -mt-16"
                     >
                     </div>
 
                     <h3
-                        class="text-xl font-bold text-primary uppercase mb-6 flex items-center gap-3"
+                        class="text-[length:var(--text-h5)] font-bold text-primary uppercase mb-6 flex items-center gap-3 font-secondary"
                     >
                         <MapPin class="w-6 h-6 text-accent" />
                         Local Landmarks
                     </h3>
                     <p
-                        class="text-sm text-[var(--text-body)] mb-6 leading-relaxed"
+                        class="text-[length:var(--text-label)] text-[var(--clr-body)] mb-6 leading-relaxed"
                     >
                         We provide expert electrical services near major {
                             city.name
@@ -757,24 +1077,24 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
                     <div class="flex flex-wrap gap-2">
                         {
                             (city.landmarks || []).map((landmark: string) => (
-                                <span class="px-3 py-1.5 bg-white rounded-lg border border-gray-200 text-[10px] font-black text-primary uppercase tracking-wider shadow-sm">
+                                <span class="px-3 py-1.5 bg-white rounded-[var(--radius-lg)] border border-[var(--border-light)] text-[length:var(--text-micro)] font-black text-primary uppercase tracking-wider shadow-[var(--shadow-sm)]">
                                     {landmark}
                                 </span>
                             ))
                         }
                     </div>
-                    <div class="mt-8 pt-8 border-t border-gray-200">
+                    <div class="mt-8 pt-8 border-t border-[var(--border-light)]">
                         <div class="flex items-center gap-4">
-                            <div class="bg-primary text-white p-3 rounded-xl">
+                            <div class="bg-primary text-white p-3 rounded-[var(--radius-xl)]">
                                 <Shield class="w-6 h-6" />
                             </div>
                             <div>
                                 <p
-                                    class="text-sm font-black text-primary uppercase tracking-tight"
+                                    class="text-[length:var(--text-label)] font-black text-primary uppercase tracking-tight"
                                 >
                                     Verified Local Provider
                                 </p>
-                                <p class="text-xs text-[var(--text-body)]">
+                                <p class="text-[length:var(--text-caption)] text-[var(--clr-body)]">
                                     Full coverage for {city.name} and surrounding
                                     communities in {city.county} County.
                                 </p>
@@ -795,29 +1115,23 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
         style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
     >
         <Container>
-            <div class="text-center mb-10">
-                <span
-                    class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
-                >
-                    Also Serving
-                </span>
-                <h2
-                    class="text-2xl md:text-3xl font-black text-primary uppercase"
-                >
+            <header class="section-header">
+                <span class="section-label inline-flex items-center gap-1.5"><Map class="w-4 h-4" /> Also Serving</span>
+                <h2 class="section-title">
                     {service.name}
                     <span class="text-accent"> in Nearby Cities</span>
                 </h2>
-            </div>
+            </header>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {
                     relatedCities.map((relatedCity) => (
                         <a
                             href={`/services/${serviceId}/${relatedCity.slug}`}
-                            class="group flex items-center gap-2 p-4 bg-light rounded-lg border border-gray-100 hover:border-accent hover:shadow-md transition-all"
+                            class="group flex items-center gap-2 p-4 bg-light rounded-[var(--radius-lg)] border border-[var(--border-light)] hover:border-accent hover:shadow-[var(--shadow-md)] transition-all"
                         >
                             <MapPin class="w-4 h-4 text-accent flex-shrink-0" />
-                            <span class="font-medium text-primary group-hover:text-accent transition-colors text-sm">
+                            <span class="font-medium text-primary group-hover:text-accent transition-colors text-[length:var(--text-label)]">
                                 {relatedCity.name}
                             </span>
                         </a>
@@ -845,36 +1159,30 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
         style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
     >
         <Container>
-            <div class="text-center mb-10">
-                <span
-                    class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block"
-                >
-                    More Services
-                </span>
-                <h2
-                    class="text-2xl md:text-3xl font-black text-primary uppercase"
-                >
+            <header class="section-header">
+                <span class="section-label inline-flex items-center gap-1.5"><Zap class="w-4 h-4" /> More Services</span>
+                <h2 class="section-title">
                     Other Electrical Services
                     <span class="text-accent"> in {city.name}</span>
                 </h2>
-            </div>
+            </header>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                     relatedServices.map((relatedService) => (
                         <a
                             href={`/services/${relatedService.slug}/${cityId}`}
-                            class="group flex items-center justify-between p-5 bg-white rounded-xl border border-gray-100 hover:border-accent hover:shadow-md transition-all"
+                            class="group flex items-center justify-between p-5 bg-white rounded-[var(--radius-xl)] border border-[var(--border-light)] hover:border-accent hover:shadow-[var(--shadow-md)] transition-all"
                         >
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center">
                                     <Zap class="w-5 h-5 text-accent" />
                                 </div>
                                 <span class="font-bold text-primary group-hover:text-accent transition-colors">
                                     {relatedService.name}
                                 </span>
                             </div>
-                            <ChevronRight class="w-5 h-5 text-gray-400 group-hover:text-accent transition-colors" />
+                            <ChevronRight class="w-5 h-5 text-[var(--clr-muted)] group-hover:text-accent transition-colors" />
                         </a>
                     ))
                 }
@@ -895,38 +1203,55 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
     </section>
 
     <!-- Final CTA -->
-    <section
-        class="bg-gradient-to-br from-primary to-primary/95"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
-    >
-        <Container class="text-center">
-            <Zap class="w-16 h-16 text-accent mx-auto mb-6 animate-pulse" />
-            <h2
-                class="text-3xl md:text-5xl font-black text-white uppercase mb-6"
-            >
-                Ready for {service.name}
-                <span
-                    class="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
-                >
-                    in {city.name}?
-                </span>
-            </h2>
-            <p class="text-gray-200 text-lg md:text-xl mb-10">
-                Get expert electrical service from {city.name}'s trusted
-                electricians. Licensed, insured, and available 24/7 for your
-                electrical needs.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <CtaButton
-                    action="call"
-                    variant="secondary"
-                    size="lg"
-                    text="Call Now"
-                />
-                <Button href="/book" variant="primary" size="lg" class="gap-2">
-                    <Zap class="w-5 h-5" />
-                    Book Online
-                </Button>
+    <section id="booking-section" class="relative bg-gradient-to-br from-primary via-primary/95 to-primary overflow-hidden" style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--color-accent)_0%,_transparent_50%)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,_var(--color-accent)_0%,_transparent_40%)]"></div>
+        </div>
+        <Container class="relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="lg:sticky lg:top-28">
+                    <Zap class="w-12 h-12 text-accent mb-6 animate-pulse" />
+                    <h2 class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] lg:text-[length:var(--text-display)] font-black text-white uppercase mb-6 font-display leading-tight">
+                        Schedule Your Free {service.name}
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
+                            Estimate in {city.name}
+                        </span>
+                    </h2>
+                    <p class="text-white/80 text-[length:var(--text-body)] leading-relaxed mb-8">
+                        Get expert electrical service from {city.name}'s most trusted 
+                        electricians. Licensed, insured, and available 24/7 for your 
+                        electrical needs in {city.county} County.
+                    </p>
+
+                    <!-- Trust Micro-Stats -->
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-[var(--radius-lg)]">
+                            <Shield class="w-4 h-4 text-accent" />
+                            <span class="text-white text-[length:var(--text-caption)] font-bold uppercase tracking-wider">Licensed FL #{SITE_CONFIG.credentials.license.number}</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-[var(--radius-lg)]">
+                            <Star class="w-4 h-4 text-accent fill-accent" />
+                            <span class="text-white text-[length:var(--text-caption)] font-bold uppercase tracking-wider">{SITE_CONFIG.stats.totalReviews}+ Reviews</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-[var(--radius-lg)]">
+                            <CheckCircle class="w-4 h-4 text-accent" />
+                            <span class="text-white text-[length:var(--text-caption)] font-bold uppercase tracking-wider">$2M Insured</span>
+                        </div>
+                    </div>
+
+                    <CtaButton
+                        action="call"
+                        variant="secondary"
+                        size="lg"
+                        text="Call&nbsp;Now 24/7"
+                    />
+                </div>
+
+                <!-- Booking Form -->
+                <div>
+                    <BookingForm idPrefix="booking-footer" />
+                </div>
             </div>
         </Container>
     </section>
@@ -995,4 +1320,56 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
         });
     });
 </script>
+
+<style>
+    /* =========================================
+       SECTION HEADERS
+       ========================================= */
+    .section-header {
+        text-align: center;
+        margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-header-left {
+        text-align: left;
+    }
+
+    .section-header-light {
+        /* Light variant context — children override */
+    }
+
+    .section-label {
+        display: inline-block;
+        color: var(--color-accent);
+        font-size: var(--text-label);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+        padding: 0.5rem 1rem;
+        background: rgba(var(--color-accent-rgb), 0.1);
+        border-radius: var(--radius-full);
+    }
+
+    .section-label-light {
+        color: white;
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .section-title-light {
+        color: white;
+    }
+
+    .section-description {
+        font-size: var(--text-body);
+        color: var(--text-body);
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    .section-description-light {
+        color: rgba(255, 255, 255, 0.85);
+    }
+</style>
 </Layout>

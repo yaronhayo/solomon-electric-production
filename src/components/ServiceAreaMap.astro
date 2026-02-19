@@ -255,12 +255,13 @@ const dataProps = {
     defaultCenter,
     defaultZoom,
     averageRating: SITE_CONFIG.stats.averageRating,
+    licenseNumber: SITE_CONFIG.credentials.license.number,
     GOOGLE_MAPS_API_KEY: SITE_CONFIG.seo.integrations.googleMaps,
 };
 ---
 
 <div
-    class="service-area-map-container rounded-[var(--radius-xl)] overflow-hidden shadow-2xl"
+    class="service-area-map-container rounded-[var(--radius-xl)] overflow-hidden shadow-[var(--shadow-xl)]"
 >
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
         <!-- Content Side - DARK THEME -->
@@ -274,25 +275,29 @@ const dataProps = {
             </div>
 
             <div
-                class="inline-block px-3 py-1.5 bg-accent/90 text-primary font-bold text-[10px] tracking-[0.2em] uppercase mb-4 w-fit"
+                class="inline-block px-3 py-1.5 bg-accent/90 text-primary font-bold text-[length:var(--text-micro)] tracking-[0.2em] uppercase mb-4 w-fit"
                 style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);"
             >
                 Coverage Network
             </div>
             <h2
-                class="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-[1.1] font-display uppercase"
+                class="text-[length:var(--text-h3)] md:text-[length:var(--text-h2)] lg:text-[length:var(--text-h1)] font-black text-white mb-4 leading-[1.1] font-display uppercase"
             >
                 Serving All of <br />
                 <span class="text-accent">South Florida</span>
             </h2>
 
-            <p class="text-sm md:text-base text-white/75 mb-6 leading-relaxed">
+            <p
+                class="text-[length:var(--text-label)] md:text-[length:var(--text-body-sm)] text-white/75 mb-6 leading-relaxed"
+            >
                 Licensed electricians providing rapid response across the entire
                 tri-county area.
             </p>
 
             <!-- County Cards - Interactive with map -->
-            <div class="space-y-2 mb-6">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-2 mb-6"
+            >
                 <!-- Miami-Dade -->
                 <a
                     href={miamiDadeLink}
@@ -307,11 +312,13 @@ const dataProps = {
                     </div>
                     <div class="flex-grow">
                         <h3
-                            class="text-white font-bold text-sm group-hover:text-white transition-colors"
+                            class="text-white font-bold text-[length:var(--text-label)] group-hover:text-white transition-colors"
                         >
                             Miami-Dade County
                         </h3>
-                        <p class="text-white/70 text-xs">
+                        <p
+                            class="text-white/70 text-[length:var(--text-caption)]"
+                        >
                             6 Cities • 24/7 Service
                         </p>
                     </div>
@@ -328,28 +335,30 @@ const dataProps = {
                 <!-- Broward -->
                 <a
                     href={browardLink}
-                    class="county-card flex items-center group p-3 bg-[#1E5AA8]/20 border-l-4 border-[#1E5AA8] hover:bg-[#1E5AA8]/30 transition-all duration-300"
+                    class="county-card flex items-center group p-3 bg-broward/20 border-l-4 border-broward hover:bg-broward/30 transition-all duration-300"
                     data-county="broward"
                 >
                     <div
-                        class="w-8 h-8 bg-[#1E5AA8] flex items-center justify-center text-white mr-3 group-hover:scale-110 transition-transform"
+                        class="w-8 h-8 bg-broward flex items-center justify-center text-white mr-3 group-hover:scale-110 transition-transform"
                         style="clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);"
                     >
                         <MapPin class="w-4 h-4" />
                     </div>
                     <div class="flex-grow">
                         <h3
-                            class="text-white font-bold text-sm group-hover:text-white transition-colors"
+                            class="text-white font-bold text-[length:var(--text-label)] group-hover:text-white transition-colors"
                         >
                             Broward County
                         </h3>
-                        <p class="text-white/70 text-xs">
+                        <p
+                            class="text-white/70 text-[length:var(--text-caption)]"
+                        >
                             15 Cities • 24/7 Service
                         </p>
                     </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-4 h-4 text-[#1E5AA8] group-hover:text-accent group-hover:translate-x-1 transition-all"
+                        class="w-4 h-4 text-broward group-hover:text-accent group-hover:translate-x-1 transition-all"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -360,28 +369,30 @@ const dataProps = {
                 <!-- Palm Beach -->
                 <a
                     href={palmBeachLink}
-                    class="county-card flex items-center group p-3 bg-[#2980B9]/20 border-l-4 border-[#2980B9] hover:bg-[#2980B9]/30 transition-all duration-300"
+                    class="county-card flex items-center group p-3 bg-palm-beach/20 border-l-4 border-palm-beach hover:bg-palm-beach/30 transition-all duration-300"
                     data-county="palm-beach"
                 >
                     <div
-                        class="w-8 h-8 bg-[#2980B9] flex items-center justify-center text-white mr-3 group-hover:scale-110 transition-transform"
+                        class="w-8 h-8 bg-palm-beach flex items-center justify-center text-white mr-3 group-hover:scale-110 transition-transform"
                         style="clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);"
                     >
                         <MapPin class="w-4 h-4" />
                     </div>
                     <div class="flex-grow">
                         <h3
-                            class="text-white font-bold text-sm group-hover:text-white transition-colors"
+                            class="text-white font-bold text-[length:var(--text-label)] group-hover:text-white transition-colors"
                         >
                             Palm Beach County
                         </h3>
-                        <p class="text-white/70 text-xs">
+                        <p
+                            class="text-white/70 text-[length:var(--text-caption)]"
+                        >
                             6 Cities • 24/7 Service
                         </p>
                     </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-4 h-4 text-[#2980B9] group-hover:text-accent group-hover:translate-x-1 transition-all"
+                        class="w-4 h-4 text-palm-beach group-hover:text-accent group-hover:translate-x-1 transition-all"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -416,7 +427,9 @@ const dataProps = {
                     <Zap
                         class="w-12 h-12 text-accent animate-pulse mx-auto mb-3"
                     />
-                    <p class="text-sm text-[var(--text-muted)] font-medium">
+                    <p
+                        class="text-[length:var(--text-label)] text-[var(--clr-body)] font-medium"
+                    >
                         Loading map...
                     </p>
                 </div>
@@ -424,24 +437,32 @@ const dataProps = {
 
             <!-- Stats Badge -->
             <div
-                class="absolute bottom-4 right-4 bg-[var(--color-primary)] px-4 py-3 shadow-lg z-10"
+                class="absolute bottom-4 right-4 bg-[var(--color-primary)] px-4 py-3 shadow-[var(--shadow-lg)] z-10"
                 style="clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);"
             >
                 <div class="flex items-center gap-3 text-white">
                     <div class="text-center">
                         <div
-                            class="text-lg font-black text-accent leading-none"
+                            class="text-[length:var(--text-body)] font-black text-accent leading-none"
                         >
                             27
                         </div>
-                        <div class="text-[8px] text-white/70 uppercase">
+                        <div
+                            class="text-[length:var(--text-micro)] text-white/70 uppercase"
+                        >
                             Cities
                         </div>
                     </div>
                     <div class="w-px h-6 bg-white/20"></div>
                     <div class="text-center">
-                        <div class="text-lg font-black leading-none">3</div>
-                        <div class="text-[8px] text-white/70 uppercase">
+                        <div
+                            class="text-[length:var(--text-body)] font-black leading-none"
+                        >
+                            3
+                        </div>
+                        <div
+                            class="text-[length:var(--text-micro)] text-white/70 uppercase"
+                        >
                             Counties
                         </div>
                     </div>
@@ -535,15 +556,14 @@ const dataProps = {
         const mapElement = document.getElementById("interactive-map");
         if (!mapElement) return;
 
-        map = new (window as any).google.maps.Map(mapElement, {
+        map = new window.google.maps.Map(mapElement, {
             center: data.defaultCenter,
             zoom: data.defaultZoom,
             styles: mapStyles,
             disableDefaultUI: true,
             zoomControl: true,
             zoomControlOptions: {
-                position: (window as any).google.maps.ControlPosition
-                    .RIGHT_CENTER,
+                position: window.google.maps.ControlPosition.RIGHT_CENTER,
             },
             mapTypeControl: false,
             streetViewControl: false,
@@ -601,7 +621,7 @@ const dataProps = {
             strokeColor: "#0D4380",
             strokeWeight: 1,
             scale: 1.5,
-            anchor: new (window as any).google.maps.Point(12, 22),
+            anchor: new window.google.maps.Point(12, 22),
         });
 
         // Add city markers with click state tracking
@@ -610,12 +630,12 @@ const dataProps = {
             const _countyColor =
                 data.countyBoundaries[city.county]?.color || "#0D4380";
 
-            const marker = new (window as any).google.maps.Marker({
+            const marker = new window.google.maps.Marker({
                 position: { lat: city.lat, lng: city.lng },
                 map: map,
                 title: city.name,
                 icon: createMarkerIcon(false),
-                animation: (window as any).google.maps.Animation.DROP,
+                animation: window.google.maps.Animation.DROP,
             });
 
             // Track click state for double-click behavior
@@ -633,13 +653,13 @@ const dataProps = {
                     // Show info window
                     const content = `
                         <div style="padding: 16px; font-family: var(--font-secondary), sans-serif; min-width: 200px;">
-                            <h3 style="margin: 0 0 4px 0; font-weight: 800; color: #0D4380; font-size: 16px; text-transform: uppercase;">${city.name}</h3>
-                            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 12px;">
-                                <span style="color: #CDAC4F; font-size: 14px;">★★★★★</span>
+                            <h3 style="margin: 0 0 4px 0; font-weight: 800; color: #0D4380; font-size: 1rem; text-transform: uppercase;">${city.name}</h3>
+                            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: var(--spacing-sm, 12px);">
+                                <span style="color: #CDAC4F; display: inline-flex; gap: 1px;">${Array(5).fill('<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>').join("")}</span>
                                 <span style="font-size: 12px; font-weight: 700; color: #666;">${data.averageRating} Rating</span>
                             </div>
-                            <p style="margin: 0 0 12px 0; font-size: 12px; color: #444; line-height: 1.4;">24/7 Professional Electrical Services in ${city.name}. Licensed Florida Contractor #${SITE_CONFIG.credentials.license.number}.</p>
-                            <p style="margin: 0; font-size: 11px; color: #14D3E3; font-weight: 700;">Click again to view service details →</p>
+                            <p style="margin: 0 0 12px 0; font-size: 12px; color: #444; line-height: 1.4;">24/7 Professional Electrical Services in ${city.name}. Licensed Florida Contractor #${data.licenseNumber}.</p>
+                            <p style="margin: 0; font-size: 11px; color: #14D3E3; font-weight: 700; display: flex; align-items: center; gap: 4px;">Click again to view service details <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></p>
                         </div>
                     `;
                     infoWindow.setContent(content);
@@ -712,7 +732,7 @@ const dataProps = {
                     if (markerCounty === countyId) {
                         marker.setVisible(true);
                         marker.setAnimation(
-                            (window as any).google.maps.Animation.BOUNCE,
+                            window.google.maps.Animation.BOUNCE,
                         );
                         setTimeout(() => marker.setAnimation(null), 750);
                     } else {
@@ -745,7 +765,7 @@ const dataProps = {
 
     // Load Google Maps API
     function loadGoogleMapsScript() {
-        if ((window as any).google && (window as any).google.maps) {
+        if (window.google && window.google.maps) {
             initMap();
             return;
         }

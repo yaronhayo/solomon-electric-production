@@ -1,12 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/heroes/contact.webp";
+import { IMAGES } from "../config/images";
 import Container from "../components/ui/Container.astro";
 import PageHero from "../components/PageHero.astro";
 import { SITE_CONFIG } from "../config/site";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import { generateBreadcrumbSchema } from "../utils/seo";
-import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-astro";
+import {
+    Phone,
+    Mail,
+    MapPin,
+    Clock,
+    AlertTriangle,
+    Zap,
+    Plug,
+    Shield,
+    Wrench,
+    Home,
+} from "lucide-astro";
 
 // Generate ContactPage Schema
 const contactSchema = {
@@ -85,9 +96,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 ---
 
 <Layout
-    title={`Contact Solomon Electric | 24/7 Miami Electrician | ${SITE_CONFIG.contact.phone.formatted}`}
-    description={`Need an electrician? Call ${SITE_CONFIG.contact.phone.formatted} for 24/7 emergency service in Miami-Dade & Broward. Free estimates, same-day appointments. Licensed & insured.`}
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    title="Contact Solomon Electric | 24/7 Miami Electrician"
+    description={`Need an electrician? Call ${SITE_CONFIG.contact.phone.formatted} for 24/7 emergency service in Miami-Dade & Broward. Free estimates, prompt appointments. Licensed & insured.`}
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
     ogImageAlt="Contact Solomon Electric - 24/7 Emergency Electrical Service in Miami"
     topBarDark={true}
 >
@@ -106,23 +117,22 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
     <!-- Hero Section -->
     <PageHero
-        title={`Call Miami's Top Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${SITE_CONFIG.contact.phone.formatted} • 24/7 Service</span>`}
-        subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} • Free Estimates • Same-Day Available`}
+        title={`Call Miami's Top Electrician<br><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${SITE_CONFIG.contact.phone.formatted} • 24/7 Service</span>`}
+        subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} • Free Estimates • Fast Service Available`}
         description="Emergency electrical repair? Panel upgrade questions? EV charger installation quote? Contact Solomon Electric anytime—we answer calls 24/7 and provide free estimates for all electrical services in Miami-Dade and Broward counties."
-        image={heroImage}
+        image={IMAGES.heroes.contact.src}
         trustIndicators={true}
     />
 
-    <div class="bg-light py-20 md:py-32">
+    <div class="bg-light py-12 md:py-32">
         <Container>
             <div
-                class="grid grid-cols-1 lg:grid-cols-2 items-start"
-                style="gap: var(--spacing-3xl);"
+                class="grid grid-cols-1 lg:grid-cols-2 items-start gap-12 lg:gap-[var(--spacing-3xl)]"
             >
                 <!-- Contact Info -->
                 <div>
                     <h2
-                        class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase"
+                        class="text-[length:var(--text-h1)] md:text-[length:var(--text-display)] font-black text-primary leading-tight uppercase font-display"
                         style="margin-bottom: var(--spacing-xl);"
                     >
                         Miami Electrician <span class="text-accent"
@@ -132,16 +142,16 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
                     <div class="space-y-10">
                         <div
-                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-2xl transition-all hover:bg-white/10"
+                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-[var(--radius-2xl)] transition-all hover:bg-white/10"
                         >
                             <div
-                                class="bg-accent/10 p-5 rounded-xl text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300 shimmer-authority"
+                                class="bg-accent/10 p-5 rounded-[var(--radius-xl)] text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300 shimmer-authority"
                             >
                                 <Phone class="w-8 h-8" />
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
+                                    class="text-[length:var(--text-h5)] font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
                                 >
                                     Phone
                                 </h3>
@@ -150,53 +160,53 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                 </p>
                                 <a
                                     href={SITE_CONFIG.contact.phone.href}
-                                    class="text-2xl font-black text-accent hover:text-primary transition-colors tracking-wider"
+                                    class="text-[length:var(--text-h4)] font-black text-accent hover:text-primary transition-colors tracking-wider"
                                     >{SITE_CONFIG.contact.phone.formatted}</a
                                 >
                             </div>
                         </div>
 
                         <div
-                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-2xl transition-all hover:bg-white/10"
+                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-[var(--radius-2xl)] transition-all hover:bg-white/10"
                         >
                             <div
-                                class="bg-accent/10 p-5 rounded-xl text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300"
+                                class="bg-accent/10 p-5 rounded-[var(--radius-xl)] text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300"
                             >
                                 <Mail class="w-8 h-8" />
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
+                                    class="text-[length:var(--text-h5)] font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
                                 >
                                     Email
                                 </h3>
                                 <p class="text-body mb-2 font-medium">
-                                    For general inquiries & quotes
+                                    For general inquiries &amp; quotes
                                 </p>
                                 <a
                                     href={`mailto:${SITE_CONFIG.contact.email.primary}`}
-                                    class="text-xl font-bold text-primary hover:text-accent transition-colors"
+                                    class="text-[length:var(--text-h5)] font-bold text-primary hover:text-accent transition-colors"
                                     >{SITE_CONFIG.contact.email.primary}</a
                                 >
                             </div>
                         </div>
 
                         <div
-                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-2xl transition-all hover:bg-white/10"
+                            class="flex items-start gap-6 group glass-bg glass-border p-6 rounded-[var(--radius-2xl)] transition-all hover:bg-white/10"
                         >
                             <div
-                                class="bg-accent/10 p-5 rounded-xl text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300"
+                                class="bg-accent/10 p-5 rounded-[var(--radius-xl)] text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300"
                             >
                                 <MapPin class="w-8 h-8" />
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
+                                    class="text-[length:var(--text-h5)] font-bold mb-1 text-primary uppercase tracking-wide font-secondary"
                                 >
                                     Service Areas
                                 </h3>
                                 <p class="text-body font-medium">
-                                    Miami-Dade, Broward &<br />Palm Beach
+                                    Miami-Dade, Broward &amp;<br />Palm Beach
                                     Counties
                                 </p>
                             </div>
@@ -206,7 +216,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
                 <!-- Contact Form -->
                 <div
-                    class="glass-bg-dark p-8 md:p-10 border-l-4 border-l-accent shadow-xl relative overflow-hidden rounded-2xl"
+                    class="glass-bg-dark p-8 md:p-10 border-l-4 border-l-accent shadow-[var(--shadow-xl)] relative overflow-hidden rounded-[var(--radius-2xl)]"
                 >
                     <!-- Decorative Corner Element -->
                     <div
@@ -214,15 +224,37 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                     >
                     </div>
                     <h2
-                        class="text-3xl font-black mb-8 text-primary uppercase relative z-10"
+                        class="text-[length:var(--text-h2)] font-black mb-8 text-primary uppercase relative z-10 font-display"
                     >
-                        Send a <span class="text-accent">Message</span>
+                        Request Your Free <span class="text-accent"
+                            >Electrical Estimate</span
+                        >
                     </h2>
-                    <form id="contact-form" class="space-y-6">
+                    <form
+                        id="contact-form"
+                        class="space-y-6"
+                        data-recaptcha-key={SITE_CONFIG.seo.integrations
+                            .recaptcha}
+                    >
+                        <!-- Honeypot anti-spam field — hidden from humans, bots will fill it -->
+                        <div
+                            style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;overflow:hidden;"
+                            aria-hidden="true"
+                        >
+                            <label for="website">Website</label>
+                            <input
+                                type="text"
+                                id="website"
+                                name="website"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
+                        </div>
+
                         <div>
                             <label
                                 for="name"
-                                class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                class="block text-[length:var(--text-label)] font-bold text-[var(--clr-muted)] mb-3 uppercase tracking-wide font-secondary"
                                 >Your Name</label
                             >
                             <input
@@ -230,6 +262,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                 id="name"
                                 name="name"
                                 required
+                                autocomplete="name"
                                 class="w-full bg-light border-2 border-gray-200 px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all placeholder-gray-400 font-medium"
                                 placeholder="John Doe"
                             />
@@ -239,7 +272,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                             <div>
                                 <label
                                     for="email"
-                                    class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                    class="block text-[length:var(--text-label)] font-bold text-[var(--clr-muted)] mb-3 uppercase tracking-wide font-secondary"
                                     >Email Address</label
                                 >
                                 <input
@@ -247,6 +280,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                     id="email"
                                     name="email"
                                     required
+                                    autocomplete="email"
                                     class="w-full bg-light border-2 border-gray-200 px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all placeholder-gray-400 font-medium"
                                     placeholder="john@example.com"
                                 />
@@ -254,7 +288,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                             <div>
                                 <label
                                     for="phone"
-                                    class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                    class="block text-[length:var(--text-label)] font-bold text-[var(--clr-muted)] mb-3 uppercase tracking-wide font-secondary"
                                     >Phone Number</label
                                 >
                                 <input
@@ -262,6 +296,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                     id="phone"
                                     name="phone"
                                     required
+                                    autocomplete="tel"
                                     class="w-full bg-light border-2 border-gray-200 px-6 py-4 text-primary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all placeholder-gray-400 font-medium"
                                     placeholder="(305) 555-0123"
                                 />
@@ -271,7 +306,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                         <div>
                             <label
                                 for="message"
-                                class="block text-sm font-bold text-[var(--text-muted)] mb-3 uppercase tracking-wide font-secondary"
+                                class="block text-[length:var(--text-label)] font-bold text-[var(--clr-muted)] mb-3 uppercase tracking-wide font-secondary"
                                 >Message</label
                             >
                             <textarea
@@ -283,17 +318,64 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                                 placeholder="How can we help you?"></textarea>
                         </div>
 
+                        <div class="space-y-4">
+                            <!-- SMS Consent Checkbox (TCR Compliance Required) -->
+                            <div class="flex items-start group">
+                                <input
+                                    type="checkbox"
+                                    name="smsConsent"
+                                    id="smsConsent"
+                                    required
+                                    class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent flex-shrink-0 cursor-pointer"
+                                />
+                                <label
+                                    for="smsConsent"
+                                    class="ml-3 text-[length:var(--text-caption)] text-[var(--clr-body)] font-medium leading-relaxed cursor-pointer"
+                                >
+                                    By submitting this form and signing up for
+                                    texts, you consent to receive text messages
+                                    from Solomon Electric, LLC at the number
+                                    provided, including messages sent by auto
+                                    dialer. Consent is not a condition of
+                                    purchase. Msg &amp; data rates may apply.
+                                    Msg frequency varies. Unsubscribe at any
+                                    time by replying STOP or clicking the
+                                    unsubscribe link (where available) and no
+                                    further messages will be sent. Reply HELP
+                                    for help.
+                                </label>
+                                <div class="ml-3 mt-2 flex items-center gap-2">
+                                    <button
+                                        type="button"
+                                        class="legal-link text-accent hover:underline font-semibold text-[length:var(--text-caption)]"
+                                        data-modal="privacy"
+                                        >Privacy Policy</button
+                                    >
+                                    <span
+                                        class="text-gray-400 text-[length:var(--text-caption)]"
+                                        >|</span
+                                    >
+                                    <button
+                                        type="button"
+                                        class="legal-link text-accent hover:underline font-semibold text-[length:var(--text-caption)]"
+                                        data-modal="terms"
+                                        >Terms &amp; Conditions</button
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
                         <button
                             type="submit"
                             id="submit-btn"
-                            class="w-full bg-accent text-white font-black text-lg py-5 hover:bg-primary transition-all transform hover:-translate-y-1 uppercase tracking-widest shadow-[var(--shadow-lg)] border-l-4 border-primary"
+                            class="w-full bg-accent text-white font-black text-[length:var(--text-body)] py-5 hover:bg-primary transition-all transform hover:-translate-y-1 uppercase tracking-widest shadow-[var(--shadow-lg)] border-l-4 border-primary"
                         >
                             Send Message
                         </button>
 
                         <div
                             id="form-status"
-                            class="hidden text-center p-4 rounded-lg font-bold mt-4"
+                            class="hidden text-center p-4 rounded-[var(--radius-lg)] font-bold mt-4"
                         >
                         </div>
                     </form>
@@ -301,6 +383,180 @@ const breadcrumbSchema = generateBreadcrumbSchema(
             </div>
         </Container>
     </div>
+
+    <!-- Legal Modal (Privacy Policy & Terms) -->
+    <div
+        id="legalModal"
+        class="legal-modal fixed inset-0 z-50 hidden items-center justify-center p-4"
+    >
+        <div class="modal-backdrop fixed inset-0 bg-black/60 backdrop-blur-sm">
+        </div>
+        <div
+            class="modal-content relative bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-xl)] w-full max-w-4xl max-h-[80vh] flex flex-col overflow-hidden transform transition-all"
+        >
+            <div
+                class="modal-header flex items-center justify-between p-6 border-b border-gray-200 bg-primary"
+            >
+                <h3
+                    id="modalTitle"
+                    class="text-[length:var(--text-h5)] font-black text-white uppercase tracking-wide font-secondary"
+                >
+                    Legal Information
+                </h3>
+                <button
+                    type="button"
+                    class="modal-close text-white/80 hover:text-white transition-colors"
+                    aria-label="Close modal"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div
+                id="modalBody"
+                class="modal-body p-6 overflow-y-auto text-[length:var(--text-label)] leading-relaxed text-gray-700"
+            >
+            </div>
+            <div
+                class="modal-footer p-4 border-t border-gray-200 bg-gray-50 flex justify-end"
+            >
+                <button
+                    type="button"
+                    class="modal-close px-6 py-2 bg-primary text-white font-bold rounded hover:bg-primary/90 transition-colors uppercase text-[length:var(--text-label)] tracking-wider"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategic Service Hub & Local Coverage -->
+    <section
+        class="bg-white border-y border-[var(--border-light)] overflow-hidden"
+        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
+    >
+        <Container>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <!-- Service Hub -->
+                <div>
+                    <h3
+                        class="text-[length:var(--text-h3)] font-black text-primary uppercase font-display mb-8"
+                    >
+                        Our Strategic <span class="text-accent"
+                            >Electrical Services</span
+                        >
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {
+                            [
+                                {
+                                    name: "Emergency Response",
+                                    icon: AlertTriangle,
+                                    href: "/services/24-7-emergency-electrical-service",
+                                },
+                                {
+                                    name: "Panel Upgrades",
+                                    icon: Zap,
+                                    href: "/services/electrical-panel-upgrade-100a-to-200a",
+                                },
+                                {
+                                    name: "EV Charging Infrastructure",
+                                    icon: Plug,
+                                    href: "/services/level-2-ev-charger-installation",
+                                },
+                                {
+                                    name: "Specialized Inspections",
+                                    icon: Shield,
+                                    href: "/services/electrical-safety-inspection",
+                                },
+                                {
+                                    name: "Commercial Construction",
+                                    icon: Wrench,
+                                    href: "/services/commercial-panel-installation-upgrades",
+                                },
+                                {
+                                    name: "Landscape Illumination",
+                                    icon: Home,
+                                    href: "/services/landscape-outdoor-lighting",
+                                },
+                            ].map((item) => (
+                                <a
+                                    href={item.href}
+                                    class="flex items-center gap-3 p-4 bg-light rounded-[var(--radius-xl)] border border-transparent hover:border-accent/20 hover:bg-white hover:shadow-[var(--shadow-md)] transition-all group"
+                                >
+                                    <div class="w-10 h-10 bg-white rounded-[var(--radius-lg)] flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                                        <item.icon class="w-5 h-5" />
+                                    </div>
+                                    <span class="text-[length:var(--text-label)] font-bold text-primary group-hover:text-accent transition-colors">
+                                        {item.name}
+                                    </span>
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <!-- Local Coverage -->
+                <div>
+                    <h3
+                        class="text-[length:var(--text-h3)] font-black text-primary uppercase font-display mb-8"
+                    >
+                        South Florida <span class="text-accent"
+                            >Coverage Map</span
+                        >
+                    </h3>
+                    <div class="space-y-6">
+                        <p
+                            class="text-[var(--clr-body)] font-medium leading-relaxed"
+                        >
+                            Solomon Electric operates a strategic fleet of 24/7
+                            service vehicles stationed throughout South Florida,
+                            ensuring a sub-60 minute response time for
+                            emergencies in all major corridors.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            {
+                                [
+                                    "Miami",
+                                    "Miami Beach",
+                                    "Miami Gardens",
+                                    "North Miami",
+                                    "Hollywood",
+                                    "Fort Lauderdale",
+                                    "Pembroke Pines",
+                                    "Weston",
+                                    "Boca Raton",
+                                    "Delray Beach",
+                                ].map((city) => (
+                                    <a
+                                        href={`/service-areas/${city.toLowerCase().replace(/\s+/g, "-")}`}
+                                        class="px-4 py-2 bg-primary/5 text-primary text-[length:var(--text-micro)] font-black uppercase tracking-widest rounded-full border border-primary/10 hover:bg-primary hover:text-white transition-all"
+                                    >
+                                        {city}
+                                    </a>
+                                ))
+                            }
+                            <span
+                                class="px-4 py-2 bg-accent/10 text-accent text-[length:var(--text-micro)] font-black uppercase tracking-widest rounded-full border border-accent/20 italic"
+                            >
+                                &amp; Surrounding Areas
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
 
     <!-- Business Hours & Emergency Protocol -->
     <section
@@ -316,15 +572,15 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 >
                     <div class="flex items-center gap-4 mb-6">
                         <div
-                            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+                            class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center"
                         >
                             <Clock class="w-6 h-6 text-white" />
                         </div>
                         <h2
                             id="hours-heading"
-                            class="text-2xl font-black text-primary uppercase"
+                            class="text-[length:var(--text-h4)] font-black text-primary uppercase font-display"
                         >
-                            Business Hours
+                            Office Hours & Emergency Availability
                         </h2>
                     </div>
                     <div class="space-y-3">
@@ -364,16 +620,18 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
                 <!-- Emergency Protocol -->
                 <div
-                    class="bg-gradient-to-br from-accent/10 to-accent/5 p-8 rounded-2xl border border-accent/20"
+                    class="bg-gradient-to-br from-accent/10 to-accent/5 p-8 rounded-[var(--radius-2xl)] border border-accent/20"
                 >
                     <div class="flex items-center gap-4 mb-6">
                         <div
-                            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center animate-pulse"
+                            class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center animate-pulse"
                         >
                             <AlertTriangle class="w-6 h-6 text-white" />
                         </div>
-                        <h2 class="text-2xl font-black text-primary uppercase">
-                            Emergency Protocol
+                        <h2
+                            class="text-[length:var(--text-h4)] font-black text-primary uppercase font-display"
+                        >
+                            24/7 Emergency Electrician Response
                         </h2>
                     </div>
                     <div class="space-y-4">
@@ -413,7 +671,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                             </li>
                         </ul>
                         <p
-                            class="text-sm text-[var(--text-body)] font-medium italic pt-4 border-t border-accent/20"
+                            class="text-[length:var(--text-label)] text-[var(--clr-body)] font-medium italic pt-4 border-t border-accent/20"
                         >
                             <span class="font-bold text-primary"
                                 >24/7 Availability:</span
@@ -428,12 +686,16 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
     <script>
         // Load Google reCAPTCHA v3 Script dynamically
+        const recaptchaSiteKey =
+            document
+                .getElementById("contact-form")
+                ?.getAttribute("data-recaptcha-key") || "";
+
         const loadRecaptcha = () => {
             if (document.getElementById("recaptcha-script")) return;
             const script = document.createElement("script");
             script.id = "recaptcha-script";
-            script.src =
-                "https://www.google.com/recaptcha/api.js?render=6LeDDjUsAAAAAEJquohduwPouri3rOne3ahYp765";
+            script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
@@ -452,6 +714,110 @@ const breadcrumbSchema = generateBreadcrumbSchema(
             "submit-btn",
         ) as HTMLButtonElement;
 
+        // reCAPTCHA verification status
+        let recaptchaVerified = false;
+
+        // =====================================================
+        // FORM INPUT FORMATTING UTILITIES (Imported)
+        // =====================================================
+        const { formatPhoneNumber, isValidUSPhone, capitalizeName } =
+            await import("../utils/form-validation");
+
+        // Show validation error
+        const showFieldError = (
+            input: HTMLInputElement | HTMLTextAreaElement,
+            message: string,
+        ) => {
+            input.classList.add("border-red-500");
+            input.setAttribute("aria-invalid", "true");
+            let errorEl = input.parentElement?.querySelector(
+                ".field-error",
+            ) as HTMLElement;
+            if (!errorEl) {
+                errorEl = document.createElement("p");
+                errorEl.className =
+                    "field-error text-red-500 text-xs mt-1 font-medium";
+                errorEl.id = `${input.id}-error`;
+                input.parentElement?.appendChild(errorEl);
+                input.setAttribute("aria-describedby", errorEl.id);
+            }
+            errorEl.textContent = message;
+        };
+
+        // Clear validation error
+        const clearFieldError = (
+            input: HTMLInputElement | HTMLTextAreaElement,
+        ) => {
+            input.classList.remove("border-red-500");
+            input.removeAttribute("aria-invalid");
+            input.removeAttribute("aria-describedby");
+            const errorEl = input.parentElement?.querySelector(".field-error");
+            if (errorEl) errorEl.remove();
+        };
+
+        // =====================================================
+        // FORM INPUT EVENT HANDLERS
+        // =====================================================
+
+        // Name input — auto-capitalize on blur
+        const nameInput = document.getElementById("name") as HTMLInputElement;
+        if (nameInput) {
+            nameInput.addEventListener("blur", () => {
+                if (nameInput.value.trim()) {
+                    nameInput.value = capitalizeName(nameInput.value.trim());
+                }
+            });
+        }
+
+        // Phone input — format on input, validate
+        const phoneInput = document.getElementById("phone") as HTMLInputElement;
+        if (phoneInput) {
+            phoneInput.addEventListener("input", (e) => {
+                const target = e.target as HTMLInputElement;
+                const cursorPos = target.selectionStart || 0;
+                const prevLen = target.value.length;
+                target.value = formatPhoneNumber(target.value);
+                const newLen = target.value.length;
+                const newPos = cursorPos + (newLen - prevLen);
+                target.setSelectionRange(newPos, newPos);
+
+                if (target.value && !isValidUSPhone(target.value)) {
+                    showFieldError(
+                        target,
+                        "Please enter a valid 10-digit US phone number",
+                    );
+                } else {
+                    clearFieldError(target);
+                }
+            });
+        }
+
+        // Email input — lowercase + trim on blur
+        const emailInput = document.getElementById("email") as HTMLInputElement;
+        if (emailInput) {
+            emailInput.addEventListener("blur", () => {
+                if (emailInput.value) {
+                    emailInput.value = emailInput.value.trim().toLowerCase();
+                }
+            });
+        }
+
+        // Message input — capitalize first letter of each sentence
+        const messageInput = document.getElementById(
+            "message",
+        ) as HTMLTextAreaElement;
+        if (messageInput) {
+            messageInput.addEventListener("blur", () => {
+                if (messageInput.value.trim()) {
+                    messageInput.value = messageInput.value
+                        .trim()
+                        .replace(/(^\s*\w|[.!?]\s*\w)/g, (c) =>
+                            c.toUpperCase(),
+                        );
+                }
+            });
+        }
+
         form?.addEventListener("submit", async (e) => {
             e.preventDefault();
             if (!statusDiv || !submitBtn) return;
@@ -461,166 +827,35 @@ const breadcrumbSchema = generateBreadcrumbSchema(
             submitBtn.textContent = "Sending...";
             statusDiv.classList.add("hidden");
             statusDiv.className =
-                "hidden text-center p-4 rounded-lg font-bold mt-4";
+                "hidden text-center p-4 rounded-[var(--radius-lg)] font-bold mt-4";
 
             try {
                 // reCAPTCHA verification
-                let recaptchaVerified = false;
                 let recaptchaToken = "";
                 const grecaptcha = (window as any).grecaptcha;
 
                 if (grecaptcha) {
                     await new Promise((resolve) => grecaptcha.ready(resolve));
                     recaptchaToken = await grecaptcha.execute(
-                        "6LeDDjUsAAAAAEJquohduwPouri3rOne3ahYp765",
+                        recaptchaSiteKey,
                         { action: "submit" },
                     );
-                    recaptchaVerified = true;
                 }
 
-                // Collect tracking data
-                const trackingData = {
-                    // Session & timing
-                    sessionStart:
-                        sessionStorage.getItem("sessionStart") ||
-                        new Date().toISOString(),
-                    timeOnSite: Math.round(
-                        (Date.now() -
-                            parseInt(
-                                sessionStorage.getItem("sessionStart") ||
-                                    Date.now().toString(),
-                            )) /
-                            1000,
-                    ),
-
-                    // Navigation
-                    currentUrl: window.location.href,
-                    referrer: document.referrer || "Direct",
-                    clickPath:
-                        sessionStorage.getItem("clickPath") ||
-                        window.location.pathname,
-
-                    // Device & browser
-                    userAgent: navigator.userAgent,
-                    deviceType: /Mobile|Android|iPhone/i.test(
-                        navigator.userAgent,
-                    )
-                        ? "Mobile"
-                        : "Desktop",
-                    screenResolution: `${screen.width}x${screen.height}`,
-                    language: navigator.language,
-
-                    // Consent & cookies
-                    cookiesAccepted:
-                        localStorage.getItem("cookie-consent") === "accepted",
-                    consentTimestamp:
-                        localStorage.getItem("cookie-consent-timestamp") ||
-                        "N/A",
-                    recaptchaVerified,
-
-                    // Traffic source
-                    utmSource:
-                        new URLSearchParams(window.location.search).get(
-                            "utm_source",
-                        ) ||
-                        sessionStorage.getItem("utm_source") ||
-                        "N/A",
-                    utmMedium:
-                        new URLSearchParams(window.location.search).get(
-                            "utm_medium",
-                        ) ||
-                        sessionStorage.getItem("utm_medium") ||
-                        "N/A",
-                    utmCampaign:
-                        new URLSearchParams(window.location.search).get(
-                            "utm_campaign",
-                        ) ||
-                        sessionStorage.getItem("utm_campaign") ||
-                        "N/A",
-                    gclid:
-                        new URLSearchParams(window.location.search).get(
-                            "gclid",
-                        ) ||
-                        sessionStorage.getItem("gclid") ||
-                        null,
-                    trafficSource: (() => {
-                        const ref = document.referrer.toLowerCase();
-                        const params = new URLSearchParams(
-                            window.location.search,
-                        );
-                        // Check for Google Ads first
-                        if (
-                            params.get("gclid") ||
-                            sessionStorage.getItem("gclid")
-                        ) {
-                            return "Google Ads";
-                        }
-                        // Check referrer-based sources
-                        if (
-                            ref.includes("business.google.com") ||
-                            ref.includes("business.google")
-                        ) {
-                            return "Google Business Profile";
-                        }
-                        if (
-                            ref.includes("google.com/maps") ||
-                            ref.includes("maps.google.com")
-                        ) {
-                            return "Google Maps";
-                        }
-                        if (ref.includes("google.com")) {
-                            return "Google Organic";
-                        }
-                        if (ref.includes("bing.com")) {
-                            return "Bing Organic";
-                        }
-                        if (ref.includes("facebook.com")) {
-                            return "Facebook";
-                        }
-                        if (ref.includes("instagram.com")) {
-                            return "Instagram";
-                        }
-                        if (ref.includes("yelp.com")) {
-                            return "Yelp";
-                        }
-                        if (ref.includes("nextdoor.com")) {
-                            return "Nextdoor";
-                        }
-                        if (ref && !ref.includes(window.location.hostname)) {
-                            return "Referral";
-                        }
-                        return "Direct";
-                    })(),
-
-                    // New vs Returning visitor detection
-                    newReturning: (() => {
-                        const lastVisit =
-                            localStorage.getItem("lastVisitTimestamp");
-                        const isReturning = lastVisit !== null;
-                        // Update last visit timestamp
-                        localStorage.setItem(
-                            "lastVisitTimestamp",
-                            new Date().toISOString(),
-                        );
-                        return isReturning ? "Returning" : "New";
-                    })(),
-                };
+                // Collect tracking data (shared utility)
+                const { collectTrackingData, buildTrackingPayload } =
+                    await import("../utils/form-tracking");
+                const trackingData = collectTrackingData();
 
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData.entries());
 
-                // Merge data
+                // Merge form data + reCAPTCHA token + tracking data
                 const payload = {
                     ...data,
                     "g-recaptcha-response": recaptchaToken,
+                    ...buildTrackingPayload(trackingData),
                 };
-
-                // Add tracking data with prefix
-                Object.keys(trackingData).forEach((key) => {
-                    (payload as any)[`tracking_${key}`] = (trackingData as any)[
-                        key
-                    ];
-                });
 
                 const response = await fetch("/api/contact.php", {
                     method: "POST",
@@ -630,11 +865,8 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 const result = await response.json();
 
                 if (response.ok && result.status === "success") {
-                    if (
-                        typeof window !== "undefined" &&
-                        (window as any).dataLayer
-                    ) {
-                        (window as any).dataLayer.push({
+                    if (typeof window !== "undefined" && window.dataLayer) {
+                        window.dataLayer.push({
                             event: "form_submission",
                             form_type: "contact_form",
                         });
@@ -660,6 +892,98 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 submitBtn.disabled = false;
                 submitBtn.textContent = "Send Message";
             }
+        });
+
+        // =====================================================
+        // Legal Modal Functionality (TCR Compliance)
+        // =====================================================
+        const legalModal = document.getElementById("legalModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalBody = document.getElementById("modalBody");
+
+        const legalContent = {
+            privacy: {
+                title: "Privacy Policy",
+                content: `
+                    <h4 class="font-bold text-primary mb-3 font-secondary">Information We Collect</h4>
+                    <p class="mb-4 text-gray-600">We collect information you provide directly, including name, phone number, email address, and service address when you submit a contact form or request a quote.</p>
+                    
+                    <h4 class="font-bold text-primary mb-3 font-secondary">SMS/Text Message Communications</h4>
+                    <p class="mb-4 text-gray-600">By submitting our contact form and signing up for texts, you consent to receive text messages from Solomon Electric, LLC at the number provided, including messages sent by auto dialer. Consent is not a condition of purchase. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available) and no further messages will be sent. Reply HELP for help.</p>
+                    
+                    <p class="mb-4 text-gray-600"><strong>Verbal Opt-In:</strong> Solomon Electric, LLC will collect opt-in verbally from customers. Customers will be able to opt in to receive messages either in person at our physical location, or over a phone call. When a customer is registered for the first time, they are asked to provide the phone number, and staff is trained to ask if the customer would like to opt in to SMS-based billing notifications, appointment reminders, dispatch notifications, and job completion surveys. Customers will be verbally informed that: "Message and data rates may apply", "Message frequency may vary", and they can "text HELP for support or more information and STOP to unsubscribe, at any time and no further messages will be sent." They will also be informed that their information will not be shared with third parties.</p>
+                    
+                    <p class="mb-4 text-gray-600"><strong>Your phone number and consent data will not be shared with third parties for marketing purposes.</strong></p>
+                    
+                    <h4 class="font-bold text-primary mb-3 font-secondary">How We Use Your Information</h4>
+                    <p class="mb-4 text-gray-600">We use your information to provide electrical services, send appointment reminders, dispatch notifications, and follow up on service requests.</p>
+                    
+                    <h4 class="font-bold text-primary mb-3 font-secondary">Contact Us</h4>
+                    <p class="text-gray-600">For questions about this privacy policy, contact us at {SITE_CONFIG.contact.phone.formatted} or {SITE_CONFIG.contact.email.support}.</p>
+                `,
+            },
+            terms: {
+                title: "Terms & Conditions",
+                content: `
+                    <h4 class="font-bold text-primary mb-3 font-secondary">Acceptance of Terms</h4>
+                    <p class="mb-4 text-gray-600">By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                    
+                    <h4 class="font-bold text-primary mb-3 font-secondary">SMS/Text Message Terms</h4>
+                    <p class="mb-4 text-gray-600"><strong>Verbal Opt-In:</strong> Solomon Electric, LLC will collect opt-in verbally from customers. Customers will be able to opt in to receive messages either in person at our physical location, or over a phone call. When a customer is registered for the first time, they are asked to provide the phone number, and staff is trained to ask if the customer would like to opt in to SMS-based billing notifications, appointment reminders, dispatch notifications, and job completion surveys. Customers will be verbally informed that: "Message and data rates may apply", "Message frequency may vary", and they can "text HELP for support or more information and STOP to unsubscribe, at any time and no further messages will be sent." They will also be informed that their information will not be shared with third parties.</p>
+                    
+                    <p class="mb-4 text-gray-600">By submitting our contact form and signing up for texts, you consent to receive text messages from Solomon Electric, LLC at the number provided, including messages sent by auto dialer. Consent is not a condition of purchase. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available) and no further messages will be sent. Reply HELP for help.</p>
+                    
+                    <p class="mb-4 text-gray-600">You may receive appointment reminders, technician dispatch notifications, service completion updates, billing reminders, and customer satisfaction surveys via SMS. You may opt out of receiving text messages at any time by replying STOP. Reply HELP for help.</p>
+                    
+                    <p class="mb-4 text-gray-600">Standard message and data rates may apply. Message frequency varies based on your service activity.</p>
+                    
+                    <h4 class="font-bold text-primary mb-3 font-secondary">Service Terms</h4>
+                    <p class="text-gray-600">Solomon Electric is licensed ({SITE_CONFIG.credentials.license.number}) and insured. All work is performed according to local codes and regulations.</p>
+                `,
+            },
+        };
+
+        function openModal(type: string) {
+            const content = legalContent[type as keyof typeof legalContent];
+            if (!content || !legalModal || !modalTitle || !modalBody) return;
+
+            modalTitle.textContent = content.title;
+            modalBody.innerHTML = content.content;
+            legalModal.classList.remove("hidden");
+            legalModal.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            if (!legalModal) return;
+            legalModal.classList.add("hidden");
+            legalModal.classList.remove("flex");
+            document.body.style.overflow = "";
+        }
+
+        // Event listeners for legal links
+        const legalLinks = document.querySelectorAll(".legal-link");
+        const modalCloseButtons = document.querySelectorAll(".modal-close");
+        const modalBackdrop = document.querySelector(".modal-backdrop");
+
+        legalLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                const modalType = link.getAttribute("data-modal");
+                if (modalType) openModal(modalType);
+            });
+        });
+
+        modalCloseButtons.forEach((btn) => {
+            btn.addEventListener("click", closeModal);
+        });
+
+        if (modalBackdrop) {
+            modalBackdrop.addEventListener("click", closeModal);
+        }
+
+        // Close on Escape key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeModal();
         });
     </script>
 </Layout>

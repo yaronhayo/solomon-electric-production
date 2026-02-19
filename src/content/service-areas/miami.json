@@ -55,12 +55,12 @@
     }
   ],
   "featuredServices": [
-    "condo-electrical-upgrades-miami",
+    "home-electrical-system-upgrade",
     "24-7-emergency-electrical-service",
-    "ev-charging-system-setup",
+    "home-ev-charging-system-setup",
     "recessed-lighting-installation",
     "electrical-panel-upgrade-100a-to-200a",
-    "smart-home-automation"
+    "smart-switch-home-automation"
   ],
   "stats": [
     {
@@ -68,7 +68,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -76,26 +76,26 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
       "question": "Why do Brickell condos have different electrical requirements than single-family homes?",
-      "answer": "High-rise condos in Brickell and Edgewater have unique electrical constraints: limited panel space, shared building infrastructure, HOA approval requirements, and strict fire codes. We specialize in Miami condo electrical work\u2014understanding which upgrades are possible, navigating HOA procedures, and maximizing your electrical capacity within building limitations. Many condo owners are surprised to learn they CAN install EV chargers and upgrade panels with proper planning."
+      "answer": "High-rise condos in Brickell and Edgewater have unique electrical constraints: limited panel space, shared building infrastructure, HOA approval requirements, and strict fire codes. We specialize in Miami condo electrical work—understanding which upgrades are possible, navigating HOA procedures, and maximizing your electrical capacity within building limitations. Many condo owners are surprised to learn they CAN install EV chargers and upgrade panels with proper planning."
     },
     {
-      "question": "My Miami home was built in the 1950s\u2014is the wiring still safe?",
-      "answer": "Many homes in Coconut Grove, Coral Way, and Shenandoah still have original cloth-insulated wiring and undersized panels. After 60-70 years, this wiring becomes brittle, loses insulation integrity, and can't safely handle modern loads. We've rewired hundreds of Miami's historic homes, preserving architectural character while bringing electrical systems to 2024 code standards. Insurance companies increasingly require updated electrical before issuing policies on older Miami homes."
+      "question": "My Miami home was built in the 1950s—is the wiring still safe?",
+      "answer": "Many homes in Coconut Grove, Coral Way, and Shenandoah still have original cloth-insulated wiring and undersized panels. After 60-70 years, this wiring becomes brittle, loses insulation integrity, and can't safely handle modern loads. We've rewired hundreds of Miami's historic homes, preserving architectural character while bringing electrical systems to current NEC code standards. Insurance companies increasingly require updated electrical before issuing policies on older Miami homes."
     },
     {
       "question": "How quickly can you respond to electrical emergencies in Downtown Miami?",
-      "answer": "We maintain coverage throughout Miami-Dade to assist with electrical requirements in Downtown Miami, Brickell, and Edgewater. For situation-specific emergencies\u2014such as sparking or burning smells\u2014we prioritize the allocation of technical resources."
+      "answer": "We maintain coverage throughout Miami-Dade to assist with electrical requirements in Downtown Miami, Brickell, and Edgewater. For situation-specific emergencies—such as sparking or burning smells—we prioritize the allocation of technical resources."
     },
     {
       "question": "Do you speak Spanish? Many of my neighbors in Little Havana prefer Spanish.",
-      "answer": "\u00a1S\u00ed! Several of our electricians are fluent Spanish speakers. We've proudly served the Little Havana, Westchester, and Hialeah communities for {{YEARS_EXPERIENCE}}+ years. Whether you're more comfortable discussing your electrical needs in Spanish or English, we'll make sure you fully understand the work, service standards, and options before we begin."
+      "answer": "¡Sí! Several of our electricians are fluent Spanish speakers. We've proudly served the Little Havana, Westchester, and Hialeah communities for 18+ years. Whether you're more comfortable discussing your electrical needs in Spanish or English, we'll make sure you fully understand the work, service standards, and options before we begin."
     },
     {
       "question": "What's special about electrical work in Miami's coastal neighborhoods?",
@@ -103,27 +103,28 @@
     },
     {
       "question": "Can you help prepare my Miami home for hurricane season?",
-      "answer": "Absolutely\u2014hurricane electrical preparedness is one of our specialties. We install transfer switches for generators, whole-home surge protection (critical when power fluctuates during storms), weatherproof outdoor outlets, and ensure your weatherhead and service entrance can withstand high winds. We also inspect panels for water damage after storms. Miami homeowners who prepare before June 1st avoid the rush and have peace of mind all season."
+      "answer": "Absolutely—hurricane electrical preparedness is one of our specialties. We install transfer switches for generators, whole-home surge protection (critical when power fluctuates during storms), weatherproof outdoor outlets, and ensure your weatherhead and service entrance can withstand high winds. We also inspect panels for water damage after storms. Miami homeowners who prepare before June 1st avoid the rush and have peace of mind all season."
     }
   ],
   "seoContent": [
     {
       "heading": "Miami's Premier Licensed Electricians",
-      "body": "Miami\u2014The Magic City\u2014is a global hub of culture, business, and innovation. From the glittering towers of Brickell to the lush canopy of Coconut Grove, Miami's electrical needs are as diverse as its people. Solomon Electric is proud to be a trusted provider for Miami's homeowners and entrepreneurs, delivering the professional expertise needed in a world-class city."
+      "body": "Miami—The Magic City—is a global hub of culture, business, and innovation. From the glittering towers of Brickell to the lush canopy of Coconut Grove, Miami's electrical needs are as diverse as its people. Solomon Electric is proud to be a trusted provider for Miami's homeowners and entrepreneurs, delivering the professional expertise needed in a world-class city. Our electricians are dispatched from strategic locations across Miami-Dade County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Miami's Electrical Needs",
-      "body": "Miami homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Miami's needs."
+      "heading": "Expert Electrical Solutions for Miami Properties",
+      "body": "Whether your Miami property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Miami-Dade County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Miami is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Miami Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Miami. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Miami",
+      "body": "From Brickell, Coconut Grove, Little Havana to The Roads, our electricians provide full-service coverage throughout Miami. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Miami properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Professional Electrical Solutions for Every Miami Neighborhood",
-      "body": "Whether you're modernizing a boutique in the Design District, upgrading a luxury condo in Edgewater, or restoring the safe power of a family home in Coral Way, Solomon Electric brings {{YEARS_EXPERIENCE}} years of experience to every project. We understand Miami's strict building codes and unique environmental challenges, ensuring your electrical system is safe, efficient, and ready for the future."
+      "body": "Whether you're modernizing a boutique in the Design District, upgrading a luxury condo in Edgewater, or restoring the safe power of a family home in Coral Way, Solomon Electric brings 18 years of experience to every project. We understand Miami's strict building codes and unique environmental challenges, ensuring your electrical system is safe, efficient, and ready for the future. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Miami. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Miami, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Miami, FL. Panel upgrades, EV chargers, generators, lighting & 24/7 emergency repairs. Serving all of Miami-Dade County."
 }

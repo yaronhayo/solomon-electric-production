@@ -54,9 +54,9 @@
     "electrical-panel-upgrade-100a-to-200a",
     "recessed-lighting-installation",
     "whole-home-surge-protection",
-    "smart-home-automation",
+    "smart-switch-home-automation",
     "24-7-emergency-electrical-service",
-    "ev-charging-system-setup"
+    "home-ev-charging-system-setup"
   ],
   "stats": [
     {
@@ -64,7 +64,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -72,26 +72,26 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "We have a 5-acre property in Plantation Acres\u2014can you handle the electrical for our entire estate?",
-      "answer": "Absolutely. Plantation Acres properties are unique in Broward County\u20145-acre estates with multiple structures, guest houses, pool houses, horse barns, and extensive landscape lighting needs. We regularly work on these large properties, designing comprehensive electrical systems that include multiple sub-panels, long-run underground wiring, and proper load balancing across the entire estate."
+      "question": "We have a 5-acre property in Plantation Acres—can you handle the electrical for our entire estate?",
+      "answer": "Absolutely. Plantation Acres properties are unique in Broward County—5-acre estates with multiple structures, guest houses, pool houses, horse barns, and extensive landscape lighting needs. We regularly work on these large properties, designing comprehensive electrical systems that include multiple sub-panels, long-run underground wiring, and proper load balancing across the entire estate."
     },
     {
       "question": "Do you work in the country club communities like Jacaranda or Plantation Isles?",
       "answer": "Yes, we serve all of Plantation's country club and gated communities including Jacaranda Country Club, Plantation Isles, and the various estates off NW 80th Avenue. We understand the HOA coordination often required, the quality expectations in these communities, and the typical electrical challenges of 1980s-1990s construction that's now due for upgrades."
     },
     {
-      "question": "My Plantation home was built in the 1980s\u2014what should I be concerned about?",
+      "question": "My Plantation home was built in the 1980s—what should I be concerned about?",
       "answer": "1980s Plantation homes often have 150-amp or 200-amp panels that may be approaching end of life, outdated GFCI protection that doesn't meet current codes, and wiring that's now 40+ years old. We recommend an electrical safety inspection to identify any immediate concerns. Common issues we find include corroded breaker connections, deteriorating wire insulation in attics, and panels that are full with no room for additions like EV chargers."
     },
     {
       "question": "Can you add a dedicated circuit for our home office in Plantation?",
-      "answer": "Yes\u2014dedicated home office circuits are one of our most common requests from Plantation professionals. A dedicated 20-amp circuit prevents your computer from flickering when the AC kicks on, provides stable power for sensitive equipment, and separates your work electronics from household load fluctuations. We typically run a new circuit with multiple outlets exactly where you need them."
+      "answer": "Yes—dedicated home office circuits are one of our most common requests from Plantation professionals. A dedicated 20-amp circuit prevents your computer from flickering when the AC kicks on, provides stable power for sensitive equipment, and separates your work electronics from household load fluctuations. We typically run a new circuit with multiple outlets exactly where you need them."
     },
     {
       "question": "Do you provide commercial electrical near the Westfield Mall area?",
@@ -99,27 +99,28 @@
     },
     {
       "question": "How fast can you get to Plantation for an electrical emergency?",
-      "answer": "Plantation is central to our service area\u2014we respond quickly to all neighborhoods from Plantation Acres to Jacaranda.  "
+      "answer": "Plantation is central to our service area—we respond quickly to all neighborhoods from Plantation Acres to Jacaranda.  "
     }
   ],
   "seoContent": [
     {
-      "heading": "Premier Plantation Electricians \u2013 Your Local Connection",
-      "body": "Plantation is a city that prides itself on its lush greenery and high quality of life. As a community that truly believes 'the grass is greener' here, your home or business deserves electrical service that is equally exceptional. Solomon Electric has been serving the Plantation community for over {{YEARS_EXPERIENCE}} years with professionalism and integrity."
+      "heading": "Premier Plantation Electricians – Your Local Connection",
+      "body": "Plantation is a city that prides itself on its lush greenery and high quality of life. As a community that truly believes 'the grass is greener' here, your home or business deserves electrical service that is equally exceptional. Solomon Electric has been serving the Plantation community for over 18 years with professionalism and integrity. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Plantation's Electrical Needs",
-      "body": "Plantation homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Plantation's needs."
+      "heading": "Expert Electrical Solutions for Plantation Properties",
+      "body": "Whether your Plantation property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Plantation is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Plantation Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Plantation. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Plantation",
+      "body": "From Plantation Acres, Central Plantation, Jacaranda to Hawks Landing, our electricians provide full-service coverage throughout Plantation. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Plantation properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Excellence in Electrical Care for Plantation Families",
-      "body": "From the sprawling estates of Plantation Acres to the cozy neighborhoods of Jacaranda, our team understands the diverse needs of Plantation properties. Whether it's a 24/7 emergency repair or a sophisticated smart home upgrade, Solomon Electric delivers the safe and reliable service our neighbors count on."
+      "body": "From the sprawling estates of Plantation Acres to the cozy neighborhoods of Jacaranda, our team understands the diverse needs of Plantation properties. Whether it's a 24/7 emergency repair or a sophisticated smart home upgrade, Solomon Electric delivers the safe and reliable service our neighbors count on. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Plantation. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Plantation, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Plantation, FL. Panel upgrades, pool electrical, smart home & 24/7 emergency repairs. Serving Broward County."
 }

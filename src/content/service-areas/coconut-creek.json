@@ -49,9 +49,9 @@
     }
   ],
   "featuredServices": [
-    "smart-home-automation",
+    "smart-switch-home-automation",
     "landscape-outdoor-lighting",
-    "ev-charging-system-setup",
+    "home-ev-charging-system-setup",
     "electrical-panel-upgrade-100a-to-200a",
     "24-7-emergency-electrical-service",
     "recessed-lighting-installation"
@@ -62,7 +62,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -70,17 +70,17 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "We live in Wynmoor\u2014do you understand the requirements for our community?",
+      "question": "We live in Wynmoor—do you understand the requirements for our community?",
       "answer": "Absolutely. Wynmoor Village is one of our most-served communities in Coconut Creek. We understand the condo association coordination, the building management protocols, and the specific electrical systems in Wynmoor units. We're respectful of your schedule, communicate clearly about service standards and work, and have earned many referrals from Wynmoor residents who've recommended us to their neighbors."
     },
     {
-      "question": "Coconut Creek is a 'Green' city\u2014do you offer energy-efficient electrical solutions?",
+      "question": "Coconut Creek is a 'Green' city—do you offer energy-efficient electrical solutions?",
       "answer": "Yes, and it's one of our specialties. For Coconut Creek's environmentally-conscious residents, we offer LED lighting retrofits that reduce energy consumption dramatically, smart thermostats and switches that optimize usage, EV charger installations for electric vehicles, and load monitoring to identify energy-wasting appliances. The Butterfly Capital of the World deserves electricians who share its values."
     },
     {
@@ -88,12 +88,12 @@
       "answer": "Yes, we provide commercial electrical services throughout Coconut Creek, including the Promenade at Coconut Creek and surrounding business districts. Services include tenant buildout electrical, retail lighting design, restaurant and food service wiring, and 24/7 emergency response. We understand that retail businesses can't afford extended electrical downtime."
     },
     {
-      "question": "We're thinking of adding an EV charger to our Regency Lakes home\u2014what's involved?",
-      "answer": "EV charger installation in Regency Lakes typically requires a dedicated 40-50 amp 240V circuit. We first assess your panel's capacity\u2014many Coconut Creek homes have room for a charger without upgrades, but some may need a panel upgrade or load management solution. We handle all permitting through Broward County. Most installations are completed in a single day."
+      "question": "We're thinking of adding an EV charger to our Regency Lakes home—what's involved?",
+      "answer": "EV charger installation in Regency Lakes typically requires a dedicated 40-50 amp 240V circuit. We first assess your panel's capacity—many Coconut Creek homes have room for a charger without upgrades, but some may need a panel upgrade or load management solution. We handle all permitting through Broward County. Most installations are completed in a single day."
     },
     {
-      "question": "Our Coconut Creek condo building has old electrical\u2014can individual units upgrade?",
-      "answer": "Often yes, but it depends on your building's infrastructure. Individual unit upgrades\u2014adding circuits, upgrading your unit's sub-panel, or installing smart devices\u2014are usually possible with condo board approval. Building-wide issues like common area panels or service entrance are the association's responsibility. We can assess what's possible for your individual unit and coordinate with building management as needed."
+      "question": "Our Coconut Creek condo building has old electrical—can individual units upgrade?",
+      "answer": "Often yes, but it depends on your building's infrastructure. Individual unit upgrades—adding circuits, upgrading your unit's sub-panel, or installing smart devices—are usually possible with condo board approval. Building-wide issues like common area panels or service entrance are the association's responsibility. We can assess what's possible for your individual unit and coordinate with building management as needed."
     },
     {
       "question": "How quickly can you respond to emergencies in Coconut Creek?",
@@ -103,21 +103,22 @@
   "seoContent": [
     {
       "heading": "Trusted Coconut Creek Electricians Since 2003",
-      "body": "Coconut Creek, the 'Butterfly Capital of the World,' is a city dedicated to its natural beauty and environmental sustainability. It's a community that values excellence and innovation. Solomon Electric is proud to serve Coconut Creek families with electrical services that are as professional as they are efficient."
+      "body": "Coconut Creek, the 'Butterfly Capital of the World,' is a city dedicated to its natural beauty and environmental sustainability. It's a community that values excellence and innovation. Solomon Electric is proud to serve Coconut Creek families with electrical services that are as professional as they are efficient. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
       "heading": "Understanding Coconut Creek's Unique Electrical Needs",
-      "body": "Coconut Creek's commitment to environmental sustainability and its established residential character create unique electrical opportunities. Many homes in Wynmoor and Regency Lakes are excellent candidates for energy-efficient LED retrofits and smart home automation that reduce energy consumption. The city's focus on recreation and outdoor living\u2014from Butterfly World to Tradewinds Park\u2014means outdoor lighting and GFCI-protected circuits are essential for safety and ambiance."
+      "body": "Coconut Creek's commitment to environmental sustainability and its established residential character create unique electrical opportunities. Many homes in Wynmoor and Regency Lakes are excellent candidates for energy-efficient LED retrofits and smart home automation that reduce energy consumption. The city's focus on recreation and outdoor living—from Butterfly World to Tradewinds Park—means outdoor lighting and GFCI-protected circuits are essential for safety and ambiance. Every project in Coconut Creek is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
       "heading": "Comprehensive Electrical Services for Every Coconut Creek Home",
-      "body": "Whether you're modernizing technology in your Wynmoor condo, installing elegant landscape lighting to complement our city's natural beauty, upgrading to energy-efficient systems, or facing an urgent electrical issue, our licensed team delivers professional solutions. We provide transparent professional service, respect your property, and stand behind our work with guarantees that have earned Coconut Creek's trust for over {{YEARS_EXPERIENCE}} years."
+      "body": "Whether you're modernizing technology in your Wynmoor condo, installing elegant landscape lighting to complement our city's natural beauty, upgrading to energy-efficient systems, or facing an urgent electrical issue, our licensed team delivers professional solutions. We provide transparent professional service, respect your property, and stand behind our work with guarantees that have earned Coconut Creek's trust for over 18 years. Coconut Creek properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Excellence in Electrical Care for Your Coconut Creek Home",
-      "body": "Whether you're upgrading the technology in your Wynmoor condo, installing beautiful landscape lighting to match our city's greenery, or requiring an urgent repair, our licensed team is here for you. We provide professional service and a dedication to safety that Coconut Creek has trusted for {{YEARS_EXPERIENCE}} years."
+      "body": "Whether you're upgrading the technology in your Wynmoor condo, installing beautiful landscape lighting to match our city's greenery, or requiring an urgent repair, our licensed team is here for you. We provide professional service and a dedication to safety that Coconut Creek has trusted for 18 years. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Coconut Creek. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Coconut Creek, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Coconut Creek, FL. Panel upgrades, smart home wiring, EV chargers & emergency repairs. Serving Broward County 24/7."
 }

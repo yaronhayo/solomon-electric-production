@@ -1,7 +1,7 @@
 {
   "name": "Electrical Safety Inspection & Certification",
   "slug": "electrical-safety-inspection",
-  "description": "Peace of mind starts with knowing your electrical system is safe. Solomon Electric provides comprehensive electrical safety inspections and professional certifications for South Florida homeowners and professionals\u2014covering everything from 4-point insurance inspections and pre-purchase audits to real estate certifications. Our licensed electricians identify hidden hazards, verify code compliance, and deliver the official documentation you need for insurance, sales, or total peace of mind.",
+  "description": "You can't see hidden hazards behind your walls—but a professional electrical inspection can. Thermal imaging reveals overheated connections, and comprehensive testing exposes code violations that put your family at risk. Peace of mind starts with knowing your electrical system is safe. Solomon Electric provides comprehensive electrical safety inspections and professional certifications for South Florida homeowners and professionals—covering everything from 4-point insurance inspections and pre-purchase audits to real estate certifications. Our licensed electricians identify hidden hazards, verify code compliance, and deliver the official documentation you need for insurance, sales, or total peace of mind. Licensed FL electricians providing thorough inspections with detailed reports throughout {cityName}.",
   "shortDescription": "Certified electrical system evaluation",
   "icon": "Shield",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,7 +15,7 @@
     "Detailed written reports with photos",
     "Prioritized repair recommendations"
   ],
-  "warningSignsHeading": "When You Need Electrical Inspection & Certification",
+  "warningSignsHeading": "Do You Need Electrical Safety Inspection? Common Warning Signs",
   "warningSignsSubheading": "Whether for safety, compliance, or transactions, professional documentation ensures your system meets standard requirements.",
   "problems": [
     {
@@ -49,7 +49,7 @@
       "icon": "Zap"
     }
   ],
-  "processHeading": "Our Comprehensive Inspection Process",
+  "processHeading": "What to Expect During Electrical Safety Inspection",
   "process": [
     {
       "step": 1,
@@ -77,7 +77,7 @@
       "description": "You receive a professional written report and, if qualified, the safety certification needed for insurance or real estate transactions."
     }
   ],
-  "benefitsHeading": "Benefits of Professional Certification",
+  "benefitsHeading": "Advantages of Professional Electrical Safety Inspection",
   "benefits": [
     {
       "title": "Insurer Accepted Documentation",
@@ -110,7 +110,7 @@
       "label": "Insurer Acceptance"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "What is the difference between this and a home inspection?",
-      "answer": "Significantly different. General home inspectors check basic functions\u2014a 5-10 minute review. Professional electrical inspections involve deep examination by licensed electricians who understand code requirements, hidden hazards, and system integrity."
+      "answer": "Significantly different. General home inspectors check basic functions—a 5-10 minute review. Professional electrical inspections involve deep examination by licensed electricians who understand code requirements, hidden hazards, and system integrity."
     },
     {
       "question": "Is this the same as a 4-point inspection?",
@@ -142,34 +142,55 @@
     {
       "question": "Will an old panel fail the inspection automatically?",
       "answer": "Age alone isn't always a failure, but safety and condition are. However, certain recalled brands like Federal Pacific or Zinsco are known hazards and will be noted as such, as most insurers require their replacement for coverage."
+    },
+    {
+      "question": "How often should I get an electrical safety inspection?",
+      "answer": "We recommend inspections every 3 to 5 years for homes under 25 years old, and every 1 to 3 years for older homes. Florida insurers often require inspections for policy renewals on homes over 25 years, and anytime you buy, sell, or significantly renovate."
+    },
+    {
+      "question": "What areas of the home are checked during an electrical inspection?",
+      "answer": "We examine the main panel and all sub-panels, test every GFCI and AFCI device, inspect visible wiring in the attic and crawl spaces, check grounding and bonding, test outlet polarity and voltage throughout the home, and review smoke detector wiring and placement."
     }
   ],
   "relatedServices": [
     "electrical-code-compliance-audit",
-    "pre-purchase-electrical-inspection",
-    "insurance-electrical-inspection",
+    "electrical-panel-upgrade-100a-to-200a",
+    "whole-home-surge-protection",
     "service-panel-replacement"
   ],
   "seoContent": [
     {
-      "heading": "Certified Electrical Safety Inspections in South Florida",
-      "body": "Solomon Electric provides the professional electrical safety inspections and certifications required for Florida's unique real estate and insurance market. Serving Miami-Dade, Broward, and Palm Beach counties, our licensed electricians deliver the 4-point inspection data and safety certifications you need to maintain coverage or close a sale."
+      "heading": "Stopping Hidden Hazards: Certified Electrical Inspections in {cityName}",
+      "body": "Solomon Electric provides the professional electrical safety inspections and certifications required for Florida's unique real estate and insurance market. Serving {county}, Broward, and Palm Beach counties, our licensed electricians deliver the 4-point inspection data and safety certifications you need to maintain coverage or close a sale. Commercial electrical inspections follow NFPA 70B maintenance standards and Florida Building Code requirements. Our detailed reports include photographs, code references, and prioritized remediation recommendations."
     },
     {
-      "heading": "4-Point Insurance & Real Estate Documentation",
-      "body": "Florida insurance companies increasingly require electrical documentation for policy renewals, especially on homes over 25 years old. Our inspection reports are designed to satisfy insurer requirements, documenting connection quality, testing GFCI function, and identifying recalled equipment before it causes a problem."
+      "heading": "Passing 4-Point Audits: Insurance-Qualified Inspections in {cityName}",
+      "body": "Florida insurance companies increasingly require electrical documentation for policy renewals, especially on homes over 25 years old. Our inspection reports are designed to satisfy insurer requirements, documenting connection quality, testing GFCI function, and identifying recalled equipment before it causes a problem. We understand the urgency of commercial electrical issues—downtime means lost revenue. Our commercial team schedules work during off-hours and weekends to minimize business disruption, and we maintain fully-stocked vehicles for faster completions."
     },
     {
-      "heading": "Peace of Mind for Home Buyers & Sellers",
-      "body": "Don't inherit someone else's electrical mistakes. Our pre-purchase inspections identify unpermitted DIY work, code violations, and aging infrastructure that general home inspectors miss. For sellers, proactive certification ensures your home is market-ready and prevents last-minute negotiation credits."
+      "heading": "Avoiding \"Money Pits\": Pre-Purchase Electrical Audits in {cityName}",
+      "body": "Don't inherit someone else's electrical mistakes. Our pre-purchase inspections identify unpermitted DIY work, code violations, and aging infrastructure that general home inspectors miss. For sellers, proactive certification ensures your home is market-ready and prevents last-minute negotiation credits. Code compliance isn't just about passing inspections—it's about protecting your business from liability. We document all findings and provide certificates of compliance that satisfy insurance underwriters and commercial lease requirements."
     },
     {
-      "heading": "Honest Assessments, Professional Results",
-      "body": "We don't create unnecessary work. Our reports prioritize findings by urgency\u2014immediate safety hazards vs. code updates vs. future improvements. You'll understand exactly what's important for your safety and your property value."
+      "heading": "Verified Safe: Licensed Electrical Safety Certification in {cityName}",
+      "body": "We don't create unnecessary work. Our reports prioritize findings by urgency—immediate safety hazards vs. code updates vs. future improvements. You'll understand exactly what's important for your safety and your property value. For commercial properties, we coordinate with property managers, general contractors, and municipal building departments to ensure smooth permitting and inspection processes. Our familiarity with {county} County procedures saves you time and prevents delays."
     }
   ],
   "relatedBlogPosts": [
     "comprehensive-electrical-safety-inspections"
   ],
-  "imageAlt": "Electrical Safety Inspection & Certification service provided by licensed electricians in South Florida"
+  "imageAlt": "Electrical Safety Inspection & Certification service provided by licensed electricians in South Florida",
+  "shortName": "Electrical Inspection",
+  "metaDescription": "Electrical safety inspection and certification in Miami. 4-point, pre-purchase & insurance inspections. Licensed, prompt reports.",
+  "metaTitle": "Electrical Inspection Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Full home electrical inspection typically requires 2-3 hours",
+    "priceRange": "Comprehensive electrical inspection ranges from $250–$500 with detailed written report",
+    "commonBrands": [
+      "Fluke testers",
+      "FLIR thermal cameras",
+      "Amprobe"
+    ],
+    "permitNote": "Inspections don't require permits; any corrective work identified may require {county} County permits"
+  }
 }

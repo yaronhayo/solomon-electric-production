@@ -1,7 +1,7 @@
 {
   "name": "24/7 Emergency Electrical Service",
   "slug": "24-7-emergency-electrical-service",
-  "description": "Electrical emergencies require professional attention to ensure safety. Solomon Electric provides 24/7 emergency response throughout Miami-Dade and Broward for residential and commercial properties experiencing electrical hazards such as burning smells, visible sparks, or total power failure.",
+  "description": "Electrical emergencies don't wait for business hours. Sparking outlets, burning smells, total power loss, and exposed wiring demand immediate professional response to protect your family and property. Electrical emergencies require professional attention to ensure safety. Solomon Electric's licensed electricians provide 24/7 emergency response throughout Miami-Dade and Broward for residential and commercial properties experiencing electrical hazards such as burning smells, visible sparks, or total power failure. Licensed FL electricians with rapid response times across {cityName} and all of {county} County.",
   "shortDescription": "24/7 emergency electrical response for southern Florida",
   "icon": "Wrench",
   "image": "../../assets/images/services/emergency.webp",
@@ -13,9 +13,9 @@
     "Live communication with trained coordinators",
     "Service vehicles equipped for immediate repairs",
     "FPL power restoration coordination",
-    "Licensed & Insured Florida Experts (#{{LICENSE}})"
+    "Licensed & Insured Florida Experts (#EC13012419)"
   ],
-  "warningSignsHeading": "Identifying Electrical Emergencies",
+  "warningSignsHeading": "How to Know You Need Professional Emergency Electrician",
   "warningSignsSubheading": "Recognizing the symptoms of a critical electrical failure is essential for property safety. These conditions indicate active electrical hazards.",
   "problems": [
     {
@@ -49,7 +49,7 @@
       "icon": "AlertTriangle"
     }
   ],
-  "processHeading": "Emergency Response Protocol",
+  "processHeading": "The Professional Emergency Electrician Process",
   "process": [
     {
       "step": 1,
@@ -77,7 +77,7 @@
       "description": "Following the repair, a system check is completed to verify that the hazard has been resolved and the electrical system is operating safely."
     }
   ],
-  "benefitsHeading": "Emergency Service Standards",
+  "benefitsHeading": "How Emergency Electrician Improves Your Property",
   "benefits": [
     {
       "title": "Internal Communication",
@@ -125,7 +125,7 @@
     },
     {
       "question": "Which areas receive emergency service?",
-      "answer": "Emergency services are provided throughout Miami-Dade and Broward counties, with technicians located in various areas to facilitate response."
+      "answer": "Emergency services are provided throughout {county} and Broward counties, with technicians located in various areas to facilitate response."
     },
     {
       "question": "Will utility providers shut off power during a repair?",
@@ -138,6 +138,18 @@
     {
       "question": "Should a buzzing panel be ignored?",
       "answer": "No. Audible buzzing often indicates arcing, where electricity jumps between connections. This creates intense heat and represents a serious fire risk that requires attention."
+    },
+    {
+      "question": "What qualifies as an electrical emergency?",
+      "answer": "Sparking outlets, burning smells from panels or wires, total power loss, exposed live wiring, water contact with electrical systems, and any situation posing immediate fire or shock risk. When in doubt, call—our dispatchers help assess the urgency."
+    },
+    {
+      "question": "How fast can an emergency electrician arrive?",
+      "answer": "Our typical response time is 30 to 60 minutes for {county} and Broward areas. We maintain on-call crews around the clock so a licensed electrician is always available, including weekends and holidays."
+    },
+    {
+      "question": "Are emergency electrical repairs more expensive than scheduled service?",
+      "answer": "Emergency rates may include a service call fee, but we provide upfront pricing before any work begins. There are no hidden charges, and the cost of ignoring a genuine emergency—fire damage, equipment failure—far exceeds the service fee."
     }
   ],
   "relatedServices": [
@@ -148,16 +160,37 @@
   ],
   "seoContent": [
     {
-      "heading": "Emergency Electrical Services in Miami & Broward",
-      "body": "Solomon Electric provides residential and commercial electrical repairs for critical issues such as burning smells, power outages, and sparking. Licensed experts conduct safe, code-compliant restoration of electrical systems to ensure the continued safety of South Florida properties."
+      "heading": "Immediate Solutions for Electrical Emergencies in {cityName}",
+      "body": "Solomon Electric provides residential and commercial electrical repairs for critical issues such as burning smells, power outages, and sparking. Licensed experts conduct safe, code-compliant restoration of electrical systems to ensure the continued safety of South Florida properties. Every emergency call begins with a safety assessment. Our electricians use non-contact voltage testers, thermal imaging cameras, and circuit analyzers to identify the root cause—not just the symptom. We explain what we find in plain language before any work begins."
     },
     {
-      "heading": "Understanding Electrical Hazards in older properties",
-      "body": "The South Florida environment, characterized by high humidity and salt air, can put additional strain on electrical infrastructure. Properties with outdated equipment may be more susceptible to failures that require professional intervention to mitigate safety risks."
+      "heading": "Understanding Electrical Hazards in Older Miami Properties",
+      "body": "The South Florida environment, characterized by high humidity and salt air, can put additional strain on electrical infrastructure. Properties with outdated equipment may be more susceptible to failures that require professional intervention to mitigate safety risks. South Florida's combination of aging infrastructure, lightning exposure, and high humidity creates unique emergency scenarios. Our electricians are trained to handle salt-air corrosion, water intrusion in panels, and surge damage from frequent thunderstorms."
+    },
+    {
+      "heading": "24/7 Rapid Response Electrician for {cityName} & {county} County",
+      "body": "Electrical emergencies don't wait for business hours. Solomon Electric provides round-the-clock emergency electrical service across {county}, Broward, and Palm Beach counties. Our licensed electricians carry fully stocked vehicles and arrive prepared to diagnose and resolve urgent issues on the first visit. We stock our service vehicles with the most commonly needed parts—breakers, GFCI outlets, wire nuts, connectors, and diagnostic equipment—so most emergency repairs are completed in a single visit without waiting for parts."
+    },
+    {
+      "heading": "Is Your {cityName} Property at Risk? When to Call Us",
+      "body": "Not every electrical issue requires an emergency call, but some situations demand immediate attention. Burning smells, sparking panels, repeated breaker trips, and post-storm damage are all scenarios where waiting creates significant fire and safety risks. Our team helps you make the right call. After every emergency repair, we provide a written safety assessment and recommend any additional work needed to prevent recurrence. We never upsell unnecessary services, and our upfront pricing means no surprises on your bill."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
   ],
-  "imageAlt": "24/7 Emergency Electrical Service service provided by licensed electricians in South Florida"
+  "imageAlt": "24/7 Emergency Electrical Service service provided by licensed electricians in South Florida",
+  "shortName": "Emergency Electrical Service",
+  "metaDescription": "24/7 emergency electrician in Miami. Fast response for power outages, sparking outlets & electrical fires. Licensed & insured. Request service now.",
+  "metaTitle": "24/7 Emergency Electrician Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Emergency response within 60 minutes for most {county} County locations",
+    "priceRange": "Emergency service calls start at $150–$300 for diagnosis; repairs quoted on-site",
+    "commonBrands": [
+      "Fluke diagnostic equipment",
+      "Klein Tools",
+      "Milwaukee"
+    ],
+    "permitNote": "Emergency repairs may proceed immediately; follow-up permits filed within 48 hours per Florida code"
+  }
 }

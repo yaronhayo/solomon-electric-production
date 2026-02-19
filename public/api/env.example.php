@@ -63,8 +63,12 @@ define('WEBSITE_URL', 'https://www.yourdomain.com');
 // BRANDING COLORS
 // ==========================================
 define('BRAND_PRIMARY', '#000000');
+define('BRAND_PRIMARY_DARK', '#000000');
 define('BRAND_ACCENT', '#FFFFFF');
+define('BRAND_ACCENT_DARK', '#CCCCCC');
 define('BRAND_LIGHT', '#F3F3F3');
+define('BRAND_DARK', '#111111');
+define('BRAND_GOLD', '#CDAC4F');
 
 // ==========================================
 // API ENDPOINTS

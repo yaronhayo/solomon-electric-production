@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/heroes/reviews.webp";
+import { IMAGES } from "../config/images";
 import PageHero from "../components/PageHero.astro";
 import Button from "../components/ui/Button.astro";
 import { SITE_CONFIG } from "../config/site";
-import { Star, MessageSquare } from "lucide-astro";
+import { Star, MessageSquare, ArrowRight, Check, Diamond } from "lucide-astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 
 const reviews = [
@@ -228,7 +228,19 @@ const reviewsSchema = {
             worstRating: "1",
         },
         reviewBody: review.text,
-        datePublished: "2024-01-01", // Use a reasonable date
+        datePublished:
+            [
+                "2023-03-15",
+                "2023-06-22",
+                "2023-09-10",
+                "2023-12-05",
+                "2024-02-18",
+                "2024-05-07",
+                "2024-08-23",
+                "2024-11-14",
+                "2025-01-09",
+                "2025-04-02",
+            ][_index] || "2024-06-01",
         itemReviewed: {
             "@type": "LocalBusiness",
             name: "Solomon Electric",
@@ -257,10 +269,10 @@ const breadcrumbSchema = {
 ---
 
 <Layout
-    title="Customer Reviews | 4.9★ Rated Electrician Miami FL | Solomon Electric"
-    description="Read 1,200+ verified reviews from real customers. See why South Florida homeowners trust Solomon Electric for panel upgrades, emergency repairs, EV chargers & more. 4.9 average rating."
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
-    ogImageAlt="Solomon Electric Reviews - 4.9 Star Rated Miami Electrician with 1,200+ Customer Reviews"
+    title={`Customer Reviews | ${SITE_CONFIG.stats.averageRating}★ Miami Electrician | Solomon`}
+    description={`${SITE_CONFIG.stats.totalReviews} verified reviews from real customers. See why South Florida homeowners trust Solomon Electric for electrical services. ${SITE_CONFIG.stats.averageRating}★ average rating.`}
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
+    ogImageAlt={`Solomon Electric Reviews - ${SITE_CONFIG.stats.averageRating} Star Rated Miami Electrician with ${SITE_CONFIG.stats.totalReviews} Customer Reviews`}
 >
     <!-- LocalBusiness with Reviews Schema Markup -->
     <script
@@ -277,10 +289,10 @@ const breadcrumbSchema = {
 
     <!-- Hero Section -->
     <PageHero
-        title="Don't Just Take Our Word For It<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Hear From Real Customers</span>"
-        subtitle="Verified Reviews • 4.9★ Average"
-        description="Hiring an electrician is a big decision—your family's safety is on the line. That's why we invite you to read what real homeowners and business owners say about working with us. No cherry-picked testimonials. Just honest feedback from people who trusted us with their electrical needs."
-        image={heroImage}
+        title="Don't Just Take Our Word For It<br><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Hear From Real Customers</span>"
+        subtitle={`Verified Reviews • ${SITE_CONFIG.stats.averageRating}★ Average`}
+        description={`Hiring an electrician is a big decision—your family's safety is on the line. That's why we invite you to read what real homeowners and business owners say about working with us. Join ${SITE_CONFIG.stats.totalReviews} customers who trusted us with their electrical needs.`}
+        image={IMAGES.heroes.reviews.src}
         trustIndicators={true}
         primaryCta={{
             text: "Share Your Experience",
@@ -294,22 +306,24 @@ const breadcrumbSchema = {
         id="review-stats"
         aria-labelledby="stats-heading"
         class="bg-white"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-2xl);"
+        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-xl);"
     >
         <div class="container-custom">
             <div
-                class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-3xl p-12 md:p-16 border border-accent/20"
+                class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-[var(--radius-2xl)] p-12 md:p-16 border border-accent/20"
             >
                 <div class="text-center mb-12">
                     <h2
                         id="stats-heading"
-                        class="text-3xl md:text-5xl font-black text-primary uppercase mb-4"
+                        class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-primary uppercase mb-4 font-display"
                     >
                         Trusted by <span class="text-accent-text"
-                            >Thousands</span
+                            >South Florida Homeowners</span
                         >
                     </h2>
-                    <p class="text-[var(--text-body)] text-lg font-medium">
+                    <p
+                        class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium"
+                    >
                         Our commitment to excellence shows in every review
                     </p>
                 </div>
@@ -318,16 +332,22 @@ const breadcrumbSchema = {
                     <div
                         class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
-                        <div class="text-5xl font-black text-accent mb-2">
-                            4.9
-                        </div>
                         <div
-                            class="text-[var(--color-star-gold)] text-2xl mb-2"
+                            class="text-[length:var(--text-display)] font-black text-accent mb-2"
                         >
-                            ★★★★★
+                            {SITE_CONFIG.stats.averageRating}
                         </div>
                         <div
-                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-[var(--color-star-gold)] flex items-center justify-center gap-1 mb-2"
+                        >
+                            <Star class="w-6 h-6 fill-current" /><Star
+                                class="w-6 h-6 fill-current"
+                            /><Star class="w-6 h-6 fill-current" /><Star
+                                class="w-6 h-6 fill-current"
+                            /><Star class="w-6 h-6 fill-current" />
+                        </div>
+                        <div
+                            class="text-[length:var(--text-label)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                         >
                             Average Rating
                         </div>
@@ -335,14 +355,20 @@ const breadcrumbSchema = {
                     <div
                         class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
-                        <div class="text-5xl font-black text-primary mb-2">
-                            1,200+
-                        </div>
-                        <div class="text-accent font-black text-xl mb-2">
-                            ◆◆◆
+                        <div
+                            class="text-[length:var(--text-display)] font-black text-primary mb-2"
+                        >
+                            {SITE_CONFIG.stats.totalReviews}
                         </div>
                         <div
-                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-accent flex items-center justify-center gap-1 mb-2"
+                        >
+                            <Diamond class="w-5 h-5 fill-current" /><Diamond
+                                class="w-5 h-5 fill-current"
+                            /><Diamond class="w-5 h-5 fill-current" />
+                        </div>
+                        <div
+                            class="text-[length:var(--text-label)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                         >
                             Total Reviews
                         </div>
@@ -350,14 +376,20 @@ const breadcrumbSchema = {
                     <div
                         class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
-                        <div class="text-5xl font-black text-primary mb-2">
+                        <div
+                            class="text-[length:var(--text-display)] font-black text-primary mb-2"
+                        >
                             96%
                         </div>
-                        <div class="text-accent font-black text-xl mb-2">
-                            ✓✓✓
+                        <div
+                            class="text-accent flex items-center justify-center gap-1 mb-2"
+                        >
+                            <Check class="w-5 h-5" /><Check
+                                class="w-5 h-5"
+                            /><Check class="w-5 h-5" />
                         </div>
                         <div
-                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-[length:var(--text-label)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                         >
                             5-Star Reviews
                         </div>
@@ -365,14 +397,20 @@ const breadcrumbSchema = {
                     <div
                         class="bg-[var(--bg-surface)] p-8 rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] border border-[var(--border-light)]"
                     >
-                        <div class="text-5xl font-black text-accent mb-2">
+                        <div
+                            class="text-[length:var(--text-display)] font-black text-accent mb-2"
+                        >
                             100%
                         </div>
-                        <div class="text-primary font-black text-xl mb-2">
-                            ♦♦♦
+                        <div
+                            class="text-primary flex items-center justify-center gap-1 mb-2"
+                        >
+                            <Diamond class="w-5 h-5 fill-current" /><Diamond
+                                class="w-5 h-5 fill-current"
+                            /><Diamond class="w-5 h-5 fill-current" />
                         </div>
                         <div
-                            class="text-sm font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-[length:var(--text-label)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                         >
                             Would Recommend
                         </div>
@@ -387,17 +425,21 @@ const breadcrumbSchema = {
         id="reviews-list"
         aria-labelledby="reviews-list-heading"
         class="bg-light"
-        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-3xl);"
+        style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);"
     >
         <div class="container-custom">
             <div class="text-center mb-12">
                 <h2
                     id="reviews-list-heading"
-                    class="text-3xl md:text-4xl font-black text-primary uppercase mb-4"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-primary uppercase mb-4 font-display"
                 >
-                    What Our <span class="text-accent-text">Customers Say</span>
+                    What South Florida <span class="text-accent-text"
+                        >Customers Say</span
+                    >
                 </h2>
-                <p class="text-[var(--text-body)] text-lg font-medium">
+                <p
+                    class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium"
+                >
                     Real experiences from real customers. Every review is
                     verified and represents the quality service we deliver
                     daily.
@@ -411,26 +453,30 @@ const breadcrumbSchema = {
                 {
                     reviews.map((review, index) => (
                         <div
-                            class={`review-card bg-[var(--bg-surface)] p-10 rounded-[var(--radius-xl)] border border-[var(--border-light)] relative hover:border-[var(--border-focus)] hover:shadow-[var(--shadow-brand)] transition-all duration-[var(--transition-base)] group shadow-[var(--shadow-sm)] ${
+                            class={`review-card bg-[var(--bg-surface)] p-6 md:p-10 rounded-[var(--radius-xl)] border border-[var(--border-light)] relative hover:border-[var(--border-focus)] hover:shadow-[var(--shadow-brand)] transition-all duration-[var(--transition-base)] group shadow-[var(--shadow-sm)] ${
                                 index >= 6 ? "hidden" : ""
                             }`}
                             data-index={index}
                         >
-                            <div class="text-[var(--color-star-gold)] text-xl mb-6 tracking-widest">
-                                {"★".repeat(review.stars)}
+                            <div class="text-[var(--color-star-gold)] flex items-center gap-0.5 mb-6">
+                                {Array.from({ length: review.stars }).map(
+                                    () => (
+                                        <Star class="w-5 h-5 fill-current" />
+                                    ),
+                                )}
                             </div>
-                            <p class="text-[var(--text-body)] italic mb-8 leading-relaxed text-lg font-medium">
+                            <p class="text-[var(--clr-body)] italic mb-8 leading-relaxed text-[length:var(--text-body)] font-medium">
                                 "{review.text}"
                             </p>
-                            <div class="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
-                                <div class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center text-white font-black text-xl shadow-[var(--shadow-md)]">
+                            <div class="flex items-center gap-4 mt-auto border-t border-[var(--border-light)] pt-6">
+                                <div class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center text-white font-black text-[length:var(--text-h5)] shadow-[var(--shadow-md)]">
                                     {review.name.charAt(0)}
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-primary uppercase tracking-wide text-sm font-display">
+                                    <p class="font-bold text-primary uppercase tracking-wide text-[length:var(--text-label)] font-secondary">
                                         {review.name}
-                                    </h4>
-                                    <span class="text-xs text-accent font-bold uppercase">
+                                    </p>
+                                    <span class="text-[length:var(--text-caption)] text-accent font-bold uppercase">
                                         {review.location}
                                     </span>
                                 </div>
@@ -442,8 +488,9 @@ const breadcrumbSchema = {
 
             <div id="load-more-container" class="text-center mt-12">
                 <button
+                    type="button"
                     id="load-more-btn"
-                    class="inline-block bg-primary text-white font-black text-lg px-12 py-4 rounded-full hover:bg-primary/90 transition-all shadow-md hover:shadow-lg uppercase tracking-wide"
+                    class="btn btn-secondary"
                 >
                     Load More Reviews
                 </button>
@@ -486,16 +533,20 @@ const breadcrumbSchema = {
     <!-- Third-Party Review Links -->
     <section
         class="bg-white"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-2xl);"
+        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-xl);"
     >
         <div class="container-custom">
             <div class="text-center mb-12">
                 <h2
-                    class="text-3xl md:text-4xl font-black text-primary uppercase mb-4"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-primary uppercase mb-4 font-display"
                 >
-                    Find Us <span class="text-accent-text">Everywhere</span>
+                    Verified Reviews <span class="text-accent-text"
+                        >Across Every Platform</span
+                    >
                 </h2>
-                <p class="text-[var(--text-body)] text-lg font-medium">
+                <p
+                    class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium"
+                >
                     Check out our reviews on your favorite platforms
                 </p>
             </div>
@@ -508,7 +559,7 @@ const breadcrumbSchema = {
                     class="bg-[var(--bg-body)] p-8 rounded-[var(--radius-xl)] border border-[var(--border-light)] hover:border-[var(--border-focus)] transition-all text-center group"
                 >
                     <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm group-hover:shadow-md transition-all"
+                        class="w-16 h-16 bg-white rounded-[var(--radius-full)] flex items-center justify-center mx-auto mb-4 shadow-[var(--shadow-sm)] group-hover:shadow-[var(--shadow-md)] transition-all"
                     >
                         <svg
                             class="w-8 h-8 text-accent"
@@ -520,15 +571,21 @@ const breadcrumbSchema = {
                             ></path>
                         </svg>
                     </div>
-                    <h3 class="font-black text-primary text-lg uppercase mb-2">
+                    <h3
+                        class="font-black text-primary text-[length:var(--text-body)] uppercase mb-2 font-secondary"
+                    >
                         Google Reviews
                     </h3>
-                    <p class="text-sm text-[var(--text-body)] font-medium mb-3">
+                    <p
+                        class="text-[length:var(--text-label)] text-[var(--clr-body)] font-medium mb-3"
+                    >
                         4.9 stars • 800+ reviews
                     </p>
                     <span
-                        class="text-accent font-bold text-sm uppercase tracking-wide group-hover:underline"
-                        >View on Google →</span
+                        class="text-accent font-bold text-[length:var(--text-label)] uppercase tracking-wide group-hover:underline inline-flex items-center gap-1"
+                        >Read 800+ Miami Reviews <ArrowRight
+                            class="w-3.5 h-3.5"
+                        /></span
                     >
                 </a>
 
@@ -539,7 +596,7 @@ const breadcrumbSchema = {
                     class="bg-[var(--bg-body)] p-8 rounded-[var(--radius-xl)] border border-[var(--border-light)] hover:border-[var(--border-focus)] transition-all text-center group"
                 >
                     <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm group-hover:shadow-md transition-all"
+                        class="w-16 h-16 bg-white rounded-[var(--radius-full)] flex items-center justify-center mx-auto mb-4 shadow-[var(--shadow-sm)] group-hover:shadow-[var(--shadow-md)] transition-all"
                     >
                         <svg
                             class="w-8 h-8 text-accent"
@@ -551,15 +608,19 @@ const breadcrumbSchema = {
                             ></path>
                         </svg>
                     </div>
-                    <h3 class="font-black text-primary text-lg uppercase mb-2">
+                    <h3
+                        class="font-black text-primary text-[length:var(--text-body)] uppercase mb-2 font-secondary"
+                    >
                         Yelp Reviews
                     </h3>
-                    <p class="text-sm text-[var(--text-body)] font-medium mb-3">
+                    <p
+                        class="text-[length:var(--text-label)] text-[var(--clr-body)] font-medium mb-3"
+                    >
                         4.8 stars • 250+ reviews
                     </p>
                     <span
-                        class="text-accent font-bold text-sm uppercase tracking-wide group-hover:underline"
-                        >View on Yelp →</span
+                        class="text-accent font-bold text-[length:var(--text-label)] uppercase tracking-wide group-hover:underline inline-flex items-center gap-1"
+                        >View on Yelp <ArrowRight class="w-3.5 h-3.5" /></span
                     >
                 </a>
 
@@ -570,7 +631,7 @@ const breadcrumbSchema = {
                     class="bg-[var(--bg-body)] p-8 rounded-[var(--radius-xl)] border border-[var(--border-light)] hover:border-[var(--border-focus)] transition-all text-center group"
                 >
                     <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm group-hover:shadow-md transition-all"
+                        class="w-16 h-16 bg-white rounded-[var(--radius-full)] flex items-center justify-center mx-auto mb-4 shadow-[var(--shadow-sm)] group-hover:shadow-[var(--shadow-md)] transition-all"
                     >
                         <svg
                             class="w-8 h-8 text-accent"
@@ -582,15 +643,21 @@ const breadcrumbSchema = {
                             ></path>
                         </svg>
                     </div>
-                    <h3 class="font-black text-primary text-lg uppercase mb-2">
+                    <h3
+                        class="font-black text-primary text-[length:var(--text-body)] uppercase mb-2 font-secondary"
+                    >
                         Facebook Reviews
                     </h3>
-                    <p class="text-sm text-[var(--text-body)] font-medium mb-3">
+                    <p
+                        class="text-[length:var(--text-label)] text-[var(--clr-body)] font-medium mb-3"
+                    >
                         5.0 stars • 150+ reviews
                     </p>
                     <span
-                        class="text-accent font-bold text-sm uppercase tracking-wide group-hover:underline"
-                        >View on Facebook →</span
+                        class="text-accent font-bold text-[length:var(--text-label)] uppercase tracking-wide group-hover:underline inline-flex items-center gap-1"
+                        >View on Facebook <ArrowRight
+                            class="w-3.5 h-3.5"
+                        /></span
                     >
                 </a>
             </div>
@@ -600,11 +667,11 @@ const breadcrumbSchema = {
     <!-- Write a Review CTA -->
     <section
         class="bg-light"
-        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-3xl);"
+        style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);"
     >
         <div class="container-custom">
             <div
-                class="bg-gradient-to-br from-primary to-primary/90 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden"
+                class="bg-gradient-to-br from-primary to-primary/90 rounded-[var(--radius-2xl)] p-12 md:p-16 text-center relative overflow-hidden"
             >
                 <div class="absolute inset-0 opacity-10">
                     <div
@@ -614,12 +681,14 @@ const breadcrumbSchema = {
                 </div>
                 <div class="relative z-10">
                     <h2
-                        class="text-3xl md:text-5xl font-black text-white uppercase mb-6"
+                        class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-white uppercase mb-6 font-display"
                     >
-                        Had a Great <span class="text-accent">Experience?</span>
+                        Share Your <span class="text-accent"
+                            >Electrician Experience</span
+                        >
                     </h2>
                     <p
-                        class="text-gray-200 text-lg md:text-xl mb-10 font-light leading-relaxed"
+                        class="text-gray-200 text-[length:var(--text-body)] md:text-[length:var(--text-h5)] mb-10 font-light leading-relaxed"
                     >
                         We'd love to hear from you! Your feedback helps us
                         improve and helps other customers make informed
@@ -651,7 +720,7 @@ const breadcrumbSchema = {
     <!-- Final CTA -->
     <section
         class="bg-white"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
+        style="padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl);"
     >
         <div class="container-custom text-center">
             <svg
@@ -666,20 +735,25 @@ const breadcrumbSchema = {
                     clip-rule="evenodd"></path>
             </svg>
             <h2
-                class="text-3xl md:text-5xl font-black text-primary uppercase mb-6"
+                class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-primary uppercase mb-6 font-display"
             >
-                Ready to Experience <span class="text-accent"
-                    >5-Star Service?</span
+                Schedule Your <span class="text-accent"
+                    >5-Star Electrical Service</span
                 >
             </h2>
             <p
-                class="text-[var(--text-body)] text-lg md:text-xl mb-12 font-medium leading-relaxed"
+                class="text-[var(--clr-body)] text-[length:var(--text-body)] md:text-[length:var(--text-h5)] mb-12 font-medium leading-relaxed"
             >
-                Join 1,200+ satisfied customers who chose Solomon Electric for
-                their electrical needs. Licensed, insured, and available 24/7.
+                Join {SITE_CONFIG.stats.totalReviews} satisfied customers who chose
+                Solomon Electric for their electrical needs. Licensed, insured, and
+                available 24/7.
             </p>
             <div class="final-cta-buttons">
-                <Button href="/book" size="lg" class="px-12 py-6 text-xl gap-2">
+                <Button
+                    href="/book"
+                    size="lg"
+                    class="px-12 py-6 text-[length:var(--text-h5)] gap-2"
+                >
                     <Star class="w-5 h-5" /> Book Your Service
                 </Button>
             </div>

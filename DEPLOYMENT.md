@@ -191,9 +191,6 @@ curl -I https://www.247electricianmiami.com/api/env.php
 ```bash
 # Increase heap allocation in package.json
 "build": "NODE_OPTIONS='--max-old-space-size=12288' astro build"
-
-# Or reduce compression
-# Comment out compress() integration in astro.config.mjs
 ```
 
 ## Security Checklist

@@ -6,14 +6,14 @@ import { SITE_CONFIG } from "../config/site";
  * Enhanced with E-E-A-T signals for author expertise and credentials
  */
 export function generateArticleSchema(post: any, siteUrl: string) {
-    const canonical = `${siteUrl}/blog/${post.slug}`;
+    const canonical = `${siteUrl}/blog/${post.slug}/`;
     return {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        '@id': `${canonical}/#article`,
+        '@id': `${canonical}#article`,
         headline: post.data.title,
         description: post.data.description,
-        image: post.data.image ? (typeof post.data.image === 'string' ? `${siteUrl}${post.data.image}` : `${siteUrl}${post.data.image.src}`) : `${siteUrl}/og-default.jpg`,
+        image: post.data.image ? (typeof post.data.image === 'string' ? `${siteUrl}${post.data.image}` : `${siteUrl}${post.data.image.src}`) : `${siteUrl}/og-default.webp`,
         datePublished: post.data.pubDate.toISOString(),
         dateModified: (post.data.updatedDate || post.data.pubDate).toISOString(),
         author: [
@@ -65,33 +65,6 @@ export function generateArticleSchema(post: any, siteUrl: string) {
 
 
 /**
- * Generate JSON-LD structured data for services list
- */
-export function generateServicesSchema(services: any[], siteUrl: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'ItemList',
-        itemListElement: services.map((service, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            item: {
-                '@type': 'Service',
-                '@id': `${siteUrl}/services/${service.slug || service.id}/#service`,
-                name: service.name,
-                description: service.description,
-                provider: {
-                    '@type': 'Electrician',
-                    name: 'Solomon Electric',
-                    url: siteUrl,
-                    telephone: SITE_CONFIG.contact.phone.formatted,
-                    image: `${siteUrl}/og-default.jpg`,
-                },
-            },
-        })),
-    };
-}
-
-/**
  * Generate JSON-LD structured data for FAQPage
  */
 export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
@@ -110,54 +83,8 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
 }
 
 /**
- * Generate JSON-LD structured data for ImageObject
- * Used for GSC image metadata and rich image results
+ * Generate JSON-LD structured data for organization
  */
-export interface ImageSchemaInput {
-    url: string;
-    alt: string;
-    caption?: string;
-    width?: number;
-    height?: number;
-    license?: string;
-    author?: string;
-}
-
-export function generateImageSchema(image: ImageSchemaInput, siteUrl: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'ImageObject',
-        '@id': `${siteUrl}${image.url}#image`,
-        contentUrl: image.url.startsWith('http') ? image.url : `${siteUrl}${image.url}`,
-        caption: image.caption || image.alt,
-        description: image.alt,
-        name: image.alt,
-        ...(image.width && { width: image.width }),
-        ...(image.height && { height: image.height }),
-        ...(image.license && { license: image.license }),
-        ...(image.author && {
-            author: {
-                '@type': 'Organization',
-                name: image.author
-            }
-        }),
-        copyrightHolder: {
-            '@type': 'Organization',
-            '@id': `${siteUrl}/#organization`,
-            name: 'Solomon Electric'
-        },
-        acquireLicensePage: `${siteUrl}/contact`,
-        creditText: 'Solomon Electric'
-    };
-}
-
-/**
- * Generate multiple ImageObjects for a page
- */
-export function generateImagesSchema(images: ImageSchemaInput[], siteUrl: string) {
-    return images.map(image => generateImageSchema(image, siteUrl));
-}
-
 /**
  * Generate JSON-LD structured data for organization
  */
@@ -167,10 +94,10 @@ export function generateOrganizationSchema(siteUrl: string) {
         '@type': 'Electrician',
         '@id': `${siteUrl}/#organization`,
         name: 'Solomon Electric',
-        image: `${siteUrl}/og-default.jpg`,
+        image: `${siteUrl}/og-default.webp`,
         description: `Miami's Premier 24/7 Electrical Services - Licensed, Insured, and Ready to Power Your World. Serving Miami-Dade and Broward counties since ${SITE_CONFIG.company.foundedYear}.`,
         url: siteUrl,
-        telephone: SITE_CONFIG.contact.phone.formatted,
+        telephone: SITE_CONFIG.contact.phone.raw,
         email: SITE_CONFIG.contact.email.primary,
         priceRange: '$$',
         address: {
@@ -434,42 +361,6 @@ export function generateSpeakableSchema(url: string, selectors: string[] = ['.se
             '@type': 'SpeakableSpecification',
             'cssSelector': selectors
         }
-    };
-}
-
-/**
- * Generate OpenGraph meta tags
- */
-export function generateOGTags(
-    title: string,
-    description: string,
-    url: string,
-    image?: string,
-    type: 'website' | 'article' = 'website'
-) {
-    return {
-        'og:title': title,
-        'og:description': description,
-        'og:url': url,
-        'og:type': type,
-        'og:image': image || `${url}/og-default.jpg`,
-        'og:site_name': 'Solomon Electric',
-    };
-}
-
-/**
- * Generate Twitter Card meta tags
- */
-export function generateTwitterTags(
-    title: string,
-    description: string,
-    image?: string
-) {
-    return {
-        'twitter:card': 'summary_large_image',
-        'twitter:title': title,
-        'twitter:description': description,
-        'twitter:image': image || '/og-default.jpg',
     };
 }
 

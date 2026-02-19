@@ -1,7 +1,7 @@
 {
   "name": "Ceiling Fan & Light Fixture Installation",
   "slug": "ceiling-fan-light-fixture-installation",
-  "description": "Transform any room with professional ceiling fan and light fixture installation. Whether you're replacing outdated fixtures, adding a new ceiling fan for comfort and efficiency, or installing statement lighting in your South Florida home, Solomon Electric ensures safe, code-compliant installation with proper electrical connections and secure mounting.",
+  "description": "Transform any room with professional ceiling fan and light fixture installation. Whether you're replacing outdated fixtures, adding a new ceiling fan for comfort and efficiency, or installing statement lighting in your South Florida home, Solomon Electric's licensed team ensures safe, code-compliant installation with proper electrical connections and secure mounting.",
   "shortDescription": "Expert fixture and fan installation",
   "icon": "Lightbulb",
   "image": "../../assets/images/services/lighting.webp",
@@ -15,12 +15,12 @@
     "Fan/light combination units",
     "Remote and smart control setup"
   ],
-  "warningSignsHeading": "When You Need Professional Fixture Installation",
-  "warningSignsSubheading": "Some installations are straightforward\u2014others require professional electrical work. Here's when to call an electrician.",
+  "warningSignsHeading": "How to Know You Need Professional Ceiling Fan & Light Fixture Installation",
+  "warningSignsSubheading": "Some installations are straightforward—others require professional electrical work. Here's when to call an electrician.",
   "problems": [
     {
       "title": "No Existing Ceiling Box",
-      "description": "Installing a fan or fixture where none existed before requires running new wiring and installing a properly rated ceiling box\u2014definitely electrician territory.",
+      "description": "Installing a fan or fixture where none existed before requires running new wiring and installing a properly rated ceiling box—definitely electrician territory.",
       "icon": "AlertTriangle"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "Shield"
     }
   ],
-  "processHeading": "Our Installation Process",
+  "processHeading": "The Professional Ceiling Fan & Light Fixture Installation Process",
   "process": [
     {
       "step": 1,
@@ -64,7 +64,7 @@
     {
       "step": 3,
       "title": "Secure Mounting",
-      "description": "We install proper mounting hardware rated for your fixture's weight, ensuring connection to structural framing\u2014not just drywall."
+      "description": "We install proper mounting hardware rated for your fixture's weight, ensuring connection to structural framing—not just drywall."
     },
     {
       "step": 4,
@@ -77,11 +77,11 @@
       "description": "We test all functions (lights, fan speeds, remotes), balance ceiling fans for wobble-free operation, and demonstrate controls."
     }
   ],
-  "benefitsHeading": "Benefits of Professional Installation",
+  "benefitsHeading": "How Ceiling Fan & Light Fixture Installation Improves Your Property",
   "benefits": [
     {
       "title": "Safe, Secure Mounting",
-      "description": "Ceiling fans spin at high speeds\u2014loose mounting creates dangerous situations. Professional installation ensures your fixture stays safely in place.",
+      "description": "Ceiling fans spin at high speeds—loose mounting creates dangerous situations. Professional installation ensures your fixture stays safely in place.",
       "icon": "Shield"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "title": "Florida Comfort & Efficiency",
-      "description": "Ceiling fans reduce perceived temperature by 4-8\u00b0F, allowing higher thermostat settings. This means real AC savings in Florida's long cooling season.",
+      "description": "Ceiling fans reduce perceived temperature by 4-8°F, allowing higher thermostat settings. This means real AC savings in Florida's long cooling season.",
       "icon": "TrendingUp"
     },
     {
@@ -106,11 +106,11 @@
       "label": "Fixtures Installed"
     },
     {
-      "value": "4-8\u00b0F",
+      "value": "4-8°F",
       "label": "Cooling Effect"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -121,11 +121,11 @@
   "faqs": [
     {
       "question": "Can I install a ceiling fan where there's only a light fixture?",
-      "answer": "Usually, yes\u2014but the existing ceiling box must be replaced with a fan-rated box designed to handle the weight and vibration of a spinning fan. Standard light boxes will fail over time, creating a safety hazard. We install proper fan boxes as part of our fan installation service."
+      "answer": "Usually, yes—but the existing ceiling box must be replaced with a fan-rated box designed to handle the weight and vibration of a spinning fan. Standard light boxes will fail over time, creating a safety hazard. We install proper fan boxes as part of our fan installation service."
     },
     {
       "question": "Do you install ceiling fans I've already purchased?",
-      "answer": "Absolutely. Bring your own fixture and we'll install it professionally. We can also help select fixtures if you haven't decided yet\u2014we're not tied to any particular brand and can recommend options based on your needs."
+      "answer": "Absolutely. Bring your own fixture and we'll install it professionally. We can also help select fixtures if you haven't decided yet—we're not tied to any particular brand and can recommend options based on your needs."
     },
     {
       "question": "Why does my ceiling fan wobble?",
@@ -137,7 +137,7 @@
     },
     {
       "question": "Do ceiling fans reduce cooling bills?",
-      "answer": "Yes! Ceiling fans create a wind-chill effect that makes rooms feel 4-8\u00b0F cooler. This allows you to raise your thermostat setting and reduce AC runtime. In Florida's long cooling season, this translates to meaningful energy savings\u2014enough that fans typically pay for themselves."
+      "answer": "Yes! Ceiling fans create a wind-chill effect that makes rooms feel 4-8°F cooler. This allows you to raise your thermostat setting and reduce AC runtime. In Florida's long cooling season, this translates to meaningful energy savings—enough that fans typically pay for themselves."
     },
     {
       "question": "Can I have separate wall switches for fan and light?",
@@ -161,23 +161,37 @@
   "seoContent": [
     {
       "heading": "Ceiling Fan Installation in Miami & South Florida",
-      "body": "Ceiling fans aren't just decorative\u2014they're essential comfort devices in South Florida's climate. By creating a wind-chill effect, ceiling fans make rooms feel 4-8\u00b0F cooler, allowing you to reduce AC usage and save on energy bills. Solomon Electric provides professional ceiling fan installation throughout Miami-Dade and Broward counties, ensuring safe mounting, proper electrical connections, and wobble-free operation."
+      "body": "Ceiling fans aren't just decorative—they're essential comfort devices in South Florida's climate. By creating a wind-chill effect, ceiling fans make rooms feel 4-8°F cooler, allowing you to reduce AC usage and save on energy bills. Solomon Electric provides professional ceiling fan installation throughout {county} and Broward counties, ensuring safe mounting, proper electrical connections, and wobble-free operation. We design lighting layouts that balance aesthetics, function, and energy efficiency. For recessed lighting, we calculate proper spacing and placement to eliminate shadows and dark spots while avoiding over-lighting that wastes energy."
     },
     {
-      "heading": "Light Fixture Installation & Replacement",
-      "body": "Whether you're updating outdated fixtures, installing a statement chandelier, or adding task lighting to your kitchen, Solomon Electric handles all residential light fixture work. We install fixtures you've purchased or help select options that meet your style and functional needs. Every installation includes proper electrical connections, secure mounting, and testing."
+      "heading": "Light Fixture Installation & Replacement in Miami",
+      "body": "Whether you're updating outdated fixtures, installing a statement chandelier, or adding task lighting to your kitchen, Solomon Electric handles all residential light fixture work. We install fixtures you've purchased or help select options that meet your style and functional needs. Every installation includes proper electrical connections, secure mounting, and testing. South Florida's intense sunlight creates specific indoor lighting challenges—high contrast between sun-drenched windows and interior spaces. We design lighting to complement natural light patterns, using dimmers and zones for all-day comfort."
     },
     {
-      "heading": "Heavy Fixture & Chandelier Mounting",
-      "body": "Large chandeliers and heavy fixtures require proper structural mounting\u2014not just a ceiling box. Drywall cannot support significant weight; fixtures must connect to ceiling joists or properly installed bracing. Our electricians verify structural support and install appropriate mounting hardware for fixtures of any size."
+      "heading": "Heavy Fixture & Chandelier Mounting in Miami Homes",
+      "body": "Large chandeliers and heavy fixtures require proper structural mounting—not just a ceiling box. Drywall cannot support significant weight; fixtures must connect to ceiling joists or properly installed bracing. Our electricians verify structural support and install appropriate mounting hardware for fixtures of any size. Modern LED lighting typically pays for itself within 1-2 years through energy savings. We calculate your specific ROI based on current fixtures, usage patterns, and FPL rates so you can make an informed decision."
     },
     {
       "heading": "Serving South Florida Homeowners",
-      "body": "Solomon Electric installs ceiling fans and light fixtures throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Schedule your installation and enjoy your new fixture\u2014professionally installed, safely mounted, and ready to enjoy."
+      "body": "Solomon Electric installs ceiling fans and light fixtures throughout {cityName}, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Schedule your installation and enjoy your new fixture—professionally installed, safely mounted, and ready to enjoy. Smart lighting systems connect to your existing WiFi network and integrate with voice assistants like Alexa and Google Home. We configure scenes, schedules, and automations during installation so your system is ready to use immediately."
     }
   ],
   "relatedBlogPosts": [
     "lighting-fixture-installation"
   ],
-  "imageAlt": "Ceiling Fan & Light Fixture Installation service provided by licensed electricians in South Florida"
+  "imageAlt": "Ceiling Fan & Light Fixture Installation service provided by licensed electricians in South Florida",
+  "shortName": "Ceiling Fan Installation",
+  "metaDescription": "Professional ceiling fan and light fixture installation in Miami. Licensed electricians, prompt scheduling available. Free estimates.",
+  "metaTitle": "Ceiling Fan & Fixture Install Miami | Solomon",
+  "localSignals": {
+    "typicalTimeline": "Ceiling fan installation typically completes in 1-2 hours; chandeliers may require more time",
+    "priceRange": "Ceiling fan installation ranges from $200–$500; chandelier mounting from $300–$800",
+    "commonBrands": [
+      "Hunter",
+      "Minka Aire",
+      "Casablanca",
+      "Modern Forms"
+    ],
+    "permitNote": "Simple fixture swaps don't require permits; new junction boxes or circuits require {county} County permits"
+  }
 }

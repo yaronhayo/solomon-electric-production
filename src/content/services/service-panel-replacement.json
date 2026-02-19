@@ -1,12 +1,12 @@
 {
   "name": "Service Panel Replacement",
   "slug": "service-panel-replacement",
-  "description": "When your electrical panel is damaged, recalled, or simply worn out, replacement is the right answer. Solomon Electric provides service panel replacement throughout South Florida\u2014removing problematic panels and installing modern, code-compliant electrical distribution that protects your home and provides reliable power.",
+  "description": "Outdated or damaged panels don't just limit your home's electrical capacity—they create genuine fire and safety risks that grow more serious each year. When your electrical panel is damaged, recalled, or simply worn out, replacement is the right answer. Solomon Electric's licensed electricians provide service panel replacement throughout South Florida—removing problematic panels and installing modern, code-compliant electrical distribution that protects your home and provides reliable power. Licensed FL electricians providing complete panel replacements with FPL coordination and {county} County permits.",
   "shortDescription": "Replace outdated or dangerous panels",
   "icon": "Zap",
   "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
-  "order": 8,
+  "order": 9,
   "features": [
     "Federal Pacific panel replacement",
     "Zinsco panel replacement",
@@ -15,7 +15,7 @@
     "Modern breaker installation",
     "Code-compliant installation"
   ],
-  "warningSignsHeading": "When Panel Replacement Is Needed",
+  "warningSignsHeading": "How to Know You Need Professional Service Panel Replacement",
   "warningSignsSubheading": "Some panels should be replaced regardless of age or capacity.",
   "problems": [
     {
@@ -49,7 +49,7 @@
       "icon": "FileCheck"
     }
   ],
-  "processHeading": "Our Panel Replacement Process",
+  "processHeading": "The Professional Service Panel Replacement Process",
   "process": [
     {
       "step": 1,
@@ -77,7 +77,7 @@
       "description": "We coordinate inspection, verify passed inspection, and provide documentation for your records."
     }
   ],
-  "benefitsHeading": "Benefits of Panel Replacement",
+  "benefitsHeading": "How Service Panel Replacement Improves Your Property",
   "benefits": [
     {
       "title": "Safety",
@@ -110,7 +110,7 @@
       "label": "Recall Removal"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "Why is my specific panel brand a problem?",
-      "answer": "Federal Pacific (FPE/Stab-Lok) and Zinsco breakers have documented failure rates\u2014they don't trip when they should, leading to overheating and fires. The problem is the breaker design, not just age. These panels should be replaced regardless of condition."
+      "answer": "Federal Pacific (FPE/Stab-Lok) and Zinsco breakers have documented failure rates—they don't trip when they should, leading to overheating and fires. The problem is the breaker design, not just age. These panels should be replaced regardless of condition."
     },
     {
       "question": "How do I know if I have a recalled panel?",
@@ -129,15 +129,15 @@
     },
     {
       "question": "Will my insurance cover panel replacement?",
-      "answer": "Insurance typically doesn't cover replacement of functioning but hazardous panels\u2014that's maintenance, not damage. However, if your insurer requires replacement for continued coverage, the alternative is losing insurance. The cost of replacement versus uninsured status makes the decision clear."
+      "answer": "Insurance typically doesn't cover replacement of functioning but hazardous panels—that's maintenance, not damage. However, if your insurer requires replacement for continued coverage, the alternative is losing insurance. The cost of replacement versus uninsured status makes the decision clear."
     },
     {
       "question": "How long does panel replacement take?",
-      "answer": "Typically one full day for direct replacement (same size panel). Power is off for most of that time\u2014usually 6-10 hours. We coordinate to minimize disruption and complete work efficiently."
+      "answer": "Typically one full day for direct replacement (same size panel). Power is off for most of that time—usually 6-10 hours. We coordinate to minimize disruption and complete work efficiently."
     },
     {
       "question": "Should I upgrade size while replacing?",
-      "answer": "If your panel is being replaced anyway, upgrading from 100A to 200A adds relatively little to the project (vs. separate upgrade later). Consider future needs\u2014EV charging, additions, modern electrical loads. We can advise whether upgrade makes sense."
+      "answer": "If your panel is being replaced anyway, upgrading from 100A to 200A adds relatively little to the project (vs. separate upgrade later). Consider future needs—EV charging, additions, modern electrical loads. We can advise whether upgrade makes sense."
     },
     {
       "question": "What about my breakers?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "Will replacement solve my electrical problems?",
-      "answer": "Panel replacement addresses panel-specific issues\u2014recalled equipment, corrosion, physical damage. If you have wiring problems, overloaded circuits, or other issues, those may need separate attention. We identify what panel replacement will and won't solve."
+      "answer": "Panel replacement addresses panel-specific issues—recalled equipment, corrosion, physical damage. If you have wiring problems, overloaded circuits, or other issues, those may need separate attention. We identify what panel replacement will and won't solve."
     },
     {
       "question": "Do I need to coordinate with FPL?",
@@ -161,21 +161,38 @@
   "seoContent": [
     {
       "heading": "Service Panel Replacement in South Florida",
-      "body": "When your electrical panel is damaged, recalled, or worn out, replacement is the answer. Solomon Electric replaces problematic panels throughout Miami-Dade and Broward counties with modern, code-compliant electrical distribution that protects your home."
+      "body": "When your electrical panel is damaged, recalled, or worn out, replacement is the answer. Solomon Electric replaces problematic panels throughout {county} and Broward counties with modern, code-compliant electrical distribution that protects your home. Our licensed electricians perform a complete load calculation before any panel work, ensuring your new panel meets current NEC requirements and has room for future expansion. We use copper bus bars, properly torqued connections, and AFCI/GFCI breakers where required by Florida Building Code."
     },
     {
-      "heading": "Federal Pacific and Zinsco Panel Replacement",
-      "body": "These recalled brands have documented fire risks from breakers that don't trip when they should. Insurance companies increasingly require their removal. We replace dangerous FPE and Zinsco panels with safe, modern equipment."
+      "heading": "Federal Pacific & Zinsco Panel Replacement in Miami",
+      "body": "These recalled brands have documented fire risks from breakers that don't trip when they should. Insurance companies increasingly require their removal. We replace dangerous FPE and Zinsco panels with safe, modern equipment. South Florida's heat and humidity accelerate corrosion inside electrical panels. We inspect for oxidized bus bars, loose connections, and thermal damage that compromise safety. Every panel we install includes proper weather sealing rated for coastal environments."
     },
     {
-      "heading": "Storm and Damage Replacement",
-      "body": "Panels damaged by storms, flooding, or surge events may have internal damage that isn't visible. When panels are compromised, replacement provides the fresh start your electrical system needs."
+      "heading": "Storm Damage Panel Replacement in South Florida",
+      "body": "Panels damaged by storms, flooding, or surge events may have internal damage that isn't visible. When panels are compromised, replacement provides the fresh start your electrical system needs. Insurance companies increasingly require panel upgrades for policy renewals. Our electricians provide documented before-and-after reports that satisfy insurance requirements, and we coordinate directly with your insurer when needed."
     },
     {
-      "heading": "Professional Panel Replacement",
-      "body": "Solomon Electric provides panel replacement throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Remove dangerous equipment and install reliable, safe electrical distribution."
+      "heading": "Professional Panel Replacement in Miami, FL",
+      "body": "Solomon Electric provides panel replacement throughout {cityName} and surrounding communities. Remove dangerous equipment and install reliable, safe electrical distribution. Modern electrical demands—EV chargers, home offices, pool equipment, smart home systems—require more capacity than panels installed even 15 years ago. We future-proof your installation with 20-30% additional capacity beyond your current needs."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Service Panel Replacement service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "electrical-panel-modernization-upgrades",
+    "electrical-panel-repair"
+  ],
+  "imageAlt": "Service Panel Replacement service provided by licensed electricians in South Florida",
+  "shortName": "Panel Replacement",
+  "metaDescription": "Service panel replacement in Miami. Upgrade old fuse boxes and outdated breaker panels for safe, modern power. Licensed, permits included.",
+  "metaTitle": "Panel Replacement Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Full panel replacement typically requires 6-10 hours including FPL coordination",
+    "priceRange": "Complete panel replacement ranges from $2,500–$5,500 depending on amperage and complexity",
+    "commonBrands": [
+      "Square D Homeline",
+      "Eaton BR/CH",
+      "Siemens",
+      "Leviton"
+    ],
+    "permitNote": "Requires {county} County electrical permit, FPL meter pull, and mandatory final inspection"
+  }
 }

@@ -36,9 +36,9 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 ---
 
 <Layout
-    title={`About Solomon Electric | Licensed Miami Electricians Since ${SITE_CONFIG.company.foundedYear}`}
+    title={`About Solomon Electric | Miami Electricians Since ${SITE_CONFIG.company.foundedYear}`}
     description={`Meet South Florida's trusted electrical team. ${SITE_CONFIG.stats.totalProjects}+ projects completed. FL License #${SITE_CONFIG.credentials.license.number}. Family-owned, 24/7 service, satisfaction guaranteed.`}
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
     ogImageAlt={`Solomon Electric Team - Licensed Miami Electricians since ${SITE_CONFIG.company.foundedYear}`}
     topBarDark={true}
 >
@@ -57,14 +57,14 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
     <!-- Hero Section -->
     <PageHero
-        title={`Licensed Miami Electricians<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${SITE_CONFIG.stats.totalProjects}+ Projects Since ${SITE_CONFIG.company.foundedYear}</span>`}
+        title={`Licensed Miami Electricians<br><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>${SITE_CONFIG.stats.totalProjects}+ Projects Since ${SITE_CONFIG.company.foundedYear}</span>`}
         subtitle={`About Solomon Electric • FL License #${SITE_CONFIG.credentials.license.number}`}
         description="From homeowners protecting their families to business owners keeping operations running—Solomon Electric is the licensed electrical contractor South Florida trusts. Available 24/7 for emergency repairs, panel upgrades, and all electrical services."
         image={heroImage}
     />
 
     <!-- Company Story Section -->
-    <section class="bg-white py-20 md:py-32">
+    <section class="bg-white py-12 md:py-32">
         <Container>
             <div
                 class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal reveal-up"
@@ -72,28 +72,28 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 <!-- Left: Image -->
                 <div class="relative order-2 lg:order-1">
                     <div
-                        class="absolute -inset-4 border-4 border-accent z-0 translate-x-6 translate-y-6 rounded-3xl"
+                        class="absolute -inset-4 border-4 border-accent z-0 translate-x-6 translate-y-6 rounded-[var(--radius-2xl)]"
                     >
                     </div>
                     <Image
                         src={dispatcherImage.src}
                         alt={dispatcherImage.alt}
-                        class="relative z-10 w-full shadow-2xl rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
+                        class="relative z-10 w-full shadow-[var(--shadow-xl)] rounded-[var(--radius-2xl)] grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
                     />
                 </div>
 
                 <!-- Right: Content -->
                 <div class="order-1 lg:order-2">
-                    <h4
-                        class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                    <span
+                        class="text-[var(--color-accent-text)] font-bold text-lg tracking-[0.2em] uppercase font-secondary block"
                         style="margin-bottom: var(--spacing-md);"
                     >
                         Miami's Trusted Electricians Since {
                             SITE_CONFIG.company.foundedYear
                         }
-                    </h4>
+                    </span>
                     <h2
-                        class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase font-display"
+                        class="text-[length:var(--text-h1)] md:text-[length:var(--text-display)] font-black text-primary leading-tight uppercase font-display"
                         style="margin-bottom: var(--spacing-xl);"
                     >
                         Licensed <span class="text-accent"
@@ -102,37 +102,39 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                         in South Florida
                     </h2>
                     <div
-                        class="space-y-6 text-[var(--text-body)] leading-relaxed font-medium font-body"
+                        class="space-y-6 text-[var(--clr-body)] leading-relaxed font-medium font-body"
                     >
-                        <p class="text-lg">
+                        <p class="text-[length:var(--text-body)]">
                             <span class="text-primary font-bold"
                                 >Solomon Electric protects Miami families and
                                 businesses.</span
                             > Since {SITE_CONFIG.company.foundedYear}, we've
                             been the licensed electrician South Florida trusts
                             for panel upgrades, emergency repairs, EV charger
-                            installation, and all electrical services. From
-                            Miami Beach to Fort Lauderdale to Coral Gables—our
-                            experienced team delivers safe, code-compliant
-                            electrical work.
+                            installation, and all electrical services.
                         </p>
                         <p>
-                            With <span class="font-bold text-primary"
+                            From Miami Beach to Fort Lauderdale to Coral
+                            Gables—our experienced team delivers safe,
+                            code-compliant electrical work. With <span
+                                class="font-bold text-primary"
                                 >{SITE_CONFIG.stats.totalProjects}+ residential
                                 and commercial projects</span
                             > completed since {SITE_CONFIG.company.foundedYear},
                             we've helped thousands of homeowners solve
                             electrical problems that other contractors couldn't
-                            figure out. We've seen the damage that DIY fixes and
-                            unlicensed work can cause—and we've fixed it all.
+                            figure out.
                         </p>
                         <p>
                             Our licensed electricians don't just show up and
                             start working. We listen to your concerns first,
                             explain exactly what needs to be done, and make sure
-                            you're comfortable before we begin. When we leave,
-                            you'll have peace of mind knowing the job was done
-                            right—backed by our workmanship warranty.
+                            you're comfortable before we begin.
+                        </p>
+                        <p>
+                            When we leave, you'll have peace of mind knowing the
+                            job was done right—backed by our workmanship
+                            warranty.
                         </p>
                     </div>
                 </div>
@@ -141,16 +143,16 @@ const breadcrumbSchema = generateBreadcrumbSchema(
     </section>
 
     <!-- Mission & Values Section -->
-    <section class="bg-light py-20 md:py-32">
+    <section class="bg-light py-12 md:py-32">
         <Container>
             <div class="text-center" style="margin-bottom: var(--spacing-3xl);">
-                <h4
-                    class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary"
+                <span
+                    class="text-[var(--color-accent-text)] font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary block"
                 >
                     Why Choose Solomon Electric
-                </h4>
+                </span>
                 <h2
-                    class="text-3xl md:text-5xl font-black text-primary uppercase font-display"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-primary uppercase font-display"
                 >
                     Licensed, Insured, <span class="text-accent"
                         >Guaranteed</span
@@ -161,17 +163,17 @@ const breadcrumbSchema = generateBreadcrumbSchema(
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal reveal-up">
                 <!-- Stop Worrying About Safety -->
                 <div
-                    class="glass-bg glass-border p-8 rounded-2xl transition-all group hover:bg-white/10 text-center flex flex-col items-center"
+                    class="glass-bg glass-border p-8 rounded-[var(--radius-2xl)] transition-all group hover:bg-white/10 text-center flex flex-col items-center"
                 >
                     <div
-                        class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent transition-all shimmer-authority mb-6"
+                        class="w-16 h-16 bg-accent/10 rounded-[var(--radius-xl)] flex items-center justify-center group-hover:bg-accent transition-all shimmer-authority mb-6"
                     >
                         <ShieldCheck
                             class="w-8 h-8 text-accent group-hover:text-white transition-all"
                         />
                     </div>
                     <h3
-                        class="text-xl font-black text-primary uppercase font-display mb-4"
+                        class="text-[length:var(--text-h5)] font-black text-primary uppercase font-display mb-4"
                     >
                         Stop Worrying About Electrical Safety
                     </h3>
@@ -184,17 +186,17 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
                 <!-- Never Call Back -->
                 <div
-                    class="glass-bg glass-border p-8 rounded-2xl transition-all group hover:bg-white/10 text-center flex flex-col items-center"
+                    class="glass-bg glass-border p-8 rounded-[var(--radius-2xl)] transition-all group hover:bg-white/10 text-center flex flex-col items-center"
                 >
                     <div
-                        class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent transition-all shimmer-authority"
+                        class="w-16 h-16 bg-accent/10 rounded-[var(--radius-xl)] flex items-center justify-center mb-6 group-hover:bg-accent transition-all shimmer-authority"
                     >
                         <Wrench
                             class="w-8 h-8 text-accent group-hover:text-white transition-all"
                         />
                     </div>
                     <h3
-                        class="text-xl font-black text-primary mb-4 uppercase font-display"
+                        class="text-[length:var(--text-h5)] font-black text-primary mb-4 uppercase font-display"
                     >
                         Never Call Someone to Fix Our Work
                     </h3>
@@ -207,17 +209,17 @@ const breadcrumbSchema = generateBreadcrumbSchema(
 
                 <!-- Actually Listen -->
                 <div
-                    class="glass-bg glass-border p-8 rounded-2xl transition-all group hover:bg-white/10 text-center flex flex-col items-center"
+                    class="glass-bg glass-border p-8 rounded-[var(--radius-2xl)] transition-all group hover:bg-white/10 text-center flex flex-col items-center"
                 >
                     <div
-                        class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent transition-all shimmer-authority"
+                        class="w-16 h-16 bg-accent/10 rounded-[var(--radius-xl)] flex items-center justify-center mb-6 group-hover:bg-accent transition-all shimmer-authority"
                     >
                         <Heart
                             class="w-8 h-8 text-accent group-hover:text-white transition-all"
                         />
                     </div>
                     <h3
-                        class="text-xl font-black text-primary mb-4 uppercase font-display"
+                        class="text-[length:var(--text-h5)] font-black text-primary mb-4 uppercase font-display"
                     >
                         An Electrician Who Actually Listens
                     </h3>
@@ -236,13 +238,13 @@ const breadcrumbSchema = generateBreadcrumbSchema(
     <section
         id="our-story"
         aria-labelledby="story-heading"
-        class="py-20 md:py-32 bg-white relative overflow-hidden"
+        class="py-12 md:py-32 bg-white relative overflow-hidden"
     >
         <Container>
             <div class="text-center" style="margin-bottom: var(--spacing-3xl);">
                 <h2
                     id="story-heading"
-                    class="text-3xl md:text-5xl font-black text-primary mb-6 uppercase leading-tight font-display"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-primary mb-6 uppercase leading-tight font-display"
                 >
                     A Legacy of <span
                         class="text-accent underline decoration-accent/20 underline-offset-8"
@@ -250,7 +252,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                     > Since {SITE_CONFIG.company.foundedYear}
                 </h2>
                 <p
-                    class="text-[var(--text-body)] text-lg font-medium max-w-5xl mx-auto font-body"
+                    class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium max-w-5xl mx-auto font-body"
                 >
                     We maintain the highest professional standards and
                     regulatory compliance to ensure your complete peace of mind.
@@ -264,20 +266,22 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 <!-- Licensed -->
                 <div class="reveal reveal-up">
                     <div
-                        class="glass-bg glass-border p-6 rounded-2xl hover:bg-white/10 transition-all flex flex-col items-center"
+                        class="glass-bg glass-border p-6 rounded-[var(--radius-2xl)] hover:bg-white/10 transition-all flex flex-col items-center"
                     >
                         <div
-                            class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 shimmer-authority"
+                            class="w-12 h-12 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center mb-4 shimmer-authority"
                         >
                             <BadgeCheck class="w-6 h-6 text-accent" />
                         </div>
                         <h3
                             class="font-black text-primary uppercase font-display"
-                            style="font-size: clamp(1.25rem, 2vw, 1.5rem); margin-bottom: 0.5rem;"
+                            style="font-size: var(--text-h4); margin-bottom: 0.5rem;"
                         >
                             FL Licensed
                         </h3>
-                        <p class="text-sm font-bold text-accent font-secondary">
+                        <p
+                            class="text-[length:var(--text-label)] font-bold text-accent font-secondary"
+                        >
                             {SITE_CONFIG.credentials.license.number}
                         </p>
                     </div>
@@ -286,20 +290,22 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 <!-- Experience -->
                 <div class="reveal reveal-up" style="transition-delay: 100ms;">
                     <div
-                        class="glass-bg glass-border p-6 rounded-2xl hover:bg-white/10 transition-all flex flex-col items-center"
+                        class="glass-bg glass-border p-6 rounded-[var(--radius-2xl)] hover:bg-white/10 transition-all flex flex-col items-center"
                     >
                         <div
-                            class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 shimmer-authority"
+                            class="w-12 h-12 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center mb-4 shimmer-authority"
                         >
                             <Users class="w-6 h-6 text-accent" />
                         </div>
                         <h3
                             class="font-black text-primary uppercase font-display"
-                            style="font-size: clamp(1.25rem, 2vw, 1.5rem); margin-bottom: 0.5rem;"
+                            style="font-size: var(--text-h4); margin-bottom: 0.5rem;"
                         >
                             {SITE_CONFIG.credentials.yearsExperience}+ Years
                         </h3>
-                        <p class="text-sm font-bold text-accent font-secondary">
+                        <p
+                            class="text-[length:var(--text-label)] font-bold text-accent font-secondary"
+                        >
                             Local Experience
                         </p>
                     </div>
@@ -308,20 +314,22 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 <!-- Insured -->
                 <div class="reveal reveal-up" style="transition-delay: 200ms;">
                     <div
-                        class="glass-bg glass-border p-6 rounded-2xl hover:bg-white/10 transition-all flex flex-col items-center"
+                        class="glass-bg glass-border p-6 rounded-[var(--radius-2xl)] hover:bg-white/10 transition-all flex flex-col items-center"
                     >
                         <div
-                            class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 shimmer-authority"
+                            class="w-12 h-12 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center mb-4 shimmer-authority"
                         >
                             <Shield class="w-6 h-6 text-accent" />
                         </div>
                         <h3
                             class="font-black text-primary uppercase font-display"
-                            style="font-size: clamp(1.25rem, 2vw, 1.5rem); margin-bottom: 0.5rem;"
+                            style="font-size: var(--text-h4); margin-bottom: 0.5rem;"
                         >
-                            Full Insured
+                            Fully Insured
                         </h3>
-                        <p class="text-sm font-bold text-accent font-secondary">
+                        <p
+                            class="text-[length:var(--text-label)] font-bold text-accent font-secondary"
+                        >
                             $2M Coverage
                         </p>
                     </div>
@@ -330,20 +338,22 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 <!-- Guaranteed -->
                 <div class="reveal reveal-up" style="transition-delay: 300ms;">
                     <div
-                        class="glass-bg glass-border p-6 rounded-2xl hover:bg-white/10 transition-all flex flex-col items-center"
+                        class="glass-bg glass-border p-6 rounded-[var(--radius-2xl)] hover:bg-white/10 transition-all flex flex-col items-center"
                     >
                         <div
-                            class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 shimmer-authority"
+                            class="w-12 h-12 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center mb-4 shimmer-authority"
                         >
                             <ThumbsUp class="w-6 h-6 text-accent" />
                         </div>
                         <h3
                             class="font-black text-primary uppercase font-display"
-                            style="font-size: clamp(1.25rem, 2vw, 1.5rem); margin-bottom: 0.5rem;"
+                            style="font-size: var(--text-h4); margin-bottom: 0.5rem;"
                         >
                             Guaranteed
                         </h3>
-                        <p class="text-sm font-bold text-accent font-secondary">
+                        <p
+                            class="text-[length:var(--text-label)] font-bold text-accent font-secondary"
+                        >
                             Satisfaction
                         </p>
                     </div>
@@ -353,27 +363,27 @@ const breadcrumbSchema = generateBreadcrumbSchema(
     </section>
 
     <!-- Call to Excellence -->
-    <section class="py-20 md:py-32 bg-primary relative overflow-hidden">
+    <section class="py-12 md:py-32 bg-primary relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div
-                class="absolute top-0 right-0 w-96 h-96 bg-accent blur-[120px] rounded-full"
+                class="absolute top-0 right-0 w-96 h-96 bg-accent blur-[120px] rounded-[var(--radius-full)]"
             >
             </div>
             <div
-                class="absolute bottom-0 left-0 w-96 h-96 bg-accent blur-[120px] rounded-full"
+                class="absolute bottom-0 left-0 w-96 h-96 bg-accent blur-[120px] rounded-[var(--radius-full)]"
             >
             </div>
         </div>
 
         <Container class="relative z-10 text-center">
             <h2
-                class="text-3xl md:text-6xl font-black text-white mb-8 uppercase leading-tight font-display reveal reveal-up max-w-4xl mx-auto"
+                class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-white mb-8 uppercase leading-tight font-display reveal reveal-up max-w-4xl mx-auto"
             >
-                Ready to Experience <br />
-                <span class="text-accent">Better</span> Electrical Service?
+                Schedule Your Free <br />
+                <span class="text-accent">Electrical</span> Estimate Today
             </h2>
             <p
-                class="text-white/80 text-lg md:text-xl font-medium max-w-4xl mx-auto mb-12 font-body reveal reveal-up reveal-delay-1"
+                class="text-white/80 text-[length:var(--text-body)] md:text-[length:var(--text-h5)] font-medium max-w-4xl mx-auto mb-12 font-body reveal reveal-up reveal-delay-1"
             >
                 Don't settle for "good enough" when it comes to your family's
                 safety. Join the {SITE_CONFIG.stats.totalProjects}+ satisfied
@@ -385,14 +395,14 @@ const breadcrumbSchema = generateBreadcrumbSchema(
                 <Button
                     href="/book"
                     variant="primary"
-                    class="w-full sm:w-auto text-lg px-8 py-4 magnetic-cta"
+                    class="w-full sm:w-auto text-[length:var(--text-body)] px-8 py-4 magnetic-cta"
                 >
                     Book Your Inspection
                 </Button>
                 <Button
                     href={`tel:${SITE_CONFIG.contact.phone.raw}`}
                     variant="secondary"
-                    class="w-full sm:w-auto text-lg px-8 py-4"
+                    class="w-full sm:w-auto text-[length:var(--text-body)] px-8 py-4"
                 >
                     {SITE_CONFIG.contact.phone.formatted}
                 </Button>

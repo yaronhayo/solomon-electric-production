@@ -69,7 +69,7 @@ jobs:
 
       - name: 🚀 Trigger IndexNow (Instant Indexing)
         if: success()
-        run: node scripts/submit-indexnow.js ${{ secrets.INDEXNOW_KEY }}
+        run: node scripts/indexnow.js ${{ secrets.INDEXNOW_KEY }}
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
 

@@ -1,7 +1,7 @@
 {
   "name": "Electrical Code Compliance Violation Repairs",
   "slug": "electrical-code-compliance-violation-repairs",
-  "description": "Code violations identified during inspections, sales, or audits need to be corrected. Solomon Electric provides electrical code violation repairs throughout South Florida\u2014addressing cited violations, bringing systems into compliance, and providing documentation that satisfies inspectors, insurers, and buyers.",
+  "description": "Code violations identified during inspections, sales, or audits need to be corrected. Solomon Electric's licensed electricians provide electrical code violation repairs throughout South Florida—addressing cited violations, bringing systems into compliance, and providing documentation that satisfies inspectors, insurers, and buyers.",
   "shortDescription": "Fix code violations professionally",
   "icon": "Shield",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,7 +15,7 @@
     "Wiring violations",
     "Documentation for records"
   ],
-  "warningSignsHeading": "When Violation Repairs Are Needed",
+  "warningSignsHeading": "How to Know You Need Professional Code Violation Repair",
   "warningSignsSubheading": "Various situations require addressing electrical code violations.",
   "problems": [
     {
@@ -49,12 +49,12 @@
       "icon": "TrendingUp"
     }
   ],
-  "processHeading": "Our Violation Repair Process",
+  "processHeading": "The Professional Code Violation Repair Process",
   "process": [
     {
       "step": 1,
       "title": "Violation Review",
-      "description": "We review the specific violations cited\u2014inspection reports, audit findings, or buyer concerns\u2014to understand exactly what needs correction."
+      "description": "We review the specific violations cited—inspection reports, audit findings, or buyer concerns—to understand exactly what needs correction."
     },
     {
       "step": 2,
@@ -74,10 +74,10 @@
     {
       "step": 5,
       "title": "Documentation",
-      "description": "We provide documentation of corrections made\u2014important for satisfying insurance, closing transactions, or completing audit remediation."
+      "description": "We provide documentation of corrections made—important for satisfying insurance, closing transactions, or completing audit remediation."
     }
   ],
-  "benefitsHeading": "Benefits of Professional Violation Repair",
+  "benefitsHeading": "How Code Violation Repair Improves Your Property",
   "benefits": [
     {
       "title": "Pass Re-Inspection",
@@ -110,7 +110,7 @@
       "label": "Re-Inspection Pass"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "question": "Can you help with fire marshal violations?",
-      "answer": "Yes. Fire code violations related to electrical\u2014exit signs, emergency lighting, panel access\u2014fall within our expertise. We address fire code electrical violations and coordinate with fire inspectors."
+      "answer": "Yes. Fire code violations related to electrical—exit signs, emergency lighting, panel access—fall within our expertise. We address fire code electrical violations and coordinate with fire inspectors."
     },
     {
       "question": "What about commercial violations?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "What if corrections are expensive?",
-      "answer": "We provide accurate quotes before starting work. For expensive corrections, we discuss options\u2014phased work, alternative approaches, or understanding whether the violation truly requires correction. We help you make informed decisions."
+      "answer": "We provide accurate quotes before starting work. For expensive corrections, we discuss options—phased work, alternative approaches, or understanding whether the violation truly requires correction. We help you make informed decisions."
     }
   ],
   "relatedServices": [
@@ -161,21 +161,37 @@
   "seoContent": [
     {
       "heading": "Code Violation Repairs in South Florida",
-      "body": "Code violations identified during inspections, sales, or audits need correction. Solomon Electric provides electrical violation repairs throughout Miami-Dade and Broward counties\u2014addressing cited issues, achieving compliance, and providing documentation for inspectors and insurers."
+      "body": "Code violations identified during inspections, sales, or audits need correction. Solomon Electric provides electrical violation repairs throughout {county} and Broward counties—addressing cited issues, achieving compliance, and providing documentation for inspectors and insurers. Commercial electrical inspections follow NFPA 70B maintenance standards and Florida Building Code requirements. Our detailed reports include photographs, code references, and prioritized remediation recommendations."
     },
     {
-      "heading": "Inspection Failure Corrections",
-      "body": "When building or fire inspectors cite electrical violations, we address them promptly and coordinate re-inspection. Our corrections address root causes to pass inspection and prevent future citations."
+      "heading": "Electrical Inspection Failure Corrections in Miami",
+      "body": "When building or fire inspectors cite electrical violations, we address them promptly and coordinate re-inspection. Our corrections address root causes to pass inspection and prevent future citations. We understand the urgency of commercial electrical issues—downtime means lost revenue. Our commercial team schedules work during off-hours and weekends to minimize business disruption, and we maintain fully-stocked vehicles for faster completions."
     },
     {
-      "heading": "Real Estate Transaction Support",
-      "body": "Electrical violations can derail property sales. We correct cited issues quickly, provide documentation, and help meet transaction deadlines. Clear the path to closing with professional violation repairs."
+      "heading": "Real Estate Electrical Transaction Support in South Florida",
+      "body": "Electrical violations can derail property sales. We correct cited issues quickly, provide documentation, and help meet transaction deadlines. Clear the path to closing with professional violation repairs. Code compliance isn't just about passing inspections—it's about protecting your business from liability. We document all findings and provide certificates of compliance that satisfy insurance underwriters and commercial lease requirements."
     },
     {
       "heading": "Serving South Florida Properties",
-      "body": "Solomon Electric provides code violation repairs throughout Miami, Fort Lauderdale, Hollywood, and all surrounding areas. From simple corrections to complex remediation, we bring electrical systems into compliance."
+      "body": "Solomon Electric provides code violation repairs throughout {cityName}, Hollywood, and all surrounding areas. From simple corrections to complex remediation, we bring electrical systems into compliance. For commercial properties, we coordinate with property managers, general contractors, and municipal building departments to ensure smooth permitting and inspection processes. Our familiarity with {county} County procedures saves you time and prevents delays."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Electrical Code Compliance Violation Repairs service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "comprehensive-electrical-safety-inspections"
+  ],
+  "imageAlt": "Electrical Code Compliance Violation Repairs service provided by licensed electricians in South Florida",
+  "shortName": "Code Violation Repairs",
+  "metaTitle": "Code Violation Repairs Miami FL | Solomon Electric",
+  "metaDescription": "Electrical code violation repairs in Miami. Fix permit violations, failed inspections & non-compliant wiring. Licensed, fast turnaround.",
+  "localSignals": {
+    "typicalTimeline": "Violation repairs vary from 2 hours to several days depending on scope",
+    "priceRange": "Code violation repairs range from $200–$3,000+ per violation depending on severity",
+    "commonBrands": [
+      "Square D",
+      "Leviton",
+      "Eaton",
+      "various per violation"
+    ],
+    "permitNote": "All violation repairs require {county} County permits to close out open violations"
+  }
 }

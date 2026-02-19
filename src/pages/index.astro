@@ -52,12 +52,13 @@ const homepageSchema = generateHomepageSchema(SITE_CONFIG.seo.siteUrl);
 const faqSchema = generateFAQSchema(faqsForSchema);
 
 import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
+import PhoneNumber from "../components/ui/PhoneNumber.astro";
 ---
 
 <Layout
-    title="Electrician Miami | 24/7 Licensed Electrical Services | Solomon Electric"
-    description={`Top-rated electrician in Miami, Fort Lauderdale & South Florida. 24/7 emergency service, panel upgrades, EV charger installation. Licensed #${SITE_CONFIG.credentials.license.number}. Call ${SITE_CONFIG.contact.phone.formatted}!`}
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    title="Electrician Miami | 24/7 Service | Solomon Electric"
+    description={`Top-rated electrician in Miami &amp; South Florida. 24/7 emergency service, panel upgrades, EV chargers &amp; more. Licensed #${SITE_CONFIG.credentials.license.number}. Free estimates!`}
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
     ogImageAlt="Solomon Electric - Licensed Miami Electricians providing 24/7 emergency electrical services"
 >
     <!-- Schema Markup -->
@@ -70,9 +71,9 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
 
     <!-- Hero Section -->
     <PageHero
-        title="Miami's #1 Licensed Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>24/7 Emergency & Repair Services</span>"
-        subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} • Miami-Dade • Broward • Palm Beach`}
-        description={`Flickering lights, tripping breakers, or sparking outlets aren't just annoying—they're safety hazards. Since ${SITE_CONFIG.company.foundedYear}, over ${SITE_CONFIG.stats.totalProjects} South Florida homes and businesses have trusted Solomon Electric to fix electrical problems fast. Our licensed electricians arrive same-day, diagnose issues accurately, and repair them right the first time.`}
+        title={'Miami\'s #1 Licensed Electrician<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">24/7 Emergency &amp; Repair Services</span>'}
+        subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} &bull; Miami-Dade &bull; Broward &bull; Palm Beach`}
+        description={`Flickering lights or tripping breakers aren't just annoying—they're safety hazards. Since ${SITE_CONFIG.company.foundedYear}, over ${SITE_CONFIG.stats.totalProjects} South Florida homes and businesses have trusted Solomon Electric for licensed, 24/7 electrical repairs. We arrive promptly, diagnose accurately, and fix it right the first time.`}
         image={heroImage}
         trustIndicators={true}
         showScrollIndicator={true}
@@ -94,7 +95,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
     <section
         id="trust-indicators"
         aria-labelledby="trust-heading"
-        class="relative border-b border-gray-100 overflow-hidden py-16 md:py-24"
+        class="relative border-b border-[var(--border-light)] overflow-hidden py-12 md:py-24"
     >
         <h2 id="trust-heading" class="sr-only">Why Trust Solomon Electric</h2>
         <div class="absolute inset-0 z-0">
@@ -108,7 +109,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
         </div>
         <Container class="relative z-10">
             <div
-                class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 text-center reveal reveal-up"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center reveal reveal-up"
                 style="gap: var(--spacing-xl);"
             >
                 <div
@@ -116,7 +117,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     style="gap: var(--spacing-md);"
                 >
                     <div
-                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1 shimmer-authority"
+                        class="w-16 h-16 rounded-[var(--radius-full)] bg-white shadow-[var(--shadow-sm)] flex items-center justify-center group-hover:shadow-[var(--shadow-md)] transition-all group-hover:-translate-y-1 shimmer-authority"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -135,12 +136,12 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     </div>
                     <div>
                         <span
-                            class="block text-lg font-bold text-primary uppercase leading-tight font-secondary"
+                            class="block text-[length:var(--text-body)] font-bold text-primary uppercase leading-tight font-secondary"
                             style="margin-bottom: var(--spacing-xs);"
-                            >Licensed & Insured</span
+                            >Licensed &amp; Insured</span
                         >
                         <span
-                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-[length:var(--text-caption)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                             >Your Safety Guaranteed</span
                         >
                     </div>
@@ -151,7 +152,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     style="gap: var(--spacing-md);"
                 >
                     <div
-                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
+                        class="w-16 h-16 rounded-[var(--radius-full)] bg-white shadow-[var(--shadow-sm)] flex items-center justify-center group-hover:shadow-[var(--shadow-md)] transition-all group-hover:-translate-y-1"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -170,11 +171,12 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     </div>
                     <div>
                         <span
-                            class="block text-lg font-bold text-primary mb-1 uppercase leading-tight font-secondary"
+                            class="block text-[length:var(--text-body)] font-bold text-primary uppercase leading-tight font-secondary"
+                            style="margin-bottom: var(--spacing-xs);"
                             >Emergency Service</span
                         >
                         <span
-                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-[length:var(--text-caption)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                             >Here When Needed</span
                         >
                     </div>
@@ -185,7 +187,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     style="gap: var(--spacing-md);"
                 >
                     <div
-                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
+                        class="w-16 h-16 rounded-[var(--radius-full)] bg-white shadow-[var(--shadow-sm)] flex items-center justify-center group-hover:shadow-[var(--shadow-md)] transition-all group-hover:-translate-y-1"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -208,11 +210,12 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     </div>
                     <div>
                         <span
-                            class="block text-lg font-bold text-primary mb-1 uppercase leading-tight font-secondary"
+                            class="block text-[length:var(--text-body)] font-bold text-primary uppercase leading-tight font-secondary"
+                            style="margin-bottom: var(--spacing-xs);"
                             >Local Experts</span
                         >
                         <span
-                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-[length:var(--text-caption)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                             >We Know Miami Code</span
                         >
                     </div>
@@ -223,7 +226,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     style="gap: var(--spacing-md);"
                 >
                     <div
-                        class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition-all group-hover:-translate-y-1"
+                        class="w-16 h-16 rounded-[var(--radius-full)] bg-white shadow-[var(--shadow-sm)] flex items-center justify-center group-hover:shadow-[var(--shadow-md)] transition-all group-hover:-translate-y-1"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -242,11 +245,12 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     </div>
                     <div>
                         <span
-                            class="block text-lg font-bold text-primary mb-1 uppercase leading-tight font-secondary"
+                            class="block text-[length:var(--text-body)] font-bold text-primary uppercase leading-tight font-secondary"
+                            style="margin-bottom: var(--spacing-xs);"
                             >Satisfaction First</span
                         >
                         <span
-                            class="text-xs font-bold text-[var(--text-body)] uppercase tracking-wide"
+                            class="text-[length:var(--text-caption)] font-bold text-[var(--clr-body)] uppercase tracking-wide"
                             >Quality You Can Trust</span
                         >
                     </div>
@@ -259,7 +263,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
     <section
         id="featured-services"
         aria-labelledby="services-heading"
-        class="bg-white py-20 md:py-32"
+        class="bg-white py-12 md:py-32 defer-render"
     >
         <Container>
             <div
@@ -267,17 +271,17 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 style="margin-bottom: var(--spacing-3xl);"
             >
                 <p
-                    class="text-primary font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                    class="text-primary font-bold text-[length:var(--text-body)] tracking-[0.2em] uppercase font-secondary"
                     style="margin-bottom: var(--spacing-md);"
                 >
                     Professional Electrical Services Miami
                 </p>
                 <h2
                     id="services-heading"
-                    class="text-3xl md:text-5xl font-black text-primary uppercase"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-primary uppercase font-display"
                 >
                     Panel Upgrades, EV Chargers <span class="text-primary"
-                        >& More</span
+                        >&amp; More</span
                     >
                 </h2>
             </div>
@@ -293,7 +297,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         return (
                             <a
                                 href={`/services/${service.slug}`}
-                                class="group block relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                                class="group block relative rounded-[var(--radius-xl)] overflow-hidden shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)] transition-all duration-500"
                                 style="aspect-ratio: 4/3;"
                             >
                                 {/* Background Image */}
@@ -307,29 +311,29 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                                 />
 
                                 {/* Gradient Overlay */}
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#082a4d] via-[#082a4d]/70 to-transparent group-hover:from-[#082a4d]/90 group-hover:via-[#082a4d]/50 transition-all duration-500" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-darker)] via-[var(--color-primary-darker)]/70 to-transparent group-hover:from-[var(--color-primary-darker)]/90 group-hover:via-[var(--color-primary-darker)]/50 transition-all duration-500" />
 
                                 {/* Content */}
                                 <div class="absolute inset-0 flex flex-col justify-end p-6">
                                     {/* Icon Badge */}
-                                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <div class="w-12 h-12 bg-accent rounded-[var(--radius-lg)] flex items-center justify-center mb-4 shadow-[var(--shadow-lg)] group-hover:scale-110 transition-transform duration-300">
                                         <Icon class="w-6 h-6 text-primary" />
                                     </div>
 
                                     {/* Title */}
-                                    <h3 class="text-xl font-bold text-white mb-3 leading-tight">
+                                    <h3 class="text-[length:var(--text-h5)] font-bold text-white mb-3 leading-tight font-secondary">
                                         {service.name}
                                     </h3>
 
                                     {/* CTA */}
-                                    <div class="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                                    <div class="flex items-center gap-2 text-accent font-semibold text-[length:var(--text-label)] group-hover:gap-3 transition-all duration-300">
                                         <span>Get Free Quote</span>
                                         <ArrowRight class="w-4 h-4" />
                                     </div>
                                 </div>
 
                                 {/* Accent Border on Hover */}
-                                <div class="absolute inset-0 border-2 border-transparent group-hover:border-accent rounded-xl transition-colors duration-300 pointer-events-none" />
+                                <div class="absolute inset-0 border-2 border-transparent group-hover:border-accent rounded-[var(--radius-xl)] transition-colors duration-300 pointer-events-none" />
                             </a>
                         );
                     })
@@ -344,7 +348,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     <Button
                         href="/services"
                         size="lg"
-                        class="text-xl font-black gap-2 magnetic-cta"
+                        class="text-[length:var(--text-h5)] font-black gap-2"
                     >
                         <Grid class="w-5 h-5" />
                         View All 63+ Services
@@ -358,7 +362,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
     <section
         id="about-story"
         aria-labelledby="story-heading"
-        class="bg-light relative overflow-hidden py-20 md:py-32"
+        class="bg-light relative overflow-hidden py-12 md:py-32 defer-render"
     >
         <div class="absolute inset-0 opacity-5">
             <div
@@ -375,9 +379,10 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 <!-- Left: Image -->
                 <div class="relative order-2 md:order-1">
                     <div
-                        class="absolute -inset-4 border-4 border-accent z-0 translate-x-6 translate-y-6 rounded-3xl"
+                        class="absolute -inset-4 border-4 border-accent z-0 translate-x-6 translate-y-6 rounded-[var(--radius-3xl)]"
                     >
                     </div>
+
                     <Image
                         src={customerInteractionImage.src}
                         alt={customerInteractionImage.alt}
@@ -390,14 +395,14 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 <!-- Right: Content -->
                 <div class="order-1 md:order-2">
                     <p
-                        class="text-primary font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                        class="text-primary font-bold text-[length:var(--text-body)] tracking-[0.2em] uppercase font-secondary"
                         style="margin-bottom: var(--spacing-md);"
                     >
                         Why Choose Solomon Electric
                     </p>
                     <h2
                         id="story-heading"
-                        class="text-4xl md:text-5xl font-black text-primary leading-tight uppercase"
+                        class="text-[length:var(--text-h1)] md:text-[length:var(--text-display)] font-black text-primary leading-tight uppercase font-display"
                         style="margin-bottom: var(--spacing-xl);"
                     >
                         Miami's Trusted<br />
@@ -405,7 +410,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     </h2>
 
                     <p
-                        class="text-[var(--text-body)] leading-relaxed text-lg font-medium"
+                        class="text-[var(--clr-body)] leading-relaxed text-[length:var(--text-body)] font-medium"
                         style="margin-bottom: var(--spacing-2xl);"
                     >
                         Since {SITE_CONFIG.company.foundedYear}, Solomon
@@ -416,7 +421,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         Broward, and Palm Beach counties. From emergency repairs to
                         complete panel upgrades, our Florida-licensed electricians
                         (License #{SITE_CONFIG.credentials.license.number})
-                        deliver code-compliant work with same-day service
+                        deliver code-compliant work with prompt service
                         availability.
                     </p>
 
@@ -424,7 +429,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         <div class="flex" style="gap: var(--spacing-md);">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
+                                    class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center shadow-[var(--shadow-lg)]"
                                 >
                                     <svg
                                         class="w-6 h-6 text-white"
@@ -440,7 +445,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-black text-primary uppercase"
+                                    class="text-[length:var(--text-h5)] font-black text-primary uppercase font-secondary"
                                     style="margin-bottom: var(--spacing-xs);"
                                 >
                                     24/7 Emergency Electrician
@@ -458,7 +463,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         <div class="flex" style="gap: var(--spacing-md);">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
+                                    class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center shadow-[var(--shadow-lg)]"
                                 >
                                     <svg
                                         class="w-6 h-6 text-white"
@@ -474,7 +479,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-black text-primary uppercase"
+                                    class="text-[length:var(--text-h5)] font-black text-primary uppercase font-secondary"
                                     style="margin-bottom: var(--spacing-xs);"
                                 >
                                     Transparent Communication
@@ -491,7 +496,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         <div class="flex" style="gap: var(--spacing-md);">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
+                                    class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center shadow-[var(--shadow-lg)]"
                                 >
                                     <svg
                                         class="w-6 h-6 text-white"
@@ -507,12 +512,12 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-black text-primary uppercase"
+                                    class="text-[length:var(--text-h5)] font-black text-primary uppercase font-secondary"
                                     style="margin-bottom: var(--spacing-xs);"
                                 >
                                     Extensive Experience
                                 </h3>
-                                <p class="text-[var(--text-body)] font-medium">
+                                <p class="text-[var(--clr-body)] font-medium">
                                     With thousands of successful projects, we
                                     have a proven history of delivering safe and
                                     compliant electrical work.
@@ -523,7 +528,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         <div class="flex" style="gap: var(--spacing-md);">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg"
+                                    class="w-12 h-12 bg-accent rounded-[var(--radius-full)] flex items-center justify-center shadow-[var(--shadow-lg)]"
                                 >
                                     <svg
                                         class="w-6 h-6 text-white"
@@ -539,12 +544,12 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-black text-primary uppercase"
+                                    class="text-[length:var(--text-h5)] font-black text-primary uppercase font-secondary"
                                     style="margin-bottom: var(--spacing-xs);"
                                 >
                                     Quality Assurance
                                 </h3>
-                                <p class="text-[var(--text-body)] font-medium">
+                                <p class="text-[var(--clr-body)] font-medium">
                                     We stand behind the quality of our
                                     workmanship, ensuring every job meets high
                                     professional standards.
@@ -574,12 +579,19 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                 <div class="text-center md:text-left">
                     <h3
                         id="emergency-heading"
-                        class="text-3xl md:text-4xl font-black text-white uppercase"
+                        class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-white uppercase font-secondary"
                         style="margin-bottom: var(--spacing-xs);"
                     >
                         Need Immediate Assistance?
                     </h3>
-                    <p class="text-white/90 text-lg font-bold">
+                    <p
+                        class="text-accent text-[length:var(--text-h5)] font-bold font-secondary"
+                    >
+                        <PhoneNumber />
+                    </p>
+                    <p
+                        class="text-white/90 text-[length:var(--text-body)] font-bold"
+                    >
                         Electrical issues like sparking outlets or burning
                         smells require professional attention. Contact us for
                         prompt service.
@@ -589,7 +601,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                     action="call"
                     variant="secondary"
                     size="lg"
-                    class="flex-shrink-0 shadow-2xl hover:shadow-3xl magnetic-cta"
+                    class="flex-shrink-0 shadow-[var(--shadow-xl)]"
                 />
             </div>
         </Container>
@@ -599,24 +611,24 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
     <ReviewCarousel />
 
     <!-- Service Areas Map -->
-    <section class="bg-white overflow-hidden" id="service-areas">
+    <section class="bg-white overflow-hidden defer-render" id="service-areas">
         <Container class="py-20 md:py-32">
             <ServiceAreaMap />
         </Container>
     </section>
 
     <!-- Stats Section -->
-    <section class="bg-primary py-20 md:py-32">
+    <section class="bg-primary py-12 md:py-32">
         <Container>
             <div class="text-center mb-16">
                 <p
-                    class="text-accent font-bold text-lg tracking-[0.2em] uppercase font-secondary"
+                    class="text-accent font-bold text-[length:var(--text-body)] tracking-[0.2em] uppercase font-secondary"
                     style="margin-bottom: var(--spacing-md);"
                 >
                     Real Results
                 </p>
                 <h2
-                    class="text-3xl md:text-5xl font-black text-white uppercase"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-white uppercase font-display"
                 >
                     {SITE_CONFIG.stats.totalProjects}+ Projects <span
                         class="text-accent">Completed</span
@@ -640,14 +652,14 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         return (
                             <div class="text-center">
                                 <div
-                                    class="text-4xl md:text-5xl font-black text-white stat-counter font-display"
+                                    class="text-[length:var(--text-h1)] md:text-[length:var(--text-display)] font-black text-white stat-counter font-display"
                                     data-target={numericValue}
                                     data-suffix={suffix}
                                     style="margin-bottom: var(--spacing-sm);"
                                 >
                                     0{suffix}
                                 </div>
-                                <div class="text-accent font-bold uppercase tracking-wider text-sm md:text-base">
+                                <div class="text-accent font-bold uppercase tracking-wider text-[length:var(--text-label)] md:text-[length:var(--text-body-sm)]">
                                     {stat.label}
                                 </div>
                             </div>
@@ -662,7 +674,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
     <LatestBlogPosts />
 
     <!-- Final CTA Section -->
-    <section class="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section class="py-12 md:py-32 bg-white relative overflow-hidden">
         <div
             class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"
         >
@@ -682,39 +694,31 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         clip-rule="evenodd"></path>
                 </svg>
                 <h2
-                    class="text-3xl md:text-5xl font-black text-primary mb-8 uppercase"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-display)] font-black text-primary mb-8 uppercase font-display"
                 >
-                    Ready to Get Started?
+                    Schedule Your Free Electrical Estimate
                 </h2>
                 <p
-                    class="text-lg md:text-xl text-body mb-12 leading-relaxed font-medium reveal reveal-up reveal-delay-2"
+                    class="text-[length:var(--text-body)] md:text-[length:var(--text-h5)] text-body mb-12 leading-relaxed font-medium reveal reveal-up reveal-delay-2"
                 >
                     Get a free estimate from Miami's top-rated electricians.
-                    Same-day service available. Licensed, insured, and
+                    Prompt service available. Licensed, insured, and
                     satisfaction guaranteed.
                 </p>
 
                 <div
                     class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center reveal reveal-up reveal-delay-3"
                 >
-                    <CtaButton
-                        action="call"
-                        variant="secondary"
-                        size="lg"
-                        class="magnetic-cta"
-                    />
-                    <CtaButton
-                        action="book"
-                        variant="primary"
-                        size="lg"
-                        class="magnetic-cta"
-                    />
+                    <CtaButton action="call" variant="secondary" size="lg" />
+                    <CtaButton action="book" variant="primary" size="lg" />
                 </div>
 
                 <!-- Trust Badges -->
-                <div class="flex flex-wrap justify-center gap-6 mt-16 text-sm">
+                <div
+                    class="flex flex-wrap justify-center gap-6 mt-16 text-[length:var(--text-label)]"
+                >
                     <div
-                        class="flex items-center gap-2 text-[var(--text-muted)]"
+                        class="flex items-center gap-2 text-[var(--clr-muted)]"
                     >
                         <svg
                             class="w-5 h-5 text-accent"
@@ -726,10 +730,10 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                                 d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="font-bold">Licensed & Insured</span>
+                        <span class="font-bold">Licensed &amp; Insured</span>
                     </div>
                     <div
-                        class="flex items-center gap-2 text-[var(--text-muted)]"
+                        class="flex items-center gap-2 text-[var(--clr-muted)]"
                     >
                         <svg
                             class="w-5 h-5 text-accent"
@@ -746,7 +750,7 @@ import { Calendar, ArrowRight, Grid, Zap } from "lucide-astro";
                         >
                     </div>
                     <div
-                        class="flex items-center gap-2 text-[var(--text-muted)]"
+                        class="flex items-center gap-2 text-[var(--clr-muted)]"
                     >
                         <svg
                             class="w-5 h-5 text-accent"

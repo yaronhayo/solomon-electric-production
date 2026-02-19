@@ -56,7 +56,7 @@
     "commercial-led-lighting-retrofit",
     "24-7-emergency-electrical-service",
     "whole-home-surge-protection",
-    "ev-charging-system-setup"
+    "home-ev-charging-system-setup"
   ],
   "stats": [
     {
@@ -64,7 +64,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -72,14 +72,14 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "We bought a historic home in El Cid\u2014what electrical challenges should we expect?",
-      "answer": "El Cid and Flamingo Park have some of Palm Beach County's most beautiful historic homes, but many still have original 1920s-1940s electrical systems. Common issues include knob-and-tube wiring, 60-amp fuse boxes, insufficient outlets, and ungrounded systems. The challenge is modernizing these homes to handle AC, modern kitchens, and home offices while preserving their architectural character. We've completed dozens of historic West Palm rewiring projects\u2014it's one of our specialties."
+      "question": "We bought a historic home in El Cid—what electrical challenges should we expect?",
+      "answer": "El Cid and Flamingo Park have some of Palm Beach County's most beautiful historic homes, but many still have original 1920s-1940s electrical systems. Common issues include knob-and-tube wiring, 60-amp fuse boxes, insufficient outlets, and ungrounded systems. The challenge is modernizing these homes to handle AC, modern kitchens, and home offices while preserving their architectural character. We've completed dozens of historic West Palm rewiring projects—it's one of our specialties."
     },
     {
       "question": "How is working with Palm Beach County permits different from South Miami-Dade or Broward?",
@@ -87,39 +87,40 @@
     },
     {
       "question": "Can you install landscape lighting for our Intracoastal property in West Palm?",
-      "answer": "Absolutely. Waterfront properties in West Palm Beach\u2014along Flagler Drive, the El Cid waterfront, and throughout the Intracoastal neighborhoods\u2014benefit tremendously from professional landscape lighting. We design and install systems that highlight your property's best features, enhance security, and withstand the coastal environment. Low-voltage LED systems keep operating costs minimal while providing stunning nighttime aesthetics."
+      "answer": "Absolutely. Waterfront properties in West Palm Beach—along Flagler Drive, the El Cid waterfront, and throughout the Intracoastal neighborhoods—benefit tremendously from professional landscape lighting. We design and install systems that highlight your property's best features, enhance security, and withstand the coastal environment. Low-voltage LED systems keep operating costs minimal while providing stunning nighttime aesthetics."
     },
     {
-      "question": "We're opening a business near The Square (CityPlace)\u2014do you handle commercial electrical?",
+      "question": "We're opening a business near The Square (CityPlace)—do you handle commercial electrical?",
       "answer": "Yes, we provide commercial electrical services throughout downtown West Palm Beach. Whether you're doing a tenant buildout, installing specialty lighting for a restaurant, adding circuits for new equipment, or need ongoing maintenance, we handle commercial projects from small retail to multi-story office buildings. We understand that construction timelines are tight and coordinate efficiently with general contractors."
     },
     {
-      "question": "Our West Palm home is all-electric with no gas\u2014is a generator worth it?",
-      "answer": "For all-electric homes, a standby generator is particularly valuable because you have no backup cooking, water heating, or HVAC options during outages. West Palm Beach experiences power outages from hurricanes, summer storms, and occasional infrastructure issues. A properly sized generator keeps your entire home running automatically. For all-electric homes, we typically recommend generators that can power the full house including AC\u2014not just essential circuits."
+      "question": "Our West Palm home is all-electric with no gas—is a generator worth it?",
+      "answer": "For all-electric homes, a standby generator is particularly valuable because you have no backup cooking, water heating, or HVAC options during outages. West Palm Beach experiences power outages from hurricanes, summer storms, and occasional infrastructure issues. A properly sized generator keeps your entire home running automatically. For all-electric homes, we typically recommend generators that can power the full house including AC—not just essential circuits."
     },
     {
       "question": "How quickly can you respond to emergencies in West Palm Beach?",
-      "answer": "We maintain Palm Beach County coverage to serve West Palm Beach and surrounding areas. For situation-specific emergencies\u2014such as sparking or complete power loss\u2014we prioritize the allocation of technical resources."
+      "answer": "We maintain Palm Beach County coverage to serve West Palm Beach and surrounding areas. For situation-specific emergencies—such as sparking or complete power loss—we prioritize the allocation of technical resources."
     }
   ],
   "seoContent": [
     {
       "heading": "Trusted West Palm Beach Electricians Since 2003",
-      "body": "West Palm Beach is a vibrant, historic city that serves as the heart of Palm Beach County. From its bustling downtown to its beautifully preserved neighborhoods, it's a place of incredible energy and growth. Solomon Electric is proud to serve West Palm residents and businesses with the professional excellence they deserve."
+      "body": "West Palm Beach is a vibrant, historic city that serves as the heart of Palm Beach County. From its bustling downtown to its beautifully preserved neighborhoods, it's a place of incredible energy and growth. Solomon Electric is proud to serve West Palm residents and businesses with the professional excellence they deserve. Our electricians are dispatched from strategic locations across Palm Beach County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding West Palm Beach's Electrical Needs",
-      "body": "West Palm Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to West Palm Beach's needs."
+      "heading": "Expert Electrical Solutions for West Palm Beach Properties",
+      "body": "Whether your West Palm Beach property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Palm Beach County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in West Palm Beach is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your West Palm Beach Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout West Palm Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in West Palm Beach",
+      "body": "From El Cid, Grandview Heights, Flamingo Park to South of Southern (SoSo), our electricians provide full-service coverage throughout West Palm Beach. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. West Palm Beach properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Reliable Electrical Solutions for West Palm properties",
-      "body": "Whether you're developing a new commercial space near The Square, upgrading your family home in Flamingo Park, or requiring urgent help near the waterfront, our licensed team is ready. We provide professional service, clean workmanship, and a dedication to safety that West Palm Beach has trusted for {{YEARS_EXPERIENCE}} years."
+      "body": "Whether you're developing a new commercial space near The Square, upgrading your family home in Flamingo Park, or requiring urgent help near the waterfront, our licensed team is ready. We provide professional service, clean workmanship, and a dedication to safety that West Palm Beach has trusted for 18 years. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in West Palm Beach. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in West Palm Beach, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in West Palm Beach, FL. Panel upgrades, commercial electrical, EV chargers & 24/7 emergency repairs. Palm Beach County."
 }

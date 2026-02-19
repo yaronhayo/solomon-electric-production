@@ -26,14 +26,14 @@ Redirect 301 /site-map/ /sitemap-index.xml
 Redirect 301 /category/services/ /services/
 
 # --- Service URL Consolidations ---
-Redirect 301 /ceiling-fan-installation/ /services/ceiling-fan-installation/
-Redirect 301 /services/microwave-installation/ /services/appliance-circuit-installation/
+Redirect 301 /ceiling-fan-installation/ /services/ceiling-fan-light-fixture-installation/
+Redirect 301 /services/microwave-installation/ /services/microwave-circuit-installation/
 Redirect 301 /services/chandelier-installation/ /services/ceiling-fan-light-fixture-installation/
 Redirect 301 /services/pull-wires-underground/ /services/underground-electrical-lines/
 Redirect 301 /services/electrical-installation/ /services/
 Redirect 301 /services/outlet-switch-installation/ /services/outlet-installation/
 Redirect 301 /services/smoke-detectors-installation/ /services/smoke-carbon-monoxide-detector-installation/
-Redirect 301 /services/hot-tub-spa-installation /services/hot-tub-wiring/
+Redirect 301 /services/hot-tub-spa-installation/ /services/pool-spa-wiring-inspection/
 
 # --- Additional Service Consolidation Redirects (Feb 2026) ---
 Redirect 301 /services/tesla-charger-installation/ /services/level-2-ev-charger-installation/
@@ -41,7 +41,6 @@ Redirect 301 /services/electrical-repair/ /services/24-7-emergency-electrical-se
 Redirect 301 /services/sensor-light-installation/ /services/motion-sensor-dimmer-installation/
 Redirect 301 /services/outlet-switch-relocation/ /services/new-outlet-installation-repair/
 Redirect 301 /services/panel-repair/ /services/panel-repair-circuit-breaker-replacement/
-Redirect 301 /services/ceiling-fan-installation/ /services/ceiling-fan-light-fixture-installation/
 Redirect 301 /services/outlet-switch-repair/ /services/new-outlet-installation-repair/
 Redirect 301 /services/light-fixture-installation/ /services/ceiling-fan-light-fixture-installation/
 Redirect 301 /services/wiring-installation/ /services/electrical-wiring-updates-rewiring/
@@ -133,6 +132,33 @@ RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteCond %{REQUEST_URI} !\.(html|xml|txt|json|ico|png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot|webp|avif|php)$
 RewriteRule ^(.*)$ $1/ [L,R=301]
 
+# ======================================================================
+# CATCH-ALL SAFETY NET REDIRECTS — Zero 404 Strategy
+# Any URL that doesn't match a real file falls through to these rules.
+# Placed AFTER trailing-slash but BEFORE index.html serve.
+# Updated: 2026-02-15
+# ======================================================================
+
+# Non-existent service+city combo → service page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^services/([^/]+)/([^/]+)/?$ /services/$1/ [R=301,L]
+
+# Non-existent service slug → services index
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^services/([^/]+)/?$ /services/ [R=301,L]
+
+# Non-existent service-area → service areas index
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^service-areas/([^/]+)/?$ /service-areas/ [R=301,L]
+
+# Non-existent blog post → blog index
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^blog/([^/]+)/?$ /blog/ [R=301,L]
+
 # 4. Serve index.html for directory paths
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} /$
@@ -154,7 +180,7 @@ RewriteRule ^(.*)$ $1.html [L]
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://scripts.clarity.ms https://www.googleadservices.com https://googleads.g.doubleclick.net https://seo.gettmarketing.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://api.dataforseo.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://seo.gettmarketing.com https://sa.searchatlas.com https://*.searchatlas.com; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.smtp2go.com;"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://scripts.clarity.ms https://www.googleadservices.com https://googleads.g.doubleclick.net https://seo.gettmarketing.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://maps.googleapis.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://seo.gettmarketing.com https://sa.searchatlas.com https://*.searchatlas.com; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.smtp2go.com;"
 </IfModule>
 
 # ==============================================================================

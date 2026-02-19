@@ -1,7 +1,7 @@
 ---
 // src/components/ui/Button.astro
 interface Props {
-  variant?: "primary" | "secondary" | "icon";
+  variant?: "primary" | "secondary" | "outline" | "icon";
   size?: "lg" | "md" | "sm";
   href?: string;
   class?: string;
@@ -22,20 +22,20 @@ const {
 
 // Base styles for all buttons
 const baseStyles =
-  "inline-flex items-center justify-center font-secondary font-bold uppercase transition-all duration-[var(--transition-base)] group relative overflow-hidden magnetic-cta";
-const shadowStyle = "hover:shadow-[var(--shadow-brand)]";
+  "inline-flex items-center justify-center font-secondary font-bold uppercase transition-all duration-[var(--transition-base)] ease-[var(--ease-out)] group relative overflow-hidden magnetic-cta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 active:scale-[0.97] active:brightness-90";
+const shadowStyle = "hover:shadow-[var(--shadow-accent-md)]";
 
 const sizes = {
-  lg: "h-[56px] px-8 text-[18px]",
-  md: "h-[48px] px-6 text-[16px]",
-  sm: "h-[40px] px-5 text-[14px]",
+  lg: "h-[56px] px-8 text-[length:var(--text-body)]",
+  md: "h-[48px] px-6 text-[length:var(--text-nav)]",
+  sm: "h-[40px] px-5 text-[length:var(--text-label)]",
 };
 
 // Variant styles matching Figma (Colors & Clip Path only)
 const variants = {
   primary: `
-    bg-gradient-to-r from-accent to-[#0ab8c7] text-[#082a4d]
-    hover:from-primary hover:to-[#0a3060] hover:text-white
+    bg-gradient-to-r from-accent to-[var(--color-accent-dark)] text-[var(--color-primary-dark)]
+    hover:from-primary hover:to-[var(--color-primary-dark)] hover:text-white
     leading-[1.5] shimmer-authority
     [clip-path:polygon(12px_0%,100%_0%,calc(100%_-_12px)_100%,0%_100%)]
   `,
@@ -45,11 +45,17 @@ const variants = {
     leading-[1.5]
     [clip-path:polygon(12px_0%,100%_0%,calc(100%_-_12px)_100%,0%_100%)]
   `,
-  icon: `
-    bg-accent text-[#082a4d]
+  outline: `
+    bg-transparent text-primary border-2 border-primary
     hover:bg-primary hover:text-white
-    !px-0 w-[44px] h-[44px] flex items-center justify-center
-    text-[18px]
+    leading-[1.5]
+    [clip-path:polygon(12px_0%,100%_0%,calc(100%_-_12px)_100%,0%_100%)]
+  `,
+  icon: `
+    bg-accent text-[var(--color-primary-dark)]
+    hover:bg-primary hover:text-white
+    !px-0 w-[44px] h-[44px]
+    text-[length:var(--text-body)]
     rounded-[var(--radius-full)]
     shimmer-authority
   `,
@@ -60,13 +66,17 @@ const variants = {
 // it will fall back to undefined in variants object.
 // We should check usages of variant="mobile" and update them to size="sm".
 
-const styles = `
-  ${baseStyles} 
-  ${shadowStyle} 
-  ${variants[variant] || variants.primary} 
-  ${variant !== "icon" ? sizes[size] : ""}
-  ${className}
-`;
+const styles = [
+  baseStyles,
+  shadowStyle,
+  variants[variant] || variants.primary,
+  variant !== "icon" ? sizes[size] : "",
+  className,
+]
+  .join(" ")
+  .split(/\s+/)
+  .filter((c, i, a) => c && a.indexOf(c) === i)
+  .join(" ");
 
 // Element Logic: render <a> if href exists, otherwise <button>
 const Element = href ? "a" : "button";
@@ -83,7 +93,5 @@ const Element = href ? "a" : "button";
   type={!href ? type : undefined}
   class={styles}
   id={id}
-  {...rest}
+  {...rest}><slot /></Element
 >
-  <slot />
-</Element>

@@ -56,7 +56,7 @@
     "24-7-emergency-electrical-service",
     "landscape-outdoor-lighting",
     "recessed-lighting-installation",
-    "ec-charging-system-setup",
+    "home-ev-charging-system-setup",
     "whole-home-surge-protection"
   ],
   "stats": [
@@ -65,7 +65,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -73,54 +73,55 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "My Hollywood home was built in the 1970s\u2014what electrical issues should I expect?",
-      "answer": "Hollywood saw major residential growth in the 1970s-80s, and those homes are now 40-50 years old with electrical systems that weren't designed for today's demands. Common issues include undersized 100-amp panels, aluminum wiring (a fire risk), outdated breakers, and insufficient outlets. We've modernized hundreds of Hollywood Hills and Emerald Hills homes from this era\u2014it's one of our most common projects in the area."
+      "question": "My Hollywood home was built in the 1970s—what electrical issues should I expect?",
+      "answer": "Hollywood saw major residential growth in the 1970s-80s, and those homes are now 40-50 years old with electrical systems that weren't designed for today's demands. Common issues include undersized 100-amp panels, aluminum wiring (a fire risk), outdated breakers, and insufficient outlets. We've modernized hundreds of Hollywood Hills and Emerald Hills homes from this era—it's one of our most common projects in the area."
     },
     {
       "question": "Do you service the beach condos along A1A in Hollywood?",
       "answer": "Absolutely. We're familiar with the high-rise and mid-rise buildings along Hollywood Beach and the Broadwalk. Condo electrical work requires working with building management, understanding shared electrical infrastructure, and often navigating HOA approval processes. Whether you need a panel upgrade, EV charger installation, or lighting refresh, we handle the coordination so you don't have to."
     },
     {
-      "question": "We're opening a business near Young Circle\u2014can you handle commercial electrical?",
-      "answer": "Yes, we provide commercial electrical services throughout Downtown Hollywood and the Arts District near Young Circle. Whether you're opening a restaurant, retail shop, or office, we handle commercial lighting installations, 3-phase power, signage circuits, POS system wiring, and code compliance inspections. Hollywood's revitalized downtown is growing\u2014we've helped numerous businesses get powered up and open."
+      "question": "We're opening a business near Young Circle—can you handle commercial electrical?",
+      "answer": "Yes, we provide commercial electrical services throughout Downtown Hollywood and the Arts District near Young Circle. Whether you're opening a restaurant, retail shop, or office, we handle commercial lighting installations, 3-phase power, signage circuits, POS system wiring, and code compliance inspections. Hollywood's revitalized downtown is growing—we've helped numerous businesses get powered up and open."
     },
     {
       "question": "How does Hollywood's coastal location affect my electrical system?",
-      "answer": "Properties in Hollywood Beach and Hollywood Lakes experience accelerated corrosion from salt air. We commonly see rusted weatherheads, corroded panel connections, and failed outdoor outlets\u2014often years before they'd fail in inland areas. For coastal Hollywood properties, we specify corrosion-resistant materials and marine-grade hardware to extend the life of your electrical installation."
+      "answer": "Properties in Hollywood Beach and Hollywood Lakes experience accelerated corrosion from salt air. We commonly see rusted weatherheads, corroded panel connections, and failed outdoor outlets—often years before they'd fail in inland areas. For coastal Hollywood properties, we specify corrosion-resistant materials and marine-grade hardware to extend the life of your electrical installation."
     },
     {
       "question": "Can you install outdoor lighting along the Intracoastal in Hollywood?",
-      "answer": "Yes\u2014waterfront lighting is a specialty for us. For Hollywood properties along the Intracoastal, we install dock lighting, seawall accent lighting, and landscape illumination that withstands the marine environment. Proper wire gauge, sealed connections, and GFCI protection are critical near water. We also ensure lighting doesn't create navigation hazards for boaters."
+      "answer": "Yes—waterfront lighting is a specialty for us. For Hollywood properties along the Intracoastal, we install dock lighting, seawall accent lighting, and landscape illumination that withstands the marine environment. Proper wire gauge, sealed connections, and GFCI protection are critical near water. We also ensure lighting doesn't create navigation hazards for boaters."
     },
     {
       "question": "Do you offer generator installation for Hollywood homes?",
-      "answer": "Yes, and Hollywood homes particularly benefit from generator protection. Between hurricane vulnerability and the aging FPL infrastructure in some neighborhoods, power outages happen more frequently here than you might expect. We install both portable generator transfer switches and whole-home standby generators\u2014the latter providing automatic power restoration within seconds of an outage."
+      "answer": "Yes, and Hollywood homes particularly benefit from generator protection. Between hurricane vulnerability and the aging FPL infrastructure in some neighborhoods, power outages happen more frequently here than you might expect. We install both portable generator transfer switches and whole-home standby generators—the latter providing automatic power restoration within seconds of an outage."
     }
   ],
   "seoContent": [
     {
       "heading": "Your Trusted Hollywood, FL Electrical Partners",
-      "body": "Hollywood, the 'Diamond of the Gold Coast,' is a beautiful city that bridges the gap between Fort Lauderdale and Miami. From the family-friendly hills to the world-famous Broadwalk, Hollywood is a community of diverse needs. Solomon Electric has been a staple in Hollywood for over {{YEARS_EXPERIENCE}} years, providing safe and reliable power to our neighbors."
+      "body": "Hollywood, the 'Diamond of the Gold Coast,' is a beautiful city that bridges the gap between Fort Lauderdale and Miami. From the family-friendly hills to the world-famous Broadwalk, Hollywood is a community of diverse needs. Solomon Electric has been a staple in Hollywood for over 18 years, providing safe and reliable power to our neighbors. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Hollywood's Electrical Needs",
-      "body": "Hollywood homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Hollywood's needs."
+      "heading": "Expert Electrical Solutions for Hollywood Properties",
+      "body": "Whether your Hollywood property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Hollywood is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Hollywood Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Hollywood. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Hollywood",
+      "body": "From Hollywood Hills, Emerald Hills, Hollywood Lakes to Beach District, our electricians provide full-service coverage throughout Hollywood. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Hollywood properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Serving Every Hollywood Neighborhood with Excellence",
-      "body": "Whether you're starting a renovation in Emerald Hills, upgrading the electrical at a beachfront rental, or need the peace of mind of a whole-home surge protector in Oakwood, Solomon Electric is your first choice. Our licensed electricians understand the specific challenges of Hollywood's coastal and historic properties, ensuring your home is safe and compliant."
+      "body": "Whether you're starting a renovation in Emerald Hills, upgrading the electrical at a beachfront rental, or need the peace of mind of a whole-home surge protector in Oakwood, Solomon Electric is your first choice. Our licensed electricians understand the specific challenges of Hollywood's coastal and historic properties, ensuring your home is safe and compliant. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Hollywood. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Hollywood, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Hollywood, FL. Panel upgrades, coastal wiring, lighting & emergency repairs. Serving Broward County 24/7. Free estimates."
 }

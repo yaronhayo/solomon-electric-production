@@ -1,7 +1,7 @@
 {
   "name": "Electrical Fire Hazard Investigation",
   "slug": "electrical-fire-hazard-investigation",
-  "description": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive electrical fire hazard investigation throughout South Florida\u2014identifying conditions that could lead to fires: overloaded circuits, damaged wiring, improper installations, and failing equipment. Proactive investigation prevents fires; reactive investigation follows them.",
+  "description": "Don't wait for a fire to discover electrical hazards. Solomon Electric's licensed electricians provide comprehensive electrical fire hazard investigation throughout South Florida—identifying conditions that could lead to fires: overloaded circuits, damaged wiring, improper installations, and failing equipment. Proactive investigation prevents fires; reactive investigation follows them.",
   "shortDescription": "Identify fire risks before they ignite",
   "icon": "Flame",
   "image": "../../assets/images/services/emergency.webp",
@@ -15,7 +15,7 @@
     "Connection integrity testing",
     "Prioritized remediation plan"
   ],
-  "warningSignsHeading": "When Fire Hazard Investigation Is Needed",
+  "warningSignsHeading": "When to Consider Electrical Fire Hazard Investigation",
   "warningSignsSubheading": "Some situations warrant proactive investigation before problems manifest.",
   "problems": [
     {
@@ -30,12 +30,12 @@
     },
     {
       "title": "Purchased Home with Concerns",
-      "description": "If you've purchased a home with electrical concerns\u2014old panel, evidence of DIY work\u2014investigation quantifies the risks.",
+      "description": "If you've purchased a home with electrical concerns—old panel, evidence of DIY work—investigation quantifies the risks.",
       "icon": "AlertTriangle"
     },
     {
       "title": "Unexplained Electrical Symptoms",
-      "description": "Flickering lights, warm outlets, intermittent problems\u2014these symptoms may indicate fire hazards requiring investigation.",
+      "description": "Flickering lights, warm outlets, intermittent problems—these symptoms may indicate fire hazards requiring investigation.",
       "icon": "Zap"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "Shield"
     }
   ],
-  "processHeading": "Our Investigation Process",
+  "processHeading": "Our Step-by-Step Electrical Fire Hazard Investigation Process",
   "process": [
     {
       "step": 1,
@@ -64,7 +64,7 @@
     {
       "step": 3,
       "title": "Thermal Inspection",
-      "description": "We use thermal imaging to identify hot spots indicating overheating\u2014in panels, at outlets, and in accessible wiring areas."
+      "description": "We use thermal imaging to identify hot spots indicating overheating—in panels, at outlets, and in accessible wiring areas."
     },
     {
       "step": 4,
@@ -77,7 +77,7 @@
       "description": "We provide a detailed report identifying hazards found, their severity, and recommended remediation priorities."
     }
   ],
-  "benefitsHeading": "Benefits of Fire Hazard Investigation",
+  "benefitsHeading": "Key Benefits of Electrical Fire Hazard Investigation",
   "benefits": [
     {
       "title": "Prevent Fires",
@@ -96,7 +96,7 @@
     },
     {
       "title": "Clear Path Forward",
-      "description": "You'll know exactly what hazards exist and what's needed to resolve them\u2014no more wondering or worrying.",
+      "description": "You'll know exactly what hazards exist and what's needed to resolve them—no more wondering or worrying.",
       "icon": "Home"
     }
   ],
@@ -110,7 +110,7 @@
       "label": "Find Significant Hazards"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -125,7 +125,7 @@
     },
     {
       "question": "How common are electrical fires?",
-      "answer": "Electrical problems cause approximately 47,000 home fires annually in the US, resulting in hundreds of deaths. Most are preventable\u2014caused by conditions that proper inspection could identify and remediate."
+      "answer": "Electrical problems cause approximately 47,000 home fires annually in the US, resulting in hundreds of deaths. Most are preventable—caused by conditions that proper inspection could identify and remediate."
     },
     {
       "question": "What's a thermal imaging inspection?",
@@ -137,7 +137,7 @@
     },
     {
       "question": "What about aluminum wiring?",
-      "answer": "Aluminum branch circuit wiring (1965-1975 era) presents fire risks at connections\u2014aluminum expands/contracts differently than the copper/brass fittings it connects to. It doesn't require removal, but connections need proper treatment or replacement."
+      "answer": "Aluminum branch circuit wiring (1965-1975 era) presents fire risks at connections—aluminum expands/contracts differently than the copper/brass fittings it connects to. It doesn't require removal, but connections need proper treatment or replacement."
     },
     {
       "question": "Can DIY electrical work cause fires?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "What if you find serious hazards?",
-      "answer": "We'll explain the severity and recommend actions\u2014potentially shutting off specific circuits until repairs are complete. For hazards, we provide repair availability based on the urgency of the situation. Safety is the priority."
+      "answer": "We'll explain the severity and recommend actions—potentially shutting off specific circuits until repairs are complete. For hazards, we provide repair availability based on the urgency of the situation. Safety is the priority."
     },
     {
       "question": "Does investigation damage walls or finishes?",
@@ -161,21 +161,37 @@
   "seoContent": [
     {
       "heading": "Electrical Fire Hazard Investigation in South Florida",
-      "body": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive fire hazard investigation throughout Miami-Dade and Broward counties\u2014identifying overloaded circuits, damaged wiring, and failing equipment before they cause fires."
+      "body": "Don't wait for a fire to discover electrical hazards. Solomon Electric provides comprehensive fire hazard investigation throughout {county} and Broward counties—identifying overloaded circuits, damaged wiring, and failing equipment before they cause fires. Every emergency call begins with a safety assessment. Our electricians use non-contact voltage testers, thermal imaging cameras, and circuit analyzers to identify the root cause—not just the symptom. We explain what we find in plain language before any work begins."
     },
     {
-      "heading": "Thermal Imaging for Hidden Hazards",
-      "body": "Our thermal cameras detect overheating invisible to the naked eye. Hot spots in panels, walls, and equipment indicate fire risks that physical inspection might miss. Non-invasive thermal inspection is a core part of our hazard investigation."
+      "heading": "Thermal Imaging for Hidden Electrical Hazards in Miami Homes",
+      "body": "Our thermal cameras detect overheating invisible to the naked eye. Hot spots in panels, walls, and equipment indicate fire risks that physical inspection might miss. Non-invasive thermal inspection is a core part of our hazard investigation. South Florida's combination of aging infrastructure, lightning exposure, and high humidity creates unique emergency scenarios. Our electricians are trained to handle salt-air corrosion, water intrusion in panels, and surge damage from frequent thunderstorms."
     },
     {
-      "heading": "Proactive Prevention",
-      "body": "Electrical fires are largely preventable. Conditions that cause fires\u2014loose connections, overloaded circuits, degraded wiring\u2014can be identified and corrected before ignition. Proactive investigation is far better than reactive fire response."
+      "heading": "Proactive Electrical Fire Prevention in South Florida",
+      "body": "Electrical fires are largely preventable. Conditions that cause fires—loose connections, overloaded circuits, degraded wiring—can be identified and corrected before ignition. Proactive investigation is far better than reactive fire response. We stock our service vehicles with the most commonly needed parts—breakers, GFCI outlets, wire nuts, connectors, and diagnostic equipment—so most emergency repairs are completed in a single visit without waiting for parts."
     },
     {
       "heading": "Protecting South Florida Homes",
-      "body": "Solomon Electric provides electrical fire hazard investigation throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, and all surrounding communities. Know your risks. Address hazards. Protect your family and home."
+      "body": "Solomon Electric provides electrical fire hazard investigation throughout {cityName} and surrounding communities. Know your risks. Address hazards. Protect your family and home. After every emergency repair, we provide a written safety assessment and recommend any additional work needed to prevent recurrence. We never upsell unnecessary services, and our upfront pricing means no surprises on your bill."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Electrical Fire Hazard Investigation service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "expert-electrical-diagnostics-repair",
+    "comprehensive-electrical-safety-inspections"
+  ],
+  "imageAlt": "Electrical Fire Hazard Investigation service provided by licensed electricians in South Florida",
+  "shortName": "Fire Hazard Investigation",
+  "metaTitle": "Fire Hazard Investigation Miami FL | Solomon Electric",
+  "metaDescription": "Electrical fire hazard investigation in Miami. Identify and eliminate arc faults, overloaded circuits & outdated wiring. 24/7 service.",
+  "localSignals": {
+    "typicalTimeline": "Full electrical fire hazard assessment typically requires 2-3 hours",
+    "priceRange": "Fire hazard investigation ranges from $250–$600 including thermal imaging and full report",
+    "commonBrands": [
+      "FLIR thermal imaging",
+      "Fluke insulation testers",
+      "Megger"
+    ],
+    "permitNote": "Investigations may trigger mandatory {county} County reporting if imminent hazards are found"
+  }
 }

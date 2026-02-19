@@ -10,23 +10,23 @@ import Container from "./ui/Container.astro";
 // Component displays 12 reviews in auto-rotating carousel
 ---
 
-<section class="py-20 md:py-32 bg-light relative overflow-hidden">
+<section class="py-[var(--spacing-2xl)] md:py-[var(--spacing-3xl)] bg-light relative overflow-hidden">
     <!-- Background decoration -->
     <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,211,227,0.05),transparent_70%)]"
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(var(--color-accent-rgb),0.05),transparent_70%)]"
     >
     </div>
 
     <Container class="relative z-10">
         <!-- Section Header -->
         <div class="text-center mb-16">
-            <p class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary">
+            <p class="text-[var(--color-accent-text)] font-bold text-[length:var(--text-body)] tracking-[0.2em] mb-4 uppercase font-secondary">
                 Client Testimonials
             </p>
-            <h2 class="text-4xl md:text-6xl font-bold text-primary mb-6 font-display">
-                What Our <span class="text-accent">Customers Say</span>
+            <h2 class="text-[length:var(--text-h1)] md:text-[length:var(--text-display)] font-bold text-primary mb-6 font-display">
+                What South Florida <span class="text-accent">Homeowners Say</span>
             </h2>
-            <p class="text-[var(--text-body)] text-lg font-medium">
+            <p class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium">
                 Don't just take our word for it. See why Miami homeowners and
                 businesses trust Solomon Electric for all their electrical
                 needs.
@@ -34,7 +34,7 @@ import Container from "./ui/Container.astro";
         </div>
 
         <!-- Reviews Carousel -->
-        <div class="relative" id="reviewCarousel">
+        <section class="relative" id="reviewCarousel" aria-roledescription="carousel" aria-label="Customer Reviews">
             <!-- Reviews Container -->
             <div class="overflow-hidden">
                 <div
@@ -43,7 +43,12 @@ import Container from "./ui/Container.astro";
                 >
                     {
                         reviews.map((review) => (
-                            <div class="carousel-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div 
+                                class="carousel-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+                                role="group"
+                                aria-roledescription="slide"
+                                aria-label={`Review ${reviews.indexOf(review) + 1} of ${reviews.length}`}
+                            >
                                 <div class="bg-[var(--bg-surface)] border border-[var(--border-light)] rounded-[var(--radius-xl)] p-8 h-full flex flex-col hover:border-[var(--border-focus)] transition-all duration-[var(--transition-base)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)]">
                                     <!-- Star Rating -->
                                     <div class="flex items-center gap-1 mb-4">
@@ -51,6 +56,7 @@ import Container from "./ui/Container.astro";
                                             <svg
                                                 class="w-[var(--icon-sm)] h-[var(--icon-sm)] text-[var(--color-star-gold)] fill-current"
                                                 viewBox="0 0 20 20"
+                                                aria-hidden="true"
                                             >
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                             </svg>
@@ -58,21 +64,21 @@ import Container from "./ui/Container.astro";
                                     </div>
 
                                     <!-- Review Text -->
-                                    <p class="text-[var(--text-body)] text-base leading-relaxed mb-6 flex-grow font-medium">
+                                    <p class="text-[var(--clr-body)] text-[length:var(--text-body-sm)] leading-relaxed mb-6 flex-grow font-medium">
                                         "{review.data.text}"
                                     </p>
 
                                     <!-- Author & Service -->
-                                    <div class="border-t border-gray-100 pt-4">
-                                        <p class="text-primary font-bold text-lg font-secondary">
+                                    <div class="border-t border-[var(--border-light)] pt-4 mt-auto">
+                                        <p class="text-primary font-bold text-[length:var(--text-body)] font-secondary">
                                             {review.data.author}
                                         </p>
                                         {review.data.service && (
-                                            <p class="text-accent text-sm font-bold mt-1 uppercase tracking-wide">
+                                            <p class="text-[var(--color-accent-text)] text-[length:var(--text-label)] font-bold mt-1 uppercase tracking-wide">
                                                 {review.data.service}
                                             </p>
                                         )}
-                                        <p class="text-gray-400 text-xs mt-2 font-medium">
+                                        <p class="text-[var(--clr-muted)] text-[length:var(--text-caption)] mt-2 font-medium">
                                         {new Date(
                                                 review.data.date,
                                             ).toLocaleDateString("en-US", {
@@ -107,7 +113,7 @@ import Container from "./ui/Container.astro";
                                                 fill="#EA4335"
                                             />
                                         </svg>
-                                        <span class="text-[var(--text-muted)] text-xs font-bold">
+                                        <span class="text-[var(--clr-muted)] text-[length:var(--text-caption)] font-bold">
                                             Google Review
                                         </span>
                                     </div>
@@ -120,11 +126,12 @@ import Container from "./ui/Container.astro";
 
             <!-- Navigation Arrows -->
             <button
+                type="button"
                 id="prevReview"
-                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-[var(--bg-surface)] text-[var(--text-primary)] border border-[var(--border-light)] p-4 rounded-[var(--radius-full)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-[var(--transition-base)] shadow-[var(--shadow-lg)] z-10 hidden lg:block"
+                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-[var(--bg-surface)] text-[var(--clr-primary)] border border-[var(--border-light)] p-4 rounded-[var(--radius-full)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-[var(--transition-base)] shadow-[var(--shadow-lg)] z-10 hidden lg:block"
                 aria-label="Previous review"
             >
-                <svg class="w-[var(--icon-md)] h-[var(--icon-md)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-[var(--icon-md)] h-[var(--icon-md)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -133,11 +140,12 @@ import Container from "./ui/Container.astro";
                 </svg>
             </button>
             <button
+                type="button"
                 id="nextReview"
-                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-[var(--bg-surface)] text-[var(--text-primary)] border border-[var(--border-light)] p-4 rounded-[var(--radius-full)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-[var(--transition-base)] shadow-[var(--shadow-lg)] z-10 hidden lg:block"
+                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-[var(--bg-surface)] text-[var(--clr-primary)] border border-[var(--border-light)] p-4 rounded-[var(--radius-full)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-[var(--transition-base)] shadow-[var(--shadow-lg)] z-10 hidden lg:block"
                 aria-label="Next review"
             >
-                <svg class="w-[var(--icon-md)] h-[var(--icon-md)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-[var(--icon-md)] h-[var(--icon-md)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -149,23 +157,24 @@ import Container from "./ui/Container.astro";
                   {
                       reviews.map((_, index) => (
                           <button
+                              type="button"
                               class="review-dot w-6 h-6 flex items-center justify-center group"
                               data-index={index}
                               aria-label={`Go to review ${index + 1}`}
                           >
-                              <div class="w-2.5 h-2.5 rounded-full bg-[var(--text-muted)] group-hover:bg-[var(--color-accent)] transition-all duration-300 pointer-events-none shadow-sm"></div>
+                              <span class="w-2.5 h-2.5 rounded-[var(--radius-full)] bg-[var(--text-muted)] group-hover:bg-[var(--color-accent)] transition-all duration-300 ease-[var(--ease-out)] pointer-events-none shadow-[var(--shadow-sm)]" aria-hidden="true"></span>
                           </button>
                       ))
                   }
             </div>
-        </div>
+        </section>
 
         <!-- CTA Button -->
         <div class="text-center mt-16">
             <Button
                 href="/reviews"
                 variant="primary"
-                class="px-12 py-5 text-lg font-black flex items-center gap-2"
+                class="px-12 py-5 text-[length:var(--text-body)] font-black flex items-center gap-2"
                 >
                 <ArrowRight class="w-5 h-5" />
                 Read All Reviews</Button
@@ -201,13 +210,15 @@ import Container from "./ui/Container.astro";
 
         // Update dots
         dots.forEach((dot, index) => {
-            const dotInner = dot.querySelector("div");
+            const dotInner = dot.querySelector("span");
             if (index === currentIndex) {
                 dotInner?.classList.add("bg-[var(--color-accent)]", "scale-125");
                 dotInner?.classList.remove("bg-[var(--text-muted)]");
+                dot.setAttribute("aria-current", "true");
             } else {
                 dotInner?.classList.remove("bg-[var(--color-accent)]", "scale-125");
                 dotInner?.classList.add("bg-[var(--text-muted)]");
+                dot.setAttribute("aria-current", "false");
             }
         });
     }

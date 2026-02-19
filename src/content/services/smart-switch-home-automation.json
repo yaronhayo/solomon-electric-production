@@ -1,7 +1,7 @@
 {
-  "name": "Smart Switch & Home Automation",
+  "name": "Smart Switch &amp; Home Automation",
   "slug": "smart-switch-home-automation",
-  "description": "Transform your South Florida home into a smart home with professional smart switch and automation installation. Control lights, fans, and devices from your phone, voice assistants, or automated schedules. Solomon Electric ensures proper wiring compatibility, reliable app configuration, and seamless integration with your existing smart home ecosystem.",
+  "description": "Transform your South Florida home into a smart home with professional smart switch and automation installation. Control lights, fans, and devices from your phone, voice assistants, or automated schedules. Solomon Electric's licensed team ensures proper wiring compatibility, reliable app configuration, and seamless integration with your existing smart home ecosystem.",
   "shortDescription": "Control your home from anywhere",
   "icon": "Zap",
   "image": "../../assets/images/services/lighting.webp",
@@ -15,7 +15,7 @@
     "Smart fan controls",
     "Hub and bridge configuration"
   ],
-  "warningSignsHeading": "Is Smart Home Automation Right for You?",
+  "warningSignsHeading": "Signs You May Need Smart Switch & Home Automation",
   "warningSignsSubheading": "Smart switches and automation can transform daily routines. Here's when professional installation makes the difference.",
   "problems": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "title": "Dimmer Compatibility Issues",
-      "description": "Not all smart dimmers work with all LED bulbs\u2014causing flickering, buzzing, or limited dimming range. We select compatible equipment combinations.",
+      "description": "Not all smart dimmers work with all LED bulbs—causing flickering, buzzing, or limited dimming range. We select compatible equipment combinations.",
       "icon": "Zap"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "TrendingUp"
     }
   ],
-  "processHeading": "Our Smart Home Installation Process",
+  "processHeading": "How Our Smart Switch & Home Automation Process Works",
   "process": [
     {
       "step": 1,
@@ -77,11 +77,11 @@
       "description": "We walk you through controlling your new smart devices, explain automation options, and ensure everyone in the household knows how to use the system."
     }
   ],
-  "benefitsHeading": "Benefits of Smart Home Automation",
+  "benefitsHeading": "Why Professional Smart Switch & Home Automation Matters",
   "benefits": [
     {
       "title": "Control from Anywhere",
-      "description": "Left a light on? Forgot to turn off the fan? Control your home from your phone wherever you are\u2014at work, on vacation, or just in bed.",
+      "description": "Left a light on? Forgot to turn off the fan? Control your home from your phone wherever you are—at work, on vacation, or just in bed.",
       "icon": "Home"
     },
     {
@@ -110,7 +110,7 @@
       "label": "Typical Energy Savings"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -129,15 +129,15 @@
     },
     {
       "question": "Will smart switches work with my existing light fixtures?",
-      "answer": "Yes, smart switches replace the wall switch and work with any fixture. However, smart dimmers must be compatible with your bulb type\u2014LED, incandescent, or CFL. We verify compatibility and select dimmers rated for your specific fixtures."
+      "answer": "Yes, smart switches replace the wall switch and work with any fixture. However, smart dimmers must be compatible with your bulb type—LED, incandescent, or CFL. We verify compatibility and select dimmers rated for your specific fixtures."
     },
     {
       "question": "Can you install smart switches in a 3-way configuration?",
-      "answer": "Absolutely. Three-way switches (controlling one light from two locations) require specific smart switch setups\u2014typically a smart switch at one location and a companion switch at the other. We configure these correctly so both switches work as expected."
+      "answer": "Absolutely. Three-way switches (controlling one light from two locations) require specific smart switch setups—typically a smart switch at one location and a companion switch at the other. We configure these correctly so both switches work as expected."
     },
     {
       "question": "What happens to smart switches during power outages?",
-      "answer": "Smart switches still function as regular switches during power outages\u2014you can still turn lights on and off manually. When power returns, most smart switches reconnect automatically to your WiFi and resume normal smart operation."
+      "answer": "Smart switches still function as regular switches during power outages—you can still turn lights on and off manually. When power returns, most smart switches reconnect automatically to your WiFi and resume normal smart operation."
     },
     {
       "question": "Do you install smart thermostats too?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "Can I still use regular switches after installing smart switches?",
-      "answer": "Smart switches can always be operated manually\u2014they're still physical switches. Family members or guests who don't want to use voice or app control can use them exactly like regular switches."
+      "answer": "Smart switches can always be operated manually—they're still physical switches. Family members or guests who don't want to use voice or app control can use them exactly like regular switches."
     }
   ],
   "relatedServices": [
@@ -160,22 +160,38 @@
   ],
   "seoContent": [
     {
-      "heading": "Smart Switch Installation in Miami & South Florida",
-      "body": "Transform your home with professional smart switch installation from Solomon Electric. We install smart light switches, dimmers, and fan controls that integrate with Alexa, Google Home, Apple HomeKit, and other smart home platforms. Our licensed electricians ensure proper wiring, reliable connectivity, and complete app configuration\u2014so your smart home works perfectly from day one."
+      "heading": "Smart Switch Installation in Miami &amp; South Florida",
+      "body": "Transform your home with professional smart switch installation from Solomon Electric. We install smart light switches, dimmers, and fan controls that integrate with Alexa, Google Home, Apple HomeKit, and other smart home platforms. Our licensed electricians ensure proper wiring, reliable connectivity, and complete app configuration—so your smart home works perfectly from day one. We design lighting layouts that balance aesthetics, function, and energy efficiency. For recessed lighting, we calculate proper spacing and placement to eliminate shadows and dark spots while avoiding over-lighting that wastes energy."
     },
     {
-      "heading": "Expert Smart Home Wiring",
-      "body": "Smart device installation isn't just plugging in a gadget\u2014it requires proper electrical wiring and configuration. We handle the challenges DIYers struggle with: missing neutral wires, multi-way switch configurations, dimmer compatibility, and WiFi connectivity issues. Professional installation means reliable, frustration-free smart home operation."
+      "heading": "Expert Smart Home Wiring in Miami",
+      "body": "Smart device installation isn't just plugging in a gadget—it requires proper electrical wiring and configuration. We handle the challenges DIYers struggle with: missing neutral wires, multi-way switch configurations, dimmer compatibility, and WiFi connectivity issues. Professional installation means reliable, frustration-free smart home operation. South Florida's intense sunlight creates specific indoor lighting challenges—high contrast between sun-drenched windows and interior spaces. We design lighting to complement natural light patterns, using dimmers and zones for all-day comfort."
     },
     {
-      "heading": "Complete Smart Home Ecosystem Setup",
-      "body": "We don't just install hardware\u2014we configure your complete smart home ecosystem. App setup, voice assistant integration, automation schedules, and scenes that control multiple devices with one command. We'll train you on using your new system and ensure everyone in the household can operate it."
+      "heading": "Complete Smart Home Ecosystem Setup in South Florida",
+      "body": "We don't just install hardware—we configure your complete smart home ecosystem. App setup, voice assistant integration, automation schedules, and scenes that control multiple devices with one command. We'll train you on using your new system and ensure everyone in the household can operate it. Modern LED lighting typically pays for itself within 1-2 years through energy savings. We calculate your specific ROI based on current fixtures, usage patterns, and FPL rates so you can make an informed decision."
     },
     {
       "heading": "Serving Smart Homeowners Throughout South Florida",
-      "body": "Solomon Electric provides smart home installation throughout Miami-Dade, Broward, and Palm Beach counties. From single smart switch installations to whole-home automation projects, we bring the expertise to make your smart home dreams reality. Contact us for a smart home consultation."
+      "body": "Solomon Electric provides smart home installation throughout {county}, Broward, and Palm Beach counties. From single smart switch installations to whole-home automation projects, we bring the expertise to make your smart home dreams reality. Contact us for a smart home consultation. Smart lighting systems connect to your existing WiFi network and integrate with voice assistants like Alexa and Google Home. We configure scenes, schedules, and automations during installation so your system is ready to use immediately."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Smart Switch & Home Automation service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "intelligent-sensor-security-lighting-systems"
+  ],
+  "imageAlt": "Smart Switch & Home Automation service provided by licensed electricians in South Florida",
+  "shortName": "Smart Switch & Automation",
+  "metaDescription": "Smart switch and home automation installation in Miami. Control lights, fans & outlets from your phone. Licensed electrician, free estimates.",
+  "metaTitle": "Smart Home Automation Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Smart switch installation typically completes in 30-60 minutes per switch; whole-home in 1-2 days",
+    "priceRange": "Smart switch installation ranges from $150–$350 per switch including device and configuration",
+    "commonBrands": [
+      "Lutron Caséta",
+      "Leviton Decora Smart",
+      "TP-Link Kasa",
+      "Inovelli"
+    ],
+    "permitNote": "Smart switch devices replace existing switches and typically don't require {county} County permits"
+  }
 }

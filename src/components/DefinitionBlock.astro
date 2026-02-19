@@ -41,7 +41,7 @@ const definitionSchema = {
 ---
 
 <div
-    class="definition-block bg-gradient-to-br from-light to-white border-l-4 border-accent rounded-r-xl p-6 md:p-8 my-8 shadow-sm"
+    class="definition-block bg-gradient-to-br from-light to-white border-l-4 border-accent rounded-r-[var(--radius-xl)] p-6 md:p-8 my-8 shadow-[var(--shadow-sm)]"
 >
     {
         showSchema && (
@@ -55,7 +55,7 @@ const definitionSchema = {
     <!-- Term Header -->
     <div class="flex items-center gap-3 mb-4">
         <div
-            class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"
+            class="w-10 h-10 bg-accent/10 rounded-[var(--radius-lg)] flex items-center justify-center"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,16 +72,16 @@ const definitionSchema = {
                 ></path>
             </svg>
         </div>
-        <h3
-            class="text-xl md:text-2xl font-black text-primary uppercase tracking-tight"
+        <h2
+            class="text-[length:var(--text-h5)] md:text-[length:var(--text-h4)] font-black text-primary uppercase tracking-tight font-secondary"
         >
             What is {term}?
-        </h3>
+        </h2>
     </div>
 
     <!-- Definition (optimized for featured snippet extraction) -->
     <p
-        class="definition-text text-[var(--text-body)] text-lg leading-relaxed mb-4"
+        class="definition-text text-[var(--clr-body)] text-[length:var(--text-body)] leading-relaxed mb-4"
     >
         <strong class="text-primary">{term}</strong>
         {definition}
@@ -89,7 +89,7 @@ const definitionSchema = {
 
     {
         additionalInfo && (
-            <p class="text-[var(--text-body)] text-base leading-relaxed opacity-90">
+            <p class="text-[var(--clr-body)] text-[length:var(--text-body-sm)] leading-relaxed opacity-90">
                 {additionalInfo}
             </p>
         )
@@ -98,12 +98,12 @@ const definitionSchema = {
     {
         relatedTerms.length > 0 && (
             <div class="mt-4 pt-4 border-t border-gray-200">
-                <span class="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                <span class="text-[length:var(--text-label)] font-medium text-[var(--clr-muted)] uppercase tracking-wide">
                     Related:
                 </span>
                 <div class="flex flex-wrap gap-2 mt-2">
                     {relatedTerms.map((related) => (
-                        <span class="inline-block px-3 py-1 bg-primary/5 text-primary text-sm font-medium rounded-full">
+                        <span class="inline-block px-3 py-1 bg-primary/5 text-primary text-[length:var(--text-label)] font-medium rounded-[var(--radius-full)]">
                             {related}
                         </span>
                     ))}
@@ -130,21 +130,11 @@ const definitionSchema = {
             var(--color-accent) 0%,
             var(--color-primary) 100%
         );
-        border-radius: 4px 0 0 4px;
+        border-radius: var(--radius-sm) 0 0 var(--radius-sm);
     }
 
     .definition-text {
         /* Optimized line length for readability and snippet extraction */
         max-width: 75ch;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .definition-block {
-            background: linear-gradient(
-                135deg,
-                rgba(var(--color-primary-rgb), 0.1) 0%,
-                rgba(var(--color-primary-rgb), 0.05) 100%
-            );
-        }
     }
 </style>

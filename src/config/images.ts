@@ -19,13 +19,13 @@
 // BRANDING & TRUST BADGES
 // ==========================================
 import logo from '../assets/images/logo.png';
-import logoWhite from '../assets/images/logo-white.png';
+import logoWhite from '../assets/images/logo-white.webp';
 import logoNew from '../assets/images/logo-new.webp';
-import badgeSatisfaction from '../assets/images/badge-satisfaction.png';
-import badgeAngi from '../assets/images/badge-angi.png';
-import badgeYelp from '../assets/images/badge-yelp.png';
-import badgeBBB from '../assets/images/badge-bbb.png';
-import badgeGuarantee from '../assets/images/badge-guarantee.png';
+import badgeSatisfaction from '../assets/images/badge-satisfaction.webp';
+import badgeAngi from '../assets/images/badge-angi.webp';
+import badgeYelp from '../assets/images/badge-yelp.webp';
+import badgeBBB from '../assets/images/badge-bbb.webp';
+import badgeGuarantee from '../assets/images/badge-guarantee.webp';
 
 // ==========================================
 // PAGE HERO BACKGROUNDS
@@ -52,7 +52,6 @@ import categoryGenerators from '../assets/images/categories/generators.webp';
 import categorySmartHome from '../assets/images/categories/smart-home.webp';
 import categoryCommercial from '../assets/images/categories/commercial.webp';
 import categoryInspection from '../assets/images/categories/inspection.webp';
-import categoryOutdoor from '../assets/images/categories/outdoor.webp';
 
 // ==========================================
 // SITE ENHANCEMENTS (About, Story sections)
@@ -60,9 +59,6 @@ import categoryOutdoor from '../assets/images/categories/outdoor.webp';
 import enhDispatcher from '../assets/images/enhancements/dispatcher.webp';
 import enhTrustBg from '../assets/images/enhancements/trust-bg.webp';
 import enhCustomerInteraction from '../assets/images/enhancements/customer-interaction.webp';
-import heroTeam from '../assets/images/hero-team.webp';
-import heroTruck from '../assets/images/hero-truck.webp';
-import servicePanel from '../assets/images/service-panel.webp';
 
 // ==========================================
 // BLOG POST FEATURED IMAGES
@@ -220,10 +216,6 @@ export const IMAGES = {
             src: categoryInspection,
             alt: "Comprehensive Electrical Safety and Compliance Inspections"
         },
-        outdoor: {
-            src: categoryOutdoor,
-            alt: "Security and Landscape Architectural Lighting"
-        },
     },
 
     // Site Enhancements
@@ -239,18 +231,6 @@ export const IMAGES = {
         customerInteraction: {
             src: enhCustomerInteraction,
             alt: "Electrician explaining service options to a satisfied client"
-        },
-        heroTeam: {
-            src: heroTeam,
-            alt: "The Solomon Electric team of licensed professionals"
-        },
-        heroTruck: {
-            src: heroTruck,
-            alt: "Solomon Electric clearly marked service vehicle on site"
-        },
-        servicePanel: {
-            src: servicePanel,
-            alt: "Modern electrical panel installation detail"
         },
     },
 
@@ -279,7 +259,7 @@ export const IMAGES = {
     // Service Page Images (Direct Service Imports)
     services: {
         commercial: { src: svcCommercial, alt: "Professional commercial electrical infrastructure" },
-        emergency: { src: svcEmergency, alt: "Same-day 24/7 emergency electrical repairs" },
+        emergency: { src: svcEmergency, alt: "24/7 emergency electrical repairs by licensed electricians" },
         evCharging: { src: svcEvCharging, alt: "Certified Level 2 home EV charger installation" },
         lighting: { src: svcLighting, alt: "Energy-efficient LED lighting retrofit and design" },
         wiring: { src: svcWiring, alt: "Whole-home electrical rewiring for safety and code" },
@@ -289,8 +269,8 @@ export const IMAGES = {
     // Static URLs (for email templates, external references)
     static: {
         logo: '/logo.webp',
-        ogDefault: '/og-default.jpg',
-        favicon: '/favicon.webp',
+        ogDefault: '/og-default.webp',
+        favicon: '/favicon.png',
     },
 } as const;
 
@@ -304,37 +284,3 @@ export type HeroImage = keyof typeof IMAGES.heroes;
 export type CategoryImage = keyof typeof IMAGES.categories;
 export type BlogImage = keyof typeof IMAGES.blog;
 export type ServiceImage = keyof typeof IMAGES.services;
-
-// ==========================================
-// HELPER: Get image by slug (for dynamic pages)
-// ==========================================
-export function getHeroImage(page: string): ImageObject {
-    const heroMap: Record<string, ImageObject> = {
-        'index': IMAGES.heroes.homepage,
-        'about': IMAGES.heroes.about,
-        'contact': IMAGES.heroes.contact,
-        'services': IMAGES.heroes.services,
-        'service-areas': IMAGES.heroes.serviceAreas,
-        'blog': IMAGES.heroes.blog,
-        'reviews': IMAGES.heroes.reviews,
-        'faq': IMAGES.heroes.faq,
-        'book': IMAGES.heroes.book,
-    };
-    return heroMap[page] || IMAGES.heroes.homepage;
-}
-
-export function getCategoryImage(slug: string): ImageObject {
-    const categoryMap: Record<string, ImageObject> = {
-        'emergency': IMAGES.categories.emergency,
-        'panel-upgrade': IMAGES.categories.panelUpgrade,
-        'ev-charging': IMAGES.categories.evCharging,
-        'lighting': IMAGES.categories.lighting,
-        'wiring': IMAGES.categories.wiring,
-        'generators': IMAGES.categories.generators,
-        'smart-home': IMAGES.categories.smartHome,
-        'commercial': IMAGES.categories.commercial,
-        'inspection': IMAGES.categories.inspection,
-        'outdoor': IMAGES.categories.outdoor,
-    };
-    return categoryMap[slug] || IMAGES.categories.emergency;
-}

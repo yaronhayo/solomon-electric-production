@@ -62,7 +62,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -70,22 +70,22 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
       "question": "Do you work in the Inverrary condos and townhomes?",
-      "answer": "Yes, Inverrary is one of our most-served communities in Lauderhill. We understand the condo association coordination, the specific electrical systems in Inverrary units, and the common issues in 1970s-80s construction\u2014overloaded panels, outdated GFCIs, and aging wiring. We work efficiently within association guidelines and treat your home with respect."
+      "answer": "Yes, Inverrary is one of our most-served communities in Lauderhill. We understand the condo association coordination, the specific electrical systems in Inverrary units, and the common issues in 1970s-80s construction—overloaded panels, outdated GFCIs, and aging wiring. We work efficiently within association guidelines and treat your home with respect."
     },
     {
-      "question": "We moved from Jamaica\u2014do you have electricians who speak patois or understand Caribbean electrical terminology?",
+      "question": "We moved from Jamaica—do you have electricians who speak patois or understand Caribbean electrical terminology?",
       "answer": "Lauderhill has a vibrant Caribbean community, and we're proud to serve neighbors from Jamaica, Trinidad, Barbados, and throughout the islands. We communicate clearly about all work and service standards, explain everything thoroughly, and make sure you understand exactly what you're getting. Your comfort and trust matter to us."
     },
     {
-      "question": "My 1970s Lauderhill home has a Zinsco panel\u2014is that a problem?",
-      "answer": "Yes\u2014Zinsco panels, like Federal Pacific panels, have a documented history of breaker failure. Breakers that don't trip during overloads allow wires to overheat, creating fire risk. If you have a Zinsco panel (common in 1970s-80s Lauderhill construction), we recommend replacement. Many insurance companies now require it. We provide honest assessments and professional service."
+      "question": "My 1970s Lauderhill home has a Zinsco panel—is that a problem?",
+      "answer": "Yes—Zinsco panels, like Federal Pacific panels, have a documented history of breaker failure. Breakers that don't trip during overloads allow wires to overheat, creating fire risk. If you have a Zinsco panel (common in 1970s-80s Lauderhill construction), we recommend replacement. Many insurance companies now require it. We provide honest assessments and professional service."
     },
     {
       "question": "Can you add more outlets in an older Lauderhill home?",
@@ -97,27 +97,28 @@
     },
     {
       "question": "How quickly can you respond to emergencies in Lauderhill?",
-      "answer": "Lauderhill is centrally located in our Broward service area with excellent access via the Turnpike, Oakland Park Boulevard, and University Drive.  For after-hours emergencies\u2014sparking, burning smells, or complete outages\u2014we allocate resources."
+      "answer": "Lauderhill is centrally located in our Broward service area with excellent access via the Turnpike, Oakland Park Boulevard, and University Drive.  For after-hours emergencies—sparking, burning smells, or complete outages—we allocate resources."
     }
   ],
   "seoContent": [
     {
       "heading": "Your Trusted Lauderhill Electrical Partners",
-      "body": "Lauderhill is a vibrant, diverse community that has grown from a small retirement village to a thriving city of 70,000 residents. Solomon Electric has been proud to witness and support this growth for over {{YEARS_EXPERIENCE}} years, providing the professional electrical services that Lauderhill families and businesses deserve."
+      "body": "Lauderhill is a vibrant, diverse community that has grown from a small retirement village to a thriving city of 70,000 residents. Solomon Electric has been proud to witness and support this growth for over 18 years, providing the professional electrical services that Lauderhill families and businesses deserve. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Lauderhill's Electrical Needs",
-      "body": "Lauderhill homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Lauderhill's needs."
+      "heading": "Expert Electrical Solutions for Lauderhill Properties",
+      "body": "Whether your Lauderhill property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Lauderhill is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Lauderhill Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Lauderhill. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Lauderhill",
+      "body": "From Inverrary, Lauderhill Estates, West Ken Lark to St. George, our electricians provide full-service coverage throughout Lauderhill. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Lauderhill properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Reliable Electrical Solutions for Lauderhill Properties",
-      "body": "Whether you live in the historic Inverrary area or a business near Central Broward Regional Park, Solomon Electric is your first choice for quality. We provide professional service, clean workmanship, and a dedication to safety on every project, no matter how large or small."
+      "body": "Whether you live in the historic Inverrary area or a business near Central Broward Regional Park, Solomon Electric is your first choice for quality. We provide professional service, clean workmanship, and a dedication to safety on every project, no matter how large or small. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Lauderhill. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Lauderhill, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Lauderhill, FL. Residential & commercial electrical services. Panel upgrades, code compliance & 24/7 emergency repairs."
 }

@@ -53,9 +53,9 @@
     "electrical-panel-upgrade-100a-to-200a",
     "home-standby-generator-installation",
     "whole-home-surge-protection",
-    "smart-home-automation",
+    "smart-switch-home-automation",
     "ceiling-fan-light-fixture-installation",
-    "gfci-outlet-installation-outdoor-pool"
+    "gfci-outlet-installation-repair"
   ],
   "stats": [
     {
@@ -63,7 +63,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -71,54 +71,55 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "We have a nursery in the Redland area\u2014can you handle agricultural electrical?",
-      "answer": "Yes, Homestead's agricultural sector is part of our specialty work. We install and maintain electrical for nurseries, shade houses, irrigation pump systems, packing facilities, and farm equipment. The Redland area has unique requirements\u2014including often needing 3-phase power for larger operations\u2014and we understand the specific needs of agricultural properties."
+      "question": "We have a nursery in the Redland area—can you handle agricultural electrical?",
+      "answer": "Yes, Homestead's agricultural sector is part of our specialty work. We install and maintain electrical for nurseries, shade houses, irrigation pump systems, packing facilities, and farm equipment. The Redland area has unique requirements—including often needing 3-phase power for larger operations—and we understand the specific needs of agricultural properties."
     },
     {
-      "question": "Homestead gets hit hard by hurricanes\u2014should we install a generator?",
-      "answer": "Homestead is often the first landfall point for storms approaching South Florida, and you're far from the priority areas for power restoration. A whole-home standby generator isn't a luxury here\u2014it's nearly essential. We size generators to handle your AC, refrigeration, well pump if applicable, and essential circuits. Many Homestead families have learned the hard way that portable generators aren't enough."
+      "question": "Homestead gets hit hard by hurricanes—should we install a generator?",
+      "answer": "Homestead is often the first landfall point for storms approaching South Florida, and you're far from the priority areas for power restoration. A whole-home standby generator isn't a luxury here—it's nearly essential. We size generators to handle your AC, refrigeration, well pump if applicable, and essential circuits. Many Homestead families have learned the hard way that portable generators aren't enough."
     },
     {
-      "question": "Our Waterstone home is new\u2014do we still need electrical services?",
+      "question": "Our Waterstone home is new—do we still need electrical services?",
       "answer": "New construction electrical is typically fine, but Waterstone and other recent developments often need additions: EV charger installations, home office circuits, landscape lighting, or surge protection that builders don't include. We also see builder-grade fixtures that homeowners want upgraded, and additions like ceiling fans or extra outlets in the garage."
     },
     {
       "question": "How quickly can you respond to emergencies in South Dade?",
-      "answer": "For situation-specific emergencies\u2014such as sparking or burning smells\u2014we prioritize the allocation of technical resources based on the safety requirements of the property."
+      "answer": "For situation-specific emergencies—such as sparking or burning smells—we prioritize the allocation of technical resources based on the safety requirements of the property."
     },
     {
       "question": "Can you install electrical for an accessory dwelling unit (ADU) or guest house on our Homestead property?",
       "answer": "Yes, many Homestead properties have space for ADUs, guest houses, or mother-in-law suites that need separate electrical service or sub-panels. We handle the design, Miami-Dade County permitting, and installation for accessory structures, ensuring proper load calculation and code compliance."
     },
     {
-      "question": "Our older Homestead home is on well water\u2014what electrical considerations matter?",
-      "answer": "Well pumps need reliable power\u2014when electricity goes out, so does your water. We recommend generator backup for well properties, properly sized circuits for your pump, and surge protection to prevent pump motor damage from voltage spikes. We also ensure proper grounding for well components, which is critical for safety."
+      "question": "Our older Homestead home is on well water—what electrical considerations matter?",
+      "answer": "Well pumps need reliable power—when electricity goes out, so does your water. We recommend generator backup for well properties, properly sized circuits for your pump, and surge protection to prevent pump motor damage from voltage spikes. We also ensure proper grounding for well components, which is critical for safety."
     }
   ],
   "seoContent": [
     {
       "heading": "Safe & Reliable Electrical Services for Homestead, FL",
-      "body": "Homestead is a unique blend of historic charm, agricultural heritage, and modern suburban growth. As the 'Gateway to the Keys,' this community faces specific environmental and infrastructure challenges. Solomon Electric provides the expertise needed to keep Homestead homes and businesses powered safely, through every season."
+      "body": "Homestead is a unique blend of historic charm, agricultural heritage, and modern suburban growth. As the 'Gateway to the Keys,' this community faces specific environmental and infrastructure challenges. Solomon Electric provides the expertise needed to keep Homestead homes and businesses powered safely, through every season. Our electricians are dispatched from strategic locations across Miami-Dade County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Homestead's Electrical Needs",
-      "body": "Homestead homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Homestead's needs."
+      "heading": "Expert Electrical Solutions for Homestead Properties",
+      "body": "Whether your Homestead property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Miami-Dade County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Homestead is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Homestead Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Homestead. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Homestead",
+      "body": "From Redland, Naranja, Modello to Waterstone, our electricians provide full-service coverage throughout Homestead. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Homestead properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Serving the South Dade Community with Pride",
-      "body": "Whether you're a long-time resident of the historic downtown area or moving into one of Homestead's newer developments like Waterstone, our team of licensed electricians is here to serve you. We provide everything from minor repairs to whole-home backup power systems, ensuring Homestead remains a safe and well-powered place to live and work."
+      "body": "Whether you're a long-time resident of the historic downtown area or moving into one of Homestead's newer developments like Waterstone, our team of licensed electricians is here to serve you. We provide everything from minor repairs to whole-home backup power systems, ensuring Homestead remains a safe and well-powered place to live and work. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Homestead. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Homestead, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Homestead, FL. Panel upgrades, generator installation, agricultural wiring & 24/7 emergency repairs. Miami-Dade County."
 }

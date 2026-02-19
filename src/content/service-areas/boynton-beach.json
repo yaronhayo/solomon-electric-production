@@ -54,7 +54,7 @@
     "24-7-emergency-electrical-service",
     "landscape-outdoor-lighting",
     "whole-home-surge-protection",
-    "ev-charging-system-setup",
+    "home-ev-charging-system-setup",
     "ceiling-fan-light-fixture-installation"
   ],
   "stats": [
@@ -63,7 +63,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -71,30 +71,30 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
       "question": "Can you install dock power at our Boynton Beach Intracoastal home?",
-      "answer": "Absolutely. Boynton's waterfront properties near the inlet and along the Intracoastal need specialized dock electrical that meets NEC Article 555 marina safety requirements. We install dock pedestals with properly rated circuits, boat lift power, shore power connections, and seawall lighting\u2014all using marine-grade corrosion-resistant components."
+      "answer": "Absolutely. Boynton's waterfront properties near the inlet and along the Intracoastal need specialized dock electrical that meets NEC Article 555 marina safety requirements. We install dock pedestals with properly rated circuits, boat lift power, shore power connections, and seawall lighting—all using marine-grade corrosion-resistant components."
     },
     {
-      "question": "We live in Aberdeen\u2014what electrical issues are common in our community?",
+      "question": "We live in Aberdeen—what electrical issues are common in our community?",
       "answer": "Aberdeen homes are typically well-maintained, but many are now 15-20+ years old. Common requests include panel upgrades to support EV chargers and home additions, landscape lighting installations, and whole-home surge protection. We also see builder-grade fixtures that homeowners want to upgrade and the addition of ceiling fans and home office circuits."
     },
     {
       "question": "Is Palm Beach County permitting different from Broward?",
-      "answer": "Yes, Palm Beach County has its own permitting process and code requirements that differ from Broward and Miami-Dade. We're licensed to work in all three counties and handle all permitting for Boynton Beach projects. Understanding the specific requirements of each jurisdiction is part of our job\u2014you don't need to worry about it."
+      "answer": "Yes, Palm Beach County has its own permitting process and code requirements that differ from Broward and Miami-Dade. We're licensed to work in all three counties and handle all permitting for Boynton Beach projects. Understanding the specific requirements of each jurisdiction is part of our job—you don't need to worry about it."
     },
     {
       "question": "Do you service the commercial district near Congress Avenue?",
       "answer": "Yes, we provide commercial electrical services along Congress Avenue, Boynton Beach Boulevard, and the surrounding business areas. Services include tenant buildouts, retail and restaurant electrical, parking lot lighting, and 24/7 emergency response for businesses that can't afford extended outages."
     },
     {
-      "question": "Our Valencia Reserve home is all-electric with no gas\u2014should we have a generator?",
-      "answer": "For all-electric homes in Boynton Beach, generators become even more important\u2014when power goes out, you lose not just AC but also your cooktop, water heating, and everything else. We size generators to handle the full electrical load or prioritize critical circuits based on your preferences and budget."
+      "question": "Our Valencia Reserve home is all-electric with no gas—should we have a generator?",
+      "answer": "For all-electric homes in Boynton Beach, generators become even more important—when power goes out, you lose not just AC but also your cooktop, water heating, and everything else. We size generators to handle the full electrical load or prioritize critical circuits based on your preferences and budget."
     },
     {
       "question": "How quickly can you respond to emergencies in Boynton Beach?",
@@ -104,21 +104,22 @@
   "seoContent": [
     {
       "heading": "Trusted Boynton Beach Electricians Since 2003",
-      "body": "Boynton Beach is a city of incredible natural beauty and growing opportunity. Known as the 'Gateway to the Gulf Stream,' it's a community that values its coastal heritage and its future progress. Solomon Electric is proud to provide the safe and reliable electrical foundation Boynton families and businesses need to thrive."
+      "body": "Boynton Beach is a city of incredible natural beauty and growing opportunity. Known as the 'Gateway to the Gulf Stream,' it's a community that values its coastal heritage and its future progress. Solomon Electric is proud to provide the safe and reliable electrical foundation Boynton families and businesses need to thrive. Our electricians are dispatched from strategic locations across Palm Beach County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Boynton Beach's Electrical Needs",
-      "body": "Boynton Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Boynton Beach's needs."
+      "heading": "Expert Electrical Solutions for Boynton Beach Properties",
+      "body": "Whether your Boynton Beach property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Palm Beach County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Boynton Beach is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Boynton Beach Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Boynton Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Boynton Beach",
+      "body": "From Aberdeen, Canyon Lakes, Cobblestone Village to Valencia Reserve, our electricians provide full-service coverage throughout Boynton Beach. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Boynton Beach properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Excellence in Electrical Care for Your Boynton Home",
-      "body": "Whether you're finishing a remodel in Canyon Lakes, needing dock power near the marina, or requiring an urgent repair in Aberdeen, our licensed team is here for you. We provide professional service, clean workmanship, and a dedication to safety that has made us a local leader for over {{YEARS_EXPERIENCE}} years."
+      "body": "Whether you're finishing a remodel in Canyon Lakes, needing dock power near the marina, or requiring an urgent repair in Aberdeen, our licensed team is here for you. We provide professional service, clean workmanship, and a dedication to safety that has made us a local leader for over 18 years. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Boynton Beach. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Boynton Beach, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Boynton Beach, FL. Residential & commercial electrical services. Panel upgrades, generators & 24/7 emergency repairs."
 }

@@ -1,137 +1,128 @@
 #!/usr/bin/env node
 /**
  * PageSpeed Insights CLI Tool
- * Usage: node scripts/pagespeed-audit.js [url] [--desktop]
  * 
- * Runs PageSpeed Insights API and outputs Lighthouse scores + issues
+ * Usage:
+ *   node scripts/pagespeed-audit.js [url] [--desktop] [--mobile] [--both]
  */
 
 import https from 'https';
+import { loadEnv } from 'vite';
+import fs from 'fs';
+import path from 'path';
 
-const API_KEY = process.env.PSI_API_KEY || 'AIzaSyCPUa0e_IB0rB5UeJrWa3__Lohkm7HB9hY';
-const DEFAULT_URL = 'https://www.247electricianmiami.com/';
+// Load environment variables
+const env = Object.assign(process.env, loadEnv('', process.cwd(), ''));
+const API_KEY = env.PSI_API_KEY || '';
+const DEFAULT_URL = 'https://solomonelectric.com/';
 
-async function runPageSpeed(url, strategy = 'mobile') {
+// Parse arguments
+const args = process.argv.slice(2);
+let targetUrl = DEFAULT_URL;
+let strategy = 'mobile';
+
+if (args.length > 0) {
+  for (const arg of args) {
+    if (arg.startsWith('http')) {
+      targetUrl = arg;
+    } else if (arg === '--desktop') {
+      strategy = 'desktop';
+    } else if (arg === '--mobile') {
+      strategy = 'mobile';
+    } else if (arg === '--both') {
+      strategy = 'both';
+    }
+  }
+}
+
+async function runAudit(url, strat) {
+  console.log(`\n🚀 Starting PageSpeed Audit for: ${url} (${strat})`);
+  
+  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=${strat}${API_KEY ? `&key=${API_KEY}` : ''}`;
+
   return new Promise((resolve, reject) => {
-    const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?` +
-      `url=${encodeURIComponent(url)}&` +
-      `strategy=${strategy}&` +
-      `category=performance&category=accessibility&category=best-practices&category=seo` +
-      (API_KEY ? `&key=${API_KEY}` : '');
+    const options = {
+      headers: {
+        'Referer': 'https://www.google.com/'
+      }
+    };
 
-    console.log(`\n🔍 Running ${strategy.toUpperCase()} test for: ${url}\n`);
-
-    https.get(apiUrl, (res) => {
+    https.get(apiUrl, options, (res) => {
       let data = '';
-      res.on('data', chunk => data += chunk);
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
       res.on('end', () => {
         try {
-          resolve(JSON.parse(data));
+          const json = JSON.parse(data);
+          if (json.error) {
+            reject(new Error(json.error.message));
+            return;
+          }
+          resolve(json);
         } catch (e) {
-          reject(new Error('Failed to parse response'));
+          reject(new Error('Failed to parse response: ' + e.message));
         }
       });
-    }).on('error', reject);
+    }).on('error', (e) => {
+      reject(e);
+    });
   });
 }
 
-function displayResults(data, strategy) {
-  if (data.error) {
-    console.log('❌ Error:', data.error.message);
-    return null;
-  }
+function displayResults(json, strat) {
+  const lighthouse = json.lighthouseResult;
+  const categories = lighthouse.categories;
+  const auditResults = lighthouse.audits;
 
-  const cats = data.lighthouseResult.categories;
-  const audits = data.lighthouseResult.audits;
+  const score = (categories.performance.score * 100).toFixed(0);
+  const color = score >= 90 ? '🟢' : score >= 50 ? '🟠' : '🔴';
 
-  const emoji = strategy === 'mobile' ? '📱' : '🖥️';
-  const title = strategy.toUpperCase();
-
-  console.log('╔════════════════════════════════════════════════════════════════╗');
-  console.log(`║ ${emoji} ${title} LIGHTHOUSE SCORES`.padEnd(65) + '║');
-  console.log('╠════════════════════════════════════════════════════════════════╣');
+  console.log(`\n--- Results for ${strat.toUpperCase()} ---`);
+  console.log(`${color} Performance Score: ${score}/100`);
   
-  const perfScore = Math.round(cats.performance.score * 100);
-  const a11yScore = Math.round(cats.accessibility.score * 100);
-  const bpScore = Math.round(cats['best-practices'].score * 100);
-  const seoScore = Math.round(cats.seo.score * 100);
+  const metrics = {
+    'First Contentful Paint': auditResults['first-contentful-paint'].displayValue,
+    'Largest Contentful Paint': auditResults['largest-contentful-paint'].displayValue,
+    'Total Blocking Time': auditResults['total-blocking-time'].displayValue,
+    'Cumulative Layout Shift': auditResults['cumulative-layout-shift'].displayValue,
+    'Speed Index': auditResults['speed-index'].displayValue,
+  };
 
-  const getColor = (score) => score >= 90 ? '🟢' : score >= 50 ? '🟡' : '🔴';
-
-  console.log(`║ ${getColor(perfScore)} Performance:    ${String(perfScore).padEnd(47)}║`);
-  console.log(`║ ${getColor(a11yScore)} Accessibility:  ${String(a11yScore).padEnd(47)}║`);
-  console.log(`║ ${getColor(bpScore)} Best Practices: ${String(bpScore).padEnd(47)}║`);
-  console.log(`║ ${getColor(seoScore)} SEO:            ${String(seoScore).padEnd(47)}║`);
-  console.log('╠════════════════════════════════════════════════════════════════╣');
-  console.log('║ CORE WEB VITALS                                               ║');
-  
-  const fcp = audits['first-contentful-paint']?.displayValue || 'N/A';
-  const lcp = audits['largest-contentful-paint']?.displayValue || 'N/A';
-  const cls = audits['cumulative-layout-shift']?.displayValue || 'N/A';
-  const tbt = audits['total-blocking-time']?.displayValue || 'N/A';
-  const si = audits['speed-index']?.displayValue || 'N/A';
-
-  console.log(`║  FCP:  ${String(fcp).padEnd(56)}║`);
-  console.log(`║  LCP:  ${String(lcp).padEnd(56)}║`);
-  console.log(`║  CLS:  ${String(cls).padEnd(56)}║`);
-  console.log(`║  TBT:  ${String(tbt).padEnd(56)}║`);
-  console.log(`║  SI:   ${String(si).padEnd(56)}║`);
-  console.log('╚════════════════════════════════════════════════════════════════╝');
-
-  // Collect failed audits
-  const issues = [];
-  for (const [key, audit] of Object.entries(audits)) {
-    if (audit.score !== null && 
-        audit.score < 0.9 && 
-        audit.scoreDisplayMode !== 'informative' && 
-        audit.scoreDisplayMode !== 'notApplicable' && 
-        audit.scoreDisplayMode !== 'manual') {
-      issues.push({
-        id: key,
-        title: audit.title,
-        score: Math.round(audit.score * 100),
-        displayValue: audit.displayValue || '',
-        description: audit.description
-      });
-    }
+  for (const [name, value] of Object.entries(metrics)) {
+    console.log(`  - ${name.padEnd(25)}: ${value}`);
   }
 
-  if (issues.length) {
-    console.log(`\n🔴 Issues to Fix (${issues.length}):`);
-    issues.sort((a, b) => a.score - b.score).slice(0, 15).forEach(i => {
-      const scoreStr = `[${i.score}%]`;
-      console.log(`  ${scoreStr.padEnd(7)} ${i.title}${i.displayValue ? ` (${i.displayValue})` : ''}`);
-    });
-  } else {
-    console.log('\n✅ No major issues found!');
-  }
+  // Check thresholds
+  const tbt = parseFloat(auditResults['total-blocking-time'].numericValue);
+  const lcp = parseFloat(auditResults['largest-contentful-paint'].numericValue) / 1000;
+  const cls = parseFloat(auditResults['cumulative-layout-shift'].numericValue);
 
-  return { scores: { perfScore, a11yScore, bpScore, seoScore }, issues };
+  if (tbt > 200) console.log(`⚠️  Warning: TBT is high (${tbt.toFixed(0)}ms, target < 200ms)`);
+  if (lcp > 2.5) console.log(`⚠️  Warning: LCP is slow (${lcp.toFixed(2)}s, target < 2.5s)`);
+  if (cls > 0.1) console.log(`⚠️  Warning: CLS is high (${cls.toFixed(3)}, target < 0.1)`);
 }
 
 async function main() {
-  const args = process.argv.slice(2);
-  const url = args.find(a => a.startsWith('http')) || DEFAULT_URL;
-  const isDesktop = args.includes('--desktop');
-  const runBoth = args.includes('--both') || (!args.includes('--mobile') && !args.includes('--desktop'));
-
-  console.log('🚀 PageSpeed Insights Audit\n');
-  console.log(`📍 URL: ${url}`);
+  if (!API_KEY) {
+    console.warn('⚠️  No PSI_API_KEY found in .env. Running without key (limited quota).');
+  }
 
   try {
-    if (runBoth || !isDesktop) {
-      const mobileData = await runPageSpeed(url, 'mobile');
-      displayResults(mobileData, 'mobile');
+    if (strategy === 'both') {
+      const mobileResult = await runAudit(targetUrl, 'mobile');
+      displayResults(mobileResult, 'mobile');
+      const desktopResult = await runAudit(targetUrl, 'desktop');
+      displayResults(desktopResult, 'desktop');
+    } else {
+      const result = await runAudit(targetUrl, strategy);
+      displayResults(result, strategy);
     }
-
-    if (runBoth || isDesktop) {
-      if (runBoth) console.log('\n' + '─'.repeat(68) + '\n');
-      const desktopData = await runPageSpeed(url, 'desktop');
-      displayResults(desktopData, 'desktop');
-    }
-
+    console.log('\n✅ Audit completed successfully.');
   } catch (error) {
-    console.error('Error:', error.message);
+    console.error(`\n❌ Error during audit: ${error.message}`);
     process.exit(1);
   }
 }

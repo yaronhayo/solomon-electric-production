@@ -13,57 +13,6 @@ export function calculateReadingTime(content: string): number {
 }
 
 /**
- * Extract headings from markdown content for Table of Contents
- * @param content - The markdown content
- * @returns Array of headings with text, level, and id
- */
-export function extractHeadings(content: string) {
-    const headingRegex = /^(#{2,3})\s+(.+)$/gm;
-    const headings: { level: number; text: string; id: string }[] = [];
-    let match;
-
-    while ((match = headingRegex.exec(content)) !== null) {
-        const level = match[1].length;
-        const text = match[2];
-        const id = text
-            .toLowerCase()
-            .replace(/[^a-z0-9\s-]/g, '')
-            .replace(/\s+/g, '-');
-
-        headings.push({ level, text, id });
-    }
-
-    return headings;
-}
-
-/**
- * Generate excerpt from content if not provided
- * @param content - The full content
- * @param maxLength - Maximum length of excerpt
- * @returns Excerpt string
- */
-export function generateExcerpt(content: string, maxLength: number = 160): string {
-    // Remove markdown formatting
-    const plainText = content
-        .replace(/^#{1,6}\s+/gm, '') // Remove headings
-        .replace(/\*\*(.+?)\*\*/g, '$1') // Remove bold
-        .replace(/\*(.+?)\*/g, '$1') // Remove italic
-        .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links
-        .replace(/`(.+?)`/g, '$1') // Remove code
-        .replace(/\n+/g, ' ') // Replace newlines with space
-        .trim();
-
-    if (plainText.length <= maxLength) {
-        return plainText;
-    }
-
-    // Cut at word boundary
-    const trimmed = plainText.substring(0, maxLength);
-    const lastSpace = trimmed.lastIndexOf(' ');
-    return trimmed.substring(0, lastSpace) + '...';
-}
-
-/**
  * Find related posts based on shared tags
  * @param currentPost - The current post object
  * @param allPosts - Array of all posts
@@ -139,20 +88,4 @@ export function formatDate(date: Date): string {
         month: 'long',
         day: 'numeric',
     }).format(date);
-}
-
-/**
- * Group posts by category
- * @param posts - Array of posts
- * @returns Object with categories as keys
- */
-export function groupByCategory(posts: any[]): Record<string, any[]> {
-    return posts.reduce((acc, post) => {
-        const category = post.data.category || 'Uncategorized';
-        if (!acc[category]) {
-            acc[category] = [];
-        }
-        acc[category].push(post);
-        return acc;
-    }, {} as Record<string, any[]>);
 }

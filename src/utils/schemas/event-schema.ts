@@ -118,7 +118,7 @@ export function generateSaleEventSchema(
   description: string,
   startDate: string,
   endDate: string,
-  discountPercentage: number,
+  _discountPercentage: number,
   services: string[] = []
 ): Record<string, unknown> {
   return {
@@ -204,7 +204,7 @@ export function generateSpecialOfferSchema(
   offerName: string,
   description: string,
   validDays: number,
-  discountValue: string
+  _discountValue: string
 ): Record<string, unknown> {
   const startDate = new Date().toISOString();
   const endDate = new Date(Date.now() + validDays * 24 * 60 * 60 * 1000).toISOString();

@@ -59,7 +59,7 @@
     "24-7-emergency-electrical-service",
     "commercial-led-lighting-retrofit",
     "electrical-panel-upgrade-100a-to-200a",
-    "smart-home-automation"
+    "smart-switch-home-automation"
   ],
   "stats": [
     {
@@ -67,7 +67,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -75,14 +75,14 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
       "question": "Do you install electrical for boat lifts and dock pedestals in Fort Lauderdale?",
-      "answer": "Yes\u2014waterfront electrical is one of our specialties in the Venice of America. We install and repair dock pedestals, boat lift motors, shore power connections, and marine-grade lighting throughout Las Olas Isles, Rio Vista, and Harbor Beach. All waterfront electrical must meet strict NEC Article 555 requirements for marina safety. We ensure your dock electrical is safe, code-compliant, and properly protected from corrosion."
+      "answer": "Yes—waterfront electrical is one of our specialties in the Venice of America. We install and repair dock pedestals, boat lift motors, shore power connections, and marine-grade lighting throughout Las Olas Isles, Rio Vista, and Harbor Beach. All waterfront electrical must meet strict NEC Article 555 requirements for marina safety. We ensure your dock electrical is safe, code-compliant, and properly protected from corrosion."
     },
     {
       "question": "Why is Fort Lauderdale electrical work different from inland areas?",
@@ -90,39 +90,40 @@
     },
     {
       "question": "Can you upgrade the electrical in my Victoria Park or Sailboat Bend home?",
-      "answer": "Absolutely. These historic Fort Lauderdale neighborhoods have beautiful older homes that often need careful electrical modernization. We've upgraded dozens of 1920s-1950s homes in Victoria Park and Sailboat Bend\u2014replacing outdated panels, installing proper grounding, and adding capacity for modern living while preserving the character that makes these neighborhoods special. Many of these homes still have original 60-amp service that desperately needs upgrading."
+      "answer": "Absolutely. These historic Fort Lauderdale neighborhoods have beautiful older homes that often need careful electrical modernization. We've upgraded dozens of 1920s-1950s homes in Victoria Park and Sailboat Bend—replacing outdated panels, installing proper grounding, and adding capacity for modern living while preserving the character that makes these neighborhoods special. Many of these homes still have original 60-amp service that desperately needs upgrading."
     },
     {
       "question": "What permits do I need for electrical work in Fort Lauderdale?",
-      "answer": "All significant electrical work in Fort Lauderdale requires Broward County permits. This includes panel upgrades, new circuits, EV chargers, and outlet additions. We handle all permitting with Broward County\u2014you don't need to visit the building department or coordinate inspections. Our 100% inspection pass rate means your project won't face delays or re-work."
+      "answer": "All significant electrical work in Fort Lauderdale requires Broward County permits. This includes panel upgrades, new circuits, EV chargers, and outlet additions. We handle all permitting with Broward County—you don't need to visit the building department or coordinate inspections. Our 100% inspection pass rate means your project won't face delays or re-work."
     },
     {
       "question": "Do you provide electrical services for vacation rentals on Fort Lauderdale Beach?",
-      "answer": "Yes, we work with many vacation rental owners on Galt Ocean Mile and Fort Lauderdale Beach. Common needs include adding outlets for guest convenience, installing smart locks and thermostats, upgrading lighting for better photos, and ensuring all GFCIs work properly (a common guest complaint). Quick turnaround between tenants is essential\u2014we schedule around your booking calendar."
+      "answer": "Yes, we work with many vacation rental owners on Galt Ocean Mile and Fort Lauderdale Beach. Common needs include adding outlets for guest convenience, installing smart locks and thermostats, upgrading lighting for better photos, and ensuring all GFCIs work properly (a common guest complaint). Quick turnaround between tenants is essential—we schedule around your booking calendar."
     },
     {
       "question": "How fast can you respond to emergencies near Las Olas or Downtown Fort Lauderdale?",
-      "answer": "We maintain coverage across Broward County to assist with electrical requirements in central Fort Lauderdale. For situation-specific emergencies\u2014such as sparking or burning smells\u2014we prioritize the allocation of technical resources."
+      "answer": "We maintain coverage across Broward County to assist with electrical requirements in central Fort Lauderdale. For situation-specific emergencies—such as sparking or burning smells—we prioritize the allocation of technical resources."
     }
   ],
   "seoContent": [
     {
       "heading": "Fort Lauderdale's Trusted Electrical Experts",
-      "body": "Known as the 'Venice of America' for its intricate canal system, Fort Lauderdale is a hub of maritime, commercial, and residential excellence. Solomon Electric is proud to serve this vibrant city, providing the specialized electrical knowledge needed for its unique waterfront lifestyle and booming urban core. Our licensed team is dedicated to keeping Fort Lauderdale powered safely and efficiently."
+      "body": "Known as the 'Venice of America' for its intricate canal system, Fort Lauderdale is a hub of maritime, commercial, and residential excellence. Solomon Electric is proud to serve this vibrant city, providing the specialized electrical knowledge needed for its unique waterfront lifestyle and booming urban core. Our licensed team is dedicated to keeping Fort Lauderdale powered safely and efficiently. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Fort Lauderdale's Electrical Needs",
-      "body": "Fort Lauderdale homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Fort Lauderdale's needs."
+      "heading": "Expert Electrical Solutions for Fort Lauderdale Properties",
+      "body": "Whether your Fort Lauderdale property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Fort Lauderdale is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Fort Lauderdale Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Fort Lauderdale. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Fort Lauderdale",
+      "body": "From Victoria Park, Harbordale, Rio Vista to Galt Ocean Mile, our electricians provide full-service coverage throughout Fort Lauderdale. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Fort Lauderdale properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Serving Every Corner of Fort Lauderdale",
-      "body": "Whether you're maintaining a waterfront estate in Rio Vista, upgrading a commercial space on Las Olas, or restoring a historic gem in Victoria Park, Solomon Electric brings {{YEARS_EXPERIENCE}} years of professional experience to your door. We understand Fort Lauderdale's specific code requirements and environmental challenges, delivering results that stand the test of time."
+      "body": "Whether you're maintaining a waterfront estate in Rio Vista, upgrading a commercial space on Las Olas, or restoring a historic gem in Victoria Park, Solomon Electric brings 18 years of professional experience to your door. We understand Fort Lauderdale's specific code requirements and environmental challenges, delivering results that stand the test of time. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Fort Lauderdale. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Fort Lauderdale, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Fort Lauderdale, FL. Panel upgrades, generators, EV chargers, lighting & 24/7 emergency repairs. Free estimates."
 }

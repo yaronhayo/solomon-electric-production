@@ -10,74 +10,6 @@ Disallow: /api/
 Disallow: /thank-you
 Disallow: /_astro/
 
-# Crawl rate (optional, respected by well-behaved bots)
-Crawl-delay: 1
-
-# ============================================
-# AI/LLM Bot Access - ALLOW for discovery
-# ============================================
-
-# OpenAI
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-# Google AI
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-# Anthropic
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-# Microsoft/Bing
-User-agent: Bingbot
-Allow: /
-
-# Common Crawl (used for AI training)
-User-agent: CCBot
-Allow: /
-
-# Perplexity AI
-User-agent: PerplexityBot
-Allow: /
-
-# You.com
-User-agent: YouBot
-Allow: /
-
-# Meta AI
-User-agent: FacebookBot
-Allow: /
-
-# Cohere
-User-agent: cohere-ai
-Allow: /
-
-# AI21
-User-agent: AI21
-Allow: /
-
-# xAI (Grok)
-User-agent: Grok
-Allow: /
-
-# Mistral
-User-agent: MistralBot
-Allow: /
-
-# Apple Siri/Spotlight
-User-agent: Applebot
-Allow: /
-
 # ============================================
 # Search Engine Bots - ALLOW
 # ============================================
@@ -107,10 +39,55 @@ User-agent: YandexBot
 Allow: /
 
 # ============================================
+# AI/LLM Bot Access - ALLOW for discovery
+# ============================================
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: AI21
+Allow: /
+
+User-agent: Grok
+Allow: /
+
+User-agent: MistralBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ============================================
 # Bad Bots - BLOCK
 # ============================================
 
-# Known scrapers and spam bots
 User-agent: AhrefsBot
 Disallow: /
 
@@ -127,15 +104,15 @@ Disallow: /
 # Sitemaps
 # ============================================
 
-# Google automatically discovers all child sitemaps from the index
 Sitemap: https://www.247electricianmiami.com/sitemap-index.xml
 
 # ============================================
 # Additional Discovery Files
 # ============================================
 
-# LLM context file for AI assistants
+# LLM context files for AI assistants
 # https://www.247electricianmiami.com/llms.txt
+# https://www.247electricianmiami.com/llms-full.txt
 
 # Security contact
 # https://www.247electricianmiami.com/.well-known/security.txt

@@ -1,14 +1,8 @@
 import { SITE_CONFIG } from "../config/site";
+import { SERVICE_KEYWORDS } from "../config/keywords";
 
 /**
  * Replaces placeholders in text with values from SITE_CONFIG
- * Supported placeholders:
- * {{LICENSE}} - Electrical license number
- * {{PHONE}} - Formatted phone number
- * {{EMAIL}} - Primary email address
- * {{FOUNDED_YEAR}} - Company founding year
- * {{YEARS_EXPERIENCE}} - Years of experience
- * {{COMPANY_NAME}} - Company name
  */
 export const replacePlaceholder = (text: string): string => {
     if (!text) return text;
@@ -22,12 +16,25 @@ export const replacePlaceholder = (text: string): string => {
 };
 
 /**
- * Processes an array of FAQ items, replacing placeholders in question and answer
+ * Programmatically highlights keywords for SEO and readability
  */
-export const processFaqs = (faqs: any[]) => {
-    return (faqs || []).map(faq => ({
-        ...faq,
-        question: replacePlaceholder(faq.question || faq.data?.question),
-        answer: replacePlaceholder(faq.answer || faq.data?.answer)
-    }));
+export const highlightKeywords = (text: string, additionalKeywords: string[] = []): string => {
+    if (!text) return text;
+    
+    // Combine base registry with context-specific keywords (e.g., city name)
+    const keywords = Array.from(new Set([...SERVICE_KEYWORDS, ...additionalKeywords]));
+    
+    // Escape keywords for regex and sort by length descending to match longer phrases first
+    const escapedKeywords = keywords
+        .filter(k => k.length > 2)
+        .sort((a, b) => b.length - a.length)
+        .map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+        
+    if (escapedKeywords.length === 0) return text;
+
+    // Use word boundaries \b to avoid highlighting parts of words
+    // Use positive lookahead/lookbehind to avoid double-wrapping
+    const pattern = new RegExp(`\\b(${escapedKeywords.join('|')})\\b`, 'gi');
+    
+    return text.replace(pattern, (match) => `<strong>${match}</strong>`);
 };

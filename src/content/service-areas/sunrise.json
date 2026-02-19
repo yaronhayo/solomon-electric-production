@@ -54,7 +54,7 @@
     "24-7-emergency-electrical-service",
     "commercial-led-lighting-retrofit",
     "recessed-lighting-installation",
-    "ev-charging-system-setup"
+    "home-ev-charging-system-setup"
   ],
   "stats": [
     {
@@ -62,7 +62,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -70,17 +70,17 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "My Sunrise home was built in the 1970s and has a Federal Pacific panel\u2014should I be worried?",
-      "answer": "Yes\u2014Federal Pacific panels are a documented fire hazard. Breakers in these panels often fail to trip during overloads, allowing wires to overheat and potentially start fires. If your Sunrise home has a Federal Pacific (FPE) panel, we strongly recommend replacement. These panels were commonly installed in 1970s-80s Sunrise homes, and insurance companies are increasingly requiring their replacement before issuing policies."
+      "question": "My Sunrise home was built in the 1970s and has a Federal Pacific panel—should I be worried?",
+      "answer": "Yes—Federal Pacific panels are a documented fire hazard. Breakers in these panels often fail to trip during overloads, allowing wires to overheat and potentially start fires. If your Sunrise home has a Federal Pacific (FPE) panel, we strongly recommend replacement. These panels were commonly installed in 1970s-80s Sunrise homes, and insurance companies are increasingly requiring their replacement before issuing policies."
     },
     {
-      "question": "We live in a Sunrise senior community\u2014do you work in places like Sunrise Lakes?",
+      "question": "We live in a Sunrise senior community—do you work in places like Sunrise Lakes?",
       "answer": "Absolutely. We serve many residents in Sunrise Lakes, Kings Point, and other 55+ communities. We understand the unique considerations: communicating clearly about work and costs, respecting your schedule and routines, and coordinating with building management when needed. We're patient, thorough, and happy to explain everything in detail."
     },
     {
@@ -93,31 +93,32 @@
     },
     {
       "question": "Can you add outlets in my Sunrise home? We never have enough.",
-      "answer": "Definitely\u2014insufficient outlets are a hallmark of 1970s-80s construction. Homes built then typically have far fewer outlets than modern codes require or families need. We can add outlets to any room, including dedicated circuits for high-draw items like space heaters or window AC units. Adding outlets is relatively straightforward and much safer than relying on extension cords and power strips."
+      "answer": "Definitely—insufficient outlets are a hallmark of 1970s-80s construction. Homes built then typically have far fewer outlets than modern codes require or families need. We can add outlets to any room, including dedicated circuits for high-draw items like space heaters or window AC units. Adding outlets is relatively straightforward and much safer than relying on extension cords and power strips."
     },
     {
       "question": "How quickly can you get to Sunrise for an emergency?",
-      "answer": "Sunrise is central to our Broward service area with direct access via I-595, the Sawgrass Expressway, and I-75.  For after-hours emergencies\u2014sparking panels, burning smells, or complete outages\u2014we allocate resources."
+      "answer": "Sunrise is central to our Broward service area with direct access via I-595, the Sawgrass Expressway, and I-75.  For after-hours emergencies—sparking panels, burning smells, or complete outages—we allocate resources."
     }
   ],
   "seoContent": [
     {
       "heading": "Sunrise's Trusted Licensed Electricians",
-      "body": "Sunrise is a dynamic city that serves as a cornerstone of the Broward County community. From the family-friendly parks of Welleby to the world-class shopping at Sawgrass Mills, Sunrise requires a high standard of professional electrical care. Solomon Electric is proud to be a trusted provider for our Sunrise neighbors for over {{YEARS_EXPERIENCE}} years."
+      "body": "Sunrise is a dynamic city that serves as a cornerstone of the Broward County community. From the family-friendly parks of Welleby to the world-class shopping at Sawgrass Mills, Sunrise requires a high standard of professional electrical care. Solomon Electric is proud to be a trusted provider for our Sunrise neighbors for over 18 years. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Sunrise's Electrical Needs",
-      "body": "Sunrise homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Sunrise's needs."
+      "heading": "Expert Electrical Solutions for Sunrise Properties",
+      "body": "Whether your Sunrise property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Sunrise is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Sunrise Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Sunrise. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Sunrise",
+      "body": "From Welleby, Sawgrass, Sunrise Lakes to Nob Hill, our electricians provide full-service coverage throughout Sunrise. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Sunrise properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Excellence in Electrical Care for Sunrise Families",
-      "body": "Whether you're upgrading the lighting in your Sunrise home, requiring an urgent panel replacement, or needing the peace of mind of a whole-home surge protector, our team is ready to help. We provide professional service, clean workmanship, and a dedication to safety that Sunrise families can rely on."
+      "body": "Whether you're upgrading the lighting in your Sunrise home, requiring an urgent panel replacement, or needing the peace of mind of a whole-home surge protector, our team is ready to help. We provide professional service, clean workmanship, and a dedication to safety that Sunrise families can rely on. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Sunrise. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Sunrise, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Sunrise, FL. Commercial & residential electrical services. Panel upgrades, lighting retrofits & 24/7 emergency repairs."
 }

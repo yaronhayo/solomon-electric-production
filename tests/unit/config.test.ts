@@ -14,7 +14,7 @@ describe('Site Configuration', () => {
 
   describe('Contact Information', () => {
     it('should have a valid phone number format', () => {
-      expect(configContent).toMatch(/formatted:\s*"?\(\d{3}\)\s*\d{3}-\d{4}"?/);
+      expect(configContent).toMatch(/formatted:\s*"?\(\d{3}\)(\\u00A0|\s)*\d{3}(\\u2011|-)\d{4}"?/);
     });
 
     it('should have an email address', () => {
@@ -41,18 +41,6 @@ describe('Site Configuration', () => {
   describe('License Information', () => {
     it('should have a valid Florida license number', () => {
       expect(configContent).toMatch(/number:\s*"EC\d+"/);
-    });
-  });
-
-  describe('Business Hours', () => {
-    it('should have hours defined for all days', () => {
-      expect(configContent).toMatch(/monday:/);
-      expect(configContent).toMatch(/tuesday:/);
-      expect(configContent).toMatch(/wednesday:/);
-      expect(configContent).toMatch(/thursday:/);
-      expect(configContent).toMatch(/friday:/);
-      expect(configContent).toMatch(/saturday:/);
-      expect(configContent).toMatch(/sunday:/);
     });
   });
 

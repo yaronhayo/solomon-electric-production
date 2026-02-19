@@ -1,0 +1,107 @@
+---
+/**
+ * ErrorPage Component
+ * Shared layout for 404 and 500 error pages.
+ * Provides consistent UX with emergency CTA and popular service links.
+ */
+import Container from "./ui/Container.astro";
+import Button from "./ui/Button.astro";
+import CtaButton from "./ui/CtaButton.astro";
+import { Home } from "lucide-astro";
+
+interface Props {
+    code: string;
+    title: string;
+    description: string;
+    codeSize?: string;
+}
+
+const {
+    code,
+    title,
+    description,
+    codeSize = "clamp(8rem, 20vw, 15rem)",
+} = Astro.props;
+---
+
+<section
+    class="min-h-[70vh] flex items-center bg-[var(--bg-body)] relative overflow-hidden py-24 md:py-32"
+>
+    <div class="absolute inset-0 z-0 opacity-5">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-accent)_0%,_transparent_70%)]"
+        >
+        </div>
+    </div>
+
+    <Container class="relative z-10 text-center">
+        <!-- Optional slot for icon above the code (used by 500 page) -->
+        <slot name="icon" />
+
+        <h1
+            class="font-black text-[var(--color-primary)] leading-none mb-4 font-display"
+            style={`font-size: ${codeSize};`}
+        >
+            {code}
+        </h1>
+        <h2
+            class="text-[length:var(--text-h3)] md:text-[length:var(--text-h1)] font-black text-[var(--color-primary)] uppercase mb-6 font-secondary"
+        >
+            {title}
+        </h2>
+        <p
+            class="text-[var(--clr-body)] text-[length:var(--text-body)] md:text-[length:var(--text-h5)] mx-auto mb-12 leading-relaxed max-w-4xl"
+        >
+            {description}
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <CtaButton
+                action="call"
+                variant="primary"
+                size="lg"
+                text="Emergency Service"
+                class="magnetic-cta"
+            />
+            <Button
+                href="/"
+                variant="secondary"
+                size="lg"
+                class="gap-2 magnetic-cta"
+            >
+                <Home class="w-5 h-5" />
+                Return Home
+            </Button>
+        </div>
+
+        <div class="border-t border-[var(--border-light)] pt-12">
+            <p
+                class="text-[var(--clr-muted)] font-bold mb-6 uppercase tracking-[0.2em] text-[length:var(--text-label)] font-secondary"
+            >
+                Or explore our most popular services:
+            </p>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                <a
+                    href="/services/electrical-panel-upgrade-100a-to-200a"
+                    class="text-[var(--color-primary)] hover:text-[var(--color-accent)] font-bold transition-all border-b-2 border-transparent hover:border-[var(--color-accent)] font-secondary uppercase tracking-wider text-[length:var(--text-label)]"
+                    >Panel Upgrades</a
+                >
+                <a
+                    href="/services/level-2-ev-charger-installation"
+                    class="text-[var(--color-primary)] hover:text-[var(--color-accent)] font-bold transition-all border-b-2 border-transparent hover:border-[var(--color-accent)] font-secondary uppercase tracking-wider text-[length:var(--text-label)]"
+                    >EV Charging</a
+                >
+                <a
+                    href="/services/home-standby-generator-installation"
+                    class="text-[var(--color-primary)] hover:text-[var(--color-accent)] font-bold transition-all border-b-2 border-transparent hover:border-[var(--color-accent)] font-secondary uppercase tracking-wider text-[length:var(--text-label)]"
+                    >Generators</a
+                >
+                <a
+                    href="/services/24-7-emergency-electrical-service"
+                    class="text-[var(--color-primary)] hover:text-[var(--color-accent)] font-bold transition-all border-b-2 border-transparent hover:border-[var(--color-accent)] font-secondary uppercase tracking-wider text-[length:var(--text-label)]"
+                    >24/7 Repairs</a
+                >
+            </div>
+        </div>
+    </Container>
+</section>

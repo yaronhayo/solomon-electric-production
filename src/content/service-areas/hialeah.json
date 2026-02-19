@@ -55,7 +55,7 @@
     "whole-home-surge-protection",
     "commercial-led-lighting-retrofit",
     "ceiling-fan-light-fixture-installation",
-    "gfci-outlet-installation-outdoor-pool"
+    "gfci-outlet-installation-repair"
   ],
   "stats": [
     {
@@ -63,7 +63,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -71,54 +71,55 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "\u00bfHablan espa\u00f1ol sus electricistas? Muchos de nosotros preferimos comunicarnos en espa\u00f1ol.",
-      "answer": "\u00a1Por supuesto! Varios de nuestros electricistas son hispanohablantes nativos. Hialeah es una comunidad que nos importa mucho\u2014llevamos m\u00e1s de 15 a\u00f1os sirviendo a familias en el City of Progress. Ya sea que prefiera discutir su proyecto en espa\u00f1ol o ingl\u00e9s, nos aseguraremos de que entienda completamente el trabajo, los precios y sus opciones antes de comenzar."
+      "question": "¿Hablan español sus electricistas? Muchos de nosotros preferimos comunicarnos en español.",
+      "answer": "¡Por supuesto! Varios de nuestros electricistas son hispanohablantes nativos. Hialeah es una comunidad que nos importa mucho—llevamos más de 15 años sirviendo a familias en el City of Progress. Ya sea que prefiera discutir su proyecto en español o inglés, nos aseguraremos de que entienda completamente el trabajo, los precios y sus opciones antes de comenzar."
     },
     {
-      "question": "Our Hialeah house was built in the 1950s and still has the original panel\u2014is that dangerous?",
+      "question": "Our Hialeah house was built in the 1950s and still has the original panel—is that dangerous?",
       "answer": "Potentially yes. Many Hialeah homes from the 1950s-60s have original 60-amp or 100-amp panels with fuses instead of breakers, and outdated wiring that can't safely handle modern loads. Common issues include Federal Pacific or Zinsco breakers (known fire hazards), cloth-insulated wiring (deteriorates over decades), and insufficient capacity for AC and modern appliances. We offer free safety inspections to assess your specific situation and provide honest recommendations."
     },
     {
       "question": "Do you provide electrical services for Hialeah's warehouses and industrial buildings?",
-      "answer": "Yes\u2014Hialeah's industrial district is a significant part of our commercial work. We handle 3-phase power installations, machine equipment wiring, high-bay LED lighting retrofits, sub-panel installations for new equipment, and emergency repairs that keep your operations running. We understand that warehouse downtime costs money, so we respond quickly and work efficiently to minimize disruption to your business."
+      "answer": "Yes—Hialeah's industrial district is a significant part of our commercial work. We handle 3-phase power installations, machine equipment wiring, high-bay LED lighting retrofits, sub-panel installations for new equipment, and emergency repairs that keep your operations running. We understand that warehouse downtime costs money, so we respond quickly and work efficiently to minimize disruption to your business."
     },
     {
-      "question": "My Hialeah home keeps tripping the breaker when we use the window AC and microwave together\u2014why?",
-      "answer": "This is the classic sign of an overloaded circuit, extremely common in older Hialeah homes. Houses built 40-60 years ago weren't designed for today's electrical demands. The solution is typically a panel upgrade to 200 amps combined with adding dedicated circuits for high-draw appliances. We provide honest assessments\u2014if a simple circuit addition solves your problem, we won't push you toward a full panel upgrade you don't need."
+      "question": "My Hialeah home keeps tripping the breaker when we use the window AC and microwave together—why?",
+      "answer": "This is the classic sign of an overloaded circuit, extremely common in older Hialeah homes. Houses built 40-60 years ago weren't designed for today's electrical demands. The solution is typically a panel upgrade to 200 amps combined with adding dedicated circuits for high-draw appliances. We provide honest assessments—if a simple circuit addition solves your problem, we won't push you toward a full panel upgrade you don't need."
     },
     {
       "question": "How much does a panel upgrade cost in Hialeah?",
-      "answer": "Panel upgrade costs depend on your specific situation\u2014the current panel condition, service entrance requirements, FPL coordination needs, and your home's wiring. For Hialeah homes, typical 200-amp panel upgrades range from professional standard that reflects honest work. We provide detailed written estimates before any work begins, with no hidden fees. We respect that Hialeah is a working community and price our services fairly."
+      "answer": "Panel upgrade costs depend on your specific situation—the current panel condition, service entrance requirements, FPL coordination needs, and your home's wiring. For Hialeah homes, typical 200-amp panel upgrades range from professional standard that reflects honest work. We provide detailed written estimates before any work begins, with no hidden fees. We respect that Hialeah is a working community and price our services fairly."
     },
     {
       "question": "How fast can you get to Hialeah for an electrical emergency?",
-      "answer": "Hialeah is central to our service area\u2014we respond to Hialeah emergencies faster than almost anywhere else in Miami-Dade.  For after-hours emergencies involving sparking, burning smells, or complete power loss, we allocate resources. We're familiar with all Hialeah neighborhoods from Seminola to Hialeah Heights."
+      "answer": "Hialeah is central to our service area—we respond to Hialeah emergencies faster than almost anywhere else in Miami-Dade.  For after-hours emergencies involving sparking, burning smells, or complete power loss, we allocate resources. We're familiar with all Hialeah neighborhoods from Seminola to Hialeah Heights."
     }
   ],
   "seoContent": [
     {
       "heading": "Trusted Hialeah Electricians Serving the City of Progress",
-      "body": "Hialeah is a cornerstone of the South Florida community, known for its industrious spirit and vibrant culture. Solomon Electric has been part of the Hialeah landscape for over {{YEARS_EXPERIENCE}} years, providing the reliable electrical foundation homes and businesses need to thrive. Whether you're near Westland Mall or deep in the industrial district, our team is ready to help."
+      "body": "Hialeah is a cornerstone of the South Florida community, known for its industrious spirit and vibrant culture. Solomon Electric has been part of the Hialeah landscape for over 18 years, providing the reliable electrical foundation homes and businesses need to thrive. Whether you're near Westland Mall or deep in the industrial district, our team is ready to help. Our electricians are dispatched from strategic locations across Miami-Dade County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Hialeah's Electrical Needs",
-      "body": "Hialeah homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Miami-Dade County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Hialeah's needs."
+      "heading": "Expert Electrical Solutions for Hialeah Properties",
+      "body": "Whether your Hialeah property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Miami-Dade County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Hialeah is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Hialeah Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Hialeah. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Hialeah",
+      "body": "From Seminola, Tanglewood, Hialeah Heights to Hialeah Park, our electricians provide full-service coverage throughout Hialeah. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Hialeah properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Meeting Hialeah's Diverse Electrical Needs",
-      "body": "From the charming mid-century homes in the traditional Hialeah area to the newer developments in Hialeah Heights, the electrical demands of this city are diverse. Our residential electricians specialize in panel upgrades and rewiring for older properties, while our commercial team handles the complex requirements of local warehouses and retail spaces."
+      "body": "From the charming mid-century homes in the traditional Hialeah area to the newer developments in Hialeah Heights, the electrical demands of this city are diverse. Our residential electricians specialize in panel upgrades and rewiring for older properties, while our commercial team handles the complex requirements of local warehouses and retail spaces. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Hialeah. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Hialeah, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Hialeah, FL. Panel upgrades, rewiring, commercial electrical & 24/7 emergency repairs. Serving Miami-Dade County."
 }

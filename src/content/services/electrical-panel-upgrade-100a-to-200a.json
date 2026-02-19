@@ -1,7 +1,7 @@
 {
   "name": "Electrical Panel Upgrade (100A to 200A)",
   "slug": "electrical-panel-upgrade-100a-to-200a",
-  "description": "Modern electrical demands often exceed the capacity of older residential systems. Solomon Electric specializes in upgrading 100-amp panels to 200-amp service, providing the necessary capacity for central air conditioning, electric vehicle charging, and smart home technology while complying with current Florida building and insurance standards.",
+  "description": "Is your 100-amp panel struggling to keep up with modern electrical demands? Tripping breakers, dimming lights, and an inability to add new circuits are clear signs you've outgrown your panel. Modern electrical demands often exceed the capacity of older residential systems. Solomon Electric's licensed electricians specialize in upgrading 100-amp panels to 200-amp service, providing the necessary capacity for central air conditioning, electric vehicle charging, and smart home technology while complying with current Florida building and insurance standards. Licensed FL electricians serving {cityName} with code-compliant upgrades, FPL coordination, and expedited permit processing.",
   "shortDescription": "Panel modernization to 200-amp capacity",
   "icon": "CircuitBoard",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,7 +15,7 @@
     "Provision of electrical certification for insurance verification",
     "Adherence to National Electrical Code (NEC) standards"
   ],
-  "warningSignsHeading": "Indicators for Recommended Panel Modernization",
+  "warningSignsHeading": "How to Know You Need Professional 200 Amp Panel Upgrade",
   "warningSignsSubheading": "Older electrical infrastructure in Florida properties can lead to operational limitations and safety risks. These indicators suggest the need for a system evaluation.",
   "problems": [
     {
@@ -49,7 +49,7 @@
       "icon": "Home"
     }
   ],
-  "processHeading": "Modernization and Upgrade Procedure",
+  "processHeading": "The Professional 200 Amp Panel Upgrade Process",
   "process": [
     {
       "step": 1,
@@ -77,7 +77,7 @@
       "description": "The property owner is provided with the final permit documents and safety certifications required for property records and insurance agents."
     }
   ],
-  "benefitsHeading": "Operational Benefits of Panel Modernization",
+  "benefitsHeading": "How 200 Amp Panel Upgrade Improves Your Property",
   "benefits": [
     {
       "title": "Regulatory Compliance",
@@ -138,6 +138,18 @@
     {
       "question": "Is surge protection included in a panel upgrade?",
       "answer": "Current Florida building codes often require the integration of surge protection during a panel modernization to safeguard the electrical system from internal and external voltage spikes."
+    },
+    {
+      "question": "How long does a panel upgrade from 100A to 200A take?",
+      "answer": "Most residential panel upgrades are completed in one day, typically 6 to 8 hours. This includes coordination with FPL for the meter disconnect and reconnect, installing the new panel, and transferring all circuits."
+    },
+    {
+      "question": "Do I need a permit for a panel upgrade in {cityName}?",
+      "answer": "Yes. Florida requires electrical permits for panel upgrades. We handle the entire permit process—application, scheduling the inspection, and ensuring the installation passes on the first visit."
+    },
+    {
+      "question": "Will my power be out during the entire upgrade?",
+      "answer": "Power is typically off for 4 to 6 hours during the main installation phase. We coordinate with FPL to minimize downtime and can arrange temporary power if needed for medical equipment or other critical loads."
     }
   ],
   "relatedServices": [
@@ -148,17 +160,38 @@
   ],
   "seoContent": [
     {
-      "heading": "Electrical Panel Modernization in Miami-Dade & Broward",
-      "body": "Expert electrical panel upgrades are provided throughout South Florida, specializing in the conversion of older residential infrastructure to modern 200-amp service standards. Our technicians manage the requirements for municipal permitting and utility coordination to ensure a compliant modernization."
+      "heading": "Modern 200-Amp Capacity for Your {cityName} Property",
+      "body": "Expert electrical panel upgrades are provided throughout South Florida, specializing in the conversion of older residential infrastructure to modern 200-amp service standards. Our technicians manage the requirements for municipal permitting and utility coordination to ensure a compliant modernization. Our licensed electricians perform a complete load calculation before any panel work, ensuring your new panel meets current NEC requirements and has room for future expansion. We use copper bus bars, properly torqued connections, and AFCI/GFCI breakers where required by Florida Building Code."
     },
     {
-      "heading": "Replacement of Obsolete Residential Panels",
-      "body": "Many properties in Miami and surrounding areas still utilize outdated electrical panels that are recognized as liabilities by safety organizations and insurance providers. Professional replacement with modern equipment is used to bring properties into compliance with the latest safety standards."
+      "heading": "Solving Safety Hazards in {cityName}'s Older Electrical Panels",
+      "body": "Many properties in {cityName} and surrounding areas still utilize outdated electrical panels that are recognized as liabilities by safety organizations and insurance providers. Professional replacement with modern equipment is used to bring properties into compliance with the latest safety standards. South Florida's heat and humidity accelerate corrosion inside electrical panels. We inspect for oxidized bus bars, loose connections, and thermal damage that compromise safety. Every panel we install includes proper weather sealing rated for coastal environments."
+    },
+    {
+      "heading": "Why {cityName} Homes Require 200-Amp Electrical Panels Today",
+      "body": "Most {cityName} homes built before 2000 have 100-amp panels that weren't designed for today's electrical demands. EV chargers, modern HVAC systems, pool equipment, and home offices can easily overload older panels. Upgrading to 200 amps provides the capacity your home needs safely and prevents dangerous overloading. Insurance companies increasingly require panel upgrades for policy renewals. Our electricians provide documented before-and-after reports that satisfy insurance requirements, and we coordinate directly with your insurer when needed."
+    },
+    {
+      "heading": "Seamless {cityName} Panel Upgrades: What to Expect",
+      "body": "A professional panel upgrade involves more than swapping a box. Our licensed electricians assess your current wiring, calculate total load requirements, coordinate FPL meter services, install a modern breaker panel with room for expansion, and ensure everything passes county inspection the first time. Modern electrical demands—EV chargers, home offices, pool equipment, smart home systems—require more capacity than panels installed even 15 years ago. We future-proof your installation with 20-30% additional capacity beyond your current needs."
     }
   ],
   "relatedBlogPosts": [
     "rewiring-historic-miami-homes",
     "electrical-panel-modernization-upgrades"
   ],
-  "imageAlt": "Electrical Panel Upgrade (100A to 200A) service provided by licensed electricians in South Florida"
+  "imageAlt": "Electrical Panel Upgrade (100A to 200A) service provided by licensed electricians in South Florida",
+  "shortName": "Panel Upgrade 100A to 200A",
+  "metaDescription": "Upgrade your electrical panel from 100A to 200A in Miami. Handle modern electrical loads safely. Licensed, permits included, free estimates.",
+  "metaTitle": "200A Panel Upgrade Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Most 200-amp panel upgrades complete in 6-8 hours with a single visit",
+    "priceRange": "Typically $2,200–$4,800 depending on existing wiring and meter base requirements",
+    "commonBrands": [
+      "Square D QO",
+      "Eaton CH",
+      "Siemens PL/ES"
+    ],
+    "permitNote": "Requires {county} County electrical permit, FPL meter disconnect coordination, and final inspection"
+  }
 }

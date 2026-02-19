@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import Button from "./ui/Button.astro";
 import Container from "./ui/Container.astro";
 import { HelpCircle } from "lucide-astro";
-import { SITE_CONFIG } from "../config/site";
 import { replacePlaceholder } from "../utils/content";
 
 interface FAQData {
@@ -51,24 +50,25 @@ if (propFaqs && propFaqs.length > 0) {
 <section class="py-20 md:py-32 bg-light relative overflow-hidden">
     <!-- Decorative Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[120px] rounded-full"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[120px] rounded-[var(--radius-full)]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-[var(--radius-full)]"></div>
     </div>
+
 
     <Container class="relative z-10">
         <!-- Section Header -->
         <div class="text-center mb-16">
             <p
-                class="text-primary font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary"
+                class="text-primary font-bold text-[length:var(--text-body)] tracking-[0.2em] mb-4 uppercase font-secondary"
             >
                 Common Questions
             </p>
             <h2
-                class="text-4xl md:text-6xl font-bold text-primary mb-6 font-display"
+                class="text-[length:var(--text-h1)] md:text-[length:var(--text-display)] font-bold text-primary mb-6 font-display"
             >
                 Frequently Asked <span class="text-primary">Questions</span>
             </h2>
-            <p class="text-[var(--text-body)] text-lg font-medium">
+            <p class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium">
                 Get answers to the most common questions about our electrical
                 services and availability.
             </p>
@@ -78,31 +78,39 @@ if (propFaqs && propFaqs.length > 0) {
         <div class="space-y-4" style="max-width: var(--container-content, 900px); margin: 0 auto;">
             {
                 displayFaqs.slice(0, 6).map((faq, index) => (
-                    <div class="faq-item group relative glass-bg glass-border transition-all duration-300 hover:shadow-2xl hover:border-accent/40 rounded-2xl overflow-hidden">
+                    <div class="faq-item group relative glass-bg glass-border transition-all duration-300 hover:shadow-[var(--shadow-xl)] hover:border-accent/40 rounded-[var(--radius-2xl)] overflow-hidden">
+
                         <!-- Subtle glow on hover -->
                         <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         
                         <button
-                            class="faq-question w-full text-left p-5 md:p-6 flex items-center gap-4 relative z-10"
+                            type="button"
+                            class="faq-question w-full text-left p-5 md:p-6 flex items-center gap-4 relative z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
                             data-index={index}
                             aria-expanded="false"
+                            aria-controls={`faq-answer-${index}`}
+                            id={`faq-question-${index}`}
                         >
-                            <span class="flex-1 font-bold text-primary group-hover:text-accent transition-colors duration-300 font-display uppercase tracking-tight" style="font-size: clamp(0.95rem, 1.25vw, 1.1rem);">
+                            <span class="flex-1 font-bold text-primary group-hover:text-accent transition-colors duration-300 font-display uppercase tracking-tight" style="font-size: var(--text-body-sm);">
                                 {faq.data.question}
                             </span>
                             
                             <!-- Lightning bolt plus icon -->
-                            <div class="faq-icon flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary group-hover:bg-accent transition-all duration-300 relative rounded-lg">
-                                <span class="text-white font-bold text-xl leading-none transition-transform duration-300">+</span>
-                            </div>
+                            <span class="faq-icon flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary group-hover:bg-accent transition-all duration-300 relative rounded-[var(--radius-lg)]">
+
+                                <span class="text-white font-bold text-[length:var(--text-h5)] leading-none transition-transform duration-300">+</span>
+                            </span>
                         </button>
                         
                         <div
+                            id={`faq-answer-${index}`}
                             class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
                             style="max-height: 0;"
                             data-index={index}
+                            role="region"
+                            aria-labelledby={`faq-question-${index}`}
                         >
-                            <div class="px-5 md:px-8 pb-5 md:pb-8 text-body leading-relaxed border-t border-accent/10 pt-4" style="font-size: clamp(0.9rem, 1.1vw, 1rem);">
+                            <div class="px-5 md:px-8 pb-5 md:pb-8 text-body leading-relaxed border-t border-accent/10 pt-4" style="font-size: var(--text-body-sm);">
                                 {faq.data.answer}
                             </div>
                         </div>
@@ -116,7 +124,7 @@ if (propFaqs && propFaqs.length > 0) {
             <Button
                 href="/faq"
                 variant="primary"
-                class="px-12 py-5 text-lg font-black flex items-center gap-2"
+                class="px-12 py-5 text-[length:var(--text-body)] font-black flex items-center gap-2"
             >
                 <HelpCircle class="w-5 h-5" />
                 View All FAQs

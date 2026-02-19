@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/heroes/faq.webp";
+import { IMAGES } from "../config/images";
 import PageHero from "../components/PageHero.astro";
 import Button from "../components/ui/Button.astro";
 import { SITE_CONFIG } from "../config/site";
@@ -376,6 +376,7 @@ const faqs = [
 const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": `${SITE_CONFIG.seo.siteUrl}/faq/#faqpage`,
     mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -384,6 +385,9 @@ const faqSchema = {
             text: faq.answer,
         },
     })),
+    publisher: {
+        "@id": `${SITE_CONFIG.seo.siteUrl}/#organization`,
+    },
 };
 
 const breadcrumbSchema = {
@@ -407,9 +411,9 @@ const breadcrumbSchema = {
 ---
 
 <Layout
-    title="Electrician FAQ Miami | Common Questions Answered | Solomon Electric"
-    description="Get answers to 72+ common electrical questions. Panel upgrades, EV chargers, emergency repairs, costs & more. Licensed Miami electrician answers your questions."
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
+    title="Electrician FAQ Miami | Questions Answered | Solomon"
+    description="Answers to 72+ common electrical questions. Panel upgrades, EV chargers, emergency repairs, costs & more. Licensed Miami electricians."
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
     ogImageAlt="Electrician FAQ - Common Electrical Questions Answered by Solomon Electric Miami"
 >
     <!-- FAQPage Schema Markup -->
@@ -424,10 +428,10 @@ const breadcrumbSchema = {
 
     <!-- Hero -->
     <PageHero
-        title="Miami Electrician FAQ<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>72+ Questions Answered</span>"
+        title="Miami Electrician FAQ<br><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>72+ Questions Answered</span>"
         subtitle="Panel Upgrades • EV Chargers • Emergency Repairs • Costs"
         description="How much does a panel upgrade cost? Do I need a permit for an EV charger? When should I call an emergency electrician? Get answers to common electrical questions from Miami's licensed electricians—so you can make informed decisions about your home's safety."
-        image={heroImage}
+        image={IMAGES.heroes.faq.src}
     />
 
     <!-- SEO Intro Section -->
@@ -498,9 +502,11 @@ const breadcrumbSchema = {
                             <div class="faq-glow"></div>
                             
                             <button
+                                id={`faq-question-${index}`}
                                 class="faq-question"
                                 data-index={index}
                                 aria-expanded="false"
+                                aria-controls={`faq-answer-${index}`}
                             >
                                 <span class="faq-question-text">
                                     {faq.question}
@@ -518,7 +524,10 @@ const breadcrumbSchema = {
                             </button>
                             
                             <div
+                                id={`faq-answer-${index}`}
                                 class="faq-answer"
+                                role="region"
+                                aria-labelledby={`faq-question-${index}`}
                                 style="max-height: 0;"
                                 data-index={index}
                             >
@@ -553,7 +562,7 @@ const breadcrumbSchema = {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="cta-bolt">
                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                 </svg>
-                <h2 id="faq-contact-heading">Still Have Questions?</h2>
+                <h2 id="faq-contact-heading">Still Have Electrical Questions?</h2>
                 <p>
                     Contact our team for personalized answers to your electrical questions.
                     Our licensed electricians are here to help with any concerns.
@@ -570,7 +579,7 @@ const breadcrumbSchema = {
                         class="gap-2"
                     >
                         <Phone class="w-5 h-5" />
-                        Call Now</Button
+                        Call&nbsp;Now</Button
                     >
                 </div>
             </div>
@@ -666,7 +675,7 @@ const breadcrumbSchema = {
     /* ===== SEO Intro Section ===== */
     .seo-intro {
         background: var(--bg-body);
-        padding: clamp(2.5rem, 5vw, 4rem) 0;
+        padding: clamp(1.5rem, 5vw, 4rem) 0;
     }
 
     .seo-intro-content {
@@ -686,25 +695,13 @@ const breadcrumbSchema = {
     }
 
     .seo-intro-title {
-        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-family: var(--font-display);
+        font-size: var(--text-h3);
         font-weight: 800;
         color: var(--color-primary);
         margin-bottom: clamp(1rem, 2vw, 1.5rem);
         text-transform: uppercase;
         line-height: 1.2;
-    }
-
-    .seo-intro-description {
-        font-size: clamp(1rem, 1.25vw, 1.125rem);
-        color: var(--text-body);
-        line-height: 1.8;
-        margin-bottom: 1rem;
-    }
-
-    .seo-intro-secondary {
-        font-size: clamp(0.95rem, 1.1vw, 1rem);
-        color: var(--text-muted);
-        line-height: 1.7;
     }
 
     .seo-intro-stats {
@@ -745,14 +742,14 @@ const breadcrumbSchema = {
     }
 
     .intro-stat-value {
-        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-size: var(--text-h4);
         font-weight: 800;
         color: var(--color-primary);
         line-height: 1;
     }
 
     .intro-stat-label {
-        font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+        font-size: var(--text-caption);
         color: var(--text-muted);
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -764,7 +761,7 @@ const breadcrumbSchema = {
         position: relative;
         overflow: hidden;
         background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-body) 100%);
-        padding: clamp(3rem, 6vw, 5rem) 0;
+        padding: clamp(2rem, 6vw, 5rem) 0;
     }
 
     .faq-bg-decorations {
@@ -780,7 +777,7 @@ const breadcrumbSchema = {
         right: -80px;
         width: 320px;
         height: 320px;
-        background: linear-gradient(135deg, rgba(20, 211, 227, 0.08) 0%, transparent 70%);
+        background: linear-gradient(135deg, rgba(var(--color-accent-rgb), 0.08) 0%, transparent 70%);
         transform: rotate(45deg);
     }
 
@@ -803,24 +800,15 @@ const breadcrumbSchema = {
     .section-label {
         display: block;
         color: var(--color-accent);
-        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-size: var(--text-label);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
     }
 
-    .section-title {
-        font-size: clamp(1.75rem, 4vw, 2.75rem);
-        font-weight: 800;
-        color: var(--color-primary);
-        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
-        text-transform: uppercase;
-        line-height: 1.15;
-    }
-
     .section-description {
-        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        font-size: var(--text-body-sm);
         color: var(--text-body);
         max-width: 800px;
         margin: 0 auto;
@@ -854,7 +842,7 @@ const breadcrumbSchema = {
     }
 
     .faq-item.is-open {
-        box-shadow: var(--shadow-xl), 0 0 0 2px rgba(20, 211, 227, 0.3);
+        box-shadow: var(--shadow-xl), 0 0 0 2px rgba(var(--color-accent-rgb), 0.3);
     }
 
     /* Accent Stripe */
@@ -877,7 +865,7 @@ const breadcrumbSchema = {
     .faq-glow {
         position: absolute;
         inset: 0;
-        background: linear-gradient(90deg, rgba(20, 211, 227, 0.04) 0%, transparent 50%);
+        background: linear-gradient(90deg, rgba(var(--color-accent-rgb), 0.04) 0%, transparent 50%);
         opacity: 0;
         transition: opacity var(--transition-base);
         pointer-events: none;
@@ -906,7 +894,7 @@ const breadcrumbSchema = {
 
     .faq-question-text {
         flex: 1;
-        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        font-size: var(--text-body-sm);
         font-weight: 700;
         color: var(--color-primary);
         font-family: var(--font-display);
@@ -929,7 +917,7 @@ const breadcrumbSchema = {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, var(--color-primary) 0%, #0a3560 100%);
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
         border-radius: var(--radius-lg);
         position: relative;
         transition: 
@@ -982,7 +970,7 @@ const breadcrumbSchema = {
         padding: 0 clamp(1.25rem, 2.5vw, 1.75rem) clamp(1rem, 2vw, 1.5rem);
         padding-left: clamp(1.5rem, 3vw, 2rem);
         color: var(--text-body);
-        font-size: clamp(0.9rem, 1.1vw, 1rem);
+        font-size: var(--text-body-sm);
         line-height: 1.7;
         border-top: 1px solid var(--border-light);
         margin-top: -0.25rem;
@@ -999,10 +987,10 @@ const breadcrumbSchema = {
         display: inline-flex;
         align-items: center;
         gap: 0.75rem;
-        background: linear-gradient(135deg, var(--color-primary) 0%, #0a3560 100%);
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
         color: white;
         font-family: var(--font-display);
-        font-size: clamp(0.875rem, 1vw, 1rem);
+        font-size: var(--text-nav);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -1050,12 +1038,12 @@ const breadcrumbSchema = {
         height: clamp(2.5rem, 5vw, 3rem);
         color: var(--color-accent);
         margin: 0 auto clamp(1rem, 2vw, 1.5rem);
-        animation: pulse 2s ease-in-out infinite;
+        animation: pulse-scale 2s ease-in-out infinite;
     }
 
     .final-cta-content h2 {
         color: var(--color-primary);
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-size: var(--text-h2);
         font-weight: 800;
         text-transform: uppercase;
         margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
@@ -1063,7 +1051,7 @@ const breadcrumbSchema = {
 
     .final-cta-content p {
         color: var(--text-body);
-        font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+        font-size: var(--text-body-sm);
         line-height: 1.6;
         margin-bottom: clamp(1.5rem, 3vw, 2rem);
     }
@@ -1076,27 +1064,9 @@ const breadcrumbSchema = {
     }
 
     /* ===== Animations ===== */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
-    @keyframes pulse {
-        0%, 100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        50% {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
-    }
+
+
 
     /* ===== Hidden State ===== */
     .hidden {

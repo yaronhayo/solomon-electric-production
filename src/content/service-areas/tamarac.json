@@ -54,7 +54,7 @@
     "recessed-lighting-installation",
     "24-7-emergency-electrical-service",
     "ceiling-fan-light-fixture-installation",
-    "smart-home-automation"
+    "smart-switch-home-automation"
   ],
   "stats": [
     {
@@ -62,7 +62,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -70,25 +70,25 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "We live in Kings Point Tamarac\u2014do you regularly work in our community?",
-      "answer": "Yes, Kings Point Tamarac is one of our most-served communities. We understand the specific requirements: coordinating with building management, respecting community rules, and working within the typical schedules of 55+ residents. Many Kings Point residents have recommended us to their neighbors\u2014we take that trust seriously and treat every home with care and respect."
+      "question": "We live in Kings Point Tamarac—do you regularly work in our community?",
+      "answer": "Yes, Kings Point Tamarac is one of our most-served communities. We understand the specific requirements: coordinating with building management, respecting community rules, and working within the typical schedules of 55+ residents. Many Kings Point residents have recommended us to their neighbors—we take that trust seriously and treat every home with care and respect."
     },
     {
-      "question": "My Tamarac home was built in the 1970s\u2014what electrical problems are common?",
+      "question": "My Tamarac home was built in the 1970s—what electrical problems are common?",
       "answer": "Tamarac's 1970s-80s housing often has 100-amp or 150-amp panels that are now 40-50 years old. Common issues include Federal Pacific or Zinsco panels (known fire hazards), aluminum wiring connections that need remediation, GFCI outlets that have never been updated, and capacity that's insufficient for modern AC systems and appliances. We provide thorough inspections and honest recommendations."
     },
     {
       "question": "Do you offer evening or weekend appointments for Tamarac residents who still work?",
-      "answer": "Yes, we understand that not everyone is available during traditional business hours. We offer flexible scheduling for Tamarac residents, including early morning, evening, and weekend appointments when needed. We also work efficiently to minimize disruption\u2014most panel upgrades are completed in a single day."
+      "answer": "Yes, we understand that not everyone is available during traditional business hours. We offer flexible scheduling for Tamarac residents, including early morning, evening, and weekend appointments when needed. We also work efficiently to minimize disruption—most panel upgrades are completed in a single day."
     },
     {
-      "question": "Our Mainlands townhouse has very few outlets\u2014can you add more?",
+      "question": "Our Mainlands townhouse has very few outlets—can you add more?",
       "answer": "Definitely. Older Tamarac construction typically has far fewer outlets than modern homes. Adding outlets is relatively straightforward and much safer than relying on extension cords and power strips, which are fire hazards. We can add outlets throughout your home, including dedicated circuits for high-draw items like space heaters or window units."
     },
     {
@@ -102,22 +102,23 @@
   ],
   "seoContent": [
     {
-      "heading": "Trusted Tamarac Electricians \u2013 Serving Our Community Since 2003",
-      "body": "Tamarac is a city that truly lives up to its motto, 'The City For Your Life.' It's a place where families grow and retirees thrive. Solomon Electric is proud to have been a part of the Tamarac story for over {{YEARS_EXPERIENCE}} years, providing the professional electrical support that keeps our city running smoothly."
+      "heading": "Trusted Tamarac Electricians – Serving Our Community Since 2003",
+      "body": "Tamarac is a city that truly lives up to its motto, 'The City For Your Life.' It's a place where families grow and retirees thrive. Solomon Electric is proud to have been a part of the Tamarac story for over 18 years, providing the professional electrical support that keeps our city running smoothly. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Tamarac's Electrical Needs",
-      "body": "Tamarac homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Tamarac's needs."
+      "heading": "Expert Electrical Solutions for Tamarac Properties",
+      "body": "Whether your Tamarac property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Tamarac is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Tamarac Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Tamarac. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Tamarac",
+      "body": "From Kings Point Tamarac, Woodmont, Sabal Palm to Woodlands, our electricians provide full-service coverage throughout Tamarac. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Tamarac properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Safe & Professional Electrical Solutions for Tamarac Residents",
-      "body": "From updating panels in the Mainlands to installing modern lighting in Woodmont, our team of licensed electricians is dedicated to quality. We offer professional service, clean workmanship, and a dedication to safety that Tamarac families have relied on for generations."
+      "body": "From updating panels in the Mainlands to installing modern lighting in Woodmont, our team of licensed electricians is dedicated to quality. We offer professional service, clean workmanship, and a dedication to safety that Tamarac families have relied on for generations. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Tamarac. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Tamarac, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Tamarac, FL. Safety inspections, panel upgrades, outlet installations & 24/7 emergency repairs. Broward County."
 }

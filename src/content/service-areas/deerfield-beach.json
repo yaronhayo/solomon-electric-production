@@ -62,7 +62,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -70,18 +70,18 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
-      "question": "We live in Century Village Deerfield\u2014do you understand our specific electrical needs?",
+      "question": "We live in Century Village Deerfield—do you understand our specific electrical needs?",
       "answer": "Absolutely. Century Village is one of our most-served communities. We understand the condo association coordination required, the fixed-income budget considerations, and the specific electrical challenges of these buildings. We're patient, explain everything clearly, and provide honest service standards with no surprises. Many Century Village residents call us specifically because their neighbors recommend us."
     },
     {
       "question": "Why do outdoor electrical fixtures fail faster on Deerfield Beach oceanfront properties?",
-      "answer": "Properties east of A1A face constant salt spray that aggressively corrodes standard electrical hardware. We see outdoor outlets, light fixtures, and panel enclosures fail in 3-5 years that would last {{YEARS_EXPERIENCE}}+ years inland. For Deerfield Beach oceanfront, we exclusively use marine-grade stainless hardware and sealed enclosures designed for the harshest coastal conditions."
+      "answer": "Properties east of A1A face constant salt spray that aggressively corrodes standard electrical hardware. We see outdoor outlets, light fixtures, and panel enclosures fail in 3-5 years that would last 18+ years inland. For Deerfield Beach oceanfront, we exclusively use marine-grade stainless hardware and sealed enclosures designed for the harshest coastal conditions."
     },
     {
       "question": "Can you install electrical for our Hillsboro Mile estate?",
@@ -92,32 +92,33 @@
       "answer": "Yes, we provide commercial electrical services throughout Deerfield Beach's business districts including The Cove, Hillsboro Boulevard, and the industrial areas. Services include tenant buildouts, retail lighting, restaurant electrical, and 24/7 emergency response for businesses that can't afford extended outages."
     },
     {
-      "question": "Our 1970s Deerfield home has a fuse box\u2014is that a problem?",
+      "question": "Our 1970s Deerfield home has a fuse box—is that a problem?",
       "answer": "Fuse boxes were phased out decades ago for good reason. They're less safe than modern breaker panels, offer no GFCI or AFCI protection, and can't handle the electrical loads of modern homes. More practically, insurance companies often require panel upgrades before issuing policies on homes with fuse boxes. Upgrading to a modern 200-amp panel is one of the best investments you can make in your Deerfield home."
     },
     {
       "question": "How quickly can you respond to emergencies in Deerfield Beach?",
-      "answer": "We respond quickly to all Deerfield Beach neighborhoods\u2014The Cove, Deer Creek, Century Village, and waterfront properties.  "
+      "answer": "We respond quickly to all Deerfield Beach neighborhoods—The Cove, Deer Creek, Century Village, and waterfront properties.  "
     }
   ],
   "seoContent": [
     {
       "heading": "Deerfield Beach's Trusted Local Electricians",
-      "body": "Deerfield Beach is a city of incredible variety, from its pristine shores to its bustling corporate centers. It's a place where tradition meets progress, and Solomon Electric has been there since {{FOUNDED_YEAR}}, providing the reliable electrical foundation Deerfield homes and businesses need to flourish."
+      "body": "Deerfield Beach is a city of incredible variety, from its pristine shores to its bustling corporate centers. It's a place where tradition meets progress, and Solomon Electric has been there since 2008, providing the reliable electrical foundation Deerfield homes and businesses need to flourish. Our electricians are dispatched from strategic locations across Broward County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Deerfield Beach's Electrical Needs",
-      "body": "Deerfield Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Broward County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Deerfield Beach's needs."
+      "heading": "Expert Electrical Solutions for Deerfield Beach Properties",
+      "body": "Whether your Deerfield Beach property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Broward County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Deerfield Beach is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Deerfield Beach Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Deerfield Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Deerfield Beach",
+      "body": "From The Cove, Deer Creek, Loch Lomond to Century Village Deerfield, our electricians provide full-service coverage throughout Deerfield Beach. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Deerfield Beach properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Serving Every Corner of Deerfield Beach with Excellence",
-      "body": "Whether you're finishing a remodel in Deer Creek, upgrading the lighting at The Cove, or needing urgent help at a local industrial property, Solomon Electric is your first choice. We bring {{YEARS_EXPERIENCE}} years of licensed experience and a commitment to quality that our Deerfield neighbors trust."
+      "body": "Whether you're finishing a remodel in Deer Creek, upgrading the lighting at The Cove, or needing urgent help at a local industrial property, Solomon Electric is your first choice. We bring 18 years of licensed experience and a commitment to quality that our Deerfield neighbors trust. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Deerfield Beach. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Deerfield Beach, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Deerfield Beach, FL. Safety inspections, panel upgrades, lighting & 24/7 emergency repairs. Serving Broward County."
 }

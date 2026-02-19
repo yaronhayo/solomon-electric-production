@@ -1,7 +1,7 @@
 {
   "name": "Smart Thermostat Installation",
   "slug": "smart-thermostat-installation",
-  "description": "Take control of your South Florida cooling costs with professional smart thermostat installation. Smart thermostats like Nest, Ecobee, and Honeywell learn your schedule, adjust automatically, and let you control temperature from anywhere. Solomon Electric ensures proper wiring\u2014including the common wire (C-wire) most smart thermostats need\u2014and complete app setup.",
+  "description": "Manual thermostats waste energy when you're away and make you uncomfortable when you're home. Smart thermostats learn your schedule, adjust automatically, and save the average household 10-15% on HVAC costs. Take control of your South Florida cooling costs with professional smart thermostat installation. Smart thermostats like Nest, Ecobee, and Honeywell learn your schedule, adjust automatically, and let you control temperature from anywhere. Solomon Electric's licensed team ensures proper wiring—including the common wire (C-wire) most smart thermostats need—and complete app setup. Licensed FL electricians installing and configuring smart thermostats throughout {cityName}.",
   "shortDescription": "Connected temperature control",
   "icon": "Home",
   "image": "../../assets/images/services/lighting.webp",
@@ -15,7 +15,7 @@
     "Voice assistant integration",
     "Energy usage monitoring setup"
   ],
-  "warningSignsHeading": "Why Upgrade to a Smart Thermostat?",
+  "warningSignsHeading": "Signs You May Need Smart Thermostat Installation",
   "warningSignsSubheading": "In Florida's cooling-intensive climate, smart thermostats offer real savings and convenience.",
   "problems": [
     {
@@ -25,7 +25,7 @@
     },
     {
       "title": "Coming Home to a Hot House",
-      "description": "Forget to adjust the thermostat before leaving? Smart thermostats learn your schedule and cool down before you arrive\u2014or control them from your phone.",
+      "description": "Forget to adjust the thermostat before leaving? Smart thermostats learn your schedule and cool down before you arrive—or control them from your phone.",
       "icon": "Home"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "Shield"
     }
   ],
-  "processHeading": "Our Smart Thermostat Installation Process",
+  "processHeading": "How Our Smart Thermostat Installation Process Works",
   "process": [
     {
       "step": 1,
@@ -77,7 +77,7 @@
       "description": "If you use Alexa, Google Home, or Apple HomeKit, we link your thermostat for voice control and smart home integration."
     }
   ],
-  "benefitsHeading": "Benefits of Smart Thermostats",
+  "benefitsHeading": "Why Professional Smart Thermostat Installation Matters",
   "benefits": [
     {
       "title": "Energy Savings",
@@ -110,7 +110,7 @@
       "label": "Thermostats Installed"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -161,21 +161,37 @@
   "seoContent": [
     {
       "heading": "Smart Thermostat Installation in Miami & South Florida",
-      "body": "Take control of your Florida cooling costs with professional smart thermostat installation from Solomon Electric. We install Nest, Ecobee, Honeywell, and all major brands, ensuring proper wiring including C-wire installation when needed. Complete app setup and voice assistant integration means your smart thermostat works perfectly from day one."
+      "body": "Take control of your Florida cooling costs with professional smart thermostat installation from Solomon Electric. We install Nest, Ecobee, Honeywell, and all major brands, ensuring proper wiring including C-wire installation when needed. Complete app setup and voice assistant integration means your smart thermostat works perfectly from day one. We design lighting layouts that balance aesthetics, function, and energy efficiency. For recessed lighting, we calculate proper spacing and placement to eliminate shadows and dark spots while avoiding over-lighting that wastes energy."
     },
     {
-      "heading": "C-Wire Installation for Smart Thermostats",
-      "body": "Many older homes lack the common wire (C-wire) that powers most smart thermostats. We can run a C-wire from your air handler to the thermostat location, install a C-wire adapter, or recommend thermostats that work without C-wires. Professional installation solves the #1 DIY smart thermostat challenge."
+      "heading": "C-Wire Installation for Smart Thermostats in Miami Homes",
+      "body": "Many older homes lack the common wire (C-wire) that powers most smart thermostats. We can run a C-wire from your air handler to the thermostat location, install a C-wire adapter, or recommend thermostats that work without C-wires. Professional installation solves the #1 DIY smart thermostat challenge. South Florida's intense sunlight creates specific indoor lighting challenges—high contrast between sun-drenched windows and interior spaces. We design lighting to complement natural light patterns, using dimmers and zones for all-day comfort."
     },
     {
       "heading": "Energy Savings in Florida's Climate",
-      "body": "With AC running 8+ months per year, Florida homeowners see significant returns from smart thermostat efficiency. Learning schedules, remote control, and optimized operation typically reduce HVAC energy use by 10-15%\u2014meaningful savings that add up over Florida's long cooling season."
+      "body": "With AC running 8+ months per year, Florida homeowners see significant returns from smart thermostat efficiency. Learning schedules, remote control, and optimized operation typically reduce HVAC energy use by 10-15%—meaningful savings that add up over Florida's long cooling season. Modern LED lighting typically pays for itself within 1-2 years through energy savings. We calculate your specific ROI based on current fixtures, usage patterns, and FPL rates so you can make an informed decision."
     },
     {
       "heading": "Expert Installation Throughout South Florida",
-      "body": "Solomon Electric installs smart thermostats throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-thermostat installations to multi-zone smart home integration, we deliver professional installation with complete setup and training."
+      "body": "Solomon Electric installs smart thermostats throughout {cityName}, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. From single-thermostat installations to multi-zone smart home integration, we deliver professional installation with complete setup and training. Smart lighting systems connect to your existing WiFi network and integrate with voice assistants like Alexa and Google Home. We configure scenes, schedules, and automations during installation so your system is ready to use immediately."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Smart Thermostat Installation service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "intelligent-sensor-security-lighting-systems"
+  ],
+  "imageAlt": "Smart Thermostat Installation service provided by licensed electricians in South Florida",
+  "shortName": "Smart Thermostat Install",
+  "metaDescription": "Smart thermostat installation in Miami. Nest, Ecobee & Honeywell setup with proper wiring. Licensed electrician, save on energy bills.",
+  "metaTitle": "Smart Thermostat Install Miami | Solomon",
+  "localSignals": {
+    "typicalTimeline": "Smart thermostat installation typically completes in 1-2 hours",
+    "priceRange": "Smart thermostat installation ranges from $200–$450 including the device",
+    "commonBrands": [
+      "Nest",
+      "ecobee",
+      "Honeywell T-Series",
+      "Emerson Sensi"
+    ],
+    "permitNote": "Smart thermostat installations typically don't require permits unless HVAC wiring modifications are needed"
+  }
 }

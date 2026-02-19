@@ -7,9 +7,13 @@ import FAQAccordion from "../../components/FAQAccordion.astro";
 import ReviewCarousel from "../../components/ReviewCarousel.astro";
 import CityMap from "../../components/CityMap.astro";
 import { SITE_CONFIG } from "../../config/site";
-import { ArrowRight } from "lucide-astro";
+import { ArrowRight, Zap, MapPin, Plug } from "lucide-astro";
 import { getCollection } from "astro:content";
-import { replacePlaceholder } from "../../utils/content";
+import { replacePlaceholder, highlightKeywords } from "../../utils/content";
+import {
+    generateProblemCentricH2,
+    CITY_CHALLENGES,
+} from "../../utils/service-location-generator";
 import { IMAGES } from "../../config/images";
 const heroImage = IMAGES.heroes.serviceAreas;
 const allServices = await getCollection("services");
@@ -37,12 +41,15 @@ export async function getStaticPaths() {
 
 const { area } = Astro.props;
 const cityData = area.data;
+const cityKeywords = CITY_CHALLENGES[cityData.slug] || [];
 
 // SEO - Enhanced for local search
-const title = `Electrician ${cityData.name} FL | 24/7 Licensed Service | Solomon Electric`;
-const description = replacePlaceholder(
-    `Need an electrician in ${cityData.name}? Solomon Electric offers 24/7 emergency repairs, panel upgrades, EV charger installation. Licensed #${SITE_CONFIG.credentials.license.number}. Call ${SITE_CONFIG.contact.phone.formatted}!`,
-);
+const title = `Electrician in ${cityData.name}, FL | 24/7 Licensed Service | Solomon Electric`;
+const description =
+    cityData.metaDescription ||
+    replacePlaceholder(
+        `Need an electrician in ${cityData.name}? Solomon Electric offers 24/7 emergency repairs, panel upgrades, EV charger installation. Licensed #${SITE_CONFIG.credentials.license.number}. Call ${SITE_CONFIG.contact.phone.formatted}!`,
+    );
 
 // Schema.org LocalBusiness
 const localBusinessSchema = {
@@ -50,7 +57,7 @@ const localBusinessSchema = {
     "@type": "Electrician",
     "@id": `${SITE_CONFIG.seo.siteUrl}/service-areas/${cityData.slug}/#localbusiness`,
     name: `Solomon Electric - ${cityData.name}`,
-    image: `${SITE_CONFIG.seo.siteUrl}/og-default.jpg`,
+    image: `${SITE_CONFIG.seo.siteUrl}/og-default.webp`,
     description: cityData.description,
     telephone: SITE_CONFIG.contact.phone.formatted,
     email: SITE_CONFIG.contact.email.primary,
@@ -144,10 +151,10 @@ const faqSchema =
               mainEntity: cityData.faqs.map(
                   (faq: { question: string; answer: string }) => ({
                       "@type": "Question",
-                      name: faq.question,
+                      name: replacePlaceholder(faq.question),
                       acceptedAnswer: {
                           "@type": "Answer",
-                          text: faq.answer,
+                          text: replacePlaceholder(faq.answer),
                       },
                   }),
               ),
@@ -211,7 +218,7 @@ const faqSchema =
 
     <!-- Page Hero -->
     <PageHero
-        title={`${cityData.name} Electrician<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>24/7 Licensed Service</span>`}
+        title={`${cityData.name} Electrician<br><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>24/7 Licensed Service</span>`}
         subtitle={`Licensed #${SITE_CONFIG.credentials.license.number} • ${cityData.county} County • Free Estimates`}
         description={`Need an electrician in ${cityData.name}, FL? Solomon Electric provides 24/7 emergency repairs, panel upgrades, EV charger installation, and all electrical services. Serving ${cityData.name} since ${SITE_CONFIG.company.foundedYear} with ${SITE_CONFIG.stats.totalProjects}+ projects completed across South Florida.`}
         image={heroImage}
@@ -225,7 +232,7 @@ const faqSchema =
             (() => {
                 const stats = cityData.stats!;
                 return (
-                    <section class="stats-bar">
+                    <section class="stats-bar py-8 md:py-12">
                         <Container>
                             <div class="stats-grid">
                                 {stats.map((stat, index) => (
@@ -250,7 +257,7 @@ const faqSchema =
     }
 
     <!-- City Overview Section (About) -->
-    <section class="overview-section">
+    <section class="overview-section py-12 md:py-32">
         <div class="overview-bg">
             <div class="overview-decoration-1"></div>
             <div class="overview-decoration-2"></div>
@@ -259,8 +266,9 @@ const faqSchema =
             <div class="overview-grid">
                 <div class="overview-content">
                     <header class="section-header section-header-left">
-                        <span class="section-label"
-                            >⚡ About {cityData.name}</span
+                        <span
+                            class="section-label inline-flex items-center gap-1.5"
+                            ><Zap class="w-4 h-4" /> About {cityData.name}</span
                         >
                         <h2 class="section-title">
                             Electrical Services in <span class="text-accent"
@@ -271,11 +279,15 @@ const faqSchema =
                     {
                         cityData.seoContent &&
                             cityData.seoContent.length > 0 && (
-                                <p class="overview-text">
-                                    {replacePlaceholder(
-                                        cityData.seoContent[0].body,
+                                <p
+                                    class="overview-text"
+                                    set:html={highlightKeywords(
+                                        replacePlaceholder(
+                                            cityData.seoContent[0].body,
+                                        ),
+                                        [cityData.name, ...cityKeywords],
                                     )}
-                                </p>
+                                />
                             )
                     }
                     <div class="overview-facts">
@@ -402,14 +414,14 @@ const faqSchema =
     <!-- Electrical Challenges Section -->
     {
         cityData.challenges && cityData.challenges.length > 0 && (
-            <section class="challenges-section">
+            <section class="challenges-section py-12 md:py-32">
                 <div class="challenges-bg">
                     <div class="challenges-pattern" />
                 </div>
                 <Container class="relative z-10">
                     <header class="section-header section-header-light">
-                        <span class="section-label section-label-light">
-                            ⚡ Local Challenges
+                        <span class="section-label section-label-light inline-flex items-center gap-1.5">
+                            <Zap class="w-4 h-4" /> Local Challenges
                         </span>
                         <h2 class="section-title section-title-light">
                             Electrical Challenges in{" "}
@@ -457,11 +469,15 @@ const faqSchema =
                                     </div>
                                 </div>
                                 <h3 class="challenge-title">
-                                    {challenge.title}
+                                    {challenge.title} in {cityData.name}
                                 </h3>
-                                <p class="challenge-description">
-                                    {challenge.description}
-                                </p>
+                                <p
+                                    class="challenge-description"
+                                    set:html={highlightKeywords(
+                                        challenge.description,
+                                        [cityData.name, ...cityKeywords],
+                                    )}
+                                />
                             </div>
                         ))}
                     </div>
@@ -473,13 +489,27 @@ const faqSchema =
     <!-- SEO Content Section (Text Paragraphs) -->
     {
         cityData.seoContent && cityData.seoContent.length > 1 && (
-            <section class="seo-section">
+            <section class="seo-section defer-render py-[var(--spacing-2xl)] md:py-[var(--spacing-3xl)]">
                 <Container>
                     <div class="seo-wrapper">
                         {cityData.seoContent.slice(1).map((section) => (
                             <article class="seo-block">
-                                <h2 class="seo-heading">{section.heading}</h2>
-                                <p class="seo-body">{section.body}</p>
+                                <h2 class="seo-heading">
+                                    {replacePlaceholder(section.heading)} in{" "}
+                                    {cityData.name}
+                                </h2>
+                                <div class="seo-body space-y-4">
+                                    {replacePlaceholder(section.body)
+                                        .split("\n\n")
+                                        .map((p) => (
+                                            <p
+                                                set:html={highlightKeywords(p, [
+                                                    cityData.name,
+                                                    ...cityKeywords,
+                                                ])}
+                                            />
+                                        ))}
+                                </div>
                             </article>
                         ))}
                     </div>
@@ -489,10 +519,14 @@ const faqSchema =
     }
 
     <!-- Neighborhoods Section (Coverage Area) -->
-    <section class="neighborhoods-section">
+    <section
+        class="neighborhoods-section py-[var(--spacing-2xl)] md:py-[var(--spacing-3xl)]"
+    >
         <Container>
             <header class="section-header">
-                <span class="section-label">📍 Coverage Area</span>
+                <span class="section-label inline-flex items-center gap-1.5"
+                    ><MapPin class="w-4 h-4" /> Coverage Area</span
+                >
                 <h2 class="section-title">
                     Neighborhoods in <span class="text-accent"
                         >{cityData.name}</span
@@ -514,7 +548,7 @@ const faqSchema =
                 {
                     cityData.majorRoads && (
                         <div class="major-roads">
-                            <h4>Major Roads We Serve Along</h4>
+                            <h3>Major Roads We Serve Along</h3>
                             <p>{cityData.majorRoads.join(" • ")}</p>
                         </div>
                     )
@@ -524,60 +558,48 @@ const faqSchema =
     </section>
 
     <!-- Featured Services Section -->
-    <section class="services-section">
+    <section
+        class="services-section defer-render py-[var(--spacing-2xl)] md:py-[var(--spacing-3xl)]"
+    >
         <div class="services-bg">
             <div class="services-decoration-1"></div>
             <div class="services-decoration-2"></div>
         </div>
         <Container class="relative z-10">
             <header class="section-header">
-                <span class="section-label">🔌 Our Services</span>
+                <span class="section-label inline-flex items-center gap-1.5"
+                    ><Plug class="w-4 h-4" /> Our Strategic Services</span
+                >
                 <h2 class="section-title">
-                    Electrical Services in <span class="text-accent"
-                        >{cityData.name}</span
-                    >
+                    {generateProblemCentricH2("Commercial", cityData.name)}
                 </h2>
                 <p class="section-description">
                     Professional electrical solutions tailored for {
                         cityData.name
-                    } homes and businesses. Click any service to see local pricing,
-                    projects, and city-specific details.
+                    } homes and businesses. Our licensed electricians are dispatched
+                    locally from {cityData.name} to ensure same-day response times.
                 </p>
             </header>
 
-            <div class="services-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
-                    sortedServices.map((svc, index) => (
+                    sortedServices.map((svc) => (
                         <a
                             href={`/services/${svc.id}/${cityData.slug}`}
-                            class="service-card"
-                            style={`--delay: ${index * 0.05}s`}
+                            class="group p-5 bg-white border border-[var(--border-light)] rounded-[var(--radius-xl)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] hover:border-accent/30 transition-all flex items-center gap-4"
                         >
-                            <div class="service-card-accent" />
-                            <div class="service-card-glow" />
-                            <div class="service-card-content">
-                                <div class="service-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
-                                            clip-rule="evenodd"
-                                        />
-                                    </svg>
-                                </div>
-                                <h3 class="service-name">{svc.data.name}</h3>
-                                <p class="text-xs text-white/50 mb-4 line-clamp-2">
-                                    {svc.data.description}
-                                </p>
-                                <span class="service-link">
-                                    View in {cityData.name}
-                                    <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </span>
+                            <div class="w-12 h-12 bg-primary/5 rounded-[var(--radius-lg)] flex items-center justify-center group-hover:bg-primary group-hover:text-accent transition-colors duration-300">
+                                <Zap class="w-6 h-6" />
                             </div>
+                            <div class="flex-grow min-h-[4rem] flex flex-col justify-center">
+                                <h3 class="text-[length:var(--text-body)] font-black text-primary uppercase font-secondary group-hover:text-accent transition-colors leading-tight">
+                                    {svc.data.name}
+                                </h3>
+                                <p class="text-[length:var(--text-micro)] text-primary/60 font-bold uppercase tracking-wider mt-1">
+                                    Available in {cityData.name}
+                                </p>
+                            </div>
+                            <ArrowRight class="w-5 h-5 text-primary/20 group-hover:text-accent group-hover:translate-x-1 transition-all" />
                         </a>
                     ))
                 }
@@ -606,7 +628,7 @@ const faqSchema =
     />
 
     <!-- Final CTA Section -->
-    <section class="final-cta">
+    <section class="final-cta py-12 md:py-32">
         <div class="final-cta-bg">
             <div class="cta-bolt-decoration cta-bolt-1">
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -652,13 +674,13 @@ const faqSchema =
                         action="book"
                         variant="primary"
                         size="lg"
-                        text="Get Free Estimate"
+                        text="Get Your Free Quote"
                     />
                     <CtaButton
                         action="call"
                         variant="secondary"
                         size="lg"
-                        text="Call Now"
+                        text="Speak to an Expert"
                     />
                 </div>
             </div>
@@ -675,17 +697,16 @@ const faqSchema =
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         padding: 0.75rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         position: sticky;
         top: var(--header-height, 70px);
-        z-index: 45;
+        z-index: var(--z-header);
     }
 
     .breadcrumb-items {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        font-size: 0.875rem;
+        font-size: var(--text-nav);
     }
 
     .breadcrumb-link {
@@ -717,7 +738,7 @@ const faqSchema =
         background: linear-gradient(
             135deg,
             var(--color-primary) 0%,
-            #061f3d 100%
+            var(--color-primary-darker) 100%
         );
         padding: clamp(1.5rem, 3vw, 2.5rem) 0;
         position: relative;
@@ -731,20 +752,10 @@ const faqSchema =
         background: linear-gradient(
             90deg,
             transparent 0%,
-            rgba(20, 211, 227, 0.1) 50%,
+            rgba(var(--color-accent-rgb), 0.1) 50%,
             transparent 100%
         );
-        animation: shimmer 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-        0%,
-        100% {
-            transform: translateX(-100%);
-        }
-        50% {
-            transform: translateX(100%);
-        }
+        animation: shimmer-x 3s ease-in-out infinite;
     }
 
     .stats-grid {
@@ -770,7 +781,7 @@ const faqSchema =
         height: 80px;
         background: radial-gradient(
             circle,
-            rgba(20, 211, 227, 0.3) 0%,
+            rgba(var(--color-accent-rgb), 0.3) 0%,
             transparent 70%
         );
         filter: blur(20px);
@@ -785,17 +796,17 @@ const faqSchema =
     .stat-value {
         display: block;
         font-family: var(--font-display);
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: var(--text-h2);
         font-weight: 800;
         color: var(--color-accent);
         line-height: 1;
-        text-shadow: 0 0 30px rgba(20, 211, 227, 0.5);
+        text-shadow: 0 0 30px rgba(var(--color-accent-rgb), 0.5);
         position: relative;
     }
 
     .stat-label {
         display: block;
-        font-size: clamp(0.7rem, 1vw, 0.8rem);
+        font-size: var(--text-label);
         color: rgba(255, 255, 255, 0.85);
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -818,74 +829,10 @@ const faqSchema =
         );
     }
 
-    /* =========================================
-       SECTION HEADERS
-       ========================================= */
-    .section-header {
-        text-align: center;
-        margin-bottom: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .section-header-left {
-        text-align: left;
-    }
-
-    .section-label {
-        display: inline-block;
-        color: var(--color-accent);
-        font-size: clamp(0.8rem, 1vw, 0.9rem);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
-        padding: 0.5rem 1rem;
-        background: rgba(20, 211, 227, 0.1);
-        border-radius: var(--radius-full);
-    }
-
-    .section-label-light {
-        color: white;
-        background: rgba(255, 255, 255, 0.15);
-    }
-
-    .section-title {
-        font-size: clamp(1.75rem, 4vw, 2.75rem);
-        font-weight: 800;
-        color: var(--color-primary);
-        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
-        text-transform: uppercase;
-        line-height: 1.15;
-    }
-
-    .section-title-light {
-        color: white;
-    }
-
-    .section-description {
-        font-size: clamp(1rem, 1.25vw, 1.125rem);
-        color: var(--text-body);
-        max-width: 900px;
-        margin: 0 auto;
-        line-height: 1.7;
-    }
-
-    .section-description-light {
-        color: rgba(255, 255, 255, 0.85);
-    }
-
-    .section-cta {
-        text-align: center;
-        margin-top: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    /* =========================================
-       OVERVIEW SECTION
-       ========================================= */
     .overview-section {
         position: relative;
         overflow: hidden;
         background: var(--bg-body);
-        padding: clamp(4rem, 8vw, 6rem) 0;
     }
 
     .overview-bg {
@@ -916,7 +863,7 @@ const faqSchema =
         height: 300px;
         background: radial-gradient(
             circle,
-            rgba(13, 67, 128, 0.08) 0%,
+            rgba(var(--color-primary-rgb), 0.08) 0%,
             transparent 60%
         );
     }
@@ -935,7 +882,7 @@ const faqSchema =
     }
 
     .overview-text {
-        font-size: clamp(1rem, 1.15vw, 1.0625rem);
+        font-size: var(--text-body);
         color: var(--text-body);
         line-height: 1.8;
         margin-bottom: 2rem;
@@ -961,7 +908,7 @@ const faqSchema =
     .fact-card:hover {
         box-shadow:
             var(--shadow-lg),
-            0 0 20px rgba(20, 211, 227, 0.1);
+            0 0 20px rgba(var(--color-accent-rgb), 0.1);
         transform: translateY(-4px);
     }
 
@@ -970,8 +917,8 @@ const faqSchema =
         height: 2.5rem;
         background: linear-gradient(
             135deg,
-            rgba(20, 211, 227, 0.15) 0%,
-            rgba(20, 211, 227, 0.05) 100%
+            rgba(var(--color-accent-rgb), 0.15) 0%,
+            rgba(var(--color-accent-rgb), 0.05) 100%
         );
         border-radius: var(--radius-md);
         display: flex;
@@ -987,7 +934,7 @@ const faqSchema =
 
     .fact-label {
         display: block;
-        font-size: 0.7rem;
+        font-size: var(--text-caption);
         color: var(--text-muted);
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -997,7 +944,7 @@ const faqSchema =
         display: block;
         font-weight: 700;
         color: var(--color-primary);
-        font-size: 1.1rem;
+        font-size: var(--text-h5);
     }
 
     .landmarks-card {
@@ -1024,7 +971,7 @@ const faqSchema =
 
     .landmarks-card h3 {
         font-family: var(--font-display);
-        font-size: clamp(1rem, 1.25vw, 1.125rem);
+        font-size: var(--text-body);
         color: var(--color-primary);
         text-transform: uppercase;
         margin-bottom: 1.5rem;
@@ -1042,7 +989,7 @@ const faqSchema =
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        font-size: 0.95rem;
+        font-size: var(--text-body-sm);
         color: var(--text-body);
     }
 
@@ -1082,7 +1029,7 @@ const faqSchema =
         background: linear-gradient(
             135deg,
             var(--color-primary) 0%,
-            #061f3d 100%
+            var(--color-primary-darker) 100%
         );
     }
 
@@ -1092,12 +1039,12 @@ const faqSchema =
         background-image:
             radial-gradient(
                 circle at 20% 80%,
-                rgba(20, 211, 227, 0.15) 0%,
+                rgba(var(--color-accent-rgb), 0.15) 0%,
                 transparent 40%
             ),
             radial-gradient(
                 circle at 80% 20%,
-                rgba(20, 211, 227, 0.1) 0%,
+                rgba(var(--color-accent-rgb), 0.1) 0%,
                 transparent 40%
             );
     }
@@ -1115,14 +1062,14 @@ const faqSchema =
         padding: clamp(2rem, 4vw, 2.5rem);
         text-align: center;
         transition: all var(--transition-base);
-        animation: fadeInUp 0.6s ease-out backwards;
+        animation: fadeInUp var(--transition-slow) ease-out backwards;
         animation-delay: var(--delay);
         clip-path: polygon(16px 0%, 100% 0%, calc(100% - 16px) 100%, 0% 100%);
     }
 
     .challenge-card:hover {
         background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(20, 211, 227, 0.5);
+        border-color: rgba(var(--color-accent-rgb), 0.5);
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
@@ -1138,7 +1085,7 @@ const faqSchema =
         inset: -8px;
         background: radial-gradient(
             circle,
-            rgba(20, 211, 227, 0.3) 0%,
+            rgba(var(--color-accent-rgb), 0.3) 0%,
             transparent 70%
         );
         filter: blur(15px);
@@ -1155,10 +1102,10 @@ const faqSchema =
         height: clamp(3.5rem, 6vw, 4.5rem);
         background: linear-gradient(
             135deg,
-            rgba(20, 211, 227, 0.2) 0%,
-            rgba(20, 211, 227, 0.05) 100%
+            rgba(var(--color-accent-rgb), 0.2) 0%,
+            rgba(var(--color-accent-rgb), 0.05) 100%
         );
-        border: 2px solid rgba(20, 211, 227, 0.3);
+        border: 2px solid rgba(var(--color-accent-rgb), 0.3);
         border-radius: var(--radius-xl);
         display: flex;
         align-items: center;
@@ -1173,7 +1120,8 @@ const faqSchema =
     }
 
     .challenge-title {
-        font-size: clamp(1rem, 1.25vw, 1.125rem);
+        font-family: var(--font-secondary);
+        font-size: var(--text-body);
         font-weight: 700;
         color: white;
         margin-bottom: 0.75rem;
@@ -1181,7 +1129,7 @@ const faqSchema =
     }
 
     .challenge-description {
-        font-size: clamp(0.875rem, 1vw, 0.9375rem);
+        font-size: var(--text-nav);
         color: rgba(255, 255, 255, 0.8);
         line-height: 1.7;
         margin: 0;
@@ -1205,167 +1153,6 @@ const faqSchema =
         position: relative;
         overflow: hidden;
         background: var(--bg-body);
-        padding: clamp(4rem, 8vw, 6rem) 0;
-    }
-
-    .services-bg {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-    }
-
-    .services-decoration-1 {
-        position: absolute;
-        top: 50%;
-        right: -150px;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(
-            circle,
-            rgba(20, 211, 227, 0.08) 0%,
-            transparent 60%
-        );
-    }
-
-    .services-decoration-2 {
-        position: absolute;
-        bottom: 0;
-        left: -100px;
-        width: 200px;
-        height: 200px;
-        background: radial-gradient(
-            circle,
-            rgba(13, 67, 128, 0.08) 0%,
-            transparent 60%
-        );
-    }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: clamp(1.5rem, 3vw, 2rem);
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    @media (max-width: 900px) {
-        .services-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 600px) {
-        .services-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .service-card {
-        position: relative;
-        background: var(--bg-surface);
-        text-decoration: none;
-        overflow: hidden;
-        box-shadow: var(--shadow-md);
-        transition: all var(--transition-base);
-        animation: fadeInUp 0.6s ease-out backwards;
-        animation-delay: var(--delay);
-        clip-path: polygon(16px 0%, 100% 0%, calc(100% - 16px) 100%, 0% 100%);
-    }
-
-    .service-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow:
-            var(--shadow-xl),
-            0 0 40px rgba(20, 211, 227, 0.15);
-    }
-
-    .service-card-accent {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(
-            90deg,
-            var(--color-accent),
-            var(--color-primary)
-        );
-    }
-
-    .service-card-glow {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            135deg,
-            rgba(20, 211, 227, 0.05) 0%,
-            transparent 50%
-        );
-        opacity: 0;
-        transition: opacity var(--transition-base);
-    }
-
-    .service-card:hover .service-card-glow {
-        opacity: 1;
-    }
-
-    .service-card-content {
-        position: relative;
-        padding: clamp(1.5rem, 3vw, 2rem);
-        text-align: center;
-    }
-
-    .service-icon {
-        width: clamp(3rem, 5vw, 3.5rem);
-        height: clamp(3rem, 5vw, 3.5rem);
-        background: linear-gradient(
-            135deg,
-            rgba(20, 211, 227, 0.15) 0%,
-            rgba(20, 211, 227, 0.05) 100%
-        );
-        border-radius: var(--radius-lg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.25rem;
-    }
-
-    .service-icon svg {
-        width: clamp(1.5rem, 2.5vw, 1.75rem);
-        height: clamp(1.5rem, 2.5vw, 1.75rem);
-        color: var(--color-accent);
-    }
-
-    .service-name {
-        font-size: clamp(1rem, 1.25vw, 1.125rem);
-        font-weight: 700;
-        color: var(--color-primary);
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        line-height: 1.3;
-    }
-
-    .service-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--color-accent);
-        font-weight: 700;
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    .service-link svg {
-        width: 1rem;
-        height: 1rem;
-        transition: transform var(--transition-fast);
-    }
-
-    .service-card:hover .service-link svg {
-        transform: translateX(4px);
     }
 
     /* =========================================
@@ -1377,7 +1164,6 @@ const faqSchema =
             var(--bg-surface) 0%,
             var(--bg-body) 100%
         );
-        padding: clamp(4rem, 8vw, 6rem) 0;
     }
 
     .neighborhoods-card {
@@ -1417,12 +1203,12 @@ const faqSchema =
         padding: 0.625rem 1.25rem;
         background: linear-gradient(
             135deg,
-            rgba(20, 211, 227, 0.1) 0%,
-            rgba(20, 211, 227, 0.02) 100%
+            rgba(var(--color-accent-rgb), 0.1) 0%,
+            rgba(var(--color-accent-rgb), 0.02) 100%
         );
         color: var(--color-primary);
-        border: 1px solid rgba(20, 211, 227, 0.3);
-        font-size: 0.9rem;
+        border: 1px solid rgba(var(--color-accent-rgb), 0.3);
+        font-size: var(--text-body-sm);
         font-weight: 600;
         transition: all var(--transition-fast);
         clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
@@ -1442,7 +1228,7 @@ const faqSchema =
     }
 
     .major-roads h4 {
-        font-size: 0.75rem;
+        font-size: var(--text-caption);
         color: var(--text-muted);
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -1451,7 +1237,7 @@ const faqSchema =
 
     .major-roads p {
         color: var(--text-body);
-        font-size: 1rem;
+        font-size: var(--text-body);
         font-weight: 500;
     }
 
@@ -1460,7 +1246,6 @@ const faqSchema =
        ========================================= */
     .seo-section {
         background: var(--bg-surface);
-        padding: clamp(4rem, 8vw, 6rem) 0;
     }
 
     .seo-wrapper {
@@ -1477,7 +1262,8 @@ const faqSchema =
     }
 
     .seo-heading {
-        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-family: var(--font-display);
+        font-size: var(--text-h4);
         font-weight: 700;
         color: var(--color-primary);
         margin-bottom: 1rem;
@@ -1502,7 +1288,7 @@ const faqSchema =
     }
 
     .seo-body {
-        font-size: clamp(1rem, 1.15vw, 1.0625rem);
+        font-size: var(--text-body);
         color: var(--text-body);
         line-height: 1.8;
     }
@@ -1513,7 +1299,6 @@ const faqSchema =
     .final-cta {
         position: relative;
         background: var(--bg-surface);
-        padding: clamp(4rem, 8vw, 6rem) 0;
         overflow: hidden;
     }
 
@@ -1547,16 +1332,6 @@ const faqSchema =
         bottom: 2rem;
         right: 10%;
         animation: float 6s ease-in-out infinite 3s;
-    }
-
-    @keyframes float {
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
     }
 
     .final-cta-content {
@@ -1593,7 +1368,7 @@ const faqSchema =
 
     .cta-title {
         font-family: var(--font-display);
-        font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+        font-size: var(--text-h2);
         font-weight: 800;
         color: var(--color-primary);
         text-transform: uppercase;
@@ -1602,7 +1377,7 @@ const faqSchema =
     }
 
     .cta-description {
-        font-size: clamp(1rem, 1.25vw, 1.125rem);
+        font-size: var(--text-body);
         color: var(--text-body);
         margin-bottom: 2rem;
         max-width: 36rem;

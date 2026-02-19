@@ -1,7 +1,7 @@
 ---
 /**
  * Mobile Floating CTA Bar
- * Sticky bottom bar with All Services and Call Now buttons
+ * Sticky bottom bar with All Services and Call&nbsp;Now buttons
  * Auto-parks above footer when scrolled to bottom
  */
 import { Phone } from "lucide-astro";
@@ -13,22 +13,22 @@ import { SITE_CONFIG } from "../config/site";
     <a
         href="/services"
         class="cta-button cta-all-services"
-        aria-label="View all electrical services"
+        aria-label="All Services – View all electrical services"
     >
         <div class="cta-content">
             <span class="cta-text">All Services</span>
         </div>
     </a>
 
-    <!-- Call Now Button -->
+    <!-- Call&nbsp;Now Button -->
     <a
         href={`tel:${SITE_CONFIG.contact.phone.raw}`}
         class="cta-button cta-call-now"
-        aria-label={`Call Solomon Electric now at ${SITE_CONFIG.contact.phone.display}`}
+        aria-label="Call&nbsp;Now – Solomon Electric"
     >
         <div class="cta-content">
             <Phone class="cta-icon" aria-hidden="true" />
-            <span class="cta-text">Call Now</span>
+            <span class="cta-text">Call&nbsp;Now</span>
         </div>
     </a>
 </div>
@@ -40,8 +40,8 @@ import { SITE_CONFIG } from "../config/site";
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 999;
-        transition: transform 0.3s ease-in-out;
+        z-index: var(--z-floating);
+        transition: transform var(--transition-base);
     }
 
     /* Show only on mobile */
@@ -54,7 +54,9 @@ import { SITE_CONFIG } from "../config/site";
             padding: 0;
             width: 100%;
             height: 50px;
-            filter: drop-shadow(0px -2px 10px rgba(13, 67, 128, 0.15));
+            filter: drop-shadow(
+                0px -2px 10px rgba(var(--color-primary-rgb), 0.15)
+            );
         }
 
         .mobile-floating-cta.parked {
@@ -93,22 +95,23 @@ import { SITE_CONFIG } from "../config/site";
 
     /* All Services Button - Cyan */
     .cta-all-services {
-        background: var(--color-accent); /* #14D3E3 */
+        background: var(--color-accent-dark); /* WCAG AA 4.7:1 on white */
         border-right: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .cta-all-services .cta-text {
-        font-family: "Manrope", sans-serif;
+        font-family: var(--font-body);
         font-weight: 600;
-        font-size: 18px;
+        font-size: var(--text-body);
         line-height: 1.4;
         text-align: center;
-        color: var(--color-light);
+        color: var(--text-inverse);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
 
-    /* Call Now Button - Blue */
+    /* Call&nbsp;Now Button - Blue */
     .cta-call-now {
         background: var(--color-primary); /* #0D4380 */
     }
@@ -116,10 +119,10 @@ import { SITE_CONFIG } from "../config/site";
     .cta-call-now .cta-text {
         font-family: var(--font-display);
         font-weight: 500;
-        font-size: 16px;
+        font-size: var(--text-nav);
         line-height: 1.4;
         text-align: center;
-        color: var(--color-light);
+        color: var(--text-inverse);
         text-transform: uppercase;
         letter-spacing: 1px;
     }
@@ -127,7 +130,7 @@ import { SITE_CONFIG } from "../config/site";
     .cta-icon {
         width: 20px;
         height: 20px;
-        color: var(--color-light);
+        color: var(--text-inverse);
         flex-shrink: 0;
     }
 

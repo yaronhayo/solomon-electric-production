@@ -1,7 +1,7 @@
 {
   "name": "Permit Application & Inspection Coordination",
   "slug": "permit-application-inspection-coordination",
-  "description": "Electrical permits and inspections are required for most significant electrical work in South Florida, but navigating the process can be confusing. Solomon Electric handles permit applications and inspection coordination for all our projects\u2014ensuring proper permits are pulled, work passes inspection, and you have documentation for insurance and resale purposes.",
+  "description": "Electrical permits and inspections are required for most significant electrical work in South Florida, but navigating the process can be confusing. Solomon Electric's licensed team handles permit applications and inspection coordination for all our projects—ensuring proper permits are pulled, work passes inspection, and you have documentation for insurance and resale purposes.",
   "shortDescription": "We handle permits and inspections",
   "icon": "FileCheck",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,12 +15,12 @@
     "Correction handling",
     "Final documentation"
   ],
-  "warningSignsHeading": "When Permits Are Required",
+  "warningSignsHeading": "How to Know You Need Professional Electrical Permit Coordination",
   "warningSignsSubheading": "Most electrical work beyond minor repairs requires permits. Here's what you should know.",
   "problems": [
     {
       "title": "Don't Know What Requires Permits",
-      "description": "Panel changes, new circuits, major additions\u2014these require permits. Simple repairs typically don't. We know the requirements.",
+      "description": "Panel changes, new circuits, major additions—these require permits. Simple repairs typically don't. We know the requirements.",
       "icon": "AlertTriangle"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "title": "Need Inspection Passed",
-      "description": "Work must pass inspection to be legal and insurable. Our work is designed to pass inspection\u2014and we're present for inspections.",
+      "description": "Work must pass inspection to be legal and insurable. Our work is designed to pass inspection—and we're present for inspections.",
       "icon": "Shield"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "Zap"
     }
   ],
-  "processHeading": "Our Permit Process",
+  "processHeading": "The Professional Electrical Permit Coordination Process",
   "process": [
     {
       "step": 1,
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Application Preparation",
-      "description": "We prepare permit applications with required information\u2014scope of work, diagrams if needed, and contractor documentation."
+      "description": "We prepare permit applications with required information—scope of work, diagrams if needed, and contractor documentation."
     },
     {
       "step": 3,
@@ -74,10 +74,10 @@
     {
       "step": 5,
       "title": "Documentation",
-      "description": "You receive permit documentation showing work was properly permitted and passed inspection\u2014important for insurance and resale."
+      "description": "You receive permit documentation showing work was properly permitted and passed inspection—important for insurance and resale."
     }
   ],
-  "benefitsHeading": "Benefits of Proper Permitting",
+  "benefitsHeading": "How Electrical Permit Coordination Improves Your Property",
   "benefits": [
     {
       "title": "Legal Compliance",
@@ -110,7 +110,7 @@
       "label": "First-Pass Inspections"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -145,11 +145,11 @@
     },
     {
       "question": "What documentation do I receive?",
-      "answer": "You receive copies of the approved permit and passed inspection record. These documents prove work was properly permitted and inspected\u2014important for insurance claims, property sales, and your records."
+      "answer": "You receive copies of the approved permit and passed inspection record. These documents prove work was properly permitted and inspected—important for insurance claims, property sales, and your records."
     },
     {
       "question": "Are permit fees included in your quotes?",
-      "answer": "We can include fees in quotes or pass through at cost\u2014whichever you prefer. Fees vary by municipality and scope of work, typically $50-200 for residential work, more for larger commercial projects."
+      "answer": "We can include fees in quotes or pass through at cost—whichever you prefer. Fees vary by municipality and scope of work, typically $50-200 for residential work, more for larger commercial projects."
     }
   ],
   "relatedServices": [
@@ -161,21 +161,32 @@
   "seoContent": [
     {
       "heading": "Permit Application & Inspection Coordination in South Florida",
-      "body": "Electrical permits and inspections are required for most significant electrical work. Solomon Electric handles the entire permit process throughout Miami-Dade and Broward counties\u2014applications, submissions, inspections, and documentation. You get compliant work with proper records."
+      "body": "Electrical permits and inspections are required for most significant electrical work. Solomon Electric handles the entire permit process throughout {county} and Broward counties—applications, submissions, inspections, and documentation. You get compliant work with proper records. Commercial electrical inspections follow NFPA 70B maintenance standards and Florida Building Code requirements. Our detailed reports include photographs, code references, and prioritized remediation recommendations."
     },
     {
       "heading": "We Know South Florida Jurisdictions",
-      "body": "Every municipality has different permit requirements and processes. We work regularly with building departments across South Florida\u2014Miami, Fort Lauderdale, Hollywood, and surrounding cities\u2014and know their requirements and procedures."
+      "body": "Every municipality has different permit requirements and processes. We work regularly with building departments across South Florida—{cityName} and surrounding cities—and know their requirements and procedures. We understand the urgency of commercial electrical issues—downtime means lost revenue. Our commercial team schedules work during off-hours and weekends to minimize business disruption, and we maintain fully-stocked vehicles for faster completions."
     },
     {
-      "heading": "Pass Inspection the First Time",
-      "body": "Our work is designed to pass inspection. We understand code requirements, build accordingly, and attend inspections to address any questions. High first-pass inspection rates mean faster project completion."
+      "heading": "Pass Electrical Inspection the First Time in Miami-Dade",
+      "body": "Our work is designed to pass inspection. We understand code requirements, build accordingly, and attend inspections to address any questions. High first-pass inspection rates mean faster project completion. Code compliance isn't just about passing inspections—it's about protecting your business from liability. We document all findings and provide certificates of compliance that satisfy insurance underwriters and commercial lease requirements."
     },
     {
-      "heading": "Documentation for Your Records",
-      "body": "Properly permitted and inspected work protects your insurance coverage and facilitates property sales. We provide documentation showing permits were obtained and inspections passed\u2014important records for the future."
+      "heading": "Electrical Permit Documentation for Miami Property Owners",
+      "body": "Properly permitted and inspected work protects your insurance coverage and facilitates property sales. We provide documentation showing permits were obtained and inspections passed—important records for the future. For commercial properties, we coordinate with property managers, general contractors, and municipal building departments to ensure smooth permitting and inspection processes. Our familiarity with {county} County procedures saves you time and prevents delays."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Permit Application & Inspection Coordination service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "comprehensive-electrical-safety-inspections"
+  ],
+  "imageAlt": "Permit Application & Inspection Coordination service provided by licensed electricians in South Florida",
+  "shortName": "Electrical Permits",
+  "metaTitle": "Electrical Permits Miami | Inspections | Solomon Electric",
+  "metaDescription": "Electrical permit application and inspection coordination in Miami. We handle all paperwork and scheduling. Licensed, hassle-free process.",
+  "localSignals": {
+    "typicalTimeline": "Permit processing typically takes 2-5 business days; full coordination spans project duration",
+    "priceRange": "Permit coordination services range from $200–$500 on top of actual permit fees",
+    "commonBrands": [],
+    "permitNote": "We handle all {county} County permit applications, fee payments, and inspection scheduling"
+  }
 }

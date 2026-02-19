@@ -5,15 +5,12 @@
 # Dependencies
 # ============================================
 node_modules/
-.pnpm-store/
 
 # ============================================
 # Build Output
 # ============================================
 dist/
 .astro/
-.vercel/
-.output/
 
 # ============================================
 # Environment Variables (CRITICAL)
@@ -58,7 +55,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .cache/
-.parcel-cache/
 
 # ============================================
 # Editor & IDE
@@ -77,7 +73,6 @@ Thumbs.db
 # Testing
 # ============================================
 coverage/
-.nyc_output/
 playwright-report/
 test-results/
 

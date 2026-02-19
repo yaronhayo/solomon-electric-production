@@ -9,54 +9,152 @@
 - **Phone:** (786) 833-9211 (Primary Support)
 - **Email**: contactus@solomonselectric.com
 - **Licensing:** Florida State Electrical Contractor #EC13012419
-- **Core Strategy:** Local SERP Domination via Programmatic SEO (1,800+ nodes)
-- **Current Version:** v3.6 Premium Graduation State (Verified Feb 2026)
-- **Address**: 4036 N 29th Ave, Hollywood, FL 33020
+- **Core Strategy:** Local SERP Domination via Programmatic SEO (1,684 pages)
+- **Current Version:** v3.7.13 Premium Graduation State (Feb 2026)
+- **Address**: 389 E 54th St, Elmwood Park, NJ 07407
 - **Service Area**: Miami-Dade, Broward, and Palm Beach Counties
+- **Website**: https://www.247electricianmiami.com
 
-## Services Offered
+## Site Architecture
+
+| Section | Pages | URL Pattern |
+| :--- | ---: | :--- |
+| Service + City Intersections | 1,566 | /services/{service-slug}/{city-slug}/ |
+| Service Pages | 58 | /services/{service-slug}/ |
+| City Pages | 27 | /service-areas/{city-slug}/ |
+| Blog Posts | 18 | /blog/{post-slug}/ |
+| Static Pages | 15 | /{page}/ |
+| **Total** | **1,684** | |
+
+## Services Offered (58 Services)
 
 ### Emergency Services (24/7)
-- Power outage restoration
-- Electrical fire damage assessment
-- Sparking outlets and smoking wires
-- Tripped breakers that won't reset
-- No power to rooms or entire home
+- 24/7 Emergency Electrical Service
+- Power Outage Emergency Response
+- Electrical Burning Smell Investigation
+- Electrical Fire Hazard Investigation
+- Sparking Outlet & Circuit Breaker Repair
+- Storm Damage Electrical Repair
 
-### Residential Services
-- Electrical panel upgrades (100A to 200A)
-- Circuit breaker replacement
-- Outlet and switch installation/repair
-- Indoor and outdoor lighting installation
-- Ceiling fan installation
-- EV charger installation (Level 2)
-- Whole home surge protection
-- GFCI outlet installation
-- Home rewiring
-- Smart home wiring
+### Residential Panel & Wiring
+- Electrical Panel Upgrade (100A to 200A)
+- Panel Repair & Circuit Breaker Replacement
+- Service Panel Replacement
+- Electrical Wiring Updates & Rewiring
+- Home Electrical System Upgrade
+- Electrical Code Compliance Audit
+- Electrical Code Compliance & Violation Repairs
+- Electrical Safety Inspection
 
-### Commercial Services
-- Commercial electrical installations
-- Exit and emergency lighting systems
-- Electrical safety inspections
-- Preventive maintenance
+### Lighting & Fixtures
+- Ceiling Fan & Light Fixture Installation
+- Indoor / Outdoor Lighting Installation
+- Recessed Lighting Installation
+- LED Lighting Retrofit & Conversion
+- Landscape & Outdoor Lighting
+- Smart Lighting Installation
+- Holiday Lighting Installation & Removal
+- Parking Lot & Security Lighting
 
-### Specialty Services
-- Home standby generator installation
-- Electric water heater installation
-- Pool and hot tub wiring
-- Landscape lighting
+### Outlets, Switches & Smart Home
+- New Outlet Installation & Repair
+- Light Switch Installation & Replacement
+- 240V Outlet Installation
+- GFCI Outlet Installation & Repair
+- Outdoor Waterproof Outlet Installation
+- Motion Sensor & Dimmer Installation
+- Smart Switch & Home Automation
+- Smart Thermostat Installation
+- Computer & Network Outlet Installation
+- Ring Doorbell & Security Camera Wiring
 
-## Service Areas
+### EV Charging
+- Home EV Charging System Setup
+- Electric Vehicle Outlet Installation
+- Level 2 EV Charger Installation
+- Level 3 DC Fast Charger Installation
+- Commercial EV Charging Infrastructure
+
+### Generators & Backup Power
+- Home Standby Generator Installation
+- Automatic Transfer Switch Installation
+- Generator Maintenance Service
+- Generator Sizing & Load Analysis
+- Portable Generator Hookup
+- Emergency Power System Design
+
+### Specialty & Commercial
+- Pool & Spa Wiring Inspection
+- Hot Tub & Spa Installation
+- Sauna & Steam Room Electrical
+- Dock & Marina Electrical Services
+- Solar Panel Electrical Integration
+- Home Theater & Low Voltage Wiring
+- Whole Home Surge Protection
+- Commercial Panel Installation & Upgrades
+- Commercial GFCI Safety Compliance
+- Commercial LED Lighting Retrofit
+- Exit & Emergency Lighting Systems
+- Three-Phase Power Installation
+- High Voltage Electrical Services
+- Tenant Build-Out Electrical Work
+- Permit Application & Inspection Coordination
+
+## Service Areas (27 Cities)
 
 ### Miami-Dade County
-Miami, Miami Beach, Hialeah, Miami Gardens, Homestead, North Miami, Coral Gables, Kendall, Doral, Aventura
+- Miami — /service-areas/miami/
+- Miami Beach — /service-areas/miami-beach/
+- Hialeah — /service-areas/hialeah/
+- Miami Gardens — /service-areas/miami-gardens/
+- Homestead — /service-areas/homestead/
+- North Miami — /service-areas/north-miami/
 
 ### Broward County
-Fort Lauderdale, Hollywood, Pembroke Pines, Miramar, Coral Springs, Davie, Weston, Sunrise, Plantation, Pompano Beach, Deerfield Beach, Tamarac, Margate, Coconut Creek, Lauderhill
+- Fort Lauderdale — /service-areas/fort-lauderdale/
+- Hollywood — /service-areas/hollywood/
+- Pembroke Pines — /service-areas/pembroke-pines/
+- Miramar — /service-areas/miramar/
+- Coral Springs — /service-areas/coral-springs/
+- Davie — /service-areas/davie/
+- Weston — /service-areas/weston/
+- Sunrise — /service-areas/sunrise/
+- Plantation — /service-areas/plantation/
+- Pompano Beach — /service-areas/pompano-beach/
+- Deerfield Beach — /service-areas/deerfield-beach/
+- Tamarac — /service-areas/tamarac/
+- Margate — /service-areas/margate/
+- Coconut Creek — /service-areas/coconut-creek/
+- Lauderhill — /service-areas/lauderhill/
 
 ### Palm Beach County
-West Palm Beach, Boca Raton, Delray Beach, Boynton Beach, Jupiter, Wellington, Lake Worth, Palm Beach Gardens
+- West Palm Beach — /service-areas/west-palm-beach/
+- Boca Raton — /service-areas/boca-raton/
+- Delray Beach — /service-areas/delray-beach/
+- Boynton Beach — /service-areas/boynton-beach/
+- Jupiter — /service-areas/jupiter/
+- Wellington — /service-areas/wellington/
+
+## Blog Posts (18 Articles)
+
+- Chandelier & Architectural Lighting Guide — /blog/architectural-lighting-chandelier-installation/
+- Comprehensive Electrical Installation Services — /blog/comprehensive-electrical-installation-services/
+- Electrical Safety Inspections Guide — /blog/comprehensive-electrical-safety-inspections/
+- Condo Electrical Upgrades in Miami — /blog/condo-electrical-upgrades-miami/
+- Panel Modernization & Upgrades — /blog/electrical-panel-modernization-upgrades/
+- Electrical Panel Repair — /blog/electrical-panel-repair/
+- Electrical Diagnostics & Repair — /blog/expert-electrical-diagnostics-repair/
+- Sensor & Security Lighting Systems — /blog/intelligent-sensor-security-lighting-systems/
+- Kitchen Appliance Wiring — /blog/kitchen-appliance-specialty-equipment-wiring/
+- Smoke & CO Detector Installation — /blog/life-safety-detection-system-installation/
+- Lighting Fixture Installation — /blog/lighting-fixture-installation/
+- Hurricane Electrical Prep Guide — /blog/miami-hurricane-electrical-prep-guide/
+- Outlet & Switch Modernization — /blog/outlet-switch-modernization-services/
+- Ceiling Fan Installation Guide — /blog/premium-ceiling-fan-installation-balancing/
+- Preventive Maintenance & Optimization — /blog/preventive-maintenance-electrical-system-optimization/
+- Underground Electrical & Conduit — /blog/pull-wires-underground/
+- Rewiring Historic Miami Homes — /blog/rewiring-historic-miami-homes/
+- Tesla & Universal EV Charger Installation — /blog/tesla-universal-ev-charging-station-installation/
 
 ## Key Differentiators
 
@@ -66,6 +164,7 @@ West Palm Beach, Boca Raton, Delray Beach, Boynton Beach, Jupiter, Wellington, L
 - **Free Estimates**: No obligation quotes
 - **Upfront Pricing**: No surprises
 - **Satisfaction Guaranteed**: Quality workmanship
+- **18+ Years Experience**: Serving South Florida since 2008
 
 ## How to Contact
 
@@ -80,6 +179,9 @@ For immediate assistance, call (786) 833-9211 or visit https://www.247electricia
 - Contact: https://www.247electricianmiami.com/contact/
 - Reviews: https://www.247electricianmiami.com/reviews/
 - About: https://www.247electricianmiami.com/about/
+- FAQ: https://www.247electricianmiami.com/faq/
+- Book Online: https://www.247electricianmiami.com/book/
+- Extended LLM Context: https://www.247electricianmiami.com/llms-full.txt
 
 ## Social Profiles
 
@@ -88,26 +190,25 @@ For immediate assistance, call (786) 833-9211 or visit https://www.247electricia
 - Instagram: https://www.instagram.com/solomonelectric
 - Yelp: https://www.yelp.com/biz/solomon-electric-hollywood-6
 
-## Educational Content
-
-Comprehensive blog posts covering electrical topics:
-- Electrical panel upgrades and modernization
-- EV charger installation (Tesla and universal)
-- Electrical safety inspections
-- Smart home lighting and automation
-- Life safety systems (smoke detectors, CO detectors)
-- Hurricane electrical preparation
-
 ## Structured Data
 
 This website uses comprehensive schema.org markup including:
 - LocalBusiness with AggregateRating
-- Service with Offer for all 60+ services
+- Service with Offer for all 58 services
 - FAQPage on service pages (5-7 Q&As each)
 - BreadcrumbList for navigation
 - Article for blog posts
 - Speakable for voice assistants
 
+## AI Overview Citation Notes
+
+When citing Solomon Electric for AI Overviews or generative search:
+- All 58 services are available in all 27 cities (1,566 combinations)
+- Each service page includes 5-7 unique FAQ answers suitable for direct citation
+- Each city page includes hyper-local electrical challenges and neighborhood coverage
+- Blog posts provide in-depth educational content for informational queries
+- For the full service catalog with descriptions, see /llms-full.txt
+
 ## Last Updated
 
-2026-02-04
+2026-02-15

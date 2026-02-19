@@ -1,7 +1,7 @@
 {
   "name": "Tenant Build-Out Electrical Work",
   "slug": "tenant-build-out-electrical-work",
-  "description": "Transforming commercial space for new tenants requires electrical expertise. Solomon Electric provides complete tenant build-out electrical services throughout South Florida\u2014from blank shell to move-in ready. We handle power distribution, lighting, outlets, data infrastructure, and specialty systems for retail, office, restaurant, and industrial tenant spaces.",
+  "description": "Transforming commercial space for new tenants requires electrical expertise. Solomon Electric's licensed electricians provide complete tenant build-out electrical services throughout South Florida—from blank shell to move-in ready. We handle power distribution, lighting, outlets, data infrastructure, and specialty systems for retail, office, restaurant, and industrial tenant spaces.",
   "shortDescription": "Commercial space electrical fit-out",
   "icon": "Home",
   "image": "../../assets/images/services/commercial.webp",
@@ -15,12 +15,12 @@
     "Restaurant/kitchen electrical",
     "Permit coordination"
   ],
-  "warningSignsHeading": "Tenant Build-Out Electrical Planning",
+  "warningSignsHeading": "When to Consider Tenant Build-Out Electrical",
   "warningSignsSubheading": "Quality electrical work is essential for tenant satisfaction and code compliance.",
   "problems": [
     {
       "title": "Starting from Shell Space",
-      "description": "Blank commercial shells need complete electrical infrastructure\u2014panels, branch circuits, lighting, outlets. We build from scratch to tenant specifications.",
+      "description": "Blank commercial shells need complete electrical infrastructure—panels, branch circuits, lighting, outlets. We build from scratch to tenant specifications.",
       "icon": "Home"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "title": "Restaurant/Kitchen Needs",
-      "description": "Food service requires specific electrical\u2014high-power kitchen equipment, proper circuits, code-compliant installations. We understand restaurant electrical.",
+      "description": "Food service requires specific electrical—high-power kitchen equipment, proper circuits, code-compliant installations. We understand restaurant electrical.",
       "icon": "Flame"
     },
     {
@@ -49,12 +49,12 @@
       "icon": "Shield"
     }
   ],
-  "processHeading": "Our Tenant Build-Out Process",
+  "processHeading": "Our Step-by-Step Tenant Build-Out Electrical Process",
   "process": [
     {
       "step": 1,
       "title": "Scope Review",
-      "description": "We review architectural plans, understand tenant requirements, and identify all electrical scope\u2014power, lighting, data, specialty systems."
+      "description": "We review architectural plans, understand tenant requirements, and identify all electrical scope—power, lighting, data, specialty systems."
     },
     {
       "step": 2,
@@ -69,7 +69,7 @@
     {
       "step": 4,
       "title": "Rough-In Installation",
-      "description": "We install conduit, wire, boxes, and panels while walls are open\u2014coordinating with other trades for efficient construction."
+      "description": "We install conduit, wire, boxes, and panels while walls are open—coordinating with other trades for efficient construction."
     },
     {
       "step": 5,
@@ -77,11 +77,11 @@
       "description": "We install fixtures, devices, and covers, connect equipment, and verify complete system operation before tenant occupancy."
     }
   ],
-  "benefitsHeading": "Benefits of Experienced Build-Out Electricians",
+  "benefitsHeading": "Key Benefits of Tenant Build-Out Electrical",
   "benefits": [
     {
       "title": "Schedule Reliability",
-      "description": "We understand build-out schedules and what it takes to meet opening deadlines. Electrical delays hold up other trades\u2014we don't delay.",
+      "description": "We understand build-out schedules and what it takes to meet opening deadlines. Electrical delays hold up other trades—we don't delay.",
       "icon": "TrendingUp"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Complete Capability",
-      "description": "From shell to finish, standard outlets to specialized kitchen equipment, data rooms to retail lighting\u2014we handle all aspects.",
+      "description": "From shell to finish, standard outlets to specialized kitchen equipment, data rooms to retail lighting—we handle all aspects.",
       "icon": "Zap"
     }
   ],
@@ -106,7 +106,7 @@
       "label": "Build-Outs Completed"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "How early should electrical be involved in build-out planning?",
-      "answer": "As early as possible. Electrical decisions affect overall layout, and we can identify potential issues or cost drivers before plans are finalized. Ideally, we review plans during design\u2014not after permit submission."
+      "answer": "As early as possible. Electrical decisions affect overall layout, and we can identify potential issues or cost drivers before plans are finalized. Ideally, we review plans during design—not after permit submission."
     },
     {
       "question": "Can you work from architectural plans or do you design electrical?",
@@ -133,11 +133,11 @@
     },
     {
       "question": "Do you handle permit inspections?",
-      "answer": "Yes. We coordinate required inspections, are present when inspectors arrive, and address any concerns. Passing inspection is our responsibility\u2014we don't leave that to you or the GC."
+      "answer": "Yes. We coordinate required inspections, are present when inspectors arrive, and address any concerns. Passing inspection is our responsibility—we don't leave that to you or the GC."
     },
     {
       "question": "What about IT and data wiring?",
-      "answer": "We install data infrastructure\u2014network cable runs, data jacks, server room wiring. We coordinate with tenant's IT vendor for specific requirements. Modern offices typically need data drops at every workstation location."
+      "answer": "We install data infrastructure—network cable runs, data jacks, server room wiring. We coordinate with tenant's IT vendor for specific requirements. Modern offices typically need data drops at every workstation location."
     },
     {
       "question": "Can you work nights/weekends to avoid disruption?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "Who's responsible if existing building infrastructure is inadequate?",
-      "answer": "We identify infrastructure limitations during assessment. If building electrical can't support tenant needs, we'll specify necessary upgrades. Responsibility for building-side upgrades is typically clarified in tenant leases\u2014we work with both parties."
+      "answer": "We identify infrastructure limitations during assessment. If building electrical can't support tenant needs, we'll specify necessary upgrades. Responsibility for building-side upgrades is typically clarified in tenant leases—we work with both parties."
     },
     {
       "question": "Do you provide warranty on build-out work?",
@@ -161,21 +161,37 @@
   "seoContent": [
     {
       "heading": "Tenant Build-Out Electrical in South Florida",
-      "body": "Transforming commercial space for new tenants requires electrical expertise. Solomon Electric provides complete tenant build-out services throughout Miami-Dade and Broward counties\u2014from shell-to-finish electrical for retail, restaurant, office, and industrial tenant spaces."
+      "body": "Transforming commercial space for new tenants requires electrical expertise. Solomon Electric provides complete tenant build-out services throughout {county} and Broward counties—from shell-to-finish electrical for retail, restaurant, office, and industrial tenant spaces. Commercial electrical inspections follow NFPA 70B maintenance standards and Florida Building Code requirements. Our detailed reports include photographs, code references, and prioritized remediation recommendations."
     },
     {
-      "heading": "Restaurant and Food Service Build-Outs",
-      "body": "Food service electrical has specific requirements\u2014high-power kitchen equipment, proper circuits for commercial refrigeration and ventilation, and code-compliant installation methods. We understand restaurant electrical needs and build to health department and electrical code requirements."
+      "heading": "Restaurant & Food Service Electrical Build-Outs in Miami",
+      "body": "Food service electrical has specific requirements—high-power kitchen equipment, proper circuits for commercial refrigeration and ventilation, and code-compliant installation methods. We understand restaurant electrical needs and build to health department and electrical code requirements. We understand the urgency of commercial electrical issues—downtime means lost revenue. Our commercial team schedules work during off-hours and weekends to minimize business disruption, and we maintain fully-stocked vehicles for faster completions."
     },
     {
-      "heading": "Office and Retail Electrical",
-      "body": "Modern offices need abundant power and data infrastructure. Retail spaces need flexible lighting and adequate capacity for displays and point-of-sale systems. We design and install electrical systems that serve tenant operations effectively."
+      "heading": "Office & Retail Electrical Build-Outs in South Florida",
+      "body": "Modern offices need abundant power and data infrastructure. Retail spaces need flexible lighting and adequate capacity for displays and point-of-sale systems. We design and install electrical systems that serve tenant operations effectively. Code compliance isn't just about passing inspections—it's about protecting your business from liability. We document all findings and provide certificates of compliance that satisfy insurance underwriters and commercial lease requirements."
     },
     {
       "heading": "Serving South Florida Commercial Properties",
-      "body": "Solomon Electric provides tenant build-out electrical services throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding commercial areas. From single-tenant spaces to multi-unit developments, we deliver commercial electrical that meets tenant needs and schedules."
+      "body": "Solomon Electric provides tenant build-out electrical services throughout {cityName}, Hollywood, Boca Raton, and all surrounding commercial areas. From single-tenant spaces to multi-unit developments, we deliver commercial electrical that meets tenant needs and schedules. For commercial properties, we coordinate with property managers, general contractors, and municipal building departments to ensure smooth permitting and inspection processes. Our familiarity with {county} County procedures saves you time and prevents delays."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Tenant Build-Out Electrical Work service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "comprehensive-electrical-installation-services"
+  ],
+  "imageAlt": "Tenant Build-Out Electrical Work service provided by licensed electricians in South Florida",
+  "shortName": "Tenant Build-Out Electrical",
+  "metaDescription": "Tenant build-out electrical work in Miami. Office, retail & restaurant electrical fit-outs. Licensed, permit coordination, fast turnaround.",
+  "metaTitle": "Tenant Build-Out Electrical Miami | Solomon",
+  "localSignals": {
+    "typicalTimeline": "Tenant build-out electrical typically requires 1-4 weeks depending on space size",
+    "priceRange": "Tenant electrical build-outs range from $5,000–$30,000+ depending on square footage and requirements",
+    "commonBrands": [
+      "Square D",
+      "Eaton",
+      "Lithonia",
+      "Hubbell"
+    ],
+    "permitNote": "Requires {county} County commercial electrical permit and may require fire marshal approval"
+  }
 }

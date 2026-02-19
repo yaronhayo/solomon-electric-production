@@ -40,22 +40,24 @@ const {
 ---
 
 <section
-    class="relative min-h-[60vh] flex items-center overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32"
+    class="relative min-h-[clamp(600px,80vh,950px)] flex items-center overflow-hidden pt-28 pb-16 md:pt-48 md:pb-32"
+    style="contain: layout; content-visibility: auto;"
 >
     <div class="absolute inset-0 z-0">
         <Image
-            src={typeof image === "object" &&
+            src={(typeof image === "object" &&
             "src" in image &&
             typeof image.src === "object"
                 ? image.src
-                : image}
+                : image) as ImageMetadata}
             alt={imageAlt ||
-                ("alt" in image
+                (typeof image === "object" && "alt" in image
                     ? image.alt
-                    : `${title.replace(/<[^>]*>/g, "")} - Solomon Electric Miami licensed electricians`)}
+                    : `${title.replace(/<[^>]*>/g, "")} - Licensed Electricians Miami`)}
             class="w-full h-full object-cover"
             loading="eager"
             fetchpriority="high"
+            format="avif"
             quality={80}
             widths={[640, 1024, 1920]}
             sizes="100vw"
@@ -85,8 +87,8 @@ const {
                 {
                     subtitle && (
                         <p
-                            class="text-accent tracking-[0.3em] font-bold uppercase mb-[var(--spacing-md)]"
-                            style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);"
+                            class="text-accent tracking-[0.2em] md:tracking-[0.3em] font-bold uppercase mb-[var(--spacing-md)]"
+                            style="font-size: var(--text-nav);"
                         >
                             {subtitle}
                         </p>
@@ -94,18 +96,15 @@ const {
                 }
 
                 <h1
-                    class="font-black text-white leading-[0.9] mb-[var(--spacing-lg)] tracking-[-0.04em]"
-                    style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem);"
+                    class="font-black text-white leading-[0.95] md:leading-[0.9] mb-[var(--spacing-lg)] tracking-[-0.04em] font-display"
+                    style="font-size: var(--text-display);"
                 >
                     <Fragment set:html={title} />
                 </h1>
 
                 {
                     description && (
-                        <p
-                            class="text-gray-200 font-light leading-relaxed mb-[var(--spacing-lg)]"
-                            style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem);"
-                        >
+                        <p class="text-white/80 font-light leading-relaxed mb-[var(--spacing-lg)] text-[length:var(--text-body)] md:text-[length:var(--text-h4)]">
                             {description}
                         </p>
                     )
@@ -114,8 +113,8 @@ const {
                 <!-- Trust Indicators (Optional) -->
                 {
                     trustIndicators && (
-                        <div class="flex flex-wrap items-center gap-[var(--spacing-md)] mb-[var(--spacing-xl)]">
-                            <div class="flex items-center text-accent gap-[var(--spacing-xs)] glass-bg glass-border px-4 py-2 rounded-xl">
+                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-[var(--spacing-md)] mb-[var(--spacing-xl)]">
+                            <div class="flex items-center text-accent gap-[var(--spacing-xs)] bg-white/10 border border-white/20 px-4 py-2 rounded-[var(--radius-xl)]">
                                 <svg
                                     class="w-5 h-5 shimmer-authority"
                                     fill="currentColor"
@@ -129,13 +128,13 @@ const {
                                 </svg>
                                 <span
                                     class="font-extrabold text-white tracking-wider uppercase"
-                                    style="font-size: clamp(0.7rem, 0.8vw, 0.9rem);"
+                                    style="font-size: var(--text-label);"
                                 >
                                     Licensed FL{" "}
                                     {SITE_CONFIG.credentials.license.number}
                                 </span>
                             </div>
-                            <div class="flex items-center gap-2 text-accent glass-bg glass-border px-4 py-2 rounded-xl">
+                            <div class="flex items-center gap-2 text-accent bg-white/10 border border-white/20 px-4 py-2 rounded-[var(--radius-xl)]">
                                 <svg
                                     class="w-5 h-5 shimmer-authority"
                                     fill="currentColor"
@@ -145,7 +144,7 @@ const {
                                 </svg>
                                 <span
                                     class="font-extrabold text-white tracking-wider uppercase"
-                                    style="font-size: clamp(0.7rem, 0.8vw, 0.9rem);"
+                                    style="font-size: var(--text-label);"
                                 >
                                     24/7 Emergency Response
                                 </span>
@@ -162,7 +161,7 @@ const {
                                 <Button
                                     href={primaryCta.href}
                                     variant="primary"
-                                    class="md:text-lg px-8 py-4 gap-2"
+                                    class="md:text-[length:var(--text-body)] px-8 py-4 gap-2"
                                 >
                                     {primaryCta.icon && (
                                         <primaryCta.icon class="w-5 h-5" />
@@ -174,7 +173,7 @@ const {
                                 <Button
                                     href={secondaryCta.href}
                                     variant="secondary"
-                                    class="md:text-lg px-8 py-4 gap-2"
+                                    class="md:text-[length:var(--text-body)] px-8 py-4 gap-2"
                                 >
                                     {secondaryCta.icon && (
                                         <secondaryCta.icon class="w-5 h-5" />
@@ -202,7 +201,7 @@ const {
             showScrollIndicator && (
                 <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden lg:block">
                     <div class="flex flex-col items-center gap-2 text-white/70 animate-bounce">
-                        <span class="text-[10px] uppercase tracking-widest">
+                        <span class="text-[length:var(--text-micro)] uppercase tracking-widest">
                             Scroll Down
                         </span>
                         <svg

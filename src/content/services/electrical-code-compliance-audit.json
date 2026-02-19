@@ -1,7 +1,7 @@
 {
   "name": "Electrical Code Compliance Audit",
   "slug": "electrical-code-compliance-audit",
-  "description": "Is your electrical system up to code? Solomon Electric provides comprehensive code compliance audits for South Florida properties\u2014identifying violations, safety hazards, and areas needing updates to meet current National Electrical Code standards. Whether you're addressing permit issues, preparing for sale, or simply want peace of mind, we document your electrical compliance status.",
+  "description": "Is your electrical system up to code? Solomon Electric's licensed electricians provide comprehensive code compliance audits for South Florida properties—identifying violations, safety hazards, and areas needing updates to meet current National Electrical Code standards. Whether you're addressing permit issues, preparing for sale, or simply want peace of mind, we document your electrical compliance status.",
   "shortDescription": "NEC compliance verification",
   "icon": "FileCheck",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,7 +15,7 @@
     "Prioritized repair recommendations",
     "Compliance remediation planning"
   ],
-  "warningSignsHeading": "When You Need Code Compliance Audit",
+  "warningSignsHeading": "Signs You May Need Electrical Code Compliance Audit",
   "warningSignsSubheading": "Code compliance matters for safety, insurance, and property transactions. Here's when audits help.",
   "problems": [
     {
@@ -49,17 +49,17 @@
       "icon": "Zap"
     }
   ],
-  "processHeading": "Our Code Compliance Audit Process",
+  "processHeading": "How Our Electrical Code Compliance Audit Process Works",
   "process": [
     {
       "step": 1,
       "title": "Scope Definition",
-      "description": "We understand your goals\u2014full compliance audit, specific concern investigation, or pre-sale documentation\u2014and plan accordingly."
+      "description": "We understand your goals—full compliance audit, specific concern investigation, or pre-sale documentation—and plan accordingly."
     },
     {
       "step": 2,
       "title": "Systematic Inspection",
-      "description": "We examine your electrical system against applicable NEC requirements\u2014panel, wiring, outlets, safety devices, and general installation quality."
+      "description": "We examine your electrical system against applicable NEC requirements—panel, wiring, outlets, safety devices, and general installation quality."
     },
     {
       "step": 3,
@@ -69,7 +69,7 @@
     {
       "step": 4,
       "title": "Prioritization",
-      "description": "We categorize findings by urgency\u2014safety hazards requiring immediate attention vs. code updates that are important but not immediately dangerous."
+      "description": "We categorize findings by urgency—safety hazards requiring immediate attention vs. code updates that are important but not immediately dangerous."
     },
     {
       "step": 5,
@@ -77,7 +77,7 @@
       "description": "You receive a detailed report documenting compliance status, violations found, and recommended remediation with estimated costs."
     }
   ],
-  "benefitsHeading": "Benefits of Code Compliance Audit",
+  "benefitsHeading": "Why Professional Electrical Code Compliance Audit Matters",
   "benefits": [
     {
       "title": "Know Your Status",
@@ -96,7 +96,7 @@
     },
     {
       "title": "Clear Path Forward",
-      "description": "Our audit provides specific remediation recommendations\u2014you know exactly what's needed to achieve compliance.",
+      "description": "Our audit provides specific remediation recommendations—you know exactly what's needed to achieve compliance.",
       "icon": "Zap"
     }
   ],
@@ -110,7 +110,7 @@
       "label": "Code Standard"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -145,7 +145,7 @@
     },
     {
       "question": "How is a compliance audit different from a safety inspection?",
-      "answer": "Safety inspections focus on immediate hazards\u2014things that could cause fire or shock now. Compliance audits are more comprehensive, examining whether installations meet code requirements even when not immediately dangerous. Compliance audits include safety assessment but go further."
+      "answer": "Safety inspections focus on immediate hazards—things that could cause fire or shock now. Compliance audits are more comprehensive, examining whether installations meet code requirements even when not immediately dangerous. Compliance audits include safety assessment but go further."
     },
     {
       "question": "What documentation do I receive?",
@@ -155,27 +155,42 @@
   "relatedServices": [
     "electrical-safety-inspection",
     "electrical-code-compliance-violation-repairs",
-    "home-electrical-inspection-certification",
+    "home-electrical-system-upgrade",
     "permit-application-inspection-coordination"
   ],
   "seoContent": [
     {
-      "heading": "Electrical Code Compliance Audit in South Florida",
-      "body": "Is your electrical system up to code? Solomon Electric provides comprehensive NEC compliance audits throughout Miami-Dade and Broward counties\u2014identifying violations, safety hazards, and areas needing updates. Whether for permit issues, property sales, or peace of mind, we document your compliance status with clear recommendations."
+      "heading": "Solving Code Violations: Expert Compliance Audits in {cityName}",
+      "body": "Is your electrical system up to code? Solomon Electric provides comprehensive NEC compliance audits throughout {county} and Broward counties—identifying violations, safety hazards, and areas needing updates. Whether for permit issues, property sales, or peace of mind, we document your compliance status with clear recommendations. Commercial electrical inspections follow NFPA 70B maintenance standards and Florida Building Code requirements. Our detailed reports include photographs, code references, and prioritized remediation recommendations."
     },
     {
-      "heading": "Identifying Code Violations",
-      "body": "Code violations range from minor (missing outlet covers) to serious (improper panel installation). We systematically examine your electrical system against applicable NEC requirements, documenting exactly what's compliant and what needs attention\u2014with specific code references for each finding."
+      "heading": "Passing Legal Inspections: Code Violation Audits in {cityName}",
+      "body": "Code violations range from minor (missing outlet covers) to serious (improper panel installation). We systematically examine your electrical system against applicable NEC requirements, documenting exactly what's compliant and what needs attention—with specific code references for each finding. We understand the urgency of commercial electrical issues—downtime means lost revenue. Our commercial team schedules work during off-hours and weekends to minimize business disruption, and we maintain fully-stocked vehicles for faster completions."
     },
     {
-      "heading": "Unpermitted Work Assessment",
-      "body": "Previous owners or contractors may have done electrical work without permits. Our compliance audit identifies modifications that appear unpermitted, assesses their quality, and recommends paths forward\u2014whether retroactive permitting or correction is needed."
+      "heading": "Resolving Unpermitted Work: Structural Electrical Audits in {cityName}",
+      "body": "Previous owners or contractors may have done electrical work without permits. Our compliance audit identifies modifications that appear unpermitted, assesses their quality, and recommends paths forward—whether retroactive permitting or correction is needed. Code compliance isn't just about passing inspections—it's about protecting your business from liability. We document all findings and provide certificates of compliance that satisfy insurance underwriters and commercial lease requirements."
     },
     {
-      "heading": "Serving South Florida Properties",
-      "body": "Solomon Electric provides electrical compliance audits throughout Miami, Fort Lauderdale, Hollywood, Boca Raton, and all surrounding areas. From residential properties to commercial spaces, we assess NEC compliance with detailed documentation and clear remediation recommendations."
+      "heading": "Certified Compliance: Professional NEC Audits in {cityName}",
+      "body": "Solomon Electric provides electrical compliance audits throughout {cityName}, Hollywood, Boca Raton, and all surrounding areas. From residential properties to commercial spaces, we assess NEC compliance with detailed documentation and clear remediation recommendations. For commercial properties, we coordinate with property managers, general contractors, and municipal building departments to ensure smooth permitting and inspection processes. Our familiarity with {county} County procedures saves you time and prevents delays."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Electrical Code Compliance Audit service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "comprehensive-electrical-safety-inspections"
+  ],
+  "imageAlt": "Electrical Code Compliance Audit service provided by licensed electricians in South Florida",
+  "shortName": "Code Compliance Audit",
+  "metaDescription": "Electrical code compliance audit in Miami. NEC and Florida Building Code inspections for homes and businesses. Licensed, detailed reports.",
+  "metaTitle": "Electrical Code Audit Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Full code compliance audit typically requires 3-4 hours for residential",
+    "priceRange": "Code compliance audits range from $300–$600 with detailed violation report and remediation plan",
+    "commonBrands": [
+      "Fluke",
+      "FLIR",
+      "Ideal Industries"
+    ],
+    "permitNote": "Audit is non-invasive; remediation work requires {county} County electrical permits per violation"
+  }
 }

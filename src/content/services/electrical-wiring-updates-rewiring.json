@@ -1,7 +1,7 @@
 {
   "name": "Electrical Wiring Updates & Rewiring",
   "slug": "electrical-wiring-updates-rewiring",
-  "description": "The wiring hidden inside your walls is the nervous system of your home\u2014and like any aging system, it eventually needs updating or replacement. Solomon Electric provides comprehensive rewiring and wiring update services for South Florida homes, addressing degraded insulation, aluminum wiring hazards, undersized circuits, and outdated installations. Whether you need complete rewiring or targeted updates to support modern electrical demands, our licensed electricians deliver safe, code-compliant solutions.",
+  "description": "Homes built before 1975 often have aluminum wiring, cloth-insulated cables, or undersized circuits that struggle with modern electrical loads and pose genuine fire risks. The wiring hidden inside your walls is the nervous system of your home—and like any aging system, it eventually needs updating or replacement. Solomon Electric provides comprehensive rewiring and wiring update services for South Florida homes, addressing degraded insulation, aluminum wiring hazards, undersized circuits, and outdated installations. Whether you need complete rewiring or targeted updates to support modern electrical demands, our licensed electricians deliver safe, code-compliant solutions. Licensed FL electricians providing complete rewiring services throughout {cityName} with multi-stage inspections.",
   "shortDescription": "Modernize aging home wiring systems",
   "icon": "Zap",
   "image": "../../assets/images/services/wiring.webp",
@@ -15,7 +15,7 @@
     "Minimal wall damage techniques",
     "Permit and inspection coordination"
   ],
-  "warningSignsHeading": "Warning Signs Your Home Needs Rewiring",
+  "warningSignsHeading": "Do You Need Electrical Rewiring? Common Warning Signs",
   "warningSignsSubheading": "Electrical wiring doesn't last forever. These signs indicate your wiring may be ready for upgrades or replacement.",
   "problems": [
     {
@@ -30,7 +30,7 @@
     },
     {
       "title": "Frequent Breaker Trips",
-      "description": "Constantly tripping breakers indicate circuits overloaded beyond safe capacity\u2014often because wiring can't handle modern electrical demands.",
+      "description": "Constantly tripping breakers indicate circuits overloaded beyond safe capacity—often because wiring can't handle modern electrical demands.",
       "icon": "AlertTriangle"
     },
     {
@@ -40,16 +40,16 @@
     },
     {
       "title": "Too Few Outlets",
-      "description": "Using extension cords and power strips everywhere indicates your home lacks adequate outlets\u2014a common sign of outdated wiring design.",
+      "description": "Using extension cords and power strips everywhere indicates your home lacks adequate outlets—a common sign of outdated wiring design.",
       "icon": "Plug"
     },
     {
       "title": "Two-Prong Ungrounded Outlets",
-      "description": "If most of your outlets have only two slots (no ground), your wiring lacks grounding protection\u2014a safety concern that requires updating.",
+      "description": "If most of your outlets have only two slots (no ground), your wiring lacks grounding protection—a safety concern that requires updating.",
       "icon": "AlertCircle"
     }
   ],
-  "processHeading": "Our Rewiring Process",
+  "processHeading": "What to Expect During Electrical Rewiring",
   "process": [
     {
       "step": 1,
@@ -77,7 +77,7 @@
       "description": "We coordinate the required inspection, ensure all connections are properly made and protected, and provide documentation of the completed work."
     }
   ],
-  "benefitsHeading": "Benefits of Updated Electrical Wiring",
+  "benefitsHeading": "Advantages of Professional Electrical Rewiring",
   "benefits": [
     {
       "title": "Eliminate Hidden Fire Hazards",
@@ -110,7 +110,7 @@
       "label": "Homes Rewired"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -141,7 +141,7 @@
     },
     {
       "question": "Can I rewire during a renovation?",
-      "answer": "Absolutely\u2014renovations are the ideal time for rewiring. With walls already open, we can install new wiring with minimal additional disruption or cost. We coordinate with contractors to ensure electrical work fits the renovation timeline and meets your updated needs."
+      "answer": "Absolutely—renovations are the ideal time for rewiring. With walls already open, we can install new wiring with minimal additional disruption or cost. We coordinate with contractors to ensure electrical work fits the renovation timeline and meets your updated needs."
     },
     {
       "question": "What type of wire do you use?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "Will new wiring add outlets where I need them?",
-      "answer": "Yes! Rewiring projects are the perfect opportunity to add outlets where you've always wanted them\u2014home office areas, kitchen islands, workshop spaces, outdoor locations. We design new circuits to serve your actual needs, not just replicate outdated outlet placement."
+      "answer": "Yes! Rewiring projects are the perfect opportunity to add outlets where you've always wanted them—home office areas, kitchen islands, workshop spaces, outdoor locations. We design new circuits to serve your actual needs, not just replicate outdated outlet placement."
     }
   ],
   "relatedServices": [
@@ -161,23 +161,36 @@
   "seoContent": [
     {
       "heading": "Whole-Home Rewiring Services in South Florida",
-      "body": "Outdated electrical wiring is a ticking clock. Thousands of home fires originate from degraded wiring, loose connections, and overloaded circuits hidden inside walls. Solomon Electric provides comprehensive rewiring services throughout Miami-Dade, Broward, and Palm Beach counties\u2014bringing older homes up to modern safety standards with new copper wiring, properly sized circuits, and code-compliant installations."
+      "body": "Outdated electrical wiring is a ticking clock. Thousands of home fires originate from degraded wiring, loose connections, and overloaded circuits hidden inside walls. Solomon Electric provides comprehensive rewiring services throughout {county}, Broward, and Palm Beach counties—bringing older homes up to modern safety standards with new copper wiring, properly sized circuits, and code-compliant installations. We use hospital-grade and commercial-grade outlets where durability matters. For homes with children, we install tamper-resistant receptacles as required by current NEC code. All outlets are properly grounded and tested before we leave."
     },
     {
-      "heading": "Aluminum Wiring Remediation",
-      "body": "Homes built in the 1960s and 1970s often contain aluminum wiring\u2014a documented fire hazard at connection points. Insurance companies increasingly require remediation or refuse coverage entirely. Solomon Electric offers both complete aluminum-to-copper rewiring and connection remediation using CPSC-approved COPALUM or AlumiConn connectors when full replacement isn't practical."
+      "heading": "Aluminum Wiring Remediation in Miami Homes",
+      "body": "Homes built in the 1960s and 1970s often contain aluminum wiring—a documented fire hazard at connection points. Insurance companies increasingly require remediation or refuse coverage entirely. Solomon Electric offers both complete aluminum-to-copper rewiring and connection remediation using CPSC-approved COPALUM or AlumiConn connectors when full replacement isn't practical. South Florida's salt air and humidity cause accelerated corrosion in outdoor and garage outlets. We use corrosion-resistant stainless steel or PVC covers and weather-rated outlets designed for coastal environments."
     },
     {
-      "heading": "Rewiring for Renovations",
-      "body": "Planning a kitchen remodel, bathroom update, or home addition? Renovation is the ideal time for rewiring\u2014walls are already open, and you can design electrical to serve modern needs. We coordinate with contractors to install new circuits, add outlets, and upgrade capacity as part of your renovation project."
+      "heading": "Rewiring for Miami Home Renovations",
+      "body": "Planning a kitchen remodel, bathroom update, or home addition? Renovation is the ideal time for rewiring—walls are already open, and you can design electrical to serve modern needs. We coordinate with contractors to install new circuits, add outlets, and upgrade capacity as part of your renovation project. Older South Florida homes often have ungrounded two-prong outlets, aluminum wiring connections, or backstabbed wires—all of which are fire hazards. Our electricians properly diagnose the condition and provide code-compliant solutions."
     },
     {
       "heading": "Licensed Electricians Serving All of South Florida",
-      "body": "Solomon Electric provides rewiring services throughout Miami, Fort Lauderdale, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Our Florida State    \"Licensed & Insured Florida Experts (#{{LICENSE}})\" handle everything from targeted circuit updates to complete whole-home rewiring. Contact us for a wiring assessment."
+      "body": "Solomon Electric provides rewiring services throughout {cityName}, Hollywood, Coral Gables, Pembroke Pines, and all surrounding communities. Our licensed and insured Florida experts (#EC13012419) handle everything from targeted circuit updates to complete whole-home rewiring. Contact us for a wiring assessment. We run new circuits using appropriately-sized copper wire with proper support and protection. Every connection is hand-tightened to manufacturer torque specifications—never backstabbed—ensuring reliable, long-lasting performance."
     }
   ],
   "relatedBlogPosts": [
     "rewiring-historic-miami-homes"
   ],
-  "imageAlt": "Electrical Wiring Updates & Rewiring service provided by licensed electricians in South Florida"
+  "imageAlt": "Electrical Wiring Updates & Rewiring service provided by licensed electricians in South Florida",
+  "shortName": "Wiring & Rewiring Services",
+  "metaDescription": "Electrical wiring updates and whole-house rewiring in Miami. Replace outdated aluminum or knob-and-tube wiring. Licensed, free estimates.",
+  "metaTitle": "Home Rewiring Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Whole-home rewiring typically requires 3-7 days depending on house size and accessibility",
+    "priceRange": "Complete rewiring ranges from $8,000–$20,000+ for a standard 3-bedroom home",
+    "commonBrands": [
+      "Southwire ROMEX",
+      "Cerro Wire",
+      "AFC Cable"
+    ],
+    "permitNote": "Requires {county} County master electrical permit with multiple inspections (rough-in and final)"
+  }
 }

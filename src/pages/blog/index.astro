@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import heroImage from "../../assets/images/heroes/blog.webp";
+import { IMAGES } from "../../config/images";
 import BlogCard from "../../components/BlogCard.astro";
 import PageHero from "../../components/PageHero.astro";
 import { sortPostsByDate } from "../../utils/blog";
@@ -67,8 +67,10 @@ const collectionPageSchema = {
 ---
 
 <Layout
-    title="Electrical Blog | Tips & Guides from Miami Electricians | Solomon Electric"
-    description="Expert electrical advice from licensed Miami electricians. Learn about panel upgrades, EV chargers, smart home wiring, safety tips & more. Free educational content."
+    title="Electrical Tips & Guides | Miami | Solomon Electric"
+    description="Expert electrical advice from licensed Miami electricians. Panel upgrades, EV chargers, smart home wiring, safety tips & more."
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
+    ogImageAlt="Solomon Electric Blog - Expert Electrical Tips & Guides for Miami Homeowners"
 >
     <!-- SEO Schema -->
     <script
@@ -84,25 +86,23 @@ const collectionPageSchema = {
 
     <!-- Hero Section -->
     <PageHero
-        title="Electrical Insights &<br/><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Guides</span>"
+        title="Electrical Insights &<br><span class='text-transparent bg-clip-text bg-gradient-to-r from-accent to-white'>Guides</span>"
         subtitle="Our Blog"
         description="Expert knowledge from Miami's premier electrical contractors. Learn about services, safety, and modern electrical solutions."
-        image={heroImage}
+        image={IMAGES.heroes.blog.src}
     />
 
     <!-- Featured Posts Section -->
     {
         featuredPosts.length > 0 && (
-            <section
-                class="bg-light border-b border-gray-100"
-                style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
-            >
+            <section class="bg-light border-b border-gray-100 py-12 md:py-32">
                 <div class="container-custom">
                     <div class="mb-12 text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-black text-primary mb-2 uppercase">
-                            Featured <span class="text-accent">Articles</span>
+                        <h2 class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-primary mb-2 uppercase">
+                            Featured Electrical{" "}
+                            <span class="text-accent">Guides</span>
                         </h2>
-                        <p class="text-[var(--text-body)] font-medium">
+                        <p class="text-[var(--clr-body)] font-medium">
                             Must-read guides for electrical services
                         </p>
                     </div>
@@ -121,18 +121,15 @@ const collectionPageSchema = {
     }
 
     <!-- All Posts Section -->
-    <section
-        class="bg-white"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
-    >
+    <section class="bg-white py-12 md:py-32">
         <div class="container-custom">
             <div class="mb-12 text-center md:text-left">
                 <h2
-                    class="text-3xl md:text-4xl font-black text-primary mb-2 uppercase"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-primary mb-2 uppercase"
                 >
-                    All <span class="text-accent">Articles</span>
+                    All Electrical <span class="text-accent">Articles</span>
                 </h2>
-                <p class="text-[var(--text-body)] font-medium">
+                <p class="text-[var(--clr-body)] font-medium">
                     Comprehensive guides to electrical services
                 </p>
             </div>
@@ -147,20 +144,19 @@ const collectionPageSchema = {
     </section>
 
     <!-- CTA Section -->
-    <section
-        class="bg-light"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
-    >
+    <section class="bg-light py-12 md:py-32">
         <div class="container-custom">
             <div
                 class="bg-[var(--bg-surface)] border border-[var(--border-light)] rounded-[var(--radius-xl)] p-12 md:p-16 text-center shadow-[var(--shadow-sm)]"
             >
                 <h2
-                    class="text-3xl md:text-4xl font-black text-primary mb-4 uppercase"
+                    class="text-[length:var(--text-h2)] md:text-[length:var(--text-h1)] font-black text-primary mb-4 uppercase"
                 >
-                    Ready to Get Started?
+                    Schedule Your Free Electrical Estimate
                 </h2>
-                <p class="text-[var(--text-body)] text-lg mb-8 font-medium">
+                <p
+                    class="text-[var(--clr-body)] text-[length:var(--text-body)] mb-8 font-medium"
+                >
                     24/7 emergency service available. Contact us today for a
                     free consultation.
                 </p>
@@ -168,7 +164,7 @@ const collectionPageSchema = {
                     <Button
                         href="/contact"
                         variant="primary"
-                        class="px-12 py-6 text-xl flex items-center gap-2"
+                        class="px-12 py-6 text-[length:var(--text-h5)] flex items-center gap-2"
                     >
                         <Mail class="w-5 h-5" />
                         Contact Us
@@ -176,10 +172,10 @@ const collectionPageSchema = {
                     <Button
                         href={SITE_CONFIG.contact.phone.href}
                         variant="secondary"
-                        class="px-12 py-6 text-xl flex items-center gap-2"
+                        class="px-12 py-6 text-[length:var(--text-h5)] flex items-center gap-2"
                     >
                         <Phone class="w-5 h-5" />
-                        Call Now
+                        Call&nbsp;Now
                     </Button>
                 </div>
             </div>

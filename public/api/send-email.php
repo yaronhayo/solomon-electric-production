@@ -33,13 +33,34 @@ foreach ($requiredFields as $field) {
     }
 }
 
-// Verify reCAPTCHA
-if (!empty($input['g-recaptcha-response'])) {
-    if (!verifyRecaptcha($input['g-recaptcha-response'])) {
-        http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Security verification failed']);
-        exit();
-    }
+// Honeypot anti-spam check — bots fill the hidden 'website' field
+// Return fake success to fool the bot (no email sent, no resources wasted)
+if (!empty($input['website'])) {
+    echo json_encode(['success' => true, 'message' => 'Request submitted successfully']);
+    exit();
+}
+
+// Verify reCAPTCHA and capture score
+// 6. Multi-Layer Security Verification
+$token = $input['g-recaptcha-response'] ?? '';
+$recaptchaResult = verifyRecaptcha($token);
+$recaptchaSuccess = $recaptchaResult['success'];
+$recaptchaScore = $recaptchaResult['score'];
+
+// Server Source of Truth: Identify potential bot traffic without blocking (unless score is extremely low)
+$isHighlySuspicious = ($recaptchaScore !== null && $recaptchaScore < 0.3);
+$securityStatus = "Score: " . ($recaptchaScore ?? "N/A");
+
+if ($isHighlySuspicious) {
+    // Log as suspicious but allow send (we don't want to lose real leads if Google is glitching)
+    $securityStatus .= " [SUSPICIOUS]";
+}
+
+// If reCAPTCHA verification itself failed (e.g., invalid token, network error)
+if (!$recaptchaSuccess) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Security verification failed']);
+    exit();
 }
 
 // Sanitize inputs
@@ -50,12 +71,15 @@ $address = sanitizeInput($input['address']);
 $aptUnit = isset($input['aptUnit']) ? sanitizeInput($input['aptUnit']) : '';
 $gateCode = isset($input['gateCode']) ? sanitizeInput($input['gateCode']) : '';
 $zipCode = isset($input['zipCode']) ? sanitizeInput($input['zipCode']) : '';
-$city = isset($input['city']) ? sanitizeInput($input['city']) : '';
+$city = isset($input['city']) ? normalizeCity(sanitizeInput($input['city'])) : '';
 $state = isset($input['state']) ? sanitizeInput($input['state']) : '';
 $urgency = sanitizeInput($input['urgency']);
-$name = sanitizeInput($input['name']);
+$name = normalizeName(sanitizeInput($input['name']));
 $phone = sanitizeInput($input['phone']);
 $email = isset($input['email']) && !empty($input['email']) ? sanitizeInput($input['email']) : null;
+
+// Consent Data (TCR Compliance)
+$smsConsent = isset($input['smsConsent']) && $input['smsConsent'] === 'on' ? true : false;
 
 // Tracking Data - Comprehensive Marketing Analytics
 $trackingData = [
@@ -68,7 +92,6 @@ $trackingData = [
     'screenResolution' => isset($input['tracking_screenResolution']) ? sanitizeInput($input['tracking_screenResolution']) : 'N/A',
     'userAgent' => isset($input['tracking_userAgent']) ? sanitizeInput($input['tracking_userAgent']) : $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
     'language' => isset($input['tracking_language']) ? sanitizeInput($input['tracking_language']) : 'N/A',
-    'cookiesAccepted' => isset($input['tracking_cookiesAccepted']) ? ($input['tracking_cookiesAccepted'] === 'true' ? 'Yes' : 'No') : 'Unknown',
     'consentTimestamp' => isset($input['tracking_consentTimestamp']) ? sanitizeInput($input['tracking_consentTimestamp']) : 'N/A',
     'recaptchaVerified' => !empty($input['g-recaptcha-response']) ? 'Yes ✓' : 'No',
     'trafficSource' => isset($input['tracking_trafficSource']) ? sanitizeInput($input['tracking_trafficSource']) : 'Unknown',
@@ -109,6 +132,15 @@ $submittedDate = date('F j, Y');
 $submittedTime = date('g:i A');
 $clientIp = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
 
+// Log lead for backup before sending email
+logLead(array_merge($input, [
+    'type' => 'booking_form',
+    'sanitized_name' => $name,
+    'sanitized_phone' => $phone,
+    'recaptcha_score' => $recaptchaScore,
+    'ip' => $clientIp
+]));
+
 // =====================================================
 // SOLOMON ELECTRIC BRAND SYSTEM
 // =====================================================
@@ -119,11 +151,13 @@ $clientIp = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'Unkn
 // Star Gold: #CDAC4F
 // =====================================================
 
-$brandPrimary = '#0D4380';
-$brandAccent = '#14D3E3';
-$brandLight = '#F3F3F3';
-$brandDark = '#111111';
-$brandGold = '#CDAC4F';
+$brandPrimary = BRAND_PRIMARY;
+$brandPrimaryDark = BRAND_PRIMARY_DARK;
+$brandAccent = BRAND_ACCENT;
+$brandAccentDark = BRAND_ACCENT_DARK;
+$brandLight = BRAND_LIGHT;
+$brandDark = BRAND_DARK;
+$brandGold = BRAND_GOLD;
 $logoUrl = WEBSITE_URL . '/logo.png';
 $faviconUrl = WEBSITE_URL . '/favicon.svg';
 
@@ -175,7 +209,7 @@ $styles = "
        HEADER - Brand Gradient with Logo
        ===================================================== */
     .header { 
-        background: linear-gradient(135deg, $brandPrimary 0%, #092d5a 100%); 
+        background: linear-gradient(135deg, $brandPrimary 0%, $brandPrimaryDark 100%); 
         padding: 40px 24px; 
         text-align: center; 
         color: #ffffff;
@@ -343,7 +377,7 @@ $styles = "
        ===================================================== */
     .cta-button { 
         display: inline-block; 
-        background: linear-gradient(135deg, $brandAccent 0%, #10b8c6 100%); 
+        background: linear-gradient(135deg, $brandAccent 0%, $brandAccentDark 100%); 
         color: $brandPrimary !important; 
         padding: 16px 32px; 
         border-radius: 4px; 
@@ -389,7 +423,7 @@ $styles = "
        FOOTER - Brand Navy Background
        ===================================================== */
     .footer { 
-        background: linear-gradient(135deg, $brandPrimary 0%, #092d5a 100%); 
+        background: linear-gradient(135deg, $brandPrimary 0%, $brandPrimaryDark 100%); 
         padding: 28px 24px; 
         text-align: center; 
         color: rgba(255, 255, 255, 0.9); 
@@ -507,7 +541,7 @@ $styles = "
         }
         
         .cta-button {
-            background: linear-gradient(135deg, $brandAccent 0%, #10b8c6 100%) !important;
+            background: linear-gradient(135deg, $brandAccent 0%, $brandAccentDark 100%) !important;
             color: #ffffff !important;
         }
     }
@@ -534,8 +568,18 @@ $leadEmailHtml = "
 <div class='email-wrapper'>
     <div class='email-container'>
         <div class='header'>
-            <img src='$logoUrl' alt='Solomon Electric' style='height: 50px; margin-bottom: 15px;'>
-            <h1 style='margin: 0; font-size: 24px;'>⚡ New Lead Alert</h1>
+            <!-- The Logo Sticker Pattern: Optimized for visibility in dark & light mobile clients -->
+            <div style='text-align: center; padding: 10px 0;'>
+                <img src='$logoUrl' 
+                     alt='Solomon Electric' 
+                     width='180' 
+                     style='background-color: #ffffff; 
+                            padding: 12px; 
+                            border-radius: 8px; 
+                            display: inline-block; 
+                            border: 1px solid #eeeeee;'>
+            </div>
+            <h1 style='margin: 15px 0 0; font-size: 24px; color: #ffffff;'>⚡ New Lead Alert</h1>
         </div>
         
         <div class='section' style='background-color: " . ($urgency === 'ASAP' ? '#FEF2F2' : '#ffffff') . ";'>
@@ -543,6 +587,20 @@ $leadEmailHtml = "
             <div class='data-row'>
                 <div class='data-label'>Urgency</div>
                 <div class='data-value'><span class='$urgencyClass'>$urgency</span></div>
+            </div>
+            <!-- Security & Verification -->
+            <div class='data-row' style='border-top: 1px solid #e5e7eb; padding-top: 14px;'>
+                <div class='data-label'>🛡️ Bot Protection</div>
+                <div class='data-value'>
+                    " . (isset($input['g-recaptcha-response']) 
+                        ? "<span class='badge' style='background-color: #DBEAFE; color: #1E40AF; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>reCAPTCHA v3 Verified ✓</span>" 
+                        : "<span class='badge badge-error' style='background-color: #FEE2E2; color: #991B1B; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>No verification</span>") . "
+                </div>
+            </div>
+            
+            <div class='data-row'>
+                <div class='data-label'>🚨 Traffic Source</div>
+                <div class='data-value' style='font-weight: 800; color: #AF8B11;'>" . $trackingData['trafficSource'] . "</div>
             </div>
             <div class='data-row'>
                 <div class='data-label'>Service Type</div>
@@ -576,6 +634,14 @@ $leadEmailHtml = "
                 <div class='data-label'>Email</div>
                 <div class='data-value'>" . ($email ?: 'Not provided') . "</div>
             </div>
+            <div class='data-row' style='border-top: 1px solid #e5e7eb; padding-top: 14px;'>
+                <div class='data-label'>📋 SMS Consent / TCR Compliance</div>
+                <div class='data-value'>
+                    " . ($smsConsent 
+                        ? "<span class='badge badge-success' style='background-color: #DCFCE7; color: #166534; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>SMS Consent Given ✓</span>" 
+                        : "<span class='badge badge-error' style='background-color: #FEE2E2; color: #991B1B; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>No Consent</span>") . "
+                </div>
+            </div>
         </div>
 
         <div class='section' style='background-color: #fafafa; border-top: 8px solid #F3F3F3;'>
@@ -608,7 +674,15 @@ $leadEmailHtml = "
                 <!-- Click Path -->
                 <div style='margin-bottom: 16px; padding: 12px; background-color: #fff; border-radius: 6px; border: 1px solid #e9ecef;'>
                     <div class='data-label'>🛤️ Click Path (User Journey)</div>
-                    <div style='font-size: 12px; color: #555; margin-top: 6px; word-break: break-word; font-family: monospace;'>{$trackingData['clickPath']}</div>
+                    <div style='font-size: 11px; color: #555; margin-top: 6px; word-break: break-word; font-family: monospace;'>" . (function($path) {
+                        $parts = explode(' > ', $path);
+                        $humanized = [];
+                        foreach ($parts as $p) {
+                            $name = trim(str_replace(['/', '.html'], ['', ''], $p)) ?: 'Home';
+                            $humanized[] = ucwords(str_replace('-', ' ', $name));
+                        }
+                        return implode(' <span style="color: #6366f1; font-weight: bold;">→</span> ', $humanized);
+                    })($trackingData['clickPath']) . "</div>
                 </div>
                 
                 <!-- Referrer -->
@@ -632,16 +706,15 @@ $leadEmailHtml = "
                     " . ($trackingData['gclid'] ? "<div style='margin-top: 8px; padding: 6px 10px; background-color: #fef3c7; border-radius: 4px; font-size: 11px;'><strong>🎯 Google Ads Click ID:</strong> " . substr($trackingData['gclid'], 0, 20) . "...</div>" : "") . "
                 </div>
                 
-                <!-- Security & Consent -->
+                <!-- Security -->
                 <table width='100%' cellspacing='0' cellpadding='0'>
                     <tr>
-                        <td width='50%' style='padding-bottom: 8px;'>
-                            <div class='data-label'>🍪 Cookies Accepted</div>
-                            <div class='data-value'>" . ($trackingData['cookiesAccepted'] === 'Yes' ? "<span class='badge badge-success'>Yes ✓</span>" : "<span class='badge badge-error'>No</span>") . "</div>
-                        </td>
-                        <td width='50%' style='padding-bottom: 8px;'>
-                            <div class='data-label'>🛡️ reCAPTCHA</div>
-                            <div class='data-value'>" . ($trackingData['recaptchaVerified'] === 'Yes ✓' ? "<span class='badge badge-success'>Verified ✓</span>" : "<span class='badge badge-error'>Unverified</span>") . "</div>
+                        <td width='100%' style='padding-bottom: 8px;'>
+                            <div class='data-label'>🛡️ reCAPTCHA Security</div>
+                            <div class='data-value'>
+                                " . ($trackingData['recaptchaVerified'] === 'Yes ✓' ? "<span class='badge badge-success'>Verified ✓</span>" : "<span class='badge badge-error'>Unverified</span>") . "
+                                " . ($recaptchaScore !== null ? " <span style='background:#f1f5f9; padding:2px 6px; border-radius:4px; color:#475569; font-size:11px; font-weight:800; border:1px solid #e2e8f0; margin-left:6px;'>Score: " . number_format($recaptchaScore, 2) . "</span>" : "") . "
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -684,12 +757,12 @@ $autoresponderHtml = "
             <div style='background-color: #f0fdfa; border: 2px solid $brandAccent; border-radius: 12px; padding: 20px; margin: 30px 0;'>
                 <h3 style='margin-top: 0; color: $brandPrimary;'>Emergency?</h3>
                 <p style='color: #444;'>If this is an immediate emergency, call us right now:</p>
-                <a href='tel:7868339211' style='display: inline-block; background-color: $brandAccent; color: $brandPrimary; padding: 15px 30px; border-radius: 8px; font-weight: 800; text-decoration: none;'>📞 (786) 833-9211</a>
+                <a href='tel:" . COMPANY_PHONE_RAW . "' style='display: inline-block; background-color: $brandAccent; color: $brandPrimary; padding: 15px 30px; border-radius: 8px; font-weight: 800; text-decoration: none;'>📞 " . COMPANY_PHONE . "</a>
             </div>
         </div>
         
         <div class='footer'>
-            $brandPrimary Solomon Electric • 4036 N 29th Ave, Hollywood, FL 33020
+            " . COMPANY_NAME . " • " . COMPANY_ADDRESS . "
         </div>
     </div>
 </div>

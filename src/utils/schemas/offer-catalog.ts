@@ -125,7 +125,7 @@ export function generateOfferCatalogSchema(
       '@type': 'Electrician',
       '@id': `${SITE_URL}/#organization`,
       name: SITE_CONFIG.company.name,
-      telephone: SITE_CONFIG.contact.phone,
+      telephone: SITE_CONFIG.contact.phone.formatted,
       url: SITE_URL,
     };
   }

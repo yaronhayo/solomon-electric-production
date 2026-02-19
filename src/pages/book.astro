@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import heroImage from "../assets/images/heroes/book.webp";
+import { IMAGES } from "../config/images";
 import BookingForm from "../components/BookingForm.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import { SITE_CONFIG } from "../config/site";
@@ -32,7 +32,7 @@ const scheduleActionSchema = {
     "@type": "ScheduleAction",
     name: "Schedule Electrical Service",
     description:
-        "Book a licensed electrician in Miami-Dade & Broward. Same-day appointments available.",
+        "Book a licensed electrician in Miami-Dade & Broward. Fast appointments available.",
     target: {
         "@type": "EntryPoint",
         urlTemplate: `${SITE_CONFIG.seo.siteUrl}/book`,
@@ -59,10 +59,10 @@ const scheduleActionSchema = {
 ---
 
 <Layout
-    title="Schedule Electrician Miami | Book Online 24/7 | Solomon Electric"
-    description="Book your electrical service online in 60 seconds. Same-day appointments available in Miami-Dade & Broward. Licensed electricians, free estimates, upfront pricing."
-    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.jpg`}
-    ogImageAlt="Book Solomon Electric Online - Same-Day Electrician Appointments in Miami"
+    title="Schedule Electrician Miami | Book Online | Solomon"
+    description="Book electrical service online in 60 seconds. Prompt appointments in Miami-Dade & Broward. Licensed electricians, free estimates."
+    ogImage={`${SITE_CONFIG.seo.siteUrl}/og-default.webp`}
+    ogImageAlt="Book Solomon Electric Online - Fast Electrician Appointments in Miami"
 >
     <!-- Breadcrumb Schema -->
     <script
@@ -81,14 +81,13 @@ const scheduleActionSchema = {
 
     <!-- Hero Section - Fully responsive with optimized spacing -->
     <section
-        class="relative min-h-screen flex items-center overflow-hidden"
-        style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);"
+        class="relative min-h-[clamp(700px,100vh,1000px)] flex items-center overflow-hidden pt-36 pb-20 md:pt-48 md:pb-32"
     >
         <!-- Background with overlay -->
         <div class="absolute inset-0 z-0">
             <Image
-                src={heroImage}
-                alt="Book electrician online Miami - Solomon Electric same-day appointments"
+                src={IMAGES.heroes.book.src}
+                alt="Book electrician online Miami - Solomon Electric fast appointments"
                 class="w-full h-full object-cover"
             />
             <div
@@ -111,7 +110,7 @@ const scheduleActionSchema = {
                 <div class="lg:col-span-7">
                     <p
                         class="text-accent tracking-[0.3em] font-bold uppercase"
-                        style="font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); margin-bottom: var(--spacing-md);"
+                        style="font-size: var(--text-nav); margin-bottom: var(--spacing-md);"
                     >
                         Free Estimates • Licensed #{
                             SITE_CONFIG.credentials.license.number
@@ -120,19 +119,19 @@ const scheduleActionSchema = {
 
                     <h1
                         class="font-black text-white leading-[0.9]"
-                        style="font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
+                        style="font-size: var(--text-display); margin-bottom: var(--spacing-lg); letter-spacing: -0.04em;"
                     >
                         Book Miami Electrician<br />
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"
                         >
-                            Same-Day Service
+                            Fast &amp; Reliable
                         </span>
                     </h1>
 
                     <p
-                        class="text-gray-200 font-light leading-relaxed"
-                        style="font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); margin-bottom: var(--spacing-lg);"
+                        class="text-white/80 font-light leading-relaxed"
+                        style="font-size: var(--text-h4); margin-bottom: var(--spacing-lg);"
                     >
                         Takes less than 2 minutes. No commitment required—just
                         tell us what's going on and we'll reach out to discuss
@@ -146,6 +145,30 @@ const scheduleActionSchema = {
                     <BookingForm />
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section
+        class="bg-white"
+        style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);"
+    >
+        <div class="container-custom text-center">
+            <h2
+                class="text-[length:var(--text-h3)] font-black text-primary uppercase mb-4 font-display"
+            >
+                Licensed Miami Electricians — Book With <span
+                    class="text-accent-text">Confidence</span
+                >
+            </h2>
+            <p
+                class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium leading-relaxed max-w-3xl mx-auto"
+            >
+                Every appointment is handled by FL-licensed electricians
+                (#EC13012419), backed by $2M insurance. Same-day and weekend
+                availability across Miami-Dade, Broward & Palm Beach. Free
+                estimates, upfront pricing, and no hidden fees—guaranteed.
+            </p>
         </div>
     </section>
 </Layout>

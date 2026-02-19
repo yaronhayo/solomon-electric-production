@@ -1,9 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import { ArrowRight } from "lucide-astro";
-const { post } = Astro.props;
+import type { CollectionEntry } from "astro:content";
 import { formatDate, calculateReadingTime } from "../utils/blog";
 
+interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
 const readingTime = post.body ? calculateReadingTime(post.body) : 5;
 ---
 
@@ -27,12 +32,13 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
                     width={600}
                     height={338}
                     loading="lazy"
+                    format="avif"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[var(--transition-slow)]"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-[var(--transition-base)]" />
 
                 {post.data.featured && (
-                    <span class="absolute top-4 left-4 bg-accent text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+                    <span class="absolute top-4 left-4 bg-accent text-white text-[length:var(--text-caption)] font-bold uppercase tracking-widest px-3 py-1 rounded-[var(--radius-full)] shadow-[var(--shadow-sm)]">
                         Featured
                     </span>
                 )}
@@ -43,7 +49,7 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
     <div class="p-[var(--spacing-lg)] md:p-[var(--spacing-xl)]">
         <div class="flex items-center justify-between mb-4">
             <div
-                class="flex items-center gap-[var(--gap-md)] mb-4 text-xs text-[var(--text-muted)] font-bold uppercase tracking-wider"
+                class="flex items-center gap-[var(--gap-md)] mb-4 text-[length:var(--text-caption)] text-[var(--clr-muted)] font-bold uppercase tracking-wider"
             >
                 <span class="text-primary">{post.data.category}</span>
                 <span>•</span>
@@ -53,21 +59,23 @@ const readingTime = post.body ? calculateReadingTime(post.body) : 5;
 
         <!-- Title -->
         <h3
-            class="text-xl md:text-2xl font-black text-primary mb-3 tracking-tight group-hover:text-accent transition-colors duration-[var(--transition-base)] line-clamp-2 uppercase font-display"
+            class="text-[length:var(--text-h5)] md:text-[length:var(--text-h4)] font-black text-primary mb-3 tracking-tight group-hover:text-accent transition-colors duration-[var(--transition-base)] line-clamp-2 uppercase font-secondary"
         >
             {post.data.title}
         </h3>
 
         <!-- Excerpt -->
         <p
-            class="text-[var(--text-body)] mb-6 line-clamp-3 leading-relaxed font-medium"
+            class="text-[var(--clr-body)] mb-6 line-clamp-3 leading-relaxed font-medium"
         >
             {post.data.excerpt || post.data.description}
         </p>
 
         <!-- Meta Info -->
-        <div class="flex items-center justify-between text-sm">
-            <span class="text-[var(--text-muted)] font-medium">
+        <div
+            class="flex items-center justify-between text-[length:var(--text-label)]"
+        >
+            <span class="text-[var(--clr-muted)] font-medium">
                 {formatDate(post.data.pubDate)}
             </span>
             <span

@@ -35,20 +35,44 @@ foreach ($requiredFields as $field) {
     }
 }
 
-// Verify reCAPTCHA if token provided
-if (!empty($input['g-recaptcha-response'])) {
-    if (!verifyRecaptcha($input['g-recaptcha-response'])) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Security verification failed']);
-        exit();
-    }
+// Honeypot anti-spam check — bots fill the hidden 'website' field
+// Return fake success to fool the bot (no email sent, no resources wasted)
+if (!empty($input['website'])) {
+    echo json_encode(['status' => 'success', 'message' => 'Message sent successfully']);
+    exit();
+}
+
+// Verify reCAPTCHA and capture score
+// 6. Multi-Layer Security Verification
+$token = $input['g-recaptcha-response'] ?? '';
+$recaptchaResult = verifyRecaptcha($token);
+$recaptchaSuccess = $recaptchaResult['success'];
+$recaptchaScore = $recaptchaResult['score'];
+
+// Server Source of Truth: Identify potential bot traffic without blocking (unless score is extremely low)
+$isHighlySuspicious = ($recaptchaScore !== null && $recaptchaScore < 0.3);
+$securityStatus = "Score: " . ($recaptchaScore ?? "N/A");
+
+if ($isHighlySuspicious) {
+    // Log as suspicious but allow send (we don't want to lose real leads if Google is glitching)
+    $securityStatus .= " [SUSPICIOUS]";
+}
+
+// If reCAPTCHA verification itself failed (e.g., invalid token, network error)
+if (!$recaptchaSuccess) {
+    http_response_code(400);
+    echo json_encode(['status' => 'error', 'message' => 'Security verification failed']);
+    exit();
 }
 
 // Sanitize all inputs
-$name = sanitizeInput($input['name']);
+$name = normalizeName(sanitizeInput($input['name']));
 $email = isset($input['email']) && !empty($input['email']) ? sanitizeInput($input['email']) : null;
 $phone = sanitizeInput($input['phone']);
 $messageBody = sanitizeInput($input['message']);
+
+// Consent Data (TCR Compliance)
+$smsConsent = isset($input['smsConsent']) && $input['smsConsent'] === 'on' ? true : false;
 
 // Extract tracking data (sent from frontend with tracking_ prefix)
 $trackingData = [
@@ -61,9 +85,8 @@ $trackingData = [
     'deviceType' => isset($input['tracking_deviceType']) ? sanitizeInput($input['tracking_deviceType']) : 'Unknown',
     'screenResolution' => isset($input['tracking_screenResolution']) ? sanitizeInput($input['tracking_screenResolution']) : 'N/A',
     'language' => isset($input['tracking_language']) ? sanitizeInput($input['tracking_language']) : 'N/A',
-    'cookiesAccepted' => isset($input['tracking_cookiesAccepted']) ? ($input['tracking_cookiesAccepted'] === 'true' ? 'Yes' : 'No') : 'Unknown',
     'consentTimestamp' => isset($input['tracking_consentTimestamp']) ? sanitizeInput($input['tracking_consentTimestamp']) : 'N/A',
-    'recaptchaVerified' => isset($input['tracking_recaptchaVerified']) ? ($input['tracking_recaptchaVerified'] === 'true' ? 'Yes ✓' : 'No') : 'No',
+    'recaptchaVerified' => !empty($input['g-recaptcha-response']) ? 'Yes ✓' : 'No',
     'utmSource' => isset($input['tracking_utmSource']) ? sanitizeInput($input['tracking_utmSource']) : 'N/A',
     'utmMedium' => isset($input['tracking_utmMedium']) ? sanitizeInput($input['tracking_utmMedium']) : 'N/A',
     'utmCampaign' => isset($input['tracking_utmCampaign']) ? sanitizeInput($input['tracking_utmCampaign']) : 'N/A',
@@ -78,6 +101,15 @@ $submittedDate = date('F j, Y');
 $submittedTime = date('g:i A');
 $clientIp = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
 
+// Log lead for backup before sending email
+logLead(array_merge($input, [
+    'type' => 'contact_form',
+    'sanitized_name' => $name,
+    'sanitized_email' => $email,
+    'recaptcha_score' => $recaptchaScore,
+    'ip' => $clientIp
+]));
+
 // =====================================================
 // SOLOMON ELECTRIC BRAND SYSTEM
 // =====================================================
@@ -88,13 +120,15 @@ $clientIp = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'Unkn
 // Star Gold: #CDAC4F
 // =====================================================
 
-$brandPrimary = '#0D4380';
-$brandAccent = '#14D3E3';
-$brandLight = '#F3F3F3';
-$brandDark = '#111111';
-$brandGold = '#CDAC4F';
+$brandPrimary = BRAND_PRIMARY;
+$brandPrimaryDark = BRAND_PRIMARY_DARK;
+$brandAccent = BRAND_ACCENT;
+$brandAccentDark = BRAND_ACCENT_DARK;
+$brandLight = BRAND_LIGHT;
+$brandDark = BRAND_DARK;
+$brandGold = BRAND_GOLD;
 $logoUrl = WEBSITE_URL . '/logo.png';
-$faviconUrl = WEBSITE_URL . '/favicon.svg';
+$faviconUrl = WEBSITE_URL . '/favicon.png';
 
 // SOLOMON ELECTRIC EMAIL DESIGN SYSTEM
 // Pixel-perfect responsive templates with brand consistency
@@ -144,7 +178,7 @@ $styles = "
        HEADER - Brand Gradient with Logo
        ===================================================== */
     .header { 
-        background: linear-gradient(135deg, $brandPrimary 0%, #092d5a 100%); 
+        background: linear-gradient(135deg, $brandPrimary 0%, $brandPrimaryDark 100%); 
         padding: 40px 24px; 
         text-align: center; 
         color: #ffffff;
@@ -294,7 +328,7 @@ $styles = "
        ===================================================== */
     .cta-button { 
         display: inline-block; 
-        background: linear-gradient(135deg, $brandAccent 0%, #10b8c6 100%); 
+        background: linear-gradient(135deg, $brandAccent 0%, $brandAccentDark 100%); 
         color: $brandPrimary !important; 
         padding: 16px 32px; 
         border-radius: 4px; 
@@ -312,7 +346,7 @@ $styles = "
        FOOTER - Brand Navy Background
        ===================================================== */
     .footer { 
-        background: linear-gradient(135deg, $brandPrimary 0%, #092d5a 100%); 
+        background: linear-gradient(135deg, $brandPrimary 0%, $brandPrimaryDark 100%); 
         padding: 28px 24px; 
         text-align: center; 
         color: rgba(255, 255, 255, 0.9); 
@@ -418,7 +452,7 @@ $styles = "
         }
         
         .cta-button {
-            background: linear-gradient(135deg, $brandAccent 0%, #10b8c6 100%) !important;
+            background: linear-gradient(135deg, $brandAccent 0%, $brandAccentDark 100%) !important;
             color: #ffffff !important;
         }
     }
@@ -445,8 +479,17 @@ $leadEmailHtml = "
 <div class='email-wrapper'>
     <div class='email-container'>
         <div class='header'>
-            <img src='$logoUrl' alt='Solomon Electric' style='height: 50px; margin-bottom: 15px;'>
-            <h1 style='margin: 0; font-size: 24px;'>New Contact Message</h1>
+            <div style='text-align: center; padding: 10px 0;'>
+                <img src='$logoUrl' 
+                     alt='Solomon Electric' 
+                     width='180' 
+                     style='background-color: #ffffff; 
+                            padding: 12px; 
+                            border-radius: 8px; 
+                            display: inline-block; 
+                            border: 1px solid #eeeeee;'>
+            </div>
+            <h1 style='margin: 15px 0 0; font-size: 24px; color: #ffffff;'>✉️ New Contact Message</h1>
         </div>
         
         <div class='section'>
@@ -463,50 +506,96 @@ $leadEmailHtml = "
                 <div class='data-label'>Email</div>
                 <div class='data-value'>" . ($email ?: 'N/A') . "</div>
             </div>
+            <div class='data-row' style='border-top: 1px solid #e5e7eb; padding-top: 14px;'>
+                <div class='data-label'>📋 SMS Consent / TCR Compliance</div>
+                <div class='data-value'>
+                    " . ($smsConsent 
+                        ? "<span class='badge badge-success' style='background-color: #DCFCE7; color: #166534; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>SMS Consent Given ✓</span>" 
+                        : "<span class='badge badge-error' style='background-color: #FEE2E2; color: #991B1B; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>No Consent</span>") . "
+                </div>
+            </div>
             
             <div class='section-title' style='margin-top: 30px;'>Message</div>
             <div class='message-box'>$messageBody</div>
         </div>
         
-        <div class='section' style='background-color: #fafafa; padding-top: 20px;'>
+        <div class='section' style='background-color: #fafafa; padding-top: 20px; border-top: 8px solid #F3F3F3;'>
             <div class='section-title'>📊 Marketing & Analytics</div>
             <div class='analytics-box'>
-                <table width='100%' cellspacing='0' cellpadding='0'>
+                <!-- Traffic Source & Attribution -->
+                <table width='100%' cellspacing='0' cellpadding='0' style='margin-bottom: 16px;'>
                     <tr>
-                        <td width='33%' style='padding-bottom: 15px;'>
-                            <div class='data-label'>Source</div>
-                            <div class='data-value'><span class='badge badge-info'>{$trackingData['trafficSource']}</span></div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>🎯 Traffic Source</div>
+                            <div class='data-value'>{$trackingData['trafficSource']}</div>
                         </td>
-                        <td width='33%' style='padding-bottom: 15px;'>
-                            <div class='data-label'>Visitor Type</div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>👤 Visitor Type</div>
                             <div class='data-value'>{$trackingData['newReturning']}</div>
                         </td>
-                        <td width='34%' style='padding-bottom: 15px;'>
-                            <div class='data-label'>Session Time</div>
-                            <div class='data-value'>{$trackingData['timeOnSite']}s</div>
-                        </td>
                     </tr>
                     <tr>
-                        <td colspan='2' style='padding-bottom: 15px;'>
-                            <div class='data-label'>UTM Data</div>
-                            <div style='font-size: 11px; color: #666;'>
-                                S: {$trackingData['utmSource']} | M: {$trackingData['utmMedium']} | C: {$trackingData['utmCampaign']}
-                            </div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>📱 Device Type</div>
+                            <div class='data-value'>{$trackingData['deviceType']}</div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td width='50%'>
-                            <div class='data-label'>Cookies</div>
-                            <div class='data-value'>" . ($trackingData['cookiesAccepted'] === 'Yes' ? "<span class='badge badge-success'>Accepted</span>" : "<span class='badge badge-error'>Declined</span>") . "</div>
-                        </td>
-                        <td width='50%'>
-                            <div class='data-label'>reCAPTCHA</div>
-                            <div class='data-value'>" . ($trackingData['recaptchaVerified'] === 'Yes ✓' ? "<span class='badge badge-success'>Verified</span>" : "<span class='badge badge-error'>Failed</span>") . "</div>
+                        <td width='50%' style='padding-bottom: 12px;'>
+                            <div class='data-label'>⏱️ Time on Site</div>
+                            <div class='data-value'>{$trackingData['timeOnSite']} seconds</div>
                         </td>
                     </tr>
                 </table>
-                <div style='margin-top: 15px; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 10px;'>
-                    IP: $clientIp | User Agent: {$trackingData['deviceType']} | Consent: {$trackingData['consentTimestamp']}
+                
+                <!-- Click Path -->
+                <div style='margin-bottom: 16px; padding: 12px; background-color: #fff; border-radius: 6px; border: 1px solid #e9ecef;'>
+                    <div class='data-label'>🛤️ Click Path (User Journey)</div>
+                    <div style='font-size: 11px; color: #555; margin-top: 6px; word-break: break-word; font-family: monospace;'>" . (function($path) {
+                        $parts = explode(' > ', $path);
+                        $humanized = [];
+                        foreach ($parts as $p) {
+                            $name = trim(str_replace(['/', '.html'], ['', ''], $p)) ?: 'Home';
+                            $humanized[] = ucwords(str_replace('-', ' ', $name));
+                        }
+                        return implode(' <span style="color: #6366f1; font-weight: bold;">→</span> ', $humanized);
+                    })($trackingData['clickPath']) . "</div>
+                </div>
+                
+                <!-- Referrer -->
+                <div style='margin-bottom: 16px;'>
+                    <div class='data-label'>🔗 Referrer / Landing Source</div>
+                    <div style='font-size: 12px; color: #555; margin-top: 4px; word-break: break-word;'>{$trackingData['referrer']}</div>
+                </div>
+
+                <!-- UTM Campaign Data -->
+                <div style='margin-bottom: 16px; padding: 12px; background-color: #e8f4f8; border-radius: 6px;'>
+                    <div class='data-label'>📈 UTM Campaign Data</div>
+                    <table width='100%' cellspacing='0' cellpadding='0' style='margin-top: 8px;'>
+                        <tr>
+                            <td style='padding: 4px 0; font-size: 12px;'><strong>Source:</strong> {$trackingData['utmSource']}</td>
+                            <td style='padding: 4px 0; font-size: 12px;'><strong>Medium:</strong> {$trackingData['utmMedium']}</td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='padding: 4px 0; font-size: 12px;'><strong>Campaign:</strong> {$trackingData['utmCampaign']}</td>
+                        </tr>
+                    </table>
+                    " . ($trackingData['gclid'] ? "<div style='margin-top: 8px; padding: 6px 10px; background-color: #fef3c7; border-radius: 4px; font-size: 11px;'><strong>🎯 Google Ads Click ID:</strong> " . substr($trackingData['gclid'], 0, 20) . "...</div>" : "") . "
+                </div>
+                
+                <!-- Security & Verification -->
+                <div class='data-row' style='border-top: 1px solid #e5e7eb; padding-top: 14px;'>
+                    <div class='data-label'>🛡️ Bot Protection</div>
+                    <div class='data-value'>
+                        " . (isset($input['g-recaptcha-response']) 
+                            ? "<span class='badge' style='background-color: #DBEAFE; color: #1E40AF; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>reCAPTCHA v3 Verified ✓</span>" 
+                            : "<span class='badge badge-error' style='background-color: #FEE2E2; color: #991B1B; padding: 6px 12px; border-radius: 4px; font-weight: 800; font-size: 11px;'>No verification</span>") . "
+                        " . ($recaptchaScore !== null ? " <span style='background:#f1f5f9; padding:2px 6px; border-radius:4px; color:#475569; font-size:11px; font-weight:800; border:1px solid #e2e8f0; margin-left:6px;'>Score: " . number_format($recaptchaScore, 2) . "</span>" : "") . "
+                    </div>
+                </div>
+                
+                <!-- Technical Details -->
+                <div style='margin-top: 16px; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 12px;'>
+                    <strong>Technical:</strong> IP: $clientIp • Screen: {$trackingData['screenResolution']} • Lang: {$trackingData['language']}<br>
+                    <strong>Consent:</strong> {$trackingData['consentTimestamp']}
                 </div>
             </div>
         </div>
@@ -521,10 +610,49 @@ $leadEmailHtml = "
 </html>
 ";
 
-// Send email
+// AUTO-RESPONDER EMAIL (sent to client)
+$firstName = explode(' ', $name)[0];
+$autoresponderHtml = "
+<!DOCTYPE html>
+<html>
+<head><style>$styles</style></head>
+<body>
+<div class='email-wrapper'>
+    <div class='email-container'>
+        <div class='header'>
+            <img src='$logoUrl' alt='Solomon Electric' style='height: 60px; margin-bottom: 15px;'>
+            <h1 style='margin: 0; font-size: 28px;'>Message Received ✓</h1>
+        </div>
+        
+        <div class='section' style='text-align: center;'>
+            <p style='font-size: 18px; color: #333;'>Thank you for reaching out, <strong>$firstName</strong>!</p>
+            <p style='color: #666; line-height: 1.6;'>We've received your message and a member of our team will get back to you shortly. We typically respond within a few hours during business hours.</p>
+            
+            <div style='background-color: #f0fdfa; border: 2px solid $brandAccent; border-radius: 12px; padding: 20px; margin: 30px 0;'>
+                <h3 style='margin-top: 0; color: $brandPrimary;'>Need Immediate Help?</h3>
+                <p style='color: #444;'>For emergencies or urgent electrical issues, call us directly:</p>
+                <a href='tel:" . COMPANY_PHONE_RAW . "' style='display: inline-block; background-color: $brandAccent; color: $brandPrimary; padding: 15px 30px; border-radius: 8px; font-weight: 800; text-decoration: none;'>📞 " . COMPANY_PHONE . "</a>
+            </div>
+        </div>
+        
+        <div class='footer'>
+            " . COMPANY_NAME . " • " . COMPANY_ADDRESS . "
+        </div>
+    </div>
+</div>
+</body>
+</html>
+";
+
+// Send lead notification email
 $subject = "✉️ Contact Form: $name";
 $replyTo = $email ?: null;
 $result = sendEmailViaSMTP2GO($subject, $leadEmailHtml, $replyTo);
+
+// Send autoresponder to client (if email provided)
+if ($email) {
+    sendAutoresponder($email, $name, "We've Received Your Message - " . COMPANY_NAME, $autoresponderHtml);
+}
 
 if ($result['success']) {
     echo json_encode(['status' => 'success', 'message' => 'Message sent successfully']);

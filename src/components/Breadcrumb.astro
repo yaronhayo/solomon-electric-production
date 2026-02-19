@@ -18,7 +18,7 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav class="breadcrumb-nav">
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
     <Container>
         <div class="breadcrumb-items">
             {
@@ -38,6 +38,7 @@ const { items } = Astro.props;
                                 fill="none"
                                 stroke="currentColor"
                                 stroke-width="2"
+                                aria-hidden="true"
                             >
                                 <path d="M9 5l7 7-7 7" />
                             </svg>
@@ -58,14 +59,14 @@ const { items } = Astro.props;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         position: sticky;
         top: var(--header-height, 70px);
-        z-index: 45;
+        z-index: var(--z-header);
     }
 
     .breadcrumb-items {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        font-size: 0.875rem;
+        font-size: var(--text-nav);
     }
 
     .breadcrumb-link {
@@ -77,6 +78,12 @@ const { items } = Astro.props;
 
     .breadcrumb-link:hover {
         color: var(--color-accent);
+    }
+
+    .breadcrumb-link:focus-visible {
+        outline: var(--outline-accent);
+        outline-offset: 4px;
+        border-radius: var(--radius-sm);
     }
 
     .breadcrumb-sep {

@@ -1,7 +1,7 @@
 {
   "name": "Automatic Transfer Switch Installation",
   "slug": "automatic-transfer-switch-installation",
-  "description": "Automatic transfer switches make generator backup truly seamless\u2014detecting power outages and switching to generator power within seconds, without any human intervention. Solomon Electric installs automatic transfer switches for both standby generators and portable units throughout South Florida, providing the convenience and reliability families need during hurricanes and outages.",
+  "description": "Automatic transfer switches make generator backup truly seamless—detecting power outages and switching to generator power within seconds, without any human intervention. Solomon Electric's licensed team installs automatic transfer switches for both standby generators and portable units throughout South Florida, providing the convenience and reliability families need during hurricanes and outages.",
   "shortDescription": "Seamless generator switchover",
   "icon": "Zap",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,7 +15,7 @@
     "Whole-house and essential load options",
     "Load shedding management"
   ],
-  "warningSignsHeading": "Why Upgrade to Automatic Transfer Switch?",
+  "warningSignsHeading": "When to Consider Transfer Switch Installation",
   "warningSignsSubheading": "Manual transfer requires you to be home during outages. Automatic switching provides protection even when you're away.",
   "problems": [
     {
@@ -49,7 +49,7 @@
       "icon": "AlertCircle"
     }
   ],
-  "processHeading": "Our Transfer Switch Installation Process",
+  "processHeading": "Our Step-by-Step Transfer Switch Installation Process",
   "process": [
     {
       "step": 1,
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Load Circuit Selection",
-      "description": "We identify essential circuits to receive backup power\u2014refrigerator, well pump, medical equipment, selected lights\u2014matched to generator capacity."
+      "description": "We identify essential circuits to receive backup power—refrigerator, well pump, medical equipment, selected lights—matched to generator capacity."
     },
     {
       "step": 3,
@@ -77,11 +77,11 @@
       "description": "We test automatic operation under simulated outage, verify transfer timing, and demonstrate system operation including maintenance requirements."
     }
   ],
-  "benefitsHeading": "Benefits of Automatic Transfer Switch",
+  "benefitsHeading": "Key Benefits of Transfer Switch Installation",
   "benefits": [
     {
       "title": "Seamless Protection",
-      "description": "Power transfers within seconds of outage detection\u2014often before lights even flicker off. No intervention required.",
+      "description": "Power transfers within seconds of outage detection—often before lights even flicker off. No intervention required.",
       "icon": "Zap"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Return to Normal",
-      "description": "When utility power returns, automatic switches transfer back and signal the generator to shut down\u2014completely hands-free.",
+      "description": "When utility power returns, automatic switches transfer back and signal the generator to shut down—completely hands-free.",
       "icon": "TrendingUp"
     }
   ],
@@ -110,7 +110,7 @@
       "label": "ATS Installed"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -121,7 +121,7 @@
   "faqs": [
     {
       "question": "What's an automatic transfer switch?",
-      "answer": "An ATS monitors utility power. When it detects an outage, it sends a start signal to your generator. Once the generator is running and stable, it transfers your home's load to generator power\u2014typically within 10-30 seconds. When utility power returns, it transfers back and stops the generator."
+      "answer": "An ATS monitors utility power. When it detects an outage, it sends a start signal to your generator. Once the generator is running and stable, it transfers your home's load to generator power—typically within 10-30 seconds. When utility power returns, it transfers back and stops the generator."
     },
     {
       "question": "Can ATS work with portable generators?",
@@ -129,7 +129,7 @@
     },
     {
       "question": "What's the difference between whole-house and essential circuit transfer?",
-      "answer": "Whole-house ATS powers your entire panel\u2014requiring a generator large enough for all loads. Essential circuit ATS powers only selected circuits (refrigerator, lights, medical equipment) allowing a smaller generator. Most residential installations use essential circuit approach."
+      "answer": "Whole-house ATS powers your entire panel—requiring a generator large enough for all loads. Essential circuit ATS powers only selected circuits (refrigerator, lights, medical equipment) allowing a smaller generator. Most residential installations use essential circuit approach."
     },
     {
       "question": "How much of my house can an ATS power?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "Is installation complicated?",
-      "answer": "Transfer switch installation involves significant panel work\u2014moving circuits, installing subpanel if needed, connecting generator interface. It's not DIY work. However, for experienced electricians, it's straightforward work that typically completes in one day."
+      "answer": "Transfer switch installation involves significant panel work—moving circuits, installing subpanel if needed, connecting generator interface. It's not DIY work. However, for experienced electricians, it's straightforward work that typically completes in one day."
     },
     {
       "question": "What happens if the generator runs out of fuel?",
@@ -161,23 +161,37 @@
   "seoContent": [
     {
       "heading": "Automatic Transfer Switch Installation in South Florida",
-      "body": "Make your generator backup truly seamless with automatic transfer switch installation from Solomon Electric. Our ATS installations detect power outages and switch to generator power within seconds\u2014protecting your home whether you're present or away. Essential protection for South Florida's hurricane-prone region."
+      "body": "Make your generator backup truly seamless with automatic transfer switch installation from Solomon Electric. Our ATS installations detect power outages and switch to generator power within seconds—protecting your home whether you're present or away. Essential protection for South Florida's hurricane-prone region. Our licensed electricians perform a complete load calculation before any panel work, ensuring your new panel meets current NEC requirements and has room for future expansion. We use copper bus bars, properly torqued connections, and AFCI/GFCI breakers where required by Florida Building Code."
     },
     {
-      "heading": "Hands-Free Backup Power",
-      "body": "Manual generator start and transfer requires you to be home during outages. Automatic transfer switches provide protection around the clock\u2014detecting outages, starting your generator, and transferring power without any intervention. When utility power returns, they transfer back automatically."
+      "heading": "Hands-Free Backup Power for Miami Homes",
+      "body": "Manual generator start and transfer requires you to be home during outages. Automatic transfer switches provide protection around the clock—detecting outages, starting your generator, and transferring power without any intervention. When utility power returns, they transfer back automatically. South Florida's heat and humidity accelerate corrosion inside electrical panels. We inspect for oxidized bus bars, loose connections, and thermal damage that compromise safety. Every panel we install includes proper weather sealing rated for coastal environments."
     },
     {
-      "heading": "Essential Circuit Protection",
-      "body": "Most residential automatic transfer installations protect essential circuits\u2014refrigerator, lighting, well pump, medical equipment\u2014sized to your generator's capacity. We help you prioritize which circuits matter most and configure the system to protect what's important to your family."
+      "heading": "Essential Circuit Protection for South Florida Properties",
+      "body": "Most residential automatic transfer installations protect essential circuits—refrigerator, lighting, well pump, medical equipment—sized to your generator's capacity. We help you prioritize which circuits matter most and configure the system to protect what's important to your family. Insurance companies increasingly require panel upgrades for policy renewals. Our electricians provide documented before-and-after reports that satisfy insurance requirements, and we coordinate directly with your insurer when needed."
     },
     {
-      "heading": "Hurricane Season Preparation",
-      "body": "Solomon Electric installs automatic transfer switches throughout Miami, Fort Lauderdale, Hollywood, and all South Florida communities. Prepare before hurricane season\u2014get the automatic protection that works even during overnight storms or when you're away from home."
+      "heading": "Hurricane Season Electrical Preparation in South Florida",
+      "body": "Solomon Electric installs automatic transfer switches throughout {cityName}, Hollywood, and all South Florida communities. Prepare before hurricane season—get the automatic protection that works even during overnight storms or when you're away from home. Modern electrical demands—EV chargers, home offices, pool equipment, smart home systems—require more capacity than panels installed even 15 years ago. We future-proof your installation with 20-30% additional capacity beyond your current needs."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
   ],
-  "imageAlt": "Automatic Transfer Switch Installation service provided by licensed electricians in South Florida"
+  "imageAlt": "Automatic Transfer Switch Installation service provided by licensed electricians in South Florida",
+  "shortName": "Transfer Switch Installation",
+  "metaTitle": "Transfer Switch Installation Miami FL | Solomon Electric",
+  "metaDescription": "Expert automatic transfer switch installation in Miami. Seamless generator-to-grid switching for uninterrupted power. Licensed & insured.",
+  "localSignals": {
+    "typicalTimeline": "Transfer switch installation typically requires 4-6 hours",
+    "priceRange": "Automatic transfer switch installation ranges from $1,500–$4,000 depending on amperage",
+    "commonBrands": [
+      "Generac",
+      "Kohler",
+      "ASCO",
+      "Eaton"
+    ],
+    "permitNote": "Requires {county} County electrical permit and FPL coordination for service connection"
+  }
 }

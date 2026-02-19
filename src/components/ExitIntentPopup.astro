@@ -6,14 +6,21 @@
  */
 
 import { SITE_CONFIG } from "../config/site";
+import { Zap } from "lucide-astro";
+import PhoneNumber from "./ui/PhoneNumber.astro";
 
 const phone = SITE_CONFIG.contact.phone.formatted;
 ---
 
-<div id="exit-intent-popup" class="exit-popup hidden" aria-hidden="true">
+<div id="exit-intent-popup" class="exit-popup hidden" inert>
   <div class="exit-popup-overlay" data-close-popup></div>
   <div class="exit-popup-content flex items-center justify-center">
-    <button class="exit-popup-close" aria-label="Close popup" data-close-popup>
+    <button
+      type="button"
+      class="exit-popup-close"
+      aria-label="Close popup"
+      data-close-popup
+    >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path
           d="M18 6L6 18M6 6l12 12"
@@ -24,7 +31,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     </button>
 
     <div class="exit-popup-body">
-      <div class="exit-popup-icon">⚡</div>
+      <div class="exit-popup-icon"><Zap class="w-8 h-8" /></div>
       <h2 class="exit-popup-title">Wait! Before You Go...</h2>
       <p class="exit-popup-message">
         Get a <strong>FREE Safety Inspection</strong> with any service! ($200 value)
@@ -40,7 +47,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
               stroke-linecap="round"
               stroke-linejoin="round"></path>
           </svg>
-          <span>Licensed & Insured</span>
+          <span>Licensed &amp; Insured</span>
         </div>
         <div class="benefit-item">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -62,7 +69,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
               stroke-linecap="round"
               stroke-linejoin="round"></path>
           </svg>
-          <span>Same-Day Service Available</span>
+          <span>Fast Response Times</span>
         </div>
       </div>
 
@@ -80,14 +87,14 @@ const phone = SITE_CONFIG.contact.phone.formatted;
               stroke-linecap="round"
               stroke-linejoin="round"></path>
           </svg>
-          Call Now: {phone}
+          Call&nbsp;Now:&nbsp;<PhoneNumber />
         </a>
         <a
           href="/book/"
           class="btn btn-secondary btn-lg"
           data-cta-type="exit_intent_book"
         >
-          Book Online & Save
+          Book Online &amp; Save
         </a>
       </div>
 
@@ -107,7 +114,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10000;
+    z-index: var(--z-banner);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,7 +143,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     max-width: 500px;
     width: 100%;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    animation: slideInDown 0.3s ease-out;
+    animation: slideInDown var(--transition-base) ease-out;
   }
 
   @keyframes slideInDown {
@@ -161,7 +168,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     padding: var(--spacing-xs);
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
-    z-index: 1;
+    z-index: var(--z-base);
   }
 
   .exit-popup-close:hover {
@@ -176,7 +183,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
   }
 
   .exit-popup-icon {
-    font-size: 4rem;
+    font-size: var(--text-headline);
     margin-bottom: var(--spacing-md);
     animation: pulse 2s ease-in-out infinite;
   }
@@ -192,21 +199,23 @@ const phone = SITE_CONFIG.contact.phone.formatted;
   }
 
   .exit-popup-title {
-    font-size: 2rem;
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
+    text-transform: uppercase;
   }
 
   .exit-popup-message {
-    font-size: 1.25rem;
+    font-size: var(--text-h4);
     margin-bottom: var(--spacing-lg);
     color: var(--text-secondary);
   }
 
   .exit-popup-message strong {
     color: var(--color-accent);
-    font-size: 1.5rem;
+    font-size: var(--text-h3);
   }
 
   .exit-popup-benefits {
@@ -242,22 +251,22 @@ const phone = SITE_CONFIG.contact.phone.formatted;
   }
 
   .exit-popup-disclaimer {
-    font-size: 0.75rem;
+    font-size: var(--text-caption);
     color: var(--text-tertiary);
     font-style: italic;
   }
 
   @media (max-width: 640px) {
     .exit-popup-title {
-      font-size: 1.5rem;
+      font-size: var(--text-h4);
     }
 
     .exit-popup-message {
-      font-size: 1.1rem;
+      font-size: var(--text-h5);
     }
 
     .benefit-item {
-      font-size: 0.9rem;
+      font-size: var(--text-body-sm);
     }
   }
 </style>
@@ -287,7 +296,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     function showPopup() {
       hasShown = true;
       popup?.classList.remove("hidden");
-      popup?.setAttribute("aria-hidden", "false");
+      popup?.removeAttribute("inert");
       sessionStorage.setItem("exit_intent_shown", "true");
 
       // Track event
@@ -305,7 +314,7 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     // Close popup
     function closePopup() {
       popup?.classList.add("hidden");
-      popup?.setAttribute("aria-hidden", "true");
+      popup?.setAttribute("inert", "");
       document.body.style.overflow = "";
 
       // Track close event
@@ -323,6 +332,20 @@ const phone = SITE_CONFIG.contact.phone.formatted;
     const closeElements = popup?.querySelectorAll("[data-close-popup]");
     closeElements?.forEach((el) => {
       el.addEventListener("click", closePopup);
+    });
+
+    // Track CTA button clicks (call and book)
+    const ctaButtons = popup?.querySelectorAll("[data-cta-type]");
+    ctaButtons?.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const ctaType = btn.getAttribute("data-cta-type");
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: "exit_intent_cta_click",
+            cta_type: ctaType,
+          });
+        }
+      });
     });
 
     // Close on Escape key

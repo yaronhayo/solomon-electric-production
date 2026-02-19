@@ -42,7 +42,7 @@ export const categoryImages: Record<ServiceCategory, any> = {
     'Commercial & Inspections': IMAGES.categories.commercial
 };
 
-export const categoryDescriptions: Record<ServiceCategory, string> = {
+const categoryDescriptions: Record<ServiceCategory, string> = {
     'Electrical Panels & Power Systems': `Ensure your property is hurricane-ready and code-compliant. Since ${SITE_CONFIG.company.foundedYear}, we've modernized 100A and 200A panels across Miami, providing the capacity needed for modern appliances and whole-home surge protection.`,
     'Emergency Electrical Services': 'Sparking outlets, burning smells, or total blackouts? Our 24/7 rapid-response team is on call throughout Miami-Dade and Broward to keep your family safe from electrical fire hazards.',
     'EV Charging & Solar': 'Future-proof your South Florida home with Level 2 EV charging and solar-ready infrastructure. We handle the complex permitting and FPL coordination so you don\'t have to.',
@@ -51,7 +51,6 @@ export const categoryDescriptions: Record<ServiceCategory, string> = {
     'Commercial & Inspections': 'Keep your business running and insurance-compliant. We provide comprehensive safety inspections, three-phase power solutions, and verified code certifications.'
 };
 
-type ImageMetadata = typeof panelUpgradeImg;
 
 // Map string icon names from JSON to Lucide components
 export const iconMap: Record<string, any> = {
@@ -65,19 +64,6 @@ export const iconMap: Record<string, any> = {
     'ShieldAlert': ShieldAlert,
     'Wrench': Wrench,
     'Cable': Cable,
-    // Add legacy mappings
-    'panelUpgradeIcon': CircuitBoard,
-    'evChargerIcon': Zap,
-    'smartHomeIcon': Smartphone,
-    'generatorIcon': Zap,
-    'lightingIcon': Lightbulb,
-    'ceilingFanIcon': Fan,
-    'emergencyPowerIcon': Siren,
-    'ledRetrofitIcon': Lightbulb,
-    'maintenanceIcon': ClipboardCheck,
-    'fireSafetyIcon': ShieldAlert,
-    'repairIcon': Wrench,
-    'rewiringIcon': Cable
 };
 
 export const getServices = async () => {
@@ -123,12 +109,4 @@ export const getCategoryInfo = async (category: ServiceCategory) => {
         description: categoryDescriptions[category],
         image: categoryImages[category]
     };
-};
-
-/**
- * Helper to resolve the icon component for a service entry
- */
-export const getServiceIcon = (serviceEntry: any) => {
-    const iconName = serviceEntry.data.icon;
-    return iconMap[iconName] || Wrench;
 };

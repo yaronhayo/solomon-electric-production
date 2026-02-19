@@ -51,9 +51,9 @@
     }
   ],
   "featuredServices": [
-    "smart-home-automation",
+    "smart-switch-home-automation",
     "landscape-outdoor-lighting",
-    "ev-charging-system-setup",
+    "home-ev-charging-system-setup",
     "whole-home-surge-protection",
     "24-7-emergency-electrical-service",
     "electrical-panel-upgrade-100a-to-200a"
@@ -64,7 +64,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -72,54 +72,55 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
   "faqs": [
     {
       "question": "Do you have experience with large estate electrical systems in Royal Palm or Boca West?",
-      "answer": "Absolutely. We regularly work in Royal Palm Yacht & Country Club, Boca West, St. Andrews, and Woodfield\u2014homes that often have 400-amp or even 600-amp service, multiple sub-panels, sophisticated lighting control systems, and whole-home automation. These properties require electricians who understand high-capacity distribution, can coordinate with architects and builders, and appreciate the level of quality expected in Boca's premier communities."
+      "answer": "Absolutely. We regularly work in Royal Palm Yacht & Country Club, Boca West, St. Andrews, and Woodfield—homes that often have 400-amp or even 600-amp service, multiple sub-panels, sophisticated lighting control systems, and whole-home automation. These properties require electricians who understand high-capacity distribution, can coordinate with architects and builders, and appreciate the level of quality expected in Boca's premier communities."
     },
     {
       "question": "What's different about electrical permitting in Boca Raton versus Broward County?",
-      "answer": "Boca Raton falls under Palm Beach County jurisdiction, which has different permit processes and inspection schedules than Miami-Dade or Broward. We pull permits through Palm Beach County for all Boca Raton work and are familiar with their specific requirements. The process is slightly different\u2014and the fees are higher\u2014but we handle everything so you don't need to navigate the bureaucracy yourself."
+      "answer": "Boca Raton falls under Palm Beach County jurisdiction, which has different permit processes and inspection schedules than Miami-Dade or Broward. We pull permits through Palm Beach County for all Boca Raton work and are familiar with their specific requirements. The process is slightly different—and the fees are higher—but we handle everything so you don't need to navigate the bureaucracy yourself."
     },
     {
       "question": "Can you integrate high-end lighting control systems like Lutron or Control4?",
-      "answer": "Yes\u2014we're experienced with premium automation platforms including Lutron RadioRA, Homeworks, Control4, and Savant. Many Boca Raton estates use these systems for whole-home lighting control, motorized shades, and scene programming. We can install new systems, expand existing ones, add keypads, and troubleshoot integration issues. We also work collaboratively with your home automation integrator when complex coordination is needed."
+      "answer": "Yes—we're experienced with premium automation platforms including Lutron RadioRA, Homeworks, Control4, and Savant. Many Boca Raton estates use these systems for whole-home lighting control, motorized shades, and scene programming. We can install new systems, expand existing ones, add keypads, and troubleshoot integration issues. We also work collaboratively with your home automation integrator when complex coordination is needed."
     },
     {
-      "question": "Our Boca Raton home has a backup generator, but it hasn't been used in years\u2014can you inspect it?",
-      "answer": "Yes, generator maintenance and inspection is one of our services. Many Boca Raton homes have Generac, Kohler, or Cummins standby generators that have sat dormant for years. We inspect the electrical connections, transfer switch operation, and recommend the manufacturer's maintenance schedule. A generator that doesn't work when the power goes out is worse than no generator at all\u2014you're unprepared without realizing it."
+      "question": "Our Boca Raton home has a backup generator, but it hasn't been used in years—can you inspect it?",
+      "answer": "Yes, generator maintenance and inspection is one of our services. Many Boca Raton homes have Generac, Kohler, or Cummins standby generators that have sat dormant for years. We inspect the electrical connections, transfer switch operation, and recommend the manufacturer's maintenance schedule. A generator that doesn't work when the power goes out is worse than no generator at all—you're unprepared without realizing it."
     },
     {
-      "question": "We're building a new home in The Oaks\u2014do you work on new construction?",
-      "answer": "Yes, we work on both new construction and renovations. For new builds in Boca Raton, we coordinate with your general contractor to install the complete electrical system\u2014from temporary power through final trim. We're experienced with the inspection sequences, know Palm Beach County's specific requirements, and design wire runs that accommodate future technology upgrades. If your builder doesn't have a preferred electrician, we'd be glad to provide a competitive bid."
+      "question": "We're building a new home in The Oaks—do you work on new construction?",
+      "answer": "Yes, we work on both new construction and renovations. For new builds in Boca Raton, we coordinate with your general contractor to install the complete electrical system—from temporary power through final trim. We're experienced with the inspection sequences, know Palm Beach County's specific requirements, and design wire runs that accommodate future technology upgrades. If your builder doesn't have a preferred electrician, we'd be glad to provide a competitive bid."
     },
     {
       "question": "How quickly can you respond to electrical emergencies in east Boca Raton?",
-      "answer": "We maintain coverage in Palm Beach County to serve Boca Raton, Delray Beach, and Boynton Beach. For situation-specific emergencies\u2014such as sparking or complete power loss\u2014we prioritize the allocation of technical resources."
+      "answer": "We maintain coverage in Palm Beach County to serve Boca Raton, Delray Beach, and Boynton Beach. For situation-specific emergencies—such as sparking or complete power loss—we prioritize the allocation of technical resources."
     }
   ],
   "seoContent": [
     {
-      "heading": "Premier Boca Raton Electricians \u2013 Excellence in Every Detail",
-      "body": "Boca Raton is a city synonymous with luxury, culture, and high standards. From its mediterranean-inspired architecture to its status as a corporate and academic leader, Boca requires a level of electrical expertise that is truly world-class. Solomon Electric is proud to deliver that standard to our Boca Raton neighbors."
+      "heading": "Premier Boca Raton Electricians – Excellence in Every Detail",
+      "body": "Boca Raton is a city synonymous with luxury, culture, and high standards. From its mediterranean-inspired architecture to its status as a corporate and academic leader, Boca requires a level of electrical expertise that is truly world-class. Solomon Electric is proud to deliver that standard to our Boca Raton neighbors. Our electricians are dispatched from strategic locations across Palm Beach County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Boca Raton's Electrical Needs",
-      "body": "Boca Raton homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Boca Raton's needs."
+      "heading": "Expert Electrical Solutions for Boca Raton Properties",
+      "body": "Whether your Boca Raton property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Palm Beach County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Boca Raton is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Boca Raton Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Boca Raton. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Boca Raton",
+      "body": "From Royal Palm Yacht & Country Club, Boca West, St. Andrews Country Club to The Oaks, our electricians provide full-service coverage throughout Boca Raton. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Boca Raton properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Advanced Electrical Solutions for Your Boca Raton Property",
-      "body": "Whether you're integrating a state-of-the-art smart home system, upgrading the power for a grand estate, or needing the peace of mind of high-performance surge protection, our licensed team is ready. We provide the meticulous, professional results that Boca's most discerning homeowners and businesses expect."
+      "body": "Whether you're integrating a state-of-the-art smart home system, upgrading the power for a grand estate, or needing the peace of mind of high-performance surge protection, our licensed team is ready. We provide the meticulous, professional results that Boca's most discerning homeowners and businesses expect. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Boca Raton. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Boca Raton, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Boca Raton, FL. Panel upgrades, EV chargers, lighting & emergency repairs. Serving Palm Beach County 24/7. Free estimates."
 }

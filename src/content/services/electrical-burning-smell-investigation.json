@@ -1,7 +1,7 @@
 {
   "name": "Electrical Burning Smell Investigation",
   "slug": "electrical-burning-smell-investigation",
-  "description": "A burning smell from electrical sources is a serious warning sign. Something is overheating\u2014and overheating leads to fire. Solomon Electric provides emergency investigation of electrical burning smells throughout South Florida. We find the source, assess the danger, and fix the problem before it becomes a fire.",
+  "description": "A burning smell from electrical sources is a serious warning sign. Something is overheating—and overheating leads to fire. Solomon Electric's licensed electricians provide emergency investigation of electrical burning smells throughout South Florida. We find the source, assess the danger, and fix the problem before it becomes a fire.",
   "shortDescription": "Locate dangerous overheating",
   "icon": "Flame",
   "image": "../../assets/images/services/emergency.webp",
@@ -15,8 +15,8 @@
     "Fire hazard assessment",
     "Immediate repairs"
   ],
-  "warningSignsHeading": "Types of Electrical Burning Smells",
-  "warningSignsSubheading": "Different smells indicate different problems\u2014all require investigation.",
+  "warningSignsHeading": "How to Know You Need Professional Electrical Burning Smell",
+  "warningSignsSubheading": "Different smells indicate different problems—all require investigation.",
   "problems": [
     {
       "title": "Burning Plastic Smell",
@@ -30,7 +30,7 @@
     },
     {
       "title": "Smell at Outlet or Switch",
-      "description": "Localized burning smell indicates overheating at that specific device\u2014loose connections or overloaded circuit.",
+      "description": "Localized burning smell indicates overheating at that specific device—loose connections or overloaded circuit.",
       "icon": "Plug"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "Lightbulb"
     }
   ],
-  "processHeading": "Our Investigation Process",
+  "processHeading": "The Professional Electrical Burning Smell Process",
   "process": [
     {
       "step": 1,
@@ -59,7 +59,7 @@
     {
       "step": 2,
       "title": "Source Location",
-      "description": "Using physical inspection and thermal imaging, we locate the source of overheating\u2014panel, outlet, junction box, or appliance."
+      "description": "Using physical inspection and thermal imaging, we locate the source of overheating—panel, outlet, junction box, or appliance."
     },
     {
       "step": 3,
@@ -77,7 +77,7 @@
       "description": "We repair the underlying problem, replace damaged components, and verify the issue is resolved before restoring power."
     }
   ],
-  "benefitsHeading": "Why Immediate Investigation Matters",
+  "benefitsHeading": "How Electrical Burning Smell Improves Your Property",
   "benefits": [
     {
       "title": "Fire Prevention",
@@ -86,7 +86,7 @@
     },
     {
       "title": "Find Hidden Problems",
-      "description": "Burning smell may indicate larger issues\u2014failing panel, degraded wiring, overloaded circuits. Investigation reveals the complete picture.",
+      "description": "Burning smell may indicate larger issues—failing panel, degraded wiring, overloaded circuits. Investigation reveals the complete picture.",
       "icon": "AlertTriangle"
     },
     {
@@ -110,7 +110,7 @@
       "label": "Min Avg Response"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -121,11 +121,11 @@
   "faqs": [
     {
       "question": "Is electrical burning smell an emergency?",
-      "answer": "Yes\u2014treat it as an emergency. Burning smell means overheating is occurring, which can progress to fire. Turn off power if you can identify the source (breaker for that area), and call for investigation. Don't wait until morning or Monday."
+      "answer": "Yes—treat it as an emergency. Burning smell means overheating is occurring, which can progress to fire. Turn off power if you can identify the source (breaker for that area), and call for investigation. Don't wait until morning or Monday."
     },
     {
       "question": "What does electrical burning smell like?",
-      "answer": "Often like burning plastic\u2014acrid and chemical. Sometimes described as 'fishy' or like urine (burning electrical components produce this odd smell). Any unusual burning odor near electrical equipment warrants investigation."
+      "answer": "Often like burning plastic—acrid and chemical. Sometimes described as 'fishy' or like urine (burning electrical components produce this odd smell). Any unusual burning odor near electrical equipment warrants investigation."
     },
     {
       "question": "Should I turn off power if I smell burning?",
@@ -133,11 +133,11 @@
     },
     {
       "question": "What causes electrical overheating?",
-      "answer": "Common causes: loose connections (most common), overloaded circuits, failing components, damaged wiring, improper installations. All create resistance that converts electricity to heat\u2014potentially enough to ignite fires."
+      "answer": "Common causes: loose connections (most common), overloaded circuits, failing components, damaged wiring, improper installations. All create resistance that converts electricity to heat—potentially enough to ignite fires."
     },
     {
       "question": "What if the smell is intermittent?",
-      "answer": "Intermittent smell may only occur under load. We investigate under various conditions\u2014lights on, HVAC running, high-use times\u2014to find problems that only appear during specific circumstances."
+      "answer": "Intermittent smell may only occur under load. We investigate under various conditions—lights on, HVAC running, high-use times—to find problems that only appear during specific circumstances."
     },
     {
       "question": "Could it be something other than electrical?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "What if you find fire damage?",
-      "answer": "If we find fire damage\u2014charred wiring, melted components\u2014we document it for insurance, determine extent of damage, and recommend appropriate repairs. Significant hidden fire damage may require insurance claim and major repair work."
+      "answer": "If we find fire damage—charred wiring, melted components—we document it for insurance, determine extent of damage, and recommend appropriate repairs. Significant hidden fire damage may require insurance claim and major repair work."
     }
   ],
   "relatedServices": [
@@ -161,21 +161,37 @@
   "seoContent": [
     {
       "heading": "Electrical Burning Smell Investigation in South Florida",
-      "body": "A burning smell from electrical sources means something is overheating\u2014a serious fire warning. Solomon Electric provides emergency investigation throughout Miami-Dade and Broward counties. We find the source, assess the danger, and fix the problem before it becomes a fire."
+      "body": "A burning smell from electrical sources means something is overheating—a serious fire warning. Solomon Electric provides emergency investigation throughout {county} and Broward counties. We find the source, assess the danger, and fix the problem before it becomes a fire. Every emergency call begins with a safety assessment. Our electricians use non-contact voltage testers, thermal imaging cameras, and circuit analyzers to identify the root cause—not just the symptom. We explain what we find in plain language before any work begins."
     },
     {
-      "heading": "Don't Ignore Electrical Odors",
-      "body": "Burning electrical smell often precedes fire. What smells like burning plastic, fish, or chemicals may be wire insulation degrading from dangerous overheating. This warning sign shouldn't wait\u2014call for emergency investigation."
+      "heading": "Don't Ignore Electrical Odors in Your Miami Home",
+      "body": "Burning electrical smell often precedes fire. What smells like burning plastic, fish, or chemicals may be wire insulation degrading from dangerous overheating. This warning sign shouldn't wait—call for emergency investigation. South Florida's combination of aging infrastructure, lightning exposure, and high humidity creates unique emergency scenarios. Our electricians are trained to handle salt-air corrosion, water intrusion in panels, and surge damage from frequent thunderstorms."
     },
     {
-      "heading": "Thermal Imaging Inspection",
-      "body": "Our thermal cameras detect heat invisible to the naked eye. Overheating connections inside walls, panels, and equipment show as hot spots on thermal images. This technology helps us find the source of burning smells without destructive investigation."
+      "heading": "Thermal Imaging Electrical Inspection in Miami",
+      "body": "Our thermal cameras detect heat invisible to the naked eye. Overheating connections inside walls, panels, and equipment show as hot spots on thermal images. This technology helps us find the source of burning smells without destructive investigation. We stock our service vehicles with the most commonly needed parts—breakers, GFCI outlets, wire nuts, connectors, and diagnostic equipment—so most emergency repairs are completed in a single visit without waiting for parts."
     },
     {
-      "heading": "24/7 Emergency Response",
-      "body": "Solomon Electric provides emergency burning smell investigation throughout Miami, Fort Lauderdale, Hollywood, and all South Florida. Electrical overheating requires professional assessment to mitigate the risk of fire development."
+      "heading": "24/7 Emergency Electrical Response in Miami-Dade & Broward",
+      "body": "Solomon Electric provides emergency burning smell investigation throughout {cityName}, Hollywood, and all South Florida. Electrical overheating requires professional assessment to mitigate the risk of fire development. After every emergency repair, we provide a written safety assessment and recommend any additional work needed to prevent recurrence. We never upsell unnecessary services, and our upfront pricing means no surprises on your bill."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "Electrical Burning Smell Investigation service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "expert-electrical-diagnostics-repair",
+    "comprehensive-electrical-safety-inspections"
+  ],
+  "imageAlt": "Electrical Burning Smell Investigation service provided by licensed electricians in South Florida",
+  "shortName": "Burning Smell Investigation",
+  "metaDescription": "Electrical burning smell investigation in Miami. Fast diagnosis of overheating wires, melting insulation & fire hazards. 24/7 emergency.",
+  "metaTitle": "Burning Smell Electrical Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Thermal imaging investigation typically completes in 1-2 hours",
+    "priceRange": "Comprehensive electrical investigation ranges from $200–$500 with thermal imaging",
+    "commonBrands": [
+      "FLIR thermal cameras",
+      "Fluke Ti series",
+      "Klein Tools"
+    ],
+    "permitNote": "Investigation itself doesn't require a permit; any resulting repairs may require {county} County permits"
+  }
 }

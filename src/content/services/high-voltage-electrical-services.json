@@ -1,7 +1,7 @@
 {
   "name": "High-Voltage Electrical Services",
   "slug": "high-voltage-electrical-services",
-  "description": "Industrial and large commercial operations often require high-voltage electrical systems beyond standard commercial service. Solomon Electric provides high-voltage electrical services throughout South Florida\u2014medium voltage distribution, switchgear installation, transformer work, and specialized industrial electrical for facilities requiring more than typical 480V systems.",
+  "description": "Industrial and large commercial operations often require high-voltage electrical systems beyond standard commercial service. Solomon Electric's licensed electricians provide high-voltage electrical services throughout South Florida—medium voltage distribution, switchgear installation, transformer work, and specialized industrial electrical for facilities requiring more than typical 480V systems.",
   "shortDescription": "Industrial high-voltage specialists",
   "icon": "Zap",
   "image": "../../assets/images/services/commercial.webp",
@@ -15,12 +15,12 @@
     "Power factor correction",
     "High-voltage maintenance"
   ],
-  "warningSignsHeading": "When High-Voltage Service Is Required",
+  "warningSignsHeading": "When to Consider High Voltage Electrical Services",
   "warningSignsSubheading": "Large industrial operations have electrical needs beyond standard commercial service.",
   "problems": [
     {
       "title": "Large Industrial Loads",
-      "description": "Facilities with total loads exceeding 500 kVA often receive medium voltage service and step down on-site\u2014more efficient and cost-effective.",
+      "description": "Facilities with total loads exceeding 500 kVA often receive medium voltage service and step down on-site—more efficient and cost-effective.",
       "icon": "Zap"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "title": "Switchgear Maintenance",
-      "description": "High-voltage switchgear requires specialized maintenance\u2014testing, lubrication, and inspection that general electricians aren't equipped to perform.",
+      "description": "High-voltage switchgear requires specialized maintenance—testing, lubrication, and inspection that general electricians aren't equipped to perform.",
       "icon": "Shield"
     },
     {
@@ -49,7 +49,7 @@
       "icon": "Flame"
     }
   ],
-  "processHeading": "Our High-Voltage Process",
+  "processHeading": "Our Step-by-Step High Voltage Electrical Services Process",
   "process": [
     {
       "step": 1,
@@ -59,12 +59,12 @@
     {
       "step": 2,
       "title": "Utility Coordination",
-      "description": "Medium voltage service requires extensive utility coordination\u2014service agreements, transformer specifications, and protection coordination."
+      "description": "Medium voltage service requires extensive utility coordination—service agreements, transformer specifications, and protection coordination."
     },
     {
       "step": 3,
       "title": "Engineering Design",
-      "description": "High-voltage systems require professional engineering\u2014one-line diagrams, protection coordination studies, and arc flash analysis."
+      "description": "High-voltage systems require professional engineering—one-line diagrams, protection coordination studies, and arc flash analysis."
     },
     {
       "step": 4,
@@ -74,10 +74,10 @@
     {
       "step": 5,
       "title": "Testing and Commissioning",
-      "description": "High-voltage systems require specialized testing before energization\u2014insulation testing, protection verification, and coordinated startup."
+      "description": "High-voltage systems require specialized testing before energization—insulation testing, protection verification, and coordinated startup."
     }
   ],
-  "benefitsHeading": "Benefits of Proper High-Voltage Infrastructure",
+  "benefitsHeading": "Key Benefits of High Voltage Electrical Services",
   "benefits": [
     {
       "title": "Handle Large Loads",
@@ -106,7 +106,7 @@
       "label": "Industrial Projects"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -129,11 +129,11 @@
     },
     {
       "question": "What's involved in switchgear maintenance?",
-      "answer": "Switchgear requires periodic inspection, cleaning, lubrication of mechanisms, protective relay testing, and insulation testing. Frequency depends on equipment type and usage\u2014typically annual or biennial for critical systems."
+      "answer": "Switchgear requires periodic inspection, cleaning, lubrication of mechanisms, protective relay testing, and insulation testing. Frequency depends on equipment type and usage—typically annual or biennial for critical systems."
     },
     {
       "question": "Do you perform arc flash studies?",
-      "answer": "Yes. Arc flash studies calculate incident energy levels at each point in the electrical system, determining required PPE for safe work. OSHA requires employers to assess and label electrical hazards\u2014arc flash studies fulfill this requirement."
+      "answer": "Yes. Arc flash studies calculate incident energy levels at each point in the electrical system, determining required PPE for safe work. OSHA requires employers to assess and label electrical hazards—arc flash studies fulfill this requirement."
     },
     {
       "question": "Can you work on energized high-voltage systems?",
@@ -141,7 +141,7 @@
     },
     {
       "question": "What about power factor correction?",
-      "answer": "Poor power factor increases utility bills (power factor penalties) and reduces system capacity. We design and install power factor correction equipment\u2014typically capacitor banks\u2014to improve power factor to acceptable levels."
+      "answer": "Poor power factor increases utility bills (power factor penalties) and reduces system capacity. We design and install power factor correction equipment—typically capacitor banks—to improve power factor to acceptable levels."
     },
     {
       "question": "How long do high-voltage projects take?",
@@ -161,21 +161,37 @@
   "seoContent": [
     {
       "heading": "High-Voltage Electrical Services in South Florida",
-      "body": "Industrial and large commercial operations often require high-voltage electrical systems. Solomon Electric provides medium voltage distribution, switchgear installation, and specialized industrial electrical throughout South Florida for facilities requiring more than standard commercial service."
+      "body": "Industrial and large commercial operations often require high-voltage electrical systems. Solomon Electric provides medium voltage distribution, switchgear installation, and specialized industrial electrical throughout South Florida for facilities requiring more than standard commercial service. Commercial electrical inspections follow NFPA 70B maintenance standards and Florida Building Code requirements. Our detailed reports include photographs, code references, and prioritized remediation recommendations."
     },
     {
-      "heading": "Medium Voltage Distribution",
-      "body": "Large industrial facilities often receive medium voltage service (4.16kV, 13.8kV, etc.) and step down on-site via transformers. We design and install medium voltage distribution systems that efficiently power large industrial operations."
+      "heading": "Medium Voltage Distribution in Miami & South Florida",
+      "body": "Large industrial facilities often receive medium voltage service (4.16kV, 13.8kV, etc.) and step down on-site via transformers. We design and install medium voltage distribution systems that efficiently power large industrial operations. We understand the urgency of commercial electrical issues—downtime means lost revenue. Our commercial team schedules work during off-hours and weekends to minimize business disruption, and we maintain fully-stocked vehicles for faster completions."
     },
     {
-      "heading": "Switchgear and Industrial Equipment",
-      "body": "Industrial electrical infrastructure includes switchgear, motor control centers, transformers, and specialized distribution equipment. We install, maintain, and repair industrial electrical systems that keep operations running."
+      "heading": "Switchgear & Industrial Equipment in South Florida",
+      "body": "Industrial electrical infrastructure includes switchgear, motor control centers, transformers, and specialized distribution equipment. We install, maintain, and repair industrial electrical systems that keep operations running. Code compliance isn't just about passing inspections—it's about protecting your business from liability. We document all findings and provide certificates of compliance that satisfy insurance underwriters and commercial lease requirements."
     },
     {
       "heading": "Serving South Florida Industrial Facilities",
-      "body": "Solomon Electric provides high-voltage electrical services throughout South Florida industrial areas\u2014from manufacturing facilities to processing plants to large commercial complexes requiring specialized industrial electrical expertise."
+      "body": "Solomon Electric provides high-voltage electrical services throughout South Florida industrial areas—from manufacturing facilities to processing plants to large commercial complexes requiring specialized industrial electrical expertise. For commercial properties, we coordinate with property managers, general contractors, and municipal building departments to ensure smooth permitting and inspection processes. Our familiarity with {county} County procedures saves you time and prevents delays."
     }
   ],
-  "relatedBlogPosts": [],
-  "imageAlt": "High-Voltage Electrical Services service provided by licensed electricians in South Florida"
+  "relatedBlogPosts": [
+    "comprehensive-electrical-installation-services"
+  ],
+  "imageAlt": "High-Voltage Electrical Services service provided by licensed electricians in South Florida",
+  "shortName": "High-Voltage Electrical",
+  "metaTitle": "High-Voltage Electrical Miami FL | Solomon Electric",
+  "metaDescription": "High-voltage electrical services in Miami. Industrial and commercial power systems, transformers & distribution. Licensed & insured.",
+  "localSignals": {
+    "typicalTimeline": "High-voltage projects vary from 1 day to several weeks based on scope",
+    "priceRange": "High-voltage work starts at $5,000 and can exceed $50,000 for complex installations",
+    "commonBrands": [
+      "Eaton",
+      "ABB",
+      "Schneider Electric",
+      "Siemens"
+    ],
+    "permitNote": "Requires specialized {county} County permits and may require utility engineering review"
+  }
 }

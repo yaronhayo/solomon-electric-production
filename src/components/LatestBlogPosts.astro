@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import Button from "./ui/Button.astro";
 import Container from "./ui/Container.astro";
 import { ArrowRight } from "lucide-astro";
+import { calculateReadingTime } from "../utils/blog";
 
 // Get the 3 most recent blog posts
 const allPosts = await getCollection("blog");
@@ -14,13 +15,6 @@ const latestPosts = allPosts
             new Date(a.data.pubDate).getTime(),
     )
     .slice(0, 3);
-
-// Calculate reading time
-function calculateReadingTime(content: string): number {
-    const wordsPerMinute = 200;
-    const words = content.trim().split(/\s+/).length;
-    return Math.ceil(words / wordsPerMinute);
-}
 ---
 
 <section class="py-20 md:py-32 bg-light">
@@ -28,16 +22,20 @@ function calculateReadingTime(content: string): number {
         <!-- Section Header -->
         <div class="text-center mb-16">
             <p
-                class="text-accent font-bold text-lg tracking-[0.2em] mb-4 uppercase font-secondary"
+                class="text-[var(--color-accent-text)] font-bold text-[length:var(--text-body)] tracking-[0.2em] mb-4 uppercase font-secondary"
             >
                 Expert Electrical Knowledge
             </p>
             <h2
-                class="text-4xl md:text-6xl font-black text-primary mb-6 uppercase"
+                class="text-[length:var(--text-h1)] md:text-[length:var(--text-display)] font-black text-primary mb-6 uppercase"
             >
-                Helpful <span class="text-accent">Guides & Tips</span>
+                Helpful Electrical <span class="text-[var(--color-accent-text)]"
+                    >Guides &amp; Tips</span
+                >
             </h2>
-            <p class="text-[var(--text-body)] text-lg font-medium">
+            <p
+                class="text-[var(--clr-body)] text-[length:var(--text-body)] font-medium"
+            >
                 Get expert electrical advice from licensed Miami electricians.
                 Learn about home safety, energy efficiency, and when to call a
                 professional.
@@ -75,7 +73,7 @@ function calculateReadingTime(content: string): number {
                                     ) : (
                                         <div class="w-full h-full flex items-center justify-center">
                                             <svg
-                                                class="w-16 h-16 text-gray-300"
+                                                class="w-16 h-16 text-[var(--clr-muted)]"
                                                 fill="none"
                                                 stroke="currentColor"
                                                 viewBox="0 0 24 24"
@@ -89,8 +87,7 @@ function calculateReadingTime(content: string): number {
                                             </svg>
                                         </div>
                                     )}
-                                    {/* Reading Time Badge */}
-                                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-gray-100">
+                                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-[var(--radius-full)] text-[length:var(--text-caption)] font-bold text-primary shadow-[var(--shadow-sm)] border border-gray-100">
                                         {readingTime} min read
                                     </div>
                                 </div>
@@ -98,7 +95,7 @@ function calculateReadingTime(content: string): number {
                                 {/* Content */}
                                 <div class="p-6 md:p-8 flex flex-col flex-grow">
                                     {/* Date */}
-                                    <time class="text-accent text-sm font-bold mb-3 block uppercase tracking-wide">
+                                    <time class="text-[var(--color-accent-text)] text-[length:var(--text-label)] font-bold mb-3 block uppercase tracking-wide">
                                         {new Date(
                                             post.data.pubDate,
                                         ).toLocaleDateString("en-US", {
@@ -110,17 +107,17 @@ function calculateReadingTime(content: string): number {
                                     </time>
 
                                     {/* Title */}
-                                    <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 tracking-tight group-hover:text-accent transition-colors duration-[var(--transition-base)] line-clamp-2 uppercase font-secondary">
+                                    <h3 class="text-[length:var(--text-h5)] md:text-[length:var(--text-h4)] font-bold text-primary mb-3 tracking-tight group-hover:text-accent transition-colors duration-[var(--transition-base)] line-clamp-2 uppercase font-secondary">
                                         {post.data.title}
                                     </h3>
 
                                     {/* Excerpt */}
-                                    <p class="text-[var(--text-body)] leading-relaxed line-clamp-3 mb-6 flex-grow font-medium">
+                                    <p class="text-[var(--clr-body)] leading-relaxed line-clamp-3 mb-6 flex-grow font-medium">
                                         {post.data.description}
                                     </p>
 
                                     {/* Read More Link */}
-                                    <span class="inline-flex items-center text-accent-text font-bold uppercase tracking-widest text-sm group-hover:gap-3 transition-all duration-[var(--transition-base)]">
+                                    <span class="inline-flex items-center text-accent-text font-bold uppercase tracking-widest text-[length:var(--text-label)] group-hover:gap-3 transition-all duration-[var(--transition-base)]">
                                         Read Article{" "}
                                         <ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-[var(--transition-base)]" />
                                     </span>
@@ -137,7 +134,7 @@ function calculateReadingTime(content: string): number {
             <Button
                 href="/blog"
                 variant="primary"
-                class="px-12 py-5 text-lg font-black flex items-center gap-2"
+                class="px-12 py-5 text-[length:var(--text-body)] font-black flex items-center gap-2"
             >
                 View All Articles
                 <ArrowRight class="w-5 h-5" />

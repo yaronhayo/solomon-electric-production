@@ -8,7 +8,7 @@ const pageDescription =
     "Official brand guidelines and design system for Solomon Electric. Complete documentation of colors, typography, components, and usage standards.";
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={pageDescription} noindex={true}>
     <!-- Hero Section -->
     <section
         class="relative bg-gradient-to-br from-primary via-primary to-[#092d5a] py-20 md:py-28 overflow-hidden"
@@ -263,7 +263,7 @@ const pageDescription =
     </section>
 
     <!-- Color Palette -->
-    <section id="colors" class="py-16 md:py-24 bg-white">
+    <section id="colors" class="py-12 md:py-32 bg-white">
         <div class="container-custom">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
@@ -522,7 +522,7 @@ const pageDescription =
     </section>
 
     <!-- Typography -->
-    <section id="typography" class="py-16 md:py-24 bg-light">
+    <section id="typography" class="py-12 md:py-32 bg-light">
         <div class="container-custom">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
@@ -630,11 +630,11 @@ const pageDescription =
                                 class="text-xs text-gray-400 font-mono w-32 shrink-0"
                                 >H1 / Display</span
                             >
-                            <h1
+                            <div
                                 class="text-primary font-display text-4xl md:text-5xl uppercase tracking-wide"
                             >
                                 The Heading One
-                            </h1>
+                            </div>
                         </div>
 
                         <div
@@ -712,7 +712,7 @@ const pageDescription =
     </section>
 
     <!-- Components -->
-    <section id="components" class="py-16 md:py-24 bg-white">
+    <section id="components" class="py-12 md:py-32 bg-white">
         <div class="container-custom">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
@@ -986,7 +986,7 @@ const pageDescription =
     </section>
 
     <!-- Spacing System -->
-    <section id="spacing" class="py-16 md:py-24 bg-light">
+    <section id="spacing" class="py-12 md:py-32 bg-light">
         <div class="container-custom">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
@@ -1171,7 +1171,7 @@ const pageDescription =
     </section>
 
     <!-- Usage Guidelines -->
-    <section id="usage" class="py-16 md:py-24 bg-white">
+    <section id="usage" class="py-12 md:py-32 bg-white">
         <div class="container-custom">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
@@ -1305,7 +1305,7 @@ const pageDescription =
 
     <!-- Footer CTA -->
     <section
-        class="py-16 md:py-24 bg-gradient-to-br from-primary via-primary to-[#092d5a] relative overflow-hidden"
+        class="py-12 md:py-32 bg-gradient-to-br from-primary via-primary to-[#092d5a] relative overflow-hidden"
     >
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">

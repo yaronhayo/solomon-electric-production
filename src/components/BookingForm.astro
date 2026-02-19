@@ -2,19 +2,29 @@
 import { SITE_CONFIG } from "../config/site";
 import Button from "./ui/Button.astro";
 import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
+
+interface Props {
+    idPrefix?: string;
+}
+
+const { idPrefix = "booking" } = Astro.props;
+const getPrefixedId = (id: string) => `${idPrefix}-${id}`;
 ---
 
 <div
-    class="booking-form-container bg-white/95 backdrop-blur-sm shadow-[0_20px_60px_rgba(20,211,227,0.15)] overflow-hidden relative z-20 border-l-4 border-l-accent rounded-sm"
+    class="booking-form-container bg-white/95 backdrop-blur-sm shadow-[0_20px_60px_rgba(var(--color-accent-rgb),0.15)] overflow-hidden relative z-20 border-l-4 border-l-[var(--color-accent)] rounded-[var(--radius-sm)] max-w-[500px] mx-auto lg:mx-0"
+    data-id-prefix={idPrefix}
+    data-gmaps-key={SITE_CONFIG.seo.integrations.googleMaps}
+    data-recaptcha-key={SITE_CONFIG.seo.integrations.recaptcha}
 >
     <!-- Animated Background Pattern -->
     <div class="absolute inset-0 opacity-5 pointer-events-none">
         <div
-            class="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full filter blur-3xl animate-pulse"
+            class="absolute top-0 right-0 w-64 h-64 bg-[var(--color-accent)] rounded-[var(--radius-full)] filter blur-3xl animate-pulse"
         >
         </div>
         <div
-            class="absolute bottom-0 left-0 w-48 h-48 bg-primary rounded-full filter blur-3xl animate-pulse"
+            class="absolute bottom-0 left-0 w-48 h-48 bg-[var(--color-primary)] rounded-[var(--radius-full)] filter blur-3xl animate-pulse"
             style="animation-delay: 1s;"
         >
         </div>
@@ -41,17 +51,18 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         </div>
 
         <h2
-            class="text-white text-xl md:text-2xl font-black uppercase tracking-wider font-display mb-2"
+            class="text-white text-[length:var(--text-h5)] md:text-[length:var(--text-h4)] font-black uppercase tracking-wider font-display mb-2"
         >
             Request Service
         </h2>
         <p
-            class="text-accent text-sm font-bold uppercase tracking-widest font-display flex items-center justify-center gap-2"
+            class="text-accent text-[length:var(--text-label)] font-bold uppercase tracking-widest font-display flex items-center justify-center gap-2"
         >
             <svg
                 class="w-4 h-4 animate-pulse"
                 fill="currentColor"
                 viewBox="0 0 20 20"
+                aria-hidden="true"
             >
                 <path
                     fill-rule="evenodd"
@@ -64,7 +75,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         <!-- Step Progress Indicator -->
         <div
             class="mt-6 flex items-center justify-center gap-2"
-            id="progressIndicator"
+            id={getPrefixedId("progressIndicator")}
         >
             <div class="step-indicator active" data-step="1">
                 <div class="step-icon">
@@ -90,23 +101,38 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
     </div>
 
     <form
-        id="bookingForm"
-        class="p-[var(--spacing-lg)] md:p-[var(--spacing-xl)] relative min-h-[400px] flex flex-col"
+        id={getPrefixedId("bookingForm")}
+        class="p-[var(--spacing-md)] md:p-[var(--spacing-xl)] relative min-h-[380px] flex flex-col"
     >
+        <!-- Honeypot anti-spam field — hidden from humans, bots will fill it -->
+        <div
+            style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;overflow:hidden;"
+            aria-hidden="true"
+        >
+            <label for={getPrefixedId("website")}>Website</label>
+            <input
+                type="text"
+                id={getPrefixedId("website")}
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+            />
+        </div>
+
         <!-- Step 1: Service Details -->
         <div class="form-step active flex-grow" data-step="1">
             <div class="mb-6">
                 <label
-                    for="serviceType"
-                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-secondary"
+                    for={getPrefixedId("serviceType")}
+                    class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-secondary"
                 >
                     Service Needed
                 </label>
                 <select
-                    id="serviceType"
+                    id={getPrefixedId("serviceType")}
                     name="serviceType"
                     required
-                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all cursor-pointer appearance-none font-body"
+                    class="w-full bg-[var(--bg-surface-hover)] border-2 border-[var(--border-glass)] rounded-[var(--radius-sm)] px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all cursor-pointer appearance-none font-body"
                 >
                     <option value="" disabled selected
                         >Select a service...</option
@@ -126,10 +152,11 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none mt-8 mr-6"
                 >
                     <svg
-                        class="w-4 h-4 text-[var(--text-muted)]"
+                        class="w-4 h-4 text-[var(--clr-muted)]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                         ><path
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -139,10 +166,10 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                 </div>
             </div>
 
-            <div id="additionalDetailsContainer" class="mb-6">
+            <div id={getPrefixedId("additionalDetailsContainer")} class="mb-6">
                 <label
-                    for="serviceDetails"
-                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    for={getPrefixedId("serviceDetails")}
+                    class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                 >
                     Additional Details <span
                         class="text-gray-400 normal-case font-normal"
@@ -150,10 +177,10 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     >
                 </label>
                 <textarea
-                    id="serviceDetails"
+                    id={getPrefixedId("serviceDetails")}
                     name="serviceDetails"
                     rows="4"
-                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all resize-none font-body"
+                    class="w-full bg-[var(--bg-surface-hover)] border-2 border-[var(--border-glass)] rounded-[var(--radius-sm)] px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all resize-none font-body"
                     placeholder="Describe your issue or project..."></textarea>
             </div>
 
@@ -162,7 +189,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     type="button"
                     variant="primary"
                     size="lg"
-                    class="next-step-btn flex items-center justify-center gap-2 group"
+                    class="next-step-btn flex gap-2"
                 >
                     Continue
                     <ArrowRight
@@ -176,7 +203,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         <div class="form-step hidden flex-grow" data-step="2">
             <button
                 type="button"
-                class="prev-step-btn text-gray-400 hover:text-primary mb-4 flex items-center gap-1 text-sm font-bold uppercase tracking-wide transition-colors font-display"
+                class="prev-step-btn text-gray-400 hover:text-primary mb-4 flex items-center gap-1 text-[length:var(--text-label)] font-bold uppercase tracking-wide transition-colors font-display"
             >
                 <ChevronLeft class="w-4 h-4" />
                 Back
@@ -184,36 +211,48 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
             <div class="mb-4">
                 <label
-                    for="address"
-                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    for={getPrefixedId("address")}
+                    class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                 >
                     Service Address
                 </label>
                 <input
                     type="text"
-                    id="address"
+                    id={getPrefixedId("address")}
                     name="address"
                     required
-                    autocomplete="off"
-                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all font-body"
+                    autocomplete="address-line1"
+                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all font-body"
                     placeholder="Start typing your address..."
                 />
                 <!-- Hidden fields for CRM address components -->
-                <input type="hidden" id="streetNumber" name="streetNumber" />
-                <input type="hidden" id="streetName" name="streetName" />
-                <input type="hidden" id="city" name="city" />
-                <input type="hidden" id="state" name="state" />
-                <input type="hidden" id="zipCode" name="zipCode" />
+                <input
+                    type="hidden"
+                    id={getPrefixedId("streetNumber")}
+                    name="streetNumber"
+                />
+                <input
+                    type="hidden"
+                    id={getPrefixedId("streetName")}
+                    name="streetName"
+                />
+                <input type="hidden" id={getPrefixedId("city")} name="city" />
+                <input type="hidden" id={getPrefixedId("state")} name="state" />
+                <input
+                    type="hidden"
+                    id={getPrefixedId("zipCode")}
+                    name="zipCode"
+                />
             </div>
 
             <div
-                id="addressFieldsContainer"
+                id={getPrefixedId("addressFieldsContainer")}
                 class="grid grid-cols-2 gap-4 mb-6 hidden"
             >
                 <div>
                     <label
-                        for="aptUnit"
-                        class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                        for={getPrefixedId("aptUnit")}
+                        class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                     >
                         Apt/Suite # <span
                             class="text-gray-400 normal-case font-normal"
@@ -222,15 +261,15 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     </label>
                     <input
                         type="text"
-                        id="aptUnit"
+                        id={getPrefixedId("aptUnit")}
                         name="aptUnit"
-                        class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all font-body"
+                        class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all font-body"
                     />
                 </div>
                 <div>
                     <label
-                        for="gateCode"
-                        class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                        for={getPrefixedId("gateCode")}
+                        class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                     >
                         Gate Code <span
                             class="text-gray-400 normal-case font-normal"
@@ -239,25 +278,25 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     </label>
                     <input
                         type="text"
-                        id="gateCode"
+                        id={getPrefixedId("gateCode")}
                         name="gateCode"
-                        class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all font-body"
+                        class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all font-body"
                     />
                 </div>
             </div>
 
             <div class="mb-6">
                 <label
-                    for="urgency"
-                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    for={getPrefixedId("urgency")}
+                    class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                 >
                     When do you need us?
                 </label>
                 <select
-                    id="urgency"
+                    id={getPrefixedId("urgency")}
                     name="urgency"
                     required
-                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all cursor-pointer appearance-none font-body"
+                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all cursor-pointer appearance-none font-body"
                 >
                     <option value="" disabled selected>Select timing...</option>
                     <option value="ASAP">ASAP / Emergency</option>
@@ -273,6 +312,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                         ><path
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -287,7 +327,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                     type="button"
                     variant="primary"
                     size="lg"
-                    class="next-step-btn flex items-center justify-center gap-2 group"
+                    class="next-step-btn flex gap-2"
                 >
                     Continue
                     <svg
@@ -310,7 +350,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         <div class="form-step hidden flex-grow" data-step="3">
             <button
                 type="button"
-                class="prev-step-btn text-gray-400 hover:text-primary mb-4 flex items-center gap-1 text-sm font-bold uppercase tracking-wide transition-colors font-display"
+                class="prev-step-btn text-gray-400 hover:text-primary mb-4 flex items-center gap-1 text-[length:var(--text-label)] font-bold uppercase tracking-wide transition-colors font-display"
             >
                 <svg
                     class="w-4 h-4"
@@ -328,42 +368,44 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
             <div class="mb-4">
                 <label
-                    for="name"
-                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    for={getPrefixedId("name")}
+                    class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                 >
                     Full Name
                 </label>
                 <input
                     type="text"
-                    id="name"
+                    id={getPrefixedId("name")}
                     name="name"
                     required
-                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all font-body"
+                    autocomplete="name"
+                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all font-body"
                     placeholder="John Doe"
                 />
             </div>
 
             <div class="mb-4">
                 <label
-                    for="phone"
-                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    for={getPrefixedId("phone")}
+                    class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                 >
                     Phone Number
                 </label>
                 <input
                     type="tel"
-                    id="phone"
+                    id={getPrefixedId("phone")}
                     name="phone"
                     required
-                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all font-body"
+                    autocomplete="tel"
+                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all font-body"
                     placeholder="(305) 555-0123"
                 />
             </div>
 
             <div class="mb-6">
                 <label
-                    for="email"
-                    class="block text-primary font-bold uppercase text-xs mb-2 tracking-wide font-display"
+                    for={getPrefixedId("email")}
+                    class="block text-primary font-bold uppercase text-[length:var(--text-caption)] mb-2 tracking-wide font-display"
                 >
                     Email Address <span
                         class="text-gray-400 normal-case font-normal"
@@ -372,81 +414,54 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                 </label>
                 <input
                     type="email"
-                    id="email"
+                    id={getPrefixedId("email")}
                     name="email"
-                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--text-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all font-body"
+                    autocomplete="email"
+                    class="w-full bg-[var(--bg-surface-hover)] border border-[var(--border-light)] rounded-sm px-4 py-3 text-[var(--clr-body)] font-medium focus:outline-none focus:border-[var(--border-focus)] focus:ring-[var(--ring-accent)] transition-all font-body"
                     placeholder="john@example.com"
                 />
             </div>
 
             <div class="space-y-4 mb-6">
-                <label class="flex items-start cursor-pointer group">
-                    <input
-                        type="checkbox"
-                        name="consentFollowUp"
-                        required
-                        class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent"
-                    />
-                    <span
-                        class="ml-2 text-xs text-[var(--text-body)] font-medium leading-tight font-secondary"
-                    >
-                        I agree to be followed up about my request via phone or
-                        email.
-                    </span>
-                </label>
-
                 <!-- SMS Consent Checkbox (TCR Compliance Required) -->
-                <label class="flex items-start cursor-pointer group">
+                <div class="flex items-start gap-2">
                     <input
                         type="checkbox"
+                        id={getPrefixedId("smsConsent")}
                         name="smsConsent"
                         required
-                        class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent"
+                        class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-[var(--color-accent)] focus:ring-offset-2 cursor-pointer"
                     />
-                    <span
-                        class="ml-2 text-xs text-[var(--text-body)] font-medium leading-tight font-body"
+                    <label
+                        for={getPrefixedId("smsConsent")}
+                        class="text-[length:var(--text-caption)] text-[var(--clr-body)] font-medium leading-tight font-body cursor-pointer"
                     >
                         By submitting this form and signing up for texts, you
                         consent to receive text messages from Solomon Electric,
                         LLC at the number provided, including messages sent by
                         auto dialer. Consent is not a condition of purchase. Msg
-                        & data rates may apply. Msg frequency varies.
+                        &amp; data rates may apply. Msg frequency varies.
                         Unsubscribe at any time by replying STOP or clicking the
                         unsubscribe link (where available) and no further
                         messages will be sent. Reply HELP for help.
-                        <button
-                            type="button"
-                            class="legal-link text-accent hover:underline font-medium"
-                            data-modal="privacy">Privacy Policy</button
-                        > | <button
-                            type="button"
-                            class="legal-link text-accent hover:underline font-medium"
-                            data-modal="terms">Terms & Conditions</button
-                        >
-                    </span>
-                </label>
-
-                <label class="flex items-start cursor-pointer group">
-                    <input
-                        type="checkbox"
-                        name="consentPrivacy"
-                        required
-                        class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent"
-                    />
-                    <span
-                        class="ml-2 text-xs text-[var(--text-body)] font-medium leading-tight font-body"
+                    </label>
+                </div>
+                <!-- Legal Links - Outside the label to satisfy accessibility & validation -->
+                <div
+                    class="flex items-center gap-2 text-[length:var(--text-caption)] font-body ml-6"
+                >
+                    <button
+                        type="button"
+                        class="legal-link text-accent hover:underline font-medium"
+                        data-modal="privacy">Privacy Policy</button
                     >
-                        I agree to the <button
-                            type="button"
-                            class="legal-link text-accent hover:underline font-medium"
-                            data-modal="privacy">Privacy Policy</button
-                        > and <button
-                            type="button"
-                            class="legal-link text-accent hover:underline font-medium"
-                            data-modal="terms">Terms & Conditions</button
-                        >.
-                    </span>
-                </label>
+                    <span class="text-gray-400">|</span>
+                    <button
+                        type="button"
+                        class="legal-link text-accent hover:underline font-medium"
+                        data-modal="terms">Terms &amp; Conditions</button
+                    >
+                </div>
             </div>
 
             <div class="mt-auto pt-8 flex justify-center">
@@ -461,15 +476,17 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             class="px-[var(--spacing-lg)] md:px-[var(--spacing-xl)] py-4 bg-gray-50/50 border-t border-gray-100"
         >
             <div
-                class="flex flex-wrap items-center justify-center gap-4 text-xs"
+                class="flex flex-wrap items-center justify-center gap-4 text-[length:var(--text-caption)]"
             >
                 <!-- SSL Badge -->
-                <div class="flex items-center gap-1.5 text-gray-700">
+                <div
+                    class="flex items-center gap-1.5 text-[var(--color-primary-dark)]"
+                >
                     <div
-                        class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0"
+                        class="w-5 h-5 rounded-[var(--radius-full)] bg-[var(--color-accent)]/10 flex items-center justify-center flex-shrink-0"
                     >
                         <svg
-                            class="w-3 h-3 text-accent"
+                            class="w-3 h-3 text-[var(--color-accent)]"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                         >
@@ -480,14 +497,14 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                         </svg>
                     </div>
                     <span class="font-semibold font-secondary"
-                        >Secure & Encrypted</span
+                        >Secure &amp; Encrypted</span
                     >
                 </div>
 
                 <div class="w-px h-4 bg-gray-300 hidden sm:block"></div>
 
                 <!-- Privacy Badge -->
-                <div class="flex items-center gap-1.5 text-gray-700">
+                <div class="flex items-center gap-1.5 text-gray-900">
                     <div
                         class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0"
                     >
@@ -508,7 +525,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                 <div class="w-px h-4 bg-gray-300 hidden sm:block"></div>
 
                 <!-- Licensed Badge -->
-                <div class="flex items-center gap-1.5 text-gray-700">
+                <div class="flex items-center gap-1.5 text-gray-900">
                     <div
                         class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0"
                     >
@@ -532,8 +549,10 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
         <!-- Success Message (Hidden by default) -->
         <div
-            id="formSuccess"
+            id={getPrefixedId("formSuccess")}
             class="hidden p-[var(--spacing-xl)] text-center relative"
+            role="status"
+            aria-live="polite"
         >
             <!-- Decorative Background -->
             <div
@@ -542,13 +561,14 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             </div>
 
             <div
-                class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg relative"
+                class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-500 rounded-[var(--radius-full)] flex items-center justify-center mx-auto mb-6 shadow-[var(--shadow-lg)] relative"
             >
                 <!-- Animated Ring -->
                 <div
-                    class="absolute inset-0 rounded-full border-4 border-green-400 animate-ping opacity-75"
+                    class="absolute inset-0 rounded-[var(--radius-full)] border-4 border-green-400 animate-ping opacity-75"
                 >
                 </div>
+
                 <svg
                     class="w-10 h-10 text-white relative z-10"
                     fill="none"
@@ -563,14 +583,18 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                 </svg>
             </div>
             <h3
-                class="text-3xl font-black text-primary mb-3 font-display uppercase"
+                class="text-[length:var(--text-h3)] font-black text-primary mb-3 font-display uppercase"
             >
                 Request Received!
             </h3>
-            <p class="text-[var(--text-body)] mb-2 text-lg">
+            <p
+                class="text-[var(--clr-body)] mb-2 text-[length:var(--text-body)]"
+            >
                 We'll contact you promptly during business hours.
             </p>
-            <p class="text-[var(--text-muted)] text-sm mb-8">
+            <p
+                class="text-[var(--clr-muted)] text-[length:var(--text-label)] mb-8"
+            >
                 Expect to hear from us within 30 minutes during operating hours.
             </p>
             <Button
@@ -585,8 +609,10 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
         <!-- Error Message (Hidden by default) -->
         <div
-            id="formError"
-            class="hidden p-6 mx-[var(--spacing-lg)] mb-[var(--spacing-lg)] bg-gradient-to-br from-red-50 to-red-100/50 border-l-4 border-red-500 rounded-sm shadow-lg"
+            id={getPrefixedId("formError")}
+            class="hidden p-6 mx-[var(--spacing-lg)] mb-[var(--spacing-lg)] bg-gradient-to-br from-red-50 to-red-100/50 border-l-4 border-red-500 rounded-[var(--radius-sm)] shadow-[var(--shadow-lg)]"
+            role="alert"
+            aria-live="assertive"
         >
             <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
@@ -603,13 +629,13 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
                 </div>
                 <div class="flex-1">
                     <h4
-                        class="text-red-800 font-bold text-sm uppercase tracking-wide font-secondary mb-1"
+                        class="text-red-800 font-bold text-[length:var(--text-label)] uppercase tracking-wide font-secondary mb-1"
                     >
                         Error
                     </h4>
                     <p
-                        class="text-red-700 font-medium text-sm"
-                        id="errorMessage"
+                        class="text-red-700 font-medium text-[length:var(--text-label)]"
+                        id={getPrefixedId("errorMessage")}
                     >
                         Something went wrong. Please try again.
                     </p>
@@ -620,10 +646,11 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
     <!-- Legal Modal -->
     <div
-        id="legalModal"
+        id={getPrefixedId("legalModal")}
         class="fixed inset-0 z-50 hidden items-center justify-center p-4"
         role="dialog"
         aria-modal="true"
+        aria-labelledby={getPrefixedId("modalTitle")}
     >
         <!-- Backdrop -->
         <div
@@ -633,21 +660,21 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
         <!-- Modal Content -->
         <div
-            class="modal-content relative bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden transform transition-all"
+            class="modal-content relative bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-xl)] w-full max-w-4xl max-h-[80vh] flex flex-col overflow-hidden transform transition-all"
         >
             <!-- Modal Header -->
             <div
                 class="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50"
             >
                 <h3
-                    id="modalTitle"
-                    class="text-lg font-bold text-primary font-display uppercase tracking-wide"
+                    id={getPrefixedId("modalTitle")}
+                    class="text-[length:var(--text-body)] font-bold text-primary font-display uppercase tracking-wide"
                 >
                     Privacy Policy
                 </h3>
                 <button
                     type="button"
-                    class="modal-close p-2 rounded-full hover:bg-gray-200 transition-colors text-gray-500 hover:text-gray-700"
+                    class="modal-close p-2 rounded-[var(--radius-full)] hover:bg-gray-200 transition-colors text-gray-500 hover:text-gray-700"
                     aria-label="Close modal"
                 >
                     <svg
@@ -666,7 +693,10 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             </div>
 
             <!-- Modal Body -->
-            <div id="modalBody" class="flex-1 overflow-y-auto p-6">
+            <div
+                id={getPrefixedId("modalBody")}
+                class="flex-1 overflow-y-auto p-6"
+            >
                 <div class="animate-pulse">
                     <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
                     <div class="h-4 bg-gray-200 rounded w-full mb-4"></div>
@@ -680,7 +710,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             >
                 <button
                     type="button"
-                    class="modal-close px-6 py-2 bg-primary text-white font-bold uppercase text-sm tracking-wide rounded hover:bg-primary/90 transition-colors"
+                    class="modal-close px-6 py-2 bg-[var(--color-primary)] text-white font-bold uppercase text-[length:var(--text-label)] tracking-wide rounded-[var(--radius-sm)] hover:bg-[var(--color-primary-dark)] transition-all active:scale-95"
                 >
                     Close
                 </button>
@@ -691,7 +721,11 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
     <style>
         /* Header Gradient */
         .header-gradient {
-            background: linear-gradient(135deg, #0a1e32 0%, #0f2a47 100%);
+            background: linear-gradient(
+                135deg,
+                var(--color-primary-darker) 0%,
+                var(--color-primary-dark) 100%
+            );
             position: relative;
         }
 
@@ -718,22 +752,30 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             align-items: center;
             gap: 0.5rem;
             position: relative;
-            transition: all 0.3s ease;
+            transition: all var(--transition-base);
         }
 
         .step-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: var(--radius-full);
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.3);
+
             display: flex;
             align-items: center;
             justify-content: center;
             color: rgba(255, 255, 255, 0.6);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all var(--transition-base);
             position: relative;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .step-icon {
+                width: 3rem;
+                height: 3rem;
+            }
         }
 
         .step-icon::before {
@@ -742,23 +784,23 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             inset: 0;
             background: radial-gradient(
                 circle,
-                rgba(20, 211, 227, 0.3) 0%,
+                rgba(var(--color-accent-rgb), 0.3) 0%,
                 transparent 70%
             );
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity var(--transition-base);
         }
 
         .step-indicator.active .step-icon {
             background: linear-gradient(
                 135deg,
                 var(--color-accent) 0%,
-                var(--color-accent-dark, #10b8c6) 100%
+                var(--color-accent-dark) 100%
             );
             border-color: var(--color-accent);
             color: white;
             box-shadow:
-                0 0 20px rgba(20, 211, 227, 0.5),
+                0 0 20px rgba(var(--color-accent-rgb), 0.5),
                 0 4px 12px rgba(0, 0, 0, 0.15);
             transform: scale(1.1);
         }
@@ -770,17 +812,24 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
         .step-indicator.completed .step-icon {
             background: rgba(16, 185, 129, 0.2);
-            border-color: #10b581;
-            color: #10b581;
+            border-color: var(--color-success);
+            color: var(--color-success);
         }
 
         .step-label {
-            font-size: 0.75rem;
+            display: none;
+            font-size: var(--text-caption);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: rgba(255, 255, 255, 0.6);
-            transition: color 0.3s ease;
+            transition: color var(--transition-base);
+        }
+
+        @media (min-width: 480px) {
+            .step-label {
+                display: block;
+            }
         }
 
         .step-indicator.active .step-label {
@@ -788,7 +837,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         }
 
         .step-indicator.completed .step-label {
-            color: #10b581;
+            color: var(--color-success);
         }
 
         .step-line {
@@ -809,31 +858,20 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             background: linear-gradient(
                 90deg,
                 var(--color-accent),
-                var(--color-accent-dark, #10b8c6)
+                var(--color-accent-dark)
             );
-            transition: width 0.5s ease;
+            transition: width var(--transition-slow);
         }
 
         .step-line.completed::after {
             width: 100%;
         }
 
-        @keyframes ripple {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-
         /* Form Step Transitions */
         .form-step {
             transition:
-                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                opacity var(--transition-base),
+                transform var(--transition-base);
         }
 
         .form-step.hidden {
@@ -846,18 +884,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
             display: block;
             opacity: 1;
             transform: translateX(0);
-            animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            animation: fadeInUp var(--transition-base);
         }
 
         /* Enhanced Input Styles */
@@ -865,7 +892,7 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         select:focus,
         textarea:focus {
             box-shadow:
-                0 0 0 3px rgba(20, 211, 227, 0.1),
+                0 0 0 3px rgba(var(--color-accent-rgb), 0.1),
                 0 4px 12px rgba(0, 0, 0, 0.08);
             transform: translateY(-1px);
         }
@@ -874,27 +901,14 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         input.border-red-500,
         select.border-red-500,
         textarea.border-red-500 {
-            animation: shake 0.5s ease-in-out;
-            border-color: #ef4444 !important;
-        }
-
-        @keyframes shake {
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-            25% {
-                transform: translateX(-8px);
-            }
-            75% {
-                transform: translateX(8px);
-            }
+            animation: shake var(--transition-slow) ease-in-out;
+            border-color: var(--color-error) !important;
         }
 
         input.valid,
         select.valid,
         textarea.valid {
-            border-color: #10b581;
+            border-color: var(--color-success);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B581' stroke-width='3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 0.75rem center;
@@ -903,71 +917,53 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
         /* Success State Animation */
         #formSuccess {
-            animation: successFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes successFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            animation: successFadeIn var(--transition-slow)
+                cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         #formSuccess .w-16.h-16 {
-            animation: checkmarkBounce 0.8s
-                cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        @keyframes checkmarkBounce {
-            0% {
-                transform: scale(0);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
+            animation: checkmarkBounce var(--transition-slow) var(--ease-bounce);
         }
 
         /* Button Hover Effects */
         button:not(:disabled):hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(20, 211, 227, 0.25);
+            box-shadow: 0 8px 24px rgba(var(--color-accent-rgb), 0.25);
         }
 
         button:active {
-            transform: translateY(0);
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            filter: grayscale(0.5);
         }
 
         /* Loading Spinner */
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
     </style>
 
-    <script
-        define:vars={{
-            googleMapsApiKey: SITE_CONFIG.seo.integrations.googleMaps,
-            recaptchaKey: SITE_CONFIG.seo.integrations.recaptcha,
-        }}
-    >
+    <script>
+        import {
+            formatPhoneNumber,
+            isValidUSPhone,
+            capitalizeName,
+            isValidEmail,
+        } from "../utils/form-validation";
+        import {
+            collectTrackingData,
+            buildTrackingPayload,
+        } from "../utils/form-tracking";
+
         // Load Google Maps Script dynamically
-        const loadGoogleMaps = () => {
+        const loadGoogleMaps = (apiKey) => {
             const existingScript =
                 document.getElementById("google-maps-script");
             if (existingScript) return;
 
             const script = document.createElement("script");
             script.id = "google-maps-script";
-            // Use environment variable for Google Maps API key
-            const apiKey = googleMapsApiKey;
             if (!apiKey) {
                 console.warn(
                     "Google Maps API key not configured. Address autocomplete disabled.",
@@ -981,86 +977,105 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
         };
 
         // Make initAutocomplete globally available
-        (window as any).initAutocomplete = () => {
-            const addressInput = document.getElementById(
-                "address",
-            ) as HTMLInputElement;
-            if (!addressInput) return;
-
-            const google = (window as any).google;
-            if (!google) return;
-
-            const autocomplete = new google.maps.places.Autocomplete(
-                addressInput,
-                {
-                    types: ["address"],
-                    componentRestrictions: { country: "us" }, // Restrict to US
-                },
+        window.initAutocomplete = () => {
+            // Find all address inputs and initialize them
+            const addressInputs = document.querySelectorAll(
+                'input[name="address"]',
             );
+            addressInputs.forEach((addressInput) => {
+                const container = addressInput.closest(
+                    ".booking-form-container",
+                );
+                if (!container) return;
+                const prefix = container.getAttribute("data-id-prefix");
+                const getPrefixedId = (id) => `${prefix}-${id}`;
 
-            autocomplete.addListener("place_changed", () => {
-                const place = autocomplete.getPlace();
-                if (!place.geometry) {
-                    return;
-                }
+                const google = window.google;
+                if (!google) return;
 
-                // Extract address components for CRM
-                const components = place.address_components || [];
-                let streetNumber = "";
-                let streetName = "";
-                let city = "";
-                let state = "";
-                let zipCode = "";
+                const autocomplete = new google.maps.places.Autocomplete(
+                    addressInput,
+                    {
+                        types: ["address"],
+                        componentRestrictions: { country: "us" }, // Restrict to US
+                    },
+                );
 
-                components.forEach((component: any) => {
-                    const types = component.types;
-                    if (types.includes("street_number")) {
-                        streetNumber = component.long_name;
-                    } else if (types.includes("route")) {
-                        streetName = component.long_name;
-                    } else if (types.includes("locality")) {
-                        city = component.long_name;
-                    } else if (types.includes("administrative_area_level_1")) {
-                        state = component.short_name;
-                    } else if (types.includes("postal_code")) {
-                        zipCode = component.long_name;
+                autocomplete.addListener("place_changed", () => {
+                    const place = autocomplete.getPlace();
+                    if (!place.geometry) {
+                        return;
+                    }
+
+                    // Extract address components for CRM
+                    const components = place.address_components || [];
+                    let streetNumber = "";
+                    let streetName = "";
+                    let city = "";
+                    let state = "";
+                    let zipCode = "";
+
+                    components.forEach((component) => {
+                        const types = component.types;
+                        if (types.includes("street_number")) {
+                            streetNumber = component.long_name;
+                        } else if (types.includes("route")) {
+                            streetName = component.long_name;
+                        } else if (types.includes("locality")) {
+                            city = component.long_name;
+                        } else if (
+                            types.includes("administrative_area_level_1")
+                        ) {
+                            state = component.short_name;
+                        } else if (types.includes("postal_code")) {
+                            zipCode = component.long_name;
+                        }
+                    });
+
+                    // Fill hidden fields for CRM
+                    const streetNumberInput = container.querySelector(
+                        `#${getPrefixedId("streetNumber")}`,
+                    );
+                    const streetNameInput = container.querySelector(
+                        `#${getPrefixedId("streetName")}`,
+                    );
+                    const cityInput = container.querySelector(
+                        `#${getPrefixedId("city")}`,
+                    );
+                    const stateInput = container.querySelector(
+                        `#${getPrefixedId("state")}`,
+                    );
+                    const zipCodeInput = container.querySelector(
+                        `#${getPrefixedId("zipCode")}`,
+                    );
+
+                    if (streetNumberInput)
+                        streetNumberInput.value = streetNumber;
+                    if (streetNameInput) streetNameInput.value = streetName;
+                    if (cityInput) cityInput.value = city;
+                    if (stateInput) stateInput.value = state;
+                    if (zipCodeInput) zipCodeInput.value = zipCode;
+
+                    // Show address fields when autocomplete is used
+                    const addressFieldsContainer = container.querySelector(
+                        `#${getPrefixedId("addressFieldsContainer")}`,
+                    );
+                    if (addressFieldsContainer) {
+                        addressFieldsContainer.classList.remove("hidden");
                     }
                 });
-
-                // Fill hidden fields for CRM
-                (
-                    document.getElementById("streetNumber") as HTMLInputElement
-                ).value = streetNumber;
-                (
-                    document.getElementById("streetName") as HTMLInputElement
-                ).value = streetName;
-                (document.getElementById("city") as HTMLInputElement).value =
-                    city;
-                (document.getElementById("state") as HTMLInputElement).value =
-                    state;
-                (document.getElementById("zipCode") as HTMLInputElement).value =
-                    zipCode;
-
-                // Show address fields when autocomplete is used
-                const addressFieldsContainer = document.getElementById(
-                    "addressFieldsContainer",
-                );
-                if (addressFieldsContainer) {
-                    addressFieldsContainer.classList.remove("hidden");
-                }
             });
         };
 
         // Load Google reCAPTCHA v3 Script dynamically
-        const loadRecaptcha = () => {
+        const loadRecaptcha = (key) => {
             const existingScript = document.getElementById("recaptcha-script");
             if (existingScript) return;
 
             const script = document.createElement("script");
             script.id = "recaptcha-script";
             script.src =
-                "https://www.google.com/recaptcha/api.js?render=" +
-                recaptchaKey;
+                "https://www.google.com/recaptcha/api.js?render=" + key;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
@@ -1068,735 +1083,580 @@ import { MapPin, User, Clipboard, ArrowRight, ChevronLeft } from "lucide-astro";
 
         // Load scripts on mount - trigger on interaction for better performance
         let scriptsLoaded = false;
-        const initScripts = () => {
+        const initScripts = (container) => {
             if (scriptsLoaded) return;
-            loadGoogleMaps();
-            loadRecaptcha();
+            const gmapsKey = container.getAttribute("data-gmaps-key");
+            const recaptchaKey = container.getAttribute("data-recaptcha-key");
+            loadGoogleMaps(gmapsKey);
+            loadRecaptcha(recaptchaKey);
             scriptsLoaded = true;
         };
 
-        // Initialize on focus or touch
-        ["focusin", "touchstart", "mouseover"].forEach((event) => {
-            document
-                .getElementById("bookingForm")
-                ?.addEventListener(event, initScripts, { once: true });
-        });
+        // Initialize each form instance
+        document
+            .querySelectorAll(".booking-form-container")
+            .forEach((container) => {
+                const prefix = container.getAttribute("data-id-prefix");
+                const getPrefixedId = (id) => `${prefix}-${id}`;
+                const gmapsKey = container.getAttribute("data-gmaps-key");
+                const recaptchaKey =
+                    container.getAttribute("data-recaptcha-key");
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const form = document.getElementById(
-                "bookingForm",
-            ) as HTMLFormElement;
-            const steps = document.querySelectorAll(".form-step");
-            const nextBtns = document.querySelectorAll(".next-step-btn");
-            const prevBtns = document.querySelectorAll(".prev-step-btn");
-            const submitBtn = form.querySelector('button[type="submit"]');
+                // Initialize scripts on interaction for this specific form
+                ["focusin", "touchstart", "mouseover"].forEach((event) => {
+                    container
+                        .querySelector(`#${getPrefixedId("bookingForm")}`)
+                        ?.addEventListener(
+                            event,
+                            () => initScripts(container),
+                            { once: true },
+                        );
+                });
 
-            // =====================================================
-            // FORM VALIDATION UTILITIES
-            // =====================================================
-
-            // Format US phone number - accepts various input formats
-            const formatPhoneNumber = (value: string): string => {
-                // Remove all non-digit characters
-                const digits = value.replace(/\D/g, "");
-
-                // Handle different lengths
-                if (digits.length === 0) return "";
-                if (digits.length <= 3) return `(${digits}`;
-                if (digits.length <= 6)
-                    return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
-                if (digits.length <= 10)
-                    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
-
-                // For 11 digits (with country code 1)
-                if (digits.length === 11 && digits[0] === "1") {
-                    return `(${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 11)}`;
-                }
-
-                // Limit to 10 digits
-                return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
-            };
-
-            // Validate US phone number
-            const isValidUSPhone = (value: string): boolean => {
-                const digits = value.replace(/\D/g, "");
-                return (
-                    digits.length === 10 ||
-                    (digits.length === 11 && digits[0] === "1")
+                const form = container.querySelector(
+                    `#${getPrefixedId("bookingForm")}`,
                 );
-            };
+                if (!form) return;
 
-            // Capitalize name properly (handles McName, O'Brien, etc.)
-            const capitalizeName = (name: string): string => {
-                return name
-                    .toLowerCase()
-                    .split(/(\s+)/)
-                    .map((part) => {
-                        if (!part.trim()) return part;
+                const steps = container.querySelectorAll(".form-step");
+                const nextBtns = container.querySelectorAll(".next-step-btn");
+                const prevBtns = container.querySelectorAll(".prev-step-btn");
+                const submitBtn = form.querySelector('button[type="submit"]');
 
-                        // Handle Mc/Mac prefixes
-                        if (part.startsWith("mc") && part.length > 2) {
-                            return (
-                                "Mc" +
-                                part.charAt(2).toUpperCase() +
-                                part.slice(3)
-                            );
-                        }
-                        if (part.startsWith("mac") && part.length > 3) {
-                            return (
-                                "Mac" +
-                                part.charAt(3).toUpperCase() +
-                                part.slice(4)
-                            );
-                        }
+                // =====================================================
+                // FORM INPUT FORMATTING UTILITIES (Imported)
+                // =====================================================
+                const showFieldError = (input, message) => {
+                    input.classList.add("border-red-500", "focus:ring-red-500");
+                    input.classList.remove("focus:ring-[var(--color-accent)]");
+                    input.setAttribute("aria-invalid", "true");
 
-                        // Handle O' prefix
-                        if (part.startsWith("o'") && part.length > 2) {
-                            return (
-                                "O'" +
-                                part.charAt(2).toUpperCase() +
-                                part.slice(3)
-                            );
-                        }
-
-                        // Standard capitalization
-                        return part.charAt(0).toUpperCase() + part.slice(1);
-                    })
-                    .join("")
-                    .split("-")
-                    .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
-                    .join("-");
-            };
-
-            // Validate email format
-            const isValidEmail = (email: string): boolean => {
-                if (!email) return true; // Optional field
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
-            };
-
-            // Show validation error
-            const showFieldError = (
-                input: HTMLInputElement,
-                message: string,
-            ) => {
-                input.classList.add("border-red-500", "focus:ring-red-500");
-                input.classList.remove("focus:ring-[var(--color-accent)]");
-
-                let errorEl =
-                    input.parentElement?.querySelector(".field-error");
-                if (!errorEl) {
-                    errorEl = document.createElement("p");
-                    errorEl.className =
-                        "field-error text-red-500 text-xs mt-1 font-medium";
-                    input.parentElement?.appendChild(errorEl);
-                }
-                errorEl.textContent = message;
-            };
-
-            // Clear validation error
-            const clearFieldError = (input: HTMLInputElement) => {
-                input.classList.remove("border-red-500", "focus:ring-red-500");
-                input.classList.add("focus:ring-[var(--color-accent)]");
-                const errorEl =
-                    input.parentElement?.querySelector(".field-error");
-                if (errorEl) errorEl.remove();
-            };
-
-            // =====================================================
-            // FORM INPUT HANDLERS
-            // =====================================================
-
-            // Phone input formatting
-            const phoneInput = document.getElementById(
-                "phone",
-            ) as HTMLInputElement;
-            if (phoneInput) {
-                phoneInput.addEventListener("input", (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const cursorPos = target.selectionStart || 0;
-                    const prevLen = target.value.length;
-
-                    target.value = formatPhoneNumber(target.value);
-
-                    // Maintain cursor position
-                    const newLen = target.value.length;
-                    const newPos = cursorPos + (newLen - prevLen);
-                    target.setSelectionRange(newPos, newPos);
-
-                    // Validate
-                    if (target.value && !isValidUSPhone(target.value)) {
-                        showFieldError(
-                            target,
-                            "Please enter a valid 10-digit US phone number",
-                        );
-                    } else {
-                        clearFieldError(target);
+                    let errorEl =
+                        input.parentElement?.querySelector(".field-error");
+                    if (!errorEl) {
+                        errorEl = document.createElement("p");
+                        errorEl.className =
+                            "field-error text-red-500 text-xs mt-1 font-medium";
+                        errorEl.id = `${input.id}-error`;
+                        input.parentElement?.appendChild(errorEl);
+                        input.setAttribute("aria-describedby", errorEl.id);
                     }
-                });
-
-                phoneInput.addEventListener("blur", () => {
-                    if (phoneInput.value && !isValidUSPhone(phoneInput.value)) {
-                        showFieldError(
-                            phoneInput,
-                            "Please enter a valid 10-digit US phone number",
-                        );
-                    }
-                });
-            }
-
-            // Name input capitalization
-            const nameInput = document.getElementById(
-                "name",
-            ) as HTMLInputElement;
-            if (nameInput) {
-                nameInput.addEventListener("blur", () => {
-                    if (nameInput.value.trim()) {
-                        nameInput.value = capitalizeName(
-                            nameInput.value.trim(),
-                        );
-                    }
-                });
-            }
-
-            // Email validation
-            const emailInput = document.getElementById(
-                "email",
-            ) as HTMLInputElement;
-            if (emailInput) {
-                emailInput.addEventListener("blur", () => {
-                    if (emailInput.value && !isValidEmail(emailInput.value)) {
-                        showFieldError(
-                            emailInput,
-                            "Please enter a valid email address",
-                        );
-                    } else {
-                        clearFieldError(emailInput);
-                    }
-                });
-            }
-
-            // Service details capitalization
-            const detailsInput = document.getElementById(
-                "serviceDetails",
-            ) as HTMLTextAreaElement;
-            if (detailsInput) {
-                detailsInput.addEventListener("blur", () => {
-                    if (detailsInput.value.trim()) {
-                        // Capitalize first letter of each sentence
-                        detailsInput.value = detailsInput.value
-                            .trim()
-                            .replace(/(^\s*\w|[.!?]\s*\w)/g, (c) =>
-                                c.toUpperCase(),
-                            );
-                    }
-                });
-            }
-
-            // =====================================================
-            // LEGAL MODAL FUNCTIONALITY
-            // =====================================================
-
-            const legalModal = document.getElementById("legalModal");
-            const modalTitle = document.getElementById("modalTitle");
-            const modalBody = document.getElementById("modalBody");
-            const legalLinks = document.querySelectorAll(".legal-link");
-            const modalCloseButtons = document.querySelectorAll(".modal-close");
-            const modalBackdrop = document.querySelector(".modal-backdrop");
-
-            const legalContent = {
-                privacy: {
-                    title: "Privacy Policy",
-                    content: `
-                        <h4 class="font-bold text-primary mb-3">Information We Collect</h4>
-                        <p class="mb-4 text-gray-600">We collect information you provide directly, including your name, phone number, email address, and service request details.</p>
-
-                        <h4 class="font-bold text-primary mb-3">How We Use Your Information</h4>
-                        <p class="mb-4 text-gray-600">Your information is used to respond to your service requests, schedule appointments, and provide customer support. We may also use it to send service updates and promotional communications.</p>
-
-                        <h4 class="font-bold text-primary mb-3">Information Sharing</h4>
-                        <p class="mb-4 text-gray-600">We do not sell your personal information. We may share information with service providers who assist in our operations, or as required by law.</p>
-
-                        <h4 class="font-bold text-primary mb-3">Data Security</h4>
-                        <p class="mb-4 text-gray-600">We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.</p>
-
-                        <h4 class="font-bold text-primary mb-3">Contact Us</h4>
-                        <p class="text-gray-600">For questions about this Privacy Policy, contact us at ${SITE_CONFIG.contact.phone.formatted} or ${SITE_CONFIG.contact.email.primary}.</p>
-                    `,
-                },
-                terms: {
-                    title: "Terms & Conditions",
-                    content: `
-                        <h4 class="font-bold text-primary mb-3">Service Agreement</h4>
-                        <p class="mb-4 text-gray-600">By submitting a service request, you agree to allow Solomon Electric to contact you regarding your request via phone, email, or text message.</p>
-
-                        <h4 class="font-bold text-primary mb-3">Estimates & Pricing</h4>
-                        <p class="mb-4 text-gray-600">All estimates are provided free of charge. Final pricing may vary based on actual work required and will be confirmed before any work begins.</p>
-
-                        <h4 class="font-bold text-primary mb-3">Service Hours</h4>
-                        <p class="mb-4 text-gray-600">Standard business hours are Monday-Friday, 8AM-6PM. Emergency services are available 24/7 and may incur additional fees.</p>
-
-                        <h4 class="font-bold text-primary mb-3">Licensing & Insurance</h4>
-                        <p class="mb-4 text-gray-600">Solomon Electric is fully licensed (${SITE_CONFIG.credentials.license.number}) and insured. All work is performed according to local codes and regulations.</p>
-
-                        <h4 class="font-bold text-primary mb-3">Warranty</h4>
-                        <p class="text-gray-600">We stand behind our work. All electrical services come with a satisfaction guarantee. Specific warranty terms will be provided with your service agreement.</p>
-                    `,
-                },
-            };
-
-            const openModal = (type: string) => {
-                if (!legalModal || !modalTitle || !modalBody) return;
-                const content = legalContent[type];
-                if (!content) return;
-
-                modalTitle.textContent = content.title;
-                modalBody.innerHTML = content.content;
-                legalModal.classList.remove("hidden");
-                legalModal.classList.add("flex");
-                document.body.style.overflow = "hidden";
-            };
-
-            const closeModal = () => {
-                if (!legalModal) return;
-                legalModal.classList.add("hidden");
-                legalModal.classList.remove("flex");
-                document.body.style.overflow = "";
-            };
-
-            legalLinks.forEach((link) => {
-                link.addEventListener("click", () => {
-                    const modalType = link.getAttribute("data-modal");
-                    if (modalType) openModal(modalType);
-                });
-            });
-
-            modalCloseButtons.forEach((btn) => {
-                btn.addEventListener("click", closeModal);
-            });
-
-            if (modalBackdrop) {
-                modalBackdrop.addEventListener("click", closeModal);
-            }
-
-            // Close on Escape key
-            document.addEventListener("keydown", (e) => {
-                if (
-                    e.key === "Escape" &&
-                    !legalModal?.classList.contains("hidden")
-                ) {
-                    closeModal();
-                }
-            });
-
-            // Conditional field displays
-            const serviceType = document.getElementById(
-                "serviceType",
-            ) as HTMLSelectElement;
-            // Note: additionalDetailsContainer is no longer used - notes field is always visible
-            const addressInput = document.getElementById(
-                "address",
-            ) as HTMLInputElement;
-            const addressFieldsContainer = document.getElementById(
-                "addressFieldsContainer",
-            );
-
-            // Note: additionalDetailsContainer is now always visible (no service selection required)
-
-            // Show address fields after address is entered
-            if (addressInput && addressFieldsContainer) {
-                // Check address completion
-                const checkAddressComplete = () => {
-                    if (addressInput.value.trim().length > 10) {
-                        addressFieldsContainer.classList.remove("hidden");
-                    }
+                    errorEl.textContent = message;
                 };
 
-                // Check on blur (manual entry)
-                addressInput.addEventListener("blur", checkAddressComplete);
+                const clearFieldError = (input) => {
+                    input.classList.remove(
+                        "border-red-500",
+                        "focus:ring-red-500",
+                    );
+                    input.classList.add("focus:ring-[var(--color-accent)]");
+                    input.removeAttribute("aria-invalid");
+                    input.removeAttribute("aria-describedby");
+                    const errorEl =
+                        input.parentElement?.querySelector(".field-error");
+                    if (errorEl) errorEl.remove();
+                };
 
-                // Check on input (with debounce)
-                let addressTimeout: ReturnType<typeof setTimeout>;
-                addressInput.addEventListener("input", () => {
-                    clearTimeout(addressTimeout);
-                    addressTimeout = setTimeout(checkAddressComplete, 500);
-                });
-            }
+                // Move all input handlers inside this block
+                const phoneInput = container.querySelector(
+                    `#${getPrefixedId("phone")}`,
+                );
+                if (phoneInput) {
+                    phoneInput.addEventListener("input", (e) => {
+                        const target = e.target;
+                        const cursorPos = target.selectionStart || 0;
+                        const prevLen = target.value.length;
+                        target.value = formatPhoneNumber(target.value);
+                        const newLen = target.value.length;
+                        const newPos = cursorPos + (newLen - prevLen);
+                        target.setSelectionRange(newPos, newPos);
 
-            let currentStep = 1;
-
-            function showStep(step: number) {
-                steps.forEach((s) => {
-                    if (s instanceof HTMLElement) {
-                        const stepNum = parseInt(s.dataset.step || "0");
-                        if (stepNum === step) {
-                            s.classList.remove("hidden");
-                            s.classList.add("active");
+                        if (target.value && !isValidUSPhone(target.value)) {
+                            showFieldError(
+                                target,
+                                "Please enter a valid 10-digit US phone number",
+                            );
                         } else {
-                            s.classList.add("hidden");
-                            s.classList.remove("active");
+                            clearFieldError(target);
                         }
-                    }
-                });
-                currentStep = step;
-
-                // Lazy load scripts based on step
-                if (step === 2) {
-                    loadGoogleMaps();
-                } else if (step === 3) {
-                    loadRecaptcha();
+                    });
                 }
 
-                // Update progress indicator
-                const progressIndicators =
-                    document.querySelectorAll(".step-indicator");
-                const stepLines = document.querySelectorAll(".step-line");
-
-                progressIndicators.forEach((indicator) => {
-                    if (indicator instanceof HTMLElement) {
-                        const indicatorStep = parseInt(
-                            indicator.dataset.step || "0",
-                        );
-                        indicator.classList.remove("active", "completed");
-
-                        if (indicatorStep === step) {
-                            indicator.classList.add("active");
-                        } else if (indicatorStep < step) {
-                            indicator.classList.add("completed");
+                const nameInput = container.querySelector(
+                    `#${getPrefixedId("name")}`,
+                );
+                if (nameInput) {
+                    nameInput.addEventListener("blur", () => {
+                        if (nameInput.value.trim()) {
+                            nameInput.value = capitalizeName(
+                                nameInput.value.trim(),
+                            );
                         }
-                    }
-                });
+                    });
+                }
 
-                // Update step lines
-                stepLines.forEach((line, index) => {
-                    if (index < step - 1) {
-                        line.classList.add("completed");
-                    } else {
-                        line.classList.remove("completed");
-                    }
-                });
-            }
-
-            function validateStep(step: number): boolean {
-                const currentStepEl = document.querySelector(
-                    `.form-step[data-step="${step}"]`,
+                const emailInput = container.querySelector(
+                    `#${getPrefixedId("email")}`,
                 );
-                if (!currentStepEl) return false;
-
-                const inputs = currentStepEl.querySelectorAll(
-                    "input[required], select[required], textarea[required]",
-                );
-                let isValid = true;
-
-                inputs.forEach((input) => {
-                    if (
-                        input instanceof HTMLInputElement ||
-                        input instanceof HTMLSelectElement ||
-                        input instanceof HTMLTextAreaElement
-                    ) {
-                        // Handle checkboxes (used in Step 3 for consent)
-                        if (
-                            input.type === "checkbox" &&
-                            input instanceof HTMLInputElement
-                        ) {
-                            if (!input.checked) {
-                                isValid = false;
-                                // Visual feedback could be added here
+                if (emailInput) {
+                    emailInput.addEventListener("blur", () => {
+                        if (emailInput.value) {
+                            emailInput.value = emailInput.value
+                                .trim()
+                                .toLowerCase();
+                            if (!isValidEmail(emailInput.value)) {
+                                showFieldError(
+                                    emailInput,
+                                    "Please enter a valid email address",
+                                );
+                            } else {
+                                clearFieldError(emailInput);
                             }
                         }
-                        // Handle all other input types
-                        else if (!input.value.trim()) {
-                            isValid = false;
-                            input.classList.add("border-red-500");
-                        } else {
-                            input.classList.remove("border-red-500");
+                    });
+                }
+
+                // =====================================================
+                // FORM INPUT HANDLERS
+                // =====================================================
+
+                // Service details capitalization
+                const detailsInput = container.querySelector(
+                    `#${getPrefixedId("serviceDetails")}`,
+                );
+                if (detailsInput) {
+                    detailsInput.addEventListener("blur", () => {
+                        if (detailsInput.value.trim()) {
+                            // Capitalize first letter of each sentence
+                            detailsInput.value = detailsInput.value
+                                .trim()
+                                .replace(/(^\s*\w|[.!?]\s*\w)/g, (c) =>
+                                    c.toUpperCase(),
+                                );
                         }
+                    });
+                }
 
-                        input.addEventListener("input", () => {
-                            input.classList.remove("border-red-500");
-                        });
-                        input.addEventListener("change", () => {
-                            input.classList.remove("border-red-500");
-                        });
+                // =====================================================
+                // LEGAL MODAL FUNCTIONALITY
+                // =====================================================
+
+                const legalModal = container.querySelector(
+                    `#${getPrefixedId("legalModal")}`,
+                );
+                const modalTitle = container.querySelector(
+                    `#${getPrefixedId("modalTitle")}`,
+                );
+                const modalBody = container.querySelector(
+                    `#${getPrefixedId("modalBody")}`,
+                );
+                const legalLinks = container.querySelectorAll(".legal-link");
+                const modalCloseButtons =
+                    container.querySelectorAll(".modal-close");
+                const modalBackdrop =
+                    container.querySelector(".modal-backdrop");
+
+                const legalContent = {
+                    privacy: {
+                        title: "Privacy Policy",
+                        content: `
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Information We Collect</h4>
+                        <p class="mb-4 text-gray-600">We collect information you provide directly, including your name, phone number, email address, and service request details.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">How We Use Your Information</h4>
+                        <p class="mb-4 text-gray-600">Your information is used to respond to your service requests, schedule appointments, and provide customer support. We may also use it to send service updates and promotional communications.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">SMS/Text Message Communications</h4>
+                        <p class="mb-4 text-gray-600">By submitting our contact form and signing up for texts, you consent to receive text messages from Solomon Electric, LLC at the number provided, including messages sent by auto dialer. Consent is not a condition of purchase. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available) and no further messages will be sent. Reply HELP for help.</p>
+                        <p class="mb-4 text-gray-600">Solomon Electric, LLC may collect opt-in verbally from customers in person or over the phone. Customers will be verbally informed that message and data rates may apply, message frequency may vary, they can text HELP for support and STOP to unsubscribe.</p>
+                        <p class="mb-4 text-gray-600"><strong>Your phone number and consent data will not be shared with third parties for marketing purposes.</strong></p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Information Sharing</h4>
+                        <p class="mb-4 text-gray-600">We do not sell your personal information. We may share information with service providers who assist in our operations, or as required by law.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Data Security</h4>
+                        <p class="mb-4 text-gray-600">We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Contact Us</h4>
+                        <p class="text-gray-600">For questions about this Privacy Policy, contact us at (786)&nbsp;833&#8209;9211 or contactus@solomonselectric.com.</p>
+                    `,
+                    },
+                    terms: {
+                        title: "Terms & Conditions",
+                        content: `
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Service Agreement</h4>
+                        <p class="mb-4 text-gray-600">By submitting a service request, you agree to allow Solomon Electric to contact you regarding your request via phone, email, or text message.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Estimates & Pricing</h4>
+                        <p class="mb-4 text-gray-600">All estimates are provided free of charge. Final pricing may vary based on actual work required and will be confirmed before any work begins.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Service Hours</h4>
+                        <p class="mb-4 text-gray-600">Standard business hours are Monday-Friday, 8AM-6PM. Emergency services are available 24/7 and may incur additional fees.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">SMS/Text Message Terms</h4>
+                        <p class="mb-4 text-gray-600">You may receive appointment reminders, technician dispatch notifications, service completion updates, billing reminders, and customer satisfaction surveys via SMS. You may opt out of receiving text messages at any time by replying STOP. Reply HELP for help.</p>
+                        <p class="mb-4 text-gray-600">Standard message and data rates may apply. Message frequency varies based on your service activity.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Licensing & Insurance</h4>
+                        <p class="mb-4 text-gray-600">Solomon Electric is fully licensed ({SITE_CONFIG.credentials.license.number}) and insured. All work is performed according to local codes and regulations.</p>
+
+                        <h4 class="font-bold text-primary mb-3 font-secondary">Warranty</h4>
+                        <p class="text-gray-600">We stand behind our work. All electrical services come with a satisfaction guarantee. Specific warranty terms will be provided with your service agreement.</p>
+                    `,
+                    },
+                };
+
+                const openModal = (type) => {
+                    if (!legalModal || !modalTitle || !modalBody) return;
+                    const content = legalContent[type];
+                    if (!content) return;
+
+                    modalTitle.textContent = content.title;
+                    modalBody.innerHTML = content.content;
+                    legalModal.classList.remove("hidden");
+                    legalModal.classList.add("flex");
+                    document.body.style.overflow = "hidden";
+
+                    // Focus first button after opening
+                    setTimeout(() => {
+                        const closeBtn =
+                            legalModal.querySelector(".modal-close");
+                        if (closeBtn instanceof HTMLElement) {
+                            closeBtn.focus();
+                        }
+                    }, 10);
+                };
+
+                const closeModal = () => {
+                    if (!legalModal) return;
+                    legalModal.classList.add("hidden");
+                    legalModal.classList.remove("flex");
+                    document.body.style.overflow = "";
+                };
+
+                legalLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        const modalType = link.getAttribute("data-modal");
+                        if (modalType) openModal(modalType);
+                    });
+                });
+
+                modalCloseButtons.forEach((btn) => {
+                    btn.addEventListener("click", closeModal);
+                });
+
+                if (modalBackdrop) {
+                    modalBackdrop.addEventListener("click", closeModal);
+                }
+
+                // Close on Escape key
+                document.addEventListener("keydown", (e) => {
+                    if (
+                        e.key === "Escape" &&
+                        !legalModal?.classList.contains("hidden")
+                    ) {
+                        closeModal();
                     }
                 });
 
-                return isValid;
-            }
+                // Conditional field displays
+                const serviceTypeSelect = container.querySelector(
+                    `#${getPrefixedId("serviceType")}`,
+                );
+                // Note: additionalDetailsContainer is no longer used - notes field is always visible
+                const addressInputField = container.querySelector(
+                    `#${getPrefixedId("address")}`,
+                );
+                const addressFieldsContainer = container.querySelector(
+                    `#${getPrefixedId("addressFieldsContainer")}`,
+                );
 
-            nextBtns.forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    if (validateStep(currentStep)) {
-                        showStep(currentStep + 1);
+                // Note: additionalDetailsContainer is now always visible (no service selection required)
+
+                // Show address fields after address is entered
+                if (addressInputField && addressFieldsContainer) {
+                    // Check address completion
+                    const checkAddressComplete = () => {
+                        if (addressInputField.value.trim().length > 10) {
+                            addressFieldsContainer.classList.remove("hidden");
+                        }
+                    };
+
+                    // Check on blur (manual entry)
+                    addressInputField.addEventListener(
+                        "blur",
+                        checkAddressComplete,
+                    );
+
+                    // Check on input (with debounce)
+                    let addressTimeout;
+                    addressInputField.addEventListener("input", () => {
+                        clearTimeout(addressTimeout);
+                        addressTimeout = setTimeout(checkAddressComplete, 500);
+                    });
+                }
+
+                let currentStep = 1;
+
+                function showStep(step) {
+                    steps.forEach((s) => {
+                        if (s instanceof HTMLElement) {
+                            const stepNum = parseInt(s.dataset.step || "0");
+                            if (stepNum === step) {
+                                s.classList.remove("hidden");
+                                s.classList.add("active");
+                            } else {
+                                s.classList.add("hidden");
+                                s.classList.remove("active");
+                            }
+                        }
+                    });
+                    currentStep = step;
+
+                    // Lazy load scripts based on step
+                    if (step === 2) {
+                        loadGoogleMaps();
+                    } else if (step === 3) {
+                        loadRecaptcha();
                     }
+
+                    // Update progress indicator
+                    const progressIndicators =
+                        container.querySelectorAll(".step-indicator");
+                    const stepLines = container.querySelectorAll(".step-line");
+
+                    progressIndicators.forEach((indicator) => {
+                        if (indicator instanceof HTMLElement) {
+                            const indicatorStep = parseInt(
+                                indicator.dataset.step || "0",
+                            );
+                            indicator.classList.remove("active", "completed");
+
+                            if (indicatorStep === step) {
+                                indicator.classList.add("active");
+                            } else if (indicatorStep < step) {
+                                indicator.classList.add("completed");
+                            }
+                        }
+                    });
+
+                    // Update step lines
+                    stepLines.forEach((line, index) => {
+                        if (index < step - 1) {
+                            line.classList.add("completed");
+                        } else {
+                            line.classList.remove("completed");
+                        }
+                    });
+                }
+
+                function validateStep(step) {
+                    const currentStepEl = container.querySelector(
+                        `.form-step[data-step="${step}"]`,
+                    );
+                    if (!currentStepEl) return false;
+
+                    const inputs = currentStepEl.querySelectorAll(
+                        "input[required], select[required], textarea[required]",
+                    );
+                    let isValid = true;
+
+                    inputs.forEach((input) => {
+                        if (
+                            input instanceof HTMLInputElement ||
+                            input instanceof HTMLSelectElement ||
+                            input instanceof HTMLTextAreaElement
+                        ) {
+                            // Handle checkboxes (used in Step 3 for consent)
+                            if (
+                                input.type === "checkbox" &&
+                                input instanceof HTMLInputElement
+                            ) {
+                                if (!input.checked) {
+                                    isValid = false;
+                                    // Visual feedback could be added here
+                                }
+                            }
+                            // Handle all other input types
+                            else if (!input.value.trim()) {
+                                isValid = false;
+                                input.classList.add("border-red-500");
+                            } else {
+                                input.classList.remove("border-red-500");
+                            }
+
+                            input.addEventListener("input", () => {
+                                input.classList.remove("border-red-500");
+                            });
+                            input.addEventListener("change", () => {
+                                input.classList.remove("border-red-500");
+                            });
+                        }
+                    });
+
+                    return isValid;
+                }
+
+                nextBtns.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        if (validateStep(currentStep)) {
+                            showStep(currentStep + 1);
+                        }
+                    });
                 });
-            });
 
-            prevBtns.forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    showStep(currentStep - 1);
+                prevBtns.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        showStep(currentStep - 1);
+                    });
                 });
-            });
 
-            // Form submission with reCAPTCHA v3
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                if (!validateStep(currentStep)) return;
+                // Form submission with reCAPTCHA v3
+                form.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+                    if (!validateStep(currentStep)) return;
 
-                const successEl = document.getElementById("formSuccess");
-                const errorEl = document.getElementById("formError");
-                const errorMsg = document.getElementById("errorMessage");
+                    const successEl = container.querySelector(
+                        `#${getPrefixedId("formSuccess")}`,
+                    );
+                    const errorEl = container.querySelector(
+                        `#${getPrefixedId("formError")}`,
+                    );
+                    const errorMsg = container.querySelector(
+                        `#${getPrefixedId("errorMessage")}`,
+                    );
 
-                // Hide any previous messages
-                if (errorEl) errorEl.classList.add("hidden");
+                    // Hide any previous messages
+                    if (errorEl) errorEl.classList.add("hidden");
 
-                // Disable button and show loading
-                if (submitBtn) {
-                    (submitBtn as HTMLButtonElement).disabled = true;
-                    (submitBtn as HTMLButtonElement).innerHTML = `
+                    // Disable button and show loading
+                    if (submitBtn) {
+                        /** @type {HTMLButtonElement} */ (submitBtn).disabled =
+                            true;
+                        /** @type {HTMLButtonElement} */ (submitBtn).innerHTML =
+                            `
                     <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                     Sending...
                 `;
-                }
-
-                try {
-                    // Get reCAPTCHA v3 token
-                    const grecaptcha = (window as any).grecaptcha;
-                    let recaptchaVerified = false;
-                    if (grecaptcha) {
-                        try {
-                            // Ensure grecaptcha is ready
-                            if (typeof grecaptcha.ready === "function") {
-                                await new Promise((resolve) =>
-                                    grecaptcha.ready(resolve),
-                                );
-                                const token = await grecaptcha.execute(
-                                    recaptchaKey,
-                                    { action: "submit" },
-                                );
-
-                                // Add token to form
-                                const tokenInput =
-                                    document.createElement("input");
-                                tokenInput.type = "hidden";
-                                tokenInput.name = "g-recaptcha-response";
-                                tokenInput.value = token;
-                                form.appendChild(tokenInput);
-                                recaptchaVerified = true;
-                            }
-                        } catch (err) {
-                            console.error("reCAPTCHA error:", err);
-                        }
                     }
 
-                    // Collect analytics tracking data
-                    const trackingData = {
-                        // Session & timing
-                        sessionStart:
-                            sessionStorage.getItem("sessionStart") ||
-                            new Date().toISOString(),
-                        timeOnSite: Math.round(
-                            (Date.now() -
-                                parseInt(
-                                    sessionStorage.getItem("sessionStart") ||
-                                        Date.now().toString(),
-                                )) /
-                                1000,
-                        ),
+                    try {
+                        // Get reCAPTCHA v3 token
+                        const grecaptcha = window.grecaptcha;
+                        let recaptchaVerified = false;
+                        if (grecaptcha) {
+                            try {
+                                // Ensure grecaptcha is ready
+                                if (typeof grecaptcha.ready === "function") {
+                                    await new Promise((resolve) =>
+                                        grecaptcha.ready(resolve),
+                                    );
+                                    const token = await grecaptcha.execute(
+                                        recaptchaKey,
+                                        { action: "submit" },
+                                    );
 
-                        // Navigation
-                        currentUrl: window.location.href,
-                        referrer: document.referrer || "Direct",
-                        clickPath:
-                            sessionStorage.getItem("clickPath") ||
-                            window.location.pathname,
-
-                        // Device & browser
-                        userAgent: navigator.userAgent,
-                        deviceType: /Mobile|Android|iPhone/i.test(
-                            navigator.userAgent,
-                        )
-                            ? "Mobile"
-                            : "Desktop",
-                        screenResolution: `${screen.width}x${screen.height}`,
-                        language: navigator.language,
-
-                        // Consent & cookies
-                        cookiesAccepted:
-                            localStorage.getItem("cookie-consent") ===
-                            "accepted",
-                        consentTimestamp:
-                            localStorage.getItem("cookie-consent-timestamp") ||
-                            "N/A",
-                        recaptchaVerified,
-
-                        // Traffic source
-                        utmSource:
-                            new URLSearchParams(window.location.search).get(
-                                "utm_source",
-                            ) ||
-                            sessionStorage.getItem("utm_source") ||
-                            "N/A",
-                        utmMedium:
-                            new URLSearchParams(window.location.search).get(
-                                "utm_medium",
-                            ) ||
-                            sessionStorage.getItem("utm_medium") ||
-                            "N/A",
-                        utmCampaign:
-                            new URLSearchParams(window.location.search).get(
-                                "utm_campaign",
-                            ) ||
-                            sessionStorage.getItem("utm_campaign") ||
-                            "N/A",
-                        gclid:
-                            new URLSearchParams(window.location.search).get(
-                                "gclid",
-                            ) ||
-                            sessionStorage.getItem("gclid") ||
-                            null,
-                        trafficSource: (() => {
-                            const ref = document.referrer.toLowerCase();
-                            const params = new URLSearchParams(
-                                window.location.search,
-                            );
-                            // Check for Google Ads first
-                            if (
-                                params.get("gclid") ||
-                                sessionStorage.getItem("gclid")
-                            ) {
-                                return "Google Ads";
+                                    // Add token to form
+                                    const tokenInput =
+                                        document.createElement("input");
+                                    tokenInput.type = "hidden";
+                                    tokenInput.name = "g-recaptcha-response";
+                                    tokenInput.value = token;
+                                    form.appendChild(tokenInput);
+                                    recaptchaVerified = true;
+                                }
+                            } catch (err) {
+                                console.error("reCAPTCHA error:", err);
                             }
-                            // Check referrer-based sources
-                            if (
-                                ref.includes("business.google.com") ||
-                                ref.includes("business.google")
-                            ) {
-                                return "Google Business Profile";
-                            }
-                            if (
-                                ref.includes("google.com/maps") ||
-                                ref.includes("maps.google.com")
-                            ) {
-                                return "Google Maps";
-                            }
-                            if (ref.includes("google.com")) {
-                                return "Google Organic";
-                            }
-                            if (ref.includes("bing.com")) {
-                                return "Bing Organic";
-                            }
-                            if (ref.includes("facebook.com")) {
-                                return "Facebook";
-                            }
-                            if (ref.includes("instagram.com")) {
-                                return "Instagram";
-                            }
-                            if (ref.includes("yelp.com")) {
-                                return "Yelp";
-                            }
-                            if (ref.includes("nextdoor.com")) {
-                                return "Nextdoor";
-                            }
-                            if (
-                                ref &&
-                                !ref.includes(window.location.hostname)
-                            ) {
-                                return "Referral";
-                            }
-                            return "Direct";
-                        })(),
-
-                        // New vs Returning visitor detection
-                        newReturning: (() => {
-                            const lastVisit =
-                                localStorage.getItem("lastVisitTimestamp");
-                            const isReturning = lastVisit !== null;
-                            // Update last visit timestamp
-                            localStorage.setItem(
-                                "lastVisitTimestamp",
-                                new Date().toISOString(),
-                            );
-                            return isReturning ? "Returning" : "New";
-                        })(),
-                    };
-
-                    // Add tracking data as hidden fields
-                    Object.keys(trackingData).forEach((key) => {
-                        const input = document.createElement("input");
-                        input.type = "hidden";
-                        input.name = `tracking_${key}`;
-                        input.value =
-                            (trackingData as any)[key]?.toString() || "N/A";
-                        form.appendChild(input);
-                    });
-
-                    const formData = new FormData(form);
-
-                    // Submit to PHP backend (SMTP2GO integration)
-                    const response = await fetch("/api/send-email.php", {
-                        method: "POST",
-                        body: formData,
-                    });
-
-                    const result = await response.json();
-
-                    if (response.ok) {
-                        // Push conversion event to GTM dataLayer
-                        if (
-                            typeof window !== "undefined" &&
-                            (window as any).dataLayer
-                        ) {
-                            (window as any).dataLayer.push({
-                                event: "form_submission",
-                                form_type: "booking_form",
-                                service_type: formData.get("serviceType"),
-                                urgency: formData.get("urgency"),
-                                city: formData.get("city") || "Unknown",
-                            });
                         }
 
-                        // Set flag for thank-you page validation
-                        sessionStorage.setItem("formSubmitted", "true");
-                        // Redirect to thank-you page for lead tracking
-                        window.location.href = "/thank-you";
-                    } else {
-                        // Show error message
+                        // Collect analytics tracking data using shared utility
+                        const trackingData = collectTrackingData();
+                        const trackingPayload =
+                            buildTrackingPayload(trackingData);
+
+                        // Add tracking data as hidden fields
+                        Object.entries(trackingPayload).forEach(
+                            ([name, value]) => {
+                                const input = document.createElement("input");
+                                input.type = "hidden";
+                                input.name = name;
+                                input.value = value;
+                                form.appendChild(input);
+                            },
+                        );
+
+                        const formData = new FormData(form);
+
+                        // Submit to PHP backend (SMTP2GO integration)
+                        const response = await fetch("/api/send-email.php", {
+                            method: "POST",
+                            body: formData,
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            // Push conversion event to GTM dataLayer
+                            if (
+                                typeof window !== "undefined" &&
+                                window.dataLayer
+                            ) {
+                                window.dataLayer.push({
+                                    event: "form_submission",
+                                    form_type: "booking_form",
+                                    service_type: formData.get("serviceType"),
+                                    urgency: formData.get("urgency"),
+                                    city: formData.get("city") || "Unknown",
+                                });
+                            }
+
+                            // Set flag for thank-you page validation
+                            sessionStorage.setItem("formSubmitted", "true");
+                            // Redirect to thank-you page for lead tracking
+                            window.location.href = "/thank-you";
+                        } else {
+                            // Show error message
+                            if (errorEl && errorMsg) {
+                                errorMsg.textContent =
+                                    result.message ||
+                                    "Something went wrong. Please try again.";
+                                errorEl.classList.remove("hidden");
+                            }
+                        }
+                    } catch (err) {
                         if (errorEl && errorMsg) {
                             errorMsg.textContent =
-                                result.message ||
-                                "Something went wrong. Please try again.";
+                                "Network error. Please check your connection and try again.";
                             errorEl.classList.remove("hidden");
                         }
+                    } finally {
+                        if (submitBtn) {
+                            /** @type {HTMLButtonElement} */ (
+                                submitBtn
+                            ).disabled = false;
+                            /** @type {HTMLButtonElement} */ (
+                                submitBtn
+                            ).innerText = "Submit Request";
+                        }
                     }
-                } catch (err) {
-                    if (errorEl && errorMsg) {
-                        errorMsg.textContent =
-                            "Network error. Please check your connection and try again.";
-                        errorEl.classList.remove("hidden");
-                    }
-                } finally {
-                    if (submitBtn) {
-                        (submitBtn as HTMLButtonElement).disabled = false;
-                        (submitBtn as HTMLButtonElement).innerText =
-                            "Submit Request";
-                    }
+                });
+
+                // Reset form button handler
+                const resetBtn = container.querySelector(".reset-form-btn");
+                if (resetBtn) {
+                    resetBtn.addEventListener("click", () => {
+                        const successEl = container.querySelector(
+                            `#${getPrefixedId("formSuccess")}`,
+                        );
+                        if (successEl) successEl.classList.add("hidden");
+                        form.classList.remove("hidden");
+                        showStep(1);
+                    });
                 }
             });
-
-            // Reset form button handler
-            const resetBtn = document.querySelector(".reset-form-btn");
-            if (resetBtn) {
-                resetBtn.addEventListener("click", () => {
-                    const successEl = document.getElementById("formSuccess");
-                    if (successEl) successEl.classList.add("hidden");
-                    form.classList.remove("hidden");
-                    showStep(1);
-                });
-            }
-        });
     </script>
 </div>

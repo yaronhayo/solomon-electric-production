@@ -64,7 +64,7 @@
       "label": "Residents Served"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -72,7 +72,7 @@
       "label": "Emergency Service"
     },
     {
-      "value": "4.9\u2605",
+      "value": "4.9★",
       "label": "Customer Rating"
     }
   ],
@@ -82,7 +82,7 @@
       "answer": "Yes, Atlantic Avenue's dining and entertainment district is a key part of our commercial work in Delray Beach. We understand the specific needs: kitchen electrical for restaurants, high-capacity circuits for commercial equipment, outdoor patio lighting and power, signage circuits, and the urgency of emergency repairs when every hour of downtime costs money. We work efficiently and around your business schedule."
     },
     {
-      "question": "Our Lake Ida home is historic\u2014can you modernize the electrical sensitively?",
+      "question": "Our Lake Ida home is historic—can you modernize the electrical sensitively?",
       "answer": "Absolutely. Lake Ida's historic homes require electricians who understand how to add modern capacity while respecting architectural character. We can update panels, add grounded circuits, and install modern lighting without visible conduit runs or damage to historic features. We've worked on many downtown Delray historic properties and understand the aesthetic considerations."
     },
     {
@@ -99,27 +99,28 @@
     },
     {
       "question": "How quickly can you respond to emergencies in Delray Beach?",
-      "answer": "Delray Beach is on the northern edge of our service area.  "
+      "answer": "We provide emergency electrical service throughout Delray Beach and the surrounding Palm Beach County area. Our technicians are positioned across South Florida to respond to critical situations including power failures, burning smells, and sparking outlets. Call us anytime—we're available 24/7, including weekends and holidays."
     }
   ],
   "seoContent": [
     {
-      "heading": "Trusted Delray Beach Electricians \u2013 Village by the Sea",
-      "body": "Delray Beach is a city that perfectly balances its award-winning 'Village by the Sea' charm with a sophisticated, modern energy. From Pineapple Grove to the sands of Atlantic Avenue, it's a community that values quality and character. Solomon Electric is proud to deliver that same standard of excellence to our Delray neighbors."
+      "heading": "Trusted Delray Beach Electricians – Village by the Sea",
+      "body": "Delray Beach is a city that perfectly balances its award-winning 'Village by the Sea' charm with a sophisticated, modern energy. From Pineapple Grove to the sands of Atlantic Avenue, it's a community that values quality and character. Solomon Electric is proud to deliver that same standard of excellence to our Delray neighbors. Our electricians are dispatched from strategic locations across Palm Beach County, often arriving within 60 minutes. We maintain full parts inventory on every truck, so most repairs and installations are completed in a single visit."
     },
     {
-      "heading": "Understanding Delray Beach's Electrical Needs",
-      "body": "Delray Beach homes and businesses have unique electrical requirements that demand local expertise. Our electricians understand Palm Beach County building codes, climate considerations, and the specific challenges of South Florida electrical systems. From aging infrastructure in established neighborhoods to modern smart home installations, we provide solutions tailored to Delray Beach's needs."
+      "heading": "Expert Electrical Solutions for Delray Beach Properties",
+      "body": "Whether your Delray Beach property needs panel upgrades, modern lighting, EV charging, or emergency repairs, our licensed electricians deliver solutions built for Palm Beach County's building codes and South Florida's demanding climate. We handle all permitting and inspections so you don't have to. Every project in Delray Beach is handled by W-2 employees—never subcontractors. Our electricians are drug-tested, background-checked, and carry our $2M liability insurance. We treat your home with the same care and respect we'd want in our own."
     },
     {
-      "heading": "Comprehensive Electrical Services for Your Delray Beach Home",
-      "body": "Whether you're upgrading an older home's electrical system, installing modern energy-efficient lighting, adding an EV charger, or facing an urgent electrical issue, our licensed team delivers professional solutions throughout Delray Beach. Our licensed team follows all safety protocols, respects your property, and maintains the technical standards that have defined our South Florida service for over {{YEARS_EXPERIENCE}} years."
+      "heading": "Serving Every Neighborhood in Delray Beach",
+      "body": "From Lake Ida, Delray Isle, Tropic Isle to Valencia Falls, our electricians provide full-service coverage throughout Delray Beach. We understand the specific electrical characteristics of each area — from older homes that need rewiring to new construction requiring modern smart home systems. Delray Beach properties face unique electrical challenges from South Florida's heat, humidity, and storm exposure. We use marine-grade hardware, UV-resistant conduit, and corrosion-resistant components that last in this environment."
     },
     {
       "heading": "Expert Electrical Solutions for Delray Residents and Businesses",
-      "body": "Whether you're restoring a historic gem in Lake Ida, upgrading a boutique on Atlantic Ave, or needing urgent help near the beach, our licensed team is ready. We provide professional service, clean workmanship, and a dedication to safety that Delray Beach has trusted for over {{YEARS_EXPERIENCE}} years."
+      "body": "Whether you're restoring a historic gem in Lake Ida, upgrading a boutique on Atlantic Ave, or needing urgent help near the beach, our licensed team is ready. We provide professional service, clean workmanship, and a dedication to safety that Delray Beach has trusted for over 18 years. From routine outlet installations to complex rewiring projects, we handle all aspects of residential and commercial electrical work in Delray Beach. Every job includes upfront pricing, clean worksite practices, and a satisfaction guarantee."
     }
   ],
   "imageAlt": "Professional electrical services in Delray Beach, Florida provided by Solomon Electric",
-  "image": "../../assets/images/heroes/service-areas.webp"
+  "image": "../../assets/images/heroes/service-areas.webp",
+  "metaDescription": "Licensed electrician in Delray Beach, FL. Panel upgrades, whole-house rewiring, EV chargers & emergency repairs. Serving Palm Beach County 24/7."
 }

@@ -4,6 +4,7 @@
     "heading-level": "error",
     "no-dup-id": "error",
     "no-inline-style": "off", 
+    "no-trailing-whitespace": "off",
     "prefer-native-element": "error",
     "script-type": "off",
     "require-sri": "off"

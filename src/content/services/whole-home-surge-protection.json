@@ -1,12 +1,12 @@
 {
   "name": "Whole-Home Surge Protection",
   "slug": "whole-home-surge-protection",
-  "description": "South Florida experiences a high frequency of lightning activity, which poses a risk to residential electrical systems. Solomon Electric installs comprehensive surge protection devices (SPDs) at the main electrical panel to mitigate high-voltage spikes caused by external weather events or utility grid fluctuations.",
+  "description": "South Florida leads the nation in lightning strikes, and each one can send thousands of volts through your wiring. Power strip surge protectors can't handle this—you need panel-level protection. South Florida experiences a high frequency of lightning activity, which poses a risk to residential electrical systems. Solomon Electric's licensed team installs comprehensive surge protection devices (SPDs) at the main electrical panel to mitigate high-voltage spikes caused by external weather events or utility grid fluctuations. Licensed FL electricians installing whole-home surge protection at the panel level throughout {cityName}.",
   "shortDescription": "Panel-integrated surge protection for southern Florida properties",
   "icon": "Shield",
   "image": "../../assets/images/services/panel-work.webp",
   "category": "Electrical Panels & Power Systems",
-  "order": 1,
+  "order": 2,
   "features": [
     "Installation of Type 1 and Type 2 Surge Protective Devices",
     "Application of multi-layered 'Cascading' protection strategy",
@@ -15,7 +15,7 @@
     "Adherence to UL 1449 safety and performance standards",
     "Documented installation for insurance compliance"
   ],
-  "warningSignsHeading": "Risks of Electrical Surge Exposure",
+  "warningSignsHeading": "Signs You May Need Whole Home Surge Protection",
   "warningSignsSubheading": "Properties in high-lightning regions are subject to induced voltage spikes that can affect internal wiring and connected devices. These conditions illustrate the requirement for system protection.",
   "problems": [
     {
@@ -49,7 +49,7 @@
       "icon": "FileCheck"
     }
   ],
-  "processHeading": "SPD Installation Procedure",
+  "processHeading": "How Our Whole Home Surge Protection Process Works",
   "process": [
     {
       "step": 1,
@@ -59,8 +59,7 @@
     {
       "step": 2,
       "title": "Device Integration",
-      "description": "A high-capacity Surge Protective Device (SPD) is mounted and hardwired to the main electrical panel to monitor incoming voltage.",
-      "icon": "Shield"
+      "description": "A high-capacity Surge Protective Device (SPD) is mounted and hardwired to the main electrical panel to monitor incoming voltage."
     },
     {
       "step": 3,
@@ -78,7 +77,7 @@
       "description": "The technician confirms the device is active and provides instruction on how to monitor the visual indicators for protection status."
     }
   ],
-  "benefitsHeading": "Structural Protection Benefits",
+  "benefitsHeading": "Why Professional Whole Home Surge Protection Matters",
   "benefits": [
     {
       "title": "Comprehensive Mitigation",
@@ -139,6 +138,18 @@
     {
       "question": "Is professional installation required?",
       "answer": "Yes, installing a panel-mounted SPD requires access to the main service panel and must be performed by a licensed electrician to ensure proper bonding and site safety."
+    },
+    {
+      "question": "How long do whole-home surge protectors last?",
+      "answer": "Quality SPDs typically last 3 to 5 years in South Florida due to the high frequency of lightning activity. Most units have indicator lights showing their protection status. We recommend annual checks and immediate replacement when the indicator shows the device has absorbed a major event."
+    },
+    {
+      "question": "Do I still need power strips if I have whole-home surge protection?",
+      "answer": "Whole-home SPDs handle large external surges from lightning and utility events. Point-of-use protectors add a second layer of defense for sensitive electronics. The combination—panel-level and outlet-level—provides the most comprehensive protection available."
+    },
+    {
+      "question": "Why is South Florida especially vulnerable to power surges?",
+      "answer": "Florida leads the U.S. in lightning strikes, averaging 1.4 million per year. South Florida's proximity to the coast and daily thunderstorm patterns create frequent surge events that damage unprotected electronics, HVAC systems, and appliances."
     }
   ],
   "relatedServices": [
@@ -149,16 +160,38 @@
   ],
   "seoContent": [
     {
-      "heading": "Whole-Home Surge Protection in Miami & South Florida",
-      "body": "Expert electrical services are provided for the installation of surge protective devices designed to handle the high lightning frequency of the South Florida region. Professional integration at the main terminal provides a safety barrier for all internal electrical circuits."
+      "heading": "Stopping Electronic Failure: Panel-Level Protection in {cityName}",
+      "body": "Expert electrical services are provided for the installation of surge protective devices designed to handle the high lightning frequency of the South Florida region. Professional integration at the main terminal provides a safety barrier for all internal electrical circuits. Our licensed electricians perform a complete load calculation before any panel work, ensuring your new panel meets current NEC requirements and has room for future expansion. We use copper bus bars, properly torqued connections, and AFCI/GFCI breakers where required by Florida Building Code."
     },
     {
-      "heading": "Grounding and Bonding for Surge Mitigation",
-      "body": "The effectiveness of an SPD is dependent on the property's grounding system. Licensed electricians perform grounding resistance checks to verify that induced energy can be safely diverted into the soil as part of a total protection strategy."
+      "heading": "The Foundation of Safety: Soil Resistance & Grounding in {cityName}",
+      "body": "The effectiveness of an SPD is dependent on the property's grounding system. Licensed electricians perform grounding resistance checks to verify that induced energy can be safely diverted into the soil as part of a total protection strategy. South Florida's heat and humidity accelerate corrosion inside electrical panels. We inspect for oxidized bus bars, loose connections, and thermal damage that compromise safety. Every panel we install includes proper weather sealing rated for coastal environments."
+    },
+    {
+      "heading": "Protecting Your Assets from South Florida's Lightning Intensity",
+      "body": "South Florida experiences more lightning strikes per square mile than almost anywhere in the United States. Without panel-level surge protection, every lightning event near your home sends damaging voltage spikes through your wiring—destroying TVs, computers, smart home devices, and HVAC control boards. Insurance companies increasingly require panel upgrades for policy renewals. Our electricians provide documented before-and-after reports that satisfy insurance requirements, and we coordinate directly with your insurer when needed."
+    },
+    {
+      "heading": "Tiered Safety: Implementing the Cascading Protection Standard in {cityName}",
+      "body": "The most effective surge protection uses a cascading approach: a Type 2 SPD at the main panel blocks large utility and lightning surges, while Type 3 point-of-use protectors at sensitive equipment provide the final line of defense. Solomon Electric designs and installs complete protection systems tailored to your home. Modern electrical demands—EV chargers, home offices, pool equipment, smart home systems—require more capacity than panels installed even 15 years ago. We future-proof your installation with 20-30% additional capacity beyond your current needs."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
   ],
-  "imageAlt": "Whole-Home Surge Protection service provided by licensed electricians in South Florida"
+  "imageAlt": "Whole-Home Surge Protection service provided by licensed electricians in South Florida",
+  "shortName": "Surge Protection",
+  "metaDescription": "Whole-home surge protection installation in Miami. Guard electronics and appliances from power surges and lightning. Licensed, free estimates.",
+  "metaTitle": "Surge Protection Miami FL | Solomon Electric",
+  "localSignals": {
+    "typicalTimeline": "Whole-home surge protector installation typically completes in 1-2 hours",
+    "priceRange": "Whole-home surge protection ranges from $400–$900 installed at the main panel",
+    "commonBrands": [
+      "Eaton",
+      "Leviton",
+      "Square D",
+      "Siemens"
+    ],
+    "permitNote": "Panel-mounted surge protectors may require {county} County permits as panel modifications"
+  }
 }

@@ -1,0 +1,14 @@
+# Solomon Electric - Lead Data Privacy Hardening
+# Block all public access to sensitive JSON lead logs
+<Files "*.json">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Prevent directory listing
+Options -Indexes
+
+# Security Headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"

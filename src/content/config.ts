@@ -7,6 +7,7 @@ const faqs = defineCollection({
         question: z.string(),
         answer: z.string(),
         category: z.string(),
+        order: z.number().optional(),
     }),
 });
 
@@ -48,6 +49,7 @@ const services = defineCollection({
     type: "data",
     schema: ({ image }) => z.object({
             name: z.string(),
+            shortName: z.string().optional(),
             slug: z.string(),
             description: z.string(),
             shortDescription: z.string(),
@@ -98,6 +100,14 @@ const services = defineCollection({
             warningSignsSubheading: z.string().optional(),
             processHeading: z.string().optional(),
             benefitsHeading: z.string().optional(),
+            metaDescription: z.string().optional(),
+            metaTitle: z.string().optional(),
+            localSignals: z.object({
+                typicalTimeline: z.string(),
+                priceRange: z.string(),
+                commonBrands: z.array(z.string()),
+                permitNote: z.string(),
+            }).optional(),
     }),
 });
 
@@ -155,7 +165,8 @@ const serviceAreas = defineCollection({
         seoContent: z.array(z.object({
             heading: z.string(),
             body: z.string()
-        })).optional()
+        })).optional(),
+        metaDescription: z.string().optional()
     })
 });
 

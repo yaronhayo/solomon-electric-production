@@ -12,8 +12,14 @@ import {
     Menu,
     X,
     Phone,
+    Star,
+    HelpCircle,
+    Info,
+    Mail,
+    Calendar, // Added Calendar icon
 } from "lucide-astro";
 import { SITE_CONFIG } from "../config/site";
+import PhoneNumber from "./ui/PhoneNumber.astro";
 
 // Top services for mega menu
 const topServices = [
@@ -44,14 +50,20 @@ const topServiceAreas = [
 
 <header class="w-full font-secondary sticky top-0 z-[var(--z-sticky)]">
     <!-- Main Navbar -->
-    <nav class="bg-white border-b border-gray-100 shadow-[var(--shadow-sm)]">
+    <nav
+        class="bg-white border-b border-gray-100 shadow-[var(--shadow-sm)]"
+        aria-label="Main Navigation"
+    >
         <Container class="py-2 lg:py-3">
             <!-- Desktop Header (lg and up) -->
             <div
                 class="hidden lg:grid lg:grid-cols-[minmax(180px,220px)_1fr_minmax(400px,auto)] items-center gap-4 xl:gap-8"
             >
                 <!-- Left: Logo -->
-                <a href="/" class="block w-full max-w-[220px]">
+                <a
+                    href="/"
+                    class="block max-w-[220px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 rounded-sm"
+                >
                     <Image
                         src={logoImage.src}
                         alt={logoImage.alt}
@@ -67,18 +79,25 @@ const topServiceAreas = [
                     <div class="mega-menu-container group">
                         <a
                             href="/services"
-                            class="mega-menu-trigger text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap flex items-center gap-1 group/trigger"
+                            class="mega-menu-trigger text-primary hover:text-accent transition-colors font-bold text-[length:var(--text-nav)] tracking-wider uppercase whitespace-nowrap flex items-center gap-1 group/trigger focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 rounded-sm"
+                            aria-haspopup="true"
+                            aria-expanded="false"
                         >
                             <span class="shimmer-authority">Services</span>
                             <ChevronDown
                                 class="w-3 h-3 transition-transform group-hover/trigger:rotate-180"
                             />
                         </a>
-                        <div class="mega-menu">
+                        <section
+                            class="mega-menu"
+                            aria-labelledby="mega-menu-services-label"
+                        >
                             <div class="mega-menu-content">
                                 <div class="mega-menu-header">
-                                    <span class="mega-menu-label"
-                                        >⚡ Popular Services</span
+                                    <span
+                                        class="mega-menu-label inline-flex items-center gap-1.5"
+                                        id="mega-menu-services-label"
+                                        ><Zap class="w-3.5 h-3.5" /> Popular Services</span
                                     >
                                 </div>
                                 <div class="mega-menu-grid">
@@ -99,25 +118,33 @@ const topServiceAreas = [
                                     <ArrowRight class="w-4 h-4" />
                                 </a>
                             </div>
-                        </div>
+                        </section>
                     </div>
 
                     <!-- Service Areas Mega Menu -->
                     <div class="mega-menu-container group">
                         <a
                             href="/service-areas"
-                            class="mega-menu-trigger text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap flex items-center gap-1 group/trigger"
+                            class="mega-menu-trigger text-primary hover:text-accent transition-colors font-bold text-[length:var(--text-nav)] tracking-wider uppercase whitespace-nowrap flex items-center gap-1 group/trigger focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 rounded-sm"
+                            aria-haspopup="true"
+                            aria-expanded="false"
                         >
                             <span class="shimmer-authority">Service Areas</span>
                             <ChevronDown
                                 class="w-3 h-3 transition-transform group-hover/trigger:rotate-180"
                             />
                         </a>
-                        <div class="mega-menu">
+                        <section
+                            class="mega-menu"
+                            aria-labelledby="mega-menu-cities-label"
+                        >
                             <div class="mega-menu-content">
                                 <div class="mega-menu-header">
-                                    <span class="mega-menu-label"
-                                        >📍 Top Cities We Serve</span
+                                    <span
+                                        class="mega-menu-label inline-flex items-center gap-1.5"
+                                        id="mega-menu-cities-label"
+                                        ><MapPin class="w-3.5 h-3.5" /> Top Cities
+                                        We Serve</span
                                     >
                                 </div>
                                 <div class="mega-menu-grid">
@@ -141,27 +168,27 @@ const topServiceAreas = [
                                     <ArrowRight class="w-4 h-4" />
                                 </a>
                             </div>
-                        </div>
+                        </section>
                     </div>
 
                     <a
                         href="/faq"
-                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[length:var(--text-nav)] tracking-wider uppercase whitespace-nowrap"
                         >FAQ</a
                     >
                     <a
                         href="/reviews"
-                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[length:var(--text-nav)] tracking-wider uppercase whitespace-nowrap"
                         >Reviews</a
                     >
                     <a
                         href="/about"
-                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[length:var(--text-nav)] tracking-wider uppercase whitespace-nowrap"
                         >About</a
                     >
                     <a
                         href="/contact"
-                        class="text-primary hover:text-accent transition-colors font-bold text-[14px] xl:text-[15px] tracking-wider uppercase whitespace-nowrap"
+                        class="text-primary hover:text-accent transition-colors font-bold text-[length:var(--text-nav)] tracking-wider uppercase whitespace-nowrap"
                         >Contact</a
                     >
                 </div>
@@ -194,11 +221,14 @@ const topServiceAreas = [
                     />
                 </a>
                 <button
+                    type="button"
                     id="mobile-menu-btn"
                     class="text-primary p-2"
                     aria-label="Open Menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
                 >
-                    <Menu class="w-8 h-8" />
+                    <Menu class="w-8 h-8" aria-hidden="true" />
                 </button>
             </div>
         </Container>
@@ -208,7 +238,10 @@ const topServiceAreas = [
 <!-- Mobile Menu Overlay (for phones and tablets) -->
 <div
     id="mobile-menu"
-    class="fixed inset-y-0 right-0 w-full max-w-[400px] bg-gradient-to-br from-primary via-[var(--color-primary-dark)] to-[var(--color-primary-dark)] z-[var(--z-modal)] transform translate-x-full transition-all duration-300 ease-out lg:hidden flex flex-col shadow-2xl overflow-y-auto backdrop-blur-sm"
+    class="fixed inset-y-0 right-0 w-full max-w-[400px] bg-gradient-to-br from-primary via-[var(--color-primary-dark)] to-[var(--color-primary-dark)] z-[var(--z-modal)] transform translate-x-full transition-all duration-300 ease-out lg:hidden flex flex-col shadow-[var(--shadow-xl)] overflow-y-auto backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile Navigation"
 >
     <!-- Glass Overlay Effect -->
     <div class="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
@@ -226,8 +259,9 @@ const topServiceAreas = [
             />
         </a>
         <button
+            type="button"
             id="close-menu-btn"
-            class="w-10 h-10 bg-primary/10 hover:bg-primary/20 flex items-center justify-center rounded-lg transition-all duration-200 hover:rotate-90 group"
+            class="w-10 h-10 bg-primary/10 hover:bg-primary/20 flex items-center justify-center rounded-[var(--radius-lg)] transition-all duration-200 hover:rotate-90 group"
             aria-label="Close Menu"
         >
             <X
@@ -239,10 +273,13 @@ const topServiceAreas = [
     <!-- Content -->
     <div class="relative flex flex-col gap-12 px-8 py-6 flex-grow">
         <!-- Navigation Links -->
-        <nav class="flex flex-col gap-6 animate-fade-in-up">
+        <nav
+            class="flex flex-col gap-6 animate-fade-in-up"
+            aria-label="Mobile Navigation"
+        >
             <a
                 href="/services"
-                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+                class="group flex items-center gap-3 font-secondary text-[length:var(--text-h5)] font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
             >
                 <Zap
                     class="w-5 h-5 text-accent group-hover:scale-110 transition-transform"
@@ -254,7 +291,7 @@ const topServiceAreas = [
             </a>
             <a
                 href="/service-areas"
-                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+                class="group flex items-center gap-3 font-secondary text-[length:var(--text-h5)] font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
             >
                 <MapPin
                     class="w-5 h-5 text-accent group-hover:scale-110 transition-transform"
@@ -266,9 +303,12 @@ const topServiceAreas = [
             </a>
             <a
                 href="/faq"
-                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+                class="group flex items-center gap-3 font-secondary text-[length:var(--text-h5)] font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
             >
-                <span class="text-accent text-lg">❓</span>
+                <span
+                    class="text-accent text-[length:var(--text-body)] inline-flex"
+                    ><HelpCircle class="w-5 h-5" /></span
+                >
                 <span>FAQ</span>
                 <ArrowRight
                     class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
@@ -276,9 +316,12 @@ const topServiceAreas = [
             </a>
             <a
                 href="/reviews"
-                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+                class="group flex items-center gap-3 font-secondary text-[length:var(--text-h5)] font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
             >
-                <span class="text-accent text-lg">⭐</span>
+                <span
+                    class="text-accent text-[length:var(--text-body)] inline-flex"
+                    ><Star class="w-5 h-5" /></span
+                >
                 <span>Reviews</span>
                 <ArrowRight
                     class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
@@ -286,9 +329,12 @@ const topServiceAreas = [
             </a>
             <a
                 href="/about"
-                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+                class="group flex items-center gap-3 font-secondary text-[length:var(--text-h5)] font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
             >
-                <span class="text-accent text-lg">ℹ️</span>
+                <span
+                    class="text-accent text-[length:var(--text-body)] inline-flex"
+                    ><Info class="w-5 h-5" /></span
+                >
                 <span>About</span>
                 <ArrowRight
                     class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
@@ -296,9 +342,12 @@ const topServiceAreas = [
             </a>
             <a
                 href="/contact"
-                class="group flex items-center gap-3 font-secondary text-xl font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
+                class="group flex items-center gap-3 font-secondary text-[length:var(--text-h5)] font-bold text-white hover:text-accent transition-all duration-200 hover:translate-x-2 py-2"
             >
-                <span class="text-accent text-lg">📧</span>
+                <span
+                    class="text-accent text-[length:var(--text-body)] inline-flex"
+                    ><Mail class="w-5 h-5" /></span
+                >
                 <span>Contact</span>
                 <ArrowRight
                     class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
@@ -320,7 +369,7 @@ const topServiceAreas = [
             <!-- All Services Button -->
             <a
                 href="/services"
-                class="group relative flex items-center justify-center gap-3 px-6 py-4 bg-accent hover:bg-accent/90 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] overflow-hidden"
+                class="group relative flex items-center justify-center gap-3 px-6 py-4 bg-accent hover:bg-accent/90 rounded-[var(--radius-lg)] transition-all duration-300 hover:shadow-[var(--shadow-lg)] hover:shadow-accent/20 hover:scale-[1.02] overflow-hidden"
             >
                 <div
                     class="absolute inset-0 bg-gradient-to-r from-accent/0 via-white/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
@@ -328,7 +377,7 @@ const topServiceAreas = [
                 </div>
                 <Zap class="w-5 h-5 text-primary relative z-10" />
                 <span
-                    class="font-secondary text-lg font-bold text-primary relative z-10"
+                    class="font-secondary text-[length:var(--text-body)] font-bold text-primary relative z-10"
                     >All Services</span
                 >
                 <ArrowRight
@@ -336,35 +385,37 @@ const topServiceAreas = [
                 />
             </a>
 
-            <!-- Call Now Button -->
+            <!-- Call&nbsp;Now Button -->
             <a
                 href={SITE_CONFIG.contact.phone.href}
-                class="group relative flex items-center justify-center gap-3 px-6 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.02] overflow-hidden"
+                class="group relative flex items-center justify-center gap-3 px-6 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-[var(--radius-lg)] transition-all duration-300 hover:shadow-[var(--shadow-lg)] hover:shadow-white/10 hover:scale-[1.02] overflow-hidden"
             >
                 <div
                     class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
                 >
                 </div>
                 <span
-                    class="w-9 h-9 bg-accent rounded-lg flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform"
+                    class="w-9 h-9 bg-accent rounded-[var(--radius-lg)] flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform"
                 >
                     <Phone class="w-5 h-5 text-primary" />
                 </span>
                 <span
-                    class="font-secondary text-lg font-bold text-white relative z-10"
-                    >Call Now</span
-                >
-            </a>
+                    class="font-secondary text-[length:var(--text-body)] font-bold text-white relative z-10"
+                    >Call&nbsp;Now</span
+                ></a
+            >
 
             <!-- Contact Info -->
             <div class="text-center mt-4 space-y-2">
                 <p
-                    class="text-white/60 text-xs uppercase tracking-wider font-secondary"
+                    class="text-white/60 text-[length:var(--text-caption)] uppercase tracking-wider font-secondary"
                 >
                     Available 24/7
                 </p>
-                <p class="text-accent text-xl font-bold font-secondary">
-                    {SITE_CONFIG.contact.phone.display}
+                <p
+                    class="text-accent text-[length:var(--text-h5)] font-bold font-secondary"
+                >
+                    <PhoneNumber />
                 </p>
             </div>
         </div>
@@ -381,7 +432,13 @@ const topServiceAreas = [
 
     .mega-menu-trigger {
         position: relative;
-        z-index: 10;
+        z-index: var(--z-header);
+    }
+
+    .mega-menu-trigger:focus-visible {
+        outline: var(--outline-accent);
+        outline-offset: 4px;
+        border-radius: var(--radius-sm);
     }
 
     .mega-menu {
@@ -392,11 +449,12 @@ const topServiceAreas = [
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: all 0.2s ease;
+        transition: all var(--transition-fast);
         padding-top: 12px; /* Gap between trigger and menu */
     }
 
-    .mega-menu-container:hover .mega-menu {
+    .mega-menu-container:hover .mega-menu,
+    .mega-menu-container:focus-within .mega-menu {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -419,13 +477,13 @@ const topServiceAreas = [
         background: linear-gradient(
             135deg,
             var(--color-primary) 0%,
-            #0a3060 100%
+            var(--color-primary-dark) 100%
         );
         border-bottom: 2px solid var(--color-accent);
     }
 
     .mega-menu-label {
-        font-size: 0.7rem;
+        font-size: var(--text-caption);
         font-weight: 700;
         color: white;
         text-transform: uppercase;
@@ -444,15 +502,15 @@ const topServiceAreas = [
         gap: 0.75rem;
         padding: 0.625rem 0.75rem;
         color: var(--text-body);
-        font-size: 0.875rem;
+        font-size: var(--text-nav);
         font-weight: 500;
         text-decoration: none;
         border-radius: var(--radius-md);
-        transition: all 0.15s ease;
+        transition: all var(--transition-fast);
     }
 
     .mega-menu-item:hover {
-        background: rgba(20, 211, 227, 0.08);
+        background: rgba(var(--color-accent-rgb), 0.08);
         color: var(--color-primary);
     }
 
@@ -465,7 +523,7 @@ const topServiceAreas = [
         height: 1rem;
         color: var(--color-primary);
         flex-shrink: 0;
-        transition: color 0.15s ease;
+        transition: color var(--transition-fast);
     }
 
     .mega-menu-view-all {
@@ -475,13 +533,13 @@ const topServiceAreas = [
         padding: 0.75rem 1rem;
         background: var(--bg-surface);
         color: var(--color-primary);
-        font-size: 0.8rem;
+        font-size: var(--text-label);
         font-weight: 700;
         text-transform: uppercase;
         text-decoration: none;
         letter-spacing: 0.05em;
         border-top: 1px solid var(--border-light);
-        transition: all 0.15s ease;
+        transition: all var(--transition-fast);
     }
 
     .mega-menu-view-all:hover {
@@ -497,19 +555,8 @@ const topServiceAreas = [
     /* =========================================
        MOBILE MENU ANIMATIONS
        ========================================= */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
     .animate-fade-in-up {
-        animation: fadeInUp 0.4s ease-out forwards;
+        animation: fadeInUp var(--transition-base) forwards;
     }
 
     /* Mobile menu backdrop */
@@ -539,10 +586,17 @@ const topServiceAreas = [
 
         // Toggle backdrop
         if (!isOpen) {
+            if (menuBtn) {
+                menuBtn.setAttribute("aria-expanded", "true");
+            }
             backdrop.classList.remove("pointer-events-none");
             backdrop.classList.remove("opacity-0");
         } else {
+            if (menuBtn) {
+                menuBtn.setAttribute("aria-expanded", "false");
+            }
             backdrop.classList.add("opacity-0");
+
             setTimeout(() => {
                 backdrop.classList.add("pointer-events-none");
             }, 300);
@@ -555,5 +609,42 @@ const topServiceAreas = [
 
     menu?.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", toggleMenu);
+    });
+
+    // Escape key closes menu
+    document.addEventListener("keydown", (e) => {
+        if (
+            e.key === "Escape" &&
+            !menu?.classList.contains("translate-x-full")
+        ) {
+            toggleMenu();
+            menuBtn?.focus();
+        }
+    });
+
+    // Focus trap inside mobile menu
+    document.addEventListener("keydown", (e) => {
+        if (
+            e.key !== "Tab" ||
+            !menu ||
+            menu.classList.contains("translate-x-full")
+        )
+            return;
+
+        const focusable = menu.querySelectorAll<HTMLElement>(
+            'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        );
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
     });
 </script>

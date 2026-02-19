@@ -1,0 +1,22 @@
+---
+/**
+ * PhoneNumber Component
+ * Renders a phone number with non-breaking spaces and hyphens
+ * to satisfy HTML validation (tel-non-breaking rule)
+ */
+import { SITE_CONFIG } from "../../config/site";
+
+interface Props {
+    number?: string;
+    class?: string;
+}
+
+const { number = SITE_CONFIG.contact.phone.display, class: className = "" } =
+    Astro.props;
+
+// Replace spaces with &nbsp; and hyphens with &#8209;
+// Specifically for (786) 833-9211 -> (786)&nbsp;833&#8209;9211
+const formatted = number.replace(/ /g, "&nbsp;").replace(/-/g, "&#8209;");
+---
+
+<span class={className} set:html={formatted} />

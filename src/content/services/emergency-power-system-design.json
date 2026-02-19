@@ -1,7 +1,7 @@
 {
   "name": "Emergency Power System Design",
   "slug": "emergency-power-system-design",
-  "description": "When your operation can't tolerate power interruptions, you need more than a generator\u2014you need a complete emergency power system. Solomon Electric designs comprehensive backup power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida. From generator sizing to transfer systems to load prioritization, we create backup power that keeps you running.",
+  "description": "When your operation can't tolerate power interruptions, you need more than a generator—you need a complete emergency power system. Solomon Electric's licensed team designs comprehensive backup power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida. From generator sizing to transfer systems to load prioritization, we create backup power that keeps you running.",
   "shortDescription": "Mission-critical backup power design",
   "icon": "Shield",
   "image": "../../assets/images/services/panel-work.webp",
@@ -15,7 +15,7 @@
     "UPS integration",
     "Life safety compliance"
   ],
-  "warningSignsHeading": "When Professional Power System Design Matters",
+  "warningSignsHeading": "Signs You May Need Emergency Power System",
   "warningSignsSubheading": "Mission-critical operations require engineered backup power solutions, not just generators.",
   "problems": [
     {
@@ -49,22 +49,22 @@
       "icon": "AlertTriangle"
     }
   ],
-  "processHeading": "Our Emergency Power Design Process",
+  "processHeading": "How Our Emergency Power System Process Works",
   "process": [
     {
       "step": 1,
       "title": "Requirements Analysis",
-      "description": "We understand your operational requirements\u2014what can't lose power, acceptable transition times, and runtime needs."
+      "description": "We understand your operational requirements—what can't lose power, acceptable transition times, and runtime needs."
     },
     {
       "step": 2,
       "title": "Load Analysis",
-      "description": "We inventory and calculate loads requiring backup power\u2014critical vs. optional, continuous vs. cyclical\u2014to properly size generation."
+      "description": "We inventory and calculate loads requiring backup power—critical vs. optional, continuous vs. cyclical—to properly size generation."
     },
     {
       "step": 3,
       "title": "System Design",
-      "description": "We design the complete system\u2014generators, transfer equipment, distribution, and any UPS or ride-through requirements."
+      "description": "We design the complete system—generators, transfer equipment, distribution, and any UPS or ride-through requirements."
     },
     {
       "step": 4,
@@ -77,11 +77,11 @@
       "description": "We develop implementation plans including equipment specifications, installation approach, testing procedures, and maintenance requirements."
     }
   ],
-  "benefitsHeading": "Benefits of Engineered Emergency Power",
+  "benefitsHeading": "Why Professional Emergency Power System Matters",
   "benefits": [
     {
       "title": "Right-Sized Systems",
-      "description": "Proper load analysis ensures generators are sized correctly\u2014not undersized (won't carry load) or oversized (wasted capital and operating cost).",
+      "description": "Proper load analysis ensures generators are sized correctly—not undersized (won't carry load) or oversized (wasted capital and operating cost).",
       "icon": "Zap"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "title": "Optimized Investment",
-      "description": "Thoughtful design balances protection needs with cost\u2014possibly including tiered backup for different criticality levels.",
+      "description": "Thoughtful design balances protection needs with cost—possibly including tiered backup for different criticality levels.",
       "icon": "TrendingUp"
     }
   ],
@@ -110,7 +110,7 @@
       "label": "Redundancy Available"
     },
     {
-      "value": "15+",
+      "value": "18+",
       "label": "Years Experience"
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "question": "What's N+1 redundancy?",
-      "answer": "N+1 means having one more generator than minimum required. If your load needs three generators, N+1 provides four\u2014so any one can fail or need maintenance without losing backup capability. Critical facilities like data centers often require N+1."
+      "answer": "N+1 means having one more generator than minimum required. If your load needs three generators, N+1 provides four—so any one can fail or need maintenance without losing backup capability. Critical facilities like data centers often require N+1."
     },
     {
       "question": "Do we need UPS in addition to generators?",
@@ -141,11 +141,11 @@
     },
     {
       "question": "What about code requirements for healthcare?",
-      "answer": "NFPA 99 and NEC govern healthcare electrical. Requirements include emergency system, life safety system, critical system, and equipment system\u2014each with specific loads and transfer requirements. We design compliant systems for healthcare facilities."
+      "answer": "NFPA 99 and NEC govern healthcare electrical. Requirements include emergency system, life safety system, critical system, and equipment system—each with specific loads and transfer requirements. We design compliant systems for healthcare facilities."
     },
     {
       "question": "Can you upgrade our existing backup system?",
-      "answer": "Absolutely. We evaluate existing systems, identify limitations, and design upgrades\u2014larger generators, additional transfer capacity, improved redundancy, or better load management. Upgrades often provide significantly better protection than original installations."
+      "answer": "Absolutely. We evaluate existing systems, identify limitations, and design upgrades—larger generators, additional transfer capacity, improved redundancy, or better load management. Upgrades often provide significantly better protection than original installations."
     },
     {
       "question": "What maintenance do emergency power systems need?",
@@ -161,23 +161,37 @@
   "seoContent": [
     {
       "heading": "Emergency Power System Design in South Florida",
-      "body": "Mission-critical operations can't tolerate power interruptions. Solomon Electric designs comprehensive emergency power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida\u2014from generator sizing to complete redundant systems."
+      "body": "Mission-critical operations can't tolerate power interruptions. Solomon Electric designs comprehensive emergency power solutions for commercial facilities, healthcare, data centers, and critical infrastructure throughout South Florida—from generator sizing to complete redundant systems. Our licensed electricians perform a complete load calculation before any panel work, ensuring your new panel meets current NEC requirements and has room for future expansion. We use copper bus bars, properly torqued connections, and AFCI/GFCI breakers where required by Florida Building Code."
     },
     {
-      "heading": "Healthcare and Life Safety Compliance",
-      "body": "Healthcare facilities, high-rise buildings, and assembly occupancies have code-mandated emergency power requirements. We design systems meeting NEC, NFPA 99, and NFPA 110 requirements\u2014ensuring proper emergency, life safety, and critical branch separation."
+      "heading": "Healthcare & Life Safety Power Compliance in Miami",
+      "body": "Healthcare facilities, high-rise buildings, and assembly occupancies have code-mandated emergency power requirements. We design systems meeting NEC, NFPA 99, and NFPA 110 requirements—ensuring proper emergency, life safety, and critical branch separation. South Florida's heat and humidity accelerate corrosion inside electrical panels. We inspect for oxidized bus bars, loose connections, and thermal damage that compromise safety. Every panel we install includes proper weather sealing rated for coastal environments."
     },
     {
-      "heading": "Data Center and IT Critical Power",
-      "body": "Data centers require seamless power transition and often N+1 generator redundancy. We design emergency power systems with UPS integration, redundant generation, and maintained transfer schemes that meet tier-level uptime requirements."
+      "heading": "Data Center & IT Critical Power in South Florida",
+      "body": "Data centers require seamless power transition and often N+1 generator redundancy. We design emergency power systems with UPS integration, redundant generation, and maintained transfer schemes that meet tier-level uptime requirements. Insurance companies increasingly require panel upgrades for policy renewals. Our electricians provide documented before-and-after reports that satisfy insurance requirements, and we coordinate directly with your insurer when needed."
     },
     {
       "heading": "Serving South Florida Critical Facilities",
-      "body": "Solomon Electric designs emergency power systems throughout Miami, Fort Lauderdale, Hollywood, and all South Florida. From hospitals to data centers to commercial operations, we create backup power that keeps you running."
+      "body": "Solomon Electric designs emergency power systems throughout {cityName}, Hollywood, and all South Florida. From hospitals to data centers to commercial operations, we create backup power that keeps you running. Modern electrical demands—EV chargers, home offices, pool equipment, smart home systems—require more capacity than panels installed even 15 years ago. We future-proof your installation with 20-30% additional capacity beyond your current needs."
     }
   ],
   "relatedBlogPosts": [
     "miami-hurricane-electrical-prep-guide"
   ],
-  "imageAlt": "Emergency Power System Design service provided by licensed electricians in South Florida"
+  "imageAlt": "Emergency Power System Design service provided by licensed electricians in South Florida",
+  "shortName": "Emergency Power Design",
+  "metaTitle": "Emergency Power System Design Miami FL | Solomon Electric",
+  "metaDescription": "Emergency power system design in Miami. UPS, backup generators & automatic failover solutions for homes and businesses. Licensed.",
+  "localSignals": {
+    "typicalTimeline": "System design and engineering typically requires 1-3 weeks; installation 1-4 weeks",
+    "priceRange": "Emergency power system design and installation ranges from $10,000–$100,000+ for commercial facilities",
+    "commonBrands": [
+      "Generac",
+      "Kohler",
+      "Caterpillar",
+      "Eaton UPS"
+    ],
+    "permitNote": "Requires {county} County commercial permits, fire marshal review, and health department approval for medical facilities"
+  }
 }

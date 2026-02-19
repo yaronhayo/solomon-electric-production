@@ -4,16 +4,19 @@
 
 <div
     id="cookie-banner"
-    class="cookie-banner glass-border shadow-2xl"
-    style="display: none; background-color: #0e4380;"
+    class="cookie-banner glass-border shadow-[var(--shadow-xl)]"
+    style="display: none; background-color: var(--bg-primary);"
+    role="dialog"
+    aria-label="Cookie consent"
+    aria-describedby="cookie-desc"
 >
     <div class="cookie-content">
         <div class="cookie-icon-wrapper">
             <div class="cookie-icon shimmer-authority">🍪</div>
         </div>
         <div class="cookie-text">
-            <h4 class="cookie-title">We Value Your Privacy</h4>
-            <p class="cookie-description">
+            <p class="cookie-title">We Value Your Privacy</p>
+            <p id="cookie-desc" class="cookie-description">
                 We use cookies to enhance your experience and analyze our
                 traffic. By clicking "Accept All", you consent to our use of all
                 cookies.
@@ -21,12 +24,17 @@
         </div>
         <div class="cookie-actions">
             <button
+                type="button"
                 id="accept-cookies"
                 class="cookie-btn cookie-btn-primary magnetic-cta"
             >
                 Accept All
             </button>
-            <button id="reject-cookies" class="cookie-btn cookie-btn-secondary">
+            <button
+                type="button"
+                id="reject-cookies"
+                class="cookie-btn cookie-btn-secondary"
+            >
                 Reject
             </button>
             <a href="/privacy" class="cookie-link font-secondary"
@@ -44,7 +52,7 @@
         right: var(--spacing-lg);
         max-width: 900px;
         margin: 0 auto;
-        z-index: 9998;
+        z-index: var(--z-banner);
         border-radius: var(--radius-2xl);
         overflow: hidden;
     }
@@ -71,7 +79,7 @@
     }
 
     .cookie-icon {
-        font-size: 2.5rem;
+        font-size: var(--text-h2);
         filter: drop-shadow(0 0 10px rgba(var(--color-accent-rgb), 0.3));
     }
 
@@ -80,7 +88,7 @@
     }
 
     .cookie-title {
-        font-size: 1.1rem;
+        font-size: var(--text-body-sm);
         font-weight: 900;
         color: white;
         margin: 0 0 var(--spacing-xs) 0;
@@ -90,7 +98,7 @@
     }
 
     .cookie-description {
-        font-size: 0.9rem;
+        font-size: var(--text-label);
         color: rgba(255, 255, 255, 0.8);
         margin: 0;
         line-height: 1.6;
@@ -114,14 +122,14 @@
 
     .cookie-btn {
         padding: 0.8rem 1.5rem;
-        font-size: 0.75rem;
+        font-size: var(--text-caption);
         font-weight: 900;
         font-family: var(--font-secondary);
         text-transform: uppercase;
         letter-spacing: 0.1em;
         border: none;
         cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all var(--transition-base);
         white-space: nowrap;
         clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
     }
@@ -149,11 +157,11 @@
     }
 
     .cookie-link {
-        font-size: 0.75rem;
+        font-size: var(--text-caption);
         color: rgba(255, 255, 255, 0.6);
         text-decoration: none;
         border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
-        transition: all 0.3s ease;
+        transition: all var(--transition-base);
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
@@ -161,10 +169,6 @@
     .cookie-link:hover {
         color: var(--color-accent);
         border-bottom-color: var(--color-accent);
-    }
-
-    .cookie-link:hover {
-        color: var(--color-primary);
     }
 </style>
 
@@ -204,10 +208,26 @@
         hideBanner();
     });
 
+    // Escape key dismisses banner (treat as reject)
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            const banner = document.getElementById("cookie-banner");
+            if (banner && banner.style.display !== "none") {
+                localStorage.setItem("cookie-consent", "rejected");
+                localStorage.setItem(
+                    "cookie-consent-timestamp",
+                    new Date().toISOString(),
+                );
+                hideBanner();
+            }
+        }
+    });
+
     function hideBanner() {
         const banner = document.getElementById("cookie-banner");
         if (banner) {
-            banner.style.animation = "slideDown 0.3s ease-out";
+            banner.style.animation =
+                "slideDown var(--transition-base) ease-out";
             setTimeout(() => {
                 banner.style.display = "none";
             }, 300);
@@ -217,8 +237,8 @@
     function loadAnalytics() {
         // GTM should already be loaded in Layout.astro
         // This just signals that consent was given
-        if (typeof window !== "undefined" && (window as any).dataLayer) {
-            (window as any).dataLayer.push({
+        if (typeof window !== "undefined" && window.dataLayer) {
+            window.dataLayer.push({
                 event: "cookie_consent_given",
                 consent_type: "analytics",
                 consent_timestamp: localStorage.getItem(

@@ -28,7 +28,7 @@ https://www.247electricianmiami.com/a1b2c3d4e5f6g7h8i9j0.txt
 ### 4. Submit URLs
 
 ```bash
-node scripts/submit-indexnow.js a1b2c3d4e5f6g7h8i9j0
+node scripts/indexnow.js a1b2c3d4e5f6g7h8i9j0
 ```
 
 ## The 26 URLs to Fix

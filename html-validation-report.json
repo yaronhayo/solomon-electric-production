@@ -1,0 +1,4 @@
+
+> solomon-electric@0.0.1 validate:html
+> html-validate "dist/**/*.html" --max-warnings 0 --format json
+
