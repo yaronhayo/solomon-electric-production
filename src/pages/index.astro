@@ -67,7 +67,7 @@ import PhoneNumber from "../components/ui/PhoneNumber.astro";
         set:html={JSON.stringify(homepageSchema)}
     />
     <!-- FAQ Schema for Rich Results -->
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
     <!-- Hero Section -->
     <PageHero

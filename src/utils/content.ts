@@ -21,6 +21,10 @@ export const replacePlaceholder = (text: string): string => {
 export const highlightKeywords = (text: string, additionalKeywords: string[] = []): string => {
     if (!text) return text;
     
+    // Encode raw ampersands before highlighting to prevent W3C no-raw-characters validation errors
+    // Uses negative lookahead to prevent double-encoding existing &amp;
+    let safeText = text.replace(/&(?!(amp|lt|gt|quot|apos|#39|#x27);)/gi, '&amp;');
+    
     // Combine base registry with context-specific keywords (e.g., city name)
     const keywords = Array.from(new Set([...SERVICE_KEYWORDS, ...additionalKeywords]));
     
@@ -36,5 +40,5 @@ export const highlightKeywords = (text: string, additionalKeywords: string[] = [
     // Use positive lookahead/lookbehind to avoid double-wrapping
     const pattern = new RegExp(`\\b(${escapedKeywords.join('|')})\\b`, 'gi');
     
-    return text.replace(pattern, (match) => `<strong>${match}</strong>`);
+    return safeText.replace(pattern, (match) => `<strong>${match}</strong>`);
 };

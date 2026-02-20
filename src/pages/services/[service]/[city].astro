@@ -218,7 +218,7 @@ const regulatoryInfo = generateLocalRegulatoryInfo(city.county);
     ogImageAlt={service.imageAlt || `${service.name} in ${city.name}`}
 >
     <!-- Schema Markup -->
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 
     <Fragment slot="head">
         {service.image && (

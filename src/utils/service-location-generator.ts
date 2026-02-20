@@ -305,7 +305,15 @@ export function generateMetaTitle(serviceName: string, cityName: string): string
     ];
     
     const index = Math.abs(hashString(serviceName + cityName)) % patterns.length;
-    return patterns[index];
+    const generatedTitle = patterns[index];
+
+    // Enforce strict 70-character limit for W3C HTML Validation Compliance
+    if (generatedTitle.length > 70) {
+        const fallback = `${shortServiceName} | ${cityName}, FL`;
+        return fallback.length > 70 ? fallback.substring(0, 67) + "..." : fallback;
+    }
+
+    return generatedTitle;
 }
 
 /**
